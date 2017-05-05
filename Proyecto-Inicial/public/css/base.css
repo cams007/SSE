@@ -1,0 +1,168 @@
+*{
+  margin: 0;
+  padding:0;
+}
+
+html {
+  /*background-image: rgba(0, 0, 0, 0. 0.5);*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 1024px;
+}
+
+header {
+	height: 190px;
+	background-color: white;
+	border-bottom: solid 1px #ccc;
+
+
+}
+#header {
+	display:block;
+	margin: 0 auto;
+	min-width: 960px;
+	height: 190px;
+
+
+}
+#barrasuperior
+{
+  position: absolute;
+  width:100%;
+  display:block;
+  height:40px;
+  background-color: #5E352A;
+}
+  /*----------------ICONOS SUPERIOR-------------*/
+
+  #nombre_usuario {
+  	display:block;
+  	position: relative;
+    float:left;
+    left: 32px;
+  	top: 10px;
+
+  }
+  #nombre_usuario p {
+  	display:block;
+  	position: relative;
+    float:right;
+    margin-left: 10px;
+    color:white;
+    font-family: helvetica;
+    font-size: 12px;
+    top:5px;
+
+
+  }
+  #iconos {
+  	display:block;
+  	position: relative;
+    float: right;
+  	right: 32px;
+  	top: 13px;
+  }
+  .home {
+  	width: 19px;
+  	height: 16px;
+  	margin: 0 10px;
+  	display: block;
+  	float: right;
+  }
+  .user {
+  	width: 19px;
+  	height: 16px;
+  	margin: 0 10px;
+  	display: block;
+  	float: right;
+  }
+  .configuration {
+  	width: 19px;
+  	height: 16px;
+  	margin-left: 10px;
+  	display: block;
+  	float: right;
+  }
+
+
+.block {
+  min-width: 960px;
+  height:540px;
+  border: none;
+  background: rgba(255,255,255,0.9);
+    /*background: rgba(125,240,55,0.9);*/
+  text-align: center;
+  margin: 16px 32px 0;
+  padding: 0 16px;
+  position: relative;
+  top: 8px;
+}
+.headercontainer {
+	width: 1024px;
+	height: 90px;
+	margin: 0 auto;
+
+  display:block;
+  position:relative;
+  text-align: center;
+  top:40px;
+
+}
+#logo_see_contenido{
+	width: 64px;
+	height:65px;
+	position: relative;
+	top:12px;
+  display:block;
+  float:left;
+
+}
+#logo_utm_contenido{
+	width: 64px;
+	height:64px;
+	position: relative;
+	top:12px;
+  display:block;
+  float:right;
+
+}
+#titulo_contenido{
+  margin: 0 auto;
+  width: 100%;
+  min-width: 1024px;
+  position: absolute;
+  margin-top:30px;
+  color:#5E352A;
+  font:30px Helvetica;
+  text-align:center;
+
+}
+.menucontainer {
+	width: 1024px;
+	height: 60px;
+	margin: 0 auto;
+  background-color: #5E352A;
+  display:block;
+  position:relative;
+  text-align: center;
+  top:40px;
+}
+
+.img{
+  max-width: 50%;
+  max-height: 50%;
+}
+/*.nav {
+    display: inline-block;
+    cursor: default;
+    position:relative;
+    top:108px;
+    margin: 0 auto;
+    z-index: 	500;
+    background-color: #5E352A;
+}*/
