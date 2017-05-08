@@ -1,10 +1,14 @@
 
 @extends('layouts.master')
 
+@section('title', 'Datos basicos')
+
 @section('content')
 <h1 class="text-center">Mi perfil</h1>
 	
-	@include('partials.aside')
+	<aside class="col-md-3">
+		@include('partials.aside')
+	</aside>
 	
 	<div class="col-md-6">
 		<form method="POST" action="#">
