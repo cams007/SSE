@@ -11,12 +11,27 @@
 |
 */
 
-use App\Note;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 Route::get('/', function () {
+    return view('perfil.index');
+});
+
+Route::get('/perfil', function () {
     return view('perfil.index', compact('notes'));
+});
+
+Route::get('perfil/fpersonal', function() {
+    return view('perfil.fPersonal');
+});
+
+Route::get('perfil/experiencia', function() {
+    return view('perfil.experiencia');
+});
+
+Route::get('perfil/intereses', function() {
+    return view('perfil.intereses');
+});
+
+Route::get('perfil/ofertaslab', function() {
+    return view('perfil.ofertaslab');
 });
