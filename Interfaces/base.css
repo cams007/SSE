@@ -4,7 +4,7 @@
 }
 
 html {
-  background-image: url("images/biblioteca.jpg");
+  background-image: url("images/biblioteca.JPG");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -16,20 +16,18 @@ html {
 }
 
 header {
-	height: 190px;
+	height: 153px;
 	background-color: white;
 	border-bottom: solid 1px #ccc;
-
-
+  box-shadow: 0 1px 3px #888888;
 }
 #header {
 	display:block;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	min-width: 960px;
-	height: 190px;
-
-
+	height: 164px;
 }
+
 #barrasuperior
 {
   position: absolute;
@@ -37,6 +35,7 @@ header {
   display:block;
   height:40px;
   background-color: #5E352A;
+  box-shadow: 0 1px 3px #888888;
 }
   /*----------------ICONOS SUPERIOR-------------*/
 
@@ -89,23 +88,23 @@ header {
   	float: right;
   }
 
-
 .block {
+  position: relative;
+  text-align: center;
   min-width: 960px;
-  height:540px;
+  height: 450px;
   border: none;
   background: rgba(255,255,255,0.9);
-  text-align: center;
-  margin: 16px 32px 0;
+  margin: 50px 138px auto;
   padding: 0 16px;
-  position: relative;
-  top: 8px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 3px #888888;
 }
+
 .headercontainer {
 	width: 1024px;
 	height: 90px;
 	margin: 0 auto;
-
   display:block;
   position:relative;
   text-align: center;
@@ -152,6 +151,7 @@ header {
   top:40px;
 
 }
+/*
 .nav {
     display: inline-block;
     cursor: default;
@@ -160,4 +160,29 @@ header {
     margin: 0 auto;
     z-index: 	500;
     background-color: #5E352A;
+}*/
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li{
+  float: left;
+}
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.item{
+  position: relative;
+  left: 9%;
+  font-family: helvetica;
+  font-size: 13px;
+  width: 10.5%;
+
 }
