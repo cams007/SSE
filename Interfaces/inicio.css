@@ -4,7 +4,7 @@
   border:none;
 }
 html {
-  background-image: url("images/portada.jpg");
+  background-image: url("images/portada.JPG");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -16,7 +16,7 @@ html {
 }
 .block {
   width: 500px;
-  height:550px;
+  height: 500px;
   border: none;
   background: rgba(255,255,255,0.9);
   text-align: center;
