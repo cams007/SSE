@@ -4,7 +4,7 @@
   border:none;
 }
 html {
-  background-image: url("images/portada.jpg");
+  background-image: url("images/portada.JPG");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -16,7 +16,7 @@ html {
 }
 .block {
   width: 500px;
-  height:550px;
+  height: 500px;
   border: none;
   background: rgba(255,255,255,0.9);
   text-align: center;
@@ -95,15 +95,20 @@ html {
   height:24px;
   display: block;
   float: left;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #5E352A;
+  outline: none;
 }
 #password{
   width:230px;
   height:24px;
   display: block;
   float: left;
-  color:black;
-  background-color: none;
-  border-bottom: 1px solid #b5b4b4;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #5E352A;
+  outline: none;
 }
 #olvido_pswd
 {
@@ -123,6 +128,10 @@ html {
   margin:5px auto;
   width: 222px;
   display:block;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border-radius: 7px 7px 7px 7px;
+  border: 0px solid #000000;
 }
 #registrate
 {
