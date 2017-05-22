@@ -1,0 +1,17 @@
+.fondo-perfil {
+  background-image: url("../assets/images/biblioteca.JPG");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 1024px;
+}
+.hr {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: 0; 
+	border-top: 1px solid rgba(0, 0, 0, 0.38); 
+	}
