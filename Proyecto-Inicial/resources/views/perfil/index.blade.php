@@ -10,7 +10,7 @@
 @section('content')
 	<h1 class="text-center">Mi perfil</h1>
 	<hr class="hr">
-	<aside class="col-md-3">
+	<aside class="col-md-3" id="cssmenu">
 		@include('partials.aside')
 	</aside>
 	

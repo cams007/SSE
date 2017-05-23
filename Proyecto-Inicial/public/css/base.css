@@ -89,16 +89,16 @@ header {
 
 
 .block {
-  min-width: 960px;
-  height:540px;
-  border: none;
+  min-width: 1024px;
+  height: 450px;
+  margin: 0 auto;
   background: rgba(255,255,255,0.9);
-    /*background: rgba(125,240,55,0.9);*/
-  text-align: center;
-  margin: 16px 32px 0;
-  padding: 0 16px;
+  display: block;
   position: relative;
-  top: 8px;
+  text-align: center;
+  top: 51px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 3px #888888;
 }
 .headercontainer {
 	width: 1024px;

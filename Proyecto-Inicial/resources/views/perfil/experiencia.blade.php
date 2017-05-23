@@ -2,10 +2,14 @@
 
 @section('title', 'Experiencia labolar')
 
+@section('style')
+<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+@stop
+
 @section('content')
-<h1 class="text-center">Mi perfil</h1>
-	
-	<aside class="col-md-3">
+	<h1 class="text-center">Mi perfil</h1>
+	<hr class="hr">
+	<aside class="col-md-3" id="cssmenu">
 		@include('partials.aside')
 	</aside>
 	
