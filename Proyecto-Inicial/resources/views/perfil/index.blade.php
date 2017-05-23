@@ -1,10 +1,18 @@
 
 @extends('layouts.master')
 
+@section('title', 'Datos basicos')
+
+@section('style')
+<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+@stop
+
 @section('content')
-<h1 class="text-center">Mi perfil</h1>
-	
-	@include('partials.aside')
+	<h1 class="text-center">Mi perfil</h1>
+	<hr class="hr">
+	<aside class="col-md-3" id="cssmenu">
+		@include('partials.aside')
+	</aside>
 	
 	<div class="col-md-6">
 		<form method="POST" action="#">
@@ -13,23 +21,18 @@
 			{{ csrf_field() }}
 
 			<div class="form-group">	
-				<span class="glyphicon glyphicon-user"> {{"Juan Perez"}}</span> 
+				<img src="{{ url('assets/images/user0.png') }}" alt=""> 
+				<span> {{" Juan Perez "}} </span>
 			</div>
 
 			<div class="form-group">
-				<label for="birthdate"> Fecha de nacimiento</label>
-				<div class="input-group">
-					<span class="input-group-addon glyphicon glyphicon-calendar"></span>
-					<input type="date" name="birthdate" id="birthdate" class="form-control">
-				</div>
+				<img src="{{ url('assets/images/birthday.png') }}" alt=""> 
+				<span> {{" 27 de octubre de 1985 "}} </span>
 			</div>
 
 			<div class="form-group">
-				<label for="email"> Correo electronico</label>
-				<div class="input-group">
-					<span class="input-group-addon glyphicon glyphicon-envelope"></span>
-					<input type="email" name="email" id="email" class="form-control">
-				</div>
+				<img src="{{ url('assets/images/email.png') }}" alt=""> 
+				<div class="link">Agregar un correo electronico</div>
 			</div>
 
 			<div class="form-group">

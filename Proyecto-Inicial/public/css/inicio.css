@@ -1,0 +1,159 @@
+*{
+  margin: 0;
+  padding:0;
+  border:none;
+}
+html {
+  background-image: url("../assets/images/portada.JPG");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-width: 1024px;
+}
+.block {
+  width: 500px;
+  height: 500px;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  text-align: center;
+  margin: 16px auto 0;
+}
+#franja
+{
+  width:100%;
+  min-width:1024px;
+  height:100px;
+  background-color: #5E352A;
+  border:none;
+  padding:none;
+}
+
+
+#titulo_index{
+  margin: 0 auto;
+  width: 100%;
+  min-width: 1024px;
+  position: absolute;
+  margin-top:35px;
+  color:white;
+  font:27px Helvetica;
+  text-align:center;
+
+}
+#logo_sse{
+  background-image: url("../assets/images/logo_sse_blanco.png");
+  background-size: 74px 74px;
+  margin: 0 auto 0;
+  width: 74px;
+	height:74px;
+  display: block;
+  float: left;
+  margin-top:13px;
+  margin-left: 40px;
+}
+#logo_info{
+  background-image: url("../assets/images/logo_info.png") ;
+	width: 52px;
+	height:52px;
+	position: relative;
+  float: right;
+	top: 25px;
+	right: 32px;
+}
+#logo_utm{
+	width: 170px;
+	height:170px;
+	position: relative;
+	top:20px;
+  display:block;
+  margin: 0 auto;
+}
+
+#form_login{
+  clear:both;
+  display: block;
+  position: relative;
+  top:40px;
+  width:300px;
+  margin: 0 auto;
+}
+.usuario-login, .password-login{
+  width: 300px;
+  display:block;
+  margin: 0 auto;
+  height: 35px;
+
+
+}
+#usuario{
+  width:230px;
+  height:24px;
+  display: block;
+  float: left;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #5E352A;
+  outline: none;
+}
+#password{
+  width:230px;
+  height:24px;
+  display: block;
+  float: left;
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid #5E352A;
+  outline: none;
+}
+#olvido_pswd
+{
+  font-size: 13px;
+  font-family: helvetica;
+  color: #5E352A;
+  text-align: right;
+  padding-right: 35px;
+  margin:10px 0;
+}
+
+#input-button{
+  background: #5E352A;
+  border: none;
+  color:white;
+  height: 40px;
+  margin:5px auto;
+  width: 222px;
+  display:block;
+  border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  -webkit-border-radius: 7px 7px 7px 7px;
+  border: 0px solid #000000;
+}
+#registrate
+{
+  font-size: 13px;
+  font-family: helvetica;
+  color: #5E352A;
+  text-align: center;
+
+  margin:10px 0;
+}
+#logo-user{
+  background-image:url("../assets/images/usr.png");
+  height: 24px;
+  width: 24px;
+  display:inline-block;
+  margin-right: 13px;
+  float:left;
+}
+#logo-password{
+  background-image: url("../assets/images/password.png");
+  height:24px;
+  width:24px;
+  display: inline-block;
+  float:left;
+  margin-right:13px;
+}

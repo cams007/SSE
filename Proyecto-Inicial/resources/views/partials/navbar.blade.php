@@ -1,45 +1,12 @@
-
-<nav class="navbar navbar-default">
-    <div class="container">
-
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{url('/')}}">
-                <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
-                Videoclub
-            </a>
+        <div class="menucontainer">
+          <ul id="menu">
+            <li class="item"><a href="#">Ofertas laborales</a></li>
+            <li class="item"><a href="#">Directorio de empresas</a></li>
+            <li class="item"><a href="#">Ranking de empresas</a></li>
+            <li class="item"><a href="#">Tabulador de salarios</a></li>
+            <li class="item"><a href="#">Eventos UTM</a></li>
+            <li class="item"><a href="#">Historias de éxito</a></li>
+            <li class="item"><a href="#">Tips y consejos</a></li>
+            <li class="item"><a href="#">Cerrar sesión</a></li>
+          </ul>
         </div>
-
-        
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="{{url('/catalog')}}">
-                        <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                        Catálogo
-                    </a>
-                </li>
-                <li>
-                    <a href="{{url('/catalog/create')}}">
-                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                        Nueva película
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{url('logout')}}">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                        Cerrar sesión
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>

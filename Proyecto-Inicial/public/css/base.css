@@ -3,8 +3,8 @@
   padding:0;
 }
 
-html {
-  /*background-image: rgba(0, 0, 0, 0. 0.5);*/
+.fondo-perfil {
+  background-image: url("../assets/images/biblioteca.JPG");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -19,8 +19,6 @@ header {
 	height: 190px;
 	background-color: white;
 	border-bottom: solid 1px #ccc;
-
-
 }
 #header {
 	display:block;
@@ -91,16 +89,16 @@ header {
 
 
 .block {
-  min-width: 960px;
-  height:540px;
-  border: none;
+  min-width: 1024px;
+  height: 450px;
+  margin: 0 auto;
   background: rgba(255,255,255,0.9);
-    /*background: rgba(125,240,55,0.9);*/
-  text-align: center;
-  margin: 16px 32px 0;
-  padding: 0 16px;
+  display: block;
   position: relative;
-  top: 8px;
+  text-align: center;
+  top: 51px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 3px #888888;
 }
 .headercontainer {
 	width: 1024px;
@@ -157,7 +155,8 @@ header {
   max-width: 50%;
   max-height: 50%;
 }
-/*.nav {
+
+.navbar {
     display: inline-block;
     cursor: default;
     position:relative;
@@ -165,4 +164,29 @@ header {
     margin: 0 auto;
     z-index: 	500;
     background-color: #5E352A;
-}*/
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li{
+  float: left;
+}
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.item{
+  position: relative;
+  left: 9%;
+  font-family: helvetica;
+  font-size: 13px;
+  width: 10.5%;
+
+}

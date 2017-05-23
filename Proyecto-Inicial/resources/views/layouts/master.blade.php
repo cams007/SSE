@@ -3,12 +3,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Editar Perfil</title>
+    <title> SSE - @yield('title')</title>
     <link href="{{ url('css/base.css') }}" rel="stylesheet">
+    @yield('style')
     <link href="{{ url('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
     <!-- <link href="{{ url('assets/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet"> -->
 </head>
-<body>
+<body class="fondo-perfil">
   <header>
     <section class="contenido">
       <div id="barrasuperior">
@@ -42,12 +44,12 @@
                 <img src="{{url('assets/images/logo_utm_contenido.png')}}">
               </div>
             </div>
-            
+            @include('partials.navbar')
           </div>
     </section>
   </header>
   
-  <div class="container">
+  <div class="container block">
       @yield('content')
   </div>
 
