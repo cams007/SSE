@@ -3,9 +3,13 @@
 
 @section('title', 'Datos basicos')
 
+@section('style')
+<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+@stop
+
 @section('content')
-<h1 class="text-center">Mi perfil</h1>
-	
+	<h1 class="text-center">Mi perfil</h1>
+	<hr class="hr">
 	<aside class="col-md-3">
 		@include('partials.aside')
 	</aside>

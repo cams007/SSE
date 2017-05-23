@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('perfil.index');
+    return view('index');
 });
 
 Route::get('/perfil', function () {

@@ -3,8 +3,8 @@
   padding:0;
 }
 
-html {
-  /*background-image: rgba(0, 0, 0, 0. 0.5);*/
+.fondo-perfil {
+  background-image: url("../assets/images/biblioteca.JPG");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -19,8 +19,6 @@ header {
 	height: 190px;
 	background-color: white;
 	border-bottom: solid 1px #ccc;
-
-
 }
 #header {
 	display:block;
@@ -157,7 +155,8 @@ header {
   max-width: 50%;
   max-height: 50%;
 }
-/*.nav {
+
+.navbar {
     display: inline-block;
     cursor: default;
     position:relative;
@@ -165,4 +164,29 @@ header {
     margin: 0 auto;
     z-index: 	500;
     background-color: #5E352A;
-}*/
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li{
+  float: left;
+}
+li a{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.item{
+  position: relative;
+  left: 9%;
+  font-family: helvetica;
+  font-size: 13px;
+  width: 10.5%;
+
+}
