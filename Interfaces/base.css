@@ -88,18 +88,6 @@ header {
   	float: right;
   }
 
-.block {
-  position: relative;
-  text-align: center;
-  min-width: 960px;
-  height: 450px;
-  border: none;
-  background: rgba(255,255,255,0.9);
-  margin: 50px 138px auto;
-  padding: 0 16px;
-  border: solid 1px #ccc;
-  box-shadow: 0 0 3px #888888;
-}
 
 .headercontainer {
 	width: 1024px;
@@ -140,6 +128,20 @@ header {
   text-align:center;
 
 }
+
+.block {
+  width: 1024px;
+  height: 450px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.9);
+  display: block;
+  position: relative;
+  text-align: center;
+  top: 51px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 3px #888888;
+}
+
 .menucontainer {
 	width: 1024px;
 	height: 60px;
@@ -151,16 +153,6 @@ header {
   top:40px;
 
 }
-/*
-.nav {
-    display: inline-block;
-    cursor: default;
-    position:relative;
-    top:108px;
-    margin: 0 auto;
-    z-index: 	500;
-    background-color: #5E352A;
-}*/
 
 ul{
   list-style-type: none;
