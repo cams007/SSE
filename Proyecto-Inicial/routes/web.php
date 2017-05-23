@@ -20,3 +20,11 @@ use App\Note;
 Route::get('/', function () {
     return view('perfil.index', compact('notes'));
 });
+
+
+Route::get('ranking', function () {
+    return view('ranking.ranking');
+});
+Route::get('ofertas', function () {
+    return view('ofertas.ofertas');
+});
