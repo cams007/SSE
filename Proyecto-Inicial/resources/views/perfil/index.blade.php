@@ -21,23 +21,18 @@
 			{{ csrf_field() }}
 
 			<div class="form-group">	
-				<span class="glyphicon glyphicon-user"> {{"Juan Perez"}}</span> 
+				<img src="{{ url('assets/images/user0.png') }}" alt=""> 
+				<span> {{" Juan Perez "}} </span>
 			</div>
 
 			<div class="form-group">
-				<label for="birthdate"> Fecha de nacimiento</label>
-				<div class="input-group">
-					<span class="input-group-addon glyphicon glyphicon-calendar"></span>
-					<input type="date" name="birthdate" id="birthdate" class="form-control">
-				</div>
+				<img src="{{ url('assets/images/birthday.png') }}" alt=""> 
+				<span> {{" 27 de octubre de 1985 "}} </span>
 			</div>
 
 			<div class="form-group">
-				<label for="email"> Correo electronico</label>
-				<div class="input-group">
-					<span class="input-group-addon glyphicon glyphicon-envelope"></span>
-					<input type="email" name="email" id="email" class="form-control">
-				</div>
+				<img src="{{ url('assets/images/email.png') }}" alt=""> 
+				<div class="link">Agregar un correo electronico</div>
 			</div>
 
 			<div class="form-group">
