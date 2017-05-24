@@ -15,4 +15,10 @@
 	  <li {{ Request::is('perfil/ofertaslab') ? ' class=active' : ''}}>
 	  	<a href="{{url('perfil/ofertaslab')}}">Mis ofertas laborales</a>
 	  </li>
+	  <li>
+	  	<a href="{{url('perfil/ofertaslab')}}">Opcion 3</a>
+	  </li>
+	  <li>
+	  	<a href="{{url('perfil/ofertaslab')}}">Opcion 4</a>
+	  </li>
 </ul>
