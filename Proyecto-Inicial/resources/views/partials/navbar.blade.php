@@ -1,4 +1,4 @@
-        <div class="menucontainer">
+
           <ul id="menu">
             <li class="item"><a href="#">Ofertas laborales</a></li>
             <li class="item"><a href="#">Directorio de empresas</a></li>
@@ -9,4 +9,3 @@
             <li class="item"><a href="#">Tips y consejos</a></li>
             <li class="item"><a href="#">Cerrar sesión</a></li>
           </ul>
-        </div>
