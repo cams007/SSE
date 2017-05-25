@@ -334,3 +334,58 @@ a{
     font-size: 13px;
     width: 10.5%;
   }
+
+/* Estilos para tablas */
+table{
+  width: 90%;
+  margin: 0 5% 0 5%;
+  border-collapse: collapse;
+  border: #ACABAB 2px solid;
+  font-size: 12pt;
+}
+th{
+  color: #FFFFFF;
+  background-color: #6B6B6B;
+  border: #ACABAB 2px solid;
+  text-align: center;
+}
+tr, td {
+  height: 32px;
+  border: #ACABAB 2px solid;
+}
+tr:nth-child(even){ /*Filas pares*/
+  color: #6B6B6B;
+  background-color: #FFFFFF;
+}
+tr:nth-child(odd){ /*Filas nones*/
+  color: #6B6B6B; /*color: #FFFFFF;*/
+  background-color: #D8D8D8;
+}
+
+div select{
+  width: 100%;  
+  height: 32px;
+  /*padding-left: 32px;*/
+  float: left;
+  padding: 0 0 0 32px;
+  border: 1 !important;    /*    Removes border*/
+  border: #ACABAB 2px solid;
+  -webkit-appearance: none;        /*Removes default chrome and safari style */
+  -moz-appearance: none;          /* Removes Default Firefox style*/
+  /*background: {{url('assets/images/home.png')}};         /*Adds background-image*/
+  /*background-position: 82px 7px;                /*Position of the background-image*/
+}
+div .filtro_1{
+  width: 40%;
+  margin: 0 0 10px 5%;
+  float: left;
+}
+div .filtro_3{
+  width: 26.7%;
+  margin: 0 0 10px 5%;
+  float: left;
+}
+div p.titulo_select{
+  margin: 0;
+  text-align: left;
+}
