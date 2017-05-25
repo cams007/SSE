@@ -4,9 +4,9 @@
 @section('title', 'Ofertas laborales')
 
 @section('content')
-<h1 class="text-center">Ofertas laborales</h1>
-	
-<section class="block">
+
+	<h1 class="text-center">Ofertas laborales</h1>
+	<hr class="hr">
 
 	<!-- Filtros -->
 	<div class="filtro_1">
@@ -75,6 +75,5 @@
 		
 	</table>
 
-</section>
 	
 @stop
