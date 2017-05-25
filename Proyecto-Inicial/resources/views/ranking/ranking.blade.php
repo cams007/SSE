@@ -9,14 +9,6 @@
 
 	<!-- Filtros -->
 	<div class="filtro_3">
-		<p class="titulo_select">Giro de empresa</p>
-		<select name="Giro">
-			<option selected="">Elija un giro</option>
-		  	<option value="volvo">Consultoría</option>
-			<option value="saab">Desarrollo de software</option>
-		</select>
-	</div>
-	<div class="filtro_3">
 		<p class="titulo_select">Calificación</p>
 		<select name="Calificacion">
 			<option selected="">Elija una opción</option>
@@ -35,6 +27,14 @@
 		  	<option value="volvo">CDMX</option>
 		  	<option value="saab">Huajuapán de León</option>
 		  	<option value="saab">Puebla</option>
+		</select>
+	</div>
+	<div class="filtro_3">
+		<p class="titulo_select">Giro de empresa</p>
+		<select name="Giro">
+			<option selected="">Elija un giro</option>
+		  	<option value="volvo">Consultoría</option>
+			<option value="saab">Desarrollo de software</option>
 		</select>
 	</div>
 	<br>
