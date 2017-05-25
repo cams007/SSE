@@ -1,10 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+
 *{
   margin: 0;
   padding:0;
 }
 
 html {
-  /*background-image: rgba(0, 0, 0, 0. 0.5);*/
+  background-image: url("../assets/images/biblioteca.JPG");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -13,32 +15,31 @@ html {
   -o-background-size: cover;
   background-size: cover;
   min-width: 1024px;
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
-	height: 190px;
+	height: 153px;
 	background-color: white;
 	border-bottom: solid 1px #ccc;
-
-
+  box-shadow: 0 1px 3px #888888;
 }
 #header {
 	display:block;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
 	min-width: 960px;
-	height: 190px;
-
-
+	height: 164px;
 }
-#barrasuperior
-{
+
+#barrasuperior {
   position: absolute;
   width:100%;
   display:block;
   height:40px;
   background-color: #5E352A;
+  box-shadow: 0 1px 3px #888888;
 }
-  /*----------------ICONOS SUPERIOR-------------*/
+/*----------------ICONOS SUPERIOR-------------*/
 
   #nombre_usuario {
   	display:block;
@@ -91,16 +92,16 @@ header {
 
 
 .block {
-  min-width: 960px;
-  height:540px;
-  border: none;
+  width: 1024px;
+  height: 450px;
+  margin: 0 auto;
   background: rgba(255,255,255,0.9);
-    /*background: rgba(125,240,55,0.9);*/
-  text-align: center;
-  margin: 16px 32px 0;
-  padding: 0 16px;
+  display: block;
   position: relative;
-  top: 8px;
+  text-align: center;
+  top: 51px;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 3px #888888;
 }
 .headercontainer {
 	width: 1024px;
@@ -142,85 +143,194 @@ header {
   text-align:center;
 
 }
-.menucontainer {
-	width: 1024px;
-	height: 60px;
-	margin: 0 auto;
+
+button {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 5px 25px;
+  font-size: 14px;
+  font-family: "Roboto",serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: 160px;
+  height: 32px;
+}
+
+
+button:hover{
+  outline: none
+}
+
+.flat{
+  color: #fff;
+  background-color: #BE3228;
+  text-shadow: -1px 1px #417cb8;
+  color: #FFF;
+  text-decoration: none;
+  border: none;
+}
+
+.flat:hover{
   background-color: #5E352A;
-  display:block;
-  position:relative;
-  text-align: center;
-  top:40px;
+  text-shadow: -1px 1px #27496d;
+}
+
+.flat-secundario{
+  background-color: #6B6B6B;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+input[type="email"]{
+  display: block;
+  margin-bottom: 15px;
+  width: 80%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #6B6B6B;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  padding: 10px;
+  border: solid 1px #ACABAB;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+select:focus{
+  outline: none;
+  border: solid 1px #BE3228;
+  box-shadow: 0 0 5px 1px #969696;
+}
+
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+}
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #ccc;
+}
+.control input:checked ~ .control__indicator {
+  background: #2aa1c0;
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: #0e647d;
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.control--radio .control__indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+.control--radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+}
+
+
+select{
+  display: block;
+  margin-bottom: 15px;
+  width: 83.5%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background: #FFF;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  padding: 10px;
+  border: solid 1px #ACABAB;
+  transition: box-shadow 0.3s, border 0.3s;
 }
 
 .img{
   max-width: 50%;
   max-height: 50%;
 }
-/*.nav {
-    display: inline-block;
-    cursor: default;
-    position:relative;
-    top:108px;
+
+a{
+  color: #be3228;
+  text-decoration: none;
+}
+
+/* NavBar */
+  .menucontainer {
+    width: 1024px;
+    height: 60px;
     margin: 0 auto;
-    z-index: 	500;
     background-color: #5E352A;
-}*/
+    display:block;
+    position:relative;
+    text-align: center;
+    top:40px;
+  }
 
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
 
-            
-            /* Estilos para tablas */
-table{
-  width: 90%;
-  margin: 0 5% 0 5%;
-  border: #ACABAB 2px solid;
-  font-size: 12pt;
-  font-family: Roboto;
-}
-th{
-  color: #FFFFFF;
-  background-color: #6B6B6B; 
-  border: #ACABAB 2px solid;
-  text-align: center;
-}
-tr, td {
-  height: 32px;
-  border: #ACABAB 2px solid;
-}
-tr:nth-child(even){ /*Filas pares*/
-  color: #6B6B6B;
-  background-color: #FFFFFF;
-}
-tr:nth-child(odd){ /*Filas nones*/
-  color: #6B6B6B; /*color: #FFFFFF;*/
-  background-color: #D8D8D8;
-}
+  li{
+    float: left;
+  }
 
-/* Estilos para filtros (selección) */
-div select{
-  width: 100%;  
-  height: 32px;
-  padding-left: 32px;
-  float: left;
+  li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
 
-  border: 1 !important;    /*    Removes border*/
-  border: #ACABAB 2px solid;
-  -webkit-appearance: none;        /*Removes default chrome and safari style */
-  -moz-appearance: none;          /* Removes Default Firefox style*/
-  /*background: {{url('assets/images/home.png')}};         /*Adds background-image*/
-  /*background-position: 82px 7px;                /*Position of the background-image*/
-}
-div .filtro_1{
-  width: 40%;
-  margin: 0 0 10px 5%;
-  float: left;
-}
-div .filtro_3{
-  width: 26.7%;
-  margin: 0 0 10px 5%;
-  float: left;
-}
-div p.titulo_select{
-  margin: 0;
-  text-align: left;
-}
+  .item{
+    position: relative;
+    left: 9%;
+    font-family: helvetica;
+    font-size: 13px;
+    width: 10.5%;
+  }
