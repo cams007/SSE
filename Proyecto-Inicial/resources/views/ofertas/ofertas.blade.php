@@ -1,8 +1,9 @@
 
 @extends('layouts.master')
-@section('content')
 
-<title>Ofertas laborales</title>
+@section('title', 'Ofertas laborales')
+
+@section('content')
 <h1 class="text-center">Ofertas laborales</h1>
 	
 <section class="block">
