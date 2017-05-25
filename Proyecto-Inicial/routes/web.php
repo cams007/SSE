@@ -41,5 +41,9 @@ Route::get('/tabuladorSalarios', function(){
 });
 
 Route::get('/eventosUTM', function(){
-	return view('egresados.EventosUtm');
+	return view('egresados.eventosUTM.index');
+});
+
+Route::get('eventosUTM/conciertos', function(){
+	return view('egresados.eventosUTM.Conciertos');
 });

@@ -19,16 +19,16 @@ html {
 }
 
 header {
-	height: 153px;
-	background-color: white;
-	border-bottom: solid 1px #ccc;
+  height: 153px;
+  background-color: white;
+  border-bottom: solid 1px #ccc;
   box-shadow: 0 1px 3px #888888;
 }
 #header {
-	display:block;
-	/*margin: 0 auto;*/
-	min-width: 960px;
-	height: 164px;
+  display:block;
+  /*margin: 0 auto;*/
+  min-width: 960px;
+  height: 164px;
 }
 
 #barrasuperior {
@@ -42,16 +42,16 @@ header {
 /*----------------ICONOS SUPERIOR-------------*/
 
   #nombre_usuario {
-  	display:block;
-  	position: relative;
+    display:block;
+    position: relative;
     float:left;
     left: 32px;
-  	top: 10px;
+    top: 10px;
 
   }
   #nombre_usuario p {
-  	display:block;
-  	position: relative;
+    display:block;
+    position: relative;
     float:right;
     margin-left: 10px;
     color:white;
@@ -62,32 +62,32 @@ header {
 
   }
   #iconos {
-  	display:block;
-  	position: relative;
+    display:block;
+    position: relative;
     float: right;
-  	right: 32px;
-  	top: 13px;
+    right: 32px;
+    top: 13px;
   }
   .home {
-  	width: 19px;
-  	height: 16px;
-  	margin: 0 10px;
-  	display: block;
-  	float: right;
+    width: 19px;
+    height: 16px;
+    margin: 0 10px;
+    display: block;
+    float: right;
   }
   .user {
-  	width: 19px;
-  	height: 16px;
-  	margin: 0 10px;
-  	display: block;
-  	float: right;
+    width: 19px;
+    height: 16px;
+    margin: 0 10px;
+    display: block;
+    float: right;
   }
   .configuration {
-  	width: 19px;
-  	height: 16px;
-  	margin-left: 10px;
-  	display: block;
-  	float: right;
+    width: 19px;
+    height: 16px;
+    margin-left: 10px;
+    display: block;
+    float: right;
   }
 
 
@@ -104,9 +104,9 @@ header {
   box-shadow: 0 0 3px #888888;
 }
 .headercontainer {
-	width: 1024px;
-	height: 90px;
-	margin: 0 auto;
+  width: 1024px;
+  height: 90px;
+  margin: 0 auto;
 
   display:block;
   position:relative;
@@ -115,19 +115,19 @@ header {
 
 }
 #logo_see_contenido{
-	width: 64px;
-	height:65px;
-	position: relative;
-	top:12px;
+  width: 64px;
+  height:65px;
+  position: relative;
+  top:12px;
   display:block;
   float:left;
 
 }
 #logo_utm_contenido{
-	width: 64px;
-	height:64px;
-	position: relative;
-	top:12px;
+  width: 64px;
+  height:64px;
+  position: relative;
+  top:12px;
   display:block;
   float:right;
 
