@@ -230,6 +230,7 @@ select:focus{
   height: 20px;
   width: 20px;
   background: #e6e6e6;
+  
 }
 .control--radio .control__indicator {
   border-radius: 50%;
