@@ -35,3 +35,11 @@ Route::get('perfil/intereses', function() {
 Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
+
+Route::get('/tabuladorSalarios', function(){
+	return view('egresados.TabuladorSalarios');
+});
+
+Route::get('/eventosUTM', function(){
+	return view('egresados.EventosUtm');
+});
