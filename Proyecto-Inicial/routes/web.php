@@ -35,3 +35,11 @@ Route::get('perfil/intereses', function() {
 Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
+
+Route::get('/ranking', function() {
+    return view('ranking.ranking');
+});
+
+Route::get('/ofertas', function() {
+    return view('ofertas.ofertas');
+});
