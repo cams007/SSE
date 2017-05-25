@@ -5,7 +5,7 @@
 	margin-bottom: 20px;
 	border: 0; 
 	border-top: 1px solid rgba(0, 0, 0, 0.38); 
-	}
+}
 
 #global {
   height: 300px;
@@ -33,12 +33,29 @@
     padding: 15px;
 }
 
-.content {
-  width: 45%;
+.content{
+  width: 65%;
+  height: 350px;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+}
+
+.content{
+  width: 65%;
+  height: 350px;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: 15px;
+  overflow-y: scroll;
+}
+
+.content-sm {
+  width: 35%;
   height: 350px;
   text-align: left;
   margin-left: 10%;
-  /*border: 1px solid #73AD21;*/
   overflow-y: scroll;
 }
 
@@ -49,6 +66,7 @@
 
 /* Aside */
   /* Starter CSS for Flyout Menu */
+
   #cssmenu,
   #cssmenu ul,
   #cssmenu ul li,
@@ -109,8 +127,9 @@
   /* Custom CSS Styles */
   #cssmenu {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     width: 200px;
+    border-right: 1px solid rgba(0, 0, 0, 0.38); 
   }
   #cssmenu ul a,
   #cssmenu ul a:link,
@@ -141,3 +160,38 @@
     color: #000;
     font-weight: bold;
   }
+
+
+input[type=checkbox]:checked ~ #email{
+    display: block;
+}
+#email{
+    display: none;
+}
+
+.form-group{
+  margin-top: 15px;
+}
+
+textarea{
+  margin: 0px; 
+  width: 614px; 
+  height: 212px;
+  resize: none;
+}
+
+.checkbox-inline {
+    display: block;
+    padding-left: 15px;
+    text-indent: -15px;
+}
+.checkbox {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+}

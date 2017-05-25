@@ -35,3 +35,15 @@ Route::get('perfil/intereses', function() {
 Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
+
+Route::get('perfil/dprofesional', function() {
+    return view('perfil.dprofesional');
+});
+
+Route::get('perfil/fprofesional', function() {
+    return view('perfil.fProfesional', array('dato' => 'No'));
+});
+
+Route::get('perfil/egresadoReco', function() {
+    return view('perfil.recomendaciones');
+});

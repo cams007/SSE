@@ -11,11 +11,11 @@
 	<h1 class="text-center">Mi perfil</h1>
 	<hr class="hr">
 	<div class="clearfix">
-		<aside id="cssmenu" class="column">
+		<aside id="cssmenu" class="column hrV">
 			@include('partials.aside')
 		</aside>
 		
-		<div class="column content">
+		<div class="column content-sm">
 			<form method="POST" action="#">
 			
 				{{-- TODO: Protección contra CSRF --}}
