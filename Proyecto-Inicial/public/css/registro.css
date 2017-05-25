@@ -1,0 +1,95 @@
+
+/* Aqui agrego lo mio */
+
+
+.registro{
+    position: relative;
+    top: 50px;
+    width: 1020px;
+    height: 420px;
+    margin: 0 auto;
+    padding: 0px;
+    background: #fbfbfb;
+    box-shadow: 0px 0px 4px gray;
+    
+}
+
+#saludo{
+    font-family: helvetica;
+    float:left;
+    width: 450px;
+    height: 300px;
+    margin-left: 40px;
+}
+
+#bienvenida{
+    font-family: helvetica;
+    font-size: 15px;
+    position: relative;
+    text-align: justify;
+    top: 40px;
+    color: black;
+}
+
+#aviso{
+    font-family: helvetica;
+    position: relative;
+    top: 20px;
+    text-decoration: none;
+    color: red;
+}
+
+#datos{
+    font-family: helvetica;
+    margin-top: 40px;
+    margin-left: 40px;
+    float: left;
+    width: 455px;
+    height: 300px;
+}
+
+#entradas{
+    height: 20px;
+    width: 450px;
+}
+
+.button{
+    background-color: #A4A4A4;
+    color: white;
+    border: none;
+    padding: 8px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.button2{
+    float: right;
+    background-color: #DF0101;
+    color: white;
+    border: none;
+    padding: 8px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.p{
+    font-family: helvetica;
+    font-size: 12px;
+
+}
+
+.seccion{
+    font-family: helvetica;
+    font-size: 30px;
+    text-align: center;
+}
+
+.hre{
+    width: 50%;
+}
