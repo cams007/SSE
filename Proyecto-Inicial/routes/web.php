@@ -46,4 +46,24 @@ Route::get('perfil/fprofesional', function() {
 
 Route::get('perfil/egresadoReco', function() {
     return view('perfil.recomendaciones');
+}};
+           
+Route::get('/tabuladorSalarios', function(){
+	return view('egresados.TabuladorSalarios');
+});
+
+Route::get('/eventosUTM', function(){
+	return view('egresados.eventosUTM.index');
+});
+
+Route::get('eventosUTM/conciertos', function(){
+	return view('egresados.eventosUTM.Conciertos');
+});
+
+Route::get('/ranking', function() {
+	return view('ranking.ranking');
+});
+
+Route::get('/ofertas', function() {
+	return view('ofertas.ofertas');
 });
