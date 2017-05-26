@@ -25,7 +25,7 @@
 		  <th>Título del empleo</th>
 		  <th>Empresa</th>
 		  <th>Ubicación</th>
-		  <th>Descrición</th>
+		  <th>Descripción</th>
 		</tr>
 		 
 		<tr>
