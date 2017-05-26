@@ -4,7 +4,7 @@
 
 @section('content')
 
-	<h1 class="text-center">Tabulado de salarios</h1>
+	<h1 class="text-center">Tabulador de salarios</h1>
 	<hr class="hr">
 	<!--Filtro-->
 	<div class="filtro_1">

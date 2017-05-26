@@ -77,20 +77,18 @@
 					<div class="form-group">
 						<p><b>Titulado</b></p>
 						<div class="radio">
-							<label class="control control--radio"> Si
-								<input type="radio" name="dtitulado" value="1">
-								<div class="control__indicator"></div>
+							<label class="radio-inline">
+								<input type="radio" name="dtitulado" value="1">  Si
 							</label>
-							<label class="control control--radio"> No
-								<input type="radio" name="dtitulado" id="" value="0">
-								<div class="control__indicator"></div>
+							<label class="radio-inline">
+								<input type="radio" name="dtitulado" id="" value="0">  No
 							</label>
 						</div>
 					</div>
 
 				<div class="form-group text-center">
 					<button type="submit" class="flat">
-						Guardar cambios
+						Siguiente
 					</button>
 				</div>
 			</form>

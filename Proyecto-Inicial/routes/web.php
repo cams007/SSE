@@ -36,6 +36,11 @@ Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
 
+Route::get('registro', function() {
+    return view('registrarse');
+});
+
+
 Route::get('perfil/dprofesional', function() {
     return view('perfil.dprofesional');
 });
@@ -46,7 +51,7 @@ Route::get('perfil/fprofesional', function() {
 
 Route::get('perfil/egresadoReco', function() {
     return view('perfil.recomendaciones');
-}};
+});
            
 Route::get('/tabuladorSalarios', function(){
 	return view('egresados.TabuladorSalarios');

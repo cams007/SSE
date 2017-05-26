@@ -117,7 +117,7 @@
 
 				<div class="form-group text-center">
 					<button type="submit" class="flat">
-						Guardar cambios
+						Siguiente
 					</button>
 				</div>
 			</form>
