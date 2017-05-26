@@ -46,7 +46,7 @@ Route::get('perfil/fprofesional', function() {
 
 Route::get('perfil/egresadoReco', function() {
     return view('perfil.recomendaciones');
-}};
+});
            
 Route::get('/tabuladorSalarios', function(){
 	return view('egresados.TabuladorSalarios');
