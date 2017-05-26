@@ -28,25 +28,43 @@
 			</div>
 			<div class="form-group">
 				<label for="tContrato">2. ¿Cuales factores dificultan o an dificultado ?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="tContrato">3. ¿Comó calificas, en general, la formación recibida por la UTM al momento de ejercer tu profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="tContrato" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="tContrato" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="tContrato" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="tContrato" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="tContrato" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="tContrato">4. ¿Concideras que careces o carecias de algun(nos) conocimiento(s) básico(s), al momento de ejercer tu prefesión por primera vez, y no fue(ron) desarrollado(s) durante tu formacion profesional?</label>
@@ -234,94 +252,165 @@
 
 			<div class="form-group">
 				<label for="tContrato">8. ¿Comó calificas las instalaciónes (aulas, biblioteca, sala de cómputo, laboratorios, otros), de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			
 			<div class="form-group">
 				<label for="tContrato">9. ¿Comó calificas los servicios (escolares, y administrativos) de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			
 			<div class="form-group">
 				<label for="tContrato">10. ¿Comó calificas los equipos, intrumentos, maquinaria, herramientas, y software de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 
 			<div class="form-group">
 				<label for="tContrato">11. ¿Comó calificas, en general, la limpieza de la infraestructura de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
-			</div>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>			</div>
 			<div class="form-group">
 				<label for="tContrato">12. ¿Comó calificas, en general, la capacidad de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="tContrato">13. ¿Comó calificas el desempeño de los docentes (transmision de los conocimientos, aclaracion de dudas, y asesorias) de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="tContrato">14. ¿Comó calificas las tecnicas (investigación, análisis, comparación, etc.) y metodos (uso de casos de estudio, aplicación del conocimento en ploblemas reales, etc.) de enseñanza aplicados por los docentes de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="tContrato">15. ¿Comó calificas la forma de evaluación aplicados por los docentes de la UTM, durante tu formación profesional y que repercutieron al memento de ejercer profesión por primera vez?</label>
-				<select name="tContrato" id="inputTContrato" class="form-control">
-					<option value="" checked>---Selecionar---</option>
-					<option value="0"> Excelente</option>
-					<option value="1"> Muy buena</option>
-					<option value="2"> Buena</option>
-					<option value="3"> Regular</option>
-					<option value="4"> Mala</option>
-				</select>
+				<div class="radio">
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="1"> Excelente
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Muy buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Buena
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Regular
+					</label>
+					<label class="radio-inline">
+						<input type="radio" name="sector" id="" value="0"> Mala
+					</label>
+				</div>
 			</div>
 			<div class="form-group">
 				<label for="tContrato">16. ¿Continuarias realizando algun estudio de posgrado en la Universidad Tecnológica de la Mixteca?</label>
@@ -346,3 +435,5 @@
 @stop
 
 {{-- Crear base de datos de imagenes, 20 para train, 50 para test, reconocer y detectar rostro --}}
+
+{{-- Cambiar select por radiobutton --}}

@@ -23,7 +23,7 @@
 
 				<div>	
 					<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos"> 
-					<span> {{" Juan Perez "}} </span>
+					<span> {{" Juan Peréz "}} </span>
 				</div>
 
 				<div>
@@ -33,7 +33,7 @@
 
 				<div class="input email">
 					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"> 
-					<label class="link addInput"> Agregar un correo electronico</label>
+					<label class="link addInput"> Agregar un correo electrónico</label>
 				</div>
 
 				<div class="input address">
@@ -48,7 +48,7 @@
 
 				<div class="input tel">
 					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
-					<label class="link"> {{" Agregar telefono"}}</label>
+					<label class="link"> {{" Agregar telefóno"}}</label>
 				</div>
 
 				<div class="text-center">

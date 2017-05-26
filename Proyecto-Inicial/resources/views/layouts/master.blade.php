@@ -27,7 +27,7 @@
                   <a class="configuration" href="#">
                     <img src="{{url('assets/images/configuration.png')}}">
                   </a>
-                  <a class="user" href="#">
+                  <a class="user" href="{{url('perfil')}}">
                     <img src="{{url('assets/images/user.png')}}">
                   </a>
                   <a class="home" href="#">
