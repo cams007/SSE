@@ -35,3 +35,7 @@ Route::get('perfil/intereses', function() {
 Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
+
+Route::get('registro', function() {
+    return view('registrarse');
+});
