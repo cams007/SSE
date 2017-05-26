@@ -36,6 +36,11 @@ Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
 
+Route::get('registro', function() {
+    return view('registrarse');
+});
+
+
 Route::get('perfil/dprofesional', function() {
     return view('perfil.dprofesional');
 });
