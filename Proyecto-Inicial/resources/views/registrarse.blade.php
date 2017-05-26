@@ -18,14 +18,14 @@
          	
          	<div id="datos">
          		<p class="p">Ingresa tu matrícula*</p>
-         			<input type="text" name="matricula" id="entradas"><br><br>
+         			<input type="text" name="matricula" id="entradas">
          		<p class="p">Ingresa tu CURP*</p>
-         			<input type="text" name="curp" id="entradas"><br><br>
+         			<input type="text" name="curp" id="entradas">
          		<p class="p">Ingresa tu contraseña*</p>
-         			<input type="text" name="pass" id="entradas"><br><br>
+         			<input type="text" name="pass" id="entradas">
          		<p class="p">repite tu contraseña*</p>
-         			<input type="text" name="pass2" id="entradas"><br>
-         			<p class="p" align="right">*Campos obligatorios</p><br>
+         			<input type="text" name="pass2" id="entradas">
+         			<p class="p" align="right">*Campos obligatorios</p>
          		<button class="button">Cancelar</button>
          		<button class="button2">Registrar</button>
           </div>
