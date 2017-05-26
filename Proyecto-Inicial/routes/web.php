@@ -55,3 +55,11 @@ Route::get('/ranking', function() {
 Route::get('/ofertas', function() {
 	return view('ofertas.ofertas');
 });
+
+Route::get('/directorio_empresas', function() {
+	return view('empresa.directorio');
+});
+
+Route::get('/registro', function() {
+	return view('registrarse');
+});
