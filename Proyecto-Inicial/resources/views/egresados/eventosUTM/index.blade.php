@@ -15,7 +15,16 @@
 		</aside>
 		<!--<div class="column content">-->
 			<div class="filtro_3">
-				<p class="titulo_select">Ubicación</p>
+				<input type="text" name="busquedaEvento" value="busqueda de evento">
+			</div>
+
+			<div>
+				<figure>
+	 				<img src="{{ url('assets/images/portada.JPG') }}" width="400" height="353">
+					<figcaption><h2>Orquesta de Oaxaca</h2></figcaption>
+				</figure>
+				<h3>Martes 15 de diciembre 2017, 10:00 hrs</h3><!--Fecha-->
+				<h3>Auditorio UTM. Huajuapan de león Oaxaca</h3><!--Ubicacion-->
 			</div>
 		<!--</div>-->
 	</div>

@@ -69,6 +69,10 @@ Route::get('eventosUTM/academicos', function(){
     return view('egresados.eventosUTM.Academicos');
 });
 
+Route::get('/historiasdeExito', function(){
+    return view('egresados.HistoriasDeExito');
+});
+
 Route::get('/ranking', function() {
 	return view('ranking.ranking');
 });
