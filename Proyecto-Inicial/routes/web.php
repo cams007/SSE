@@ -61,8 +61,12 @@ Route::get('/eventosUTM', function(){
 	return view('egresados.eventosUTM.index');
 });
 
-Route::get('eventosUTM/conciertos', function(){
-	return view('egresados.eventosUTM.Conciertos');
+Route::get('eventosUTM/culturales', function(){
+	return view('egresados.eventosUTM.Culturales');
+});
+
+Route::get('eventosUTM/academicos', function(){
+    return view('egresados.eventosUTM.Academicos');
 });
 
 Route::get('/ranking', function() {

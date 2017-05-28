@@ -13,8 +13,12 @@
 		<aside class="column" id="cssmenu">
 			@include('partials.AsideEventosUtm')	
 		</aside>
-
-		
+		<!--<div class="column content">-->
+			<div class="filtro_3">
+				<p class="titulo_select">Ubicación</p>
+			</div>
+		<!--</div>-->
 	</div>
+
 
 @stop
