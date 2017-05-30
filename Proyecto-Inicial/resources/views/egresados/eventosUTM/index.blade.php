@@ -23,7 +23,10 @@
 	 				<img src="{{ url('assets/images/portada.JPG') }}" width="400" height="353">
 					<figcaption><h2>Orquesta de Oaxaca</h2></figcaption>
 				</figure>
+				<img src="{{ url('assets/images/eventos_calendar.png') }}" alt="" class="iconos">
 				<h3>Martes 15 de diciembre 2017, 10:00 hrs</h3><!--Fecha-->
+
+				<img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
 				<h3>Auditorio UTM. Huajuapan de león Oaxaca</h3><!--Ubicacion-->
 			</div>
 		<!--</div>-->
