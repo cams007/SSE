@@ -72,3 +72,7 @@ Route::get('/ranking', function() {
 Route::get('/ofertas', function() {
 	return view('ofertas.ofertas');
 });
+
+Route::get('registro', function() {
+    return view('registrarse');
+});
