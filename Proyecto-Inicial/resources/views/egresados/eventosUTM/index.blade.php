@@ -13,23 +13,35 @@
 		<aside class="column" id="cssmenu">
 			@include('partials.AsideEventosUtm')	
 		</aside>
-		<!--<div class="column content">-->
+		<div class="column content">
 			<div class="filtro_3">
-				<input type="text" name="busquedaEvento" value="busqueda de evento">
+				<input type="text" name="busquedaEvento" value="busqueda de evento" class="inputBusqueda">
 			</div>
 
 			<div>
 				<figure>
-	 				<img src="{{ url('assets/images/portada.JPG') }}" width="400" height="353">
-					<figcaption><h2>Orquesta de Oaxaca</h2></figcaption>
+	 				<img src="{{ url('assets/images/acad1UTM.PNG') }}" width="400" height="353">
+					<figcaption><h2>Seminario EQUIPAR</h2></figcaption>
 				</figure>
 				<img src="{{ url('assets/images/eventos_calendar.png') }}" alt="" class="iconos">
-				<h3>Martes 15 de diciembre 2017, 10:00 hrs</h3><!--Fecha-->
+				<h3>Martes 07 de Junio de 2017, 10:00 hrs</h3><!--Fecha-->
 
 				<img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
 				<h3>Auditorio UTM. Huajuapan de león Oaxaca</h3><!--Ubicacion-->
 			</div>
-		<!--</div>-->
+
+			<div>
+				<figure>
+	 				<img src="{{ url('assets/images/biblioteca.JPG') }}" width="400" height="353">
+					<figcaption><h2>Orquesta de Oaxaca</h2></figcaption>
+				</figure>
+				<img src="{{ url('assets/images/eventos_calendar.png') }}" alt="" class="iconos">
+				<h3>Lunes 25 de enero 2017, 12:00 hrs</h3><!--Fecha-->
+
+				<img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
+				<h3>Auditorio UTM. Huajuapan de león Oaxaca</h3><!--Ubicacion-->
+			</div>
+		</div>
 	</div>
 
 
