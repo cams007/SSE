@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-	<h1 class="text-center">Mi perfil</h1>
+	<h1 class="text-center">Mi Perfil</h1>
 	<hr class="hr">
 	<div class="clearfix">
 		<aside id="cssmenu" class="column hrV">
@@ -24,6 +24,15 @@
 				<div>	
 					<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos"> 
 					<span> {{" Juan Peréz "}} </span>
+				</div>
+
+				<div class="input tel">
+					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
+					<label class="link"> {{" Genero"}}</label>
+				</div>
+				<div class="input tel">
+					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
+					<label class="link"> {{" Nacionalidad"}}</label>
 				</div>
 
 				<div>
@@ -50,6 +59,7 @@
 					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
 					<label class="link"> {{" Agregar telefóno"}}</label>
 				</div>
+
 
 				<div class="text-center">
 					<button type="button" class="flat">
