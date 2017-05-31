@@ -1,10 +1,15 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 *{
   margin: 0;
   padding:0;
 }
-
+h1{
+  font-family: 'Roboto', sans-serif;
+  font-size: 24pt;
+  color: #6B6B6B;
+  padding-top: 15PX;
+}
 html {
   background-image: url("../assets/images/biblioteca.JPG");
   background-repeat: no-repeat;
