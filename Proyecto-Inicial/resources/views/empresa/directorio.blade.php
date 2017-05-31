@@ -20,33 +20,33 @@
 	<div class="empresa_list">
 		<div class="nombre_empresa"><a href="{{url('datos_empresa')}}">KadaSoftware</a></div>
 		<div class="calificacion_empresa">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_noselect.png') }}">
-			<img src="{{ url('assets/images/start_noselect.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 		</div>
 		<p>Empresa desarrolladora de software a la medida.</p>
 	</div>
 	<div class="empresa_list">
 		<div class="nombre_empresa"><a href="{{url('datos_empresa')}}">Apple Inc.</a></div>
 		<div class="calificacion_empresa">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_noselect.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 		</div>
 		<p>Empresa de software y hardware encargada de crear productos de gran innovación.</p>
 	</div>
 	<div class="empresa_list">
 		<div class="nombre_empresa"><a href="{{url('datos_empresa')}}">Elektra</a></div>
 		<div class="calificacion_empresa">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_select.png') }}">
-			<img src="{{ url('assets/images/start_noselect.png') }}">
-			<img src="{{ url('assets/images/start_noselect.png') }}">
-			<img src="{{ url('assets/images/start_noselect.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 		</div>
 		<p>Empresa de software y hardware encargada de crear productos de gran innovación.</p>
 	</div>

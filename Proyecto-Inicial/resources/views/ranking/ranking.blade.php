@@ -9,7 +9,7 @@
 
 @section('content')
 	<h1 class="text-center">Ranking de empresas</h1>
-	<p class="calificar"><a href="{{url('directorio_empresas')}}">Calificar empresa <img src="{{ url('assets/images/start_select.png') }}"></a></p>
+	<p class="calificar"><a href="{{url('directorio_empresas')}}">Calificar empresa <img src="{{ url('assets/images/empresa_estrella_full.png') }}"></a></p>
 
 	<hr class="hr">
 		

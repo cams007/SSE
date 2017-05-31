@@ -46,12 +46,12 @@
 				</div>
 
 				<div>
-					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"> 
+					<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos"> 
 					<span> {{" CEO "}} </span>
 				</div>
 
 				<div class="input tel">
-					<img src="{{ url('assets/images/start_noselect.png') }}" alt="" class="iconos"> 
+					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos"> 
 					<label class="link"> {{" Calificar empresa "}}</label>
 				</div>
 
@@ -64,11 +64,11 @@
 	    	<div>
 	    		<br>
 	    		<h3>3.2</h3>
-		    	<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_noselect.png') }}">
+		    	<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 				<h6>12 evaluaciones</h6>
 			</div>
 		</div>

@@ -20,21 +20,21 @@
 				
 	    	<center><div>
 	    		<h2>3.2</h2>
-		    	<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_noselect.png') }}">
+		    	<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 				<h6>12 evaluaciones</h6>
 			</div></center>
 
 			<div class="comentario_list">
 				<h5>Pedro Gómez</h5>
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_noselect.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 				<label class="fecha_comentario">11 abril 2017</label>
 				<div>Una empresa muy competitiva que ofrece muchas oportunidades para crecer profesionalmente, buen salario, jornda de trabajo flexible. Excelente.
 				</div>
@@ -42,11 +42,11 @@
 
 			<div class="comentario_list">
 				<h5>Juan Castro</h5>
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_select.png') }}">
-				<img src="{{ url('assets/images/start_noselect.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+				<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 				<label class="fecha_comentario">09 abril 2017</label>
 				<div>Una empresa muy competitiva que ofrece muchas oportunidades para crecer profesionalmente, buen salario, jornda de trabajo flexible. Excelente.
 				</div>
