@@ -36,11 +36,21 @@ Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
 
+Route::get('/registro', function() {
+    return view('registro.registrarse');
+});
+
+Route::get('/inicio', function() {
+    return view('registro.home');
+});
+Route::get('/bienvenida', function() {
+    return view('registro.bienvenida');
+});
+/*
 Route::get('registro', function() {
     return view('registrarse');
 });
-
-
+*/
 Route::get('perfil/dprofesional', function() {
     return view('perfil.dprofesional');
 });
@@ -81,6 +91,7 @@ Route::get('/ofertas', function() {
 	return view('ofertas.ofertas');
 });
 
+
 Route::get('/directorio_empresas', function() {
 	return view('empresa.directorio');
 });
@@ -100,3 +111,4 @@ Route::get('datos_empresa/comentarios', function(){
 Route::get('datos_empresa/ofertas', function(){
     return view('empresa.ofertasLaborales');
 });
+
