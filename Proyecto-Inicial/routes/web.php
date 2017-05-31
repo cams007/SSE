@@ -35,3 +35,56 @@ Route::get('perfil/intereses', function() {
 Route::get('perfil/ofertaslab', function() {
     return view('perfil.ofertaslab');
 });
+
+Route::get('registro', function() {
+    return view('registrarse');
+});
+
+
+Route::get('perfil/dprofesional', function() {
+    return view('perfil.dprofesional');
+});
+
+Route::get('perfil/fprofesional', function() {
+    return view('perfil.fProfesional', array('dato' => 'No'));
+});
+
+Route::get('perfil/egresadoReco', function() {
+    return view('perfil.recomendaciones');
+});
+           
+Route::get('/tabuladorSalarios', function(){
+	return view('egresados.TabuladorSalarios');
+});
+
+Route::get('/eventosUTM', function(){
+	return view('egresados.eventosUTM.index');
+});
+
+Route::get('eventosUTM/culturales', function(){
+	return view('egresados.eventosUTM.Culturales');
+});
+
+Route::get('eventosUTM/academicos', function(){
+    return view('egresados.eventosUTM.Academicos');
+});
+
+Route::get('/historiasdeExito', function(){
+    return view('egresados.HistoriasDeExito');
+});
+
+Route::get('/ranking', function() {
+	return view('ranking.ranking');
+});
+
+Route::get('/ofertas', function() {
+	return view('ofertas.ofertas');
+});
+
+Route::get('/directorio_empresas', function() {
+	return view('empresa.directorio');
+});
+
+Route::get('/registro', function() {
+	return view('registrarse');
+});

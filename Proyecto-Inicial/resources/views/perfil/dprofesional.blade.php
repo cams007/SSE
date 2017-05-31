@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Mis intereses')
+@section('title', 'Desarrollo profesional')
 
 @section('style')
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">
@@ -13,7 +13,6 @@
 		<aside class="column" id="cssmenu">
 			@include('partials.aside')
 		</aside>
-		
 		<div class="column content">	
 			intereses.blade.php
 		</div>

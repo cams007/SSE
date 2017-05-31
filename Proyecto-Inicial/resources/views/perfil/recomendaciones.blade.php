@@ -15,7 +15,10 @@
 		</aside>
 		
 		<div class="column content">	
-			intereses.blade.php
+			<div class="form-group">
+				<label for="doctorado">¿Que recomendarias mejorar en cada una de las opciones que calificaste como regular o malo?</label>
+				<textarea name="" id="input" class="form-control" rows="3" required="required"></textarea>
+			</div>
 		</div>
 		
 	</div>
