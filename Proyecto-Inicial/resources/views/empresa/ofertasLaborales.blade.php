@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<h1 class="text-center">Comentarios de Apple Inc.</h1>
+	<h1 class="text-center">Datos de empresa</h1>
 	<hr class="hr">
 	<div class="clearfix">
 		<aside id="cssmenu" class="column hrV">

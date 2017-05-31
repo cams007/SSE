@@ -112,3 +112,6 @@ Route::get('datos_empresa/ofertas', function(){
     return view('empresa.ofertasLaborales');
 });
 
+Route::get('perfil/propuesta', function(){
+    return view('perfil.fProfesional_propuesta', array('dato' => 'No'));
+});
