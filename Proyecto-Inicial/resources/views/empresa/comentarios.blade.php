@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-	<h1 class="text-center">Comentarios de Apple Inc.</h1>
+	<h1 class="text-center">Datos de empresa</h1>
 	<hr class="hr">
 	<div class="clearfix">
 		<aside id="cssmenu" class="column hrV">
@@ -18,7 +18,9 @@
 		
 		<div class="column content">
 				
-	    	<center><div>
+	    	<center>
+	    		<div>Apple</div>
+	    		<div>
 	    		<h2>3.2</h2>
 		    	<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
 				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
