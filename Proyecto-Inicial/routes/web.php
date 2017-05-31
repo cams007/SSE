@@ -88,3 +88,15 @@ Route::get('/directorio_empresas', function() {
 Route::get('/registro', function() {
 	return view('registrarse');
 });
+
+Route::get('/datos_empresa', function(){
+    return view('empresa.index');
+});
+
+Route::get('datos_empresa/comentarios', function(){
+    return view('empresa.comentarios');
+});
+
+Route::get('datos_empresa/ofertas', function(){
+    return view('empresa.ofertasLaborales');
+});
