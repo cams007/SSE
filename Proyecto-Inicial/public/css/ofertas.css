@@ -1,0 +1,37 @@
+td.text_red {
+	color: red;
+}
+td a.more_detail {
+	float: right;
+	font-weight: bold;
+	color: red;
+	border-style: solid;
+	border-color: red;
+	margin: 5px 5px 5px 0;
+	padding: 0 5px 0 5px;
+}
+
+
+/*Paginación*/
+div.paginate{
+	margin: 20px 0px 0 0px;
+}
+div.paginate a{
+	text-align: center;
+	padding: 5px 10px 12px 9px;
+	background-repeat: no-repeat;
+}
+div.paginate a.page{
+	background-image: url("../assets/images/paginator_page.png");
+}
+div.paginate a.active{
+	color: white;
+	background-image: url("../assets/images/paginator_active.png");
+}
+div.paginate a.back{
+	/*background-image: url("../assets/images/paginator_back.png");*/
+}
+div.paginate a.forward{
+	padding-top: 20px;
+	/*background-image: url("../assets/images/paginator_forward.png");*/
+}

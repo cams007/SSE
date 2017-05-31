@@ -2,6 +2,8 @@
 @extends('layouts.master')
 
 @section('title', 'Ofertas laborales')
+@section('style')
+<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 
 @section('content')
 
@@ -11,9 +13,12 @@
 	<!-- Filtros -->
 	<div class="filtro_1">
 		<p class="titulo_select">Ubicación</p>
-		<select name="Calificacion">
-		  <option value="volvo">CDMX</option>
-		  <option value="saab">Oaxaca</option>
+		<select name="ubicacion">
+		<option selected="">Todas</option>
+		  <option value="cdmx">CDMX</option>
+		  <option value="oaxaca">Huajuapan de León</option>
+		  <option value="oaxaca">Guadalajara, Jalisco</option>
+		  <option value="oaxaca">Pruebla, Puebla</option>
 		</select>
 	</div>
 	<br>
@@ -29,27 +34,27 @@
 		</tr>
 		 
 		<tr>
-		  <td>Hoy</td>
+		  <td class="text_red">Hoy</td>
 		  <td>Desarrollador web</td>
 		  <td><a href="#">Grupo GSI</a></td>
 		  <td>CDMX</td>
-		  <td>Descripción del empleo, requisitos técnicos</td>
+		  <td>Descripción del empleo, requisitos... <a href="#" class="more_detail"> + </a></td>
 		</tr>
 		 
 		<tr>
-		  <td>Hoy</td>
+		  <td class="text_red">Hoy</td>
 		  <td>Desarrollador java</td>
 		  <td><a href="#">KadaSoftware</a></td>
-		  <td>Huajuapan del León, Oaxaca</td>
-		  <td>Descripción del empleo, requisitos técnicos</td>
+		  <td>Huajuapan de León, Oaxaca</td>
+		  <td>Conceptos básico de java, framework... <a href="#" class="more_detail"> + </a></td>
 		</tr>
 		 
 		<tr>
-		  <td></td>
-		  <td></td>
-		  <td></td>
-		  <td></td>
-		  <td></td>
+		  <td>09/marzo/2017</td>
+		  <td>Tester</td>
+		  <td><a href="#">KadaSoftware</a></td>
+		  <td>Huajuapan de León, Oaxaca</td>
+		  <td>Descripción del empleo... <a href="#" class="more_detail"> + </a></td>
 		</tr>
 		<tr>
 		  <td></td>
@@ -75,5 +80,22 @@
 		
 	</table>
 
+	<div class="paginate">
+		<a class="back" href="#">
+        	<img src="{{ url('assets/images/paginator_back.png') }}">
+      	</a>
+      	<a class="page" href="#">
+        	1
+      	</a>
+      	<a class="active" href="#">
+        	2
+      	</a>
+      	<a class="page" href="#">
+        	3
+      	</a>
+      	<a class="forward" href="#">
+        	<img src="{{ url('assets/images/paginator_forward.png') }}">
+      	</a>
+	</div>
 	
 @stop
