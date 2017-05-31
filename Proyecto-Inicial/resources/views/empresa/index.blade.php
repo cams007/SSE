@@ -69,7 +69,7 @@
 				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
 				<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
 				<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
-				<h6>12 evaluaciones</h6>
+				<h6>12 comentarios</h6>
 			</div>
 		</div>
 	</div>
