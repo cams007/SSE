@@ -3,6 +3,8 @@ p.calificar{
 	color: #BE3228;
 	text-align: right;
 }
+
+/*Directorio*/
 div.empresa_list{
 	text-align: left;
 	width: 50%;
@@ -34,4 +36,19 @@ div.buscador_empresas input:hover{
 	outline: none;
 	border: solid 1px #BE3228;
 	box-shadow: 0 0 5px 1px #969696;
+}
+
+/*Comentarios*/
+div.comentario_list{
+	text-align: left;
+	width: 90%;
+  	margin: 25px 5% 25px 5%;
+}
+div.datos_comentario{
+	text-align: left;
+	width: 90%;
+  	margin: 25px 5% 10px 0;
+}
+.fecha_comentario{
+	font-size: 11px;
 }
