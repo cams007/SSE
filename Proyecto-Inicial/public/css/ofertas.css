@@ -35,3 +35,7 @@ div.paginate a.forward{
 	padding-top: 20px;
 	/*background-image: url("../assets/images/paginator_forward.png");*/
 }
+
+th.col_calif{
+	width: 100px;
+}
