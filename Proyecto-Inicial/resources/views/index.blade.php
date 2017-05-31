@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <link href="inicio.css" rel="stylesheet">
+  <link href="{{url('css/inicio.css')}}" rel="stylesheet">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
   </div>
 </section>
 <div class="block">
-  <img id="logo_utm" src="images/logo_utm_login.png">
+  <img id="logo_utm" src="{{url('assets/images/logo_utm_login.png')}}">
   <form id="form_login">
     <div  class="usuario-login">
         <div id="logo-user"></div>

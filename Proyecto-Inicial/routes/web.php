@@ -61,8 +61,16 @@ Route::get('/eventosUTM', function(){
 	return view('egresados.eventosUTM.index');
 });
 
-Route::get('eventosUTM/conciertos', function(){
-	return view('egresados.eventosUTM.Conciertos');
+Route::get('eventosUTM/culturales', function(){
+	return view('egresados.eventosUTM.Culturales');
+});
+
+Route::get('eventosUTM/academicos', function(){
+    return view('egresados.eventosUTM.Academicos');
+});
+
+Route::get('/historiasdeExito', function(){
+    return view('egresados.HistoriasDeExito');
 });
 
 Route::get('/ranking', function() {
@@ -73,6 +81,10 @@ Route::get('/ofertas', function() {
 	return view('ofertas.ofertas');
 });
 
-Route::get('registro', function() {
-    return view('registrarse');
+Route::get('/directorio_empresas', function() {
+	return view('empresa.directorio');
+});
+
+Route::get('/registro', function() {
+	return view('registrarse');
 });

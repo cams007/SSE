@@ -14,11 +14,19 @@
 			@include('partials.aside')
 		</aside>
 		
-		<div class="column content">	
-			<div class="form-group">
-				<label for="doctorado">¿Que recomendarias mejorar en cada una de las opciones que calificaste como regular o malo?</label>
-				<textarea name="" id="input" class="form-control" rows="3" required="required"></textarea>
-			</div>
+		<div class="column content">
+			<form method="POST" action="#">
+				<div class="form-group">
+					<label for="doctorado">¿Que recomendarias mejorar en cada una de las opciones que calificaste como regular o malo?</label>
+					<textarea name="" id="input" class="form-control" rows="3" required="required"></textarea>
+				</div>
+
+				<div class="form-group text-center">
+					<button type="submit" class="flat">
+						Guardar
+					</button>
+				</div>
+			</form>	
 		</div>
 		
 	</div>
