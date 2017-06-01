@@ -1,19 +1,211 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
 
-.hr {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	border: 0; 
-	border-top: 1px solid rgba(0, 0, 0, 0.38); 
+/*texto: Eventos UTM*/
+.text-center{
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	color: #6B6B6B;
+	position: relative;
+	top: 15px;
 }
 
+/*linea, bajo el texto: Eventos UTM*/
+.hr {
+	max-width: 965px;
+	margin: 20px 27px 0;
+}
+
+#cssmenu li a{
+	color: black;
+}
+
+
+.contenedor {
+  width: 1024px;
+  height: 536px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  border: 1px solid red;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+}
+.div-1{
+	background: blue;
+}
+
+.div-2{
+	background: #E67E22;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.div-2-1{
+	background: #2874A6;
+	width: 200px;
+}
+
+.div-2-2{
+	background: #1D3B4F;
+  width: 825px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+}
+
+.div-2-2-1{
+	background: #1D4F40;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.div-2-2-2{
+	background: #30CE9F;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+}
+
+.div-2-2-3{
+	background: #CE7A30;
+
+}
+
+.div-2-2-2-1{
+	background: #B630CE;
+	margin: 25px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+}
+
+.div-2-2-2-2{
+	background: #CE3059;
+	margin: 25px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+}
+
+.foto1{
+	height: 200px;
+	background-image: url("../assets/images/acad1UTM.PNG");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.descripcion-foto1{
+	height: 200px;
+	background: #C9CE30;
+}
+
+.foto2{
+	height: 200px;
+	background-image: url("../assets/images/biblioteca.JPG");
+	background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.descripcion-foto2{
+	height: 200px;
+	background: #C9CE30;
+}
+
+/*
+#cssmenu {
+ font-family: 'Roboto', sans-serif;
+ font-size: 14px;
+ width: 200px;
+ height: 430px;
+ border: 1px solid black;
+}
+
+#menuaside{
+	width: 200px;
+	border: 1px solid blue;
+}
+.filtro_3{
+	position: relative;
+	width: 200px;
+	border: 1px solid blue;
+	float: right;
+}
+/*
+#cssmenu ul a,
+#cssmenu ul a:link,
+#cssmenu ul a:visited {
+	display: block;
+	color: #848889;
+	font-weight: 300;
+}
+
+#cssmenu > ul > li > a {
+	padding: 10px 20px;
+}
+
+#cssmenu > ul > li.active,
+#cssmenu > ul > li:hover {
+	border-left: 8px solid #be3228;
+}
+
+/*
+#cssmenu ul {
+	background: transparent;
+}
+
+#cssmenu > ul > li > a {
+	padding: 10px 20px;
+}
+
+#cssmenu > ul > li.active,
+#cssmenu > ul > li:hover {
+	border-left: 8px solid #be3228;
+}
+
+#cssmenu ul li.active > a,
+#cssmenu ul li:hover > a {
+	color: #000;
+	font-weight: bold;
+}
+
+
+#cssmenu ul {
+	background: transparent;
+}
+
+#cssmenu > ul > li > a {
+	padding: 10px 20px;
+}
+
+#cssmenu > ul > li.active,
+#cssmenu > ul > li:hover {
+	border-left: 8px solid #be3228;
+}
+
+#cssmenu ul li.active > a,
+#cssmenu ul li:hover > a {
+	color: #000;
+	font-weight: bold;
+}
+*/
+
+/*
 #global {
   height: 300px;
   width: 200px;
   border: 1px solid #ddd;
   background: #f1f1f1;
   overflow-y: scroll;
-}
+}*/
+/*
 #mensajes {
   height: auto;
 }
@@ -67,7 +259,7 @@
 /* Aside */
   /* Starter CSS for Flyout Menu */
 
-  #cssmenu,
+  /*#cssmenu,
   #cssmenu ul,
   #cssmenu ul li,
   #cssmenu ul ul {
@@ -76,6 +268,12 @@
     padding: 0;
     border: 0;
   }
+
+	#cssmenu ul li a{
+		margin: 0;
+		padding: 0;
+		border: 0;
+	}
   #cssmenu ul {
     position: relative;
     z-index: 597;
@@ -95,6 +293,7 @@
     z-index: 599;
     cursor: default;
   }
+
   #cssmenu ul ul {
     margin-top: 1px;
     visibility: hidden;
@@ -123,13 +322,15 @@
     font-weight: normal;
   }
 
-
+*/
   /* Custom CSS Styles */
-  #cssmenu {
+/*
+	 #cssmenu {
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
     width: 200px;
-    border-right: 1px solid rgba(0, 0, 0, 0.38); 
+		height: 375px;
+    border-right: 1px solid rgba(0, 0, 0, 0.38);
   }
   #cssmenu ul a,
   #cssmenu ul a:link,
@@ -160,8 +361,8 @@
     color: #000;
     font-weight: bold;
   }
-
-
+*/
+/*
 input[type=checkbox]:checked ~ #email{
     display: block;
 }
@@ -174,8 +375,8 @@ input[type=checkbox]:checked ~ #email{
 }
 
 textarea{
-  margin: 0px; 
-  width: 614px; 
+  margin: 0px;
+  width: 614px;
   height: 212px;
   resize: none;
 }
