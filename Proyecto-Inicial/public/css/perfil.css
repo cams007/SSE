@@ -161,7 +161,7 @@
     font-weight: bold;
   }
 
-
+/*Este es un comentario*/
 input[type=checkbox]:checked ~ #email{
     display: block;
 }
