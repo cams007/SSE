@@ -13,7 +13,7 @@
 	  	<a href="{{url('perfil/dprofesional')}}">Desarrollo profesional</a>
 	  </li>
 	  <li {{ Request::is('perfil/fprofesional') ? ' class=active' : ''}}>
-	  	<a href="{{url('perfil/fprofesional')}}"> Formacion profesional</a>
+	  	<a href="{{url('perfil/fprofesional')}}"> Mi primer empleo</a>
 	  </li>
 	  <li {{ Request::is('perfil/egresadoReco') ? ' class=active' : ''}}>
 	  	<a href="{{url('perfil/egresadoReco')}}"> Recomendaciones egresado</a>
