@@ -14,16 +14,16 @@
 <<<<<<< HEAD
 	margin-top: 10px;
 	margin-bottom: 10px;
-	border: 0; 
-	border-top: 1px solid rgba(0, 0, 0, 0.38); 
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.38);
 =======
 	max-width: 965px;
 	margin: 20px 27px 0;
 }
-
+/*
 #cssmenu li a{
 	color: black;
-}
+}*/
 
 
 .contenedor {
