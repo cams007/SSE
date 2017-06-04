@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-	<h1 class="text-center">Mi Perfil</h1>
+	<h1>Mi Perfil</h1>
 	<hr class="hr">
 	<div class="clearfix">
 		<aside id="cssmenu" class="column hrV">
@@ -21,43 +21,34 @@
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 
-				<div>	
-					<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos"> 
-					<span> {{" Juan Peréz "}} </span>
+				<div class="label-icon"> 	
+					<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos" /> 
+					<span class="aling"> {{" Juan Peréz "}} </span>
+				</div>
+				
+				<div class="label-icon"> 
+					<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos" /> 
+					<span class="aling">{{ "Hombre" }}</span>
 				</div>
 
-				<div class="input tel">
-					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
-					<label class="link"> {{" Genero"}}</label>
+				<div class="label-icon"> 
+					<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos" /> 
+					<span class="aling"> {{" 27 de octubre de 1985 "}} </span>
 				</div>
-				<div class="input tel">
-					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
-					<label class="link"> {{" Nacionalidad"}}</label>
+				<div>
+					<input type="email" name="" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" />
+				</div>
+				<div>
+					<input type="text" name="" class="input-icon inputHome" placeholder="Agrega tu ciudad actual" />
+				</div>
+
+				<div class="label-icon"> 
+					<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos" /> 
+					<span class="aling"> {{" Originario de Oaxaca, Oaxaca "}}</span>
 				</div>
 
 				<div>
-					<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos"> 
-					<span> {{" 27 de octubre de 1985 "}} </span>
-				</div>
-
-				<div class="input email">
-					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"> 
-					<label class="link addInput"> Agregar un correo electrónico</label>
-				</div>
-
-				<div class="input address">
-					<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos"> 
-					<label class="link"> Agrega el lugar donde vives actualmente</label>
-				</div>
-
-				<div>
-					<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"> 
-					<label> {{" Originario de Oaxaca, Oaxaca "}}</label>
-				</div>
-
-				<div class="input tel">
-					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
-					<label class="link"> {{" Agregar telefóno"}}</label>
+					<input type="tel" class="input-icon inputTel" placeholder="Agregar telefóno"/>
 				</div>
 
 
