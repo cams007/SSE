@@ -73,6 +73,10 @@ Route::get('/historiasdeExito', function(){
     return view('egresados.HistoriasDeExito');
 });
 
+Route::get('/tipsConsejos', function(){
+    return view('egresados.TipsConsejos');
+});
+
 Route::get('/ranking', function() {
 	return view('ranking.ranking');
 });
