@@ -72,16 +72,16 @@
 		    	<h1>Agregar Empleo</h1>
 		    	<form action="#">
 			    	<div>
-						<input type="text" class="inputAddress" placeholder="Nombre de la empresa" />
+						<input type="text" class="input-icon inputAddress" placeholder="Nombre de la empresa" />
 					</div>
 					<div>
-						<input type="text" class="inputPuesto" placeholder="Agregar puesto" />
+						<input type="text" class="input-icon inputPuesto" placeholder="Agregar puesto" />
 					</div>
 					<div>
-						<input type="text" class="inputAntiguedad" placeholder="Antiguedad __años __meses" />
+						<input type="text" class="input-icon inputAntiguedad" placeholder="Antiguedad __años __meses" />
 					</div>
 					<div>
-						<input type="text" class="inputFuncionDes" placeholder="Agregar funcion desempeñada" />
+						<input type="text" class="input-icon inputFuncionDes" placeholder="Agregar funcion desempeñada" />
 					</div>
 					<div class="btn-group">
 						<button type="button" class="flat-secundario aling-left">Cancelar</button>
