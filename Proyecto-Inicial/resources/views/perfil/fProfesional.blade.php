@@ -83,75 +83,80 @@
 
 				<div class="form-group">
 					<label for="">5. Subraya máximo cinco habilidades importantes que requieres o requerias dominar al momento de ejercer tu profesión por primera vez y que no fueran desarrolladas durante tu dormación profesional.</label>
-					<div class="checkbox">
+					<div class="column-3">
+						<div class="checkbox">
+							<input type="checkbox" class="checkbox" name="habilidades" id="HabiA" value="1"> 
+							<label for="HabiA" class="label-radio"> Comuinicar</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiB" value="0"> 
+							<label for="habiB" class="label-radio"> Dirigir</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiC" value="0"> 
+							<label for="habiC" class="label-radio"> Tabajo en equipo</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiD" value="0"> 
+							<label for="habiD" class="label-radio"> Identificar y resolver problemas</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiE" value="0"> 
+							<label for="habiE" class="label-radio"> Analizar</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiF" value="0"> 
+							<label for="habiF" class="label-radio"> Negociar</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiG" value="0"> 
+							<label for="habiG" class="label-radio"> Aprender</label>
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiH" value="0"> 
+							<label class="label-radio" for="habiH"> Ser creativo</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiI" value="0"> 
+							<label class="label-radio" for="habiI"> Proponer</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiJ" value="0"> 
+							<label class="label-radio" for="habiJ"> Categorizar/Clasificar</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiK" value="0"> 
+							<label class="label-radio" for="habiK"> Describir/Explicar</label>					
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiL" value="0"> 
+							<label class="label-radio" for="habiL"> Evaluar</label>
+						</div>
 						
-						<input type="checkbox" class="checkbox" name="habilidades" id="HabiA" value="1"> 
-						<label for="HabiA" class="label-radio"> Comuinicar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiB" value="0"> 
-						<label for="habiB" class="label-radio"> Dirigir</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiC" value="0"> 
-						<label for="habiC" class="label-radio"> Tabajo en equipo</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiD" value="0"> 
-						<label for="habiD" class="label-radio"> Identificar y resolver problemas</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiE" value="0"> 
-						<label for="habiE" class="label-radio"> Analizar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiF" value="0"> 
-						<label for="habiF" class="label-radio"> Negociar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiG" value="0"> 
-						<label for="habiG" class="label-radio"> Aprender</label>
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiH" value="0"> 
-						<label class="label-radio" for="habiH"> Ser creativo</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiI" value="0"> 
-						<label class="label-radio" for="habiI"> Proponer</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiJ" value="0"> 
-						<label class="label-radio" for="habiJ"> Categorizar/Clasificar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiK" value="0"> 
-						<label class="label-radio" for="habiK"> Describir/Explicar</label>					
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiL" value="0"> 
-						<label class="label-radio" for="habiL"> Evaluar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiM" value="0"> 
-						<label class="label-radio" for="habiM"> Procesar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiN" value="0"> 
-						<label class="label-radio" for="habiN"> Expresar</label>					
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiO" value="0">
-						<label class="label-radio" for="habiO"> Escuchar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiP" value="0">
-						<label class="label-radio" for="habiP"> Resolver conflictos</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiQ" value="0">
-						<label class="label-radio" for="habiQ"> Solicitar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiR" value="0">
-						<label class="label-radio" for="habiR"> Decidir</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiS" value="0">
-						<label class="label-radio" for="habiS"> Interpretar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiT" value="0">
-						<label class="label-radio" for="habiT"> Rebatir</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiU" value="0">
-						<label class="label-radio" for="habiU"> Innovar</label>
-						
-						<input type="checkbox" class="checkbox" name="habilidades" id="habiV" value="0">
-						<label class="label-radio" for="habiV"> Otras</label>
-						
-						<div class="hidden">
-							<label for="input">¿Cuáles?</label>
-							<input type="text" name="cuales" id="input" class="form-control">
+						<div class="checkbox">
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiM" value="0"> 
+							<label class="label-radio" for="habiM"> Procesar</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiN" value="0"> 
+							<label class="label-radio" for="habiN"> Expresar</label>					
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiO" value="0">
+							<label class="label-radio" for="habiO"> Escuchar</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiP" value="0">
+							<label class="label-radio" for="habiP"> Resolver conflictos</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiQ" value="0">
+							<label class="label-radio" for="habiQ"> Solicitar</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiR" value="0">
+							<label class="label-radio" for="habiR"> Decidir</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiS" value="0">
+							<label class="label-radio" for="habiS"> Interpretar</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiT" value="0">
+							<label class="label-radio" for="habiT"> Rebatir</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiU" value="0">
+							<label class="label-radio" for="habiU"> Innovar</label>
+							
+							<input type="checkbox" class="checkbox" name="habilidades" id="habiV" value="0">
+							<label class="label-radio" for="habiV"> Otras</label>
+							
+							<div class="hidden">
+								<label for="input">¿Cuáles?</label>
+								<input type="text" name="cuales" id="input" class="form-control">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -171,77 +176,84 @@
 				</div>
 				<div class="form-group">
 					<label for="">7. Subraya máximo cinco valores o actitudes importantes que requieres o requerias tener al momento de ejercer tu profesión por primera vez y que no fueran desarrolladas durante tu dormación profesional.</label>
-					<div class="checkbox">
-						
-						<input type="checkbox" name="actitudes" id="actA" value="1">
-						<label class="label-radio" for="actA"> Respeto</label>
-						
-						<input type="checkbox" name="actitudes" id="actB" value="0">
-						<label class="label-radio" for="actB"> Honestidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actC" value="0">
-						<label class="label-radio" for="actC"> Lealtad</label>
-						
-						<input type="checkbox" name="actitudes" id="actD" value="0">
-						<label class="label-radio" for="actD"> Discrecionalidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actE" value="0">
-						<label class="label-radio" for="actE"> Responsabilidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actF" value="0">
-						<label class="label-radio" for="actF"> Tolerancia</label>
-						
-						<input type="checkbox" name="actitudes" id="actG" value="0">
-						<label class="label-radio" for="actG"> Respeto a la naturaleza</label>
-						
-						<input type="checkbox" name="actitudes" id="actH" value="0">
-						<label class="label-radio" for="actH"> Imparcialidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actI" value="0">
-						<label class="label-radio" for="actI"> Solidalidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actJ" value="0">
-						<label class="label-radio" for="actJ"> Integridad</label>
-						
-						<input type="checkbox" name="actitudes" id="actK" value="0">
-						<label class="label-radio" for="actK"> Disciplina</label>					
-						
-						<input type="checkbox" name="actitudes" id="actL" value="0">
-						<label class="label-radio" for="actL"> Eficiencia</label>
-						
-						<input type="checkbox" name="actitudes" id="actM" value="0">
-						<label class="label-radio" for="actM"> Perseverancia</label>
-						
-						<input type="checkbox" name="actitudes" id="actN" value="0">
-						<label class="label-radio" for="actN"> Puntualidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actO" value="0">
-						<label class="label-radio" for="actO"> Calidad en el trabajo</label>
-						
-						<input type="checkbox" name="actitudes" id="actP" value="0">
-						<label class="label-radio" for="actP"> Limpieza</label>
-						
-						<input type="checkbox" name="actitudes" id="actQ" value="0">
-						<label class="label-radio" for="actQ"> Disponibilidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actR" value="0">
-						<label class="label-radio" for="actR"> Profesionalidad</label>
-						
-						<input type="checkbox" name="actitudes" id="actS" value="0">
-						<label class="label-radio" for="actS"> Empatia</label>
-						
-						<input type="checkbox" name="actitudes" id="actT" value="0">
-						<label class="label-radio" for="actT"> Honradez</label>
-						
-						<input type="checkbox" name="actitudes" id="actU" value="0">
-						<label class="label-radio" for="actU"> Justicia</label>
-						
-						<input type="checkbox" name="actitudes" id="actV" value="0">
-						<label class="label-radio" for="actV"> Otras</label>
+					<div class="column-3">
+						<div class="checkbox">
+							
+							<input type="checkbox" name="actitudes" id="actA" value="1">
+							<label class="label-radio" for="actA"> Respeto</label>
+							
+							<input type="checkbox" name="actitudes" id="actB" value="0">
+							<label class="label-radio" for="actB"> Honestidad</label>
+							
+							<input type="checkbox" name="actitudes" id="actC" value="0">
+							<label class="label-radio" for="actC"> Lealtad</label>
+							
+							<input type="checkbox" name="actitudes" id="actD" value="0">
+							<label class="label-radio" for="actD"> Discrecionalidad</label>
+							
+							<input type="checkbox" name="actitudes" id="actE" value="0">
+							<label class="label-radio" for="actE"> Responsabilidad</label>
+							<input type="checkbox" name="actitudes" id="actF" value="0">
+							<label class="label-radio" for="actF"> Tolerancia</label>
+						</div>
+						<div class="checkbox">
+							
+							<input type="checkbox" name="actitudes" id="actG" value="0">
+							<label class="label-radio" for="actG"> Respeto a la naturaleza</label>
+							
+							<input type="checkbox" name="actitudes" id="actH" value="0">
+							<label class="label-radio" for="actH"> Imparcialidad</label>
+							
+							<input type="checkbox" name="actitudes" id="actI" value="0">
+							<label class="label-radio" for="actI"> Solidalidad</label>
+							
+							<input type="checkbox" name="actitudes" id="actJ" value="0">
+							<label class="label-radio" for="actJ"> Integridad</label>
+							
+							<input type="checkbox" name="actitudes" id="actK" value="0">
+							<label class="label-radio" for="actK"> Disciplina</label>				
+							
+							<input type="checkbox" name="actitudes" id="actL" value="0">
+							<label class="label-radio" for="actL"> Eficiencia</label>
+							
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" name="actitudes" id="actM" value="0">
+							<label class="label-radio" for="actM"> Perseverancia</label>
+							
+							<input type="checkbox" name="actitudes" id="actN" value="0">
+							<label class="label-radio" for="actN"> Puntualidad</label>
+							
+							<input type="checkbox" name="actitudes" id="actO" value="0">
+							<label class="label-radio" for="actO"> Calidad en el trabajo</label>
+							
+							<input type="checkbox" name="actitudes" id="actP" value="0">
+							<label class="label-radio" for="actP"> Limpieza</label>
+							
+							<input type="checkbox" name="actitudes" id="actQ" value="0">
+							<label class="label-radio" for="actQ"> Disponibilidad</label>
+							
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" name="actitudes" id="actR" value="0">
+							<label class="label-radio" for="actR"> Profesionalidad</label>
+							
+							<input type="checkbox" name="actitudes" id="actS" value="0">
+							<label class="label-radio" for="actS"> Empatia</label>
+							
+							<input type="checkbox" name="actitudes" id="actT" value="0">
+							<label class="label-radio" for="actT"> Honradez</label>
+							
+							<input type="checkbox" name="actitudes" id="actU" value="0">
+							<label class="label-radio" for="actU"> Justicia</label>
+							
+							<input type="checkbox" name="actitudes" id="actV" value="0">
+							<label class="label-radio" for="actV"> Otras</label>
 
-						<div class="hidden">
-							<label for="input">¿Cuáles?</label>
-							<input type="text" name="cuales" id="input" class="form-control">
+							<div class="hidden">
+								<label for="input">¿Cuáles?</label>
+								<input type="text" name="cuales" id="input" class="form-control">
+							</div>
 						</div>
 					</div>
 				</div>

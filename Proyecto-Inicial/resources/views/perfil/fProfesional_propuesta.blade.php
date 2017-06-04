@@ -453,6 +453,10 @@
 						<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
 					</div>
 				</div> 
+				<div class="form-group">
+					<label for="doctorado">¿Que recomendarias mejorar en cada una de las opciones que calificaste como regular o malo?</label>
+					<textarea name="" id="doctorado" class="form-control" rows="3" required="required"></textarea>
+				</div>
 				<div class="form-group text-center">
 					<button type="submit" class="flat">
 						Siguiente

@@ -12,4 +12,7 @@ const { mix } = require('laravel-mix');
  */
 
 // mix.js('resources/assets/js/app.js', 'public/js')
-   mix.sass('resources/assets/sass/perfil.sass', 'public/css');
+   	mix.sass('resources/assets/sass/perfil.sass', 'public/css')
+   		.options({
+    		processCssUrls: false
+   		});
