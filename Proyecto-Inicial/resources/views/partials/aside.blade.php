@@ -15,10 +15,10 @@
 	  <li {{ Request::is('perfil/fprofesional') ? ' class=active' : ''}}>
 	  	<a href="{{url('perfil/fprofesional')}}"> Satisfación en mi formación profesional</a>
 	  </li>
+	  <!-- <li {{ Request::is('perfil/intereses') ? ' class=active' : ''}}>
 	  <li {{ Request::is('perfil/egresadoReco') ? ' class=active' : ''}}>
 	  	<a href="{{url('perfil/egresadoReco')}}"> Recomendaciones egresado</a>
 	  </li>
-	  <!-- <li {{ Request::is('perfil/intereses') ? ' class=active' : ''}}>
 	  	<a href="{{url('perfil/intereses')}}">Mis intereses</a>
 	  </li>
 	  <li {{ Request::is('perfil/ofertaslab') ? ' class=active' : ''}}>
