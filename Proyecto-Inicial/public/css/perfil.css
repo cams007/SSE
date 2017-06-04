@@ -105,7 +105,9 @@
 .descripcion-foto1{
 	height: 200px;
 	background: #C9CE30;
-}
+	display: flex;
+	flex-direction: column;
+	}
 
 .foto2{
 	height: 200px;
@@ -117,6 +119,20 @@
 .descripcion-foto2{
 	height: 200px;
 	background: #C9CE30;
+}
+
+.texto-descripcion{
+	background: #C12E9D;
+}
+
+.fecha{
+	background: #5B2EC1;
+}
+.asistiras{
+	background: #42C12E;
+}
+.botones-si-no{
+	background: #302EC1;
 }
 
 /*
