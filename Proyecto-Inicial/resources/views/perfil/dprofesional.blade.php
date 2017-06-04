@@ -14,7 +14,43 @@
 			@include('partials.aside')
 		</aside>
 		<div class="column content">	
-			intereses.blade.php
+			<table>
+				<tr>
+					<th></th>
+				  	<th>Empresa en la que laboró</th>
+				  	<th>Puesto</th>
+				  	<th>Antigüedad</th>
+				  	<th>Funciones principales</th>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+				  	<td>4/5</td>
+				  	<td><a href="#">Grupo GSI</a></td>
+				  	<td>CDMX</td>
+				  	<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+				  	<td>2/5</td>
+				  	<td>Veureka</td>
+				  	<td>Huajuapan de León, Oax.</td>
+				  	<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+				  	<td></td>
+				  	<td></td>
+				  	<td></td>
+				  	<td></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox"></td>
+				  	<td></td>
+				  	<td></td>
+				  	<td></td>
+				  	<td></td>
+				</tr>
+			</table>
 		</div>
 		
 	</div>

@@ -1,0 +1,54 @@
+p.calificar{
+	margin-right: 5px;
+	color: #BE3228;
+	text-align: right;
+}
+
+/*Directorio*/
+div.empresa_list{
+	text-align: left;
+	width: 50%;
+  	margin: 25px 25% 25px 25%;
+}
+div.nombre_empresa{
+	float: left;
+	width: 76%;
+}
+div.calificacion_empresa{
+	float: left;
+	width: 24%;
+}
+
+div.buscador_empresas input{
+	width: 40%;
+	height: 32px;
+	padding: 0 0 0 32px;
+	margin-top: 20px;
+
+	border: 1 !important;    /*    Removes border*/
+  	border: #ACABAB 2px solid;
+	background-image: url("../assets/images/search_gray.png");
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 4px 4px;
+}
+div.buscador_empresas input:hover{
+	outline: none;
+	border: solid 1px #BE3228;
+	box-shadow: 0 0 5px 1px #969696;
+}
+
+/*Comentarios*/
+div.comentario_list{
+	text-align: left;
+	width: 90%;
+  	margin: 25px 5% 25px 5%;
+}
+div.datos_comentario{
+	text-align: left;
+	width: 90%;
+  	margin: 25px 5% 10px 0;
+}
+.fecha_comentario{
+	font-size: 11px;
+}

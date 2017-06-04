@@ -8,14 +8,14 @@
 	<hr class="hr">
 	<!--Filtro-->
 	<div class="filtro_1">
-		<p class="titulo_select">carrera:</p>
+		<p class="titulo_select">Carrera:</p>
 		<select name="carrera">
-			<option value="ingAlimentos">Ing. En Alimentos</option>
-			<option value="ingAlimentos">Ing. En Computación</option>
-			<option value="ingAlimentos">Ing. En Diseño</option>
+			<option value="*">Todos</option>
+			<option value="ingAlimentos">Ing. en Alimentos</option>
+			<option value="ingAlimentos">Ing. en Computación</option>
+			<option value="ingAlimentos">Ing. en Diseño</option>
 		</select>
 	</div>
-
 	<!--Tabla de resultados-->
 	<table>
 		<tr>
@@ -50,6 +50,11 @@
 		  <td></td>
 		  <td></td>
 		  <td></td>
+		</tr>
+		<tr>
+		  <td></td>
+		  <td></td>
+		  <td></td>
 		  <td></td>
 		</tr>
 		<tr>
@@ -57,6 +62,11 @@
 		  <td></td>
 		  <td></td>
 		  <td></td>
+		</tr>
+		<tr>
+		  <td></td>
+		  <td></td>
+		  <td></td>
 		  <td></td>
 		</tr>
 		<tr>
@@ -64,12 +74,6 @@
 		  <td></td>
 		  <td></td>
 		  <td></td>
-		  <td></td>
 		</tr>
-		
 	</table>
-	
-<section>
-	
-</section>
 @stop
