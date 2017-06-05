@@ -86,6 +86,7 @@
 			box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, .3), 
 				0px 0px 0px 0px rgba(255, 255, 255, .8);
 			border-radius: 10px;
+			border: 1px solid rgba(0, 0, 0, 0.2);
 		}
 	}
 	.radio{
@@ -118,6 +119,9 @@
 		    line-height: 18px;
 		    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
 		}
+		&:checked + .label-radio:before{
+			border: 1px solid #BE3228;
+		}
 	}
 
 	select {
@@ -144,6 +148,9 @@ input[type=checkbox] {
 		text-align: right;
 		line-height: 18px;
 		color: #BE3228;
+	}
+	&:checked + .label-radio:before{
+		border: 1px solid #BE3228;
 	}
 }
 
