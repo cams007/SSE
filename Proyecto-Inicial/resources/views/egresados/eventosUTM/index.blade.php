@@ -4,7 +4,7 @@
 
 @section('style')
 	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
-	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
+	<!--<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">-->
 @stop
 
 @section('content')
@@ -33,7 +33,8 @@
 		 <div class="div-2-2-1"> <!--inicio div-2-2-1-->
 
 			 <div class="filtro_3">
-				 <input type="text" name="busquedaEvento" value="busqueda de evento" class="inputBusqueda">
+
+				 <input type="text" name="busquedaEvento" id="search" placeholder="Buscador de eventos" class="inputBusqueda">
 			 </div>
 
 		 </div><!--fin div-2-2-1-->
@@ -51,17 +52,29 @@
 
 				 <div class="descripcion-foto1"><!--inicio descripcion-foto-->
 					 <div class="texto-descripcion"><!--inicio orquesta-div-1-->
-						 <h2>Orquesta de Oaxaca</h2>
+						 <h2 class="texto-descripcion">Orquesta de Oaxaca</h2>
 					 </div><!--fin orquesta-div-1-->
-					 <div class="fecha"><!--inicio fecha-div-2-->
-						 <img src="{{ url('assets/images/eventos_calendar.png') }}" alt="" class="iconos">
-						 <h3>Martes 07 de Junio de 2017, 10:00 hrs</h3>
 
-						 <img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
-						 <h3>Auditorio UTM. Huajuapan de león Oaxaca</h3>
-					 </div><!--fin fecha-div-2-->
+						<div class="contenedor-fecha"><!--inicio cotenedor-fecha-->
+								<div class="icono-calendario"><!--inicio icono-calendario-->
+						 			<img src="{{ url('assets/images/eventos_calendar.png') }}" alt="" class="iconos">
+								</div><!--fin icono-calendario-->
+								<div class="texto-fecha"><!--inicio ubicacion-->
+						 			<p class="texto-fecha">Martes 07 de Junio 2017, 10:00 hrs.</p>
+								</div><!--fin texto-fecha-->
+						</div><!--fin contenedor-fecha-->
+
+						<div class="contenedor-ubicacion"><!--inicio contenedor-ubicacion-->
+							<div class="icono-ubicacion"><!--inicio icono-ubicacion-->
+						 		<img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
+							</div><!--fin icono-ubicacion-->
+							<div class="texto-ubicacion"><!--inicio texto-ubicacion-->
+						 		<p class="texto-ubicacion">Auditorio UTM. Huajuapan de león Oaxaca.</p>
+							</div><!--fin texto-ubicacion-->
+					 	</div><!--fin contenedor-ubicacion-->
+
 					 <div class="asistiras"><!--inicio foto1-asistiras-->
-						 <h3>¿Asistirás?
+						 <p>¿Asistirás?</p>
 					 </div><!--fin foto1-asistiras-->
 
 					 <div class="botones-si-no">
@@ -83,18 +96,30 @@
 
 				 <div class="descripcion-foto2"><!--inicio descripcion-foto2-->
 					 <div class="texto-descripcion"><!--inicio jarabe-->
-					 <h2>Jarabe Mixteco</h2>
+					 <h2 class="texto-descripcion">Jarabe Mixteco</h2>
 				 </div><!--fin jarabe-->
-				 <div class="fecha"><!--inicio fecha-jarabe-->
-					 <img src="{{ url('assets/images/eventos_calendar.png') }}" alt="" class="iconos">
-					 <h3>Lunes 25 de enero 2017, 12:00 hrs</h3><!--Fecha-->
 
-					 <img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
-					 <h3>Auditorio UTM. Huajuapan de león Oaxaca</h3><!--Ubicacion-->
-				 </div><!--fin fecha-jarabe-->
+				 <div class="contenedor-fecha"><!--inicio cotenedor-fecha-->
+						 <div class="icono-calendario"><!--inicio icono-calendario-->
+							 <img src="{{ url('assets/images/eventos_calendar.png') }}" alt="" class="iconos">
+						 </div><!--fin icono-calendario-->
+						 <div class="texto-fecha"><!--inicio ubicacion-->
+							 <p class="texto-fecha">Lunes 20 de enero 2017, 12:00 hrs.</p>
+						 </div><!--fin texto-fecha-->
+				 </div><!--fin contenedor-fecha-->
+
+				 <div class="contenedor-ubicacion"><!--inicio contenedor-ubicacion-->
+					 <div class="icono-ubicacion"><!--inicio icono-ubicacion-->
+						 <img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
+					 </div><!--fin icono-ubicacion-->
+					 <div class="texto-ubicacion"><!--inicio texto-ubicacion-->
+						 <p class="texto-ubicacion">Auditorio UTM. Huajuapan de león Oaxaca.</p>
+					 </div><!--fin texto-ubicacion-->
+				 </div><!--fin contenedor-ubicacion-->
+
 
 				 <div class="asistiras"><!--inicio foto1-asistiras-->
-					 <h3>¿Asistirás?
+					 <p>¿Asistirás?</p>
 				 </div><!--fin foto1-asistiras-->
 
 				 <div class="botones-si-no">
@@ -129,7 +154,5 @@
  </div><!--fin div-2-->
 
 </div><!--fin contenedor-->
-
-
 
 @stop
