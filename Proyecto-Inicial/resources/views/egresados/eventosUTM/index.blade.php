@@ -3,7 +3,7 @@
 @section('title', 'Eventos UTM')
 
 @section('style')
-	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/eventosUTMIndex.css') }}" rel="stylesheet">
 	<!--<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">-->
 @stop
 
