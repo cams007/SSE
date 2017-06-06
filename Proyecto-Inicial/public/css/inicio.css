@@ -157,3 +157,8 @@ html {
   float:left;
   margin-right:13px;
 }
+
+a{
+  color: #be3228;
+  text-decoration: none;
+}
