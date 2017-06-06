@@ -79,6 +79,10 @@ Route::get('/historiasdeExito', function(){
     return view('egresados.HistoriasDeExito');
 });
 
+Route::get('/tipsConsejos', function(){
+    return view('egresados.TipsConsejos');
+});
+
 Route::get('/ranking', function() {
 	return view('ranking.ranking');
 });
@@ -87,11 +91,9 @@ Route::get('/ofertas', function() {
 	return view('ofertas.ofertas');
 });
 
-
 Route::get('/directorio_empresas', function() {
 	return view('empresa.directorio');
 });
-
 
 Route::get('/datos_empresa', function(){
     return view('empresa.index');
