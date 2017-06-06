@@ -1,0 +1,183 @@
+
+/* =========================================================
+ 3. CUSTOM INPUT STYLE
+========================================================= */
+
+	input[type="text"],
+	input[type="tel"],
+	input[type="email"],
+	input[type="date"] {
+	  width: 56%;
+	  height: 32px;
+	  padding: 0 0 0 5px;
+	  margin: 8px 0px 8px 0px;
+
+	  border: #ACABAB 2px solid;
+	  background-repeat: no-repeat;
+	  background-size: 20px 20px;
+	  background-position: 4px 4px;
+	}
+
+	input {
+	  	&.input-icon {
+	    	padding: 0 0 0 32px;
+		}
+	  	&.inputEmail{
+	    	background-image: url("../assets/images/email.png");
+		}
+	  	&.inputHome {
+	    	background-image: url("../assets/images/home0.png");
+	    }
+	  	&.inputTel{
+	    	background-image: url("../assets/images/phone.png");
+		}
+	  	&.inputAddress{
+	    	background-image: url("../assets/images/address.png");
+		}
+	  	&.inputPuesto{
+	    	background-image: url("../assets/images/empresa_puesto.png");
+		}
+	  	&.inputAntiguedad{
+	    	background-image: url("../assets/images/empresa_antiguedad.png");
+		}
+	  	&.inputFuncionDes{
+	    	background-image: url("../assets/images/empresa_funcion_principal.png");
+		}
+	    
+		&:hover, &:focus {
+		    outline: none;
+		    border: solid 2px #BE3228;
+		}
+	}
+
+	.label-icon {
+		margin: 8px 0px 8px 0px;
+		font-family: 'Roboto', sans-serif;
+		font-size: 10pt;
+		padding: 0;
+		display: flex;
+		align-items: center;
+	 }
+
+/* =========================================================
+ 4. CUSTOM RADIO STYLE
+========================================================= */
+
+	.label-radio {
+		display: inline-block;
+		cursor: pointer;
+		position: relative;
+		padding-left: 20px;
+		margin-right: 15px;
+		font-size: 14px;
+		font-family: 'Roboto', sans-serif;
+		color: #000;
+
+		&:before{
+		  	content: "";
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			/*   margin-right: 10px; */
+			position: absolute;
+			left: 0;
+			bottom: 1px;
+			background-color: #fff;
+			box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, .3), 
+				0px 0px 0px 0px rgba(255, 255, 255, .8);
+			border-radius: 10px;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+		}
+	}
+	.radio{
+		margin: 8px 0px 8px 0px;
+	}
+	td > .radio { 
+		margin-left: 3.5px; 
+		> .label-radio {
+			margin-right: 0px;
+		}
+	}
+
+	th.col_calif{
+		width: 120px;
+		> span{
+			font-size: 8pt;
+		}
+	}
+
+	input[type=radio] {
+	  	display: none;
+		border: 1px #fff solid;
+		margin: 8px 0px 8px 0px;
+
+		&:checked + label:before {
+		    content: "\2022";
+		    color: #BE3228;
+		    font-size: 36px;
+		    text-align: center;
+		    line-height: 18px;
+		    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+		}
+		&:checked + .label-radio:before{
+			border: 1px solid #BE3228;
+		}
+	}
+
+	select {
+		background-color: #fff;
+		border: 2px solid #ACABAB;
+		margin: 8px 0px 8px 0px;
+		&:focus, &:hover {
+			border: 2px solid #BE3228;
+		}
+	}
+
+/* =========================================================
+ 5. CUSTOM CHECKBOX STYLE
+========================================================= */
+
+input[type=checkbox] {
+	margin: 8px 0px 8px 0px;
+	display: none; 
+
+	&:checked + label:before {
+		content: "\2713";
+		text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+		font-size: 22px;
+		text-align: right;
+		line-height: 18px;
+		color: #BE3228;
+	}
+	&:checked + .label-radio:before{
+		border: 1px solid #BE3228;
+	}
+}
+
+.checkbox {
+	margin: 8px 0px 8px 0px;
+	label:before {
+	  border-radius: 3px;
+	}
+	.label-radio:before{
+		bottom: inherit;
+	}
+}
+
+/* =========================================================
+ 6. CUSTOM CHECKBOX STYLE
+========================================================= */
+
+textarea{
+	margin: 8px 0px 8px 0px;
+	height: 68px;
+	width: 619px;
+	font-family: 'Roboto', sans-serif;
+	border: 2px solid #ACABAB;
+	padding: 10px;
+	resize: none;
+	&:focus, &:hover{
+		outline: none;
+		border: 2px solid #BE3228;
+	}
+}

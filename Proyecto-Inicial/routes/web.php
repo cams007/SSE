@@ -46,11 +46,7 @@ Route::get('/inicio', function() {
 Route::get('/bienvenida', function() {
     return view('registro.bienvenida');
 });
-/*
-Route::get('registro', function() {
-    return view('registrarse');
-});
-*/
+
 Route::get('perfil/dprofesional', function() {
     return view('perfil.dprofesional');
 });
