@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-	<h1 class="text-center">Mi perfil</h1>
+	<h1>Mi perfil</h1>
 	<hr class="hr">
 	<div class="clearfix">
 		<aside class="column" id="cssmenu">
@@ -18,7 +18,7 @@
 			<form method="POST" action="#">
 				<div class="form-group">
 					<label for="doctorado">¿Que recomendarias mejorar en cada una de las opciones que calificaste como regular o malo?</label>
-					<textarea name="" id="input" class="form-control" rows="3" required="required"></textarea>
+					<textarea name="" id="doctorado" class="form-control" rows="3" required="required"></textarea>
 				</div>
 
 				<div class="form-group text-center">

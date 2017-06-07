@@ -186,37 +186,10 @@ button:hover{
 
 .flat-secundario{
   background-color: #6B6B6B;
+  color: #FFF;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="tel"],
-input[type="email"]{
-  display: block;
-  margin-bottom: 15px;
-  width: 80%;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  color: #6B6B6B;
-  appearance: none;
-  box-shadow: none;
-  border-radius: none;
-  padding: 10px;
-  border: solid 1px #ACABAB;
-  transition: box-shadow 0.3s, border 0.3s;
-}
-
-input[type="text"]:focus,
-input[type="date"]:focus,
-input[type="tel"]:focus,
-input[type="email"]:focus,
-select:focus{
-  outline: none;
-  border: solid 1px #BE3228;
-  box-shadow: 0 0 5px 1px #969696;
-}
-
-.control {
+/*.control {
   display: block;
   position: relative;
   padding-left: 30px;
@@ -276,32 +249,19 @@ select:focus{
 }
 .control--radio input:disabled ~ .control__indicator:after {
   background: #7b7b7b;
-}
-
-
-select{
-  display: block;
-  margin-bottom: 15px;
-  width: 83.5%;
-  font-family: 'Roboto', sans-serif;
-  font-size: 14px;
-  background: #FFF;
-  appearance: none;
-  box-shadow: none;
-  border-radius: none;
-  padding: 10px;
-  border: solid 1px #ACABAB;
-  transition: box-shadow 0.3s, border 0.3s;
-}
+}*/
 
 .img{
   max-width: 50%;
   max-height: 50%;
 }
 
+.link,
 a{
   color: #be3228;
   text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
 }
 
 /* NavBar */
@@ -376,7 +336,11 @@ tr:nth-child(odd){ /*Filas nones
   /*padding-left: 32px;
   float: left;
   padding: 0 0 0 32px;
+<<<<<<< HEAD
   border: 1 !important;    /*    Removes border
+=======
+  /*border: 1 !important;    /*    Removes border*/*/
+>>>>>>> b207302be4a3d7c2cd055ef66b8a29b08998c7dd
   border: #ACABAB 2px solid;
   -webkit-appearance: none;        /*Removes default chrome and safari style
   -moz-appearance: none;          /* Removes Default Firefox style*/
