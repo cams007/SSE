@@ -3,12 +3,14 @@
 @section('title', 'Tabulador de salarios')
 
 @section('style')
-<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
+<!--<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">-->
 <link href="{{ url('css/empresa.css') }}" rel="stylesheet">
 
 @section('content')
 
-	<h1 class="text-center">Directorio de empresas</h1>
+	<div class="contenedor"><!--contenedor-->
+
+	<p class="text-center">Directorio de empresas</p>
 	<hr class="hr">
 
 	<!-- Buscador -->
@@ -16,8 +18,10 @@
 		<input type="search" name="q" placeholder="Busacdor de empresas">
 	</div>
 
+	<div class="listado"><!--listado-->
 	<!-- Listado de empresa -->
 	<div class="empresa_list">
+		<div class="calificacion"><!--calificacion-->
 		<div class="nombre_empresa"><a href="{{url('datos_empresa')}}">KadaSoftware</a></div>
 		<div class="calificacion_empresa">
 			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -26,20 +30,24 @@
 			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 		</div>
-		<p>Empresa desarrolladora de software a la medida.</p>
+	</div><!--calificacion-->
+		<p class="descripcion">Empresa desarrolladora de software a la medida.</p>
 	</div>
 	<div class="empresa_list">
-		<div class="nombre_empresa"><a href="{{url('datos_empresa')}}">Apple Inc.</a></div>
-		<div class="calificacion_empresa">
-			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
-		</div>
-		<p>Empresa de software y hardware encargada de crear productos de gran innovación.</p>
+		<div class="calificacion"><!--calificacion-->
+			<div class="nombre_empresa"><a href="{{url('datos_empresa')}}">Apple Inc.</a></div>
+				<div class="calificacion_empresa">
+					<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+					<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+					<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+					<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+					<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+			</div>
+		</div><!--calificacion-->
+		<p class="descripcion">Empresa de software y hardware encargada de crear productos de gran innovación.</p>
 	</div>
 	<div class="empresa_list">
+		<div class="calificacion"><!--calificacion-->
 		<div class="nombre_empresa"><a href="{{url('datos_empresa')}}">Elektra</a></div>
 		<div class="calificacion_empresa">
 			<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -48,8 +56,10 @@
 			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 			<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 		</div>
-		<p>Empresa de software y hardware encargada de crear productos de gran innovación.</p>
+	</div><!--calificacion-->
+		<p class="descripcion">Empresa de software y hardware encargada de crear productos de gran innovación.</p>
 	</div>
+</div><!--listado-->
 
 
 	<!-- Paginación -->
@@ -62,5 +72,5 @@
       	<a class="page" href="#">5</a>
       	<a class="forward" href="#"><img src="{{ url('assets/images/paginator_forward.png') }}"></a>
 	</div>
-
+</div><!--contenedor-->
 @stop
