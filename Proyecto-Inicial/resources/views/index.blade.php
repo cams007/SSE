@@ -16,7 +16,7 @@
 <div class="block">
   <img id="logo_utm" src="{{url('assets/images/logo_utm_login.png')}}">
   <form id="form_login">
-    <div  class="usuario-login">
+    <div class="usuario-login">
         <div id="logo-user"></div>
         <input type="text" name="usuario" id="usuario" placeholder="Matrícula" ></input>
     </div>
@@ -29,7 +29,8 @@
     <div class="boton-login">
         <input type="submit" id="input-button" VALUE="ENTRAR"></input>
     </div>
-    <div id="registrate"><p>Regístrate</p>
+    <div id="registrate">
+      <a href="{{url('registro')}}" class="link">Regístrate</a>
     </div>
   </form>
 </div>
