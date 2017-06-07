@@ -180,8 +180,22 @@
 						<span> {{" CEO "}} </span>
 					</div>
 
+					<div>
+						<br><br>
+						<h4>Calificar esta empresa</h4>
+						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
+						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
+						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
+						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
+						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
+					</div>
+					<div>
+						<textarea name="" id="comentario" class="form-control" rows="3"></textarea>
+					</div>
+
 					<div class="btn-group">
-						<button type="button" class="flat-secundario">Salir</button>
+						<button type="button" class="flat-secundario">Cancelar</button>
+						<button type="button" class="flat aling-right">Guardar</button>
 					</div>
 		    	</form>
 		    </div>
