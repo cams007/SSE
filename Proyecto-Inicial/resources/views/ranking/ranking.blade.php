@@ -14,7 +14,7 @@
 	<div class="clearfix">
 		<!-- Filtros -->
 		<div class="filtro_3">
-			<p class="titulo_select">Giro de empresa</p>
+			<p class="titulo_select">Categoría</p>
 			<select name="Giro">
 				<option selected="">Todas</option>
 			  	<option value="volvo">Consultoría</option>
