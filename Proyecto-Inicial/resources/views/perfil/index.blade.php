@@ -16,7 +16,7 @@
 		</aside>
 		
 		<div class="column content-sm">
-			<form method="POST" action="#">
+			<form method="POST" action="{{url('perfil')}}">
 			
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
@@ -53,7 +53,7 @@
 
 
 				<div class="text-center">
-					<button type="button" class="flat">
+					<button type="submit" class="flat">
 						Siguiente
 					</button>
 				</div>

@@ -149,7 +149,7 @@ header {
 
 }
 
-button {
+button, .button {
   display: inline-block;
   margin: 0 10px 0 0;
   padding: 5px 25px;
@@ -171,7 +171,6 @@ button:hover{
 .flat{
   color: #fff;
   background-color: #BE3228;
-  text-shadow: -1px 1px #417cb8;
   color: #FFF;
   text-decoration: none;
   border: none;
@@ -179,7 +178,6 @@ button:hover{
 
 .flat:hover{
   background-color: #5E352A;
-  text-shadow: -1px 1px #27496d;
 }
 
 .flat-secundario{

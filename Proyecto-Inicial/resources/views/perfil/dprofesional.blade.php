@@ -61,7 +61,7 @@
 				  	<td></td>
 				</tr>
 			</table>
-			<button type="button" class="flat aling-right">Siguiente</button>
+			<a href="{{url('perfil/fprofesional')}}" class="button flat"> Siguiente</a>
 		</div>		
 	</div>
 	

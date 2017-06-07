@@ -16,7 +16,7 @@
 		</aside>
 		
 		<div class="column content">	
-			<form method="POST" action="#">			
+			<form method="POST" action="{{url('perfil/fprofesional')}}">			
 				<div class="form-group">
 					<label for="tContrato">1. ¿Tiempo transcurrido para encontrar tu primer empleo, después de haber egresado?</label>
 					<select name="tContrato" id="inputTContrato" class="form-control">
@@ -439,7 +439,7 @@
 				</div>
 				<div class="form-group text-center">
 					<button type="submit" class="flat">
-						Siguiente
+						Finalizar
 					</button>
 				</div>
 			</form>
