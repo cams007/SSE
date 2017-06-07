@@ -28,6 +28,7 @@
 	/*background: green;*/
 	padding-left: 32px;
 	padding-top: 16px;
+	padding-bottom: 2px;
 }
 .div-3{
 	width: 450px;
@@ -117,23 +118,14 @@ tr:nth-child(odd){ /*Filas nones*/
 div select{
   width: 100%;
   height: 32px;
-  /*padding-left: 32px;*/
-  /*float: left;*/
   padding: 0 0 0 32px;
-  /*border: 1 !important;    /*    Removes border*/
-  /*border: #ACABAB 2px solid;*/
   -webkit-appearance: none;        /*Removes default chrome and safari style */
   -moz-appearance: none;          /* Removes Default Firefox style*/
-  /*background: {{url('assets/images/home.png')}};         /*Adds background-image*/
-  /*background-position: 82px 7px;                /*Position of the background-image*/
 	box-shadow: 0 0 3px gray;
 	-moz-box-shadow: 0 0 3px gray;
 	-webkit-box-shadow: 0 0 3px gray;
-}/*
-div .filtro_1{
-  width: 40%;
-  margin: 0 0 10px 5%;
-}*/
+}
+
 div p.titulo_select{
   margin: 0;
   text-align: left;

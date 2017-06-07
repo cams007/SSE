@@ -99,7 +99,7 @@
     text-indent: 20px;
 		position: relative;
 		top: 8px;
-		right: 13px;
+    right: 13px;
 		padding-top: 10px;
 		color: #797D7F;
 		font-family: 'Roboto', sans-serif;
@@ -155,7 +155,7 @@
 }
 
 .foto1{
-	background-image: url("../assets/images/Taekwondo_2016.jpg");
+	background-image: url("../assets/images/cartel08.jpg");
 	height: 160px;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -169,7 +169,7 @@
 	}
 
 .foto2{
-	 background-image: url("../assets/images/biblioteca.JPG");
+	 background-image: url("../assets/images/acad2UTM.PNG");
 	 height: 160px;
 	 background-position: center;
 	 background-repeat: no-repeat;
