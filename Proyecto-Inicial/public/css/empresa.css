@@ -76,6 +76,10 @@ div.datos_comentario{
 .fecha_comentario{
 	font-size: 11px;
 }
+textarea#comentario{
+	width: 70%;
+}
+
 
 /*Paginación*/
 div.paginate a{
@@ -99,3 +103,5 @@ div.paginate a.back{
 	position: relative;
 	top: 6px;
 }
+
+
