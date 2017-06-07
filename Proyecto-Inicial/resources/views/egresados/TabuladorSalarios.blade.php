@@ -2,6 +2,11 @@
 
 @section('title', 'Tabulador de salarios')
 
+@section('style')
+	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
+@stop
+
 @section('content')
 
 	<h1 class="text-center">Tabulador de salarios</h1>
@@ -15,6 +20,10 @@
 			<option value="ingAlimentos">Ing. en Computación</option>
 			<option value="ingAlimentos">Ing. en Diseño</option>
 		</select>
+	</div>
+	<div class="filtro_3"> 							<!--cambiar la clase -->
+		<p class="titulo_select">Busqueda:</p>
+		<input type="text" name="BusquedaEspecifica" value="x">
 	</div>
 	<!--Tabla de resultados-->
 	<table>
@@ -76,4 +85,13 @@
 		  <td></td>
 		</tr>
 	</table>
+	<div class="paginate">
+		<a class="back" href="#"><img src="{{ url('assets/images/paginator_back.png') }}"></a>
+      	<a class="page" href="#">1</a>
+      	<a class="active" href="#">2</a>
+      	<a class="page" href="#">3</a>
+      	<a class="page" href="#">4</a>
+      	<a class="page" href="#">5</a>
+      	<a class="forward" href="#"><img src="{{ url('assets/images/paginator_forward.png') }}"></a>
+	</div>
 @stop

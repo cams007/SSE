@@ -98,7 +98,7 @@ header {
 
 .block {
   width: 1024px;
-  height: 450px;
+  height: 536px;
   margin: 0 auto;
   background: rgba(255,255,255,0.9);
   display: block;
@@ -107,6 +107,8 @@ header {
   top: 51px;
   border: solid 1px #ccc;
   box-shadow: 0 0 3px #888888;
+  -moz-box-shadow: 0 0 3px #888888;
+  -webkit-box-shadow: 0 0 3px #888888;
 }
 .headercontainer {
   width: 1024px;
@@ -149,7 +151,7 @@ header {
 
 }
 
-button {
+button, .button {
   display: inline-block;
   margin: 0 10px 0 0;
   padding: 5px 25px;
@@ -171,7 +173,6 @@ button:hover{
 .flat{
   color: #fff;
   background-color: #BE3228;
-  text-shadow: -1px 1px #417cb8;
   color: #FFF;
   text-decoration: none;
   border: none;
@@ -179,7 +180,6 @@ button:hover{
 
 .flat:hover{
   background-color: #5E352A;
-  text-shadow: -1px 1px #27496d;
 }
 
 .flat-secundario{
@@ -208,7 +208,7 @@ button:hover{
   height: 20px;
   width: 20px;
   background: #e6e6e6;
-  
+
 }
 .control--radio .control__indicator {
   border-radius: 50%;
@@ -301,7 +301,7 @@ a{
     width: 10.5%;
   }
 
-/* Estilos para tablas */
+/* Estilos para tablas
 table{
   width: 90%;
   margin: 0 5% 0 5%;
@@ -319,33 +319,37 @@ tr, td {
   height: 32px;
   border: #ACABAB 2px solid;
 }
-tr:nth-child(even){ /*Filas pares*/
+tr:nth-child(even){ /*Filas pares
   color: #6B6B6B;
   background-color: #FFFFFF;
 }
-tr:nth-child(odd){ /*Filas nones*/
-  color: #6B6B6B; /*color: #FFFFFF;*/
+tr:nth-child(odd){ /*Filas nones
+  color: #6B6B6B; /*color: #FFFFFF;
   background-color: #D8D8D8;
 }
-
-div select{
-  width: 100%;  
+*/
+/*div select{
+  width: 100%;
   height: 32px;
-  /*padding-left: 32px;*/
+  /*padding-left: 32px;
   float: left;
   padding: 0 0 0 32px;
+<<<<<<< HEAD
+  border: 1 !important;    /*    Removes border
+=======
   /*border: 1 !important;    /*    Removes border*/*/
+>>>>>>> b207302be4a3d7c2cd055ef66b8a29b08998c7dd
   border: #ACABAB 2px solid;
-  -webkit-appearance: none;        /*Removes default chrome and safari style */
+  -webkit-appearance: none;        /*Removes default chrome and safari style
   -moz-appearance: none;          /* Removes Default Firefox style*/
   /*background: {{url('assets/images/home.png')}};         /*Adds background-image*/
-  /*background-position: 82px 7px;                /*Position of the background-image*/
+  /*background-position: 82px 7px;                /*Position of the background-image
 }
 div .filtro_1{
   width: 40%;
   margin: 0 0 10px 5%;
   float: left;
-}
+}/*
 div .filtro_3{
   width: 26.7%;
   margin: 0 0 10px 5%;
@@ -354,4 +358,4 @@ div .filtro_3{
 div p.titulo_select{
   margin: 0;
   text-align: left;
-}
+}*/
