@@ -8,7 +8,7 @@
 @stop
 
 @section('content')
-<<<<<<< HEAD
+
 <div class="contenedor"><!--inicio contenedor-->
 	<div class="div-1"><!--inicio div-1-->
 		<p class="text-center">Mi Perfil</p>
@@ -17,11 +17,6 @@
 
 	<div class="div-2"><!--inicio div-2-->
 		<div class="div-2-1"><!--inicio div-2-1-->
-=======
-	<h1>Mi Perfil</h1>
-	<hr class="hr">
-	<div class="clearfix">
->>>>>>> b207302be4a3d7c2cd055ef66b8a29b08998c7dd
 		<aside id="cssmenu" class="column hrV">
 			@include('partials.aside')
 		</aside>
@@ -33,7 +28,6 @@
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 
-<<<<<<< HEAD
 				<div class="contenedor-info"><!--inicio contenedor-info-->
 					<div class="icono"><!--inicio icono-->
 						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
@@ -43,51 +37,12 @@
 					</div><!--info-->
 				</div><!--contenedor-info-->
 
-				<!--
-				<div class="input tel">
-					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-					<label class="link"> {{" Genero"}}</label>
-				</div>
-				<div class="input tel">
-					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-					<label class="link"> {{" Nacionalidad"}}</label>
-=======
-				<div class="label-icon"> 	
-					<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos" /> 
-					<span class="aling"> {{" Juan Peréz "}} </span>
-				</div>
-				
-				<div class="label-icon"> 
-					<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos" /> 
-					<span class="aling">{{ "Hombre" }}</span>
->>>>>>> b207302be4a3d7c2cd055ef66b8a29b08998c7dd
-				</div>
-			-->
 				<div class="contenedor-info"><!--inicio contenedor-info-->
 					<div class="icono"><!--inicio icono-->
 						<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos">
 					</div><!--fin icono-->
 					<div class="info"><!--inicio info-->
 						<span class="info-perfil"> {{" 27 de octubre de 1985 "}} </span>
-					</div><!--info-->
-				</div><!--contenedor-info-->
-
-<<<<<<< HEAD
-				<div class="contenedor-info"><!--inicio contenedor-info-->
-					<div class="icono"><!--inicio icono-->
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-					</div><!--fin icono-->
-					<div class="info"><!--inicio info-->
-						<label class="link addInput info-perfil">Agregar un correo electrónico</label>
-					</div><!--info-->
-				</div><!--contenedor-info-->
-
-				<div class="contenedor-info"><!--inicio contenedor-info-->
-					<div class="icono"><!--inicio icono-->
-						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
-					</div><!--fin icono-->
-					<div class="info"><!--inicio info-->
-						<label class="link info-perfil"> Agrega el lugar donde vives actualmente</label>
 					</div><!--info-->
 				</div><!--contenedor-info-->
 
@@ -100,36 +55,16 @@
 					</div><!--info-->
 				</div><!--contenedor-info-->
 
-				<div class="contenedor-info"><!--inicio contenedor-info-->
-					<div class="icono"><!--inicio icono-->
-						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-					</div><!--fin icono-->
-					<div class="info"><!--inicio info-->
-						<label class="link info-perfil"> {{" Agregar telefóno"}}</label>
-					</div><!--info-->
-				</div><!--contenedor-info-->
-=======
-				<div class="label-icon"> 
-					<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos" /> 
-					<span class="aling"> {{" 27 de octubre de 1985 "}} </span>
-				</div>
-				<div>
-					<input type="email" name="" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" />
-				</div>
 				<div>
 					<input type="text" name="" class="input-icon inputHome" placeholder="Agrega tu ciudad actual" />
 				</div>
-
-				<div class="label-icon"> 
-					<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos" /> 
-					<span class="aling"> {{" Originario de Oaxaca, Oaxaca "}}</span>
+				<div>
+					<input type="email" name="" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" />
 				</div>
 
 				<div>
 					<input type="tel" class="input-icon inputTel" placeholder="Agregar telefóno"/>
 				</div>
->>>>>>> b207302be4a3d7c2cd055ef66b8a29b08998c7dd
-
 
 				<!--<div class="text-center">
 					<button type="button" class="flat">
