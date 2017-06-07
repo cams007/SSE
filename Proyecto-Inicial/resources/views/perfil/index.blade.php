@@ -23,7 +23,7 @@
 	</div><!--fin div-2-1-->
 	<div class="div-2-2"><!--inicio div-2-2-->
 		<div class="column content-sm">
-			<form method="POST" action="#">
+			<form method="POST" action="{{url('perfil')}}">
 
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
@@ -66,8 +66,9 @@
 					<input type="tel" class="input-icon inputTel" placeholder="Agregar telefóno"/>
 				</div>
 
+
 				<!--<div class="text-center">
-					<button type="button" class="flat">
+					<button type="submit" class="flat">
 						Siguiente
 					</button>
 				</div-->

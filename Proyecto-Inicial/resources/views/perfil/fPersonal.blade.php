@@ -16,7 +16,7 @@
 		</aside>
 		
 		<div class="column content">
-			<form method="POST" action="#">
+			<form method="POST" action="{{url('perfil/fpersonal')}}">
 			
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
