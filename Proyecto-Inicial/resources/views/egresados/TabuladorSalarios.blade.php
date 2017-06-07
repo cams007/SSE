@@ -21,6 +21,10 @@
 			<option value="ingAlimentos">Ing. en Diseño</option>
 		</select>
 	</div>
+	<div class="filtro_3"> 							<!--cambiar la clase -->
+		<p class="titulo_select">Busqueda:</p>
+		<input type="text" name="BusquedaEspecifica" value="x">
+	</div>
 	<!--Tabla de resultados-->
 	<table>
 		<tr>
