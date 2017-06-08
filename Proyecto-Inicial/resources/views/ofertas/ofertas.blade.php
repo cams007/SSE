@@ -9,7 +9,7 @@
 
 	<h1 class="text-center">Ofertas laborales</h1>
 	<hr class="hr">
-
+	<div>	</div>
 	<!-- Filtros -->
 	<div class="filtro_1">
 		<p class="titulo_select">Ubicación</p>
