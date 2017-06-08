@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.ingreso')
 
 @section('title', 'Registrarse')
 
@@ -28,8 +28,9 @@
          		<p class="p">Repite tu contraseña*</p>
          			<input type="text" name="pass2" id="entradas">
          			<p class="p" align="right">*Campos obligatorios</p>
-         		<button class="button">Cancelar</button>
-         		<button class="button2">Registrarse</button>
+
+         		<a href="#" class="button"> Cancelar</a>
+                <a href="{{url('bienvenida')}}" class="button2">Registrarse</a>
           </div>
         </div>
     
