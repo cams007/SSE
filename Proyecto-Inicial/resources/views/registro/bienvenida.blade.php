@@ -20,7 +20,7 @@
             <br><br>
             <div>
                 <p align="right">Adelante y ¡Disfruta!</p><br>
-                <button class="button2">Continuar</button>  
+               <a href="{{url('/perfil')}}" class="button2">Continuar</a> 
             </div>
 
           
