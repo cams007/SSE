@@ -11,7 +11,8 @@
 
 <div class="contenedor"><!--inicio contenedor-->
 	<div class="div-1"><!--inicio div-1-->
-		<p class="text-center">Mi Perfil</p>
+		<!-- <p>Mi Perfil</p> -->
+		<h1>Mi Perfil</h1>
 		<hr class="hr">
 	</div><!--fin div-1-->
 
@@ -22,7 +23,7 @@
 		</aside>
 	</div><!--fin div-2-1-->
 	<div class="div-2-2"><!--inicio div-2-2-->
-		<div class="column content-sm">
+		<div class="column content">
 			<form method="POST" action="{{url('perfil')}}">
 
 				{{-- TODO: Protección contra CSRF --}}
