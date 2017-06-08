@@ -124,10 +124,11 @@
 }
 
 .button{
+  float: left;
     background-color: #A4A4A4;
     color: white;
     border: none;
-    padding: 8px 35px;
+    padding: 3px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
