@@ -3,7 +3,7 @@
 @section('title', 'Tabulador de salarios')
 
 @section('style')
-<!--<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">-->
+<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 <link href="{{ url('css/empresa.css') }}" rel="stylesheet">
 
 @section('content')
@@ -20,7 +20,7 @@
         <div class="listado"><!--listado-->
             <div class="empresa_list"> <!-- Listado de empresa -->
                 <div class="calificacion"><!--calificacion-->
-                    <div class="nombre_empresa"><a href="{{url('datos_empresa')}}">KadaSoftware</a></div>
+                    <div class="nombre_empresa"><a href="#datosEmpresa">KadaSoftware</a></div>
                     <div class="calificacion_empresa">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -33,7 +33,7 @@
             </div>
             <div class="empresa_list">
                 <div class="calificacion"><!--calificacion-->
-                    <div class="nombre_empresa"><a href="{{url('datos_empresa')}}">Apple Inc.</a></div>
+                    <div class="nombre_empresa"><a href="#datosEmpresa">Apple Inc.</a></div>
                     <div class="calificacion_empresa">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -46,7 +46,7 @@
             </div>
             <div class="empresa_list">
                 <div class="calificacion"><!--calificacion-->
-                    <div class="nombre_empresa"><a href="{{url('datos_empresa')}}">Elektra</a></div>
+                    <div class="nombre_empresa"><a href="#datosEmpresa"">Elektra</a></div>
                     <div class="calificacion_empresa">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
