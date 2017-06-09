@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'Historias de Éxito')
+@section('title', 'Tips y consejos')
 
 @section('style')
-	<link href="{{ url('css/historiasExito.css') }}" rel="stylesheet">
+	<link href="{{ url('css/tipConsejos.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/ofertas.css') }}" rel="stylesheet"> -->
 @stop
 
@@ -11,7 +11,7 @@
 <div class="contenedor"><!--contenedor-->
 
 	<div class="div-1"><!--div-1-->
-		<p class="text-center">Historias de Éxito</p>
+		<p class="text-center">Tips y consejos</p>
 		<hr class="hr">
 	</div><!-- div-1 -->
 
@@ -24,7 +24,7 @@
 
 				<div class="div-2-2">
 			 		<div class="titulo">
-						<p>ENACTUS 2015 primer lugar</p>
+						<p>Mejora en todo momento tu nivel de inglés</p>
 					</div>
 					<div class="descripcion">
 						<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
@@ -46,7 +46,7 @@
 
 			<div class="div-2-2">
 				<div class="titulo">
-					<p>CHI 2017</p>
+					<p>Come saludablemente</p>
 				</div>
 				<div class="descripcion">
 					<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
@@ -67,7 +67,7 @@
 
 			<div class="div-2-2">
 				<div class="titulo">
-					<p>Premio CENEVAL</p>
+					<p>Haz deporte</p>
 				</div>
 				<div class="descripcion">
 					<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
@@ -88,7 +88,7 @@
 
 		<div class="div-2-2">
 			<div class="titulo">
-				<p>Concurso nacional de Tesis</p>
+				<p>Preparar una entrevista laboral</p>
 			</div>
 			<div class="descripcion">
 				<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
@@ -101,6 +101,7 @@
 		</div><!--div-2-2-2-->
 
 </div><!--historia-->
+
 
 </div><!-- div-2 -->
 		<!-- Paginación -->

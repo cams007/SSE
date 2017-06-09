@@ -8,6 +8,7 @@
 @stop
 
 @section('content')
+
 <div class="contenedor"><!--inicio contenedor-->
 	<div class="div-1"><!--inicio div-1-->
 		<p class="text-center">Mi Perfil</p>
@@ -22,7 +23,7 @@
 	</div><!--fin div-2-1-->
 	<div class="div-2-2"><!--inicio div-2-2-->
 		<div class="column content-sm">
-			<form method="POST" action="#">
+			<form method="POST" action="{{url('perfil')}}">
 
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
@@ -36,40 +37,12 @@
 					</div><!--info-->
 				</div><!--contenedor-info-->
 
-				<!--
-				<div class="input tel">
-					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-					<label class="link"> {{" Genero"}}</label>
-				</div>
-				<div class="input tel">
-					<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-					<label class="link"> {{" Nacionalidad"}}</label>
-				</div>
-			-->
 				<div class="contenedor-info"><!--inicio contenedor-info-->
 					<div class="icono"><!--inicio icono-->
 						<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos">
 					</div><!--fin icono-->
 					<div class="info"><!--inicio info-->
 						<span class="info-perfil"> {{" 27 de octubre de 1985 "}} </span>
-					</div><!--info-->
-				</div><!--contenedor-info-->
-
-				<div class="contenedor-info"><!--inicio contenedor-info-->
-					<div class="icono"><!--inicio icono-->
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-					</div><!--fin icono-->
-					<div class="info"><!--inicio info-->
-						<label class="link addInput info-perfil">Agregar un correo electrónico</label>
-					</div><!--info-->
-				</div><!--contenedor-info-->
-
-				<div class="contenedor-info"><!--inicio contenedor-info-->
-					<div class="icono"><!--inicio icono-->
-						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
-					</div><!--fin icono-->
-					<div class="info"><!--inicio info-->
-						<label class="link info-perfil"> Agrega el lugar donde vives actualmente</label>
 					</div><!--info-->
 				</div><!--contenedor-info-->
 
@@ -82,18 +55,20 @@
 					</div><!--info-->
 				</div><!--contenedor-info-->
 
-				<div class="contenedor-info"><!--inicio contenedor-info-->
-					<div class="icono"><!--inicio icono-->
-						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-					</div><!--fin icono-->
-					<div class="info"><!--inicio info-->
-						<label class="link info-perfil"> {{" Agregar telefóno"}}</label>
-					</div><!--info-->
-				</div><!--contenedor-info-->
+				<div>
+					<input type="text" name="" class="input-icon inputHome" placeholder="Agrega tu ciudad actual" />
+				</div>
+				<div>
+					<input type="email" name="" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" />
+				</div>
+
+				<div>
+					<input type="tel" class="input-icon inputTel" placeholder="Agregar telefóno"/>
+				</div>
 
 
 				<!--<div class="text-center">
-					<button type="button" class="flat">
+					<button type="submit" class="flat">
 						Siguiente
 					</button>
 				</div-->

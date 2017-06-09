@@ -29,7 +29,8 @@
     <div class="boton-login">
         <input type="submit" id="input-button" VALUE="ENTRAR"></input>
     </div>
-    <div id="registrate"><p>Regístrate</p>
+    <div id="registrate">
+      <a href="{{url('registro')}}" class="link">Regístrate</a>
     </div>
   </form>
 </div>

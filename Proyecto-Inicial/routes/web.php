@@ -16,26 +16,34 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/perfil', function () {
-    return view('perfil.index', compact('notes'));
-});
+Route::group(['prefix' => 'perfil'], function() {
+    
+    Route::get('/' , function () {
+        return view('perfil.index');
+    });
 
-Route::get('perfil/fpersonal', function() {
-    return view('perfil.fPersonal');
-});
+    Route::get('fpersonal', function() {
+        return view('perfil.fPersonal');
+    });
 
-Route::get('perfil/experiencia', function() {
-    return view('perfil.experiencia');
-});
+    Route::get('experiencia', function() {
+        return view('perfil.experiencia');
+    });
 
-Route::get('perfil/intereses', function() {
-    return view('perfil.intereses');
-});
+    Route::get('intereses', function() {
+        return view('perfil.intereses');
+    });
 
-Route::get('perfil/ofertaslab', function() {
-    return view('perfil.ofertaslab');
-});
+    Route::get('ofertaslab', function() {
+        return view('perfil.ofertaslab');
+    });
+    
+    Route::post('/', 'PerfilController@saveDatosB');
+    Route::post('fpersonal', 'PerfilController@saveFormacionPerson');
+    Route::post('experiencia', 'PerfilController@savePrimerEmp');
+    Route::post('intereses', 'PerfilController@saveFormacionProf');
 
+});
 Route::get('/registro', function() {
     return view('registro.registrarse');
 });
@@ -46,11 +54,7 @@ Route::get('/inicio', function() {
 Route::get('/bienvenida', function() {
     return view('registro.bienvenida');
 });
-/*
-Route::get('registro', function() {
-    return view('registrarse');
-});
-*/
+
 Route::get('perfil/dprofesional', function() {
     return view('perfil.dprofesional');
 });
@@ -81,6 +85,10 @@ Route::get('eventosUTM/academicos', function(){
 
 Route::get('/historiasdeExito', function(){
     return view('egresados.HistoriasDeExito');
+});
+
+Route::get('/tipsConsejos', function(){
+    return view('egresados.TipsConsejos');
 });
 
 Route::get('/ranking', function() {
