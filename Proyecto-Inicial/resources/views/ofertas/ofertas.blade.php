@@ -8,15 +8,17 @@
 @section('content')
 	<div class="contenedor"><!--contenedor-->
 		<div class="div-1"><!--div-1-->
-				<h1 class="text-center">Ofertas laborales</h1>
+				<p class="text-center">Ofertas laborales</p>
 	      <hr class="hr">
 		</div><!--div-1-->
-	<div>	
+	<div>
 	<!-- Filtros -->
-	<div class="filtro_1">
+	<!-- <div class="filtro_1"> -->
+	<div class="div-2"><!--div-2-->
 		<p class="titulo_select">Ubicación</p>
-		<select name="ubicacion">
-
+	</div><!--div-2-->
+	<div class="div-3"><!--div-3-->
+		<select name="ubicacion" class="ubicacion">
 			<option selected="">Todas</option>
 		  	<option value="cdmx">CDMX</option>
 		  	<option value="oaxaca">Huajuapan de León</option>
