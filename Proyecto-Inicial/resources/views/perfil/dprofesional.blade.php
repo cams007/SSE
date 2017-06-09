@@ -7,7 +7,9 @@
 @stop
 
 @section('content')
+
 	<h1 class="text-center">Desarrollo Profesional</h1>
+
 	<hr class="hr">
 	<div class="clearfix">
 		<aside class="column" id="cssmenu">
@@ -37,13 +39,14 @@
 				  	<td></td>
 				</tr>
 				<tr>
-					<td><input id="dprof" type="checkbox"></td>
+					  <td><input id="dprof" type="checkbox"></td>
 				  	<td></td>
 				  	<td></td>
 				  	<td></td>
 				  	<td></td>
 				</tr>
 				<tr>
+
 					<td><input id="dprof" type="checkbox"></td>
 				  	<td></td>
 				  	<td></td>
@@ -51,8 +54,35 @@
 				  	<td></td>
 				</tr>
 			</table>
+			<a href="{{url('perfil/fprofesional')}}" class="button flat"> Siguiente</a>
+		</div>		
+	</div>
+	
+	<div id="addEmpleo" class="modaloverlay">
+	  	<div class="modal">
+		    <a href="#close" class="close">&times;</a>
+		    <div>
+		    	<h1>Agregar Empleo</h1>
+		    	<form action="#">
+			    	<div>
+						<input type="text" class="input-icon inputAddress" placeholder="Nombre de la empresa" />
+					</div>
+					<div>
+						<input type="text" class="input-icon inputPuesto" placeholder="Agregar puesto" />
+					</div>
+					<div>
+						<input type="text" class="input-icon inputAntiguedad" placeholder="Antiguedad __años __meses" />
+					</div>
+					<div>
+						<input type="text" class="input-icon inputFuncionDes" placeholder="Agregar funcion desempeñada" />
+					</div>
+					<div class="btn-group">
+						<button type="button" class="flat-secundario aling-left">Cancelar</button>
+						<button type="button" class="flat aling-right">Agregar</button>
+					</div>
+		    	</form>
+		    </div>
 		</div>
-
 	</div>
 
 @stop

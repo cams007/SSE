@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-	<h1 class="text-center">Mi perfil</h1>
+	<h1>Mi perfil</h1>
 	<hr class="hr">
 	<div class="clearfix">
 		<aside class="column" id="cssmenu">
