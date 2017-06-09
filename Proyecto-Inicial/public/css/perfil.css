@@ -16,11 +16,18 @@
   display: none;
 }
 
+.hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.38);
+
 .modaloverlay:target {
   display: block;
   opacity: 1;
   pointer-events: auto;
   z-index: 99999;
+
 }
 
 .modaloverlay .modal {
@@ -197,6 +204,41 @@ input.inputHome {
   background-image: url("../assets/images/home0.png");
 }
 
+
+  #cssmenu ul li:hover > ul {
+    visibility: visible;
+  }
+  #cssmenu ul li {
+    float: none;
+  }
+  #cssmenu ul ul li {
+    font-weight: normal;
+  }
+#dprof{
+	width: 30px;
+}
+  /* Custom CSS Styles */
+  #cssmenu {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    border-right: 1px solid rgba(0, 0, 0, 0.38);
+  }
+  #cssmenu ul a,
+  #cssmenu ul a:link,
+  #cssmenu ul a:visited {
+    display: block;
+    color: #848889;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  #cssmenu > ul {
+    float: none;
+  }
+  #cssmenu ul {
+    background: transparent;
+  }
+
 input.inputTel {
   background-image: url("../assets/images/phone.png");
 }
@@ -208,6 +250,7 @@ input.inputAddress {
 input.inputPuesto {
   background-image: url("../assets/images/empresa_puesto.png");
 }
+
 
 input.inputAntiguedad {
   background-image: url("../assets/images/empresa_antiguedad.png");
@@ -222,6 +265,11 @@ input:hover, input:focus {
   border: solid 2px #BE3228;
 }
 
+
+/*Este es un comentario*/
+input[type=checkbox]:checked ~ #email{
+    display: block;
+  }
 .label-icon {
   margin: 8px 0px 8px 0px;
   font-family: 'Roboto', sans-serif;
@@ -247,6 +295,7 @@ input:hover, input:focus {
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   color: #000;
+
 }
 
 .label-radio:before {
@@ -268,6 +317,13 @@ input:hover, input:focus {
   margin: 8px 0px 8px 0px;
 }
 
+
+textarea{
+  margin: 0px;
+  width: 614px;
+  height: 212px;
+  resize: none;
+  }
 td > .radio {
   margin-left: 3.5px;
 }
@@ -316,10 +372,7 @@ select:focus, select:hover {
 /* =========================================================
  5. CUSTOM CHECKBOX STYLE
 ========================================================= */
-input[type=checkbox] {
-  margin: 8px 0px 8px 0px;
-  display: none;
-}
+
 
 input[type=checkbox]:checked + label:before {
   content: "\2713";
@@ -335,6 +388,16 @@ input[type=checkbox]:checked + .label-radio:before {
 }
 
 .checkbox {
+
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+
   margin: 8px 0px 8px 0px;
 }
 

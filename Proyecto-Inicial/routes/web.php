@@ -15,6 +15,9 @@
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/home', function () {
+    return view('registro.home');
+});
 
 Route::group(['prefix' => 'perfil'], function() {
     
@@ -66,7 +69,7 @@ Route::get('perfil/fprofesional', function() {
 Route::get('perfil/egresadoReco', function() {
     return view('perfil.recomendaciones');
 });
-           
+
 Route::get('/tabuladorSalarios', function(){
 	return view('egresados.TabuladorSalarios');
 });
