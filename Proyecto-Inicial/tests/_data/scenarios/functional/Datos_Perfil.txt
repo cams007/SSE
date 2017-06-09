@@ -1,0 +1,17 @@
+I WANT TO LLENAR LOS DATOS DE MI PERFIL
+
+I am 'un egresado' 
+I am on page '/perfil' 
+I fill field 'Agrega tu ciudad actual','Oaxaca' 
+I click 'Estudios realizados' 
+I am on page '/perfil/fpersonal' 
+I fill field 'Carrera','Ingeniería en computación' 
+I click 'Siguiente' 
+I am on page '/perfil/experiencia' 
+I click 'Siguiente' 
+I am on page '/perfil/dprofesional' 
+I click 'Siguiente' 
+I am on page '/perfil/fprofesional' 
+I click 'Finalizar' 
+I see 'Mi Perfil'
+

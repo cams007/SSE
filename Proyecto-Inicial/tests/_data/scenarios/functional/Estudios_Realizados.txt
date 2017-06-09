@@ -1,0 +1,12 @@
+I WANT TO LLENAR LOS DATOS DE ESTUDIOS REALIZADOS EN UTM
+
+I am 'un egresado' 
+I am on page '/perfil/fpersonal' 
+I fill field 'Carrera','Ingeniería en computación' 
+I select option 'titulacion'," "tesis"" 
+I fill field 'finicio','18/06/2012' 
+I fill field 'ffinal','18/06/2017' 
+I fill field 'ftitulacion','12/07/2018' 
+I click 'Siguiente' 
+I am on page '/perfil/experiencia'
+
