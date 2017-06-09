@@ -8,16 +8,15 @@
 @section('content')
 	<div class="contenedor"><!--contenedor-->
 		<div class="div-1"><!--div-1-->
-			<p class="text-center">Ofertas laborales</p>
-			<hr class="hr">
+				<h1 class="text-center">Ofertas laborales</h1>
+	      <hr class="hr">
 		</div><!--div-1-->
+	<div>	
+	<!-- Filtros -->
+	<div class="filtro_1">
+		<p class="titulo_select">Ubicación</p>
+		<select name="ubicacion">
 
-	<div class="div-2"><!--div-2-->
-		<p class="titulo_select">Ubicación:</p>
-	</div><!--div-2-->
-
-	<div class="div-3"><!--div-3-->
-		<select name="ubicacion" class="ubicacion">
 			<option selected="">Todas</option>
 		  	<option value="cdmx">CDMX</option>
 		  	<option value="oaxaca">Huajuapan de León</option>
@@ -87,7 +86,7 @@
         </div>
        </div><!--div-5-->
 </div><!--contenedor-->
-=======
+
 
 
 	<div id="datosEmpresa" class="modaloverlay">

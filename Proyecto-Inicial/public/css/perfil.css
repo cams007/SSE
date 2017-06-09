@@ -16,134 +16,18 @@
   display: none;
 }
 
-<<<<<<< HEAD
-.text-center{
-	font-family: 'Roboto', sans-serif;
-	font-size: 25px;
-	color: #6B6B6B;
-	position: relative;
-	top: 15px;
-}
-
 .hr {
-	max-width: 965px;
-	margin: 20px 27px 0;
-}
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: 0;
+	border-top: 1px solid rgba(0, 0, 0, 0.38);
 
-.column li a{
-	color: black;
-	padding-bottom: 8px;
-}
-
-
-/*#cssmenu > ul > li.active,*/
-#cssmenu > ul > li {
-	border-left: 16px solid rgba(255,255,255,0.1);
-
-}
-
-#cssmenu > ul > li:hover {
-	border-left: 16px solid #be3228;
-}
-#cssmenu > ul > li > a{
-	color: #6B6B6B;
-	font-size: 15px;
-	font-family: 'Roboto', sans-serif;
-}
-#cssmenu > ul > li > a:hover{
-	font-weight:bold;
-}
-
-#cssmenu > ul > li.active{
-	border-left: 16px solid #be3228;
-	font-weight:bold;
-}
-
-.contenedor {
-  width: 1024px;
-  height: 536px;
-  margin: 0 auto;
-  display: block;
-  text-align: center;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	flex-direction: column;
-}
-
-.div-1{
-	/*background: blue;*/
-}
-
-.div-2{
-	/*background: #E67E22;*/
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-
-.div-2-1{
-	/*background: #2874A6;*/
-	border-right: 1px solid gray;
-	height: 465px;
-	width: 248px;
-}
-
-.div-2-2{
-	/*background: #1D3B4F;*/
-	width: 520px;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.div-2-3{
-	position: relative;
-	top: 16px;
-	width: 200px;
-	background:#7F7B79;
-	background-image: url("../assets/images/biblioteca.JPG");
-	height: 160px;
-	border: 8px solid #5E352A;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-
-}
-
-.contenedor-info{
-	/*background: yellow;*/
-	position: relative;
-	top: 30px;
-	height: 60px;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-.icono{
-	/*background: pink;*/
-	width: 50px;
-	padding-right: 15px;
-}
-.info-perfil{
-	color: #6B6B6B;
-	font-size: 15px;
-	font-family: 'Roboto', sans-serif;
-}
-
-.addInput{
-	color: #be3228;
-=======
 .modaloverlay:target {
   display: block;
   opacity: 1;
   pointer-events: auto;
   z-index: 99999;
+
 }
 
 .modaloverlay .modal {
@@ -320,6 +204,41 @@ input.inputHome {
   background-image: url("../assets/images/home0.png");
 }
 
+
+  #cssmenu ul li:hover > ul {
+    visibility: visible;
+  }
+  #cssmenu ul li {
+    float: none;
+  }
+  #cssmenu ul ul li {
+    font-weight: normal;
+  }
+#dprof{
+	width: 30px;
+}
+  /* Custom CSS Styles */
+  #cssmenu {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    border-right: 1px solid rgba(0, 0, 0, 0.38);
+  }
+  #cssmenu ul a,
+  #cssmenu ul a:link,
+  #cssmenu ul a:visited {
+    display: block;
+    color: #848889;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  #cssmenu > ul {
+    float: none;
+  }
+  #cssmenu ul {
+    background: transparent;
+  }
+
 input.inputTel {
   background-image: url("../assets/images/phone.png");
 }
@@ -331,6 +250,7 @@ input.inputAddress {
 input.inputPuesto {
   background-image: url("../assets/images/empresa_puesto.png");
 }
+
 
 input.inputAntiguedad {
   background-image: url("../assets/images/empresa_antiguedad.png");
@@ -345,6 +265,11 @@ input:hover, input:focus {
   border: solid 2px #BE3228;
 }
 
+
+/*Este es un comentario*/
+input[type=checkbox]:checked ~ #email{
+    display: block;
+  }
 .label-icon {
   margin: 8px 0px 8px 0px;
   font-family: 'Roboto', sans-serif;
@@ -370,6 +295,7 @@ input:hover, input:focus {
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   color: #000;
+
 }
 
 .label-radio:before {
@@ -391,6 +317,13 @@ input:hover, input:focus {
   margin: 8px 0px 8px 0px;
 }
 
+
+textarea{
+  margin: 0px;
+  width: 614px;
+  height: 212px;
+  resize: none;
+  }
 td > .radio {
   margin-left: 3.5px;
 }
@@ -439,10 +372,7 @@ select:focus, select:hover {
 /* =========================================================
  5. CUSTOM CHECKBOX STYLE
 ========================================================= */
-input[type=checkbox] {
-  margin: 8px 0px 8px 0px;
-  display: none;
-}
+
 
 input[type=checkbox]:checked + label:before {
   content: "\2713";
@@ -458,6 +388,16 @@ input[type=checkbox]:checked + .label-radio:before {
 }
 
 .checkbox {
+
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0;
+    vertical-align: bottom;
+    position: relative;
+    top: -1px;
+    *overflow: hidden;
+
   margin: 8px 0px 8px 0px;
 }
 
@@ -512,28 +452,11 @@ textarea:focus, textarea:hover {
 }
 
 .content {
-  width: 65%;
-  height: 350px;
+  width: 75%;
+  height: 450px;
   text-align: left;
   margin-left: 5%;
   margin-bottom: 15px;
-  overflow-y: auto;
-}
-
-.content-lg {
-  width: 75%;
-  height: 350px;
-  text-align: left;
-  margin-left: 1%;
-  margin-bottom: 15px;
-  overflow-y: auto;
-}
-
-.content-sm {
-  width: 35%;
-  height: 350px;
-  text-align: left;
-  margin-left: 10%;
   overflow-y: auto;
 }
 
@@ -585,5 +508,4 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
->>>>>>> b207302be4a3d7c2cd055ef66b8a29b08998c7dd
 }
