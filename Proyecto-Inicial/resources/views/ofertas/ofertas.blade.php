@@ -8,15 +8,17 @@
 @section('content')
 	<div class="contenedor"><!--contenedor-->
 		<div class="div-1"><!--div-1-->
-				<h1 class="text-center">Ofertas laborales</h1>
+				<p class="text-center">Ofertas laborales</p>
 	      <hr class="hr">
 		</div><!--div-1-->
-	<div>	
+	<div>
 	<!-- Filtros -->
-	<div class="filtro_1">
+	<!-- <div class="filtro_1"> -->
+	<div class="div-2"><!--div-2-->
 		<p class="titulo_select">Ubicación</p>
-		<select name="ubicacion">
-
+	</div><!--div-2-->
+	<div class="div-3"><!--div-3-->
+		<select name="ubicacion" class="ubicacion">
 			<option selected="">Todas</option>
 		  	<option value="cdmx">CDMX</option>
 		  	<option value="oaxaca">Huajuapan de León</option>
@@ -34,7 +36,7 @@
 				<th>Empresa</th>
 				<th>Ubicación</th>
 				<th>Descripción</th>
-			</tr> 
+			</tr>
 			<tr>
 				<td class="text_red">Hoy</td>
 				<td>Desarrollador web</td>
@@ -52,21 +54,21 @@
 			<tr>
 				<td>09/marzo/2017</td>
 				<td>Tester</td>
-				<td><a href="#datosEmpresa"">KadaSoftware</a></td>
+				<td><a href="#datosEmpresa">KadaSoftware</a></td>
 				<td>Huajuapan de León, Oaxaca</td>
 				<td>Descripción del empleo... <a href="#detalleOferta" class="more_detail"> + </a></td>
 			</tr>
 			<tr>
 				<td>08/marzo/2017</td>
 				<td>Profesor física</td>
-				<td><a href="#datosEmpresa"">Universidad de Sonora</a></td>
+				<td><a href="#datosEmpresa">Universidad de Sonora</a></td>
 				<td>Hermosillo, Sonora</td>
 				<td>Profesor investigador de tiempo completo... <a href="#detalleOferta" class="more_detail"> + </a></td>
 			</tr>
 			<tr>
 				<td>02/marzo/2017</td>
 				<td>Gerente ADO Huajuapan</td>
-				<td><a href="#datosEmpresa"">ADO Huajuapan</a></td>
+				<td><a href="#datosEmpresa">ADO Huajuapan</a></td>
 				<td>Huajuapan de León, Oaxaca</td>
 				<td>Prestaciones superiores a las de... <a href="#detalleOferta" class="more_detail"> + </a></td>
 			</tr>
@@ -95,33 +97,33 @@
 		    <div>
 		    	<h1>Datos de empresa</h1>
 		    	<form action="#">
-			    	<div>	
-						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"> 
+			    	<div>
+						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
 						<span> {{" Apple Inc. "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
 						<span> {{" Cupertino, California, Estados Unidos "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
 						<span> {{" 1-800-275-2273 "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
 						<span> {{" info@apple.com "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
 						<span> {{" Tim Cook "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
 						<span> {{" CEO "}} </span>
 					</div>
 					<div class="btn-group">
@@ -139,8 +141,8 @@
 		    <div>
 		    	<h1>Detalles de oferta</h1>
 		    	<form action="#">
-			    	<div>	
-						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"> 
+			    	<div>
+						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
 						<h2> {{" Desarrollador web "}} </h2>
 						<h4>Grupo GSI</h4>
 					</div>
@@ -152,12 +154,12 @@
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
 						<span> {{" $25,000 - $30,000"}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
 						<span> {{" Ciudad de México (Distrito Federal) "}} </span>
 					</div>
 					<div class="btn-group">

@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.text-center{
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	color: #6B6B6B;
+	position: relative;
+	top: 15px;
+}
+.hr {
+	max-width: 965px;
+	margin: 20px 27px 0;
+}
+
+.contenedor{
+	width: 1024px;
+	height: 536px;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	/*align-items: center;*/
+}
+
+.div-1{
+	/*background: rgb(168, 127, 64);*/
+}
+
+.div-2{
+  /*background: rgb(47, 30, 209);*/
+  height: 430px;
+	padding-top: 16px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.historia{
+	/*background: rgb(214, 97, 249);*/
+	width: 800px;
+	height: 90px;
+	padding-bottom: 24px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.foto-1{
+	background-image: url("../assets/images/tipsC2.jpg");
+	width: 300px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.foto-2{
+	background-image: url("../assets/images/Taekwondo_2016.jpg");
+	width: 300px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.foto-3{
+	background-image: url("../assets/images/cartel08.jpg");
+	width: 300px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.foto-4{
+	background-image: url("../assets/images/tipsC1.jpg");
+	width: 300px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.div-2-2{
+	/*background: rgb(223, 230, 145);*/
+	/*width: 700px;*/
+	display: flex;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	flex-direction: column;
+}
+
+.titulo{
+	/*background: rgb(188, 237, 157);*/
+	font-family: 'Roboto', sans-serif;
+	font-size: 21px;
+	font-weight: 300;
+	color: #6B6B6B;
+	height: 30px;
+	text-align: left;
+	padding-left: 24px;
+}
+
+.texto-descripcion{
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #6B6B6B;
+	text-align: left;
+	padding-left: 24px;
+}
+
+
+.descripcion{
+	/*background: yellow;*/
+}
+.click{
+	/*background: rgb(77, 244, 109);*/
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.click, a{
+  color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
+}
+
+/*
+.texto-descripcion{
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	text-align: left;
+}
+.link{
+	background: rgb(77, 244, 109);
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: flex-end;
+}*/
+/*Paginación*/
+div.paginate a{
+	text-align: center;
+	padding: 5px 10px 12px 9px;
+	background-repeat: no-repeat;
+}
+div.paginate a.page{
+	background-image: url("../assets/images/paginator_page.png");
+}
+div.paginate a.active{
+	color: white;
+	background-image: url("../assets/images/paginator_active.png");
+}
+
+div.paginate a.forward{
+	position: relative;
+	top: 6px;
+}
+div.paginate a.back{
+	position: relative;
+	top: 6px;
+}
+a{
+  color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
+}
