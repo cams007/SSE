@@ -6,14 +6,13 @@
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">
 <link href="{{ url('css/empresa.css') }}" rel="stylesheet">
 <link href="{{ url('css/modal.css') }}" rel="stylesheet">
-
 @stop
 
 @section('content')
 	<div class="contenedor"><!--inicio contenedor-->
 
 		<div class="div-1"><!--inicio div-1-->
-			<h1 class="text-center">Datos de empresa</h1>
+			<h1>Datos de empresa</h1>
 			<hr class="hr">
 		</div><!--fin div-1-->
 

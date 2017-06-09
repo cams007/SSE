@@ -46,74 +46,6 @@
 	padding-bottom: 16px;
 }
 
-/* =========================================================
- 1. MODAL STYLE
-========================================================= */
-.modaloverlay {
-  background: rgba(0, 0, 0, 0.8);
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: opacity 400ms ease-in;
-  z-index: -1;
-  display: none;
-}
-
-.modaloverlay:target {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 99999;
-}
-
-.modaloverlay .modal {
-  background-color: white;
-  height: 75%;
-  width: 50%;
-  position: relative;
-  margin: 0 auto;
-  padding: 3em;
-  overflow-y: overlay;
-  -webkit-overflow-scrolling: touch;
-}
-
-@media (min-width: 60em) {
-  .modaloverlay .modal {
-    height: 50%;
-    margin: 5% auto;
-    max-height: 57em;
-    max-width: 33em;
-    width: 85%;
-  }
-}
-
-.modaloverlay .modal > iframe, .modaloverlay .modal > div {
-  border: none;
-  width: 100%;
-  height: 100%;
-}
-
-.modaloverlay .close {
-  background-color: white;
-  color: #6B6B6b;
-  font-size: 24px;
-  padding: 8px 12px;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  text-decoration: none;
-  top: 0;
-  z-index: 1;
-}
-
-.btn-group {
-  margin: 4% 19% 0 16.5%;
-}
-
 td.text_red {
 	color: #BE3228;
 }
@@ -162,31 +94,7 @@ div.paginate a.back{
 th.col_calif{
 	width: 100px;
 }
-table{
-  width: 97%;
-  /*margin: 0 5% 0 5%;*/
-  border-collapse: collapse;
-  border: #ACABAB 2px solid;
-  font-size: 12pt;
-}
-th{
-  color: #FFFFFF;
-  background-color: #6B6B6B;
-  border: #ACABAB 2px solid;
-  text-align: center;
-}
-tr, td {
-  height: 32px;
-  border: #ACABAB 2px solid;
-}
-tr:nth-child(even){ /*Filas pares*/
-  color: #6B6B6B;
-  background-color: #FFFFFF;
-}
-tr:nth-child(odd){ /*Filas nones*/
-  color: #6B6B6B; /*color: #FFFFFF;*/
-  background-color: #D8D8D8;
-}
+
 .ubicacion{
 	background-image: url("../assets/images/menu_hamburguesa.png");
 	background-repeat: no-repeat;
@@ -217,4 +125,26 @@ a{
   text-decoration: none;
   cursor:pointer; cursor: hand;
   margin-left: 10px;
+}
+
+/*Buscador*/
+div.buscador input{
+  width: 30%;
+  height: 32px;
+  padding: 0 0 0 32px;
+  margin-top: 20px;
+  border: 1 !important;    /*    Removes border*/
+    border: #ACABAB 2px solid;
+  background-image: url("../assets/images/search_gray.png");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 4px 4px;
+  box-shadow: 0 0 3px gray;
+  -moz-box-shadow: 0 0 3px gray;
+  -webkit-box-shadow: 0 0 3px gray;
+}
+div.buscador input:hover{
+  outline: none;
+  border: solid 1px #BE3228;
+  box-shadow: 0 0 5px 1px #969696;
 }

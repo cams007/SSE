@@ -10,12 +10,14 @@
 @section('content')
     <div class="contenedor"><!--contenedor-->
 
-        <p class="text-center">Directorio de empresas</p>
-        <hr class="hr">
+        <div class="div-1"><!--div-1-->
+			<p class="text-center">Directorio de empresas</p>
+	      	<hr class="hr">
+		</div><!--div-1-->
 
         <!-- Buscador -->
         <div class="buscador_empresas">
-            <input type="search" name="q" placeholder="Busacdor de empresas">
+            <input type="search" name="q" placeholder="Buscador de empresas">
         </div>
 
         <div class="listado"><!--listado-->
