@@ -1,78 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700,900);
-/* =========================================================
- 1. MODAL STYLE
-========================================================= */
-.modaloverlay {
-  background: rgba(0, 0, 0, 0.8);
-  bottom: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: opacity 400ms ease-in;
-  z-index: -1;
-  display: none;
-}
-
-.hr {
-	margin-top: 10px;
-	margin-bottom: 10px;
-	border: 0;
-	border-top: 1px solid rgba(0, 0, 0, 0.38);
-
-.modaloverlay:target {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 99999;
-
-}
-
-.modaloverlay .modal {
-  background-color: white;
-  height: 75%;
-  width: 50%;
-  position: relative;
-  margin: 0 auto;
-  padding: 3em;
-  overflow-y: overlay;
-  -webkit-overflow-scrolling: touch;
-}
-
-@media (min-width: 60em) {
-  .modaloverlay .modal {
-    height: 50%;
-    margin: 5% auto;
-    max-height: 57em;
-    max-width: 33em;
-    width: 85%;
-  }
-}
-
-.modaloverlay .modal > iframe, .modaloverlay .modal > div {
-  border: none;
-  width: 100%;
-  height: 100%;
-}
-
-.modaloverlay .close {
-  background-color: white;
-  color: #6B6B6b;
-  font-size: 24px;
-  padding: 8px 12px;
-  position: absolute;
-  right: 0;
-  text-align: center;
-  text-decoration: none;
-  top: 0;
-  z-index: 1;
-}
-
-.btn-group {
-  margin: 4% 19% 0 16.5%;
-}
 
 /* =========================================================
  2. ASIDE STYLE
@@ -140,7 +66,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   width: 200px;
-  border-right: 1px solid rgba(0, 0, 0, 0.38);
+  /*border-right: 1px solid rgba(0, 0, 0, 0.38);*/
 }
 
 #cssmenu ul {
@@ -174,6 +100,39 @@
   font-weight: bold;
   text-align: left;
 }
+  #cssmenu ul li:hover > ul {
+    visibility: visible;
+  }
+  #cssmenu ul li {
+    float: none;
+  }
+  #cssmenu ul ul li {
+    font-weight: normal;
+  }
+#dprof{
+	width: 30px;
+}
+  /* Custom CSS Styles */
+  #cssmenu {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    /*border-right: 1px solid rgba(0, 0, 0, 0.38);*/
+  }
+  #cssmenu ul a,
+  #cssmenu ul a:link,
+  #cssmenu ul a:visited {
+    display: block;
+    color: #848889;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  #cssmenu > ul {
+    float: none;
+  }
+  #cssmenu ul {
+    background: transparent;
+  }
 
 /* =========================================================
  3. CUSTOM INPUT STYLE
@@ -204,41 +163,6 @@ input.inputHome {
   background-image: url("../assets/images/home0.png");
 }
 
-
-  #cssmenu ul li:hover > ul {
-    visibility: visible;
-  }
-  #cssmenu ul li {
-    float: none;
-  }
-  #cssmenu ul ul li {
-    font-weight: normal;
-  }
-#dprof{
-	width: 30px;
-}
-  /* Custom CSS Styles */
-  #cssmenu {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    width: 200px;
-    border-right: 1px solid rgba(0, 0, 0, 0.38);
-  }
-  #cssmenu ul a,
-  #cssmenu ul a:link,
-  #cssmenu ul a:visited {
-    display: block;
-    color: #848889;
-    text-decoration: none;
-    font-weight: 300;
-  }
-  #cssmenu > ul {
-    float: none;
-  }
-  #cssmenu ul {
-    background: transparent;
-  }
-
 input.inputTel {
   background-image: url("../assets/images/phone.png");
 }
@@ -250,7 +174,6 @@ input.inputAddress {
 input.inputPuesto {
   background-image: url("../assets/images/empresa_puesto.png");
 }
-
 
 input.inputAntiguedad {
   background-image: url("../assets/images/empresa_antiguedad.png");
@@ -265,11 +188,6 @@ input:hover, input:focus {
   border: solid 2px #BE3228;
 }
 
-
-/*Este es un comentario*/
-input[type=checkbox]:checked ~ #email{
-    display: block;
-  }
 .label-icon {
   margin: 8px 0px 8px 0px;
   font-family: 'Roboto', sans-serif;
@@ -373,6 +291,10 @@ select:focus, select:hover {
  5. CUSTOM CHECKBOX STYLE
 ========================================================= */
 
+input[type=checkbox] {
+  margin: 8px 0px 8px 0px;
+  display: none;
+}
 
 input[type=checkbox]:checked + label:before {
   content: "\2713";
@@ -388,16 +310,14 @@ input[type=checkbox]:checked + .label-radio:before {
 }
 
 .checkbox {
-
-    width: 13px;
-    height: 13px;
-    padding: 0;
-    margin:0;
-    vertical-align: bottom;
-    position: relative;
-    top: -1px;
-    *overflow: hidden;
-
+  /*width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;*/
   margin: 8px 0px 8px 0px;
 }
 
@@ -496,9 +416,9 @@ label {
   display: none;
 }
 
-table {
+/*table {
   margin: 8px 0px 8px 0px;
-}
+}*/
 
 .column-3 {
   display: -webkit-box;
@@ -508,4 +428,74 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
+}
+
+
+
+
+.contenedor {
+  width: 1024px;
+  height: 536px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-1{
+  /*background: blue;*/
+}
+
+.div-2{
+  /*background: #E67E22;*/
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.div-2-1{
+  /*background: #2874A6;*/
+  border-right: 1px solid gray;
+  height: 465px;
+  width: 248px;
+}
+
+.div-2-2{
+  /*background: #1D3B4F;*/
+  width: 520px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-2-3{
+  position: relative;
+  top: 16px;
+  width: 200px;
+  background:#7F7B79;
+  background-image: url("../assets/images/biblioteca.JPG");
+  height: 160px;
+  border: 8px solid #5E352A;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+}
+
+.contenedor-info{
+  /*background: yellow;*/
+  position: relative;
+  top: 30px;
+  height: 60px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
