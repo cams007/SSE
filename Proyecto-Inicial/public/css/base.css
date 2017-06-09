@@ -253,14 +253,14 @@ button:hover{
   max-width: 50%;
   max-height: 50%;
 }
-
+/*
 .link,
 a{
   color: #be3228;
   text-decoration: none;
   cursor:pointer; cursor: hand;
   margin-left: 10px;
-}
+}*/
 
 /* NavBar */
   .menucontainer {
