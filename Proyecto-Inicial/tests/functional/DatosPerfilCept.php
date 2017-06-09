@@ -1,4 +1,4 @@
-´´<?php 
+<?php 
 $I = new FunctionalTester($scenario);
 $I->am('un egresado');
 $I->wantTo('llenar los datos de mi perfil');

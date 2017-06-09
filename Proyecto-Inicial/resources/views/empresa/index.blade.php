@@ -5,6 +5,7 @@
 @section('style')
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">
 <link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 
 @stop
 
