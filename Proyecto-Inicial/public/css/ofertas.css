@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 .text-center{
 	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
@@ -32,12 +33,12 @@
 }
 .div-3{
 	width: 450px;
-	/*background: pink;*/
-	padding-left: 32px;
+	padding-left: 8px;
+	padding-bottom: 16px;
 }
 .div-4{
 	/*background: #1BAF63;*/
-	height: 400px;
+	height: 355px;
 	padding-left: 32px;
 }
 .div-5{
@@ -113,7 +114,6 @@
   margin: 4% 19% 0 16.5%;
 }
 
-
 td.text_red {
 	color: #BE3228;
 }
@@ -135,11 +135,6 @@ td a.more_detail {
   float: left;
   margin: 0px 0px 10px 10px;
 }
-
-
-
-
-
 
 /*Paginación*/
 div.paginate a{
@@ -198,9 +193,10 @@ tr:nth-child(odd){ /*Filas nones*/
 	background-position: 3px 7px;
 }
 div select{
-  width: 100%;
+  width: 400px;
   height: 32px;
   padding: 0 0 0 32px;
+	background: white;
   -webkit-appearance: none;        /*Removes default chrome and safari style */
   -moz-appearance: none;          /* Removes Default Firefox style*/
 	box-shadow: 0 0 3px gray;
@@ -208,10 +204,17 @@ div select{
 	-webkit-box-shadow: 0 0 3px gray;
 }
 
-div p.titulo_select{
+.titulo_select{
   margin: 0;
   text-align: left;
 	color: #6B6B6B;
 	font-size: 15px;
 	font-family: 'Roboto', sans-serif;
+}
+
+a{
+  color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
 }

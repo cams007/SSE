@@ -54,11 +54,11 @@
 	display: flex;
 	flex-direction: column;
 }
-/*
+
 .div-1{
-	background: blue;
+	/*background: blue;*/
 }
-*/
+
 .div-2{
 	/*background: #E67E22;*/
 	display: -webkit-flex;
@@ -84,6 +84,7 @@
 
 .div-2-2-1{
 	/*background: #1D4F40;*/
+	height: 48px;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -91,16 +92,18 @@
 }
 
 #search {
-		height: 10px;
+		height: 20px;
+		width: 220px;
     background-image: url("../assets/images/search_gray.png");
 		background-size: 20px 20px;
     background-repeat: no-repeat;
 		background-position: 3px 7px;
-    text-indent: 20px;
+    text-indent: 30px;
 		position: relative;
 		top: 8px;
-		right: 13px;
-		padding-top: 10px;
+		right: 32px;
+		padding-top: 6px;
+		padding-bottom: 4px;
 		color: #797D7F;
 		font-family: 'Roboto', sans-serif;
 		box-shadow: 0 2px 3px gray;
@@ -295,4 +298,11 @@ div.paginate a.forward{
 div.paginate a.back{
 	position: relative;
 	top: 8px;
+}
+
+a{
+  color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
 }
