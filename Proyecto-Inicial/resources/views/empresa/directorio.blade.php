@@ -5,6 +5,7 @@
 @section('style')
 <!--<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">-->
 <link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 
 @section('content')
     <div class="contenedor"><!--contenedor-->
@@ -23,7 +24,7 @@
 
             <div class="estrella-empresa"><!--estrella-empresa-->
                     <div class="nombre_empresa">
-                      <a href="{{url('datos_empresa')}}">KadaSoftware</a>
+                      <a href="#datosEmpresa">KadaSoftware</a>
                     </div>
                     <div class="calificacion_empresa">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -42,7 +43,7 @@
 
             <div class="estrella-empresa"><!--estrella-empresa-->
                     <div class="nombre_empresa">
-                      <a href="{{url('datos_empresa')}}">KadaSoftware</a>
+                      <a href="#datosEmpresa">KadaSoftware</a>
                     </div>
                     <div class="calificacion_empresa">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -61,7 +62,7 @@
 
             <div class="estrella-empresa"><!--estrella-empresa-->
                     <div class="nombre_empresa">
-                      <a href="{{url('datos_empresa')}}">KadaSoftware</a>
+                      <a href="#datosEmpresa">KadaSoftware</a>
                     </div>
                     <div class="calificacion_empresa">
                         <img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -89,7 +90,7 @@
             </div>
     </div><!--contenedor-->
 
-<!--
+
 	<div id="datosEmpresa" class="modaloverlay">
 	  	<div class="modal">
 		    <a href="#close" class="close">&times;</a>
@@ -134,5 +135,4 @@
 		    </div>
 		</div>
 	</div>
--->
 @stop
