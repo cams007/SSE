@@ -31,12 +31,9 @@
 	 <div class="div-2-2"><!--inicio div-2-2-->
 		 <!--<div class="column content">-->
 		 <div class="div-2-2-1"> <!--inicio div-2-2-1-->
-
-			 <div class="filtro_3">
-
-				 <input type="text" name="busquedaEvento" id="search" placeholder="Buscador de eventos" class="inputBusqueda">
-			 </div>
-
+				 <div class="search">
+		            <input type="search" name="q" placeholder="Buscar">
+		        </div>
 		 </div><!--fin div-2-2-1-->
 
 		 <div class="div-2-2-2"><!--inicio div-2-2-2-->

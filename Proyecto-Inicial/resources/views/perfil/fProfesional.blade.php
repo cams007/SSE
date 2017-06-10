@@ -7,13 +7,22 @@
 @stop
 
 @section('content')
-	<h1>Mi perfil</h1>
-	<hr class="hr">
+
+<div class="contenedor"><!--inicio contenedor-->
+	<div class="div-1"><!--inicio div-1-->
+		<!-- <p>Mi Perfil</p> -->
+		<h1>Mi perfil</h1>
+		<hr class="hr">
+	</div><!--fin div-1-->
+
 	<div class="clearfix">
 
-		<aside class="column" id="cssmenu">
-			@include('partials.aside')
-		</aside>
+		<div class="div-2"><!--inicio div-2-->
+			<div class="div-2-1"><!--inicio div-2-1-->
+			<aside id="cssmenu" class="column hrV">
+				@include('partials.aside')
+			</aside>
+		</div><!--fin div-2-1-->
 		
 		<div class="column content">	
 			<form method="POST" action="{{url('perfil/fprofesional')}}">			
@@ -445,6 +454,7 @@
 			</form>
 		</div>
 	</div>
+</div><!--fin contenedor-->
 @stop
 
 {{-- Crear base de datos de imagenes, 20 para train, 50 para test, reconocer y detectar rostro --}}
