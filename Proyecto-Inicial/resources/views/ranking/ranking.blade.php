@@ -4,6 +4,7 @@
 @section('title', 'Ranking de empresas')
 
 @section('style')
+<<<<<<< HEAD
 <link href="{{ url('css/ranking.css') }}" rel="stylesheet">
 
 @section('content')
@@ -54,6 +55,46 @@
 			</div><!--div-3-3-->
 		</div><!--div-3-->
 
+=======
+	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
+	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<link href="{{ url('css/table.css') }}" rel="stylesheet">
+@stop
+
+@section('content')
+	<div class="contenedor"><!--contenedor-->
+
+		<div class="div-1"><!--div-1-->
+			<p class="text-center">Ranking de empresas</p>
+	      	<hr class="hr">
+		</div><!--div-1-->
+	
+
+		<!-- Filtros -->
+		<div class="filtro_3">
+			<p class="titulo_select">Calificación</p>
+			<select name="Calificacion">
+				<option selected="">Todas</option>
+				<option value="saab">Menor a 2.5</option>
+				<option value="saab">Mayor o igual a 2.5</option>
+			</select>
+		</div>
+		<div class="filtro_3">
+			<p class="titulo_select">Ubicación</p>
+			<select name="Ubicacion">
+				<option selected="">Todas</option>
+			  	<option value="cdmx">CDMX</option>
+			  	<option value="oaxaca">Huajuapan de León</option>
+			  	<option value="oaxaca">Guadalajara, Jalisco</option>
+			  	<option value="oaxaca">Pruebla, Puebla</option>
+			</select>
+		</div>
+		<div class="buscador">
+            <input type="search" name="q" placeholder="Buscar">
+        </div>
+		<br>
+>>>>>>> 13baa9f0e6bb83ce8f5c534d5dded8abc098ea66
 		<!-- Resultados -->
 		<div class="div-4"><!--div-4-->
 			<div class="div-4-1"><!--div-4-1-->
@@ -157,7 +198,12 @@
 	      	<a class="page" href="#">5</a>
 	      	<a class="forward" href="#"><img src="{{ url('assets/images/paginator_forward.png') }}"></a>
 		</div>
+<<<<<<< HEAD
 	</div><!--div-5-->
+=======
+	</div><!--contenedor-->
+
+>>>>>>> 13baa9f0e6bb83ce8f5c534d5dded8abc098ea66
 
 </div><!--contenedor-->
 
