@@ -4,45 +4,59 @@
 @section('title', 'Ranking de empresas')
 
 @section('style')
-	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
-	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-	<link href="{{ url('css/table.css') }}" rel="stylesheet">
+
+<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
 @stop
-
 @section('content')
-	<div class="contenedor"><!--contenedor-->
-
-		<div class="div-1"><!--div-1-->
+	<div class="contenedor"><!-- contenedor -->
+		<div class="div-1">
 			<p class="text-center">Ranking de empresas</p>
-	      	<hr class="hr">
+			<hr class="hr">
 		</div><!--div-1-->
-	
 
+		<div class="div-2"><!--div-2-->
+			<div class="div-2-1"><!--div-2-1-->
+				<p class="titulo_select">Categoría:</p>
+			</div><!--div-2-1-->
+			<div class="div-2-2"><!--div-2-2-->
+				<p class="titulo_select">Calificación:</p>
+			</div><!--div-2-2-->
+			<div class="div-2-3"><!--div-2-3-->
+				<p class="titulo_select">Ubicación:</p>
+			</div><!--div-2-3-->
+		</div><!--div-2-->
+
+		<div class="div-3"><!--div-3-->
 		<!-- Filtros -->
-		<div class="filtro_3">
-			<p class="titulo_select">Calificación</p>
-			<select name="Calificacion">
-				<option selected="">Todas</option>
-				<option value="saab">Menor a 2.5</option>
-				<option value="saab">Mayor o igual a 2.5</option>
-			</select>
-		</div>
-		<div class="filtro_3">
-			<p class="titulo_select">Ubicación</p>
-			<select name="Ubicacion">
-				<option selected="">Todas</option>
-			  	<option value="cdmx">CDMX</option>
-			  	<option value="oaxaca">Huajuapan de León</option>
-			  	<option value="oaxaca">Guadalajara, Jalisco</option>
-			  	<option value="oaxaca">Pruebla, Puebla</option>
-			</select>
-		</div>
-		<div class="buscador">
-            <input type="search" name="q" placeholder="Buscar">
-        </div>
-		<br>
-		<!-- Resultados -->
+			<div class="div-3-1"><!--div-3-1-->
+				<select name="Giro" class="seleccion">
+					<option selected="">Todas</option>
+			  	<option value="volvo">Consultoría</option>
+					<option value="saab">Desarrollo de software</option>
+					<option value="saab">Desarrollo web</option>
+					<option value="saab">Desarrollo movil</option>
+				</select>
+			</div><!--div-3-1-->
+			<div class="div-3-2"><!--div-3-2-->
+				<select name="Calificacion" class="seleccion">
+					<option selected="">Todas</option>
+					<option value="saab">Menor a 2.5</option>
+					<option value="saab">Mayor o igual a 2.5</option>
+				</select>
+			</div><!--div-3-2-->
+			<div class="div-3-3"><!--div-3-3-->
+				<select name="Ubicacion" class="seleccion">
+					<option selected="">Todas</option>
+			  		<option value="cdmx">CDMX</option>
+			  		<option value="oaxaca">Huajuapan de León</option>
+			  		<option value="oaxaca">Guadalajara, Jalisco</option>
+			  		<option value="oaxaca">Pruebla, Puebla</option>
+				</select>
+			</div><!--div-3-3-->
+		</div><!--div-3-->
+		
+		<div class="div-4"><!--div-4-->
+			<div class="div-4-1"><!--div-4-1-->
 		<table>
 			<tr>
 				<th>Lugar</th>
@@ -73,7 +87,7 @@
 					<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
 					<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 			  	</td>
-			  	<td ><a href="#datosEmpresa"">Veureka</a></td>
+			  	<td ><a href="#datosEmpresa">Veureka</a></td>
 			  	<td>Huajuapan de León, Oax.</td>
 			  	<td>Desarrollo de software</td>
 			</tr>
@@ -130,6 +144,9 @@
 			  	<td>Desarrollo</td>
 			</tr>
 		</table>
+	</div><!--div-4-1-->
+	</div><!--div-4-->
+	<div class="div-5"><!--div-5-->
 		<!-- Paginación -->
 		<div class="paginate">
 			<a class="back" href="#"><img src="{{ url('assets/images/paginator_back.png') }}"></a>
@@ -140,9 +157,9 @@
 	      	<a class="page" href="#">5</a>
 	      	<a class="forward" href="#"><img src="{{ url('assets/images/paginator_forward.png') }}"></a>
 		</div>
-	</div><!--contenedor-->
 
-
+	</div><!--div-5-->
+</div><!--contenedor-->
 
 	<div id="datosEmpresa" class="modaloverlay">
 	  	<div class="modal">
@@ -150,33 +167,33 @@
 		    <div>
 		    	<h1>Datos de empresa</h1>
 		    	<form action="#">
-			    	<div>	
-						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"> 
+			    	<div>
+						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
 						<span> {{" Apple Inc. "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
 						<span> {{" Cupertino, California, Estados Unidos "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
 						<span> {{" 1-800-275-2273 "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
 						<span> {{" info@apple.com "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
 						<span> {{" Tim Cook "}} </span>
 					</div>
 
 					<div>
-						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos"> 
+						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
 						<span> {{" CEO "}} </span>
 					</div>
 
@@ -201,5 +218,5 @@
 		    </div>
 		</div>
 	</div>
-	
+
 @stop
