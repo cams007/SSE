@@ -15,7 +15,7 @@
 	<!-- Filtros -->
 	<!-- <div class="filtro_1"> -->
 	<div class="div-2"><!--div-2-->
-		<p class="titulo_select">Ubicación</p>
+		<p class="titulo_select">Ubicación:</p>
 	</div><!--div-2-->
 	<div class="div-3"><!--div-3-->
 		<select name="ubicacion" class="ubicacion">
