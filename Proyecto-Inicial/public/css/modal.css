@@ -1,6 +1,14 @@
 /* =========================================================
  1. MODAL STYLE
 ========================================================= */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.txt{
+	font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	color: #6B6B6B;
+	position: relative;
+  top: 0;
+}
 .modaloverlay {
   background: rgba(0, 0, 0, 0.8);
   bottom: 0;
@@ -13,6 +21,7 @@
   transition: opacity 400ms ease-in;
   z-index: -1;
   display: none;
+
 }
 
 .modaloverlay:target {
@@ -20,6 +29,7 @@
   opacity: 1;
   pointer-events: auto;
   z-index: 99999;
+
 }
 
 .modaloverlay .modal {
@@ -29,8 +39,9 @@
   position: relative;
   margin: 0 auto;
   padding: 3em;
-  overflow-y: overlay;
+  /*overflow-y: overlay;*/
   -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
 }
 
 @media (min-width: 60em) {
@@ -45,8 +56,8 @@
 
 .modaloverlay .modal > iframe, .modaloverlay .modal > div {
   border: none;
-  width: 100%;
-  height: 100%;
+  /*width: 100%;
+  height: 100%;*/
 }
 
 .modaloverlay .close {
@@ -62,6 +73,45 @@
   z-index: 1;
 }
 
-.btn-group {
+/*.btn-group {
   margin: 4% 19% 0 16.5%;
+}*/
+
+.parte-1{
+  /*background: rgb(195, 140, 18);*/
+  height: 50px;
+}
+
+.parte-2{
+  /*background: rgb(14, 166, 15);*/
+  height: 280px;
+}
+
+.parte-3{
+  /*background: rgb(23, 3, 17);*/
+}
+
+.item-1{
+  /*background: rgb(198, 169, 188);*/
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+.icono{
+  /*background: rgb(131, 126, 249);*/
+  width: 70px;
+}
+.descripcion{
+  /*background: rgb(124, 214, 6);*/
+  width: 300px;
+}
+.texto-descripcion{
+  text-align: left;
+  padding-left: 24px;
+  padding-top: 8px;
+  font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+	color: #6B6B6B;
 }

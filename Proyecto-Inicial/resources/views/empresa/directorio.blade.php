@@ -93,48 +93,80 @@
     </div><!--contenedor-->
 
 
-	<div id="datosEmpresa" class="modaloverlay">
-	  	<div class="modal">
-		    <a href="#close" class="close">&times;</a>
-		    <div>
-		    	<h1>Datos de empresa</h1>
-		    	<form action="{{url('datos_empresa')}}" method="get">
-			    	<div>
-						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
-						<span> {{" Apple Inc. "}} </span>
-					</div>
+    <div id="datosEmpresa" class="modaloverlay">
+  	  	<div class="modal">
+  		    <a href="#close" class="close">&times;</a>
+  		    <!-- <div> -->
+  				<div class="parte-1"><!--parte-1-->
+  		    	<p class="txt">Datos de empresa</p>
+  				</div><!--parte-1-->
 
-					<div>
-						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
-						<span> {{" Cupertino, California, Estados Unidos "}} </span>
-					</div>
+  		    	<!-- <form action="#"> -->
+  					<div class="parte-2"><!--parte-2-->
 
-					<div>
-						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-						<span> {{" 1-800-275-2273 "}} </span>
-					</div>
+  			    	<div class="item-1"><!--item-1-->
+  							<div class="icono"><!--icono-->
+  								<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
+  							</div><!--icono-->
+  							<div class="descripcion"><!--descripcion-->
+  								<p class="texto-descripcion"> {{" Apple Inc. "}} </p>
+  							</div><!--descripcion-->
+  					</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-						<span> {{" info@apple.com "}} </span>
-					</div>
+  					<div class="item-1"><!--item-1-->
+  						<div class="icono"><!--icono-->
+  							<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
+  						</div><!--icono-->
+  						<div class="descripcion"><!--descripcion-->
+  							<p class="texto-descripcion">{{" Cupertino, California, Estados Unidos "}}</p>
+  						</div><!--descripcion-->
+  				</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
-						<span> {{" Tim Cook "}} </span>
-					</div>
+  				<div class="item-1"><!--item-1-->
+  					<div class="icono"><!--icono-->
+  						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
+  					</div><!--icono-->
+  					<div class="descripcion"><!--descripcion-->
+  						<p class="texto-descripcion"> {{" 1-800-275-2273 "}} </p>
+  					</div><!--descripcion-->
+  			</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
-						<span> {{" CEO "}} </span>
-					</div>
+  			<div class="item-1"><!--item-1-->
+  				<div class="icono"><!--icono-->
+  					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
+  				</div><!--icono-->
+  				<div class="descripcion"><!--descripcion-->
+  					<p class="texto-descripcion">{{" info@apple.com "}} </p>
+  				</div><!--descripcion-->
+  		</div><!--item-1-->
 
-					<div class="btn-group">
-						<button type="button" class="flat-secundario">Cancelar</button>
-						<button type="submit" class="flat aling-right">Ver</button>
-					</div>
-		    	</form>
-		    </div>
-		</div>
-	</div>
+  		<div class="item-1"><!--item-1-->
+  			<div class="icono"><!--icono-->
+  				<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
+  			</div><!--icono-->
+  			<div class="descripcion"><!--descripcion-->
+  				<p class="texto-descripcion">{{" Tim Cook "}}  </p>
+  			</div><!--descripcion-->
+  	</div><!--item-1-->
+
+  		<div class="item-1"><!--item-1-->
+  			<div class="icono"><!--icono-->
+  				<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
+  			</div><!--icono-->
+  			<div class="descripcion"><!--descripcion-->
+  				<p class="texto-descripcion">{{" CEO "}}   </p>
+  			</div><!--descripcion-->
+  		</div><!--item-1-->
+  			</div><!--parte-2-->
+
+  				<div class="parte-3"><!--parte-3-->
+  					<div class="btn-group">
+  						<button type="button" class="flat-secundario">Salir</button>
+  					</div>
+  				</div><!--parte-3-->
+  		    	<!-- </form> -->
+  		    <!-- </div> -->
+  		</div>
+  	</div>
+
 @stop

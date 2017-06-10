@@ -21,26 +21,38 @@
 
 
 /*#cssmenu > ul > li.active,*/
+#cssmenu ul li{
+	width: 200px;
+}
 #cssmenu > ul > li {
-	border-left: 16px solid rgba(255,255,255,0.1);
-
+	/*border-left: 8px solid rgba(255,255,255,0.1);*/
+	/*border-left: 8px solid #be3228;*/
+	/*background: black;*/
 }
 
 #cssmenu > ul > li:hover {
-	border-left: 16px solid #be3228;
+	/*border-left: 8px solid #be3228;*/
+	background: #BE3228;
 }
 #cssmenu > ul > li > a{
 	color: #6B6B6B;
+	text-align: left;
 	font-size: 15px;
 	font-family: 'Roboto', sans-serif;
 }
 #cssmenu > ul > li > a:hover{
-	font-weight:bold;
+	/*font-weight:bold;*/
+	color: white;
 }
 
 #cssmenu > ul > li.active{
-	border-left: 16px solid #be3228;
-	font-weight:bold;
+	/*border-left: 8px solid #be3228;*/
+	background: #be3228;
+	/*font-weight:bold;*/
+}
+#cssmenu > ul > li.active > a{
+	color: white;
+	font-weight: bold;
 }
 
 .contenedor {
@@ -95,7 +107,8 @@ div.search input{
 	width: 220px;
 	height: 32px;
 	padding: 0 0 0 32px;
-	margin-top: 20px;
+	margin-top: 8px;
+	margin-right: 28px;
 	border: 1 !important;    /*    Removes border*/
   	border: #ACABAB 2px solid;
 	background-image: url("../assets/images/search_gray.png");
@@ -255,9 +268,6 @@ div.search input:hover{
 	background: #BE3228;
 	color: white;
 	margin-bottom: 8px;
-	box-shadow: 0 0 3px gray;
-	-moz-box-shadow: 0 0 3px gray;
-	-webkit-box-shadow: 0 0 3px gray;
 }
 .no{
  margin-left: 10px;
@@ -265,9 +275,6 @@ div.search input:hover{
  background: #BE3228;
  color: white;
  margin-bottom: 8px;
- box-shadow: 0 0 3px gray;
- -moz-box-shadow: 0 0 3px gray;
- -webkit-box-shadow: 0 0 3px gray;
 }
 .no:hover{
 	background: #5E352A;
