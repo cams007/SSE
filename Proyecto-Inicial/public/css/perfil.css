@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700,900);
+/*<<<<<<< HEAD*/
 /* =========================================================
  1. MODAL STYLE
 ========================================================= */
@@ -16,19 +17,19 @@
   display: none;
 }
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 .hr {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 0;
 	border-top: 1px solid rgba(0, 0, 0, 0.38);
-=======
+/*=======*/
 .modaloverlay:target {
   display: block;
   opacity: 1;
   pointer-events: auto;
   z-index: 99999;
->>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
+/*>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2*/
 }
 
 .modaloverlay .modal {
@@ -74,6 +75,8 @@
 .btn-group {
   margin: 4% 19% 0 16.5%;
 }
+/*=======*/
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 
 /* =========================================================
  2. ASIDE STYLE
@@ -141,7 +144,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   width: 200px;
-  border-right: 1px solid rgba(0, 0, 0, 0.38);
+  /*border-right: 1px solid rgba(0, 0, 0, 0.38);*/
 }
 
 #cssmenu ul {
@@ -175,6 +178,39 @@
   font-weight: bold;
   text-align: left;
 }
+  #cssmenu ul li:hover > ul {
+    visibility: visible;
+  }
+  #cssmenu ul li {
+    float: none;
+  }
+  #cssmenu ul ul li {
+    font-weight: normal;
+  }
+#dprof{
+	width: 30px;
+}
+  /* Custom CSS Styles */
+  #cssmenu {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    /*border-right: 1px solid rgba(0, 0, 0, 0.38);*/
+  }
+  #cssmenu ul a,
+  #cssmenu ul a:link,
+  #cssmenu ul a:visited {
+    display: block;
+    color: #848889;
+    text-decoration: none;
+    font-weight: 300;
+  }
+  #cssmenu > ul {
+    float: none;
+  }
+  #cssmenu ul {
+    background: transparent;
+  }
 
 /* =========================================================
  3. CUSTOM INPUT STYLE
@@ -205,7 +241,8 @@ input.inputHome {
   background-image: url("../assets/images/home0.png");
 }
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
+/*<<<<<<< HEAD*/
   #cssmenu ul li:hover > ul {
     visibility: visible;
   }
@@ -239,7 +276,9 @@ input.inputHome {
   #cssmenu ul {
     background: transparent;
   }
-=======
+/*=======*/
+/*=======*/
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 input.inputTel {
   background-image: url("../assets/images/phone.png");
 }
@@ -251,7 +290,10 @@ input.inputAddress {
 input.inputPuesto {
   background-image: url("../assets/images/empresa_puesto.png");
 }
->>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
+/*<<<<<<< HEAD*/
+/*>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2*/
+/*=======*/
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 
 input.inputAntiguedad {
   background-image: url("../assets/images/empresa_antiguedad.png");
@@ -266,11 +308,14 @@ input:hover, input:focus {
   border: solid 2px #BE3228;
 }
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
+/*<<<<<<< HEAD*/
 /*Este es un comentario*/
 input[type=checkbox]:checked ~ #email{
     display: block;
+/*=======
 =======
+>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 .label-icon {
   margin: 8px 0px 8px 0px;
   font-family: 'Roboto', sans-serif;
@@ -296,7 +341,11 @@ input[type=checkbox]:checked ~ #email{
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   color: #000;
->>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
+/*<<<<<<< HEAD*/
+/*>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2*/
+/*=======*/
+/**/
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 }
 
 .label-radio:before {
@@ -318,13 +367,21 @@ input[type=checkbox]:checked ~ #email{
   margin: 8px 0px 8px 0px;
 }
 
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
+/*<<<<<<< HEAD*/
+/*=======*/
+
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 textarea{
   margin: 0px;
   width: 614px;
   height: 212px;
   resize: none;
+/*<<<<<<< HEAD
 =======
+=======*/
+  }
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 td > .radio {
   margin-left: 3.5px;
 }
@@ -373,10 +430,14 @@ select:focus, select:hover {
 /* =========================================================
  5. CUSTOM CHECKBOX STYLE
 ========================================================= */
+
 input[type=checkbox] {
   margin: 8px 0px 8px 0px;
   display: none;
+/*<<<<<<< HEAD
 >>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
+=======
+>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 }
 
 input[type=checkbox]:checked + label:before {
@@ -393,16 +454,27 @@ input[type=checkbox]:checked + .label-radio:before {
 }
 
 .checkbox {
-<<<<<<< HEAD
+/*<<<<<<< HEAD
+<<<<<<< HEAD*/
     width: 13px;
     height: 13px;
     padding: 0;
-    margin:0;
+    /*margin:0;*/
     vertical-align: bottom;
     position: relative;
     top: -1px;
     *overflow: hidden;
-=======
+/*=======
+=======*/
+  /*width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;*/
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
   margin: 8px 0px 8px 0px;
 }
 
@@ -501,9 +573,9 @@ label {
   display: none;
 }
 
-table {
+/*table {
   margin: 8px 0px 8px 0px;
-}
+}*/
 
 .column-3 {
   display: -webkit-box;
@@ -513,5 +585,78 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-flow: row;
           flex-flow: row;
+/*<<<<<<< HEAD
 >>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
+=======*/
+}
+
+
+
+
+.contenedor {
+  width: 1024px;
+  height: 536px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-1{
+  /*background: blue;*/
+}
+
+.div-2{
+  /*background: #E67E22;*/
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.div-2-1{
+  /*background: #2874A6;*/
+  border-right: 1px solid gray;
+  height: 465px;
+  width: 248px;
+}
+
+.div-2-2{
+  /*background: #1D3B4F;*/
+  width: 520px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.div-2-3{
+  position: relative;
+  top: 16px;
+  width: 200px;
+  background:#7F7B79;
+  background-image: url("../assets/images/biblioteca.JPG");
+  height: 160px;
+  border: 8px solid #5E352A;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+}
+
+.contenedor-info{
+  /*background: yellow;*/
+  position: relative;
+  top: 30px;
+  height: 60px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+/*>>>>>>> 5b808344407bbbb4b005f8ce2049805efc05e688*/
 }
