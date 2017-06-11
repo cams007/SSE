@@ -1,118 +1,211 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700,900);
+/* =========================================================
+ 1. MODAL STYLE
+========================================================= */
+.modaloverlay {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 400ms ease-in;
+  z-index: -1;
+  display: none;
+}
 
+<<<<<<< HEAD
 .hr {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 0;
 	border-top: 1px solid rgba(0, 0, 0, 0.38);
+=======
+.modaloverlay:target {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 99999;
+>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
 }
 
-#global {
-  height: 300px;
-  width: 200px;
-  border: 1px solid #ddd;
-  background: #f1f1f1;
-  overflow-y: scroll;
-}
-#mensajes {
-  height: auto;
-}
-.texto {
-  padding:4px;
-  background:#fff;
+.modaloverlay .modal {
+  background-color: white;
+  height: 75%;
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+  padding: 3em;
+  overflow-y: overlay;
+  -webkit-overflow-scrolling: touch;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+@media (min-width: 60em) {
+  .modaloverlay .modal {
+    height: 50%;
+    margin: 5% auto;
+    max-height: 57em;
+    max-width: 33em;
+    width: 85%;
+  }
 }
 
-.column {
-    float: left;
-    padding: 15px;
+.modaloverlay .modal > iframe, .modaloverlay .modal > div {
+  border: none;
+  width: 100%;
+  height: 100%;
 }
 
-.content{
-  width: 65%;
-  height: 350px;
-  text-align: left;
-  margin-left: 5%;
-  margin-bottom: 15px;
-  overflow-y: scroll;
+.modaloverlay .close {
+  background-color: white;
+  color: #6B6B6b;
+  font-size: 24px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  z-index: 1;
 }
 
-.content{
-  width: 65%;
-  height: 350px;
-  text-align: left;
-  margin-left: 5%;
-  margin-bottom: 15px;
-  overflow-y: scroll;
+.btn-group {
+  margin: 4% 19% 0 16.5%;
 }
 
-.content-sm {
-  width: 35%;
-  height: 350px;
-  text-align: left;
-  margin-left: 10%;
-  overflow-y: scroll;
-}
-
-.link{
-  color: #be3228;
-  cursor:pointer; cursor: hand;
-}
-
+/* =========================================================
+ 2. ASIDE STYLE
+========================================================= */
 /* Aside */
-  /* Starter CSS for Flyout Menu */
+/* Starter CSS for Flyout Menu */
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
 
-  #cssmenu,
-  #cssmenu ul,
-  #cssmenu ul li,
-  #cssmenu ul ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  #cssmenu ul {
-    position: relative;
-    z-index: 597;
-    float: left;
-  }
-  #cssmenu ul li {
-    float: left;
-    min-height: 1px;
-    line-height: 1em;
-    vertical-align: middle;
-  }
+#cssmenu ul {
+  position: relative;
+  z-index: 597;
+  float: left;
+}
 
-  #cssmenu ul li.active,
-  #cssmenu ul li.hover,
-  #cssmenu ul li:hover {
-    position: relative;
-    z-index: 599;
-    cursor: default;
-  }
-  #cssmenu ul ul {
-    margin-top: 1px;
-    visibility: hidden;
-    position: absolute;
-    top: 1px;
-    left: 99%;
-    z-index: 598;
-    width: 100%;
-  }
-  #cssmenu ul ul li {
-    float: none;
-  }
-  #cssmenu ul ul ul {
-    top: 1px;
-    left: 99%;
-  }
+#cssmenu ul li {
+  float: left;
+  min-height: 1px;
+  line-height: 1em;
+  vertical-align: middle;
+}
 
+#cssmenu ul li.active, #cssmenu ul li.hover, #cssmenu ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
 
+#cssmenu ul li:hover > ul {
+  visibility: visible;
+}
+
+#cssmenu ul ul {
+  margin-top: 1px;
+  visibility: hidden;
+  position: absolute;
+  top: 1px;
+  left: 99%;
+  z-index: 598;
+  width: 100%;
+}
+
+#cssmenu ul ul li {
+  font-weight: normal;
+}
+
+#cssmenu ul ul ul {
+  top: 1px;
+  left: 99%;
+}
+
+#cssmenu ul ul li {
+  float: none;
+}
+
+/* Custom CSS Styles */
+#cssmenu {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 200px;
+  border-right: 1px solid rgba(0, 0, 0, 0.38);
+}
+
+#cssmenu ul {
+  background: transparent;
+}
+
+#cssmenu ul a,
+#cssmenu ul a:link {
+  display: block;
+  color: #848889;
+  text-align: left;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+#cssmenu > ul {
+  float: none;
+}
+
+#cssmenu > ul > li > a {
+  padding: 10px 20px;
+}
+
+#cssmenu > ul > li.active, #cssmenu > ul > li:hover {
+  border-left: 8px solid #be3228;
+}
+
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a {
+  color: #000;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* =========================================================
+ 3. CUSTOM INPUT STYLE
+========================================================= */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"] {
+  width: 56%;
+  height: 32px;
+  padding: 0 0 0 5px;
+  margin: 8px 0px 8px 0px;
+  border: #ACABAB 2px solid;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 4px 4px;
+}
+
+input.input-icon {
+  padding: 0 0 0 32px;
+}
+
+input.inputEmail {
+  background-image: url("../assets/images/email.png");
+}
+
+input.inputHome {
+  background-image: url("../assets/images/home0.png");
+}
+
+<<<<<<< HEAD
   #cssmenu ul li:hover > ul {
     visibility: visible;
   }
@@ -146,47 +239,161 @@
   #cssmenu ul {
     background: transparent;
   }
+=======
+input.inputTel {
+  background-image: url("../assets/images/phone.png");
+}
 
-  #cssmenu > ul > li > a {
-    padding: 10px 20px;
-  }
+input.inputAddress {
+  background-image: url("../assets/images/address.png");
+}
 
-  #cssmenu > ul > li.active,
-  #cssmenu > ul > li:hover {
-    border-left: 8px solid #be3228;
-  }
+input.inputPuesto {
+  background-image: url("../assets/images/empresa_puesto.png");
+}
+>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
 
-  #cssmenu ul li.active > a,
-  #cssmenu ul li:hover > a {
-    color: #000;
-    font-weight: bold;
-  }
+input.inputAntiguedad {
+  background-image: url("../assets/images/empresa_antiguedad.png");
+}
 
+input.inputFuncionDes {
+  background-image: url("../assets/images/empresa_funcion_principal.png");
+}
+
+input:hover, input:focus {
+  outline: none;
+  border: solid 2px #BE3228;
+}
+
+<<<<<<< HEAD
 /*Este es un comentario*/
 input[type=checkbox]:checked ~ #email{
     display: block;
-}
-#email{
-    display: none;
+=======
+.label-icon {
+  margin: 8px 0px 8px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10pt;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.form-group{
-  margin-top: 15px;
+/* =========================================================
+ 4. CUSTOM RADIO STYLE
+========================================================= */
+.label-radio {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+  margin-right: 15px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
 }
 
+.label-radio:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  /*   margin-right: 10px; */
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background-color: #fff;
+  box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.radio {
+  margin: 8px 0px 8px 0px;
+}
+
+<<<<<<< HEAD
 textarea{
   margin: 0px;
   width: 614px;
   height: 212px;
   resize: none;
+=======
+td > .radio {
+  margin-left: 3.5px;
 }
 
-.checkbox-inline {
-    display: block;
-    padding-left: 15px;
-    text-indent: -15px;
+td > .radio > .label-radio {
+  margin-right: 0px;
 }
+
+th.col_calif {
+  width: 120px;
+}
+
+th.col_calif > span {
+  font-size: 8pt;
+}
+
+input[type=radio] {
+  display: none;
+  border: 1px #fff solid;
+  margin: 8px 0px 8px 0px;
+}
+
+input[type=radio]:checked + label:before {
+  content: "\2022";
+  color: #BE3228;
+  font-size: 36px;
+  text-align: center;
+  line-height: 18px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+input[type=radio]:checked + .label-radio:before {
+  border: 1px solid #BE3228;
+}
+
+select {
+  background-color: #fff;
+  border: 2px solid #ACABAB;
+  margin: 8px 0px 8px 0px;
+}
+
+select:focus, select:hover {
+  border: 2px solid #BE3228;
+}
+
+/* =========================================================
+ 5. CUSTOM CHECKBOX STYLE
+========================================================= */
+input[type=checkbox] {
+  margin: 8px 0px 8px 0px;
+  display: none;
+>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
+}
+
+input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 22px;
+  text-align: right;
+  line-height: 18px;
+  color: #BE3228;
+}
+
+input[type=checkbox]:checked + .label-radio:before {
+  border: 1px solid #BE3228;
+}
+
 .checkbox {
+<<<<<<< HEAD
     width: 13px;
     height: 13px;
     padding: 0;
@@ -195,4 +402,116 @@ textarea{
     position: relative;
     top: -1px;
     *overflow: hidden;
+=======
+  margin: 8px 0px 8px 0px;
+}
+
+.checkbox label:before {
+  border-radius: 3px;
+}
+
+.checkbox .label-radio:before {
+  bottom: inherit;
+}
+
+/* =========================================================
+ 6. CUSTOM CHECKBOX STYLE
+========================================================= */
+textarea {
+  margin: 8px 0px 8px 0px;
+  height: 68px;
+  width: 619px;
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid #ACABAB;
+  padding: 10px;
+  resize: none;
+}
+
+textarea:focus, textarea:hover {
+  outline: none;
+  border: 2px solid #BE3228;
+}
+
+.disabled {
+  pointer-events: none;
+  color: #ACABAB;
+  cursor: default;
+}
+
+.hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.38);
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  float: left;
+  padding: 0px;
+}
+
+.content {
+  width: 75%;
+  height: 450px;
+  text-align: left;
+  margin-left: 5%;
+  margin-bottom: 15px;
+  overflow-y: auto;
+}
+
+.clearfix ::after {
+  content: "";
+  clear: both;
+}
+
+.aling {
+  margin-left: 16px;
+}
+
+.aling-right {
+  float: right;
+  margin: 0px 0px 10px 10px;
+}
+
+.aling-left {
+  float: left;
+  margin: 0px 0px 10px 10px;
+}
+
+.margin {
+  margin: 0 5% 0% 5%;
+}
+
+.text-center {
+  text-align: center;
+  width: 32px;
+}
+
+label {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+table {
+  margin: 8px 0px 8px 0px;
+}
+
+.column-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+>>>>>>> 0cc72541e4e8bf9a099a36271fb593705459f1b2
 }

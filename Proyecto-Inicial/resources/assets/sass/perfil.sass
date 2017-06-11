@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700,900)
+@import "modal"
+@import "aside"
+@import "input"
+
+$separacion: 8px 0px 8px 0px
+// =========================================================
+// 4. PERFIL:  STYLE
+// ========================================================= */
+
+.disabled 
+  pointer-events: none
+  color: #ACABAB
+  cursor: default
+
+.hr 
+	margin-top: 10px
+	margin-bottom: 10px
+	border: 0
+	border-top: 1px solid rgba(0, 0, 0, 0.38)
+
+.clearfix::after 
+  content: ""
+  clear: both
+  display: table
+
+.column 
+  float: left
+  padding: 0px
+
+.content
+  width: 75%
+  height: 450px
+  text-align: left
+  margin-left: 5%
+  margin-bottom: 15px
+  overflow-y: auto
+
+.clearfix
+	::after
+	  content: ""
+	  clear: both
+
+.aling
+  margin-left: 16px
+
+.aling-right
+  float: right
+  margin: 0px 0px 10px 10px
+.aling-left
+  float: left
+  margin: 0px 0px 10px 10px
+
+.margin
+  margin: 0 5% 0% 5%
+
+.text-center
+  text-align: center
+  width: 32px
+
+label 
+  display: block
+
+.hidden
+  display: none
+
+table
+  margin: $separacion
+
+.column-3
+  display: flex
+  flex-flow: row

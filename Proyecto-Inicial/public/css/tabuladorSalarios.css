@@ -1,39 +1,91 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700,900');
 
-div p.titulo_select1{
-  font-size: 14pt;
+.padre{
+  /*background: red;*/
+  width: 1024px;
+  height: 536px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	/*flex-direction: column;*/
+  flex-direction: row;
+}
+
+.titulo{
+  /*font-size: 24pt;
   color: #6B6B6B;
-  margin: 0;
-  font-family: 'Roboto Regular';
-  text-align: left;
-}
-
-table th{
-  color: #FFFFFF;
-  background-color: #6B6B6B;
-  border: #ACABAB 2px solid;
-  text-align: center;
-}
-
-table tr, td {
-  height: 32px;
-  border: #ACABAB 2px solid;
-  text-align: center;
-}
-
-div.paginate{
-	margin: 20px 0px 0 0px;
-}
-
-h3{
-  line-height: 2.0;
-  font-size: 14px;
+  /*margin: 0;*/
+  /*font-family: 'Roboto';
+  padding-top: 20px;*/
+  /*text-align: left;*/
   font-family: 'Roboto', sans-serif;
-  color: #ACABAB
+	font-size: 25px;
+	color: #6B6B6B;
+	position: relative;
+	top: 15px;
+
+}
+.subtitulo{
+  font-family: 'Roboto', sans-serif;
+	font-size: 19px;
+	color: #6B6B6B;
+	position: relative;
+	/*top: 15px;*/
 }
 
-*{
-  margin: 0;
-  padding:0;
-  color: #ACABAB;
+.hr {
+	max-width: 965px;
+	margin: 20px 27px 0;
+}
+
+.div2{
+  /*background: blue;*/
+  /*width: 1024px;*/
+  /*height: 80px;*/
+  /*margin: 0 auto;*/
+  display: block;
+  /*text-align: center;*/
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+  /*padding-top: 10px;*/
+  /*border-top: 50px;*/
+}
+div select{
+  width: 400px;
+  height: 32px;
+  /*padding-left: 100px;*/
+  padding: 0 0 0 32px;
+  -webkit-appearance: none;        /*Removes default chrome and safari style */
+  -moz-appearance: none;          /* Removes Default Firefox style*/
+	box-shadow: 0 0 3px gray;
+	-moz-box-shadow: 0 0 3px gray;
+	-webkit-box-shadow: 0 0 3px gray;
+
+
+
+}
+
+.div3{
+  background: yellow;
+  /*width: 1024px;*/
+  /*width: 12px;*/
+  /*height: 436px;*/
+  margin: 0 auto;
+  display: block;
+  /*padding: 30px;*/
+  /*padding-left: 300px;*/
+  /*text-align: center;*/
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+  text-align: left;
+  
+
 }

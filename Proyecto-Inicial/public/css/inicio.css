@@ -15,8 +15,8 @@ html {
   min-width: 1024px;
 }
 .block {
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 520px;
   border: none;
   background: rgba(255,255,255,0.9);
   text-align: center;
@@ -68,7 +68,7 @@ html {
 	width: 170px;
 	height:170px;
 	position: relative;
-	top:20px;
+	top:56px;
   display:block;
   margin: 0 auto;
 }
@@ -81,16 +81,20 @@ html {
   width:300px;
   margin: 0 auto;
 }
-.usuario-login, .password-login{
+.usuario-login{
   width: 300px;
   display:block;
-  margin: 0 auto;
+  margin: 32px auto 0;
   height: 35px;
-
-
+}
+.password-login{
+  width: 300px;
+  display:block;
+  margin: 24px auto 0;
+  height: 35px;
 }
 #usuario{
-  width:230px;
+  width:232px;
   height:24px;
   display: block;
   float: left;
@@ -100,7 +104,7 @@ html {
   outline: none;
 }
 #password{
-  width:230px;
+  width:232px;
   height:24px;
   display: block;
   float: left;
@@ -109,14 +113,14 @@ html {
   border-bottom: 1px solid #5E352A;
   outline: none;
 }
-#olvido_pswd
-{
+
+#olvido_pswd{
   font-size: 13px;
   font-family: helvetica;
   color: #5E352A;
   text-align: right;
   padding-right: 35px;
-  margin:10px 0;
+  margin: 8px auto;
 }
 
 #input-button{
@@ -124,8 +128,9 @@ html {
   border: none;
   color:white;
   height: 40px;
-  margin:5px auto;
-  width: 222px;
+  margin: 24px 24px;
+  margin-bottom: 0;
+  width: 240px;
   display:block;
   border-radius: 7px 7px 7px 7px;
   -moz-border-radius: 7px 7px 7px 7px;
@@ -138,15 +143,14 @@ html {
   font-family: helvetica;
   color: #5E352A;
   text-align: center;
-
-  margin:10px 0;
+  margin: 16px auto;
 }
 #logo-user{
   background-image:url("../assets/images/usr.png");
   height: 24px;
   width: 24px;
   display:inline-block;
-  margin-right: 13px;
+  margin-right: 8px;
   float:left;
 }
 #logo-password{
@@ -155,5 +159,10 @@ html {
   width:24px;
   display: inline-block;
   float:left;
-  margin-right:13px;
+  margin-right: 8px;
+}
+
+a{
+  color: #be3228;
+  text-decoration: none;
 }
