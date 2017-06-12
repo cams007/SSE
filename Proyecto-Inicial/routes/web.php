@@ -33,6 +33,14 @@ Route::group(['prefix' => 'perfil'], function() {
         return view('perfil.experiencia');
     });
 
+    Route::get('dprofesional', function() {
+        return view('perfil.dprofesional');
+    });
+    
+    Route::get('fprofesional', function() {
+        return view('perfil.fProfesional', array('dato' => 'No'));
+    });
+
     Route::get('intereses', function() {
         return view('perfil.intereses');
     });
@@ -40,6 +48,7 @@ Route::group(['prefix' => 'perfil'], function() {
     Route::get('ofertaslab', function() {
         return view('perfil.ofertaslab');
     });
+
     
     Route::post('/', 'PerfilController@saveDatosB');
     Route::post('fpersonal', 'PerfilController@saveFormacionPerson');
@@ -56,18 +65,6 @@ Route::get('/inicio', function() {
 });
 Route::get('/bienvenida', function() {
     return view('registro.bienvenida');
-});
-
-Route::get('perfil/dprofesional', function() {
-    return view('perfil.dprofesional');
-});
-
-Route::get('perfil/fprofesional', function() {
-    return view('perfil.fProfesional', array('dato' => 'No'));
-});
-
-Route::get('perfil/egresadoReco', function() {
-    return view('perfil.recomendaciones');
 });
 
 Route::get('/tabuladorSalarios', function(){
@@ -116,8 +113,4 @@ Route::get('datos_empresa/comentarios', function(){
 
 Route::get('datos_empresa/ofertas', function(){
     return view('empresa.ofertasLaborales');
-});
-
-Route::get('perfil/propuesta', function(){
-    return view('perfil.fProfesional_propuesta', array('dato' => 'No'));
 });
