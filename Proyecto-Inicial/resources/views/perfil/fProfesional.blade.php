@@ -4,19 +4,19 @@
 
 @section('style')
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+<link href="{{ url('css/table.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
-
 <div class="contenedor"><!--inicio contenedor-->
 	<div class="div-1"><!--inicio div-1-->
 		<!-- <p>Mi Perfil</p> -->
 		<h1>Mi perfil</h1>
 		<hr class="hr">
 	</div><!--fin div-1-->
-
+	
 	<div class="clearfix">
-
+		
 		<div class="div-2"><!--inicio div-2-->
 			<div class="div-2-1"><!--inicio div-2-1-->
 			<aside id="cssmenu" class="column hrV">
@@ -25,9 +25,9 @@
 		</div><!--fin div-2-1-->
 		
 		<div class="column content">	
-			<form method="POST" action="{{url('perfil/fprofesional')}}">			
+			<form method="POST" action="#">			
 				<div class="form-group">
-					<label for="tContrato">1. ¿Tiempo transcurrido para encontrar tu primer empleo, después de haber egresado?</label>
+					<label for="tContrato">1. ¿Qué tiempo transcurrió para que consiguieras tu primer empleo, después de haber egresado?</label>
 					<select name="tContrato" id="inputTContrato" class="form-control">
 						<option value="" checked>---Selecionar---</option>
 						<option value="0">< 6 meses</option>
@@ -37,131 +37,322 @@
 						<option value="4"> No cuento con empleo aún</option>
 					</select>
 				</div>
-				<div class="form-group">
-					<label for="tContrato">2. ¿Cuales factores dificultan o an dificultado ?</label>
-					<div class="radio">
-						<input type="radio" name="sector" id="SE" value="1">
-						<label class="label-radio" for="SE">  Excelente </label>
 
-						<input type="radio" name="sector" id="sMB" value="0">
-						<label class="label-radio" for="sMB">  Muy buena </label>
-						
-						<input type="radio" name="sector" id="sB" value="0">
-						<label class="label-radio" for="sB">  Buena </label>
-						
-						<input type="radio" name="sector" id="sR" value="0">
-						<label class="label-radio" for="sR">  Regular </label>
-						
-						<input type="radio" name="sector" id="sM" value="0">
-						<label class="label-radio" for="sM">  Mala </label>
-					</div>
-				</div>
 				<div class="form-group">
-					<label for="tContrato">3. ¿Comó calificas, en general, la formación recibida por la UTM al momento de ejercer tu profesión por primera vez?</label>
-					<div class="radio">
-						<input type="radio" name="tContrato" id="tcE" value="1">
-						<label class="label-radio" for="tcE"> Excelente</label>
-						
-						<input type="radio" name="tContrato" id="tcMB" value="0">
-						<label class="label-radio" for="tcMB"> Muy buena</label>
-						
-						<input type="radio" name="tContrato" id="tcB" value="0">
-						<label class="label-radio" for="tcB"> Buena</label>
-						
-						<input type="radio" name="tContrato" id="tcR" value="0">
-						<label class="label-radio" for="tcR"> Regular</label>
-						
-						<input type="radio" name="tContrato" id="tcM" value="0">
-						<label class="label-radio" for="tcM"> Mala</label>
-					</div>
+					<label for="tContrato">2. ¿Qué factores dificultaron o han dificultado tu contratación, al momento de conseguir tu primer empleo?</label>
+					<select name="tContrato" id="inputTContrato" class="form-control">
+						<option value="" checked>---Selecionar---</option>
+						<option value="0"> No tener competencias laborales</option>
+						<option value="1"> No estar titulado</option>
+						<option value="2"> No acreditar el examen seleccionado</option>
+						<option value="3"> Ser egresado de la UTM</option>
+						<option value="4"> No dominar el idioma extranjero</option>
+						<option value="5"> Inhabilidades Socio-comunicativas</option>
+						<option value="6"> Otras</option>
+					</select>
 				</div>
+
+				<div class="form-group">
+					<label for="tContrato">3. ¿Cómo calificas los siguientes aspectos de la UTM al momento de ejercer tu profesión por primera vez? (donde 1 es Mala y 5 Excelente)</label>
+					
+					<table>
+						<tr>
+							<th>Aspecto a evaluar</th>
+							<th class="col_calif"> Calificación <br>
+								<span>1="Malo" a 5="Excelente"</span>
+							</th>
+						</tr>
+						<tr>
+							<td>Formación recibida</td>
+							<td>
+								<div class="radio">
+									<input type="radio" name="formacion" id="form1" value="1">
+									<label class="label-radio" for="form1"></label>
+									
+									<input type="radio" name="formacion" id="form2" value="2">
+									<label class="label-radio" for="form2"></label>
+									
+									<input type="radio" name="formacion" id="form3" value="3">
+									<label class="label-radio" for="form3"></label>
+									
+									<input type="radio" name="formacion" id="form4" value="4">
+									<label class="label-radio" for="form4"></label>
+									
+									<input type="radio" name="formacion" id="form5" value="5">
+									<label class="label-radio" for="form5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Instalaciones (aulas, biblioteca, salas de cómputo, laboratorios, otros)</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="instalaciones" id="inst1" value="1">
+									<label class="label-radio" for="inst1"></label>
+									
+									<input type="radio" name="instalaciones" id="inst2" value="2">
+									<label class="label-radio" for="inst2"></label>
+									
+									<input type="radio" name="instalaciones" id="inst3" value="3">
+									<label class="label-radio" for="inst3"></label>
+									
+									<input type="radio" name="instalaciones" id="inst4" value="4">
+									<label class="label-radio" for="inst4"></label>
+									
+									<input type="radio" name="instalaciones" id="inst5" value="5">
+									<label class="label-radio" for="inst5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Servicios (escolares y administrativos)</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="servicios" id="serv1" value="1">
+									<label class="label-radio" for="serv1"></label>
+									
+									<input type="radio" name="servicios" id="serv2" value="2">
+									<label class="label-radio" for="serv2"></label>
+									
+									<input type="radio" name="servicios" id="serv3" value="3">
+									<label class="label-radio" for="serv3"></label>
+									
+									<input type="radio" name="servicios" id="serv4" value="4">
+									<label class="label-radio" for="serv4"></label>
+									
+									<input type="radio" name="servicios" id="serv5" value="5">
+									<label class="label-radio" for="serv5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Equipos, instrumentos, maquinaria, herramientas y software</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="equipos" id="equip1" value="1">
+									<label class="label-radio" for="equip1"></label>
+									
+									<input type="radio" name="equipos" id="equip2" value="2">
+									<label class="label-radio" for="equip2"></label>
+									
+									<input type="radio" name="equipos" id="equip3" value="3">
+									<label class="label-radio" for="equip3"></label>
+									
+									<input type="radio" name="equipos" id="equip4" value="4">
+									<label class="label-radio" for="equip4"></label>
+									
+									<input type="radio" name="equipos" id="equip5" value="5">
+									<label class="label-radio" for="equip5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Limpieza de la infraestructura</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="limpieza" id="limp1" value="1">
+									<label class="label-radio" for="limp1"></label>
+									
+									<input type="radio" name="limpieza" id="limp2" value="0">
+									<label class="label-radio" for="limp2"></label>
+									
+									<input type="radio" name="limpieza" id="limp3" value="0">
+									<label class="label-radio" for="limp3"></label>
+									
+									<input type="radio" name="limpieza" id="limp4" value="0">
+									<label class="label-radio" for="limp4"></label>
+									
+									<input type="radio" name="limpieza" id="limp5" value="0">
+									<label class="label-radio" for="limp5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Capacidad de la infraestructura</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="infraestructura" id="infrae1" value="1">
+									<label class="label-radio" for="infrae1"></label>
+									
+									<input type="radio" name="infraestructura" id="infrae2" value="0">
+									<label class="label-radio" for="infrae2"></label>
+									
+									<input type="radio" name="infraestructura" id="infrae3" value="0">
+									<label class="label-radio" for="infrae3"></label>
+									
+									<input type="radio" name="infraestructura" id="infrae4" value="0">
+									<label class="label-radio" for="infrae4"></label>
+									
+									<input type="radio" name="infraestructura" id="infrae5" value="0">
+									<label class="label-radio" for="infrae5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Desempeño de los docentes (transmisión de conocimientos, aclaración de dudas y asesorias)</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="desempenio" id="desemp1" value="1">
+									<label class="label-radio" for="desemp1"></label>
+									
+									<input type="radio" name="desempenio" id="desemp2" value="0">
+									<label class="label-radio" for="desemp2"></label>
+									
+									<input type="radio" name="desempenio" id="desemp3" value="0">
+									<label class="label-radio" for="desemp3"></label>
+									
+									<input type="radio" name="desempenio" id="desemp4" value="0">
+									<label class="label-radio" for="desemp4"></label>
+									
+									<input type="radio" name="desempenio" id="desemp5" value="0">
+									<label class="label-radio" for="desemp5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Técnicas (investigación, análisis, comparación, etc.) y métodos (uso de casos de estudio, aplicación del conocimiento en problemas reales, etc.) de enseñanza aplicados por los Docentes</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="tecnicas" id="tec1" value="1">
+									<label class="label-radio" for="tec1"></label>
+									
+									<input type="radio" name="tecnicas" id="tec2" value="0">
+									<label class="label-radio" for="tec2"></label>
+									
+									<input type="radio" name="tecnicas" id="tec3" value="0">
+									<label class="label-radio" for="tec3"></label>
+									
+									<input type="radio" name="tecnicas" id="tec4" value="0">
+									<label class="label-radio" for="tec4"></label>
+									
+									<input type="radio" name="tecnicas" id="tec5" value="0">
+									<label class="label-radio" for="tec5"></label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Forma y pertinencia de evaluación aplicados por los Docentes</td>
+							<td>
+								<div class="radio">
+									
+									<input type="radio" name="pertinencia" id="pert1" value="1">
+									<label class="label-radio" for="pert1"></label>
+									
+									<input type="radio" name="pertinencia" id="pert2" value="0">
+									<label class="label-radio" for="pert2"></label>
+									
+									<input type="radio" name="pertinencia" id="pert3" value="0">
+									<label class="label-radio" for="pert3"></label>
+									
+									<input type="radio" name="pertinencia" id="pert4" value="0">
+									<label class="label-radio" for="pert4"></label>
+									
+									<input type="radio" name="pertinencia" id="pert5" value="0">
+									<label class="label-radio" for="pert5"></label>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+
 				<div class="form-group">
 					<label for="tContrato">4. ¿Concideras que careces o carecias de algun(nos) conocimiento(s) básico(s), al momento de ejercer tu prefesión por primera vez, y no fue(ron) desarrollado(s) durante tu formacion profesional?</label>
 					<div class="radio">
-						<input type="radio" name="rConocimientos" id="rCSi" value="1">
-						<label class="label-radio" for="rCSi"> Sí</label>
 						
-						<input type="radio" name="rConocimientos" id="rCNo" value="0">
-						<label class="label-radio" for="rCNo"> No</label>
+						<input type="radio" name="conocimientos" id="conocimSi" value="1">
+						<label class="label-radio" for="conocimSi"> Si</label>
+						
+						<input type="radio" name="conocimientos" id="conocimNo" value="0">
+						<label class="label-radio" for="conocimNo"> No</label>
 					</div>
-					@if ($dato == "AA")
+					<div class="hidden">
 						<label for="">¿Cuáles?</label>
 						<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
-					@endif
+					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="">5. Subraya máximo cinco habilidades importantes que requieres o requerias dominar al momento de ejercer tu profesión por primera vez y que no fueran desarrolladas durante tu dormación profesional.</label>
+					<label for="">5. Selecciona máximo cinco habilidades importantes que requieres o requerias dominar al momento de ejercer tu profesión por primera vez y que no fueran desarrolladas durante tu dormación profesional.</label>
+					
 					<div class="column-3">
 						<div class="checkbox">
-							<input type="checkbox" class="checkbox" name="habilidades" id="HabiA" value="1"> 
-							<label for="HabiA" class="label-radio"> Comuinicar</label>
+							<input type="checkbox" class="checkbox" name="actitudes" id="A" value="1">
+							<label class="label-radio" for="A"> Comuinicar</label>
+
+							<input type="checkbox" class="checkbox" name="actitudes" id="B" value="0">
+							<label class="label-radio" for="B"> dirigir	</label>
 							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiB" value="0"> 
-							<label for="habiB" class="label-radio"> Dirigir</label>
+							<input type="checkbox" class="checkbox" name="actitudes" id="C" value="0">
+							<label class="label-radio" for="C"> Tabajo en equipo	</label>
 							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiC" value="0"> 
-							<label for="habiC" class="label-radio"> Tabajo en equipo</label>
+							<input type="checkbox" class="checkbox" name="actitudes" id="D" value="0">
+							<label class="label-radio" for="D"> Identificar y resolver problemas	</label>
 							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiD" value="0"> 
-							<label for="habiD" class="label-radio"> Identificar y resolver problemas</label>
+							<input type="checkbox" class="checkbox" name="actitudes" id="E" value="0">
+							<label class="label-radio" for="E"> Analizar	</label>
 							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiE" value="0"> 
-							<label for="habiE" class="label-radio"> Analizar</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiF" value="0"> 
-							<label for="habiF" class="label-radio"> Negociar</label>
+							<input type="checkbox" class="checkbox" name="actitudes" id="F" value="0">
+							<label class="label-radio" for="F"> Negociar	</label>
 						</div>
 						<div class="checkbox">
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiG" value="0"> 
-							<label for="habiG" class="label-radio"> Aprender</label>
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiH" value="0"> 
-							<label class="label-radio" for="habiH"> Ser creativo</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiI" value="0"> 
-							<label class="label-radio" for="habiI"> Proponer</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiJ" value="0"> 
-							<label class="label-radio" for="habiJ"> Categorizar/Clasificar</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiK" value="0"> 
-							<label class="label-radio" for="habiK"> Describir/Explicar</label>					
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiL" value="0"> 
-							<label class="label-radio" for="habiL"> Evaluar</label>
-						</div>
-						
-						<div class="checkbox">
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiM" value="0"> 
-							<label class="label-radio" for="habiM"> Procesar</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiN" value="0"> 
-							<label class="label-radio" for="habiN"> Expresar</label>					
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiO" value="0">
-							<label class="label-radio" for="habiO"> Escuchar</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiP" value="0">
-							<label class="label-radio" for="habiP"> Resolver conflictos</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiQ" value="0">
-							<label class="label-radio" for="habiQ"> Solicitar</label>
+							<input type="checkbox" class="checkbox" name="actitudes" id="G" value="0">
+							<label class="label-radio" for="G"> Aprender</label>
+
+							<input type="checkbox" class="checkbox" name="actitudes" id="H" value="0">
+							<label class="label-radio" for="H"> Ser creativo</label>
+
+							<input type="checkbox" class="checkbox" name="actitudes" id="I" value="0">
+							<label class="label-radio" for="I"> Proponer</label>
+
+							<input type="checkbox" class="checkbox" name="actitudes" id="J" value="0">
+							<label class="label-radio" for="J"> Categorizar/Clasificar</label>
+
+							<input type="checkbox" class="checkbox" name="actitudes" id="K" value="0">
+							<label class="label-radio" for="K"> Describir/Explicar</label>
+
+							<input type="checkbox" class="checkbox" name="actitudes" id="L" value="0">
+							<label class="label-radio" for="L"> Evaluar</label>
 						</div>
 						<div class="checkbox">
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiR" value="0">
-							<label class="label-radio" for="habiR"> Decidir</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiS" value="0">
-							<label class="label-radio" for="habiS"> Interpretar</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiT" value="0">
-							<label class="label-radio" for="habiT"> Rebatir</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiU" value="0">
-							<label class="label-radio" for="habiU"> Innovar</label>
-							
-							<input type="checkbox" class="checkbox" name="habilidades" id="habiV" value="0">
-							<label class="label-radio" for="habiV"> Otras</label>
-							
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> M) Procesar
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> N) Expresar
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> O) Escuchar
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> P) Resolver conflictos
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> Q) Solicitar
+							</label>
+						</div>
+						<div class="checkbox">
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> R) Decidir
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> S) Interpretar
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> T) Rebatir
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="" value="0"> U) Innovar
+							</label>
+							<label class="label-radio">
+								<input type="checkbox" class="checkbox" name="actitudes" id="otras" value="0"> V) Otras
+							</label>
 							<div class="hidden">
 								<label for="input">¿Cuáles?</label>
 								<input type="text" name="cuales" id="input" class="form-control">
@@ -172,275 +363,104 @@
 				<div class="form-group">
 					<label for="tContrato">6. ¿Concideras que careces o carecias de alguna(s) área(s) conocimiento básica(s) (sistemas, publicidad, investigacion, manufactura, etc.), al momento de ejercer tu prefesión por primera vez, y no fue(ron) desarrollada(s) durante tu formacion profesional?</label>
 					<div class="radio">
+						
 						<input type="radio" name="areas" id="areasSi" value="1">
 						<label class="label-radio" for="areasSi"> Si</label>
 						
 						<input type="radio" name="areas" id="areasNo" value="0">
 						<label class="label-radio" for="areasNo"> No</label>
 					</div>
-					<div class="hidden">
+					@if ($dato == "AA")
 						<label for="">¿Cuáles?</label>
 						<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
-					</div>
+					@endif
 				</div>
 				<div class="form-group">
 					<label for="">7. Subraya máximo cinco valores o actitudes importantes que requieres o requerias tener al momento de ejercer tu profesión por primera vez y que no fueran desarrolladas durante tu dormación profesional.</label>
+					
 					<div class="column-3">
 						<div class="checkbox">
-							
-							<input type="checkbox" name="actitudes" id="actA" value="1">
-							<label class="label-radio" for="actA"> Respeto</label>
-							
-							<input type="checkbox" name="actitudes" id="actB" value="0">
-							<label class="label-radio" for="actB"> Honestidad</label>
-							
-							<input type="checkbox" name="actitudes" id="actC" value="0">
-							<label class="label-radio" for="actC"> Lealtad</label>
-							
-							<input type="checkbox" name="actitudes" id="actD" value="0">
-							<label class="label-radio" for="actD"> Discrecionalidad</label>
-							
-							<input type="checkbox" name="actitudes" id="actE" value="0">
-							<label class="label-radio" for="actE"> Responsabilidad</label>
-							<input type="checkbox" name="actitudes" id="actF" value="0">
-							<label class="label-radio" for="actF"> Tolerancia</label>
+							<input type="checkbox" name="valores" id="" value="1">
+							<label class="label-radio">	Respeto</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio">	Honestidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio">	Lealtad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio">	Discrecionalidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio">	Responsabilidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio">	Tolerancia</label>
+						</div>
+						<div class="checkbox">
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Respeto a la naturaleza</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Imparcialidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Solidalidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Integridad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Disciplina</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Eficiencia</label>
 						</div>
 						<div class="checkbox">
 							
-							<input type="checkbox" name="actitudes" id="actG" value="0">
-							<label class="label-radio" for="actG"> Respeto a la naturaleza</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Perseverancia</label>
 							
-							<input type="checkbox" name="actitudes" id="actH" value="0">
-							<label class="label-radio" for="actH"> Imparcialidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Puntualidad</label>
 							
-							<input type="checkbox" name="actitudes" id="actI" value="0">
-							<label class="label-radio" for="actI"> Solidalidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Calidad en el trabajo</label>
 							
-							<input type="checkbox" name="actitudes" id="actJ" value="0">
-							<label class="label-radio" for="actJ"> Integridad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Limpieza</label>
 							
-							<input type="checkbox" name="actitudes" id="actK" value="0">
-							<label class="label-radio" for="actK"> Disciplina</label>				
-							
-							<input type="checkbox" name="actitudes" id="actL" value="0">
-							<label class="label-radio" for="actL"> Eficiencia</label>
-							
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Disponibilidad</label>
 						</div>
 						<div class="checkbox">
-							<input type="checkbox" name="actitudes" id="actM" value="0">
-							<label class="label-radio" for="actM"> Perseverancia</label>
 							
-							<input type="checkbox" name="actitudes" id="actN" value="0">
-							<label class="label-radio" for="actN"> Puntualidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Profesionalidad</label>
 							
-							<input type="checkbox" name="actitudes" id="actO" value="0">
-							<label class="label-radio" for="actO"> Calidad en el trabajo</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Empatia</label>
 							
-							<input type="checkbox" name="actitudes" id="actP" value="0">
-							<label class="label-radio" for="actP"> Limpieza</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Honradez</label>
 							
-							<input type="checkbox" name="actitudes" id="actQ" value="0">
-							<label class="label-radio" for="actQ"> Disponibilidad</label>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Justicia</label>
 							
-						</div>
-						<div class="checkbox">
-							<input type="checkbox" name="actitudes" id="actR" value="0">
-							<label class="label-radio" for="actR"> Profesionalidad</label>
-							
-							<input type="checkbox" name="actitudes" id="actS" value="0">
-							<label class="label-radio" for="actS"> Empatia</label>
-							
-							<input type="checkbox" name="actitudes" id="actT" value="0">
-							<label class="label-radio" for="actT"> Honradez</label>
-							
-							<input type="checkbox" name="actitudes" id="actU" value="0">
-							<label class="label-radio" for="actU"> Justicia</label>
-							
-							<input type="checkbox" name="actitudes" id="actV" value="0">
-							<label class="label-radio" for="actV"> Otras</label>
-
-							<div class="hidden">
-								<label for="input">¿Cuáles?</label>
-								<input type="text" name="cuales" id="input" class="form-control">
-							</div>
-						</div>
+							<input type="checkbox" name="valores" id="" value="0">
+							<label class="label-radio"> Otras</label>
+						</div>	
+					</div>
+					<div id="email" class="hidden">
+						<label for="input">¿Cuáles?</label>
+						<input type="text" name="cuales" id="input" class="form-control">
 					</div>
 				</div>
 
 				<div class="form-group">
-					<label for="tContrato">8. ¿Comó calificas las instalaciónes (aulas, biblioteca, sala de cómputo, laboratorios, otros), de la UTM?</label>
+					<label for="tContrato">8. ¿Continuarias realizando algun estudio de posgrado en la Universidad Tecnológica de la Mixteca?</label>
 					<div class="radio">
+						<input type="radio" name="estPost" id="estPostSi" value="1">
+						<label class="label-radio" for="estPostSi"> Si</label>
 						
-						<input type="radio" name="instalaciones" id="instE" value="1">
-						<label class="label-radio" for="instE"> Excelente</label>
-						
-						<input type="radio" name="instalaciones" id="instMB" value="0">
-						<label class="label-radio" for="instMB"> Muy buena</label>
-						
-						<input type="radio" name="instalaciones" id="instB" value="0">
-						<label class="label-radio" for="instB"> Buena</label>
-						
-						<input type="radio" name="instalaciones" id="instR" value="0">
-						<label class="label-radio" for="instR"> Regular</label>
-						
-						<input type="radio" name="instalaciones" id="instM" value="0">
-						<label class="label-radio" for="instM"> Mala</label>
+						<input type="radio" name="estPost" id="estPostNo" value="0">
+						<label class="label-radio" for="estPostNo"> No</label>
 					</div>
-				</div>
-				
-				<div class="form-group">
-					<label for="tContrato">9. ¿Comó calificas los servicios (escolares, y administrativos) de la UTM?</label>
-					<div class="radio">
-						
-						<input type="radio" name="servicios" id="servE" value="1">
-						<label class="label-radio" for="servE"> Excelente</label>
-						
-						<input type="radio" name="servicios" id="servMB" value="0">
-						<label class="label-radio" for="servMB"> Muy buena</label>
-						
-						<input type="radio" name="servicios" id="servB" value="0">
-						<label class="label-radio" for="servB"> Buena</label>
-						
-						<input type="radio" name="servicios" id="servR" value="0">
-						<label class="label-radio" for="servR"> Regular</label>
-						
-						<input type="radio" name="servicios" id="servM" value="0">
-						<label class="label-radio" for="servM"> Mala</label>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label for="tContrato">10. ¿Comó calificas los equipos, intrumentos, maquinaria, herramientas, y software de la UTM?</label>
-					<div class="radio">
-							
-						<input type="radio" name="equipo" id="equipE" value="1">
-						<label class="label-radio" for="equipE"> Excelente</label>
-							
-						<input type="radio" name="equipo" id="equipMB" value="0">
-						<label class="label-radio" for="equipMB"> Muy buena</label>
-							
-						<input type="radio" name="equipo" id="equipB" value="0">
-						<label class="label-radio" for="equipB"> Buena</label>
-							
-						<input type="radio" name="equipo" id="equipR" value="0">
-						<label class="label-radio" for="equipR"> Regular</label>
-							
-						<input type="radio" name="equipo" id="equipM" value="0">
-						<label class="label-radio" for="equipM"> Mala</label>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="tContrato">11. ¿Comó calificas, en general, la limpieza de la infraestructura de la UTM?</label>
-					<div class="radio">
-						
-						<input type="radio" name="limpieza" id="limpE" value="1">
-						<label class="label-radio" for="limpE"> Excelente</label>
-						
-						<input type="radio" name="limpieza" id="limpMB" value="0">
-						<label class="label-radio" for="limpMB"> Muy buena</label>
-						
-						<input type="radio" name="limpieza" id="limpB" value="0">
-						<label class="label-radio" for="limpB"> Buena</label>
-						
-						<input type="radio" name="limpieza" id="limpR" value="0">
-						<label class="label-radio" for="limpR"> Regular</label>
-						
-						<input type="radio" name="limpieza" id="limpM" value="0">
-						<label class="label-radio" for="limpM"> Mala</label>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="tContrato">12. ¿Comó calificas, en general, la capacidad de la UTM?</label>
-					<div class="radio">
-						
-						<input type="radio" name="capacidad" id="capE" value="1">
-						<label class="label-radio" for="capE"> Excelente</label>
-						
-						<input type="radio" name="capacidad" id="capMB" value="0">
-						<label class="label-radio" for="capMB"> Muy buena</label>
-						
-						<input type="radio" name="capacidad" id="capB" value="0">
-						<label class="label-radio" for="capB"> Buena</label>
-						
-						<input type="radio" name="capacidad" id="capR" value="0">
-						<label class="label-radio" for="capR"> Regular</label>
-						
-						<input type="radio" name="capacidad" id="capM" value="0">
-						<label class="label-radio" for="capM"> Mala</label>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="tContrato">13. ¿Comó calificas el desempeño de los docentes (transmision de los conocimientos, aclaracion de dudas, y asesorias) de la UTM?</label>
-					<div class="radio">
-						<input type="radio" name="desempenio" id="desempE" value="1">
-						<label class="label-radio" for="desempE"> Excelente</label>
-						
-						<input type="radio" name="desempenio" id="desempMB" value="0">
-						<label class="label-radio" for="desempMB"> Muy buena</label>
-						
-						<input type="radio" name="desempenio" id="desempB" value="0">
-						<label class="label-radio" for="desempB"> Buena</label>
-						
-						<input type="radio" name="desempenio" id="desempR" value="0">
-						<label class="label-radio" for="desempR"> Regular</label>
-						
-						<input type="radio" name="desempenio" id="desempM" value="0">
-						<label class="label-radio" for="desempM"> Mala</label>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="tContrato">14. ¿Comó calificas las tecnicas (investigación, análisis, comparación, etc.) y metodos (uso de casos de estudio, aplicación del conocimento en ploblemas reales, etc.) de enseñanza aplicados por los docentes de la UTM?</label>
-					<div class="radio">
-						
-						<input type="radio" name="tecYMetodos" id="tecE" value="1"> 
-						<label class="label-radio" for="tecE"> Excelente</label>
-						
-						<input type="radio" name="tecYMetodos" id="tecMB" value="0">
-						<label class="label-radio" for="tecMB"> Muy buena</label>
-						
-						<input type="radio" name="tecYMetodos" id="tecB" value="0"> 
-						<label class="label-radio" for="tecB"> Buena</label>
-						
-						<input type="radio" name="tecYMetodos" id="tecR" value="0"> 
-						<label class="label-radio" for="tecR"> Regular</label>
-						
-						<input type="radio" name="tecYMetodos" id="tecM" value="0"> 
-						<label class="label-radio" for="tecM"> Mala</label>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="tContrato">15. ¿Comó calificas la forma de evaluación aplicados por los docentes de la UTM?</label>
-					<div class="radio">
-						<input type="radio" name="evaluacion" id="evalE" value="1">
-						<label class="label-radio" for="evalE"> Excelente</label>
-						
-						<input type="radio" name="evaluacion" id="evalMB" value="0">
-						<label class="label-radio" for="evalMB"> Muy buena</label>
-						
-						<input type="radio" name="evaluacion" id="evalB" value="0">
-						<label class="label-radio" for="evalB"> Buena</label>
-						
-						<input type="radio" name="evaluacion" id="evalR" value="0">
-						<label class="label-radio" for="evalR"> Regular</label>
-						
-						<input type="radio" name="evaluacion" id="evalM" value="0">
-						<label class="label-radio" for="evalM"> Mala</label>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="tContrato">16. ¿Continuarias realizando algun estudio de posgrado en la Universidad Tecnológica de la Mixteca?</label>
-					<div class="radio">
-						<input type="radio" name="estPosgrado" id="estPSi" value="1">
-						<label class="label-radio" for="estPSi"> Si</label>
-						
-						<input type="radio" name="estPosgrado" id="estPNo" value="0">
-						<label class="label-radio" for="estPNo"> No</label>
-					</div>
-					@if ($dato == "AA")
+					<div class="hidden">
 						<label for="">¿Por qué?</label>
 						<input type="text" name="" id="input" class="form-control" value="" required="required" pattern="" title="">
-					@endif
+					</div>
 				</div> 
 				<div class="form-group">
 					<label for="doctorado">¿Que recomendarias mejorar en cada una de las opciones que calificaste como regular o malo?</label>
@@ -448,11 +468,13 @@
 				</div>
 				<div class="form-group text-center">
 					<button type="submit" class="flat">
-						Finalizar
+						Siguiente
 					</button>
 				</div>
 			</form>
+
 		</div>
+		
 	</div>
 </div><!--fin contenedor-->
 @stop
