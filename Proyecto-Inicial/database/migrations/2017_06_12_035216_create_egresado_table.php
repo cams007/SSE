@@ -24,8 +24,8 @@ class CreateEgresadosTable extends Migration
             $table->string('correo', 50)->nullable();
             $table->string('lugar_origen', 200);
             $table->string('lugar_actual', 200)->nullable();
-            $table->foreign('preparacion_id')->references('id')->on('preparacion')->unique();
-            $table->foreign('primerEmpleo_id')->references('id')->on('primerEmpleo')->unique()->nullable();
+            $table->foreign('preparacion_id')->references('id')->on('Preparacion')->unique();
+            $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique()->nullable();
 
             $table->timestamps();
         });
