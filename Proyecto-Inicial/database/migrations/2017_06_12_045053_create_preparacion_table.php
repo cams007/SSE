@@ -19,7 +19,7 @@ class CreatePreparacionsTable extends Migration
             $table->integer('forma_titulacion');
             $table->date('fecha_inicio');
             $table->date('fecha_fin');
-            $table->date('fecha_titulo');
+            $table->date('fecha_titulo')->nullable();
             $table->integer('promedio');
 
             $table->timestamps();

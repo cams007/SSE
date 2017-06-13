@@ -38,6 +38,8 @@ class CreateEgresadosTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyContrains();
         Schema::dropIfExists('Egresado');
+        Schema::enableForeignKeyContrains();
     }
 }
