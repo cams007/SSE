@@ -430,9 +430,6 @@ label {
           flex-flow: row;
 }
 
-
-
-
 .contenedor {
   width: 1024px;
   height: 536px;
@@ -498,4 +495,9 @@ label {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+
+.contenedor-info{
+  display: flex;
+  align-items: center;
 }
