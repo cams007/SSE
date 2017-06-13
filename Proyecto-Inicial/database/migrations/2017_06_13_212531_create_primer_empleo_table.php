@@ -28,6 +28,8 @@ class CreatePrimerEmpleosTable extends Migration
             $table->string('factores_contratacion', 400);
             $table->string('carencias_basicas', 400);
             $table->string('carencias_areas', 400);
+            $table->string('motivo_no_posgrado', 100); //Motivo de no continuar estudios de posgrado en UTM
+            $table->string('recomendaciones', 500);
 
             $table->timestamps();
         });
