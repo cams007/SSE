@@ -15,15 +15,15 @@ class CreatePrimerEmpleosTable extends Migration
     {
         Schema::create('PrimerEmpleo', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('fecha_ingreso');
             $table->string('empresa', 200);
-            $table->string('puesto_inicial', 200);
-            $table->string('puesto_actual', 200);
             $table->integer('sector');
+            $table->date('fecha_ingreso');
+            $table->string('puesto_inicial', 200);
+            $table->string('puesto_final', 200);
             $table->integer('jornada');
             $table->integer('contrato');
-            $table->string('ingreso', 45);
-            $table->string('actividad_laboral', 200);
+            $table->integer('ingreso');
+            $table->integer('actividad_laboral');
             $table->integer('tiempo_sin_empleo');
             $table->string('factores_contratacion', 400);
             $table->string('carencias_basicas', 400);
