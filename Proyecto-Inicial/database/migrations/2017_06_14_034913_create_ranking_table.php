@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNoteTable extends Migration
+class CreateRankingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateNoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table) {
+        Schema::create('Ranking', function (Blueprint $table) {
             $table->increments('id');
-            $table->mediumText('note');
+            $table->integer('calificacion');
+            $table->string('comentario', 300);
+            $table->foreign('egresado_matricula')->references('id')->on('Egresado');
+            $table->foreign('empleador_id')->references('id')->on('Empleador');
+
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ class CreateNoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('Ranking');
     }
 }
