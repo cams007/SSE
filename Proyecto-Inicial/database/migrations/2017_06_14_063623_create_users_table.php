@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,16 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->string('correo')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->increments('id');
+            $table->string('usuario', 60);
+            $table->string('password', 60);
+            $table->string('egresado_matricula', 12);
+            $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
+            
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
@@ -29,7 +34,7 @@ class CreatePasswordResetsTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyContrains();
-        Schema::dropIfExists('password_resets');
+        Schema::dropIfExists('users');
         Schema::enableForeignKeyContrains();
     }
 }
