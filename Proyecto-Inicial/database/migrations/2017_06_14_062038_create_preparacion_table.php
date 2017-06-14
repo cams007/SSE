@@ -22,7 +22,6 @@ class CreatePreparacionTable extends Migration
             $table->date('fecha_fin');
             $table->date('fecha_titulo')->nullable();
             $table->integer('promedio');
-
             $table->timestamps();
         });
     }

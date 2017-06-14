@@ -51,7 +51,7 @@
 						<option value="6"> Otras</option>
 					</select>
 				</div>
-
+<!-- if no empreo no mostrar tabla -->
 				<div class="form-group">
 					<label for="tContrato">3. ¿Cómo calificas los siguientes aspectos de la UTM al momento de ejercer tu profesión por primera vez? (donde 1 es Mala y 5 Excelente)</label>
 					
