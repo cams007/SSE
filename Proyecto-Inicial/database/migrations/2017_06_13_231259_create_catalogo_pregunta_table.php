@@ -16,6 +16,7 @@ class CreateCatalogoPreguntasTable extends Migration
         Schema::create('CatalogoPreguntas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('pregunta', 100);
+            $table->boolean('cuestionario');
 
             $table->timestamps();
         });

@@ -15,7 +15,7 @@ class CreateValorPEsTable extends Migration
     {
         Schema::create('ValorPE', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('catalogoValor_descripcion', 45);
+            $table->string('valor', 45);
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
             $table->foreign('catalogoValor_id')->references('id')->on('CatalogoValor');
 

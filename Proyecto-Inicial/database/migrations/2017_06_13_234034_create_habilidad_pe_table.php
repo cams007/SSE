@@ -15,7 +15,7 @@ class CreateHabilidadPEsTable extends Migration
     {
         Schema::create('HabilidadPE', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('catalogoHabilidad_descripcion', 45);
+            $table->string('habilidad', 45);
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
             $table->foreign('catalogoHabilidad_id')->references('id')->on('CatalogoHabilidad');
 
