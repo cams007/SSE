@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class CatalogoValor extends Model
 {
+	/**
+	* The table associated with the model.
+	*
+	* @var string
+	*/
     protected $table = 'CatalogoValor';
 }
