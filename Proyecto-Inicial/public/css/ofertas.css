@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 .text-center{
 	font-family: 'Roboto', sans-serif;
 	font-size: 25px;
@@ -32,19 +33,18 @@
 }
 .div-3{
 	width: 450px;
-	/*background: pink;*/
-	padding-left: 32px;
+	padding-left: 8px;
+	padding-bottom: 16px;
 }
 .div-4{
 	/*background: #1BAF63;*/
-	height: 400px;
+	height: 355px;
 	padding-left: 32px;
 }
 .div-5{
 	/*background: #1B3FAF;*/
 	padding-bottom: 16px;
 }
-
 
 td.text_red {
 	color: #BE3228;
@@ -58,6 +58,15 @@ td a.more_detail {
 	padding: 0 5px 0 5px;
 }
 
+.aling-right {
+  float: right;
+  margin: 0px 0px 10px 10px;
+}
+
+.aling-left {
+  float: left;
+  margin: 0px 0px 10px 10px;
+}
 
 /*Paginación*/
 div.paginate a{
@@ -85,40 +94,17 @@ div.paginate a.back{
 th.col_calif{
 	width: 100px;
 }
-table{
-  width: 97%;
-  /*margin: 0 5% 0 5%;*/
-  border-collapse: collapse;
-  border: #ACABAB 2px solid;
-  font-size: 12pt;
-}
-th{
-  color: #FFFFFF;
-  background-color: #6B6B6B;
-  border: #ACABAB 2px solid;
-  text-align: center;
-}
-tr, td {
-  height: 32px;
-  border: #ACABAB 2px solid;
-}
-tr:nth-child(even){ /*Filas pares*/
-  color: #6B6B6B;
-  background-color: #FFFFFF;
-}
-tr:nth-child(odd){ /*Filas nones*/
-  color: #6B6B6B; /*color: #FFFFFF;*/
-  background-color: #D8D8D8;
-}
+
 .ubicacion{
 	background-image: url("../assets/images/menu_hamburguesa.png");
 	background-repeat: no-repeat;
 	background-position: 3px 7px;
 }
 div select{
-  width: 100%;
+  width: 400px;
   height: 32px;
   padding: 0 0 0 32px;
+	background: white;
   -webkit-appearance: none;        /*Removes default chrome and safari style */
   -moz-appearance: none;          /* Removes Default Firefox style*/
 	box-shadow: 0 0 3px gray;
@@ -126,10 +112,39 @@ div select{
 	-webkit-box-shadow: 0 0 3px gray;
 }
 
-div p.titulo_select{
+.titulo_select{
   margin: 0;
   text-align: left;
 	color: #6B6B6B;
 	font-size: 15px;
 	font-family: 'Roboto', sans-serif;
+}
+
+a{
+  color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
+}
+
+/*Buscador*/
+div.buscador input{
+  width: 30%;
+  height: 32px;
+  padding: 0 0 0 32px;
+  margin-top: 20px;
+  border: 1 !important;    /*    Removes border*/
+    border: #ACABAB 2px solid;
+  background-image: url("../assets/images/search_gray.png");
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 4px 4px;
+  box-shadow: 0 0 3px gray;
+  -moz-box-shadow: 0 0 3px gray;
+  -webkit-box-shadow: 0 0 3px gray;
+}
+div.buscador input:hover{
+  outline: none;
+  border: solid 1px #BE3228;
+  box-shadow: 0 0 5px 1px #969696;
 }

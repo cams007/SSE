@@ -24,16 +24,19 @@
                   <p>Juan Perez Sanchez</p>
               </div>
               <div id="iconos">
-                  <a class="configuration" href="#">
+                  <!-- <a class="configuration" href="#">
                     <img src="{{url('assets/images/configuration.png')}}">
-                  </a>
-                  <a class="user" href="{{url('perfil')}}">
-                    <img src="{{url('assets/images/user.png')}}">
-                  </a>
-                  <a class="home" href="#">
-                    <img src="{{url('assets/images/home.png')}}">
-                  </a>
-
+                  </a> -->
+                  <ul class="nav">
+                    <li><a  href="#"><img src="{{url('assets/images/home.png')}}"></a></li>
+                    <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
+                      <ul>
+                        <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
+                        <li><a  href="#">Cambiar contraseña</a></li>
+                        <li><a  href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </li>
+                </ul>
               </div>
               <div class="headercontainer">
                 <div id="logo_see_contenido">
@@ -49,7 +52,7 @@
               </div>
             </div>
       </header>
-    
+
       <div class="block">
           @yield('content')
       </div>

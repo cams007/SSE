@@ -1,0 +1,15 @@
+I WANT TO REGISTRARSE EN EL SISTEMA
+
+I am 'un egresado' 
+I am on page '/' 
+I click 'Regístrate' 
+I am on page '/registro' 
+I fill field 'matricula','2012020211' 
+I fill field 'curp','LOLO951211HOCSSD08' 
+I fill field 'pass','123456' 
+I fill field 'pass2','123456' 
+I click 'Registrarse' 
+I am on page '/bienvenida' 
+I click 'Continuar' 
+I see 'Mi Perfil'
+

@@ -12,6 +12,7 @@
 
 .descripcion{
 	color: #6B6B6B;
+	padding-left: 8px;
 }
 p.calificar{
 	margin-right: 5px;
@@ -23,24 +24,7 @@ p.calificar{
 	height: 350px;
 }
 /*Directorio*/
-div.empresa_list{
-	text-align: left;
-	width: 50%;
-  	margin: 25px 25% 25px 25%;
-}
-div.nombre_empresa{
-	float: left;
-	width: 76%;
-}
-div.calificacion_empresa{
-	float: left;
-	width: 24%;
-}
 
-.calificacion{
-	width: 500px;
-	height: 33px;
-}
 div.buscador_empresas input{
 	width: 40%;
 	height: 32px;
@@ -76,6 +60,10 @@ div.datos_comentario{
 .fecha_comentario{
 	font-size: 11px;
 }
+textarea#comentario{
+	width: 70%;
+}
+
 
 /*Paginación*/
 div.paginate a{
@@ -98,4 +86,50 @@ div.paginate a.forward{
 div.paginate a.back{
 	position: relative;
 	top: 6px;
+}
+.listado{
+	/*background: rgb(33, 74, 122);*/
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 32px;
+}
+.contenedor-empresa{
+	width: 530px;
+	/*background: rgb(7, 11, 94);*/
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 24px;
+}
+
+.estrella-empresa{
+	/*background: rgb(119, 87, 67);*/
+	height: 28px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: space-between;
+}
+.texto-descripcion{
+	position: relative;
+	/*background: rgb(163, 233, 107);*/
+	text-align: left;
+}
+.nombre_empresa{
+	/*background: yellow;*/
+	text-align: left;
+}
+.calificacion_empresa{
+	/*background: rgb(124, 32, 205);*/
+}
+.link,
+a{
+  color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
 }
