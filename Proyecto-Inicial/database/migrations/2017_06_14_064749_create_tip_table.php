@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEventosTable extends Migration
+class CreateTipTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateEventosTable extends Migration
      */
     public function up()
     {
-        Schema::create('Evento', function (Blueprint $table) {
+        Schema::create('Tip', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nombre', 60);
-            $table->string('descripcion', 500);
-            $table->string('lugar', 150);
-            $table->dateTime('fecha');
-            $table->integer('categoria');
+            $table->string('titulo', 60);
+            $table->string('descripcion', 5000);
             $table->string('imagen', 300);
+            $table->dateTime('fecha_publicacion');
             $table->boolean('activo');
 
             $table->timestamps();
@@ -34,6 +33,8 @@ class CreateEventosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Evento');
+        Schema::disableForeignKeyContrains();
+        Schema::dropIfExists('Tip');
+        Schema::enableForeignKeyContrains();
     }
 }

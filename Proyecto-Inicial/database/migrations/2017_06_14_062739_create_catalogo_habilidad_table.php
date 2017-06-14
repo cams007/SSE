@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipsTable extends Migration
+class CreateCatalogoHabilidadTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateTipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Tip', function (Blueprint $table) {
+        Schema::create('CatalogoHabilidad', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('titulo', 60);
-            $table->string('descripcion', 5000);
-            $table->string('imagen', 300);
-            $table->dateTime('fecha_publicacion');
-            $table->boolean('activo');
+            $table->string('descripcion', 45);
 
             $table->timestamps();
         });
@@ -32,6 +29,8 @@ class CreateTipsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Tip');
+        Schema::disableForeignKeyContrains();
+        Schema::dropIfExists('CatalogoHabilidad');
+        Schema::enableForeignKeyContrains();
     }
 }

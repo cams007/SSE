@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePreparacionsTable extends Migration
+class CreatePreparacionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class CreatePreparacionsTable extends Migration
     public function up()
     {
         Schema::create('Preparacion', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('carrera');
             $table->integer('forma_titulacion');
@@ -33,6 +34,8 @@ class CreatePreparacionsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyContrains();
         Schema::dropIfExists('Preparacion');
+        Schema::enableForeignKeyContrains();
     }
 }

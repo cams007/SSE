@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatalogoPreguntasTable extends Migration
+class CreateCatalogoValorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCatalogoPreguntasTable extends Migration
      */
     public function up()
     {
-        Schema::create('CatalogoPreguntas', function (Blueprint $table) {
+        Schema::create('CatalogoValor', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('pregunta', 100);
-            $table->boolean('cuestionario');
+            $table->string('descripcion', 45);
 
             $table->timestamps();
         });
@@ -29,6 +29,8 @@ class CreateCatalogoPreguntasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('CatalogoPreguntas');
+        Schema::disableForeignKeyContrains();
+        Schema::dropIfExists('CatalogoValor');
+        Schema::enableForeignKeyContrains();
     }
 }

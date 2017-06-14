@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEgresadosTable extends Migration
+class CreateEgresadoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class CreateEgresadosTable extends Migration
     public function up()
     {
         Schema::create('Egresado', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->string('matricula', 12)->primary()->unique();
             $table->string('nombre', 100);
             $table->string('curp', 25);
@@ -24,7 +25,9 @@ class CreateEgresadosTable extends Migration
             $table->string('correo', 50)->nullable();
             $table->string('lugar_origen', 200);
             $table->string('lugar_actual', 200)->nullable();
+            $table->integer('preparacion_id')->unsigned();
             $table->foreign('preparacion_id')->references('id')->on('Preparacion')->unique();
+            $table->integer('primerEmpleo_id')->unsigned();
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique()->nullable();
 
             $table->timestamps();

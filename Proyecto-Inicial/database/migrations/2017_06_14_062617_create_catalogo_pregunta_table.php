@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactosTable extends Migration
+class CreateCatalogoPreguntaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateContactosTable extends Migration
      */
     public function up()
     {
-        Schema::create('Contacto', function (Blueprint $table) {
+        Schema::create('CatalogoPregunta', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nombre', 90);
-            $table->string('puesto', 200);
+            $table->string('pregunta', 100);
+            $table->boolean('cuestionario');
 
             $table->timestamps();
         });
@@ -29,6 +30,8 @@ class CreateContactosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Contacto');
+        Schema::disableForeignKeyContrains();
+        Schema::dropIfExists('CatalogoPregunta');
+        Schema::enableForeignKeyContrains();
     }
 }

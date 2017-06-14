@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEvaluacionsTable extends Migration
+class CreateEvaluacionPETable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateEvaluacionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Evaluacion', function (Blueprint $table) {
+        Schema::create('EvaluacionPE', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('evaluacion');
-            $table->foreign('empleado_id')->references('id')->on('Empleado');
+            $table->integer('primerEmpleo_id')->unsigned();
+            $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
+            $table->integer('catalogoPregunta_id')->unsigned();
             $table->foreign('catalogoPregunta_id')->references('id')->on('CatalogoPregunta');
 
             $table->timestamps();
@@ -30,6 +33,8 @@ class CreateEvaluacionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Evaluacion');
+        Schema::disableForeignKeyContrains();
+        Schema::dropIfExists('EvaluacionPE');
+        Schema::enableForeignKeyContrains();
     }
 }

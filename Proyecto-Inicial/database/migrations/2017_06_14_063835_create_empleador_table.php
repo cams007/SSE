@@ -1,10 +1,10 @@
-<?php
+<<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEmpleadorsTable extends Migration
+class CreateEmpleadorTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class CreateEmpleadorsTable extends Migration
     public function up()
     {
         Schema::create('Empleador', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre', 200);
             $table->string('rfc', 45);
@@ -27,6 +28,7 @@ class CreateEmpleadorsTable extends Migration
             $table->integer('codigo_postal');
             $table->string('motivo_no_contratacion', 60);
             $table->string('recomendaciones', 200);
+            $table->integer('contacto_id')->unsigned();
             $table->foreign('contacto_id')->references('id')->on('Contacto');
 
             $table->timestamps();
@@ -40,6 +42,8 @@ class CreateEmpleadorsTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyContrains();
         Schema::dropIfExists('Empleador');
+        Schema::enableForeignKeyContrains();
     }
 }

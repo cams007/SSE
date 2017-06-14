@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePrimerEmpleosTable extends Migration
+class CreatePrimerEmpleoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class CreatePrimerEmpleosTable extends Migration
     public function up()
     {
         Schema::create('PrimerEmpleo', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('empresa', 200);
             $table->integer('sector');
@@ -42,6 +43,9 @@ class CreatePrimerEmpleosTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyContrains();
         Schema::dropIfExists('PrimerEmpleo');
+        Schema::enableForeignKeyContrains();
     }
 }
+

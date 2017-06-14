@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateContactoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('Contacto', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('usuario', 60);
-            $table->string('password', 60);
-            $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
-            
-            $table->rememberToken();
+            $table->string('nombre', 90);
+            $table->string('puesto', 200);
+
             $table->timestamps();
         });
     }
@@ -31,6 +30,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::disableForeignKeyContrains();
+        Schema::dropIfExists('Contacto');
+        Schema::enableForeignKeyContrains();
     }
 }
