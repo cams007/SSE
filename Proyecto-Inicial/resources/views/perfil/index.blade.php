@@ -33,16 +33,15 @@
 							<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
-							<span class="info-perfil"> {{" Juan Peréz "}} </span>
+							<span class="info-perfil"> {{ $egresados->nombre }} </span>
 						</div><!--info-->
 					</div><!--contenedor-info-->
-
 					<div class="contenedor-info"><!--inicio contenedor-info-->
 						<div class="icono"><!--inicio icono-->
 							<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
-							<span class="info-perfil"> {{" 27 de octubre de 1985 "}} </span>
+							<span class="info-perfil"> {{ $egresados->fecha_nacimiento }} </span>
 						</div><!--info-->
 					</div><!--contenedor-info-->
 
@@ -51,27 +50,27 @@
 							<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
-							<label class="info-perfil"> {{" Originario de Oaxaca, Oaxaca "}}</label>
+							<label class="info-perfil"> {{ $egresados->lugar_origen }}</label>
 						</div><!--info-->
 					</div><!--contenedor-info-->
 
 					<div>
-						<input type="text" name="" class="input-icon inputHome" placeholder="Agrega tu ciudad actual" />
+						<input type="text" name="cActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->lugar_actual}} " />
 					</div>
 					<div>
-						<input type="email" name="" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" />
+						<input type="email" name="egresadosEmail" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->correo}}" />
 					</div>
 
 					<div>
-						<input type="tel" class="input-icon inputTel" placeholder="Agregar telefóno"/>
+						<input type="tel" class="input-icon inputTel" placeholder="Agregar telefóno" value="{{$egresados->telefono}}" />
 					</div>
-
 
 					<div class="text-center">
 						<button type="submit" class="flat">
 							Siguiente
 						</button>
 					</div>
+
 				</form>
 			</div>
 		</div><!--fin div-2-2-->

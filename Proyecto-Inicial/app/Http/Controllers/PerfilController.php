@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class PerfilController extends Controller {
 
     public function saveDatosB(Request $request) {
-    	return redirect('perfil/fpersonal');
+
+        return $request->all(); //redirect('perfil/fpersonal');
     }
 
     public function saveFormacionPerson(Request $request) {

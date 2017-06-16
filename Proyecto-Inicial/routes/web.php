@@ -22,7 +22,9 @@ Route::get('/home', function () {
 Route::group(['prefix' => 'perfil'], function() {
     
     Route::get('/' , function () {
-        return view('perfil.index');
+        $egresado = new App\Egresado;
+        // $egresado::find(2008040046);
+        return view('perfil.index', ['egresados' => $egresado::find(2008040046)]);
     });
 
     Route::get('fpersonal', function() {

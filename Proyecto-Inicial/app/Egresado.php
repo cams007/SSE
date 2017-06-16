@@ -13,7 +13,7 @@ class Egresado extends Model
 	*/
     protected $table = 'Egresado';
     protected $primaryKey = 'matricula';
-    protected $incrementing = false;
+    public $incrementing = false;
     // public $timestamps = false; //Si no se necesitan: created_at and updated_at
 
 	/**
