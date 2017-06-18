@@ -62,7 +62,7 @@
 					</div>
 
 					<div>
-						<input type="tel" class="input-icon inputTel" placeholder="Agregar telefóno" value="{{$egresados->telefono}}" />
+						<input type="tel" name="egresadosTel" class="input-icon inputTel" placeholder="Agregar telefóno" value="{{$egresados->telefono}}" />
 					</div>
 
 					<div class="text-center">
