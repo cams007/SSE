@@ -33,8 +33,8 @@ class CreateValorPETable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('ValorPE');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

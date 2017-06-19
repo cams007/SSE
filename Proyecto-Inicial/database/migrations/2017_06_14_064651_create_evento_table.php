@@ -17,7 +17,7 @@ class CreateEventoTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre', 60);
-            $table->string('descripcion', 500);
+            $table->string('descripcion', 5000);
             $table->string('lugar', 150);
             $table->dateTime('fecha');
             $table->integer('categoria');
@@ -35,8 +35,8 @@ class CreateEventoTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Evento');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

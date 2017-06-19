@@ -19,15 +19,14 @@ class CreateEgresadoTable extends Migration
             $table->string('nombre', 100);
             $table->string('curp', 25);
             $table->integer('genero');
-            $table->date('fecha_nacimiento');
-            $table->integer('nacionalidad');
+            $table->dateTime('fecha_nacimiento');
+            $table->integer('nacionalidad')->nullable();
             $table->string('telefono', 12)->nullable();
-            $table->string('correo', 50)->nullable();
             $table->string('lugar_origen', 200);
             $table->string('lugar_actual', 200)->nullable();
-            $table->integer('preparacion_id')->unsigned();
+            $table->integer('preparacion_id')->unsigned()->nullable();
             $table->foreign('preparacion_id')->references('id')->on('Preparacion')->unique();
-            $table->integer('primerEmpleo_id')->unsigned();
+            $table->integer('primerEmpleo_id')->unsigned()->nullable();
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique()->nullable();
 
             $table->timestamps();
@@ -41,8 +40,8 @@ class CreateEgresadoTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Egresado');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

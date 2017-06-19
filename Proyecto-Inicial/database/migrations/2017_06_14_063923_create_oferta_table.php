@@ -20,7 +20,7 @@ class CreateOfertaTable extends Migration
             $table->string('descripcion', 500);
             $table->integer('carrera');
             $table->integer('salario');
-            $table->date('fecha_publicacion');
+            $table->dateTime('fecha_publicacion');
             $table->boolean('habilitada');
             $table->integer('empleador_id')->unsigned();
             $table->foreign('empleador_id')->references('id')->on('Empleador');
@@ -36,9 +36,9 @@ class CreateOfertaTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Oferta');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }
 

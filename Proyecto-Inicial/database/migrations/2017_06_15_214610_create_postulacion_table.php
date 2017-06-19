@@ -15,7 +15,7 @@ class CreatePostulacionTable extends Migration
     {
         Schema::create('Postulacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->varchar('egresado_matricula', 12);
+            $table->string('egresado_matricula', 12);
             $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
             $table->integer('oferta_id');
             $table->foreign('oferta_id')->references('id')->on('Oferta');
@@ -31,8 +31,8 @@ class CreatePostulacionTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Postulacion');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

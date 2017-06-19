@@ -16,7 +16,7 @@ class CreateMaestriaTable extends Migration
         Schema::create('Maestria', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('descripcion', 200);
+            $table->string('descripcion', 100);
             $table->boolean('titulado');
             $table->integer('preparacion_id')->unsigned();
             $table->foreign('preparacion_id')->references('id')->on('Preparacion');
@@ -32,8 +32,8 @@ class CreateMaestriaTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Maestria');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

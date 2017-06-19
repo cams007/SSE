@@ -11,9 +11,9 @@ class Egresado extends Model
 	*
 	* @var string
 	*/
-    protected $table = 'Egresado';
-    protected $primaryKey = 'matricula';
-    protected $incrementing = false;
+    public $table = 'Egresado';
+    public $primaryKey = 'matricula';
+    public $incrementing = false;
     // public $timestamps = false; //Si no se necesitan: created_at and updated_at
 
 	/**

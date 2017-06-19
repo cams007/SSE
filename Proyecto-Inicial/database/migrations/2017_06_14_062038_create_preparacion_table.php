@@ -18,9 +18,9 @@ class CreatePreparacionTable extends Migration
             $table->increments('id');
             $table->integer('carrera');
             $table->integer('forma_titulacion');
-            $table->date('fecha_inicio');
-            $table->date('fecha_fin');
-            $table->date('fecha_titulo')->nullable();
+            $table->dateTime('fecha_inicio');
+            $table->dateTime('fecha_fin');
+            $table->dateTime('fecha_titulo')->nullable();
             $table->integer('promedio');
 
             $table->timestamps();
@@ -34,8 +34,8 @@ class CreatePreparacionTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Preparacion');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }
