@@ -2,7 +2,6 @@
 namespace Models;
 
 use App\Egresado;
-use App\Preparacion;
 
 class InsertEgresadoTest extends \Codeception\Test\Unit
 {
@@ -19,6 +18,9 @@ class InsertEgresadoTest extends \Codeception\Test\Unit
         $egresado->lugar_origen = 'Huajuapan de Leon, Oaxaca';
         $egresado->save();
 
-        $this->assertTrue(true);
+        $egresadoDB = Egresado::find(2012020212);
+        $this->assertNotNull($egresadoDB);
+        $this->assertEquals($egresadoDB->nombre, 'Adrian Castillo Castillo');
+
     }
 }

@@ -8,8 +8,8 @@ actor: AcceptanceTester
 modules:
     enabled:
         - WebDriver:
-            url: 
-            browser: chrome
+            url: 'http://localhost/'
+            browser: phantomjs
         # - PhpBrowser:
-        #     url: http://localhost:8080/
+        #     url: http://localhost/
         - \Helper\Acceptance
