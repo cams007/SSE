@@ -11,6 +11,7 @@
       <!-- <link href="{{ url('assets/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet"> -->
   </head>
   <body>
+  <div class="page-wrap">
     <section class="contenido">
       <header>
         <div id="barrasuperior">
@@ -61,5 +62,9 @@
     <!-- jQuery -->
       <script src="{{ url('assets/jquery/jquery.js') }}"></script>
       @yield('script')
+
+</div>
+<footer>
+</footer>
   </body>
 </html>

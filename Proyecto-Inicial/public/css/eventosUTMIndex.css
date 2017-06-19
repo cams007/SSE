@@ -3,10 +3,10 @@
 /*texto: Eventos UTM*/
 .text-center{
 	font-family: 'Roboto', sans-serif;
-	font-size: 25px;
+	font-size: 24px;
 	color: #6B6B6B;
 	position: relative;
-	top: 15px;
+
 }
 
 /*linea, bajo el texto: Eventos UTM*/
@@ -57,7 +57,7 @@
 
 .contenedor {
   width: 1024px;
-  height: 536px;
+  min-height: 536px;
   margin: 0 auto;
   display: block;
   text-align: center;
@@ -68,7 +68,10 @@
 }
 
 .div-1{
-	/*background: blue;*/
+	/*background: yellow;*/
+	border-bottom: solid 1px #adacac;
+	margin: 8px 32px 0;
+	height:32px;
 }
 
 .div-2{
@@ -80,7 +83,7 @@
 
 .div-2-1{
 	/*background: #2874A6;*/
-	border-right: 1px solid gray;
+	border-right: 1px solid #adacac;
 	height: 465px;
 	width: 248px;
 }
@@ -281,6 +284,10 @@ div.search input:hover{
 }
 .si:hover{
 	background: #5E352A;
+}
+
+.paginate{
+	margin:32px 0 ;
 }
 div.paginate a{
 	text-align: center;

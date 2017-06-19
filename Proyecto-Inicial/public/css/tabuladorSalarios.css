@@ -1,11 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+.text-center{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #6B6B6B;
+	position: relative;
 
+}
 div p.titulo_select1{
-  font-size: 14pt;
+  font-size: 14px;
   color: #6B6B6B;
   margin: 0;
-  font-family: 'Roboto Regular';
+    font-family: "Roboto",sans-serif;
   text-align: left;
+}
+.titulo_select {
+    color: #6b6b6b;
+    background-image: url("../assets/images/menu_hamburguesa.png");   
+    font-family: "Roboto",sans-serif;
+    font-size: 14px;
+    text-align: left;
 }
 
 table th{
@@ -35,5 +48,5 @@ h3{
 *{
   margin: 0;
   padding:0;
-  color: #ACABAB;
+
 }

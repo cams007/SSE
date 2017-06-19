@@ -11,7 +11,7 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Ranking de empresas</p>
-			<hr class="hr">
+			
 		</div><!--div-1-->
 
 		<div class="div-2"><!--div-2-->
@@ -54,7 +54,7 @@
 				</select>
 			</div><!--div-3-3-->
 		</div><!--div-3-->
-		
+
 		<div class="div-4"><!--div-4-->
 			<div class="div-4-1"><!--div-4-1-->
 		<table>

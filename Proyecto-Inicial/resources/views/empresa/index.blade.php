@@ -13,7 +13,7 @@
 
 		<div class="div-1"><!--inicio div-1-->
 			<h1>Datos de empresa</h1>
-			<hr class="hr">
+			
 		</div><!--fin div-1-->
 
 		<div class="div-2"><!--inicio div-2-->
@@ -22,11 +22,11 @@
 					@include('partials.asideEmpresa')
 				</aside>
 			</div><!--fin div-2-1-->
-		
+
 			<div class="div-2-2"><!--inicio div-2-2-->
 				<div class="column content-sm">
 					<form method="POST" action="#">
-					
+
 						{{-- TODO: Protección contra CSRF --}}
 						{{ csrf_field() }}
 
@@ -41,7 +41,7 @@
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
 							<div class="icono"><!--inicio icono-->
-								<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos"> 
+								<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
 								<span> {{" Cupertino, California, Estados Unidos "}} </span>
@@ -50,7 +50,7 @@
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
 							<div class="icono"><!--inicio icono-->
-								<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos"> 
+								<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
 								<span> {{" 1-800-275-2273 "}} </span>
@@ -59,7 +59,7 @@
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
 							<div class="icono"><!--inicio icono-->
-								<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"> 
+								<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
 								<span> {{" info@apple.com "}} </span>
@@ -68,7 +68,7 @@
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
 							<div class="icono"><!--inicio icono-->
-								<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos"> 
+								<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
 								<span> {{" Tim Cook "}} </span>
@@ -77,17 +77,17 @@
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
 							<div class="icono"><!--inicio icono-->
-								<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos"> 
+								<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
 								<span> {{" CEO "}} </span>
 							</div><!--info-->
 						</div><!--contenedor-info-->
-						
+
 					</form>
 				</div>
 			</div><!--fin div-2-2-->
-	
+
 			<div class="column"> <!-- div-2-3 -->
 		    	<img src="{{url('assets/images/logo_utm.png')}}" alt="user-picture" class="img-thumbnail img">
 		    	<!-- <div>
@@ -101,7 +101,7 @@
 					<h6>12 comentarios</h6>
 				</div> -->
 				<div>
-					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos"> 
+					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
 					<a href="#calificaEmpresa">Calificar empresa</a>
 				</div>
 			</div><!--fin div-2-3-->

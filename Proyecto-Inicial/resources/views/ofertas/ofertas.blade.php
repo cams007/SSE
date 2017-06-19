@@ -11,7 +11,7 @@
 	<div class="contenedor"><!--contenedor-->
 		<div class="div-1"><!--div-1-->
 			<p class="text-center">Ofertas laborales</p>
-	      	<hr class="hr">
+	      	
 		</div><!--div-1-->
 
 	<div>

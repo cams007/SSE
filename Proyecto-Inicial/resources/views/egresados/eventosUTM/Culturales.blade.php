@@ -13,7 +13,7 @@
  <div class="div-1"> <!--incio div-1-->
 
 	 <p class="text-center">Eventos Culturales</p>
-	 <hr class="hr">
+	
 
  </div><!--fin div-1-->
 

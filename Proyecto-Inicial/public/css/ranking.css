@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 .text-center{
 	font-family: 'Roboto', sans-serif;
-	font-size: 25px;
+	font-size: 24px;
 	color: #6B6B6B;
 	position: relative;
-	top: 15px;
+
 }
 .hr {
 	max-width: 965px;
@@ -23,7 +23,10 @@
 		flex-direction: column;
 }
 .div-1{
-/*background: yellow;*/
+	/*background: yellow;*/
+	border-bottom: solid 1px #adacac;
+	margin: 8px 32px 0;
+	height:32px;
 }
 .div-2{
 	/*background: green;*/
@@ -61,7 +64,7 @@
 }
 .div-3-1{
 	/*background: rgb(69, 44, 214);*/
-	width: 290px;
+	width: 250px;
 }
 .div-3-2{
 	/*background: rgb(250, 196, 237);*/
@@ -96,21 +99,23 @@
 .titulo_select{
 	text-align: left;
 	color: #6B6B6B;
-	font-size: 15px;
+	font-size: 14px;
 	font-family: 'Roboto', sans-serif;
 }
 div select{
   width: 250px;
-	float: left;
   height: 32px;
   padding: 0 0 0 32px;
 	background: white;
-  -webkit-appearance: none;        /*Removes default chrome and safari style*/
+	border: 1px solid #acabab;
+  -webkit-appearance: none;        /*Removes default chrome and safari style */
   -moz-appearance: none;          /* Removes Default Firefox style*/
-	box-shadow: 0 0 3px gray;
+	/*box-shadow: 0 0 3px gray;
 	-moz-box-shadow: 0 0 3px gray;
-	-webkit-box-shadow: 0 0 3px gray;
+	-webkit-box-shadow: 0 0 3px gray;*/
 }
+
+
 .seleccion{
 	background-image: url("../assets/images/menu_hamburguesa.png");
 	background-repeat: no-repeat;
@@ -236,18 +241,18 @@ table{
   width: 97%;
   /*margin: 0 5% 0 5%;*/
   border-collapse: collapse;
-  border: #ACABAB 2px solid;
-  font-size: 12pt;
+  border: #ACABAB 1px solid;
+  font-size: 13px;
 }
 th{
   color: #FFFFFF;
   background-color: #6B6B6B;
-  border: #ACABAB 2px solid;
+  border: #ACABAB 1px solid;
   text-align: center;
 }
 tr, td {
   height: 32px;
-  border: #ACABAB 2px solid;
+  border: #ACABAB 1px solid;
 }
 tr:nth-child(even){ /*Filas pares*/
   color: #6B6B6B;
