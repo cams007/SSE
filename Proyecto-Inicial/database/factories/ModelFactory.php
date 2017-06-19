@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -10,11 +9,9 @@
 | database. Just tell the factory how a default model should look.
 |
 */
-
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     static $password;
-
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -27,27 +24,23 @@ $factory->define(App\CatalogoHabilidad::class, function (Faker\Generator $faker)
         'descripcion' => $faker->word,
     ];
 });
-
 $factory->define(App\CatalogoPregunta::class, function (Faker\Generator $faker) {
     return [
         'pregunta' => $faker->word,
         'cuestionario' => $faker->boolean,
     ];
 });
-
 $factory->define(App\CatalogoValor::class, function (Faker\Generator $faker) {
     return [
         'descripcion' => $faker->word,
     ];
 });
-
 $factory->define(App\Contacto::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->word,
         'puesto' => $faker->word,
     ];
 });
-
 $factory->define(App\Doctorado::class, function (Faker\Generator $faker) {
     return [
         'descripcion' => $faker->word,
@@ -55,13 +48,12 @@ $factory->define(App\Doctorado::class, function (Faker\Generator $faker) {
         'preparacion_id' => $faker->randomNumber(),
     ];
 });
-
 $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
     return [
         'matricula' => $faker->word,
         'nombre' => $faker->word,
         'curp' => $faker->word,
-        'genero' => $faker->randomNumber(),
+        'genero' => $faker->randomElement(['Masculino' ,'Femenino']),
         'fecha_nacimiento' => $faker->dateTimeBetween(),
         'nacionalidad' => $faker->randomNumber(),
         'telefono' => $faker->word,
@@ -70,13 +62,11 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'preparacion_id' => function () {
              return factory(App\Preparacion::class)->create()->id;
         },
-        'primerEmpleo_id' => $faker->randomNumber(),
-        'primer_empleo_id' => function () {
+        'primerEmpleo_id' => function () {
              return factory(App\PrimerEmpleo::class)->create()->id;
         },
     ];
 });
-
 $factory->define(App\Empleado::class, function (Faker\Generator $faker) {
     return [
         'carrera' => $faker->randomNumber(),
@@ -90,7 +80,6 @@ $factory->define(App\Empleado::class, function (Faker\Generator $faker) {
         'empleador_id' => $faker->randomNumber(),
     ];
 });
-
 $factory->define(App\Empleador::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->word,
@@ -110,7 +99,6 @@ $factory->define(App\Empleador::class, function (Faker\Generator $faker) {
         },
     ];
 });
-
 $factory->define(App\Empleo::class, function (Faker\Generator $faker) {
     return [
         'empresa' => $faker->word,
@@ -122,7 +110,6 @@ $factory->define(App\Empleo::class, function (Faker\Generator $faker) {
         'egresado_matricula' => $faker->word,
     ];
 });
-
 $factory->define(App\Evaluacion::class, function (Faker\Generator $faker) {
     return [
         'evaluacion' => $faker->randomNumber(),
@@ -133,7 +120,6 @@ $factory->define(App\Evaluacion::class, function (Faker\Generator $faker) {
         },
     ];
 });
-
 $factory->define(App\EvaluacionPE::class, function (Faker\Generator $faker) {
     return [
         'evaluacion' => $faker->randomNumber(),
@@ -144,7 +130,6 @@ $factory->define(App\EvaluacionPE::class, function (Faker\Generator $faker) {
         },
     ];
 });
-
 $factory->define(App\Evento::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->word,
@@ -156,7 +141,6 @@ $factory->define(App\Evento::class, function (Faker\Generator $faker) {
         'activo' => $faker->boolean,
     ];
 });
-
 $factory->define(App\Habilidad::class, function (Faker\Generator $faker) {
     return [
         'habilidad' => $faker->word,
@@ -168,7 +152,6 @@ $factory->define(App\Habilidad::class, function (Faker\Generator $faker) {
         },
     ];
 });
-
 $factory->define(App\HabilidadPE::class, function (Faker\Generator $faker) {
     return [
         'habilidad' => $faker->word,
@@ -179,7 +162,6 @@ $factory->define(App\HabilidadPE::class, function (Faker\Generator $faker) {
         },
     ];
 });
-
 $factory->define(App\HistoriaExito::class, function (Faker\Generator $faker) {
     return [
         'titulo' => $faker->word,
@@ -189,7 +171,6 @@ $factory->define(App\HistoriaExito::class, function (Faker\Generator $faker) {
         'activo' => $faker->boolean,
     ];
 });
-
 $factory->define(App\Maestria::class, function (Faker\Generator $faker) {
     return [
         'descripcion' => $faker->word,
@@ -197,7 +178,6 @@ $factory->define(App\Maestria::class, function (Faker\Generator $faker) {
         'preparacion_id' => $faker->randomNumber(),
     ];
 });
-
 $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
     return [
         'titulo_empleo' => $faker->word,
@@ -209,14 +189,12 @@ $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
         'empleador_id' => $faker->randomNumber(),
     ];
 });
-
 $factory->define(App\Postulacion::class, function (Faker\Generator $faker) {
     return [
         'egresado_matricula' => $faker->word,
         'oferta_id' => $faker->randomNumber(),
     ];
 });
-
 $factory->define(App\Preparacion::class, function (Faker\Generator $faker) {
     return [
         'carrera' => $faker->randomNumber(),
@@ -227,7 +205,6 @@ $factory->define(App\Preparacion::class, function (Faker\Generator $faker) {
         'promedio' => $faker->randomNumber(),
     ];
 });
-
 $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
     return [
         'tiempo_sin_empleo' => $faker->randomNumber(),
@@ -248,7 +225,6 @@ $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
         'recomendaciones' => $faker->word,
     ];
 });
-
 $factory->define(App\Ranking::class, function (Faker\Generator $faker) {
     return [
         'calificacion' => $faker->randomNumber(),
@@ -257,7 +233,6 @@ $factory->define(App\Ranking::class, function (Faker\Generator $faker) {
         'empleador_id' => $faker->randomNumber(),
     ];
 });
-
 $factory->define(App\Tip::class, function (Faker\Generator $faker) {
     return [
         'titulo' => $faker->word,
@@ -267,7 +242,6 @@ $factory->define(App\Tip::class, function (Faker\Generator $faker) {
         'activo' => $faker->boolean,
     ];
 });
-
 $factory->define(App\Valor::class, function (Faker\Generator $faker) {
     return [
         'valor' => $faker->word,
@@ -279,7 +253,6 @@ $factory->define(App\Valor::class, function (Faker\Generator $faker) {
         },
     ];
 });
-
 $factory->define(App\ValorPE::class, function (Faker\Generator $faker) {
     return [
         'valor' => $faker->word,
@@ -290,4 +263,3 @@ $factory->define(App\ValorPE::class, function (Faker\Generator $faker) {
         },
     ];
 });
-

@@ -16,7 +16,7 @@ class Egresado extends Model
     public $incrementing = false;
     // public $timestamps = false; //Si no se necesitan: created_at and updated_at
 
-    protected $fillable = ['matricula', 'nombre', 'curp', 'genero', 'fecha_nacimiento', 'lugar_origen'];
+    // protected $fillable = ['matricula', 'nombre', 'curp', 'genero', 'fecha_nacimiento', 'lugar_origen'];
 
 	/**
 	* Get the preparacion that owns the egresado.

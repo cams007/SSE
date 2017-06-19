@@ -18,7 +18,7 @@ class CreateEgresadoTable extends Migration
             $table->string('matricula', 12)->primary()->unique();
             $table->string('nombre', 100);
             $table->string('curp', 25);
-            $table->integer('genero');
+            $table->enum('genero', ['Masculino', 'Femenino']);
             $table->dateTime('fecha_nacimiento');
             $table->integer('nacionalidad')->nullable();
             $table->string('telefono', 12)->nullable();
@@ -27,7 +27,7 @@ class CreateEgresadoTable extends Migration
             $table->integer('preparacion_id')->unsigned()->nullable();
             $table->foreign('preparacion_id')->references('id')->on('Preparacion')->unique();
             $table->integer('primerEmpleo_id')->unsigned()->nullable();
-            $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique()->nullable();
+            $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique();
 
             $table->timestamps();
         });
