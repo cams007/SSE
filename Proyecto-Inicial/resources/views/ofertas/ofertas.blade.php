@@ -17,7 +17,7 @@
 
 	<div class="buscador_oferta"> <!-- Buscador -->
 			<input type="search" name="q" placeholder="Buscador de ofertas">
-	</div>
+	</div><!--buscador-->
 
 	<!-- Resultados -->
 	<div class="div-4"><!--div-4-->
