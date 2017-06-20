@@ -45,7 +45,9 @@ $factory->define(App\Doctorado::class, function (Faker\Generator $faker) {
     return [
         'descripcion' => $faker->word,
         'titulado' => $faker->boolean,
-        'preparacion_id' => $faker->randomNumber(),
+        'preparacion_id' => function () {
+             return factory(App\Preparacion::class)->create()->id;
+        },
     ];
 });
 $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
@@ -56,9 +58,9 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'genero' => $faker->randomElement(['Masculino' ,'Femenino']),
         'fecha_nacimiento' => $faker->dateTimeBetween(),
         'nacionalidad' => $faker->randomElement(['Mexicana' ,'Otra']),
-        'telefono' => $faker->word,
+        'telefono' => $faker->cellNumber,
         'lugar_origen' => $faker->word,
-        'lugar_actual' => $faker->word,
+        'direccion_actual' => $faker->word,
         'preparacion_id' => function () {
              return factory(App\Preparacion::class)->create()->id;
         },
