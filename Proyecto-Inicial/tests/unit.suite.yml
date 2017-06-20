@@ -6,4 +6,6 @@ actor: UnitTester
 modules:
     enabled:
         - Asserts
+        - Laravel5:
+            part: ORM
         - \Helper\Unit

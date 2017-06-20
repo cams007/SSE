@@ -1,8 +1,9 @@
 <?php
 
+use App\Egresado;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class EgresadoTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(EgresadoTableSeeder::class);
+        factory(Egresado::class)->times(5)->create();
     }
 }

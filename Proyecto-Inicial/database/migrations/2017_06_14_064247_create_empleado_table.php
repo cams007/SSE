@@ -19,9 +19,9 @@ class CreateEmpleadoTable extends Migration
             $table->integer('carrera');
             $table->string('puesto', 200);
             $table->integer('antiguedad');
-            $table->integer('unidad_tiempo');
+            $table->enum('unidad_tiempo', ['meses', 'años']);
             $table->string('carencias_basicas', 200);
-            $table->string('conocimientos actualizados', 200);
+            $table->string('conocimientos_actualizados', 200);
             $table->string('carencias_areas', 200);
             $table->string('factores_contratacion', 100);
             $table->integer('empleador_id')->unsigned();
@@ -38,9 +38,9 @@ class CreateEmpleadoTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Empleado');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }
 
