@@ -11,13 +11,13 @@
 <div class="contenedor"><!--contenedor-->
 
 	<div class="div-1"><!--div-1-->
-		<p class="text-center">Ofertas laborales</p>
-      	<hr class="hr">
-	</div><!--div-1-->
+	<p class="text-center">Ofertas laborales</p>
+			<hr class="hr">
+</div><!--div-1-->
 
-	<div class="search">
-        <input type="search" name="q" placeholder="Buscar">
-    </div>
+	<div class="buscador_oferta"> <!-- Buscador -->
+			<input type="search" name="q" placeholder="Buscador de ofertas">
+	</div>
 
 	<!-- Resultados -->
 	<div class="div-4"><!--div-4-->
@@ -86,7 +86,7 @@
 <div id="datosEmpresa" class="modaloverlay"> <!-- div-modaloverlay -->
 	<div class="modal"> <!-- div-modal -->
 		<a href="#close" class="close">&times;</a>
-			
+
 		<div class="parte-1"><!--parte-1-->
 			<p class="txt">Datos de empresa</p>
 		</div><!--parte-1-->
@@ -155,7 +155,7 @@
 			</div>
 		</div><!--parte-3-->
 		<!-- </form> -->
-				
+
 	</div> <!-- div-modal -->
 </div> <!-- div-modaloverlay -->
 
