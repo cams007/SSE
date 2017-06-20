@@ -20,7 +20,7 @@ class CreateEgresadoTable extends Migration
             $table->string('curp', 25);
             $table->enum('genero', ['Masculino', 'Femenino']);
             $table->dateTime('fecha_nacimiento');
-            $table->integer('nacionalidad')->nullable();
+            $table->enum('nacionalidad', ['Mexicana', 'Otra'])->nullable();
             $table->string('telefono', 12)->nullable();
             $table->string('lugar_origen', 200);
             $table->string('lugar_actual', 200)->nullable();

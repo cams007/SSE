@@ -19,7 +19,7 @@ class CreateEmpleadoTable extends Migration
             $table->integer('carrera');
             $table->string('puesto', 200);
             $table->integer('antiguedad');
-            $table->integer('unidad_tiempo');
+            $table->enum('unidad_tiempo', ['meses', 'años']);
             $table->string('carencias_basicas', 200);
             $table->string('conocimientos_actualizados', 200);
             $table->string('carencias_areas', 200);

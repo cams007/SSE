@@ -21,7 +21,7 @@ class CreateEmpleoTable extends Migration
             $table->string('puesto_final', 200);
             $table->string('funciones', 400);
             $table->integer('antiguedad');
-            $table->integer('unidad_tiempo');
+            $table->enum('unidad_tiempo', ['meses', 'años']);
             $table->string('egresado_matricula', 12);
             $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
 

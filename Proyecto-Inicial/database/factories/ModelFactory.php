@@ -55,7 +55,7 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'curp' => $faker->word,
         'genero' => $faker->randomElement(['Masculino' ,'Femenino']),
         'fecha_nacimiento' => $faker->dateTimeBetween(),
-        'nacionalidad' => $faker->randomNumber(),
+        'nacionalidad' => $faker->randomElement(['Mexicana' ,'Otra']),
         'telefono' => $faker->word,
         'lugar_origen' => $faker->word,
         'lugar_actual' => $faker->word,

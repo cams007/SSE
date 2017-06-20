@@ -16,7 +16,7 @@ class CreateEvaluacionTable extends Migration
         Schema::create('Evaluacion', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('evaluacion');
+            $table->enum('evaluacion', ['Indispensable', 'Deseable', 'Poco indispensable', 'No indispensable']);
             $table->integer('empleado_id')->unsigned();
             $table->foreign('empleado_id')->references('id')->on('Empleado');
             $table->integer('catalogoPregunta_id')->unsigned();

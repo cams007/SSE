@@ -20,7 +20,7 @@ class CreateEventoTable extends Migration
             $table->string('descripcion', 5000);
             $table->string('lugar', 150);
             $table->dateTime('fecha');
-            $table->integer('categoria');
+            $table->enum('categoria', ['Académico', 'Cultural']);
             $table->string('imagen', 300);
             $table->boolean('activo');
 

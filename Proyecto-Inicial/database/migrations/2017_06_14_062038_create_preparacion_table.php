@@ -17,7 +17,7 @@ class CreatePreparacionTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('carrera');
-            $table->integer('forma_titulacion');
+            $table->enum('forma_titulacion', ['Tesis', 'CENEVAL', 'No titulado']);
             $table->dateTime('fecha_inicio');
             $table->dateTime('fecha_fin');
             $table->dateTime('fecha_titulo')->nullable();
