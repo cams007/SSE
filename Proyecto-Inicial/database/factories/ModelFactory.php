@@ -58,7 +58,7 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'genero' => $faker->randomElement(['Masculino' ,'Femenino']),
         'fecha_nacimiento' => $faker->dateTimeBetween(),
         'nacionalidad' => $faker->randomElement(['Mexicana' ,'Otra']),
-        'telefono' => $faker->cellNumber,
+        'telefono' => $faker->word,
         'lugar_origen' => $faker->word,
         'direccion_actual' => $faker->word,
         'preparacion_id' => function () {
@@ -200,7 +200,7 @@ $factory->define(App\Postulacion::class, function (Faker\Generator $faker) {
 $factory->define(App\Preparacion::class, function (Faker\Generator $faker) {
     return [
         'carrera' => $faker->randomNumber(),
-        'forma_titulacion' => $faker->randomNumber(),
+        'forma_titulacion' => $faker->randomElement(['Tesis' ,'CENEVAL', 'No titulado']),
         'fecha_inicio' => $faker->dateTimeBetween(),
         'fecha_fin' => $faker->dateTimeBetween(),
         'fecha_titulo' => $faker->dateTimeBetween(),
@@ -212,12 +212,12 @@ $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
         'tiempo_sin_empleo' => $faker->randomNumber(),
         'empresa' => $faker->word,
         'telefono_empresa' => $faker->word,
-        'sector' => $faker->randomNumber(),
+        'sector' => $faker->randomElement(['Pública' ,'Privada', 'Propia']),
         'fecha_ingreso' => $faker->dateTimeBetween(),
         'puesto_inicial' => $faker->word,
         'puesto_final' => $faker->word,
-        'jornada' => $faker->randomNumber(),
-        'contrato' => $faker->randomNumber(),
+        'jornada' => $faker->randomElement(['Completo' ,'Medio', 'Horas']),
+        'contrato' => $faker->randomElement(['Indeterminado' ,'Eventual', 'Honorarios']),
         'ingreso' => $faker->randomNumber(),
         'actividad_laboral' => $faker->randomNumber(),
         'factores_contratacion' => $faker->word,
