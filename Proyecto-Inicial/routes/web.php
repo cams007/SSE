@@ -15,9 +15,6 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/home', function () {
-    return view('registro.home');
-});
 
 Route::group(['prefix' => 'perfil'], function() {
     
@@ -54,15 +51,12 @@ Route::group(['prefix' => 'perfil'], function() {
     Route::post('fpersonal', 'PerfilController@saveFormacionPerson');
     Route::post('experiencia', 'PerfilController@savePrimerEmp');
     Route::post('intereses', 'PerfilController@saveFormacionProf');
-
 });
+
 Route::get('/registro', function() {
     return view('registro.registrarse');
 });
 
-Route::get('/inicio', function() {
-    return view('registro.home');
-});
 Route::get('/bienvenida', function() {
     return view('registro.bienvenida');
 });
@@ -114,3 +108,7 @@ Route::get('datos_empresa/comentarios', function(){
 Route::get('datos_empresa/ofertas', function(){
     return view('empresa.ofertasLaborales');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

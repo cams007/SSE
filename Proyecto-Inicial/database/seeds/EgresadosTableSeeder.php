@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Keboola\Csv\CsvFile;
+use League\Csv\Reader;
 
 class EgresadosTableSeeder extends Seeder
 {
@@ -12,15 +12,32 @@ class EgresadosTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('Egresado')->delete();
-
-        $csv= new CsvFile('./egresados.csv');
-		
-		$this->command->info('Procesando archivo');
+        $file = database_path().'/estructura.csv';
+        // $this->command->info($file);
+        $csv = Reader::createFromPath($file); 
+        $csv->setOffset(1); //because we don't want to insert the header
         
-        foreach($csv AS $row) {
-            Model::create(['name' => $row[0], 'email' => $row[1], 'address' => $row[2]]);
+        foreach ($csv as $row) {
+            if ( !empty($row)){
+            
+                \DB::table('Egresado')->insert(
+                    array(
+                        "matricula" => $row{0},
+                        "nombre" => $row{1},
+                        "curp" => $row{2},
+                        "genero" => $row{3},
+                        "fecha_nacimiento" => date("Y-m-d", strtotime($row[4])),
+                        "nacionalidad" => $row{5},
+                        "telefono" => $row{6},
+                        "correo" => $row{7},
+                        "lugar_origen" => $row{8},
+                        "lugar_actual" => $row{9},
+                        "preparacion_id" => $row{10},
+                        "primerEmpleo_id" => $row{11},
+                    )
+                );
+            }
         }
-        $this->command->info('los datos se procesaron correctamente');
+
     }
 }

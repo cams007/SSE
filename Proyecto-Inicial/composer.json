@@ -9,7 +9,7 @@
         "codeception/codeception": "*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-	"keboola/csv": "1.1.*"
+        "league/csv": "^8.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

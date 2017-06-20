@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Egresado;
+use App\Preparacion;
+use App\Maestria;
+use App\Doctorado;
+
 class PerfilController extends Controller {
 
     public function saveDatosB(Request $request) {
@@ -14,11 +18,12 @@ class PerfilController extends Controller {
         $egresado->correo = $request->egresadosEmail;
         $egresado->save();
 
-        redirect('perfil/fpersonal');
+        return redirect('perfil/fpersonal');
     }
 
     public function saveFormacionPerson(Request $request) {
-    	return redirect('perfil/experiencia');
+        $p = 
+        // return redirect('perfil/experiencia');
     }
 
     public function savePrimerEmp(Request $request) {

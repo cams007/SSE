@@ -26,9 +26,16 @@ class CreateEgresadoTable extends Migration
             $table->string('lugar_origen', 200);
             $table->string('lugar_actual', 200)->nullable();
             $table->integer('preparacion_id')->unsigned();
-            $table->foreign('preparacion_id')->references('id')->on('Preparacion')->unique();
+            $table->foreign('preparacion_id')
+                  ->references('id')->on('Preparacion')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
             $table->integer('primerEmpleo_id')->unsigned();
-            $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique()->nullable();
+            $table->foreign('primerEmpleo_id')
+                  ->references('id')->on('PrimerEmpleo')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade')
+                  ->unique()->nullable();
 
             $table->timestamps();
         });
