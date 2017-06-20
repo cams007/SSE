@@ -7,6 +7,9 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - PhpBrowser:
-            url: http://localhost/myapp
+        - WebDriver:
+            url: 'http://localhost/'
+            browser: phantomjs
+        # - PhpBrowser:
+        #     url: http://localhost/
         - \Helper\Acceptance

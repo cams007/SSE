@@ -17,7 +17,7 @@ class CreateEmpleadorTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre', 200);
-            $table->string('rfc', 45);
+            $table->string('rfc', 45)->nullable();
             $table->string('telefono', 12);
             $table->string('correo', 50);
             $table->string('calle', 45);
@@ -26,7 +26,7 @@ class CreateEmpleadorTable extends Migration
             $table->string('ciudad', 60);
             $table->string('estado', 60);
             $table->integer('codigo_postal');
-            $table->string('motivo_no_contratacion', 60);
+            $table->string('motivo_no_contratacion', 60)->nullable();
             $table->string('recomendaciones', 200);
             $table->integer('contacto_id')->unsigned();
             $table->foreign('contacto_id')->references('id')->on('Contacto');
@@ -42,8 +42,8 @@ class CreateEmpleadorTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('Empleador');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -16,7 +16,7 @@ class CreateEvaluacionPETable extends Migration
         Schema::create('EvaluacionPE', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('evaluacion');
+            $table->enum('evaluacion', ['Excelente', 'Muy buena', 'Buena', 'Regular', 'Mala']);
             $table->integer('primerEmpleo_id')->unsigned();
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
             $table->integer('catalogoPregunta_id')->unsigned();
@@ -33,8 +33,8 @@ class CreateEvaluacionPETable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('EvaluacionPE');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

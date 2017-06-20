@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('usuario', 60);
+            $table->string('correo', 50);
             $table->string('password', 60);
             $table->string('egresado_matricula', 12);
             $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
@@ -33,8 +33,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('users');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }

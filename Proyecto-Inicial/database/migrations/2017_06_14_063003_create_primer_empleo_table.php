@@ -16,21 +16,22 @@ class CreatePrimerEmpleoTable extends Migration
         Schema::create('PrimerEmpleo', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('empresa', 200);
-            $table->integer('sector');
-            $table->date('fecha_ingreso');
-            $table->string('puesto_inicial', 200);
-            $table->string('puesto_final', 200);
-            $table->integer('jornada');
-            $table->integer('contrato');
-            $table->integer('ingreso');
-            $table->integer('actividad_laboral');
             $table->integer('tiempo_sin_empleo');
-            $table->string('factores_contratacion', 400);
-            $table->string('carencias_basicas', 400);
-            $table->string('carencias_areas', 400);
-            $table->string('motivo_no_posgrado', 100); //Motivo de no continuar estudios de posgrado en UTM
-            $table->string('recomendaciones', 500);
+            $table->string('empresa', 100)->nullable();
+            $table->string('telefono_empresa', 12)->nullable();
+            $table->enum('sector', ['Pública', 'Privada', 'Propia'])->nullable();
+            $table->dateTime('fecha_ingreso')->nullable();
+            $table->string('puesto_inicial', 60)->nullable();
+            $table->string('puesto_final', 60)->nullable();
+            $table->enum('jornada', ['Completo', 'Medio', 'Horas'])->nullable();
+            $table->enum('contrato', ['Indeterminado', 'Eventual', 'Honorarios'])->nullable();
+            $table->integer('ingreso')->nullable();
+            $table->integer('actividad_laboral')->nullable();
+            $table->string('factores_contratacion', 200);
+            $table->string('carencias_basicas', 200)->nullable();
+            $table->string('carencias_areas', 200)->nullable();
+            $table->string('motivo_no_posgrado', 100);
+            $table->string('recomendaciones', 500)->nullable();
 
             $table->timestamps();
         });
@@ -43,9 +44,9 @@ class CreatePrimerEmpleoTable extends Migration
      */
     public function down()
     {
-        Schema::disableForeignKeyContrains();
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('PrimerEmpleo');
-        Schema::enableForeignKeyContrains();
+        Schema::enableForeignKeyConstraints();
     }
 }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatalogoValorTable extends Migration
+class CreatePostulacionTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateCatalogoValorTable extends Migration
      */
     public function up()
     {
-        Schema::create('CatalogoValor', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+        Schema::create('Postulacion', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('descripcion', 45);
+            $table->string('egresado_matricula', 12);
+            $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
+            $table->integer('oferta_id');
+            $table->foreign('oferta_id')->references('id')->on('Oferta');
 
             $table->timestamps();
         });
@@ -30,7 +32,7 @@ class CreateCatalogoValorTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('CatalogoValor');
+        Schema::dropIfExists('Postulacion');
         Schema::enableForeignKeyConstraints();
     }
 }
