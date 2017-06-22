@@ -6,47 +6,291 @@
 	position: relative;
 
 }
-div p.titulo_select1{
-  font-size: 14px;
-  color: #6B6B6B;
-  margin: 0;
-    font-family: "Roboto",sans-serif;
-  text-align: left;
-}
-.titulo_select {
-    color: #6b6b6b;
-    background-image: url("../assets/images/menu_hamburguesa.png");
-    font-family: "Roboto",sans-serif;
-    font-size: 14px;
-    text-align: left;
+.hr {
+	max-width: 965px;
+	margin: 20px 27px 0;
 }
 
-table th{
+.contenedor{
+	  width: 1024px;
+	  height: 536px;
+	  margin: 0 auto;
+	  display: block;
+	  text-align: center;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction: column;
+}
+.div-1{
+	/*background: yellow;*/
+	border-bottom: solid 1px #adacac;
+	margin: 8px 32px 0;
+	height:32px;
+}
+.div-2{
+	/*background: green;*/
+	padding-top: 16px;
+	padding-bottom: 2px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	/*justify-content: space-around;*/
+}
+.div-2-1{
+	/*background: rgb(245, 56, 17);*/
+	width: 310px;
+	position: relative;
+	left: 28px;
+	/*text-align: left;*/
+}
+div.search input{
+	width: 220px;
+	height: 32px;
+	padding: 0 0 0 32px;
+	margin-top: 8px;
+	/*margin-right: 28px;*/
+	border: 1 !important;    /*    Removes border*/
+  	border: #ACABAB 2px solid;
+	background-image: url("../assets/images/search_gray.png");
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 4px 4px;
+	box-shadow: 0 0 3px gray;
+	-moz-box-shadow: 0 0 3px gray;
+	-webkit-box-shadow: 0 0 3px gray;
+}
+
+div.search input:hover{
+	outline: none;
+	border: solid 1px #BE3228;
+	box-shadow: 0 0 5px 1px #969696;
+}
+
+.div-2-2{
+	/*background: rgb(142, 144, 31);*/
+	width: 680px;
+	height: 22px;
+}
+
+.div-3{
+  /*background: rgb(35, 168, 181);*/
+	padding-bottom: 16px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	/*justify-content: space-around;*/
+}
+.div-3-1{
+	background: rgb(69, 44, 214);
+	position: relative;
+	width: 250px;
+	left: 28px;
+}
+
+.div-4{
+  /*background: #1BAF63;*/
+	height: 360px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	/*height: 355px;
+	padding-left: 32px;*/
+}
+.div-4-1{
+	width: 1000px;
+	padding-left: 28px;
+}
+.div-5{
+	/*background: #1B3FAF;*/
+	/*padding-bottom: 16px;*/
+}
+
+.titulo_select{
+	text-align: left;
+	color: #6B6B6B;
+	font-size: 14px;
+	font-family: 'Roboto', sans-serif;
+}
+div select{
+  width: 250px;
+  height: 32px;
+  padding: 0 0 0 32px;
+	background: white;
+	border: 1px solid #acabab;
+  -webkit-appearance: none;        /*Removes default chrome and safari style */
+  -moz-appearance: none;          /* Removes Default Firefox style*/
+	/*box-shadow: 0 0 3px gray;
+	-moz-box-shadow: 0 0 3px gray;
+	-webkit-box-shadow: 0 0 3px gray;*/
+}
+
+
+.seleccion{
+	background-image: url("../assets/images/menu_hamburguesa.png");
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+/* =========================================================
+ 1. MODAL STYLE
+========================================================= */
+.modaloverlay {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 400ms ease-in;
+  z-index: -1;
+  display: none;
+}
+
+.modaloverlay:target {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 99999;
+}
+
+.modaloverlay .modal {
+  background-color: white;
+  height: 75%;
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+  padding: 3em;
+  overflow-y: overlay;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 60em) {
+  .modaloverlay .modal {
+    height: 50%;
+    margin: 5% auto;
+    max-height: 57em;
+    max-width: 33em;
+    width: 85%;
+  }
+}
+
+.modaloverlay .modal > iframe, .modaloverlay .modal > div {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modaloverlay .close {
+  background-color: white;
+  color: #6B6B6b;
+  font-size: 24px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  z-index: 1;
+}
+
+.btn-group {
+  margin: 4% 19% 0 16.5%;
+}
+
+td.text_red {
+	color: #BE3228;
+}
+td a.more_detail {
+	float: right;
+	font-weight: bold;
+	border: 2px solid red;
+	border-color: red;
+	margin: 5px 5px 5px 0;
+	padding: 0 5px 0 5px;
+}
+
+
+div.paginate a{
+	text-align: center;
+	padding: 5px 10px 12px 9px;
+	background-repeat: no-repeat;
+}
+div.paginate a.page{
+	background-image: url("../assets/images/paginator_page.png");
+}
+div.paginate a.active{
+	color: white;
+	background-image: url("../assets/images/paginator_active.png");
+}
+
+div.paginate a.forward{
+	position: relative;
+	top: 6px;
+}
+div.paginate a.back{
+	position: relative;
+	top: 6px;
+}
+
+th.col_calif{
+	width: 100px;
+}
+table{
+  width: 97%;
+  /*margin: 0 5% 0 5%;*/
+  border-collapse: collapse;
+  border: #ACABAB 1px solid;
+  font-size: 13px;
+}
+th{
   color: #FFFFFF;
   background-color: #6B6B6B;
-  border: #ACABAB 2px solid;
+  border: #ACABAB 1px solid;
   text-align: center;
 }
-
-table tr, td {
+tr, td {
   height: 32px;
-  border: #ACABAB 2px solid;
-  text-align: center;
+  border: #ACABAB 1px solid;
 }
-
-div.paginate{
-	margin: 20px 0px 0 0px;
+tr:nth-child(even){ /*Filas pares*/
+  color: #6B6B6B;
+  background-color: #FFFFFF;
 }
-
-h3{
-  line-height: 2.0;
-  font-size: 14px;
-  font-family: 'Roboto', sans-serif;
-  color: #ACABAB
+tr:nth-child(odd){ /*Filas nones*/
+  color: #6B6B6B; /*color: #FFFFFF;*/
+  background-color: #D8D8D8;
 }
+/*.ubicacion{
+	background-image: url("../assets/images/menu_hamburguesa.png");
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}*/
+/*div select{
+  width: 400px;
+  height: 32px;
+  padding: 0 0 0 32px;
+	background: white;
+  -webkit-appearance: none;        /*Removes default chrome and safari style
+  -moz-appearance: none;          /* Removes Default Firefox style
+	box-shadow: 0 0 3px gray;
+	-moz-box-shadow: 0 0 3px gray;
+	-webkit-box-shadow: 0 0 3px gray;
+}*/
 
-*{
+/*.titulo_select{
   margin: 0;
-  padding:0;
+  text-align: left;
+	color: #6B6B6B;
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+}*/
 
+a{
+  color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
 }
