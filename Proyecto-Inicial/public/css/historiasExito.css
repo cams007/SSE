@@ -2,10 +2,10 @@
 
 .text-center{
 	font-family: 'Roboto', sans-serif;
-	font-size: 25px;
+	font-size: 24px;
 	color: #6B6B6B;
 	position: relative;
-	top: 15px;
+
 }
 .hr {
 	max-width: 965px;
@@ -26,7 +26,10 @@
 }
 
 .div-1{
-	/*background: rgb(168, 127, 64);*/
+	/*background: yellow;*/
+	border-bottom: solid 1px #adacac;
+	margin: 8px 32px 0;
+	height:32px;
 }
 
 .div-2{

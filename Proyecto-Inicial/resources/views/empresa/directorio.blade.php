@@ -12,7 +12,7 @@
 
     <div class="div-1"><!--div-1-->
 		<p class="text-center">Directorio de empresas</p>
-      	<hr class="hr">
+
 	</div><!--div-1-->
 
     <div class="buscador_empresas"> <!-- Buscador -->
@@ -76,7 +76,7 @@
 		</div> <!--contenedor-empresa-->
 
 	</div><!--listado-->
-	
+
 	<div class="paginate"> <!-- Paginación -->
 		<a class="back" href="#"><img src="{{ url('assets/images/paginator_back.png') }}"></a>
 		<a class="page" href="#">1</a>
