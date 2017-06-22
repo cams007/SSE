@@ -12,7 +12,7 @@
 
 	<div class="div-1"><!--div-1-->
 		<p class="text-center">Tips y consejos</p>
-		<hr class="hr">
+		
 	</div><!-- div-1 -->
 
 	<div class="div-2"><!--div-2-->

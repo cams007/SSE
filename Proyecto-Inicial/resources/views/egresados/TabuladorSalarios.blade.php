@@ -4,7 +4,7 @@
 
 @section('style')
 	<link href="{{ url('css/tabuladorSalarios.css') }}" rel="stylesheet">
-	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+
 	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
 @stop
@@ -12,10 +12,10 @@
 @section('content')
 
 	<div class="contenedor"><!--contenedor-->
-	
+
 		<div class="div-1"><!--div-1-->
 			<p class="text-center">Tabulador de salarios</p>
-	      	<hr class="hr">
+	      	
 		</div><!--div-1-->
 
 		<!--Filtro-->
@@ -106,4 +106,3 @@
 		</div>
 	</div><!--contenedor-->
 @stop
-

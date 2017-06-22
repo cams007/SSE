@@ -20,7 +20,7 @@ Route::get('/home', function () {
 });
 
 Route::group(['prefix' => 'perfil'], function() {
-    
+
     Route::get('/' , function () {
         return view('perfil.index');
     });
@@ -40,7 +40,7 @@ Route::group(['prefix' => 'perfil'], function() {
     Route::get('ofertaslab', function() {
         return view('perfil.ofertaslab');
     });
-    
+
     Route::post('/', 'PerfilController@saveDatosB');
     Route::post('fpersonal', 'PerfilController@saveFormacionPerson');
     Route::post('experiencia', 'PerfilController@savePrimerEmp');
@@ -74,8 +74,12 @@ Route::get('/tabuladorSalarios', function(){
 	return view('egresados.TabuladorSalarios');
 });
 
+// Route::get('/eventosUTM', function(){
+// 	return view('egresados.eventosUTM.index');
+// });
+
 Route::get('/eventosUTM', function(){
-	return view('egresados.eventosUTM.index');
+	return view('egresados.eventosUTM.eventosUTM-index');
 });
 
 Route::get('eventosUTM/culturales', function(){
@@ -114,8 +118,12 @@ Route::get('datos_empresa/comentarios', function(){
     return view('empresa.comentarios');
 });
 
+// Route::get('datos_empresa/ofertas', function(){
+//     return view('empresa.ofertasLaborales');
+// });
+
 Route::get('datos_empresa/ofertas', function(){
-    return view('empresa.ofertasLaborales');
+    return view('empresa.ofertas');
 });
 
 Route::get('perfil/propuesta', function(){
