@@ -270,13 +270,16 @@ div.search input:hover{
 	width: 50px;
 	background: #BE3228;
 	color: white;
+	border: 1px solid white;
 	margin-bottom: 8px;
 }
+
 .no{
  margin-left: 10px;
  width: 50px;
  background: #BE3228;
  color: white;
+ border: 1px solid white;
  margin-bottom: 8px;
 }
 .no:hover{

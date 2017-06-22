@@ -123,7 +123,7 @@ Route::get('datos_empresa/comentarios', function(){
 // });
 
 Route::get('datos_empresa/ofertas', function(){
-    return view('empresa.ofertas');
+    return view('empresa.ofertasLaborales');
 });
 
 Route::get('perfil/propuesta', function(){

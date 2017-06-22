@@ -15,7 +15,7 @@
 
 		<div class="div-1"><!--div-1-->
 			<p class="text-center">Tabulador de salarios</p>
-	      	
+
 		</div><!--div-1-->
 
 		<!--Filtro-->

@@ -10,24 +10,13 @@
 	<div class="contenedor"><!--contenedor-->
 		<div class="div-1"><!--div-1-->
 			<p class="text-center">Ofertas laborales</p>
-	      	
+
 		</div><!--div-1-->
 
-	<div>
-	<!-- Filtros -->
-	<!-- <div class="filtro_1"> -->
-	<div class="div-2"><!--div-2-->
-		<p class="titulo_select">Ubicación:</p>
-	</div><!--div-2-->
-	<div class="div-3"><!--div-3-->
-		<select name="ubicacion" class="ubicacion">
-			<option selected="">Todas</option>
-		  	<option value="cdmx">CDMX</option>
-		  	<option value="oaxaca">Huajuapan de León</option>
-		  	<option value="oaxaca">Guadalajara, Jalisco</option>
-		  	<option value="oaxaca">Pruebla, Puebla</option>
-		</select>
-	</div><!--div-3-->
+		<!-- Buscador -->
+		<div class="buscador_ofertas">
+				<input type="search" name="q" placeholder="Buscador de ofertas">
+		</div>
 
 	<!-- Resultados -->
 	<div class="div-4"><!--div-4-->

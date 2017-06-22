@@ -10,48 +10,30 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Ranking de empresas</p>
-			
+
 		</div><!--div-1-->
 
 		<div class="div-2"><!--div-2-->
 			<div class="div-2-1"><!--div-2-1-->
-				<p class="titulo_select">Categoría:</p>
-			</div><!--div-2-1-->
-			<div class="div-2-2"><!--div-2-2-->
 				<p class="titulo_select">Calificación:</p>
-			</div><!--div-2-2-->
-			<div class="div-2-3"><!--div-2-3-->
-				<p class="titulo_select">Ubicación:</p>
+			</div><!--div-2-1-->
+
+			<div class="div-2-2"><!--div-2-3-->
+				<div class="search">
+							 <input type="search" name="q" placeholder="Buscar">
+					 </div>
 			</div><!--div-2-3-->
 		</div><!--div-2-->
 
 		<div class="div-3"><!--div-3-->
 		<!-- Filtros -->
 			<div class="div-3-1"><!--div-3-1-->
-				<select name="Giro" class="seleccion">
-					<option selected="">Todas</option>
-			  	<option value="volvo">Consultoría</option>
-					<option value="saab">Desarrollo de software</option>
-					<option value="saab">Desarrollo web</option>
-					<option value="saab">Desarrollo movil</option>
-				</select>
-			</div><!--div-3-1-->
-			<div class="div-3-2"><!--div-3-2-->
 				<select name="Calificacion" class="seleccion">
 					<option selected="">Todas</option>
 					<option value="saab">Menor a 2.5</option>
 					<option value="saab">Mayor o igual a 2.5</option>
 				</select>
-			</div><!--div-3-2-->
-			<div class="div-3-3"><!--div-3-3-->
-				<select name="Ubicacion" class="seleccion">
-					<option selected="">Todas</option>
-			  		<option value="cdmx">CDMX</option>
-			  		<option value="oaxaca">Huajuapan de León</option>
-			  		<option value="oaxaca">Guadalajara, Jalisco</option>
-			  		<option value="oaxaca">Pruebla, Puebla</option>
-				</select>
-			</div><!--div-3-3-->
+			</div><!--div-3-1-->
 		</div><!--div-3-->
 
 		<div class="div-4"><!--div-4-->
