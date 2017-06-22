@@ -20,7 +20,7 @@ class CreateValorPETable extends Migration
             $table->integer('primerEmpleo_id')->unsigned();
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
             $table->integer('catalogoValor_id')->unsigned();
-            $table->foreign('catalogoValor_id')->references('id')->on('CatalogoValor');
+            $table->foreign('catalogoValor_id')->references('id')->on('CatalogoValor')->unique();
 
             $table->timestamps();
         });

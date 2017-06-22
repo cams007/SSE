@@ -20,7 +20,7 @@ class CreateEvaluacionTable extends Migration
             $table->integer('empleado_id')->unsigned();
             $table->foreign('empleado_id')->references('id')->on('Empleado');
             $table->integer('catalogoPregunta_id')->unsigned();
-            $table->foreign('catalogoPregunta_id')->references('id')->on('CatalogoPregunta');
+            $table->foreign('catalogoPregunta_id')->references('id')->on('CatalogoPregunta')->unique();
 
             $table->timestamps();
         });

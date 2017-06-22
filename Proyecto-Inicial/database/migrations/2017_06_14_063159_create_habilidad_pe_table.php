@@ -20,7 +20,7 @@ class CreateHabilidadPETable extends Migration
             $table->integer('primerEmpleo_id')->unsigned();
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
             $table->integer('catalogoHabilidad_id')->unsigned();
-            $table->foreign('catalogoHabilidad_id')->references('id')->on('CatalogoHabilidad');
+            $table->foreign('catalogoHabilidad_id')->references('id')->on('CatalogoHabilidad')->unique();
 
             $table->timestamps();
         });
