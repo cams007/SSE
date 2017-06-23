@@ -1,9 +1,9 @@
 @extends('layouts.master')
 
-@section('title', 'Eventos Académicos')
+@section('title', 'Eventos UTM')
 
 @section('style')
-	<link href="{{ url('css/eventosAcademicos.css') }}" rel="stylesheet">
+	<link href="{{ url('css/eventosUTMIndex.css') }}" rel="stylesheet">
 	<!--<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">-->
 @stop
 
@@ -12,8 +12,8 @@
 
  <div class="div-1"> <!--incio div-1-->
 
-	 <p class="text-center">Eventos Académicos</p>
-	
+	 <p class="text-center">Eventos UTM</p>
+
 
  </div><!--fin div-1-->
 
@@ -29,12 +29,12 @@
 	 </div><!--fin div-2-1-->
 
 	 <div class="div-2-2"><!--inicio div-2-2-->
-		<!--<div class="column content">-->
-		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
-			 <div class="search">
-	            <input type="search" name="q" placeholder="Buscar">
-	        </div>
-		</div><!--fin div-2-2-1-->
+		 <!--<div class="column content">-->
+		 <div class="div-2-2-1"> <!--inicio div-2-2-1-->
+				 <div class="search">
+		            <input type="search" name="q" placeholder="Buscar">
+		        </div>
+		 </div><!--fin div-2-2-1-->
 
 		 <div class="div-2-2-2"><!--inicio div-2-2-2-->
 
