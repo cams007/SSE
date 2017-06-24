@@ -25,11 +25,11 @@ class CreateEmpleadorTable extends Migration
             $table->string('colonia', 60);
             $table->string('ciudad', 60);
             $table->string('estado', 60);
-            $table->integer('codigo_postal');
+            $table->string('codigo_postal', 60);
             $table->string('motivo_no_contratacion', 60)->nullable();
             $table->string('recomendaciones', 200);
             $table->integer('contacto_id')->unsigned();
-            $table->foreign('contacto_id')->references('id')->on('Contacto');
+            $table->foreign('contacto_id')->references('id')->on('Contacto')->unique();
 
             $table->timestamps();
         });
