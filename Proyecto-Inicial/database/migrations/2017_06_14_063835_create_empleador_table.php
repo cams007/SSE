@@ -26,7 +26,7 @@ class CreateEmpleadorTable extends Migration
             $table->string('ciudad', 60);
             $table->string('estado', 60);
             $table->string('codigo_postal', 60);
-            $table->string('motivo_no_contratacion', 60)->nullable();
+            $table->string('motivo_no_contratacion', 200)->nullable();
             $table->string('recomendaciones', 200);
             $table->integer('contacto_id')->unsigned();
             $table->foreign('contacto_id')->references('id')->on('Contacto')->unique();

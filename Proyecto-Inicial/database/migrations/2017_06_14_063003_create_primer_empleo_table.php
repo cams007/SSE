@@ -21,8 +21,8 @@ class CreatePrimerEmpleoTable extends Migration
             $table->string('telefono_empresa', 12)->nullable();
             $table->enum('sector', ['Pública', 'Privada', 'Propia'])->nullable();
             $table->dateTime('fecha_ingreso')->nullable();
-            $table->string('puesto_inicial', 60)->nullable();
-            $table->string('puesto_final', 60)->nullable();
+            $table->string('puesto_inicial', 200)->nullable();
+            $table->string('puesto_final', 200)->nullable();
             $table->enum('jornada', ['Completo', 'Medio', 'Horas'])->nullable();
             $table->enum('contrato', ['Indeterminado', 'Eventual', 'Honorarios'])->nullable();
             $table->integer('ingreso')->nullable();

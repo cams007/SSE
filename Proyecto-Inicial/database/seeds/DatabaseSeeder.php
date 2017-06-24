@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(TipTableSeeder::class);
         $this->call(HistoriaExitoTableSeeder::class);
 
-        $this->call(EgresadoTableSeeder::class);
         $this->call(UserTableSeeder::class);
+        $this->call(EgresadoTableSeeder::class);
         $this->call(EmpleadorTableSeeder::class);
     }
 }

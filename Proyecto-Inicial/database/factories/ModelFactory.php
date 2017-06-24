@@ -63,7 +63,7 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'telefono' => $faker->numerify($string = '##########'),
         'lugar_origen' => $faker->city . ', ' . $faker->country,
         'direccion_actual' => $faker->address,
-        'imagen' => 'assets/images/egresados/' . $faker->randomElement(['ana.jpg' ,'luis.jpg']),
+        'imagen' => 'assets/images/egresados/' . $faker->randomElement(['usuario1.jpg', 'usuario2.jpg', 'usuario3.jpg', 'usuario4.jpg']),
         'cv' => $faker->sentence,
         'preparacion_id' => function () {
             return factory(App\Preparacion::class)

@@ -55,10 +55,10 @@
 					</div><!--contenedor-info-->
 
 					<div>
-						<input type="text" name="cActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->lugar_actual}} " />
+						<input type="text" name="cActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->direccion_actual}} " />
 					</div>
 					<div>
-						<input type="email" name="egresadosEmail" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->correo}}" />
+						<input type="email" name="egresadosEmail" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->usuario->correo}}" />
 					</div>
 
 					<div>
@@ -75,7 +75,7 @@
 			</div>
 		</div><!--fin div-2-2-->
 		<div class="div-2-3">
-	    	<img src="{{url('assets/images/logo_utm.png')}}" alt="user-picture" class="img-thumbnail img">
+	    	<img src="{{url($egresados->imagen)}}" alt="user-picture" class="img-thumbnail img">
 		</div><!--fin div-2-3-->
 	</div><!--fin div-2-->
 </div><!--fin contenedor-->
