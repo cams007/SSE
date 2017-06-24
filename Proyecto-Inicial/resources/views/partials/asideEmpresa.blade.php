@@ -1,11 +1,11 @@
 <ul>
-	  <li {{ Request::is('datos_empresa') ? ' class=active' : ''}} >
-	  	<a href="{{url('datos_empresa')}}">Datos básicos</a>
+	  <li {{ Request::is('directorio/empresa') ? ' class=active' : ''}} >
+	  	<a href="{{url('directorio/empresa')}}">Datos básicos</a>
 	  </li>
-	  <li {{ Request::is('datos_empresa/comentarios') ? ' class=active' : ''}}>
-	  	<a href="{{url('datos_empresa/comentarios')}}">Comentarios recibidos</a>
+	  <li {{ Request::is('directorio/empresa/comentarios') ? ' class=active' : ''}}>
+	  	<a href="{{url('directorio/empresa/comentarios')}}">Comentarios recibidos</a>
 	  </li>
-	  <li {{ Request::is('datos_empresa/ofertas') ? ' class=active' : ''}}>
-	  	<a href="{{url('datos_empresa/ofertas')}}">Ofertas laborales</a>
+	  <li {{ Request::is('directorio/empresa/ofertas') ? ' class=active' : ''}}>
+	  	<a href="{{url('directorio/empresa/ofertas')}}">Ofertas laborales</a>
 	  </li>
 </ul>

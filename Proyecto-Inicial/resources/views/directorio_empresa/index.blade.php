@@ -98,7 +98,7 @@
 			<p class="txt">Datos de empresa</p>
 		</div><!--parte-1-->
 
-		<form action="{{url('datos_empresa')}}" method="get">
+		<form action="{{url('directorio/empresa')}}" method="get">
 			<div class="parte-2"><!--parte-2-->
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><!--icono-->

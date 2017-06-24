@@ -20,63 +20,64 @@ Route::get('/home', function () {
 });
 
 Route::group(['prefix' => 'perfil'], function() {
-
+    
     Route::get('/' , function () {
-        return view('perfil.index');
+        return view('perfil.index', ['egresados' => App\Egresado::find(2008040046)]);
     });
-
     Route::get('fpersonal', function() {
         return view('perfil.fPersonal');
     });
-
     Route::get('experiencia', function() {
         return view('perfil.experiencia');
     });
-
+    Route::get('dprofesional', function() {
+        return view('perfil.dprofesional');
+    });
+    
+    Route::get('fprofesional', function() {
+        return view('perfil.fProfesional', array('dato' => 'No'));
+    });
     Route::get('intereses', function() {
         return view('perfil.intereses');
     });
-
     Route::get('ofertaslab', function() {
         return view('perfil.ofertaslab');
     });
-
+    
     Route::post('/', 'PerfilController@saveDatosB');
     Route::post('fpersonal', 'PerfilController@saveFormacionPerson');
     Route::post('experiencia', 'PerfilController@savePrimerEmp');
     Route::post('intereses', 'PerfilController@saveFormacionProf');
+});
+
+Route::group(['prefix' => 'directorio'], function() {
+    
+    Route::get('/', function() {
+        return view('directorio_empresa.index');
+    });
+
+    Route::get('empresa', function(){
+        return view('directorio_empresa.datos');
+    });
+
+    Route::get('empresa/comentarios', function(){
+        return view('directorio_empresa.comentarios');
+    });
+
+    Route::get('empresa/ofertas', function(){
+        return view('directorio_empresa.ofertasLaborales');
+    });
 
 });
+
 Route::get('/registro', function() {
     return view('registro.registrarse');
 });
 
-Route::get('/inicio', function() {
-    return view('registro.home');
-});
-Route::get('/bienvenida', function() {
-    return view('registro.bienvenida');
-});
-
-Route::get('perfil/dprofesional', function() {
-    return view('perfil.dprofesional');
-});
-
-Route::get('perfil/fprofesional', function() {
-    return view('perfil.fProfesional', array('dato' => 'No'));
-});
-
-Route::get('perfil/egresadoReco', function() {
-    return view('perfil.recomendaciones');
-});
 
 Route::get('/tabuladorSalarios', function(){
 	return view('egresados.TabuladorSalarios');
 });
-
-// Route::get('/eventosUTM', function(){
-// 	return view('egresados.eventosUTM.index');
-// });
 
 Route::get('/eventosUTM', function(){
 	return view('egresados.eventosUTM.eventosUTM-index');
@@ -106,26 +107,7 @@ Route::get('/ofertas', function() {
 	return view('ofertas.ofertas');
 });
 
-Route::get('/directorio_empresas', function() {
-	return view('empresa.directorio');
-});
 
-Route::get('/datos_empresa', function(){
-    return view('empresa.index');
-});
+// Auth::routes();
 
-Route::get('datos_empresa/comentarios', function(){
-    return view('empresa.comentarios');
-});
-
-// Route::get('datos_empresa/ofertas', function(){
-//     return view('empresa.ofertasLaborales');
-// });
-
-Route::get('datos_empresa/ofertas', function(){
-    return view('empresa.ofertasLaborales');
-});
-
-Route::get('perfil/propuesta', function(){
-    return view('perfil.fProfesional_propuesta', array('dato' => 'No'));
-});
+// Route::get('/home', 'HomeController@index')->name('home');
