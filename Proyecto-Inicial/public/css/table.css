@@ -5,18 +5,18 @@ table{
   width: 97%;
   /*margin: 0 5% 0 5%;*/
   border-collapse: collapse;
-  border: #ACABAB 2px solid;
-  font-size: 12pt;
+  border: #ACABAB 1px solid;
+  font-size: 13px;
 }
 th{
   color: #FFFFFF;
   background-color: #6B6B6B;
-  border: #ACABAB 2px solid;
+  border: #ACABAB 1px solid;
   text-align: center;
 }
 tr, td {
   height: 32px;
-  border: #ACABAB 2px solid;
+  border: #ACABAB 1px solid;
 }
 tr:nth-child(even){ /*Filas pares*/
   color: #6B6B6B;

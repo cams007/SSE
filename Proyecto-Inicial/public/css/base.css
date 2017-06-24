@@ -24,7 +24,7 @@ html {
 }
 
 header {
-  height: 153px;
+  height: 136px;
   background-color: white;
   border-bottom: solid 1px #ccc;
   box-shadow: 0 1px 3px #888888;
@@ -33,25 +33,24 @@ header {
   display:block;
   /*margin: 0 auto;*/
   min-width: 960px;
-  height: 164px;
+  height: 136px;
 }
-
 #barrasuperior {
   position: absolute;
   width:100%;
   display:block;
-  height:40px;
+  height:32px;
   background-color: #5E352A;
   box-shadow: 0 1px 3px #888888;
 }
 /*----------------ICONOS SUPERIOR-------------*/
 
-  #nombre_usuario {
+#nombre_usuario {
     display:block;
     position: relative;
     float:left;
     left: 32px;
-    top: 10px;
+    top: 5px;
 
   }
   #nombre_usuario p {
@@ -63,8 +62,6 @@ header {
     font-family: helvetica;
     font-size: 12px;
     top:5px;
-
-
   }
   .home {
     width: 19px;
@@ -89,29 +86,28 @@ header {
   }
 
 
-.block {
-  width: 1024px;
-  height: 536px;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.9);
-  display: block;
-  position: relative;
-  text-align: center;
-  top: 51px;
-  border: solid 1px #ccc;
-  box-shadow: 0 0 3px #888888;
-  -moz-box-shadow: 0 0 3px #888888;
-  -webkit-box-shadow: 0 0 3px #888888;
-}
+  .block {
+    width: 1024px;
+    min-height: 200px;
+    margin: 36px auto 40px;
+    background: rgba(255,255,255,0.9);
+    display: block;
+    position: relative;
+    text-align: center;
+    border: solid 1px #ccc;
+    box-shadow: 0 0 3px #888888;
+    -moz-box-shadow: 0 0 3px #888888;
+    -webkit-box-shadow: 0 0 3px #888888;
+  }
 .headercontainer {
   width: 1024px;
-  height: 90px;
+  height: 80px;
   margin: 0 auto;
 
   display:block;
   position:relative;
   text-align: center;
-  top:40px;
+  top:24px;
 
 }
 #logo_see_contenido{
@@ -137,7 +133,7 @@ header {
   width: 100%;
   min-width: 1024px;
   position: absolute;
-  margin-top:30px;
+  margin-top:24px;
   color:#5E352A;
   font:30px Helvetica;
   text-align:center;
@@ -181,13 +177,12 @@ button:hover{
 }
 
 #iconos {
-  /*display:block;*/
-  position: relative;
-  border: 0;
-  padding: 0;
-  float: right;
-  /*right: 0px;*/
-}
+   display:block;
+   position: relative;
+   float: right;
+   right: 32px;
+     top: -8px;
+ }
 .nav ul{
   float: right;
 }
@@ -304,16 +299,16 @@ a{
 }*/
 
 /* NavBar */
-  .menucontainer {
-    width: 1024px;
-    height: 60px;
-    margin: 0 auto;
-    background-color: #5E352A;
-    display:block;
-    position:relative;
-    text-align: center;
-    top:40px;
-  }
+.menucontainer {
+ width: 1024px;
+ height: 60px;
+ margin: 0 auto;
+ background-color: #5E352A;
+ display:block;
+ position:relative;
+ text-align: center;
+ top:25px;
+}
 
   ul{
     list-style-type: none;
@@ -372,3 +367,25 @@ div p.titulo_select{
   margin: 0;
   text-align: left;
 }*/
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: -32px;
+    padding-bottom:0px !important;
+}
+footer {
+  height: 32px;
+  background-color: #6b6b6b;
+}
+.page-wrap:after {
+
+  content: "";
+  display: block;
+}
+.search
+{
+  margin: 16px 0;
+  float:right;
+  display:block;
+  position: relative;
+}

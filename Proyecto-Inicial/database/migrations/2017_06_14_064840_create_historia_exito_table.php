@@ -19,7 +19,6 @@ class CreateHistoriaExitoTable extends Migration
             $table->string('titulo', 60);
             $table->string('descripcion', 5000);
             $table->string('imagen', 300);
-            $table->dateTime('fecha_publicacion');
             $table->boolean('activo');
 
             $table->timestamps();
