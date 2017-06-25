@@ -129,3 +129,17 @@ Route::get('datos_empresa/ofertas', function(){
 Route::get('perfil/propuesta', function(){
     return view('perfil.fProfesional_propuesta', array('dato' => 'No'));
 });
+
+//Rutas para la seccion de Administrador@
+Route::get('Admin/crearAlumno', function(){
+    return view('Admin.Alumnos.CrearAlumno');
+});
+Route::get('Admin/editarAlumno', function(){
+    return view('Admin.Alumnos.EditarAlumno');
+});
+Route::get('Admin/crearEmpresa', function(){
+    return view('Admin.Empresa.CrearEmpresa');
+});
+Route::get('Admin/editarEmpresa', function(){
+    return view('Admin.Empresa.EditarEmpresa');
+});
