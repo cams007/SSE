@@ -20,7 +20,6 @@ class CreateDoctoradoTable extends Migration
             $table->boolean('titulado');
             $table->integer('preparacion_id')->unsigned();
             $table->foreign('preparacion_id')->references('id')->on('Preparacion');
-            
             $table->timestamps();
         });
     }

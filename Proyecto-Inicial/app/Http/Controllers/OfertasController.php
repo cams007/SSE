@@ -9,7 +9,7 @@ class OfertasController extends Controller
 {
     public function index(Request $request) {
 
-        $ofertas = Oferta::puesto($request->get('q'))->orderBy('fecha_publicacion', 'DESC')->paginate(9);
+        $ofertas = Oferta::puesto($request->get('q'))->orderBy('created_at', 'DESC')->paginate(9);
 
         return view('ofertas.ofertas', compact('ofertas'));
     }

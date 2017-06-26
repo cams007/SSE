@@ -17,13 +17,12 @@ class CreatePreparacionTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('carrera');
-            // $table->string('generacion');
-            $table->enum('forma_titulacion', ['Tesis', 'CENEVAL', 'No titulado'])->nullable();
+            $table->string('generacion', 10);
             $table->dateTime('fecha_inicio');
             $table->dateTime('fecha_fin');
-            $table->dateTime('fecha_titulo')->nullable();
             $table->float('promedio', 8, 2);
-
+            $table->enum('forma_titulacion', ['Tesis', 'CENEVAL', 'No titulado'])->nullable();
+            $table->dateTime('fecha_titulo')->nullable();
             $table->timestamps();
         });
     }

@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('password', 60);
             $table->string('egresado_matricula', 12)->nullable();
             $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
-            
             $table->rememberToken();
             $table->timestamps();
         });

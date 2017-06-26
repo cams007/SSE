@@ -35,12 +35,12 @@
 				@foreach($ofertas as $oferta)
 					<tr data-oferta="{{ $oferta }}" data-empresa="{{ $oferta->empresa }}" data-contacto="{{ $oferta->empresa->contacto }}"> 
 						<?php
-							$date = date_create($oferta->fecha_publicacion);
+							$date = date_create($oferta->created_at);
 							echo '<td>'.date_format($date, 'd/M/Y').'</td>';
 						?>
 						<td>{{ $oferta->titulo_empleo }}</td>
 						<td><a href="#datosEmpresa" class="btn-empresa">{{ $oferta->empresa->nombre }}</a></td>
-						<td>{{ $oferta->empresa->ciudad }}</td>
+						<td>{{ $oferta->empresa->ciudad.", ".$oferta->empresa->estado }}</td>
 						<td>{{ $oferta->descripcion }}<a href="#detalleOferta" class="more_detail"> + </a></td>
 					</tr>
 				@endforeach

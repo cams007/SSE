@@ -18,9 +18,8 @@ class CreateHistoriaExitoTable extends Migration
             $table->increments('id');
             $table->string('titulo', 60);
             $table->string('descripcion', 5000);
-            $table->string('imagen', 300);
+            $table->string('imagen_url', 500);
             $table->boolean('activo');
-
             $table->timestamps();
         });
     }

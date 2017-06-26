@@ -51,13 +51,7 @@ Route::group(['prefix' => 'perfil'], function() {
 });
 
 Route::group(['prefix' => 'ofertas'], function() {
-
-    // Route::get('/', function() {
-    //     return view('ofertas.ofertas', ['ofertas' => App\Oferta::all()]);
-    // });
-
     Route::get('/', 'OfertasController@index');
-
 });
 
 Route::group(['prefix' => 'directorio'], function() {

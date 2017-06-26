@@ -5,7 +5,7 @@ $(document).ready(function() {
 		var empresa = row.data('empresa');
 		var contact = row.data('contacto');
 
-		var dir = empresa.calle + ' #' + empresa.numero + ', ' + empresa.colonia + ', ' + empresa.ciudad + ', ' + empresa.estado + '; ' + empresa.codigo_postal;
+		var dir = empresa.calle + ' #' + empresa.numero + ', ' + empresa.colonia + ', ' + empresa.ciudad + ', ' + empresa.estado + ', CP: ' + empresa.codigo_postal;
 		var nombre = document.getElementById('e_nombre');
 		var direccion = document.getElementById('e_direccion');
 		var telefono = document.getElementById('e_telefono');
@@ -19,7 +19,6 @@ $(document).ready(function() {
 		correo.innerHTML = '<p class="texto-descripcion">'+ empresa.correo +'</p>';
 		contacto.innerHTML = '<p class="texto-descripcion">'+ contact.nombre +'</p>';
 		puesto.innerHTML = '<p class="texto-descripcion">'+ contact.puesto +'</p>';
-		
 	});
 
 	$('.more_detail').click(function(){
@@ -33,9 +32,7 @@ $(document).ready(function() {
 		
 		puesto.innerHTML = oferta.titulo_empleo;
 		name_empresa.innerHTML = empresa.nombre;
-		salario.innerHTML = '$' + oferta.salario;
-
-		
+		salario.innerHTML = '$' + oferta.salario;	
 	});
 
 });

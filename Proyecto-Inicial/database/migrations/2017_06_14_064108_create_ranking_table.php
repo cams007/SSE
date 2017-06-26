@@ -22,7 +22,6 @@ class CreateRankingTable extends Migration
             $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
             $table->integer('empresa_id')->unsigned();
             $table->foreign('empresa_id')->references('id')->on('Empresa');
-
             $table->timestamps();
         });
     }

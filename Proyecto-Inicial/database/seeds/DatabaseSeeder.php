@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(HistoriaExitoTableSeeder::class);
 
         $this->call(UserTableSeeder::class);
-        //$this->call(EgresadoTableSeeder::class);
+        $this->call(EgresadoTableSeeder::class);
         $this->call(EmpleadorTableSeeder::class);
     }
 }

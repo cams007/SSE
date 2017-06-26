@@ -22,7 +22,6 @@ class CreateValorTable extends Migration
             $table->foreign('empleado_id')->references('id')->on('Empleado');
             $table->integer('catalogoValor_id')->unsigned();
             $table->foreign('catalogoValor_id')->references('id')->on('CatalogoValor')->unique();
-
             $table->timestamps();
         });
     }

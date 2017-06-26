@@ -7,7 +7,7 @@ class SelectEgresadoTest extends \Codeception\Test\Unit
     // tests
     public function test_select_egresado()
     {
-        $egresadoDB = Egresado::find('0428269059');
+        $egresadoDB = Egresado::first();
         $this->assertNotNull($egresadoDB->nombre);
     }
 }

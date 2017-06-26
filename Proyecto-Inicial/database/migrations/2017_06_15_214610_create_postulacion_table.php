@@ -19,7 +19,6 @@ class CreatePostulacionTable extends Migration
             $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
             $table->integer('oferta_id')->unsigned();
             $table->foreign('oferta_id')->references('id')->on('Oferta');
-
             $table->timestamps();
         });
     }

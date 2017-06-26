@@ -75,7 +75,7 @@
 			</div>
 		</div><!--fin div-2-2-->
 		<div class="div-2-3">
-	    	<img src="{{url($egresados->imagen)}}" alt="user-picture" class="img-thumbnail img">
+	    	<img src="{{url($egresados->imagen_url)}}" alt="user-picture" class="img-thumbnail img">
 		</div><!--fin div-2-3-->
 	</div><!--fin div-2-->
 </div><!--fin contenedor-->
