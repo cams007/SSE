@@ -19,8 +19,8 @@ class EgresadoTableSeeder extends Seeder
                 'nacionalidad' => null,
                 'telefono' => null,
                 'direccion_actual' => null,
-                'imagen' => null,
-                'cv' => null,
+                'imagen_url' => null,
+                'cv_url' => null,
                 'preparacion_id' => function () {
 		             return factory(App\Preparacion::class)->create([
 		             		'forma_titulacion' => null,

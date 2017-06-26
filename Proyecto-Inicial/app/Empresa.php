@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Empleador extends Model
+class Empresa extends Model
 {
 	/**
 	* The table associated with the model.
 	*
 	* @var string
 	*/
-    protected $table = 'Empleador';
+    protected $table = 'Empresa';
 
 	/**
 	* Get the contacto that owns the empleador.

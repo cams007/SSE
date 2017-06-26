@@ -16,9 +16,10 @@ class CreateContactoTable extends Migration
         Schema::create('Contacto', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nombre', 90);
+            $table->string('nombre', 100);
             $table->string('puesto', 200);
-
+            $table->string('telefono', 12);
+            $table->string('correo', 50);
             $table->timestamps();
         });
     }

@@ -41,6 +41,17 @@ $factory->define(App\Contacto::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->name,
         'puesto' => $faker->jobTitle,
+        'telefono' => $faker->numerify($string = '##########'),
+        'correo' => $faker->safeEmail,
+    ];
+});
+$factory->define(App\Maestria::class, function (Faker\Generator $faker) {
+    return [
+        'descripcion' => $faker->sentence(3),
+        'titulado' => $faker->boolean,
+        'preparacion_id' => function () {
+             return factory(App\Preparacion::class)->create()->id;
+        },
     ];
 });
 $factory->define(App\Doctorado::class, function (Faker\Generator $faker) {
@@ -63,11 +74,11 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'telefono' => $faker->numerify($string = '##########'),
         'lugar_origen' => $faker->city . ', ' . $faker->country,
         'direccion_actual' => $faker->address,
-        'imagen' => 'assets/images/egresados/' . $faker->randomElement(['ana.jpg' ,'luis.jpg']),
-        'cv' => $faker->sentence,
+        'imagen_url' => 'assets/images/egresados/' . $faker->randomElement(['usuario1.jpg', 'usuario2.jpg', 'usuario3.jpg', 'usuario4.jpg']),
+        'cv_url' => null,
+        'habilitado' => true,
         'preparacion_id' => function () {
-            return factory(App\Preparacion::class)
-                ->create()->id;
+            return factory(App\Preparacion::class)->create()->id;
         },
         'primerEmpleo_id' => function () {
             return factory(App\PrimerEmpleo::class)->create()->id;
@@ -78,27 +89,33 @@ $factory->define(App\Empleado::class, function (Faker\Generator $faker) {
     return [
         'carrera' => $faker->numberBetween($min = 0, $max = 10),
         'puesto' => $faker->jobTitle,
-        'antiguedad' => $faker->randomNumber(),
+        'antiguedad' => $faker->numberBetween($min = 1, $max = 20),
         'unidad_tiempo' => $faker->randomElement(['meses' ,'años']),
         'carencias_basicas' => $faker->word,
         'conocimientos_actualizados' => $faker->word,
         'carencias_areas' => $faker->word,
         'factores_contratacion' => $faker->word,
-        'empleador_id' => $faker->randomNumber(),
+        'empresa_id' => function () {
+            return factory(App\Empresa::class)->create()->id;
+        },
     ];
 });
-$factory->define(App\Empleador::class, function (Faker\Generator $faker) {
+$factory->define(App\Empresa::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->company,
-        'rfc' => $faker->word,
+        'descripcion' => $faker->sentence(8),
+        'rfc' => $faker->numerify($string = '##########'),
         'telefono' => $faker->numerify($string = '##########'),
         'correo' => $faker->unique()->safeEmail,
         'calle' => $faker->streetName,
-        'numero' => $faker->randomNumber(),
+        'numero' => $faker->numberBetween($min = 1, $max = 300),
         'colonia' => $faker->citySuffix,
         'ciudad' => $faker->city,
         'estado' => $faker->country,
         'codigo_postal' => $faker->postcode,
+        'pagina_web' => $faker->url,
+        'imagen_url' => 'assets/images/empresas/' . $faker->randomElement(['amazon.jpg', 'kada.jpg', 'usalab.png']),
+        'habilitada' => true,
         'motivo_no_contratacion' => $faker->sentence(4),
         'recomendaciones' => $faker->sentence(5),
         'contacto_id' => function () {
@@ -133,9 +150,10 @@ $factory->define(App\Evaluacion::class, function (Faker\Generator $faker) {
 $factory->define(App\EvaluacionPE::class, function (Faker\Generator $faker) {
     return [
         'evaluacion' => $faker->randomElement(['Excelente', 'Muy buena', 'Buena', 'Regular', 'Mala']),
-        'primerEmpleo_id' => $faker->randomNumber(),
-        'catalogoPregunta_id' => $faker->randomNumber(),
-        'pregunta_id' => function () {
+        'primerEmpleo_id' => function () {
+             return factory(App\PrimerEmpleo::class)->create()->id;
+        },
+        'catalogoPregunta_id' => function () {
              return factory(App\CatalogoPregunta::class)->create()->id;
         },
     ];
@@ -146,9 +164,8 @@ $factory->define(App\Evento::class, function (Faker\Generator $faker) {
         'descripcion' => $faker->paragraph,
         'lugar' => $faker->address,
         'fecha' => $faker->dateTimeBetween(),
-        'categoria' => $faker->randomNumber(),
         'categoria' => $faker->randomElement(['Académico' ,'Cultural']),
-        'imagen' => $faker->sentence,
+        'imagen_url' => 'assets/images/eventos/' . $faker->randomElement(['prueba1.PNG', 'prueba2.jpg', 'prueba3.png', 'prueba4.jpg']),
         'activo' => true,
     ];
 });
@@ -156,20 +173,28 @@ $factory->define(App\Habilidad::class, function (Faker\Generator $faker) {
     return [
         'habilidad' => $faker->word,
         'demostrada' => $faker->boolean,
-        'empleado_id' => $faker->randomNumber(),
-        'catalogoHabilidad_id' => $faker->randomNumber(),
-        'habilidad_id' => function () {
-             return factory(App\CatalogoHabilidad::class)->create()->id;
+        'empleado_id' => function () {
+             return factory(App\Empleado::class)->create()->id;
+        },
+        'catalogoHabilidad_id' => function () {
+             $hab = factory(App\CatalogoHabilidad::class)->create();
+             // 'habilidad' => $hab->descripcion;
+             return $hab->id;
+             // return factory(App\CatalogoHabilidad::class)->create()->id;
         },
     ];
 });
 $factory->define(App\HabilidadPE::class, function (Faker\Generator $faker) {
     return [
         'habilidad' => $faker->word,
-        'primerEmpleo_id' => $faker->randomNumber(),
-        'catalogoHabilidad_id' => $faker->randomNumber(),
-        'habilidad_id' => function () {
-             return factory(App\CatalogoHabilidad::class)->create()->id;
+        'primerEmpleo_id' => function () {
+             return factory(App\PrimerEmpleo::class)->create()->id;
+        },
+        'catalogoHabilidad_id' => function () {
+            $hab = factory(App\CatalogoHabilidad::class)->create();
+            // 'habilidad' => $hab->descripcion;
+            return $hab->id;
+            //return factory(App\CatalogoHabilidad::class)->create()->id;
         },
     ];
 });
@@ -177,59 +202,59 @@ $factory->define(App\HistoriaExito::class, function (Faker\Generator $faker) {
     return [
         'titulo' => $faker->sentence(3),
         'descripcion' => $faker->paragraph,
-        'imagen' => $faker->sentence,
-        'activo' => $faker->boolean,
-    ];
-});
-$factory->define(App\Maestria::class, function (Faker\Generator $faker) {
-    return [
-        'descripcion' => $faker->sentence(4),
-        'titulado' => $faker->boolean,
-        'preparacion_id' => function () {
-             return factory(App\Preparacion::class)->create()->id;
-        },
+        'imagen_url' => 'assets/images/historias_exito/' . $faker->randomElement(['prueba1.jpg', 'prueba2.jpg']),
+        'activo' => true,
     ];
 });
 $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
     return [
         'titulo_empleo' => $faker->jobTitle,
         'descripcion' => $faker->sentence(5),
+        'ubicacion' => $faker->address,
         'carrera' => $faker->numberBetween($min = 0, $max = 10),
-        'salario' => $faker->randomNumber(),
-        'fecha_publicacion' => $faker->dateTimeBetween(),
-        'habilitada' => $faker->boolean,
-        'empleador_id' => $faker->randomNumber(),
+        'experiencia' => $faker->numberBetween($min = 0, $max = 5),
+        'salario' => $faker->numberBetween($min = 5000, $max = 5000),
+        'status' => $faker->randomElement(['Vacante', 'Ocupada', 'Cancelada']),
+        'empresa_id' => function () {
+             return factory(App\Empresa::class)->create()->id;
+        },
+        'created_at' => $faker->dateTimeBetween(),
     ];
 });
 $factory->define(App\Postulacion::class, function (Faker\Generator $faker) {
     return [
-        'egresado_matricula' => $faker->word,
-        'oferta_id' => $faker->randomNumber(),
+        'egresado_matricula' => function () {
+             return factory(App\Egresado::class)->create()->matricula;
+        },
+        'oferta_id' => function () {
+             return factory(App\Oferta::class)->create()->id;
+        },
     ];
 });
 $factory->define(App\Preparacion::class, function (Faker\Generator $faker) {
     return [
         'carrera' => $faker->numberBetween($min = 0, $max = 10),
-        'forma_titulacion' => $faker->randomElement(['Tesis' ,'CENEVAL', 'No titulado']),
+        'generacion' => $faker->numberBetween($min = 1990, $max = 2000) . '-' . $faker->numberBetween($min = 2000, $max = 2017),
         'fecha_inicio' => $faker->dateTimeBetween(),
         'fecha_fin' => $faker->dateTimeBetween(),
+        'promedio' => $faker->randomFloat($nbMaxDecimals = 2, $min = 6, $max = 10),
+        'forma_titulacion' => $faker->randomElement(['Tesis' ,'CENEVAL']),
         'fecha_titulo' => $faker->dateTimeBetween(),
-        'promedio' => $faker->randomFloat($nbMaxDecimals = 2, $min = 6, $max = 10),
     ];
 });
-$factory->state(App\Preparacion::class, 'no_registrado', function ($faker) {
-    return [
-        'carrera' => $faker->numberBetween($min = 0, $max = 10),
-        'forma_titulacion' => null,
-        'fecha_inicio' => $faker->dateTimeBetween(),
-        'fecha_fin' => $faker->dateTimeBetween(),
-        'fecha_titulo' => null,
-        'promedio' => $faker->randomFloat($nbMaxDecimals = 2, $min = 6, $max = 10),
-    ];
-});
+// $factory->state(App\Preparacion::class, 'no_registrado', function ($faker) {
+//     return [
+//         'carrera' => $faker->numberBetween($min = 0, $max = 10),
+//         'forma_titulacion' => null,
+//         'fecha_inicio' => $faker->dateTimeBetween(),
+//         'fecha_fin' => $faker->dateTimeBetween(),
+//         'fecha_titulo' => null,
+//         'promedio' => $faker->randomFloat($nbMaxDecimals = 2, $min = 6, $max = 10),
+//     ];
+// });
 $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
     return [
-        'tiempo_sin_empleo' => $faker->randomElement(['< a 6 meses', 'De 6 a 9 meses', 'De 10 a 12 meses', '> a 1 año', 'No cuento con empleo aún']),
+        'tiempo_sin_empleo' => $faker->randomElement(['< a 6 meses', 'De 6 a 9 meses', 'De 10 a 12 meses', '> a 1 año']),
         'empresa' => $faker->company,
         'telefono_empresa' => $faker->numerify($string = '##########'),
         'sector' => $faker->randomElement(['Pública' ,'Privada', 'Propia']),
@@ -238,7 +263,7 @@ $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
         'puesto_final' => $faker->jobTitle,
         'jornada' => $faker->randomElement(['Completo' ,'Medio', 'Horas']),
         'contrato' => $faker->randomElement(['Indeterminado' ,'Eventual', 'Honorarios']),
-        'ingreso' => $faker->numberBetween($min = 5000, $max = 50000),
+        'ingreso_mensual' => $faker->randomElement(['Menor a 5,000.00', 'De 5,001.00 a 10,000.00', 'De 10,001.00 a 15,000.00', 'Mayor a 15,000.00']),
         'actividad_laboral' => $faker->numberBetween($min = 0, $max = 2),
         'factores_contratacion' => $faker->randomElement(['No tener competencias laborales' ,'No estar titulado', 'No acreditar el examen de seleccion', 'Ser egresado de la UTM']) . '%Otras',
         'carencias_basicas' => $faker->sentence(5),
@@ -249,17 +274,21 @@ $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Ranking::class, function (Faker\Generator $faker) {
     return [
-        'calificacion' => $faker->randomNumber(),
-        'comentario' => $faker->word,
-        'egresado_matricula' => $faker->word,
-        'empleador_id' => $faker->randomNumber(),
+        'calificacion' => numberBetween($min = 1, $max = 5),
+        'comentario' => $faker->sentence(5),
+        'egresado_matricula' => function () {
+             return factory(App\Egresado::class)->create()->matricula;
+        },
+        'empresa_id' => function () {
+             return factory(App\Empresa::class)->create()->id;
+        },
     ];
 });
 $factory->define(App\Tip::class, function (Faker\Generator $faker) {
     return [
         'titulo' => $faker->sentence(3),
         'descripcion' => $faker->paragraph,
-        'imagen' => $faker->sentence,
+        'imagen_url' => 'assets/images/tips/' . $faker->randomElement(['prueba1.jpg', 'prueba2.jpg']),
         'activo' => true,
     ];
 });
@@ -267,20 +296,28 @@ $factory->define(App\Valor::class, function (Faker\Generator $faker) {
     return [
         'valor' => $faker->word,
         'demostrado' => $faker->boolean,
-        'empleado_id' => $faker->randomNumber(),
-        'catalogoValor_id' => $faker->randomNumber(),
-        'valor_id' => function () {
-             return factory(App\CatalogoValor::class)->create()->id;
+        'empleado_id' => function () {
+             return factory(App\Empleado::class)->create()->id;
+        },
+        'catalogoValor_id' => function () {
+            $val = factory(App\CatalogoValor::class)->create();
+            // 'valor' => $val->descripcion;
+            return $val->id;
+            // return factory(App\CatalogoValor::class)->create()->id;
         },
     ];
 });
 $factory->define(App\ValorPE::class, function (Faker\Generator $faker) {
     return [
         'valor' => $faker->word,
-        'primerEmpleo_id' => $faker->randomNumber(),
-        'catalogoValor_id' => $faker->randomNumber(),
-        'valor_id' => function () {
-             return factory(App\CatalogoValor::class)->create()->id;
+        'primerEmpleo_id' => function () {
+             return factory(App\PrimerEmpleo::class)->create()->id;
+        },
+        'catalogoValor_id' => function () {
+            $val = factory(App\CatalogoValor::class)->create();
+            // 'valor' => $val->descripcion;
+            return $val->id;
+            // return factory(App\CatalogoValor::class)->create()->id;
         },
     ];
 });

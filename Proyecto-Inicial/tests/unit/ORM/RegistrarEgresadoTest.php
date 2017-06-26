@@ -1,6 +1,5 @@
 <?php
 namespace ORM;
-
 use App\Egresado;
 
 class RegistrarEgresadoTest extends \Codeception\Test\Unit

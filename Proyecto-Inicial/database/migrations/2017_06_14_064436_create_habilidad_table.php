@@ -22,7 +22,6 @@ class CreateHabilidadTable extends Migration
             $table->foreign('empleado_id')->references('id')->on('Empleado');
             $table->integer('catalogoHabilidad_id')->unsigned();
             $table->foreign('catalogoHabilidad_id')->references('id')->on('CatalogoHabilidad')->unique();
-
             $table->timestamps();
         });
     }

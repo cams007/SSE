@@ -12,4 +12,14 @@ class Oferta extends Model
 	* @var string
 	*/
     protected $table = 'Oferta';
+
+    public function empresa(){
+    	return $this->belongsTo('App\Empresa');
+    }
+
+    public function scopePuesto($query, $puesto){
+        if (trim($puesto) != ""){
+            $query->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion)"), 'like', '%'.$puesto.'%');
+        }
+    }
 }

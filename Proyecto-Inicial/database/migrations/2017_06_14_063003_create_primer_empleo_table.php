@@ -17,22 +17,21 @@ class CreatePrimerEmpleoTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->enum('tiempo_sin_empleo', ['< a 6 meses', 'De 6 a 9 meses', 'De 10 a 12 meses', '> a 1 año', 'No cuento con empleo aún']);
-            $table->string('empresa', 100)->nullable();
+            $table->string('empresa', 200)->nullable();
             $table->string('telefono_empresa', 12)->nullable();
             $table->enum('sector', ['Pública', 'Privada', 'Propia'])->nullable();
             $table->dateTime('fecha_ingreso')->nullable();
-            $table->string('puesto_inicial', 60)->nullable();
-            $table->string('puesto_final', 60)->nullable();
+            $table->string('puesto_inicial', 200)->nullable();
+            $table->string('puesto_final', 200)->nullable();
             $table->enum('jornada', ['Completo', 'Medio', 'Horas'])->nullable();
             $table->enum('contrato', ['Indeterminado', 'Eventual', 'Honorarios'])->nullable();
-            $table->integer('ingreso')->nullable();
+            $table->enum('ingreso_mensual', ['Menor a 5,000.00', 'De 5,001.00 a 10,000.00', 'De 10,001.00 a 15,000.00', 'Mayor a 15,000.00'])->nullable();
             $table->integer('actividad_laboral')->nullable();
             $table->string('factores_contratacion', 500);
             $table->string('carencias_basicas', 200)->nullable();
             $table->string('carencias_areas', 200)->nullable();
             $table->string('motivo_no_posgrado', 100);
             $table->string('recomendaciones', 500)->nullable();
-
             $table->timestamps();
         });
     }

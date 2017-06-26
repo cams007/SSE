@@ -18,7 +18,6 @@ class CreateCatalogoPreguntaTable extends Migration
             $table->increments('id');
             $table->string('pregunta', 100);
             $table->boolean('cuestionario');
-
             $table->timestamps();
         });
     }

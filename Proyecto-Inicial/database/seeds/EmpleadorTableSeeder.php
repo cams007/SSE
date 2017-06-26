@@ -1,6 +1,6 @@
 <?php
 
-use App\Empleador;
+use App\Empresa;
 use App\Oferta;
 use Illuminate\Database\Seeder;
 
@@ -13,13 +13,13 @@ class EmpleadorTableSeeder extends Seeder
      */
     public function run()
     {
-    	// Empleadores sin ofertas
-        factory(Empleador::class)->times(2)->create();
+    	// Empresa sin ofertas
+        factory(Empresa::class)->times(2)->create();
 
-    	// Empleadores con ofertas
-        factory(Empleador::class, 10)->create()->each(function ($e) {
-        	factory(Oferta::class)->times(3)->create([
-        		'empleador_id' => $e->id,
+    	// Empresa con ofertas
+        factory(Empresa::class, 20)->create()->each(function ($e) {
+        	factory(Oferta::class)->times(5)->create([
+        		'empresa_id' => $e->id,
         	]);
 	    });
     }

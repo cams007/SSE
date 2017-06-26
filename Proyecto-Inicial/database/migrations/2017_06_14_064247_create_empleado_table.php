@@ -23,10 +23,9 @@ class CreateEmpleadoTable extends Migration
             $table->string('carencias_basicas', 200);
             $table->string('conocimientos_actualizados', 200);
             $table->string('carencias_areas', 200);
-            $table->string('factores_contratacion', 100);
-            $table->integer('empleador_id')->unsigned();
-            $table->foreign('empleador_id')->references('id')->on('Empleador');
-
+            $table->string('factores_contratacion', 200);
+            $table->integer('empresa_id')->unsigned();
+            $table->foreign('empresa_id')->references('id')->on('Empresa');
             $table->timestamps();
         });
     }

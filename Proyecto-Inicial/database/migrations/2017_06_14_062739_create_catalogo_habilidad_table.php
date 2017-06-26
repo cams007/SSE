@@ -17,7 +17,6 @@ class CreateCatalogoHabilidadTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('descripcion', 45);
-
             $table->timestamps();
         });
     }
