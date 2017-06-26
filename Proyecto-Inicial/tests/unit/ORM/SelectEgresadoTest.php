@@ -9,6 +9,5 @@ class SelectEgresadoTest extends \Codeception\Test\Unit
     {
         $egresadoDB = Egresado::first();
         $this->assertNotNull($egresadoDB->nombre);
-        $this->assertNotNull($egresadoDB->nacionalidad);
     }
 }
