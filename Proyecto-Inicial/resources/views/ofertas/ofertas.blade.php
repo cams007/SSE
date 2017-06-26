@@ -7,192 +7,159 @@
 <link href="{{ url('css/table.css') }}" rel="stylesheet">
 
 @section('content')
-	<div class="contenedor"><!--contenedor-->
+<div class="contenedor"><!--contenedor-->
 		<div class="div-1"><!--div-1-->
 			<p class="text-center">Ofertas laborales</p>
-
 		</div><!--div-1-->
 
 		<!-- Buscador -->
 		<div class="buscador_ofertas">
-				<input type="search" name="q" placeholder="Buscador de ofertas">
+			{!! Form::open(['url' => 'ofertas', 'method' => 'GET', 'role' => 'search']) !!}
+				{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de ofertas']) !!}
+			{!! Form::close() !!}
 		</div>
 
 	<!-- Resultados -->
 	<div class="div-4"><!--div-4-->
-	<table>
-			<tr>
-				<th>Fecha de publicación</th>
-				<th>Título del empleo</th>
-				<th>Empresa</th>
-				<th>Ubicación</th>
-				<th>Descripción</th>
-			</tr>
-			<tr>
-				<td class="text_red">Hoy</td>
-				<td>Desarrollador web</td>
-				<td><a href="#datosEmpresa">Grupo GSI</a></td>
-				<td>CDMX</td>
-				<td>Descripción del empleo, requisitos... <a href="#detalleOferta" class="more_detail"> + </a></td>
-			</tr>
-			<tr>
-				<td class="text_red">Hoy</td>
-				<td>Desarrollador java</td>
-				<td><a href="#datosEmpresa">KadaSoftware</a></td>
-				<td>Huajuapan de León, Oaxaca</td>
-				<td>Conceptos básico de java, frame... <a href="#detalleOferta" class="more_detail"> + </a></td>
-			</tr>
-			<tr>
-				<td>09/marzo/2017</td>
-				<td>Tester</td>
-				<td><a href="#datosEmpresa">KadaSoftware</a></td>
-				<td>Huajuapan de León, Oaxaca</td>
-				<td>Descripción del empleo... <a href="#detalleOferta" class="more_detail"> + </a></td>
-			</tr>
-			<tr>
-				<td>08/marzo/2017</td>
-				<td>Profesor física</td>
-				<td><a href="#datosEmpresa">Universidad de Sonora</a></td>
-				<td>Hermosillo, Sonora</td>
-				<td>Profesor investigador de tiempo completo... <a href="#detalleOferta" class="more_detail"> + </a></td>
-			</tr>
-			<tr>
-				<td>02/marzo/2017</td>
-				<td>Gerente ADO Huajuapan</td>
-				<td><a href="#datosEmpresa">ADO Huajuapan</a></td>
-				<td>Huajuapan de León, Oaxaca</td>
-				<td>Prestaciones superiores a las de... <a href="#detalleOferta" class="more_detail"> + </a></td>
-			</tr>
+		<table>
+			<thead>
+				<tr>
+					<th>Fecha de publicación</th>
+					<th>Título del empleo</th>
+					<th>Empresa</th>
+					<th>Ubicación</th>
+					<th>Descripción</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($ofertas as $oferta)
+					<tr data-oferta="{{ $oferta }}" data-empresa="{{ $oferta->empresa }}" data-contacto="{{ $oferta->empresa->contacto }}"> 
+						<?php
+							$date = date_create($oferta->fecha_publicacion);
+							echo '<td>'.date_format($date, 'd/M/Y').'</td>';
+						?>
+						<td>{{ $oferta->titulo_empleo }}</td>
+						<td><a href="#datosEmpresa" class="btn-empresa">{{ $oferta->empresa->nombre }}</a></td>
+						<td>{{ $oferta->empresa->ciudad }}</td>
+						<td>{{ $oferta->descripcion }}<a href="#detalleOferta" class="more_detail"> + </a></td>
+					</tr>
+				@endforeach
+			</tbody>
 		</table>
-</div><!--div-4-->
-
-		<!-- Paginación -->
-		<div class="div-5"><!--div-5-->
-		<div class="paginate">
-			<a class="back" href="#"><img src="{{ url('assets/images/paginator_back.png') }}"></a>
-	      	<a class="page" href="#">1</a>
-	      	<a class="active" href="#">2</a>
-	      	<a class="page" href="#">3</a>
-	      	<a class="page" href="#">4</a>
-	      	<a class="page" href="#">5</a>
-	      	<a class="forward" href="#"><img src="{{ url('assets/images/paginator_forward.png') }}"></a>
-	        </div>
-       </div><!--div-5-->
-	</div><!--contenedor-->
+	</div><!--div-4-->
+	<!-- Paginación -->
+	<div class="div-5"><!--div-5-->
+		<?php if (isset($_GET['q'])){ ?>
+		{!! $ofertas->appends(['q' => $_GET["q"]])->render() !!}
+		<?php }else{ ?>
+			{!! $ofertas->render() !!}
+		<?php } ?>
+	</div><!--div-5-->
+</div><!--contenedor-->
 
 
-	<div id="datosEmpresa" class="modaloverlay">
-			<div class="modal">
-				<a href="#close" class="close">&times;</a>
-				<!-- <div> -->
-				<div class="parte-1"><!--parte-1-->
-					<p class="txt">Datos de empresa</p>
-				</div><!--parte-1-->
+<div id="datosEmpresa" class="modaloverlay"> <!-- div-modaloverlay -->
+	<div class="modal">
+		<a href="#close" class="close">&times;</a>
+		<div class="parte-1"><!--parte-1-->
+			<p class="txt">Datos de empresa</p>
+		</div><!--parte-1-->
 
-					<!-- <form action="#"> -->
-					<div class="parte-2"><!--parte-2-->
+		<!-- <form action="#close"> -->
+			<div class="parte-2"><!--parte-2-->
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><!--icono-->
+						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
+					</div><!--icono-->
+					<div class="descripcion" id="e_nombre"></div>
+				</div><!--item-1-->
 
-						<div class="item-1"><!--item-1-->
-							<div class="icono"><!--icono-->
-								<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
-							</div><!--icono-->
-							<div class="descripcion"><!--descripcion-->
-								<p class="texto-descripcion"> {{" Apple Inc. "}} </p>
-							</div><!--descripcion-->
-					</div><!--item-1-->
-
-					<div class="item-1"><!--item-1-->
-						<div class="icono"><!--icono-->
-							<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
-						</div><!--icono-->
-						<div class="descripcion"><!--descripcion-->
-							<p class="texto-descripcion">{{" Cupertino, California, Estados Unidos "}}</p>
-						</div><!--descripcion-->
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><!--icono-->
+						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
+					</div><!--icono-->
+					<div class="descripcion" id="e_direccion"></div>
 				</div><!--item-1-->
 
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><!--icono-->
 						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
 					</div><!--icono-->
-					<div class="descripcion"><!--descripcion-->
-						<p class="texto-descripcion"> {{" 1-800-275-2273 "}} </p>
-					</div><!--descripcion-->
-			</div><!--item-1-->
+					<div class="descripcion" id="e_telefono"></div>
+				</div><!--item-1-->
 
-			<div class="item-1"><!--item-1-->
-				<div class="icono"><!--icono-->
-					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-				</div><!--icono-->
-				<div class="descripcion"><!--descripcion-->
-					<p class="texto-descripcion">{{" info@apple.com "}} </p>
-				</div><!--descripcion-->
-		</div><!--item-1-->
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><!--icono-->
+						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
+					</div><!--icono-->
+					<div class="descripcion" id="e_correo"></div><!--descripcion-->
+				</div><!--item-1-->
 
-		<div class="item-1"><!--item-1-->
-			<div class="icono"><!--icono-->
-				<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
-			</div><!--icono-->
-			<div class="descripcion"><!--descripcion-->
-				<p class="texto-descripcion">{{" Tim Cook "}}  </p>
-			</div><!--descripcion-->
-	</div><!--item-1-->
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><!--icono-->
+						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
+					</div><!--icono-->
+					<div class="descripcion" id="e_contacto"></div><!--descripcion-->
+				</div><!--item-1-->
 
-		<div class="item-1"><!--item-1-->
-			<div class="icono"><!--icono-->
-				<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
-			</div><!--icono-->
-			<div class="descripcion"><!--descripcion-->
-				<p class="texto-descripcion">{{" CEO "}}   </p>
-			</div><!--descripcion-->
-		</div><!--item-1-->
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><!--icono-->
+						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
+					</div><!--icono-->
+					<div class="descripcion" id="e_puesto"></div><!--descripcion-->
+				</div><!--item-1-->
 			</div><!--parte-2-->
 
-				<div class="parte-3"><!--parte-3-->
-					<div class="btn-group">
-						<button type="button" class="flat-secundario">Salir</button>
-					</div>
-				</div><!--parte-3-->
-					<!-- </form> -->
-				<!-- </div> -->
-		</div>
+			<div class="parte-3"><!--parte-3-->
+			<div class="btn-group">
+				<a href="#close"><button class="flat-secundario" href="#close">Salir</button></a>
+			</div>
+			</div><!--parte-3-->
+		<!-- </form> -->
+	<!-- </div> -->
 	</div>
+</div> <!-- div-modaloverlay -->
 
 
-	<div id="detalleOferta" class="modaloverlay">
-	  	<div class="modal">
-		    <a href="#close" class="close">&times;</a>
-		    <div>
-		    	<h1>Detalles de oferta</h1>
-		    	<form action="#">
-			    	<div>
-						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
-						<h2> {{" Desarrollador web "}} </h2>
-						<h4>Grupo GSI</h4>
-					</div>
+<div id="detalleOferta" class="modaloverlay">
+  	<div class="modal">
+	    <a href="#close" class="close">&times;</a>
+	    <div>
+	    	<h1>Detalles de oferta</h1>
+	    	<form action="#">
+		    	<div>
+					<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
+					<h2 id="oferta_puesto"></h2>
+					<h4 id="oferta_empresa"></h4>
+				</div>
 
-					<div>
-						<!-- <img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">  -->
-						<span> {{" Grupo GSI, empresa mexicana fundada en el año de 2004, reconocida por su experiencia y calidad al brindar servicios de Tecnología de Información. Solicita: Desarrollador web"}} </span>
-						<p>Licenciatura terminada en Ing. en Sistemas, Informática, Ciencias de la Computación o afín. Experiencia mínima de 2 años.</p>
-					</div>
+				<div>
+					<span> {{" Grupo GSI, empresa mexicana fundada en el año de 2004, reconocida por su experiencia y calidad al brindar servicios de Tecnología de Información. Solicita: Desarrollador web"}} </span>
+					<p>Licenciatura terminada en Ing. en Sistemas, Informática, Ciencias de la Computación o afín. Experiencia mínima de 2 años.</p>
+				</div>
 
-					<div>
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-						<span> {{" $25,000 - $30,000"}} </span>
-					</div>
+				<div>
+					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
+					<span id="oferta_salario"></span>
+				</div>
 
-					<div>
-						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
-						<span> {{" Ciudad de México (Distrito Federal) "}} </span>
-					</div>
-					<div class="btn-group">
-						<button type="button" class="flat-secundario aling-left">Cancelar</button>
-						<button type="button" class="flat aling-right">Postularme</button>
-					</div>
-		    	</form>
-		    </div>
-		</div>
+				<div>
+					<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
+					<span> {{" Ciudad de México (Distrito Federal) "}} </span>
+				</div>
+				<div class="btn-group">
+					<button type="cancel" class="flat-secundario aling-left" >Cancelar</button>
+					<button type="button" class="flat aling-right">Postularme</button>
+				</div>
+	    	</form>
+	    </div>
 	</div>
+</div>
 
 
+@stop
+
+
+@section('script')
+<script src="{{ url('js/ofertas.js') }}"></script>
 @stop

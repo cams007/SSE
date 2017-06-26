@@ -50,6 +50,16 @@ Route::group(['prefix' => 'perfil'], function() {
     Route::post('intereses', 'PerfilController@saveFormacionProf');
 });
 
+Route::group(['prefix' => 'ofertas'], function() {
+
+    // Route::get('/', function() {
+    //     return view('ofertas.ofertas', ['ofertas' => App\Oferta::all()]);
+    // });
+
+    Route::get('/', 'OfertasController@index');
+
+});
+
 Route::group(['prefix' => 'directorio'], function() {
     
     Route::get('/', function() {
@@ -103,8 +113,8 @@ Route::get('/ranking', function() {
 	return view('ranking.ranking');
 });
 
-Route::get('/ofertas', function() {
-	return view('ofertas.ofertas');
+Route::get('/bienvenida', function() {
+    return view('registro.bienvenida');
 });
 
 

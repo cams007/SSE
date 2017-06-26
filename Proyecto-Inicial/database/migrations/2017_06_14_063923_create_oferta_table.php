@@ -22,8 +22,8 @@ class CreateOfertaTable extends Migration
             $table->integer('salario');
             $table->dateTime('fecha_publicacion');
             $table->boolean('habilitada');
-            $table->integer('empleador_id')->unsigned();
-            $table->foreign('empleador_id')->references('id')->on('Empleador');
+            $table->integer('empresa_id')->unsigned();
+            $table->foreign('empresa_id')->references('id')->on('Empresa');
 
             $table->timestamps();
         });

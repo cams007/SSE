@@ -13,7 +13,7 @@ class CreateEmpleadorTable extends Migration
      */
     public function up()
     {
-        Schema::create('Empleador', function (Blueprint $table) {
+        Schema::create('Empresa', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('nombre', 200);
@@ -43,7 +43,7 @@ class CreateEmpleadorTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('Empleador');
+        Schema::dropIfExists('Empresa');
         Schema::enableForeignKeyConstraints();
     }
 }

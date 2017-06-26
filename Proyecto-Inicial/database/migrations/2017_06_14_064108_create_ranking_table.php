@@ -20,8 +20,8 @@ class CreateRankingTable extends Migration
             $table->string('comentario', 300);
             $table->string('egresado_matricula', 12);
             $table->foreign('egresado_matricula')->references('matricula')->on('Egresado');
-            $table->integer('empleador_id')->unsigned();
-            $table->foreign('empleador_id')->references('id')->on('Empleador');
+            $table->integer('empresa_id')->unsigned();
+            $table->foreign('empresa_id')->references('id')->on('Empresa');
 
             $table->timestamps();
         });

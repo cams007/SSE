@@ -84,10 +84,10 @@ $factory->define(App\Empleado::class, function (Faker\Generator $faker) {
         'conocimientos_actualizados' => $faker->word,
         'carencias_areas' => $faker->word,
         'factores_contratacion' => $faker->word,
-        'empleador_id' => $faker->randomNumber(),
+        'empresa_id' => $faker->randomNumber(),
     ];
 });
-$factory->define(App\Empleador::class, function (Faker\Generator $faker) {
+$factory->define(App\Empresa::class, function (Faker\Generator $faker) {
     return [
         'nombre' => $faker->company,
         'rfc' => $faker->word,
@@ -198,7 +198,7 @@ $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
         'salario' => $faker->randomNumber(),
         'fecha_publicacion' => $faker->dateTimeBetween(),
         'habilitada' => $faker->boolean,
-        'empleador_id' => $faker->randomNumber(),
+        'empresa_id' => $faker->randomNumber(),
     ];
 });
 $factory->define(App\Postulacion::class, function (Faker\Generator $faker) {
@@ -252,7 +252,7 @@ $factory->define(App\Ranking::class, function (Faker\Generator $faker) {
         'calificacion' => $faker->randomNumber(),
         'comentario' => $faker->word,
         'egresado_matricula' => $faker->word,
-        'empleador_id' => $faker->randomNumber(),
+        'empresa_id' => $faker->randomNumber(),
     ];
 });
 $factory->define(App\Tip::class, function (Faker\Generator $faker) {
