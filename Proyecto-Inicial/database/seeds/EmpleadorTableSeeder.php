@@ -14,11 +14,11 @@ class EmpleadorTableSeeder extends Seeder
     public function run()
     {
     	// Empresa sin ofertas
-        factory(Empresa::class)->times(2)->create();
+        factory(Empresa::class)->times(10)->create();
 
     	// Empresa con ofertas
-        factory(Empresa::class, 20)->create()->each(function ($e) {
-        	factory(Oferta::class)->times(5)->create([
+        factory(Empresa::class, 50)->create()->each(function ($e) {
+        	factory(Oferta::class)->times(10)->create([
         		'empresa_id' => $e->id,
         	]);
 	    });

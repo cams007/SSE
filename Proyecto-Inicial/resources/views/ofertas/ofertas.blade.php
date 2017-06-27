@@ -1,10 +1,13 @@
 @extends('layouts.master')
 
 @section('title', 'Ofertas laborales')
+
 @section('style')
 <link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 <link href="{{ url('css/modal.css') }}" rel="stylesheet">
 <link href="{{ url('css/table.css') }}" rel="stylesheet">
+<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+@stop
 
 @section('content')
 <div class="contenedor"><!--contenedor-->
@@ -40,7 +43,7 @@
 						?>
 						<td>{{ $oferta->titulo_empleo }}</td>
 						<td><a href="#datosEmpresa" class="btn-empresa">{{ $oferta->empresa->nombre }}</a></td>
-						<td>{{ $oferta->empresa->ciudad.", ".$oferta->empresa->estado }}</td>
+						<td>{{ $oferta->ubicacion }}</td>
 						<td>{{ $oferta->descripcion }}<a href="#detalleOferta" class="more_detail"> + </a></td>
 					</tr>
 				@endforeach

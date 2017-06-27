@@ -56,9 +56,7 @@ Route::group(['prefix' => 'ofertas'], function() {
 
 Route::group(['prefix' => 'directorio'], function() {
     
-    Route::get('/', function() {
-        return view('directorio_empresa.index');
-    });
+    Route::get('/', 'DirectorioController@index');
 
     Route::get('empresa', function(){
         return view('directorio_empresa.datos');
