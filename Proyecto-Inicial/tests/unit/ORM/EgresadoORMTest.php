@@ -12,7 +12,7 @@ class EgresadoORMTest extends \Codeception\Test\Unit
     {
         $preparacion = new Preparacion();
         $preparacion->carrera = 1;
-        $preparacion->generacion = '2012-2017';
+        $preparacion->generacion = '2010-2017';
         $preparacion->forma_titulacion = 'No titulado';
         $preparacion->fecha_inicio = date('Y-m-d H:i:s');
         $preparacion->fecha_fin = date('Y-m-d H:i:s');

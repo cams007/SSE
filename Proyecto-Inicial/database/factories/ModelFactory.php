@@ -210,7 +210,7 @@ $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
     return [
         'titulo_empleo' => $faker->jobTitle,
         'descripcion' => $faker->sentence(5),
-        'ubicacion' => $faker->address,
+        'ubicacion' => $faker->city .', '. $faker->country,
         'carrera' => $faker->numberBetween($min = 0, $max = 10),
         'experiencia' => $faker->numberBetween($min = 0, $max = 5),
         'salario' => $faker->numberBetween($min = 5000, $max = 5000),

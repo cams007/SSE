@@ -72,36 +72,6 @@ td a.more_detail {
   margin: 0px 0px 10px 10px;
 }
 
-/*Paginación*/
-div ul.pagination{
-	font-size: 13px;
-	display: inline-block;
-	text-align: initial;
-}
-ul.pagination li a{
-	background-image: url("../assets/images/paginator_page.png");
-	text-align: center;
-	padding: 5px 10px 12px 9px;
-	background-repeat: no-repeat;
-	color: #be3228;
-}
-div ul.pagination li.active{
-	color: white;
-	background-repeat: no-repeat;
-	padding: 5px 10px 12px 9px;
-	background-image: url("../assets/images/paginator_active.png");
-}
-div ul.pagination li a.next{
-	background-image: url("../assets/images/paginator_forward.png");
-	position: relative;
-	top: 6px;
-}
-div ul.pagination li a.prev{
-	background-image: url("../assets/images/paginator_back.png");
-	position: relative;
-	top: 6px;
-}
-
 th.col_calif{
 	width: 100px;
 }

@@ -22,7 +22,7 @@ Route::get('/home', function () {
 Route::group(['prefix' => 'perfil'], function() {
     
     Route::get('/' , function () {
-        return view('perfil.index', ['egresados' => App\Egresado::first()]);
+        return view('perfil.index', ['egresados' => App\Egresado::where('nacionalidad', '<>', null)->first()]);
     });
     Route::get('fpersonal', function() {
         return view('perfil.fPersonal');
@@ -56,9 +56,7 @@ Route::group(['prefix' => 'ofertas'], function() {
 
 Route::group(['prefix' => 'directorio'], function() {
     
-    Route::get('/', function() {
-        return view('directorio_empresa.index');
-    });
+    Route::get('/', 'DirectorioController@index');
 
     Route::get('empresa', function(){
         return view('directorio_empresa.datos');

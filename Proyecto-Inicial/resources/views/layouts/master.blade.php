@@ -29,7 +29,7 @@
                     <img src="{{url('assets/images/configuration.png')}}">
                   </a> -->
                   <ul class="nav">
-                    <li><a  href="#"><img src="{{url('assets/images/home.png')}}"></a></li>
+                    <li><a  href="{{url('home')}}"><img src="{{url('assets/images/home.png')}}"></a></li>
                     <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
                       <ul>
                         <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
