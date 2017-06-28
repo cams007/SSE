@@ -17,7 +17,7 @@
 
     <div class="buscador_empresas"> <!-- Buscador -->
         {!! Form::open(['url' => 'directorio', 'method' => 'GET', 'role' => 'search']) !!}
-			{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}
+			{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de empresas']) !!}
 		{!! Form::close() !!}
     </div>
 
