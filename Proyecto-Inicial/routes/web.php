@@ -81,16 +81,13 @@ Route::get('/tabuladorSalarios', function(){
 	return view('egresados.TabuladorSalarios');
 });
 
-Route::get('/eventosUTM', function(){
-	return view('egresados.eventosUTM.eventosUTM-index');
-});
 
-Route::get('eventosUTM/culturales', function(){
-	return view('egresados.eventosUTM.Culturales');
-});
+Route::group(['prefix' => 'eventos'], function() {
+    Route::get('/', 'EventosController@index');
 
-Route::get('eventosUTM/academicos', function(){
-    return view('egresados.eventosUTM.Academicos');
+    Route::get('/culturales', 'EventosController@culturales');
+
+    Route::get('/academicos', 'EventosController@academicos');
 });
 
 Route::get('/historiasdeExito', function(){

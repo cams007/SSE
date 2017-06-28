@@ -116,9 +116,9 @@
 			</div><!--parte-2-->
 
 			<div class="parte-3"><!--parte-3-->
-			<div class="btn-group">
-				<a href="#close"><button class="flat-secundario" href="#close">Salir</button></a>
-			</div>
+				<div class="btn-group">
+					<a href="#close"><button class="flat-secundario" href="#close">Salir</button></a>
+				</div>
 			</div><!--parte-3-->
 		<!-- </form> -->
 	<!-- </div> -->
@@ -167,4 +167,7 @@
 
 @section('script')
 <script src="{{ url('js/ofertas.js') }}"></script>
+<script type="text/javascript">
+	var APP_URL = {!! json_encode(url('/ofertas')) !!}
+</script>
 @stop
