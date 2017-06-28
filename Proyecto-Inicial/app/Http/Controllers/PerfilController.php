@@ -13,7 +13,7 @@ class PerfilController extends Controller {
 
     public function saveDatosB(Request $request) {
 
-        $egresado = Egresado::first();
+        $egresado = Egresado::where('nacionalidad', '<>', null)->first();
         $egresado->telefono = $request->egresadosTel;
         $egresado->direccion_actual = $request->cActual;
         $egresado->usuario->correo = $request->egresadosEmail;
@@ -25,7 +25,7 @@ class PerfilController extends Controller {
 
     public function saveFormacionPerson(Request $request) {
         // $p = 
-        // return redirect('perfil/experiencia');
+        return redirect('perfil/experiencia');
     }
 
     public function savePrimerEmp(Request $request) {
