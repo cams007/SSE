@@ -28,3 +28,14 @@ div ul.pagination li a.prev{
 	position: relative;
 	top: 6px;
 }
+
+
+ul.pagination li{
+	float: left;
+}
+
+ul.pagination li a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
