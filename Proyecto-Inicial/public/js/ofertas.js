@@ -1,5 +1,11 @@
 $(document).ready(function() {
    
+	// var row = $(this).parents('tr');
+	// var empresa = row.data('empresa');
+	// if (empresa == null){
+	// 	window.location = APP_URL;
+	// }
+
 	$('.btn-empresa').click(function(){
 		var row = $(this).parents('tr');
 		var empresa = row.data('empresa');

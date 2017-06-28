@@ -29,4 +29,15 @@ class Oferta extends Model
                 ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
         }
     }
+
+    // /**
+    //  * Get the user's nombre empresa.
+    //  *
+    //  * @param  string  $value
+    //  * @return string
+    //  */
+    // public function getNombreEmpresaAttribute(){
+    //     return $this->belongsTo('App\Empresa')->select('nombre');
+    // }
+
 }

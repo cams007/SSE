@@ -22,25 +22,32 @@
     </div>
 
     <div class="listado"><!--listado-->
-    	@foreach($empresas as $empresa)
-	    	<div class="contenedor-empresa" data-empresa="{{ $empresa }}"><!--contenedor-empresa-->
-				<div class="estrella-empresa"><!--estrella-empresa-->
-					<div class="nombre_empresa">
-						<a href="#datosEmpresa" class="btn-empresa">{{ $empresa->nombre }}</a>
-					</div>
-					<div class="calificacion_empresa">
-						<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-						<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-						<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-						<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
-						<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
-					</div>
-				</div><!--estrella-empresa-->
-				<div class="texto-descripcion"><!--texto-descripcion-->
-					<p class="descripcion">{{ $empresa->descripcion }}</p>
-				</div><!--texto descripcion-->
-	        </div> <!--contenedor-empresa-->
-		@endforeach
+    <p>Se encontraron {{ $empresas->total() }} resultados</p>
+		<ul>
+			@foreach($empresas as $empresa)
+				<li data-empresa="{{ $empresa }}" data-contacto="{{ $empresa->contacto }}" class="list">
+					<div class="contenedor-empresa" ><!--contenedor-empresa-->
+						<div class="estrella-empresa"><!--estrella-empresa-->
+							<div class="nombre_empresa">
+								<a href="#datosEmpresa" class="btn-empresa">{{ $empresa->nombre }}</a>
+							</div>
+							<div class="calificacion_empresa">
+								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+								<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+								<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+							</div>
+						</div><!--estrella-empresa-->
+						<div class="texto-descripcion"><!--texto-descripcion-->
+							<p class="descripcion">{{ $empresa->descripcion }}</p>
+						</div><!--texto descripcion-->
+			        </div> <!--contenedor-empresa-->
+				</li>
+			@endforeach
+		</ul>
+
+    	
 	</div><!--listado-->
 
 	<?php if (isset($_GET['q'])){ ?>
@@ -60,65 +67,52 @@
 			<p class="txt">Datos de empresa</p>
 		</div><!--parte-1-->
 
-		<form action="{{url('directorio/empresa')}}" method="get">
+		<form action="{{ url('directorio/empresa') }}" method="get">
 			<div class="parte-2"><!--parte-2-->
+
 				<div class="item-1"><!--item-1-->
-					<div class="icono"><!--icono-->
-						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
-					</div><!--icono-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 					<div class="descripcion" id="e_nombre"></div><!--descripcion-->
 				</div><!--item-1-->
 
 				<div class="item-1"><!--item-1-->
-					<div class="icono"><!--icono-->
-						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
-					</div><!--icono-->
-					<div class="descripcion"><!--descripcion-->
-						<p class="texto-descripcion">{{" Cupertino, California, Estados Unidos "}}</p>
-					</div><!--descripcion-->
+					<div class="icono"><img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="e_direccion"></div><!--descripcion-->
 				</div><!--item-1-->
 
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><!--icono-->
 						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
 					</div><!--icono-->
-					<div class="descripcion"><!--descripcion-->
-						<p class="texto-descripcion"> {{" 1-800-275-2273 "}} </p>
-					</div><!--descripcion-->
+					<div class="descripcion" id="e_telefono"></div><!--descripcion-->
 				</div><!--item-1-->
 
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><!--icono-->
 						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
 					</div><!--icono-->
-					<div class="descripcion"><!--descripcion-->
-						<p class="texto-descripcion">{{" info@apple.com "}} </p>
-					</div><!--descripcion-->
+					<div class="descripcion" id="e_correo"></div><!--descripcion-->
 				</div><!--item-1-->
 
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><!--icono-->
 						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
 					</div><!--icono-->
-					<div class="descripcion"><!--descripcion-->
-						<p class="texto-descripcion">{{" Tim Cook "}}  </p>
-					</div><!--descripcion-->
+					<div class="descripcion" id="e_contacto"></div><!--descripcion-->
 				</div><!--item-1-->
 
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><!--icono-->
 						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
 					</div><!--icono-->
-					<div class="descripcion"><!--descripcion-->
-						<p class="texto-descripcion">{{" CEO "}}   </p>
-					</div><!--descripcion-->
+					<div class="descripcion" id="e_puesto"></div><!--descripcion-->
 				</div><!--item-1-->
 			</div><!--parte-2-->
 
 			<div class="parte-3"><!--parte-3-->
 				<div class="btn-group">
 					<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
-					<button type="submit" class="flat aling-right">Ver</button>
+					<button type="submit" class="flat aling-right" id="btn-ver">Ver</button>
 				</div>
 			</div><!--parte-3-->
 		</form>

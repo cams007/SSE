@@ -12,4 +12,11 @@ class Tip extends Model
 	* @var string
 	*/
     protected $table = 'Tip';
+
+    public function scopeTitulo($query, $titulo){
+        if (trim($titulo) != ""){
+            $query
+                ->where(\DB::raw("CONCAT(titulo, ' ', descripcion)"), 'like', '%'.$titulo.'%');
+        }
+    }
 }
