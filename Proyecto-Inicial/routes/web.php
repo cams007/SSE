@@ -95,9 +95,7 @@ Route::group(['prefix' => 'eventos'], function() {
     Route::get('/academicos', 'EventosController@academicos');
 });
 
-Route::get('/historiasExito', function(){
-    return view('egresados.historiasDeExito');
-});
+Route::get('/historiasExito', 'HistoriasExitoController@index');
 
 Route::get('/tipsConsejos', function(){
     return view('egresados.tipsConsejos');

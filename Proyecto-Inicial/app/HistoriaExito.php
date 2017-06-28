@@ -12,4 +12,11 @@ class HistoriaExito extends Model
 	* @var string
 	*/
     protected $table = 'HistoriaExito';
+
+    public function scopeTitulo($query, $titulo){
+        if (trim($titulo) != ""){
+            $query
+                ->where(\DB::raw("CONCAT(titulo, ' ', descripcion)"), 'like', '%'.$titulo.'%');
+        }
+    }
 }
