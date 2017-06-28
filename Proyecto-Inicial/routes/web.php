@@ -97,9 +97,7 @@ Route::group(['prefix' => 'eventos'], function() {
 
 Route::get('/historiasExito', 'HistoriasExitoController@index');
 
-Route::get('/tipsConsejos', function(){
-    return view('egresados.tipsConsejos');
-});
+Route::get('/tipsConsejos', 'TipsConsejosController@index');
 
 
 
