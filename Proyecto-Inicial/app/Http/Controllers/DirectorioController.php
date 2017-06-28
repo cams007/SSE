@@ -11,6 +11,6 @@ class DirectorioController extends Controller
 
         $empresas = Empresa::nombre($request->get('q'))->orderBy('nombre', 'ASC')->paginate(10);
 
-        return view('directorio_empresa.index', compact('empresas'));
+        return view('egresados.directorio.index', compact('empresas'));
     }
 }

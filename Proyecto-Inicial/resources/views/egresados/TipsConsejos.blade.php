@@ -4,6 +4,8 @@
 
 @section('style')
 	<link href="{{ url('css/tipConsejos.css') }}" rel="stylesheet">
+	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/ofertas.css') }}" rel="stylesheet"> -->
 @stop
 
@@ -15,108 +17,85 @@
 		
 	</div><!-- div-1 -->
 
+	<div class="buscador_empresas"> <!-- Buscador -->
+        {!! Form::open(['url' => 'tipsConsejos', 'method' => 'GET', 'role' => 'search']) !!}
+			{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de tips']) !!}
+		{!! Form::close() !!}
+    </div>
+
 	<div class="div-2"><!--div-2-->
 
-			<div class="historia">
-
-			 		<div class="foto-1"><!--figura1-->
-			 		</div><!--figura1-->
+		<ul class="list">
+		<p>Se encontraron {{ $tips->total() }} resultados</p>
+		@foreach($tips as $tip)
+		<li data-tip="{{ $tip }}">
+			<div class="tip">
+				<div class="foto"><!--figura1-->
+					<img src="{{url($tip->imagen_url)}}" class="foto">
+				</div><!--figura1-->
 
 				<div class="div-2-2">
-			 		<div class="titulo">
-						<p>Mejora en todo momento tu nivel de inglés</p>
+					<div class="titulo">
+						<p>{{ $tip->titulo }}</p>
 					</div>
 					<div class="descripcion">
-						<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
+						<p class="texto-descripcion">{{ $tip->descripcion }}</p>
 					</div>
 					<div class="click">
 						<div class="alineacion-link">
-						<a href="">[Seguír leyendo]</a>
-					</div>
+							<a class="seguirLeyendo" href="#verTip">[Seguír leyendo]</a>
+						</div>
 					</div>
 				</div><!--div-2-2-2-->
+			</div><!--tip-->
+		</li>
+		@endforeach
+		</ul>
 
-		</div><!--historia-->
-
-
-		<div class="historia">
-
-				<div class="foto-2"><!--figura1-->
-				</div><!--figura1-->
-
-			<div class="div-2-2">
-				<div class="titulo">
-					<p>Come saludablemente</p>
-				</div>
-				<div class="descripcion">
-					<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
-				</div>
-				<div class="click">
-					<div class="alineacion-link">
-					<a href="">[Seguír leyendo]</a>
-				</div>
-				</div>
-			</div><!--div-2-2-2-->
-
-		</div><!--historia-->
-
-		<div class="historia">
-
-				<div class="foto-3"><!--figura1-->
-				</div><!--figura1-->
-
-			<div class="div-2-2">
-				<div class="titulo">
-					<p>Haz deporte</p>
-				</div>
-				<div class="descripcion">
-					<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
-				</div>
-				<div class="click">
-					<div class="alineacion-link">
-					<a href="">[Seguír leyendo]</a>
-				</div>
-				</div>
-			</div><!--div-2-2-2-->
-
-	</div><!--historia-->
-
-	<div class="historia">
-
-			<div class="foto-4"><!--figura1-->
-			</div><!--figura1-->
-
-		<div class="div-2-2">
-			<div class="titulo">
-				<p>Preparar una entrevista laboral</p>
-			</div>
-			<div class="descripcion">
-				<p class="texto-descripcion">Los miembros de la Comisión de Premios 2016-2018 de la Sociedad Mexicana de Biotecnología y Bioingeniería (SMBB), seleccionó al ...</p>
-			</div>
-			<div class="click">
-				<div class="alineacion-link">
-				<a href="">[Seguír leyendo]</a>
-			</div>
-			</div>
-		</div><!--div-2-2-2-->
-
-</div><!--historia-->
-
-
-</div><!-- div-2 -->
+	</div><!-- div-2 -->
 		<!-- Paginación -->
 	<div class="div-3">
-		<div class="paginate">
-			<a class="back" href="#"><img src="{{ url('assets/images/paginator_back.png') }}"></a>
-      	<a class="page" href="#">1</a>
-      	<a class="active" href="#">2</a>
-      	<a class="page" href="#">3</a>
-      	<a class="page" href="#">4</a>
-      	<a class="page" href="#">5</a>
-      	<a class="forward" href="#"><img src="{{ url('assets/images/paginator_forward.png') }}"></a>
-			</div>
-		</div><!--div-3-->
+		<?php if (isset($_GET['q'])){ ?>
+		{!! $tips->appends(['q' => $_GET["q"]])->render() !!}
+		<?php }else{ ?>
+			{!! $tips->render() !!}
+		<?php } ?>
+	</div><!--div-3-->
 
 </div><!--contenedor-->
 
+
+<div id="verTip" class="modaloverlay"> <!-- div-modaloverlay -->
+	<div class="modal"> <!-- div-modal -->
+		<a href="#close" class="close">&times;</a>
+		<!-- <div> -->
+		<div class="parte-1"><!--parte-1-->
+			<p class="txt" id="h_titulo"></p>
+		</div><!--parte-1-->
+
+			<div class="parte-2"><!--parte-2-->
+
+				<div class="item-1"><!--item-1-->
+					<img src="#" class="foto" id="h_imagen">
+				</div><!--item-1-->
+
+				<div class="item-1" id="h_descripcion"><!--item-1-->
+				</div><!--item-1-->
+
+			</div><!--parte-2-->
+
+			<div class="parte-3"><!--parte-3-->
+				<div class="btn-group">
+					<a href="#close"><button class="flat-secundario" href="#close">Salir</button></a>
+				</div>
+			</div><!--parte-3-->
+		</form>
+		<!-- </div> -->
+	</div> <!-- div-modal -->
+</div> <!-- div-modaloverlay -->
+
+@stop
+
+@section('script')
+	<script src="{{ url('js/tipsConsejos.js') }}"></script>
 @stop
