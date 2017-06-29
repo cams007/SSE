@@ -7,7 +7,7 @@ class InsertCatalogoHabilidadesTest extends \Codeception\Test\Unit
 {
 
     // tests
-    public function test_insert_catalogoHabilidad()
+    public function test_insert_habilidad_a_catalogo()
     {
     	// Probando Insert y Select, de modelo CatalogoHabilidad
         $habilidad = new CatalogoHabilidad();
@@ -25,7 +25,7 @@ class InsertCatalogoHabilidadesTest extends \Codeception\Test\Unit
         $this->assertEquals($habilidadDB2->descripcion, 'Trabajo en equipo update');
     }
 
-    public function test_update_catalogoHabilidad()
+    public function test_update_habilidad_de_catalogo()
     {
         // Probando Insert y Select, de modelo CatalogoHabilidad
         $habilidad = new CatalogoHabilidad();
