@@ -5,11 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use Notifiable;
 
-    protected $table = 'users';
+    protected $guard = 'admin';
+
+    protected $table = 'admins';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'correo', 'password',
+        'correo', 'nombre', 'password',
     ];
 
     /**
@@ -28,14 +30,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-
-    /**
-    * Get the egresado that owns the user.
-    */
-    public function egresado()
-    {
-        return $this->belongsTo('App\Egresado');
-    }
-
 }

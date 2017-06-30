@@ -57,12 +57,37 @@
 					<div>
 						<input type="text" name="cActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->direccion_actual}} " />
 					</div>
+
 					<div>
 						<input type="email" name="egresadosEmail" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->usuario->correo}}" />
 					</div>
 
 					<div>
 						<input type="tel" name="egresadosTel" class="input-icon inputTel" placeholder="Agregar telefóno" value="{{$egresados->telefono}}" />
+					</div>
+
+					<div>
+						Género
+						<select name="genero">
+							<option selected="">Selecciona tu género</option>
+							<option value="saab">Masculino</option>
+							<option value="saab">Femenino</option>
+						</select>
+					</div>
+
+					<div>
+						Nacionalidad
+						<select name="nacionaidad">
+							<option selected="">Selecciona tu nacionalidad</option>
+							<option value="saab">Mexicana</option>
+							<option value="saab">Otra</option>
+						</select>
+						<input type="text" name="otraNacionalidad" class="input-icon inputTel" placeholder="Agregar nacionalidad" />
+					</div>
+
+					<div>
+					Curriculum vitae
+						<input type="file" name="cv">
 					</div>
 
 					<div class="text-center">
@@ -76,6 +101,12 @@
 		</div><!--fin div-2-2-->
 		<div class="div-2-3">
 	    	<img src="{{url($egresados->imagen_url)}}" alt="user-picture" class="img-thumbnail img">
+	    	<div>
+	    		<a href="#">
+	    			<i></i>
+	    			Cambiar foto de perfil
+	    		</a>
+	    	</div>
 		</div><!--fin div-2-3-->
 	</div><!--fin div-2-->
 </div><!--fin contenedor-->

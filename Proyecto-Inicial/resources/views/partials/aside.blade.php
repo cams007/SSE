@@ -3,17 +3,17 @@
 	  <li {{ Request::is('perfil') ? ' class=active' : ''}} >
 	  	<a href="{{url('perfil')}}">Datos básicos</a>
 	  </li>
-	  <li {{ Request::is('perfil/fpersonal') ? ' class=active' : ''}}>
-	  	<a href="{{url('perfil/fpersonal')}}">Estudios realizados</a>
+	  <li {{ Request::is('perfil/estudiosRealizados') ? ' class=active' : ''}}>
+	  	<a href="{{url('perfil/estudiosRealizados')}}">Estudios realizados</a>
 	  </li>
-	  <li {{ Request::is('perfil/experiencia') ? ' class=active' : ''}}>
-	  	<a href="{{url('perfil/experiencia')}}">Mi primer empleo</a>
+	  <li {{ Request::is('perfil/primerEmpleo') ? ' class=active' : ''}}>
+	  	<a href="{{url('perfil/primerEmpleo')}}">Mi primer empleo</a>
 	  </li>
-	  <li {{ Request::is('perfil/dprofesional') ? ' class=active' : ''}}>
-	  	<a href="{{url('perfil/dprofesional')}}">Mis otros empleos</a>
+	  <li {{ Request::is('perfil/empleos') ? ' class=active' : ''}}>
+	  	<a href="{{url('perfil/empleos')}}">Mis otros empleos</a>
 	  </li>
-	  <li {{ Request::is('perfil/fprofesional') ? ' class=active' : ''}}>
-	  	<a href="{{url('perfil/fprofesional')}}"> Satisfación en mi formación profesional</a>
+	  <li {{ Request::is('perfil/satisfaccion') ? ' class=active' : ''}}>
+	  	<a href="{{url('perfil/satisfaccion')}}"> Satisfación en mi formación profesional</a>
 	  </li>
 	  <!-- <li {{ Request::is('perfil/intereses') ? ' class=active' : ''}}>
 	  <li {{ Request::is('perfil/egresadoReco') ? ' class=active' : ''}}>

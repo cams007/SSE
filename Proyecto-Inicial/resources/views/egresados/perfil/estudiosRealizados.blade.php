@@ -1,7 +1,7 @@
 
 @extends('layouts.master')
 
-@section('title', 'Formación personal')
+@section('title', 'Estudios realizados')
 
 @section('style')
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">
@@ -25,7 +25,7 @@
 		</div><!--fin div-2-1-->
 		
 		<div class="column content">
-			<form method="POST" action="{{url('perfil/fpersonal')}}">
+			<form method="POST" action="{{url('perfil/estudiosRealizados')}}">
 			
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}

@@ -10,7 +10,7 @@
     <section id="franja">
         <div id="franja_contenedor">
             <div id="logo_sse"> </div>
-            <div id="titulo_index"><p>Sistema de Seguimiento de Egresados</p></div>
+            <div id="titulo_index"><p>Sistema de Seguimiento de Egresados - Admin</p></div>
             <div id="logo_info"></div>
         </div>
     </section>
@@ -18,12 +18,12 @@
     <div class="block">
     <img id="logo_utm" src="{{url('assets/images/logo_utm_login.png')}}">
 
-    <form id="form_login" role="form" method="POST" action="{{ route('login') }}">
+    <form id="form_login" role="form" method="POST" action="{{ route('admin.login.submit') }}">
         {{ csrf_field() }}
         
         <div class="usuario-login">
             <div id="logo-user"></div>
-            <input type="email" name="correo" id="correo" value="{{ old('correo') }}" placeholder="Correo electrónico" required autofocus>
+            <input type="email" id="correo" name="correo" value="{{ old('correo') }}" placeholder="Correo electrónico" required autofocus>
 
             @if ($errors->has('correo'))
                 <span class="help-block">
@@ -35,7 +35,7 @@
 
         <div class="password-login">
             <div id="logo-password"></div>
-            <input type="password" name="password" id="password" placeholder="Contraseña" required>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required>
 
             @if ($errors->has('password'))
                 <span class="help-block">
@@ -60,14 +60,11 @@
         </a>
 
         <div class="boton-login">
-            <button type="submit" id="input-button">
-                Entrar
-            </button>
+                <button type="submit" id="input-button">
+                    Entrar
+                </button>
         </div>
 
-        <div id="registrate">
-            <a href="{{url('registro')}}" class="link">Regístrate</a>
-        </div>
     </form>
     </div>
 

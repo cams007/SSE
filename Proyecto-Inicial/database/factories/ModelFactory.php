@@ -21,6 +21,15 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+$factory->define(App\Admin::class, function (Faker\Generator $faker) {
+    static $password;
+    return [
+        'correo' => $faker->unique()->safeEmail,
+        'nombre' => $faker->name,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
+    ];
+});
 $factory->define(App\CatalogoHabilidad::class, function (Faker\Generator $faker) {
     return [
         'descripcion' => $faker->word,
