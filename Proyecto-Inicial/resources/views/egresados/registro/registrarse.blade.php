@@ -27,7 +27,7 @@
         <form>
             <div class="group-input">
                 <div class="label">Matricula</div>
-                <input type="text" name="matricula" id="entradas" placeholder="i.e. 2010123456">
+                <input type="text" name="matricula" id="entradas" placeholder="i.e. 2010123456" autofocus>
             </div>
             <div class="group-input">
                 <div class="label">CURP</div>
@@ -41,7 +41,7 @@
 
             <div class="group-input">
                 <div class="label">Correo electrónico</div>
-                <input type="text" name="correo" id="entradas" placeholder="i.e. correo@ejemplo.com">
+                <input type="text" name="correo" id="entradas" placeholder="correo@ejemplo.net">
             </div>
             <div class="group-input">
                 <div class="label">Contraseña</div>

@@ -45,13 +45,13 @@
 
         </div>
 
-        <div class="password-login">
+        <!-- <div class="password-login">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar
                 </label>
             </div>
-        </div>
+        </div> -->
 
         <a href="{{ route('password.request') }}">
             <div id="olvido_pswd">
