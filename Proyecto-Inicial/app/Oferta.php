@@ -19,7 +19,25 @@ class Oferta extends Model
 
     public function scopePuesto($query, $puesto){
         if (trim($puesto) != ""){
-            $query->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion)"), 'like', '%'.$puesto.'%');
+
+            // $words = explode(' ', $puesto);
+            // foreach($words as $word){
+            // }
+            // $query->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', implode(" OR ", $sql));
+
+            $query
+                ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
         }
     }
+
+    // /**
+    //  * Get the user's nombre empresa.
+    //  *
+    //  * @param  string  $value
+    //  * @return string
+    //  */
+    // public function getNombreEmpresaAttribute(){
+    //     return $this->belongsTo('App\Empresa')->select('nombre');
+    // }
+
 }

@@ -70,28 +70,7 @@ textarea#comentario{
 	height:32px;
 }
 
-/*Paginación*/
-div.paginate a{
-	text-align: center;
-	padding: 5px 10px 12px 9px;
-	background-repeat: no-repeat;
-}
-div.paginate a.page{
-	background-image: url("../assets/images/paginator_page.png");
-}
-div.paginate a.active{
-	color: white;
-	background-image: url("../assets/images/paginator_active.png");
-}
 
-div.paginate a.forward{
-	position: relative;
-	top: 6px;
-}
-div.paginate a.back{
-	position: relative;
-	top: 6px;
-}
 .listado{
 	/*background: rgb(33, 74, 122);*/
 	display: -webkit-flex;
@@ -126,6 +105,7 @@ div.paginate a.back{
 }
 .nombre_empresa{
 	/*background: yellow;*/
+	color: #be3228;
 	text-align: left;
 }
 .calificacion_empresa{
@@ -140,4 +120,16 @@ a{
 }
 .paginate{
 	margin:32px 0 ;
+}
+
+li.list{
+	float: none;
+}
+
+li.list a{
+	display: block;
+	color: #be3228;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }

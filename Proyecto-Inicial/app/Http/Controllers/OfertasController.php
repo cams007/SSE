@@ -11,6 +11,6 @@ class OfertasController extends Controller
 
         $ofertas = Oferta::puesto($request->get('q'))->orderBy('created_at', 'DESC')->paginate(9);
 
-        return view('ofertas.ofertas', compact('ofertas'));
+        return view('egresados.ofertas.ofertas', compact('ofertas'));
     }
 }

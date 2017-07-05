@@ -57,7 +57,7 @@
 
 .contenedor {
   width: 1024px;
-  height: 536px;
+  min-height: 536px;
   margin: 0 auto;
   display: block;
   text-align: center;
@@ -66,12 +66,14 @@
 	display: flex;
 	flex-direction: column;
 }
+
 .div-1{
 	/*background: yellow;*/
 	border-bottom: solid 1px #adacac;
 	margin: 8px 32px 0;
 	height:32px;
 }
+
 .div-2{
 	/*background: #E67E22;*/
 	display: -webkit-flex;
@@ -168,30 +170,13 @@ div.search input:hover{
 	flex-direction: column;
 }
 
-.foto1{
-	background-image: url("../assets/images/acad1UTM.PNG");
+.foto{
 	height: 160px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-.descripcion-foto1{
-	height: 200px;
-	/*background: #C9CE30;*/
-	display: flex;
-	flex-direction: column;
-	}
-
-.foto2{
-	 background-image: url("../assets/images/portada.JPG");
-	 height: 160px;
-	 background-position: center;
-	 background-repeat: no-repeat;
-	 background-size: cover;
-
-}
-
-.descripcion-foto2{
+.descripcion-foto{
 	height: 200px;
 	/*background: #C9CE30;*/
 	display: flex;
@@ -271,6 +256,7 @@ div.search input:hover{
 	border: 1px solid white;
 	margin-bottom: 8px;
 }
+
 .no{
  margin-left: 10px;
  width: 50px;
@@ -284,27 +270,6 @@ div.search input:hover{
 }
 .si:hover{
 	background: #5E352A;
-}
-div.paginate a{
-	text-align: center;
-	padding: 5px 10px 12px 9px;
-	background-repeat: no-repeat;
-}
-div.paginate a.page{
-	background-image: url("../assets/images/paginator_page.png");
-}
-div.paginate a.active{
-	color: white;
-	background-image: url("../assets/images/paginator_active.png");
-}
-
-div.paginate a.forward{
-	position: relative;
-	top: 8px;
-}
-div.paginate a.back{
-	position: relative;
-	top: 8px;
 }
 
 a{

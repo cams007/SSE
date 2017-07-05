@@ -44,4 +44,11 @@ class Empresa extends Model
     {
         return $this->hasMany('App\Empleado');
     }
+
+    public function scopeNombre($query, $nombre){
+        if (trim($nombre) != ""){
+            $query
+                ->where(\DB::raw("CONCAT(nombre, ' ', descripcion)"), 'like', '%'.$nombre.'%');
+        }
+    }
 }

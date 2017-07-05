@@ -1,10 +1,13 @@
 @extends('layouts.master')
 
 @section('title', 'Ofertas laborales')
+
 @section('style')
 <link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 <link href="{{ url('css/modal.css') }}" rel="stylesheet">
 <link href="{{ url('css/table.css') }}" rel="stylesheet">
+<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+@stop
 
 @section('content')
 <div class="contenedor"><!--contenedor-->
@@ -21,6 +24,7 @@
 
 	<!-- Resultados -->
 	<div class="div-4"><!--div-4-->
+		<p>Se encontraron {{ $ofertas->total() }} resultados</p>
 		<table>
 			<thead>
 				<tr>
@@ -34,13 +38,14 @@
 			<tbody>
 				@foreach($ofertas as $oferta)
 					<tr data-oferta="{{ $oferta }}" data-empresa="{{ $oferta->empresa }}" data-contacto="{{ $oferta->empresa->contacto }}"> 
-						<?php
-							$date = date_create($oferta->created_at);
-							echo '<td>'.date_format($date, 'd/M/Y').'</td>';
-						?>
+						<!-- <?php
+							// $date = date_create($oferta->created_at);
+							// echo '<td>'.date_format($date, 'd/M/Y').'</td>';
+						?> -->
+						<td> {{ $oferta->created_at->diffForHumans() }} </td>
 						<td>{{ $oferta->titulo_empleo }}</td>
 						<td><a href="#datosEmpresa" class="btn-empresa">{{ $oferta->empresa->nombre }}</a></td>
-						<td>{{ $oferta->empresa->ciudad.", ".$oferta->empresa->estado }}</td>
+						<td>{{ $oferta->ubicacion }}</td>
 						<td>{{ $oferta->descripcion }}<a href="#detalleOferta" class="more_detail"> + </a></td>
 					</tr>
 				@endforeach
@@ -111,9 +116,9 @@
 			</div><!--parte-2-->
 
 			<div class="parte-3"><!--parte-3-->
-			<div class="btn-group">
-				<a href="#close"><button class="flat-secundario" href="#close">Salir</button></a>
-			</div>
+				<div class="btn-group">
+					<a href="#close"><button class="flat-secundario" href="#close">Salir</button></a>
+				</div>
 			</div><!--parte-3-->
 		<!-- </form> -->
 	<!-- </div> -->
@@ -162,4 +167,7 @@
 
 @section('script')
 <script src="{{ url('js/ofertas.js') }}"></script>
+<script type="text/javascript">
+	var APP_URL = {!! json_encode(url('/ofertas')) !!}
+</script>
 @stop

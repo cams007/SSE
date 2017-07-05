@@ -13,35 +13,44 @@
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('egresados.index');
 });
+
 Route::get('/home', function () {
-    return view('registro.home');
+    return view('egresados.home');
+});
+
+Route::get('/registro', function() {
+    return view('egresados.registro.registrarse');
+});
+
+Route::get('/bienvenida', function() {
+    return view('egresados.registro.bienvenida');
 });
 
 Route::group(['prefix' => 'perfil'], function() {
     
     Route::get('/' , function () {
-        return view('perfil.index', ['egresados' => App\Egresado::first()]);
+        return view('egresados.perfil.index', ['egresados' => App\Egresado::where('nacionalidad', '<>', null)->first()]);
     });
     Route::get('fpersonal', function() {
-        return view('perfil.fPersonal');
+        return view('egresados.perfil.fPersonal');
     });
     Route::get('experiencia', function() {
-        return view('perfil.experiencia');
+        return view('egresados.perfil.experiencia');
     });
     Route::get('dprofesional', function() {
-        return view('perfil.dprofesional');
+        return view('egresados.perfil.dprofesional');
     });
     
     Route::get('fprofesional', function() {
-        return view('perfil.fProfesional', array('dato' => 'No'));
+        return view('egresados.perfil.fProfesional', array('dato' => 'No'));
     });
     Route::get('intereses', function() {
-        return view('perfil.intereses');
+        return view('egresados.perfil.intereses');
     });
     Route::get('ofertaslab', function() {
-        return view('perfil.ofertaslab');
+        return view('egresados.perfil.ofertaslab');
     });
     
     Route::post('/', 'PerfilController@saveDatosB');
@@ -50,85 +59,65 @@ Route::group(['prefix' => 'perfil'], function() {
     Route::post('intereses', 'PerfilController@saveFormacionProf');
 });
 
+
 Route::group(['prefix' => 'ofertas'], function() {
     Route::get('/', 'OfertasController@index');
 });
 
 Route::group(['prefix' => 'directorio'], function() {
     
-    Route::get('/', function() {
-        return view('directorio_empresa.index');
-    });
-
+    Route::get('/', 'DirectorioController@index');
     Route::get('empresa', function(){
-        return view('directorio_empresa.datos');
+        return view('egresados.directorio.datos');
     });
-
     Route::get('empresa/comentarios', function(){
-        return view('directorio_empresa.comentarios');
+        return view('egresados.directorio.comentarios');
     });
-
     Route::get('empresa/ofertas', function(){
-        return view('directorio_empresa.ofertasLaborales');
+        return view('egresados.directorio.ofertasLaborales');
     });
 
-});
-
-Route::get('/registro', function() {
-    return view('registro.registrarse');
-});
-
-
-Route::get('/tabuladorSalarios', function(){
-	return view('egresados.TabuladorSalarios');
-});
-
-Route::get('/eventosUTM', function(){
-	return view('egresados.eventosUTM.eventosUTM-index');
-});
-
-Route::get('eventosUTM/culturales', function(){
-	return view('egresados.eventosUTM.Culturales');
-});
-
-Route::get('eventosUTM/academicos', function(){
-    return view('egresados.eventosUTM.Academicos');
-});
-
-Route::get('/historiasdeExito', function(){
-    return view('egresados.HistoriasDeExito');
-});
-
-Route::get('/tipsConsejos', function(){
-    return view('egresados.TipsConsejos');
 });
 
 Route::get('/ranking', function() {
-	return view('ranking.ranking');
+    return view('egresados.ranking');
 });
 
-Route::get('/bienvenida', function() {
-    return view('registro.bienvenida');
+Route::get('/tabuladorSalarios', function(){
+    return view('egresados.tabuladorSalarios');
 });
+
+Route::group(['prefix' => 'eventos'], function() {
+    Route::get('/', 'EventosController@index');
+
+    Route::get('/culturales', 'EventosController@culturales');
+
+    Route::get('/academicos', 'EventosController@academicos');
+});
+
+Route::get('/historiasExito', 'HistoriasExitoController@index');
+
+Route::get('/tipsConsejos', 'TipsConsejosController@index');
+
 
 
 // Auth::routes();
-
-
 // Route::get('/home', 'HomeController@index')->name('home');
 
 
 //Rutas para la seccion de Administrador@
-Route::get('Admin/crearAlumno', function(){
-    return view('Admin.Alumnos.CrearAlumno');
-});
-Route::get('Admin/editarAlumno', function(){
-    return view('Admin.Alumnos.EditarAlumno');
-});
-Route::get('Admin/crearEmpresa', function(){
-    return view('Admin.Empresa.CrearEmpresa');
-});
-Route::get('Admin/editarEmpresa', function(){
-    return view('Admin.Empresa.EditarEmpresa');
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('/crearAlumno', function(){
+        return view('admin.Alumnos.CrearAlumno');
+    });
+    Route::get('editarAlumno', function(){
+        return view('admin.Alumnos.EditarAlumno');
+    });
+    Route::get('crearEmpresa', function(){
+        return view('admin.Empresa.CrearEmpresa');
+    });
+    Route::get('editarEmpresa', function(){
+        return view('admin.Empresa.EditarEmpresa');
+    });
 });
 
