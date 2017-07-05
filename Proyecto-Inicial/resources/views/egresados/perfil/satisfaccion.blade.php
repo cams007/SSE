@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Mis intereses')
+@section('title', 'Satisfacción en mi formación')
 
 @section('style')
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">

@@ -31,5 +31,10 @@ class UserTableSeeder extends Seeder
         //Egresados registrados sin maestria, doctorado y empleo
         factory(User::class)->times(5)->create();
 
+        //Se crea egresado de prueba
+        factory(User::class)->times(1)->create([
+            'correo' => 'usuario@ejemplo.net',
+        ]);
+
     }
 }

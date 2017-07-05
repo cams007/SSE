@@ -6,7 +6,7 @@ class RegistrarEgresadoTest extends \Codeception\Test\Unit
 {
 
     // tests
-    public function testSomeFeature()
+    public function test_insert_egresado_with_factory()
     {
         $egresado = factory(Egresado::class, 1)->create();
 

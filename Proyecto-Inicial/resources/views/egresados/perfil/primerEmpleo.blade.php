@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Experiencia labolar')
+@section('title', 'Mi primer empleo')
 
 @section('style')
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">
@@ -24,7 +24,7 @@
 		</div><!--fin div-2-1-->
 		
 		<div class="column content">
-			<form method="POST" action="{{url('perfil/experiencia')}}">
+			<form method="POST" action="{{url('perfil/primerEmpleo')}}">
 			
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}

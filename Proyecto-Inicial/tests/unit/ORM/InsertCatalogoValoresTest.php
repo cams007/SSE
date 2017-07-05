@@ -6,7 +6,7 @@ class InsertCatalogoValoresTest extends \Codeception\Test\Unit
 {
 
     // tests
-    public function testSomeFeature()
+    public function test_insert_and_update_valor_of_catalogo()
     {
         $valor = new Catalogovalor();
         $valor->descripcion = 'Responsabilidad';
