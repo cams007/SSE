@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Desarrollo profesional')
+@section('title', 'Mis empleos')
 
 @section('style')
 <link href="{{ url('css/perfil.css') }}" rel="stylesheet">
@@ -73,7 +73,7 @@
 				  	<td></td>
 				</tr>
 			</table>
-			<a href="{{url('perfil/fprofesional')}}" class="button flat"> Siguiente</a>
+			<a href="{{url('perfil/satisfaccion')}}" class="button flat"> Siguiente</a>
 		</div>		
 	</div>
 	

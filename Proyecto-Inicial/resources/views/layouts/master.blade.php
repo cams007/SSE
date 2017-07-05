@@ -19,10 +19,14 @@
           <div id="header">
               <div id="nombre_usuario">
 
-                  <a class="user-name" href="#">
-                    <img src="{{ url('assets/images/user-name.png') }}">
-                  </a>
-                  <p>Juan Perez Sanchez</p>
+                    @if (Auth::guest())
+                        
+                    @else
+                        <a class="user-name" href="#">
+                            <img src="{{ url('assets/images/user-name.png') }}">
+                        </a>
+                        <p>{{ Auth::user()->egresado->nombre }}</p>
+                    @endif
               </div>
               <div id="iconos">
                   <!-- <a class="configuration" href="#">
@@ -34,7 +38,14 @@
                       <ul>
                         <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
                         <li><a  href="#">Cambiar contraseña</a></li>
-                        <li><a  href="#">Cerrar sesión</a></li>
+                        <li><a  href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                              document.getElementById('logout-form').submit();">
+                              Cerrar sesión
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </li>
                         </ul>
                     </li>
                 </ul>

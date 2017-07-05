@@ -6,7 +6,7 @@ class InsertCatalogoPreguntasTest extends \Codeception\Test\Unit
 {
 
     // tests
-    public function testSomeFeature()
+    public function test_insert_pregunta_a_catalogo()
     {
         $pregunta = new CatalogoPregunta();
         $pregunta->pregunta = '¿Cómo calificas las instalaciones de la UTM?';
