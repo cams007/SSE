@@ -67,7 +67,7 @@
 	<div class="modal">
 		<a href="#close" class="close">&times;</a>
 		<div class="parte-1"><!--parte-1-->
-			<p class="txt">Datos de empresa</p>
+			<p class="txt">Datos de la empresa</p>
 		</div><!--parte-1-->
 
 		<!-- <form action="#close"> -->
@@ -130,7 +130,7 @@
   	<div class="modal">
 	    <a href="#close" class="close">&times;</a>
 	    <div>
-	    	<h1>Detalles de oferta</h1>
+	    	<h1>Detalles de la oferta</h1>
 	    	<form action="#">
 		    	<div>
 					<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
@@ -139,8 +139,11 @@
 				</div>
 
 				<div>
-					<span> {{" Grupo GSI, empresa mexicana fundada en el año de 2004, reconocida por su experiencia y calidad al brindar servicios de Tecnología de Información. Solicita: Desarrollador web"}} </span>
-					<p>Licenciatura terminada en Ing. en Sistemas, Informática, Ciencias de la Computación o afín. Experiencia mínima de 2 años.</p>
+				<span id="oferta_descripcion"></span><br>
+					<span> {{"Solicita: "}} </span>
+					<span id="oferta_vacante"></span>
+					<span id="oferta_carrera"></span>
+					<span id="oferta_experiencia"></span>
 				</div>
 
 				<div>
@@ -150,7 +153,7 @@
 
 				<div>
 					<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
-					<span> {{" Ciudad de México (Distrito Federal) "}} </span>
+					<span id="oferta_ubicacion">  </span>
 				</div>
 				<div class="btn-group">
 					<button type="cancel" class="flat-secundario aling-left" >Cancelar</button>
