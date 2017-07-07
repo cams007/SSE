@@ -14,29 +14,43 @@
 		</div><!--div-1-->
 
 		<form action="" method="post" enctype="multipart/form-data">
-	 		<label for="" class="">Nombre: </label>
-	 		<input type="text" name="nombre"/>
+	 		<label for="" class="">Nombre de la empresa: </label>
+	 		<input type="text" name="nombre_emp"/>
+
+	 		<label for="" class="">Giro de la empresa: </label>
+	 		<input type="text" name="giro_emp"/>
+
+	 		<label for="" class="">Sector: </label>
+	 		<select name="sector_emp">
+	 			<option value="ic">Computación</option><!--claves de carreras-->
+	 			<option value="id">Diseño</option>
+	 			<option value="ie">Electronica</option>
+	 			<option value="im">Mecatronica</option>
+	 		</select>
 
 	 		<label for="" class="">RFC: </label>
-	 		<input type="text" name="rfc"/>
+	 		<input type="text" name="rfc_emp"/>
 
-	 		<label for="" class="">Direccion: </label>
-	 		<input type="text" name="direccion"/>
+	 		<label for="" class="">Dirección: </label>
+	 		<input type="text" name="direccion_emp"/>
 
 	 		<label for="" class="">Página web: </label>
-	 		<input type="text" name="paginaWeb"/>
+	 		<input type="text" name="paginaWeb_emp"/>
 
-	 		<label for="" class="">Imagen de la empresa: </label>
+	 		<label for="" class="">Fotografía de la empresa: </label>
 	 		<input name="uploadedfile" type="file" />
 
 	 		<label for="" class="">Nombre del contacto: </label>
-	 		<input type="text" name="nombreContacto"/>
+	 		<input type="text" name="nombre_cont"/>
+
+	 		<label for="" class="">Puesto: </label>
+	 		<input type="text" name="puesto_cont"/>
 
 	 		<label for="" class="">Número telefónico: </label>
-	 		<input type="text" name="numeroTel"/>
+	 		<input type="text" name="numeroTel_cont"/>
 
 	 		<label for="" class="">Correo electrónico: </label>
-	 		<input type="email" name="email"/>
+	 		<input type="email" name="email_cont"/>
 
 	 		<input type="submit" value="Enviar">
 		</form>	
