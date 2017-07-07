@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('admin.layouts.master')
 
 @section('title', 'Editar alumno')
 
@@ -20,41 +20,45 @@
 	 		<label for="" class="">Nombre: </label>
 	 		<input type="text" name="nombre"/>
 
-	 		<label for="" class="">Carrera: </label>
-	 		<select name="carrera">
-	 			<option value="ing.comp">Computación</option>
-	 			<option value="ing.dise">Diseño</option>
-	 			<option value="ing.elec">Electronica</option>
-	 			<option value="ing.meca">Mecatronica</option>
-	 		</select>
+	 		<label for="" class="">Curp: </label>
+	 		<input type="text" name="curp"/>
 
 	 		<label for="" class="">Fecha de nacimiento: </label>
 	 		<input type="date" name="fecha_nac"/>
 
+	 		<label for="" class="">Lugar de origen: </label>
+	 		<input type="text" name="Lugar_org"/>
+
+	 		<label for="" class="">Carrera: </label>
+	 		<select name="carrera">
+	 			<option value="ic">Computación</option><!--claves de carreras-->
+	 			<option value="id">Diseño</option>
+	 			<option value="ie">Electronica</option>
+	 			<option value="im">Mecatronica</option>
+	 		</select>
+
+	 		<label for="" class="">Especialidad: </label>
+	 		<select name="especialidad">
+	 			<option value="software">Ing. Software</option><!--claves de carreras-->
+	 			<option value="ia">Inteligencia Artificial</option>
+	 			<option value="redes">Redes</option>
+	 		</select>
+
+	 		<label for="" class="">Generación: </label>
+	 		<input type="text" name="generacion"/>
+
+
 	 		<label for="" class="">Fecha de ingreso: </label>
 	 		<input type="date" name="fecha_ing"/>
+
+	 		<label for="" class="">Fecha de egreso: </label>
+	 		<input type="date" name="fecha_egr"/>
 
 	 		<label for="" class="">Promedio: </label>
 	 		<input type="text" name="promedio"/>
 
-	 		<label for="" class="">Titulacion: </label>
-	 		<select name="titulacion">
-	 			<option value="promedio">Promedio</option>
-	 			<option value="ceneval">Ceneval</option>
-	 			<option value="tesis">Tesis</option>
-	 		</select>
-
-	 		<label for="" class="">Aprobado por: </label>
-	 		<input type="text" name="aprobado"/>
-
-	 		<label for="" class="">Especialidad: </label> <!--Esto va a actualizarse en base-->
-	 		<select name="especialidad">					<!--a la carrera-->
-	 			<option value="ia">IA</option>
-	 			<option value="redes">Redes</option>
-	 			<option value="software">Software</option>
-	 		</select>
 	 		<input type="submit" value="Enviar">
-		</form>	
+		</form>		
 
 		<div class="div-5"><!--div-5-->
 			<!-- Paginación -->
