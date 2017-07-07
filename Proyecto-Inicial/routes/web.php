@@ -82,16 +82,26 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
     Route::get('/crearAlumno', function(){
-        return view('admin.Alumnos.CrearAlumno');
+        return view('admin.alumnos.crearAlumno');
     });
     Route::get('editarAlumno', function(){
-        return view('admin.Alumnos.EditarAlumno');
+        return view('admin.alumnos.editarAlumno');
     });
     Route::get('crearEmpresa', function(){
-        return view('admin.Empresa.CrearEmpresa');
+        return view('admin.empresa.crearEmpresa');
     });
     Route::get('editarEmpresa', function(){
-        return view('admin.Empresa.EditarEmpresa');
+        return view('admin.empresa.editarEmpresa');
+    });
+
+    Route::group(['prefix' => 'alumnos'], function(){
+        Route::get('/','AlumnosController@index');
+        //Route::get('/crearAlumno','AlumnosController@');
+    });
+
+    Route::group(['prefix' => 'empresas'], function(){
+        Route::get('/','EmpresasController@index');
+        //Route::get('/crearAlumno','AlumnosController@');
     });
 });
 
