@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Editar alumno')
+@section('title', 'Editar egresados')
 
 @section('style')
 
@@ -9,7 +9,7 @@
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
-			<p class="text-center">Editar alumno</p>
+			<p class="text-center">Editar egresados</p>
 
 		</div><!--div-1-->
 

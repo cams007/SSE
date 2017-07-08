@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Editar empresa')
+@section('title', 'HistoriasYtips')
 
 @section('style')
 
@@ -9,38 +9,28 @@
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
-			<p class="text-center">Editar empresa</p>
+			<p class="text-center">Historias de exito y tips</p>
 
 		</div><!--div-1-->
 
-		<form action="" method="post" enctype="multipart/form-data">
-	 		<label for="" class="">Nombre: </label>
+		<!--Contenido de la pagina-->
+		<form method="get" action="">
+			<label for="" class="">Titulo: </label>
 	 		<input type="text" name="nombre"/>
 
-	 		<label for="" class="">RFC: </label>
-	 		<input type="text" name="rfc"/>
-
-	 		<label for="" class="">Direccion: </label>
-	 		<input type="text" name="direccion"/>
-
-	 		<label for="" class="">Página web: </label>
-	 		<input type="text" name="paginaWeb"/>
-
-	 		<label for="" class="">Imagen de la empresa: </label>
+	 		<label for="" class="">Descripción: </label>
+	 		<textarea rows="4" cols="50">
+	 		</textarea>
+	 		
+	 		<label for="" class="">Imagen: </label>
 	 		<input name="uploadedfile" type="file" />
 
-	 		<label for="" class="">Nombre del contacto: </label>
-	 		<input type="text" name="nombreContacto"/>
-
-	 		<label for="" class="">Número telefónico: </label>
-	 		<input type="text" name="numeroTel"/>
-
-	 		<label for="" class="">Correo electrónico: </label>
-	 		<input type="email" name="email"/>
+	 		<label for="" class="">Fecha de vijencia: </label>
+	 		<input type="date" name="fecha"/>
 
 	 		<input type="submit" value="Enviar">
-		</form>	
-	
+		</form>
+
 		<div class="div-5"><!--div-5-->
 			<!-- Paginación -->
 			<div class="paginate">
