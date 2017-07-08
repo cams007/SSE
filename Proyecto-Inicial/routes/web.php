@@ -103,5 +103,13 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/','EmpresasController@index');
         //Route::get('/crearAlumno','AlumnosController@');
     });
+
+    Route::get('/eventos', function(){
+        return view('admin.eventos');
+    });
+
+    Route::get('/historiasYtips', function(){
+        return view('admin.historiasTips');
+    });
 });
 
