@@ -29,7 +29,7 @@
 	<div class="div-3"><!--div-3-->
 	<!-- Filtros -->
 		<div class="div-3-1"><!--div-3-1-->
-			{!! Form::select('carrera', config('options.carreras'), null, ['class' => 'seleccion']) !!}
+			{!! Form::select('carrera', config('options.carreras'), null, ['class' => 'seleccion', "onchange" => "this.form.submit()"]) !!}
 			{!! Form::close() !!}
 		</div><!--div-3-1-->
 	</div><!--div-3-->
