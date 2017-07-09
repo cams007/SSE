@@ -3,13 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Empresa;
 
 class EmpresasController extends Controller
 {
     public function index(Request $request) {
 
-        //$eventos = Evento::titulo($request->get('q'))->orderBy('fecha', 'DESC')->paginate(8);
+        $empresas = empresa::nombre($request->get('q'))->orderBy('nombre', 'DESC')->paginate(8);
 
-        return view('admin.empresa.index', compact('empresa'));
+        return view('admin.empresa.index', compact('empresas'));
+    }
+
+    public function showCrearEmpresa(Request $request) {
+
+    	return view('admin.empresa.crearEmpresa');
+    }
+
+    public function showEditarEmpresa(Request $request) {
+
+    	return view('admin.empresa.editarEmpresa');
     }
 }
