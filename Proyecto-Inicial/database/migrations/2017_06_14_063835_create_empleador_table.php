@@ -19,6 +19,8 @@ class CreateEmpleadorTable extends Migration
             $table->string('nombre', 200);
             $table->string('descripcion', 500);
             $table->string('rfc', 45)->nullable();
+            $table->enum('sector', ['Pública', 'Privada', 'Propia'])->nullable();
+            $table->string('giro', 200);
             $table->string('telefono', 12);
             $table->string('correo', 50);
             $table->string('calle', 45);
