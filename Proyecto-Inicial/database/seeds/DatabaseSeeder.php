@@ -24,5 +24,6 @@ class DatabaseSeeder extends Seeder
         $this->call(EmpleadorTableSeeder::class);
 
         $this->call(AdminTableSeeder::class);
+        $this->call(RankingTableSeeder::class);
     }
 }

@@ -227,7 +227,6 @@ $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
         'empresa_id' => function () {
              return factory(App\Empresa::class)->create()->id;
         },
-        'created_at' => $faker->dateTimeBetween(),
     ];
 });
 $factory->define(App\Postulacion::class, function (Faker\Generator $faker) {
@@ -283,14 +282,12 @@ $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Ranking::class, function (Faker\Generator $faker) {
     return [
-        'calificacion' => numberBetween($min = 1, $max = 5),
+        'calificacion' => $faker->numberBetween($min = 1, $max = 5),
         'comentario' => $faker->sentence(5),
         'egresado_matricula' => function () {
              return factory(App\Egresado::class)->create()->matricula;
         },
-        'empresa_id' => function () {
-             return factory(App\Empresa::class)->create()->id;
-        },
+        'empresa_id' => $faker->numberBetween($min = 1, $max = 50),
     ];
 });
 $factory->define(App\Tip::class, function (Faker\Generator $faker) {

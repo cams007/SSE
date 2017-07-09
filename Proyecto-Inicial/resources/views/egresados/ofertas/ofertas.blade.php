@@ -54,11 +54,11 @@
 	</div><!--div-4-->
 	<!-- Paginación -->
 	<div class="div-5"><!--div-5-->
-		<?php if (isset($_GET['q'])){ ?>
-		{!! $ofertas->appends(['q' => $_GET["q"]])->render() !!}
-		<?php }else{ ?>
+		@if ( Request::get('q') )
+			{!! $ofertas->appends(['q' => $_GET["q"]])->render() !!}
+		@else
 			{!! $ofertas->render() !!}
-		<?php } ?>
+		@endif
 	</div><!--div-5-->
 </div><!--contenedor-->
 
