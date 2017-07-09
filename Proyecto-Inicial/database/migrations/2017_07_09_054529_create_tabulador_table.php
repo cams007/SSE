@@ -13,7 +13,7 @@ class CreateTabuladorTable extends Migration
      */
     public function up()
     {
-        Schema::create('tabulador', function (Blueprint $table) {
+        Schema::create('Tabulador', function (Blueprint $table) {
             $table->increments('id');
             $table->string('empleo', 200);
             $table->integer('carrera');
@@ -35,7 +35,7 @@ class CreateTabuladorTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('tabulador');
+        Schema::dropIfExists('Tabulador');
         Schema::enableForeignKeyConstraints();
     }
 }
