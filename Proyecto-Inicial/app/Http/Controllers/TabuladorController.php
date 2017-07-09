@@ -20,6 +20,7 @@ class TabuladorController extends Controller
     public function showTabuladorView(Request $request){
 
     	$salarios = Tabulador::empleo($request->get('q'))
+    		->carrera($request->get('carrera'))
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
 

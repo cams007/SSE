@@ -22,7 +22,6 @@
 			<div class="search">
 				{!! Form::open(['url' => 'tabuladorSalarios', 'method' => 'GET', 'role' => 'search']) !!}
 					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscar']) !!}
-				{!! Form::close() !!}
 			</div>
 		</div><!--div-2-3-->
 	</div><!--div-2-->
@@ -30,12 +29,8 @@
 	<div class="div-3"><!--div-3-->
 	<!-- Filtros -->
 		<div class="div-3-1"><!--div-3-1-->
-			<select name="Calificacion" class="seleccion">
-				<option selected="">Todas</option>
-				<option value="ingAlimentos">Ing. en Alimentos</option>
-				<option value="ingAlimentos">Ing. en Computación</option>
-				<option value="ingAlimentos">Ing. en Diseño</option>
-			</select>
+			{!! Form::select('carrera', config('options.carreras'), null, ['class' => 'seleccion']) !!}
+			{!! Form::close() !!}
 		</div><!--div-3-1-->
 	</div><!--div-3-->
 
@@ -60,27 +55,27 @@
 							<td>
 								@php
 								switch ($salario->carrera) {
-									case 0: echo "Ingeniero en Diseño";
+									case 0: echo "Ingeniería en Diseño";
 											break;
-									case 1: echo "Ingeniero en Computación";
+									case 1: echo "Ingeniería en Computación";
 											break;
-									case 2: echo "Ingeniero en Alimentos";
+									case 2: echo "Ingeniería en Alimentos";
 											break;
-									case 3: echo "Ingeniero en Electrónica";
+									case 3: echo "Ingeniería en Electrónica";
 											break;
-									case 4: echo "Ingeniero en Mecatrónica";
+									case 4: echo "Ingeniería en Mecatrónica";
 											break;
-									case 5: echo "Ingeniero  Industrial";
+									case 5: echo "Ingeniería  Industrial";
 											break;
-									case 6: echo "Ingeniero en Física Aplicada";
+									case 6: echo "Ingeniería en Física Aplicada";
 											break;
-									case 7: echo "Licenciado en Ciencias Empresariales";
+									case 7: echo "Licenciatura en Ciencias Empresariales";
 											break;
-									case 8: echo "Licenciado en Matemáticas Aplicadas";
+									case 8: echo "Licenciatura en Matemáticas Aplicadas";
 											break;
-									case 9: echo "Licenciado en Estudios Mexicanos";
+									case 9: echo "Licenciatura en Estudios Mexicanos";
 											break;
-									case 10: echo "Ingeniero en Mecánica Automotriz";
+									case 10: echo "Ingeniería en Mecánica Automotriz";
 											break;
 									default: break;
 								}

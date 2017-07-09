@@ -19,4 +19,12 @@ class Tabulador extends Model
                 ->where('empleo', 'like', '%'.$empleo.'%');
         }
     }
+
+    public function scopeCarrera($query, $carrera){
+    	$carreras = config('options.carreras');
+
+        if ($carrera != "" && isset($carreras[$carrera])){
+        	$query->where('carrera', '=', $carrera);
+        }
+    }
 }

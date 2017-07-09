@@ -24,7 +24,7 @@
 
 	<!-- Resultados -->
 	<div class="div-4"><!--div-4-->
-		<p>Se encontraron {{ $ofertas->total() }} resultados</p>
+		<p>Se encontraron {{ $ofertas->total() }} ofertas</p>
 		<table>
 			<thead>
 				<tr>
