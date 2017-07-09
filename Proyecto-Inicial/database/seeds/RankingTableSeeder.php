@@ -17,7 +17,7 @@ class RankingTableSeeder extends Seeder
     	$egresados = Egresado::where('nacionalidad', '<>', null)->take(20)->get();
 
     	foreach($egresados as $value) {
-    		for ($i = 1; $i <= 10; $i++) {
+    		for ($i = 1; $i <= 15; $i++) {
 
 		        factory(Ranking::class)->create([
 		        	'egresado_matricula' => $value->matricula,

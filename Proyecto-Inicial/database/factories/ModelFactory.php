@@ -114,6 +114,8 @@ $factory->define(App\Empresa::class, function (Faker\Generator $faker) {
         'nombre' => $faker->company,
         'descripcion' => $faker->sentence(8),
         'rfc' => $faker->numerify($string = '##########'),
+        'sector' => $faker->randomElement(['Pública' ,'Privada', 'Propia']),
+        'giro' => $faker->word,
         'telefono' => $faker->numerify($string = '##########'),
         'correo' => $faker->unique()->safeEmail,
         'calle' => $faker->streetName,

@@ -52,7 +52,7 @@
 				</thead>
 				<tbody>
 					@foreach($empresas as $indexKey => $empresa)
-						<tr>
+						<tr data-empresa="{{ $empresa }}" data-contacto="{{ $empresa->contacto }}">
 							@if ( Request::get('page') )
 								@if ( Request::get('page') == 1 and $indexKey == 0 )
 									<td><img src="{{ url('assets/images/trofeo.png') }}"></td> 
@@ -74,9 +74,9 @@
 								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
 								<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
 							</td>
-							<td><a href="#datosEmpresa">{{ $empresa->nombre }}</a></td>
+							<td><a href="#datosEmpresa" class="btn-empresa">{{ $empresa->nombre }}</a></td>
 							<td>{{ $empresa->ciudad . ', ' . $empresa->estado }}</td>
-							<td>Consultoría</td>
+							<td>{{ $empresa->giro }}</td>
 						</tr>
 					@endforeach
 				</tbody>
@@ -102,35 +102,47 @@
 		    <div>
 		    	<h1>Datos de empresa</h1>
 		    	<form action="#">
-			    	<div>
-						<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
-						<span> {{" Apple Inc. "}} </span>
-					</div>
+			    	<div class="item-1"><!--item-1-->
+						<div class="icono"><!--icono-->
+							<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
+						</div><!--icono-->
+						<div class="descripcion" id="e_nombre"></div>
+					</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
-						<span> {{" Cupertino, California, Estados Unidos "}} </span>
-					</div>
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><!--icono-->
+							<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos">
+						</div><!--icono-->
+						<div class="descripcion" id="e_direccion"></div>
+					</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
-						<span> {{" 1-800-275-2273 "}} </span>
-					</div>
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><!--icono-->
+							<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos">
+						</div><!--icono-->
+						<div class="descripcion" id="e_telefono"></div>
+					</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-						<span> {{" info@apple.com "}} </span>
-					</div>
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><!--icono-->
+							<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
+						</div><!--icono-->
+						<div class="descripcion" id="e_correo"></div><!--descripcion-->
+					</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
-						<span> {{" Tim Cook "}} </span>
-					</div>
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><!--icono-->
+							<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
+						</div><!--icono-->
+						<div class="descripcion" id="e_contacto"></div><!--descripcion-->
+					</div><!--item-1-->
 
-					<div>
-						<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
-						<span> {{" CEO "}} </span>
-					</div>
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><!--icono-->
+							<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
+						</div><!--icono-->
+						<div class="descripcion" id="e_puesto"></div><!--descripcion-->
+					</div><!--item-1-->
 
 					<div>
 						<br><br>
@@ -154,4 +166,8 @@
 		</div>
 	</div>
 
+@stop
+
+@section('script')
+<script src="{{ url('js/ranking.js') }}"></script>
 @stop
