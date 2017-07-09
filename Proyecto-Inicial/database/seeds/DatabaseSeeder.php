@@ -25,5 +25,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AdminTableSeeder::class);
         $this->call(RankingTableSeeder::class);
+        $this->call(TabuladorTableSeeder::class);
     }
 }

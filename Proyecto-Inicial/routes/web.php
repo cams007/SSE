@@ -55,9 +55,7 @@ Route::group(['prefix' => 'directorio'], function() {
 
 Route::get('/ranking', 'RankingController@showRankingView');
 
-Route::get('/tabuladorSalarios', function(){
-    return view('egresados.tabuladorSalarios');
-});
+Route::get('/tabuladorSalarios', 'TabuladorController@showTabuladorView');
 
 Route::group(['prefix' => 'eventos'], function() {
     Route::get('/', 'EventosController@index');

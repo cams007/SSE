@@ -3,8 +3,8 @@
 @section('title', 'Ranking de empresas')
 
 @section('style')
-<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
-<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+	<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -40,6 +40,7 @@
 
 	<div class="div-4"><!--div-4-->
 		<div class="div-4-1"><!--div-4-1-->
+			<p>Se encontraron {{ $empresas->total() }} resultados</p>
 			<table>
 				<thead>
 					<tr>
@@ -169,5 +170,5 @@
 @stop
 
 @section('script')
-<script src="{{ url('js/ranking.js') }}"></script>
+	<script src="{{ url('js/ranking.js') }}"></script>
 @stop
