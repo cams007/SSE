@@ -81,31 +81,28 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::post('/', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
-    Route::get('/crearAlumno', function(){
-        return view('admin.alumnos.crearAlumno');
-    });
-    Route::get('editarAlumno', function(){
-        return view('admin.alumnos.editarAlumno');
-    });
-    Route::get('crearEmpresa', function(){
-        return view('admin.empresa.crearEmpresa');
-    });
-    Route::get('editarEmpresa', function(){
-        return view('admin.empresa.editarEmpresa');
+    //Grupo de rutas para las vistas de egresados
+    Route::group(['prefix' => 'egresado'], function(){
+        Route::get('/','AlumnosController@index');
+        Route::get('/crearEgresado','AlumnosController@showCrearEgresado')->name('admin.crearEgresado');
+        Route::get('/editarEgresado','AlumnosController@showEditarEgresado')->name('admin.editarEgresado');
+        
+        Route::post('crearEgresado', 'AlumnosController@saveEgresado')->name('admin.crearEgresado.submit');
     });
 
-    Route::group(['prefix' => 'alumnos'], function(){
-        Route::get('/','AlumnosController@index');
-        //Route::get('/crearAlumno','AlumnosController@');
-    });
 
     Route::group(['prefix' => 'empresas'], function(){
         Route::get('/','EmpresasController@index');
-        //Route::get('/crearAlumno','AlumnosController@');
+        Route::get('/crearEmpresa','EmpresasController@showCrearEmpresa')->name('admin.crearEmpresa');
+        Route::get('/editarEmpresa','EmpresasController@showEditarEmpresa')->name('admin.editarEmpresa');
     });
 
-    Route::get('/eventos', function(){
-        return view('admin.eventos');
+    Route::group(['prefix' => 'eventos'], function(){
+        Route::get('/','EventosAdminController@index');
+        Route::get('/crearEvento','EventosAdminController@showCrearEvento')->name('admin.crearEvento');
+
+
+        Route::get('/editarEvento','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
     });
 
     Route::get('/historiasYtips', function(){

@@ -37,21 +37,11 @@
 	 		<label for="" class="">Poster del evento: </label>
 	 		<input name="uploadedfile" type="file" />
 
-	 		<input type="submit" value="Enviar">
+	 		<button type="submit" class="flat">
+						Enviar
+			</button>
 		</form>
 
-		<div class="div-5"><!--div-5-->
-			<!-- Paginación -->
-			<div class="paginate">
-				<a class="back" href="#"><img src="{{ url('assets/images/paginator_back.png') }}"></a>
-		      	<a class="page" href="#">1</a>
-		      	<a class="active" href="#">2</a>
-		      	<a class="page" href="#">3</a>
-		      	<a class="page" href="#">4</a>
-		      	<a class="page" href="#">5</a>
-		      	<a class="forward" href="#"><img src="{{ url('assets/images/paginator_forward.png') }}"></a>
-			</div>
-		</div><!--div-5-->
 	</div><!--contenedor-->
 
 @stop
