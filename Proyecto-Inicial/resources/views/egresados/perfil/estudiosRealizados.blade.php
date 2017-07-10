@@ -60,19 +60,43 @@
 					{!! Form::date('ftitulacion', \Carbon\Carbon::now()) !!}
 				</div>
 			
-				<div class="form-group">
-					<label for="maestria">Maestría</label>
-					<input type="text" name="maestria" id="maestria" class="form-control" pattern="[a-z]" >
-				</div>
+				<br><br>
+				<hr>
+				<br>
 
 				<div class="form-group">
-					<label>Titulado</label>
-					<div class="radio">
-						<input type="radio" name="mtitulado" id="tMSi" value="1" > <label for="tMSi" class="label-radio">Sí</label>
-						<input type="radio" name="mtitulado" id="tMNo" value="0" > <label for="tMNo" class="label-radio">No</label>
-					</div>
+					<label for="maestria">Maestría(s)</label>
+				</div>
+				@if ( $preparacion->maestrias->count() > 0)
+					<table>
+						<thead>
+							<tr>
+								<th>Descripcion</th>
+								<th>Titulado</th>
+							</tr>
+						</thead>
+
+						@foreach($preparacion->maestrias as $maestria)
+							<tbody>
+								<tr>
+									<td>{{ $maestria->descripcion }}</td>
+									<td>Si</td>
+								</tr>
+							</tbody>
+						@endforeach
+					</table>
+				@endif
+
+				<input type="text" name="maestria" id="maestria" class="form-control" pattern="[a-z]" >
+				<label>Titulado</label>
+				<div class="radio">
+					<input type="radio" name="mtitulado" id="tMSi" value="1" > <label for="tMSi" class="label-radio">Sí</label>
+					<input type="radio" name="mtitulado" id="tMNo" value="0" > <label for="tMNo" class="label-radio">No</label>
 				</div>
 
+				<br><br>
+				<hr>
+				<br>
 				<div class="form-group">
 					<label for="doctorado">Doctorado</label>
 					<input type="text" name="doctorado" id="doctorado" class="form-control" pattern="[a-z]" >
