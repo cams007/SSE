@@ -14,6 +14,18 @@ return array(
 		'8'		=>	'Licenciatura en Matemáticas Aplicadas',
 		'9'		=>	'Licenciatura en Estudios Mexicanos',
 		'10'	=>	'Ingeniería en Mecánica Automotriz'
+	],
+
+	'generos' 	=> [
+		'' 				=> 	'Selecciona tu género',
+		'Masculino'		=>	'Masculino',
+		'Femenino'		=>	'Femenino'
+	],
+
+	'nacionalidades' 	=> [
+		'' 				=> 	'Selecciona tu nacionalidad',
+		'Mexicana'		=>	'Mexicana',
+		'Otra'		=>	'Otra'
 	]
 );
 

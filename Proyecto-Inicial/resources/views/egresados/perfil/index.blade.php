@@ -50,44 +50,37 @@
 							<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
-							<label class="info-perfil"> {{ $egresados->lugar_origen }}</label>
+							<span class="info-perfil"> {{ $egresados->lugar_origen }}</span>
 						</div><!--info-->
 					</div><!--contenedor-info-->
 
 					<div>
-						<input type="text" name="cActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->direccion_actual}} " />
+						<input type="text" name="e_direccionActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->direccion_actual}} " />
 					</div>
 
 					<div>
-						<input type="email" name="egresadosEmail" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->usuario->correo}}" />
+						<input type="email" name="e_correo" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->usuario->correo}}" />
 					</div>
 
 					<div>
-						<input type="tel" name="egresadosTel" class="input-icon inputTel" placeholder="Agregar telefóno" value="{{$egresados->telefono}}" />
+						<input type="tel" name="e_telefono" class="input-icon inputTel" placeholder="Agregar telefóno" value="{{$egresados->telefono}}" />
 					</div>
 
 					<div>
-						Género
-						<select name="genero">
-							<option selected="">Selecciona tu género</option>
-							<option value="saab">Masculino</option>
-							<option value="saab">Femenino</option>
-						</select>
+						<p>Género</p>
+						{!! Form::select('e_genero', config('options.generos'), $egresados->genero, ['class' => 'select', 'required']) !!}
 					</div>
 
 					<div>
-						Nacionalidad
-						<select name="nacionaidad">
-							<option selected="">Selecciona tu nacionalidad</option>
-							<option value="saab">Mexicana</option>
-							<option value="saab">Otra</option>
-						</select>
-						<input type="text" name="otraNacionalidad" class="input-icon inputTel" placeholder="Agregar nacionalidad" />
+						<p>Nacionalidad</p>
+						{!! Form::select('e_nacionalidad', config('options.nacionalidades'), $egresados->nacionalidad, ['class' => 'select', 'required', "onchange" => "changeNacionalidad(this.value)"]) !!}
+
+						<input type="text" name="e_otraNacionalidad" id="otra_nacionalidad" class="input-icon inputTel" placeholder="Agregar nacionalidad" />
 					</div>
 
 					<div>
-					Curriculum vitae
-						<input type="file" name="cv">
+						<p>Curriculum vitae</p>
+						<input type="file" name="e_cv">
 					</div>
 
 					<div class="text-center">
@@ -114,5 +107,5 @@
 @stop
 
 @section('script')
-<script src="{{ url('js/perfil.js') }}"></script>
+	<script src="{{ url('js/perfil.js') }}"></script>
 @stop
