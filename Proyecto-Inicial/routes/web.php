@@ -105,8 +105,11 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/editarEvento','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
     });
 
-    Route::get('/historiasYtips', function(){
-        return view('admin.historiasTips');
+    //Route::get('/historiasYtips', function(){
+    //    return view('admin.historiasTips');
+    //});
+    Route::group(['prefix' => 'historiasYtips'], function(){
+        Route::get('/', 'HistoriasYTipsController@index');
     });
 });
 
