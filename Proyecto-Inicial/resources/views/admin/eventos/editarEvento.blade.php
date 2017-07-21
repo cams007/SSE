@@ -14,7 +14,7 @@
 		</div><!--div-1-->
 
 		<!--Contenido de la pagina-->
-		<form method="get" action="">
+		<form method="post" action="">
 			<label for="" class="">Titulo del evento: </label>
 	 		<input type="text" name="nombre"/>
 

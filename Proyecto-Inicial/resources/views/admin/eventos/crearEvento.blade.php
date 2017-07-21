@@ -14,12 +14,15 @@
 		</div><!--div-1-->
 
 		<!--Contenido de la pagina-->
-		<form method="get" action="">
+		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearEvento.submit') }}">
+			{{ csrf_field() }}<!--No sé para que sea pero debe de ir. jajaja XD-->
+			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+					
 			<label for="" class="">Titulo del evento: </label>
 	 		<input type="text" name="nombre"/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50">
+	 		<textarea rows="4" cols="50" name="descripcion">
 	 		</textarea>
 
 	 		<label for="" class="">Lugar del evento: </label>
@@ -30,12 +33,12 @@
 
 	 		<label for="" class="">Categoria: </label>
 	 		<select name="categoria">
-	 			<option value="culturales">Culturales</option>
-	 			<option value="academicos">Académicos</option>
+	 			<option value="1">Académicos</option>
+	 			<option value="2">Culturales</option>
 	 		</select>
 
 	 		<label for="" class="">Poster del evento: </label>
-	 		<input name="uploadedfile" type="file" />
+	 		<input name="imagen" type="file" />
 
 	 		<button type="submit" class="flat">
 						Enviar

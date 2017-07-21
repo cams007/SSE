@@ -97,12 +97,12 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/editarEmpresa','EmpresasController@showEditarEmpresa')->name('admin.editarEmpresa');
     });
 
+    //Grupo de rutas para las vistas de eventos
     Route::group(['prefix' => 'eventos'], function(){
         Route::get('/','EventosAdminController@index');
         Route::get('/crearEvento','EventosAdminController@showCrearEvento')->name('admin.crearEvento');
-
-
-        Route::get('/editarEvento','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
+        Route::post('/crearEvento','EventosAdminController@saveEvento')->name('admin.crearEvento.submit');
+        Route::get('/editarEvento/{id}','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
     });
 
     //Route::get('/historiasYtips', function(){

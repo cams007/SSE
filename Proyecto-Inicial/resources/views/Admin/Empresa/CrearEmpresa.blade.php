@@ -17,28 +17,39 @@
 	 		<label for="" class="">Nombre de la empresa: </label>
 	 		<input type="text" name="nombre_emp"/>
 
-	 		<label for="" class="">Giro de la empresa: </label>
-	 		<input type="text" name="giro_emp"/>
-
-	 		<label for="" class="">Sector: </label>
-	 		<select name="sector_emp">
-	 			<option value="ic">Computación</option><!--claves de carreras-->
-	 			<option value="id">Diseño</option>
-	 			<option value="ie">Electronica</option>
-	 			<option value="im">Mecatronica</option>
-	 		</select>
+	 		<label for="" class="">Descripción: </label>
+	 		<textarea rows="4" cols="50" name="descripcion">
+	 		</textarea>
 
 	 		<label for="" class="">RFC: </label>
 	 		<input type="text" name="rfc_emp"/>
 
-	 		<label for="" class="">Dirección: </label>
+	 		<label for="" class="">Telefono: </label>
+	 		<input type="text" name="telefono"/>
+
+	 		<label for="" class="">Correo: </label>
+	 		<input type="text" name="correo"/>
+
+	 		<label for="" class="">Dirección calle y número:</label>
 	 		<input type="text" name="direccion_emp"/>
 
+	 		<label for="" class="">Colonia:</label>
+	 		<input type="text" name="colonia"/>
+
+	 		<label for="" class="">Ciudad:</label>
+	 		<input type="text" name="ciudad"/>
+
+	 		<label for="" class="">Estado:</label>
+	 		<input type="text" name="estado"/>
+
+	 		<label for="" class="">Código postal:</label>
+	 		<input type="text" name="codigo_postal"/>
+
 	 		<label for="" class="">Página web: </label>
-	 		<input type="text" name="paginaWeb_emp"/>
+	 		<input type="text" name="pagina_web"/>
 
 	 		<label for="" class="">Fotografía de la empresa: </label>
-	 		<input name="uploadedfile" type="file" />
+	 		<input name="imagen_url" type="file" />
 
 	 		<label for="" class="">Nombre del contacto: </label>
 	 		<input type="text" name="nombre_cont"/>
