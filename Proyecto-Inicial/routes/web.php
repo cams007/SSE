@@ -103,6 +103,8 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/crearEvento','EventosAdminController@showCrearEvento')->name('admin.crearEvento');
         Route::post('/crearEvento','EventosAdminController@saveEvento')->name('admin.crearEvento.submit');
         Route::get('/editarEvento/{id}','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
+        Route::post('/editarEvento','EventosAdminController@saveEditarEvento')->name('admin.editarEvento.submit');
+
     });
 
     //Route::get('/historiasYtips', function(){

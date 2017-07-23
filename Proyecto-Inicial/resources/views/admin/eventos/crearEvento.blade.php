@@ -33,8 +33,8 @@
 
 	 		<label for="" class="">Categoria: </label>
 	 		<select name="categoria">
-	 			<option value="1">Académicos</option>
-	 			<option value="2">Culturales</option>
+	 			<option value="1">Académico</option>
+	 			<option value="2">Cultural</option>
 	 		</select>
 
 	 		<label for="" class="">Poster del evento: </label>
