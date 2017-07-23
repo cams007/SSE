@@ -14,29 +14,54 @@
 		</div><!--div-1-->
 
 		<form action="" method="post" enctype="multipart/form-data">
-	 		<label for="" class="">Nombre: </label>
-	 		<input type="text" name="nombre"/>
+	 		<label for="" class="">Nombre de la empresa: </label>
+	 		<input type="text" name="nombre_emp"/>
+
+	 		<label for="" class="">Descripción: </label>
+	 		<textarea rows="4" cols="50" name="descripcion">
+	 		</textarea>
 
 	 		<label for="" class="">RFC: </label>
-	 		<input type="text" name="rfc"/>
+	 		<input type="text" name="rfc_emp"/>
 
-	 		<label for="" class="">Direccion: </label>
-	 		<input type="text" name="direccion"/>
+	 		<label for="" class="">Telefono: </label>
+	 		<input type="text" name="telefono"/>
+
+	 		<label for="" class="">Correo: </label>
+	 		<input type="text" name="correo"/>
+
+	 		<label for="" class="">Dirección calle y número:</label>
+	 		<input type="text" name="direccion_emp"/>
+
+	 		<label for="" class="">Colonia:</label>
+	 		<input type="text" name="colonia"/>
+
+	 		<label for="" class="">Ciudad:</label>
+	 		<input type="text" name="ciudad"/>
+
+	 		<label for="" class="">Estado:</label>
+	 		<input type="text" name="estado"/>
+
+	 		<label for="" class="">Código postal:</label>
+	 		<input type="text" name="codigo_postal"/>
 
 	 		<label for="" class="">Página web: </label>
-	 		<input type="text" name="paginaWeb"/>
+	 		<input type="text" name="pagina_web"/>
 
-	 		<label for="" class="">Imagen de la empresa: </label>
-	 		<input name="uploadedfile" type="file" />
+	 		<label for="" class="">Fotografía de la empresa: </label>
+	 		<input name="imagen_url" type="file" />
 
 	 		<label for="" class="">Nombre del contacto: </label>
-	 		<input type="text" name="nombreContacto"/>
+	 		<input type="text" name="nombre_cont"/>
+
+	 		<label for="" class="">Puesto: </label>
+	 		<input type="text" name="puesto_cont"/>
 
 	 		<label for="" class="">Número telefónico: </label>
-	 		<input type="text" name="numeroTel"/>
+	 		<input type="text" name="numeroTel_cont"/>
 
 	 		<label for="" class="">Correo electrónico: </label>
-	 		<input type="email" name="email"/>
+	 		<input type="email" name="email_cont"/>
 
 	 		<input type="submit" value="Enviar">
 		</form>	

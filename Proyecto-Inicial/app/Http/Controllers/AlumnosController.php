@@ -27,9 +27,22 @@ class AlumnosController extends Controller
     public function saveEgresado(Request $request) {
 
         //return view('admin.alumnos.index', compact('egresados'));
-        dd($request->all());
+        //dd($request->all());
+        $egresado = new egresado();
+        $egresado->matricula = $request->matricula;
+        $egresado->nombre = $request->nombre;
+        $egresado->curp = $request->curp;
+        $egresado->genero = $request->genero;
+        $egresado->fecha_nacimiento = $request->fecha_nacimiento;
+        $egresado->lugar_origen = $request->lugar_origen;
+        $egresado->preparacion_id = $request->especialidad;
+        $egresado->habilitado = 1;
+        $egresado->save();
+        //$egresado->create($request->all());
+        //return redirect('egresado');
         //$egresado = new Egresado($request->all());
         //dd($egresado);
+        echo "simona";
 
         
     }

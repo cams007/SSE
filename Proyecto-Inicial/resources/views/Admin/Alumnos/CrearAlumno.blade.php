@@ -32,10 +32,10 @@
 	 		</select>
 
 	 		<label for="" class="">Fecha de nacimiento: </label>
-	 		<input type="date" name="fecha_nac" placeholder="" />
+	 		<input type="date" name="fecha_nacimiento" placeholder="" />
 
 	 		<label for="" class="">Lugar de origen: </label>
-	 		<input type="text" name="Lugar_org" placeholder=""/>
+	 		<input type="text" name="lugar_origen" placeholder=""/>
 
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera">
@@ -64,6 +64,8 @@
 
 	 		<label for="" class="">Promedio: </label>
 	 		<input type="text" name="promedio" placeholder=""/>
+
+	 		<!--<input type="hidden" name="habilitado" value="1" placeholder=""/>-->
 
 	 		<!--<label for="" class="">Forma de titulación: </label>
 	 		<select name="especialidad">
