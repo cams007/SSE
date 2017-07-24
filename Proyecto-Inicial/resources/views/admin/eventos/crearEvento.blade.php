@@ -15,7 +15,7 @@
 
 		<!--Contenido de la pagina-->
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearEvento.submit') }}">
-			{{ csrf_field() }}<!--No sé para que sea pero debe de ir. jajaja XD-->
+			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 					
 			<label for="" class="">Titulo del evento: </label>

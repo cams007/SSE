@@ -97,4 +97,18 @@ class EventosAdminController extends Controller
         return redirect('admin/eventos');//Redireccionamos al index de eventos
 
     }
+
+    public function eliminarEvento(Request $request){
+        //Obtenemos de la BD los datos del evento a eliminar.
+        $evento = Evento::findOrFail($request->id);
+        try{
+            //Eliminamos la imagen
+            unlink($evento->imagen_url);
+            $evento->delete();
+            return redirect('admin/eventos');
+        }catch(Exception $e){
+            return "Fatal errror" .$e->getMessage();
+        }
+    }
+    
 }

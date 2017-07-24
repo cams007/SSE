@@ -104,6 +104,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/crearEvento','EventosAdminController@saveEvento')->name('admin.crearEvento.submit');
         Route::get('/editarEvento/{id}','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
         Route::post('/editarEvento','EventosAdminController@saveEditarEvento')->name('admin.editarEvento.submit');
+        Route::get('/eliminarEvento/{id}','EventosAdminController@eliminarEvento')->name('admin.eliminarEvento');
 
     });
 
