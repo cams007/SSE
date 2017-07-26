@@ -17,7 +17,6 @@ class HistoriasExitoController extends Controller
     {
         $this->middleware('auth');
     }
-
     
     public function index(Request $request) {
 

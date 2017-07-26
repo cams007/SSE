@@ -90,14 +90,14 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('crearEgresado', 'AlumnosController@saveEgresado')->name('admin.crearEgresado.submit');
     });
 
-
+    //Grupo de rutas para las vistas de empresas (admin/empresas/..)
     Route::group(['prefix' => 'empresas'], function(){
         Route::get('/','EmpresasController@index');
         Route::get('/crearEmpresa','EmpresasController@showCrearEmpresa')->name('admin.crearEmpresa');
         Route::get('/editarEmpresa','EmpresasController@showEditarEmpresa')->name('admin.editarEmpresa');
     });
 
-    //Grupo de rutas para las vistas de eventos
+    //Grupo de rutas para las vistas de eventos (admin/eventos/..)
     Route::group(['prefix' => 'eventos'], function(){
         Route::get('/','EventosAdminController@index');
         Route::get('/crearEvento','EventosAdminController@showCrearEvento')->name('admin.crearEvento');
@@ -108,11 +108,12 @@ Route::group(['prefix' => 'admin'], function() {
 
     });
 
-    //Route::get('/historiasYtips', function(){
-    //    return view('admin.historiasTips');
-    //});
-    Route::group(['prefix' => 'historiasYtips'], function(){
-        Route::get('/', 'HistoriasYTipsController@index');
+    //Grupo de rutas para las historias de éxito (admin/historiasdeExito/..)
+    Route::group(['prefix' => 'historiasdeExito'], function(){
+        Route::get('/', 'HistoriasDeAdminController@indexH');
+        Route::get('/crearHistoriaDe','HistoriasDeAdminController@showCrearHistoria')->name('admin.crearHistoria');
+
+        Route::get('/editarHistoriaDe/{id}','HistoriasDeAdminController@showEditarHistoria')->name('admin.editarHistoria');
     });
 });
 
