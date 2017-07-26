@@ -17,6 +17,6 @@ class HistoriasDeAdminController extends Controller
 
     public function showCrearHistoria(Request $request){
 
-        return view('Admin.historiasDe.crearHistoriaDe');//accedemos alarchivo
+        return view('Admin.historiasDe.crearHistoriaDe');//accedemos al archivo
     }
 }
