@@ -88,28 +88,30 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('crearEgresado', 'AlumnosController@saveEgresado')->name('admin.crearEgresado.submit');
     });
 
-
+    //Grupo de rutas para las vistas de empresas (admin/empresas/..)
     Route::group(['prefix' => 'empresas'], function(){
         Route::get('/','EmpresasController@index');
         Route::get('/crearEmpresa','EmpresasController@showCrearEmpresa')->name('admin.crearEmpresa');
         Route::get('/editarEmpresa','EmpresasController@showEditarEmpresa')->name('admin.editarEmpresa');
     });
 
-    //Grupo de rutas para las vistas de eventos
+    //Grupo de rutas para las vistas de eventos (admin/eventos/..)
     Route::group(['prefix' => 'eventos'], function(){
         Route::get('/','EventosAdminController@index');
         Route::get('/crearEvento','EventosAdminController@showCrearEvento')->name('admin.crearEvento');
         Route::post('/crearEvento','EventosAdminController@saveEvento')->name('admin.crearEvento.submit');
         Route::get('/editarEvento/{id}','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
         Route::post('/editarEvento','EventosAdminController@saveEditarEvento')->name('admin.editarEvento.submit');
+        Route::get('/eliminarEvento/{id}','EventosAdminController@eliminarEvento')->name('admin.eliminarEvento');
 
     });
 
-    //Route::get('/historiasYtips', function(){
-    //    return view('admin.historiasTips');
-    //});
-    Route::group(['prefix' => 'historiasYtips'], function(){
-        Route::get('/', 'HistoriasYTipsController@index');
+    //Grupo de rutas para las historias de éxito (admin/historiasdeExito/..)
+    Route::group(['prefix' => 'historiasdeExito'], function(){
+        Route::get('/', 'HistoriasDeAdminController@indexH');
+        Route::get('/crearHistoriaDe','HistoriasDeAdminController@showCrearHistoria')->name('admin.crearHistoria');
+        Route::post('/crearHistoriaDe','HistoriasDeAdminController@saveHistoria')->name('admin.crearHistoria.submit');
+        Route::get('/editarHistoriaDe/{id}','HistoriasDeAdminController@showEditarHistoria')->name('admin.editarHistoria');
     });
 });
 

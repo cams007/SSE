@@ -3,9 +3,9 @@
 @section('title', 'eventos')
 
 @section('style')
-
 <link href="{{ url('css/ranking.css') }}" rel="stylesheet">
 @stop
+
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
@@ -15,7 +15,7 @@
 
 		<!--Contenido de la pagina-->
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearEvento.submit') }}">
-			{{ csrf_field() }}<!--No sé para que sea pero debe de ir. jajaja XD-->
+			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 					
 			<label for="" class="">Titulo del evento: </label>
