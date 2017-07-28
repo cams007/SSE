@@ -14,15 +14,18 @@
 		</div><!--div-1-->
 
 		<!--Contenido de la pagina-->
-		<form method="POST" enctype="multipart/form-data" action="">
+		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearHistoria.submit') }}">
+			{{ csrf_field() }}
+			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+
 			<label for="" class="">Titulo: </label>
 	 		<input type="text" name="titulo"/>
 
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion"></textarea>
 	 		
-	 		<label for="" class="">Imagen: </label>
-	 		<input name="uploadedfile" type="imagen"/>
+	 		<label for="" class="">Foto: </label>
+	 		<input name="imagen" type="file"/>
 
 	 		<button type="submit" class="flat">Enviar</button>
 		</form>

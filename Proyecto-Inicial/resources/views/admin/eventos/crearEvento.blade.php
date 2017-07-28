@@ -3,9 +3,9 @@
 @section('title', 'eventos')
 
 @section('style')
-
 <link href="{{ url('css/ranking.css') }}" rel="stylesheet">
 @stop
+
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
