@@ -29,7 +29,7 @@
 				<td>{{ $historia->titulo}}</td>
 				<td> <?php  $imp =substr($historia->descripcion,0,20); echo $imp;?> </td><!--se muestran 20 caracteres de la descripción-->
 				<td>
-					<a href=""><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
+					<a href="{{route('admin.editarHistoria', $historia)}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
           			<a href=""><img src="{{ url('assets/images/user0.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
