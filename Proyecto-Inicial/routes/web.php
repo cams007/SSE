@@ -116,5 +116,11 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/editarHistoriaDe/{id}','HistoriasDeAdminController@showEditarHistoria')->name('admin.editarHistoria');
         Route::post('/editarHistoriaDe','HistoriasDeAdminController@saveEditarHistoria')->name('admin.editarHistoria.submit');
     });
+
+    //Grupo de rutas para los tips y consejos. (admin/tips/..)
+    Route::group(['prefix' => 'tipConsejo'], function(){
+        Route::get('/','TipsYConsejosAdminController@index');
+        Route::get('/crearTipConsejo','TipsYConsejosAdminController@showCreateTip')->name('admin.crearTipConsejo');
+    });
 });
 
