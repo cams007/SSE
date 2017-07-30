@@ -61,7 +61,7 @@ class HistoriasDeAdminController extends Controller
     public function showEditarHistoria($id){
     	
     	$historia = DB::table('HistoriaExito')->where('id',"$id")->first();
-    	return view('admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeyo
+    	return view('Admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
 
     }
 

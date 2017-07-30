@@ -13,7 +13,7 @@
 
 		</div><!--div-1-->
 
-		<!--Contenido de la pagina-->
+		<!--Contenido de la pagina--><!--Accedemos por medio del name de la ruta-->
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearTipConsejo.submit') }}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />

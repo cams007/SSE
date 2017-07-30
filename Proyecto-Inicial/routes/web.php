@@ -117,10 +117,12 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/editarHistoriaDe','HistoriasDeAdminController@saveEditarHistoria')->name('admin.editarHistoria.submit');
     });
 
-    //Grupo de rutas para los tips y consejos. (admin/tips/..)
+    //Grupo de rutas para los tips y consejos. (admin/tipConsejo/..)
     Route::group(['prefix' => 'tipConsejo'], function(){
         Route::get('/','TipsYConsejosAdminController@index');
         Route::get('/crearTipConsejo','TipsYConsejosAdminController@showCreateTip')->name('admin.crearTipConsejo');
+        Route::post('/crearTipConsejo','TipsYConsejosAdminController@saveCrearTip')->name('admin.crearTipConsejo.submit');
+        Route::get('/editarTipConsejo/{id}','TipsYConsejosAdminController@showEditarTip')->name('admin.editarTipConsejo');
     });
 });
 
