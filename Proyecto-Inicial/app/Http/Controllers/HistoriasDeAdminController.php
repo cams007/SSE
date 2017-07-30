@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\HistoriaExito;
+use Auth;
 
 class HistoriasDeAdminController extends Controller
 {
@@ -54,5 +56,42 @@ class HistoriasDeAdminController extends Controller
             }
         }
         return redirect('admin/historiasdeExito');//Redireccionamos al index de eventos
+    }
+
+    public function showEditarHistoria($id){
+    	
+    	$historia = DB::table('HistoriaExito')->where('id',"$id")->first();
+    	return view('Admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
+
+    }
+
+    public function saveEditarHistoria(Request $request){
+
+    	//Datos de la imagen que se va a guardar
+        $archivo = $_FILES['imagen']['tmp_name'];
+
+        //Ruta donde se guardaran las imagenes
+        $dir_destino = 'assets/images/historias_exito/';
+        $imagen_subida = $dir_destino.mt_rand(0,10000). basename($_FILES['imagen']['name']);//mt_rand(0,500)
+
+        //Obtenemos de la BD los dados de la historia($id) a modificar
+        $historia = HistoriaExito::find($request->id);
+        $imagen_ban = 0;
+
+        //Se comprueba que el parametro se envio en el formulario(definido y no es null)
+        if(isset($request->imagen)){
+            unlink($historia->imagen_url);//Elimina la imagen actual
+            copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+            $imagen_ban = 1;
+        }
+
+        $historia->titulo = $request->titulo;
+        $historia->descripcion = $request->descripcion;
+        if($imagen_ban == 1)//Se verifica si hubo cambios en la imagen. Si si se envia la nueva url de la imagen
+        	$historia->imagen_url = $imagen_subida;
+        $historia->save();
+
+        return redirect('admin/historiasdeExito');//redireccionamos a la url del index
+
     }
 }

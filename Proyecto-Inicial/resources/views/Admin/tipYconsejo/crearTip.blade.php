@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'HistoriasYtips')
+@section('title', 'Tip y consejo')
 
 @section('style')
 <link href="{{ url('css/ranking.css') }}" rel="stylesheet">
@@ -9,27 +9,26 @@
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
-			<p class="text-center">Editar historia de éxito</p>
+			<p class="text-center">Crear tips y consejos</p>
+
 		</div><!--div-1-->
 
-		<!--Contenido de la pagina-->
-		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarHistoria.submit')}}">
+		<!--Contenido de la pagina--><!--Accedemos por medio del name de la ruta-->
+		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearTipConsejo.submit') }}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
-			<input name="id" type="hidden" value="{{$historia->id}}" />
-
 			<label for="" class="">Titulo: </label>
-	 		<input type="text" name="titulo" value="{{$historia->titulo}}"/>
+	 		<input type="text" name="titulo"/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion">{{$historia->descripcion}}</textarea>
+	 		<textarea rows="4" cols="50" name="descripcion"></textarea>
 	 		
 	 		<label for="" class="">Foto: </label>
 	 		<input name="imagen" type="file"/>
-	 		<img src="{{ url($historia->imagen_url)}}" alt=""/>
 
 	 		<button type="submit" class="flat">Enviar</button>
 		</form>
 	</div><!--contenedor-->
+
 @stop
