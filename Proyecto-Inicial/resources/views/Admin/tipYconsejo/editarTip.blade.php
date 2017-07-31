@@ -13,7 +13,7 @@
 		</div><!--div-1-->
 
 		<!--Contenido de la pagina-->
-		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarHistoria.submit')}}">
+		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarTipConsejo.submit')}}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
