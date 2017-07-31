@@ -62,4 +62,33 @@ class TipsYConsejosAdminController extends Controller
     	$tip = DB::table('Tip')->where('id',"$id")->first();
     	return view('Admin.tipYconsejo.editarTip',compact("tip"));//accedemos a la direccion de la vista, pasamos el objeto
     }
+
+    public function saveEditarTip(Request $request){
+
+        //Datos de la imagen que se va a guardar
+        $archivo = $_FILES['imagen']['tmp_name'];
+
+        //Ruta donde se guardaran las imagenes
+        $dir_destino = 'assets/images/tips/';
+        $imagen_subida = $dir_destino.mt_rand(0,10000). basename($_FILES['imagen']['name']);//mt_rand(0,500)
+
+        //Obtenemos de la BD los dados de la historia($id) a modificar
+        $tip = Tip::find($request->id);
+        $imagen_ban = 0; 
+
+         //Se comprueba que el parametro se envio en el formulario(definido y no es null)
+        if(isset($request->imagen)){
+            unlink($tip->imagen_url);//Elimina la imagen actual en la BD
+            copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+            $imagen_ban = 1;
+        }
+
+        $tip->titulo = $request->titulo;
+        $tip->descripcion = $request->descripcion;
+        if($imagen_ban == 1)//Se verifica si hubo cambios en la imagen.Si si se envia la nueva url de la imagen
+            $tip->imagen_url = $imagen_subida;
+        $tip->save();
+
+        return redirect('admin/tipConsejo');//redireccionamos a la url del index
+    }
 }
