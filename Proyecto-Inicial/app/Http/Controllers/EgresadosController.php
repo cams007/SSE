@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Egresado;
 
-class AlumnosController extends Controller
+class EgresadosController extends Controller
 {
 	public function index(Request $request) {
 
         $egresados = Egresado::titulo($request->get('q'))->orderBy('nombre', 'DESC')->paginate(8);
 
-        return view('admin.alumnos.index', compact('egresados'));
+        return view('Admin.Egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
     }
 
     public function showCrearEgresado(Request $request) {
 
-        return view('admin.alumnos.crearAlumno', compact('egresados'));
+        return view('admin.Egresado.crearEgresado', compact('egresados'));
     }
 
     public function showEditarEgresado(Request $request) {
