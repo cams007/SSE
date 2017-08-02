@@ -13,8 +13,9 @@
 
 		</div><!--div-1-->
 
-		<form method="POST" action="{{ route('admin.crearEgresado.submit') }}">
-			{{ csrf_field() }}<!--No sé para que sea pero debe de ir. jajaja XD-->
+		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearEgresado.submit') }}">
+			{{ csrf_field() }}
+			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 			
 			<label for="" class="">Matricula: </label>
 	 		<input type="text" name="matricula" placeholder="ejemplo:201203956"/>
@@ -26,7 +27,7 @@
 	 		<input type="text" name="curp" placeholder=""/>
 
 	 		<label for="" class="">Género: </label>
-	 		<select name="carrera">
+	 		<select name="genero">
 	 			<option value="1">Masculino</option><!--Tipo de datos enum-->
 	 			<option value="2">Femenino</option>
 	 		</select>
@@ -44,17 +45,17 @@
 	 		<input type="text" name="lugar_origen" placeholder=""/>
 
 	 		<label for="" class="">Foto: </label>
-	 		<input name="imagen" type="file"/>
+	 		<input type="file" name="imagen"/>
 	 		
 	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
 
 	 		<!--Datos de preparacion-->
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera">
-	 			<option value="ic">Computación</option><!--claves de carreras-->
-	 			<option value="id">Diseño</option>
-	 			<option value="ie">Electronica</option>
-	 			<option value="im">Mecatronica</option>
+	 			<option value="1">Computación</option><!--claves de carreras-->
+	 			<option value="2">Diseño</option>
+	 			<option value="3">Electronica</option>
+	 			<option value="4">Mecatronica</option>
 	 		</select>
 
 	 		<label for="" class="">Generación: </label>

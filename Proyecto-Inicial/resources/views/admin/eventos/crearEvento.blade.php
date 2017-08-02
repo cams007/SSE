@@ -10,11 +10,10 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Crear eventos</p>
-
 		</div><!--div-1-->
 
 		<!--Contenido de la pagina-->
-		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearEvento.submit') }}">
+		<form method="POST" enctype="multipart/form-data" action="{{route('admin.crearEvento.submit')}}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 					
