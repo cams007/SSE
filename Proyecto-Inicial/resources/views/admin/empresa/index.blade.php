@@ -14,7 +14,7 @@
 
 		</div><!--div-1-->
 		
-		<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--Button para crear empresas-->
+		<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button para crear empresas-->
 
 		<table> <!--Contenido de la pagina-->
 			<tr>
@@ -31,8 +31,8 @@
 				<td>{{$empresa->telefono}}</td>
 				<td>{{$empresa->pagina_web}}</td>
 				<td>
-					<a href="{{url('/admin/empresas/editarEmpresa')}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--editar-->
-          			<a href=""><img src="{{ url('assets/images/user0.png') }}" alt=""></a><!--Eliminar-->
+					<a href="{{url('/admin/empresas/editarEmpresa')}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
+          			<a href=""><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
 			@endforeach
