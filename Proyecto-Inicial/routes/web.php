@@ -35,7 +35,7 @@ Route::group(['prefix' => 'perfil'], function() {
         return view('egresados.perfil.ofertaslab');
     });
     
-    Route::post('/', 'PerfilController@saveDatosB');
+    Route::post('/', 'PerfilController@saveDatosBasicos');
     Route::post('estudiosRealizados', 'PerfilController@saveFormacionPerson');
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
     Route::post('intereses', 'PerfilController@saveFormacionProf');

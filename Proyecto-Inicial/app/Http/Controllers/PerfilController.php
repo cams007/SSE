@@ -31,7 +31,7 @@ class PerfilController extends Controller {
     }
 
     public function showEstudiosForm(){
-        return view('egresados.perfil.estudiosRealizados');
+        return view('egresados.perfil.estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
     }
 
     public function showPrimerEmpleoForm(){
@@ -46,16 +46,20 @@ class PerfilController extends Controller {
         return view('egresados.perfil.satisfaccion', array('dato' => 'No'));
     }
 
-    public function saveDatosB(Request $request) {
+    public function saveDatosBasicos(Request $request) {
+        $egresado = Auth::user()->egresado;
 
-        $egresado = Egresado::where('nacionalidad', '<>', null)->first();
-        $egresado->telefono = $request->egresadosTel;
-        $egresado->direccion_actual = $request->cActual;
-        $egresado->usuario->correo = $request->egresadosEmail;
+        $egresado->genero = $request->e_genero;
+        $egresado->nacionalidad = $request->e_nacionalidad;
+        $egresado->telefono = $request->e_telefono;
+        $egresado->direccion_actual = $request->e_direccionActual;
+        // save cv
         $egresado->save();
+
+        $egresado->usuario->correo = $request->e_correo;
         $egresado->usuario->save();
         
-        return redirect('perfil/estudiosRealizados');
+        return redirect('perfil/estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
     }
 
     public function saveFormacionPerson(Request $request) {
