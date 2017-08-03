@@ -14,7 +14,7 @@
 
 		</div><!--div-1-->
 		
-		<a href="{{url('/admin/egresado/crearEgresado')}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!-- Button crear Egresado-->
+		<a href="{{url('/admin/egresado/crearEgresado')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!-- Button crear Egresado-->
 
 		<table> <!--Contenido de la pagina-->
 			<tr>
@@ -29,8 +29,8 @@
 				<td>{{$egresado->nombre}}</td>
 				<td>{{$egresado->preparacion->carrera}}</td>
 				<td>
-					<a href="{{url('/admin/egresado/editarEgresado')}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--editar-->
-          			<a href=""><img src="{{ url('assets/images/user0.png') }}" alt=""></a><!--Eliminar-->
+					<a href="{{url('/admin/egresado/editarEgresado', $egresado->matricula)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
+          			<a href=""><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
 			@endforeach

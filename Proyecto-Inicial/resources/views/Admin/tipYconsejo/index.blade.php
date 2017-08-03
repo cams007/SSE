@@ -15,7 +15,7 @@
 
 		</div><!--div-1-->
 		
-		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
+		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 		
 		<table> <!--Contenido de la pagina-->
 			<tr>
@@ -29,8 +29,8 @@
 				<td>{{ $tip->titulo}}</td>
 				<td> <?php  $imp =substr($tip->descripcion,0,20); echo $imp;?> </td><!--se muestran 20 caracteres de la descripción-->
 				<td>
-					<a href="{{route('admin.editarTipConsejo', $tip)}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-          			<a href=""><img src="{{ url('assets/images/user0.png') }}" alt=""></a><!--Eliminar-->
+					<a href="{{route('admin.editarTipConsejo', $tip)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
+          			<a href=""><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
 	        @endforeach

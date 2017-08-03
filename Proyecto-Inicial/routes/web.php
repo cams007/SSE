@@ -84,7 +84,8 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/','EgresadosAdminController@index');
         Route::get('/crearEgresado','EgresadosAdminController@showCrearEgresado')->name('admin.crearEgresado');
         Route::post('/crearEgresado','EgresadosAdminController@saveEgresado')->name('admin.crearEgresado.submit');
-        Route::get('/editarEgresado','EgresadosAdminController@showEditarEgresado')->name('admin.editarEgresado');
+        Route::get('/editarEgresado/{ma}','EgresadosAdminController@showEditarEgresado')->name('admin.editarEgresado');
+        Route::post('/editarEgresado','EgresadosAdminController@saveEditarEgresado')->name('admin.editarEgresado.submit');
     });
 
     //Grupo de rutas para las vistas de empresas (admin/empresas/..)

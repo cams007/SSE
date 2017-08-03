@@ -15,7 +15,7 @@
 
 		</div><!--div-1-->
 		
-		<a href="{{url('/admin/eventos/crearEvento')}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--Button crear Evento-->
+		<a href="{{url('/admin/eventos/crearEvento')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear Evento-->
 		
 		<table> <!--Contenido de la pagina-->
 			<tr>
@@ -30,8 +30,8 @@
 				<td>{{ $evento->lugar }}</td>
 				<td>{{ $evento->fecha }}</td>
 				<td>
-					<a href="{{route('admin.editarEvento', $evento)}}"><img src="{{ url('assets/images/empresa_estrella_full.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-          			<a href="{{route('admin.eliminarEvento', $evento)}}"><img src="{{ url('assets/images/user0.png') }}" alt=""></a><!--Eliminar-->
+					<a href="{{route('admin.editarEvento', $evento)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
+          			<a href="{{route('admin.eliminarEvento', $evento)}}"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
 	        @endforeach
