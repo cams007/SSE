@@ -16,7 +16,7 @@
 
 		<!--Contenido de la pagina-->
 		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarEvento.submit')}}">
-			{{ csrf_field() }}<!--No sé para que sea pero debe de ir. jajaja XD-->
+			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 			
 			<input name="id" type="hidden" value="{{$evento->id}}" />

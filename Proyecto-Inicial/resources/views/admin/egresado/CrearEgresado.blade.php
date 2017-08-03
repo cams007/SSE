@@ -10,15 +10,20 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Alta egresado</p>
-
 		</div><!--div-1-->
+		@php
+			//creamos arreglos asociativos para los select
+			$nacionalidad = array(1=>'Mexicana', 2=>'Otra');
+			$genero = array(1=>'Masculino', 2=>'Femenino');
+			$carrera = array(0=>'Ingeniería en Diseño',1=>'Ingeniería en Computación',2=>'Ingeniría en Alimentos',3=>'Ingeniería en Electrónica',4=>'Ingeniería en Mecatrónica',5=>'Ingeniería Industrial',6=>'Ingeniería en Física Aplicada',7=>'Licenciatura en Ciencias Empresariales',8=>'Licenciatura en Matemáticas Aplicadas',9=>'Licenciatura en Estudios Mexicanos',10=>'Ingeniería en Mecánica Automotriz');
+		@endphp
 
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearEgresado.submit') }}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 			
 			<label for="" class="">Matricula: </label>
-	 		<input type="text" name="matricula" placeholder="ejemplo:201203956"/>
+	 		<input type="text" name="matricula" placeholder=""/>
 
 	 		<label for="" class="">Nombre: </label>
 	 		<input type="text" name="nombre" placeholder=""/>
@@ -28,8 +33,9 @@
 
 	 		<label for="" class="">Género: </label>
 	 		<select name="genero">
-	 			<option value="1">Masculino</option><!--Tipo de datos enum-->
-	 			<option value="2">Femenino</option>
+	 			@foreach($genero as $idn=>$nombre)
+	 					<option value={{$idn}}>{{$nombre}}</option><!--Tipo de datos enum-->
+	 			@endforeach
 	 		</select>
 
 	 		<label for="" class="">Fecha de nacimiento: </label>
@@ -37,25 +43,22 @@
 
 	 		<label for="" class="">Nacionalidad: </label>
 	 		<select name="nacionalidad">
-	 			<option value="1">Mexicana</option><!--Tipo de datos enum-->
-	 			<option value="2">Otra</option>
+	 			<@foreach($nacionalidad as $idn=>$nombre)
+	 					<option value={{$idn}}>{{$nombre}}</option><!--Tipo de datos enum-->
+	 			@endforeach
 	 		</select>
 
 	 		<label for="" class="">Lugar de origen: </label>
 	 		<input type="text" name="lugar_origen" placeholder=""/>
-
-	 		<label for="" class="">Foto: </label>
-	 		<input type="file" name="imagen"/>
 	 		
 	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
 
 	 		<!--Datos de preparacion-->
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera">
-	 			<option value="1">Computación</option><!--claves de carreras-->
-	 			<option value="2">Diseño</option>
-	 			<option value="3">Electronica</option>
-	 			<option value="4">Mecatronica</option>
+	 			@foreach($carrera as $idn=>$nombre)
+	 					<option value="{{$idn}}">{{$nombre}}</option><!--Tipo de datos enum-->
+	 			@endforeach
 	 		</select>
 
 	 		<label for="" class="">Generación: </label>
@@ -70,9 +73,7 @@
 	 		<label for="" class="">Promedio: </label>
 	 		<input type="text" name="promedio" placeholder=""/>
 
-	 		<button type="submit" class="flat">
-						Enviar
-			</button>
+	 		<button type="submit" class="flat">Enviar</button>
 		</form>	
 
 	</div><!--contenedor-->

@@ -29,7 +29,7 @@
 				<td>{{$egresado->nombre}}</td>
 				<td>{{$egresado->preparacion->carrera}}</td>
 				<td>
-					<a href="{{url('/admin/egresado/editarEgresado')}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
+					<a href="{{url('/admin/egresado/editarEgresado', $egresado->matricula)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
           			<a href=""><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
