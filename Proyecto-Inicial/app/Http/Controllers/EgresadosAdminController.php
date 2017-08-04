@@ -53,9 +53,9 @@ class EgresadosAdminController extends Controller
         if($preparacion->save()){//Si se guardo correctamente se obtiene el id del registro
             $prep = preparacion::all();
             $preparacionID = $prep->last();//obtenemos el ultimo registro de la BD
+            $egresado->preparacion_id = $preparacionID->id;
 
             //se guarda el registro de egresado a la BD
-            $egresado->preparacion_id = $preparacionID->id;
             if(!$egresado->save())
                return redirect('admin/empresas');//Redirigir a una pagina de errores
         }

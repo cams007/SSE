@@ -31,7 +31,7 @@
 				<td>{{$empresa->telefono}}</td>
 				<td>{{$empresa->pagina_web}}</td>
 				<td>
-					<a href="{{url('/admin/empresas/editarEmpresa')}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
+					<a href="{{url('/admin/empresas/editarEmpresa',$empresa->id)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
           			<a href=""><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>

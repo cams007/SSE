@@ -13,7 +13,10 @@
 
 		</div><!--div-1-->
 
-		<form action="" method="post" enctype="multipart/form-data">
+		<form method="post" enctype="multipart/form-data" action="{{route('admin.crearEmpresa.submit')}}">
+			{{ csrf_field() }}
+			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+
 	 		<label for="" class="">Nombre de la empresa: </label>
 	 		<input type="text" name="nombre_emp"/>
 
@@ -24,10 +27,10 @@
 	 		<input type="text" name="rfc_emp"/>
 
 	 		<label for="" class="">Telefono: </label>
-	 		<input type="text" name="telefono"/>
+	 		<input type="text" name="telefono_emp"/>
 
 	 		<label for="" class="">Correo: </label>
-	 		<input type="email" name="correo"/>
+	 		<input type="email" name="correo_emp"/>
 
 	 		<label for="" class="">Dirección calle y número:</label>
 	 		<input type="text" name="direccion_emp"/>
@@ -42,13 +45,21 @@
 	 		<input type="text" name="estado"/>
 
 	 		<label for="" class="">Código postal:</label>
-	 		<input type="text" name="codigo_postal"/>
+	 		<input type="text" name="codigo_p"/>
 
 	 		<label for="" class="">Página web: </label>
-	 		<input type="text" name="pagina_web"/>
+	 		<input type="text" name="pagina_w"/>
 
 	 		<label for="" class="">Fotografía de la empresa: </label>
 	 		<input type="file" name="imagen"/>
+
+	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
+
+	 		<label for="" class="">Motivos de no contratacion: </label>
+	 		<textarea rows="4" cols="50" name="noContratacion"></textarea>
+
+	 		<label for="" class="">Recomendaciones: </label>
+	 		<textarea rows="4" cols="50" name="recomendacion"></textarea>
 
 			<!--Datos del contacto de la empresa-->
 	 		<label for="" class="">Nombre del contacto: </label>
