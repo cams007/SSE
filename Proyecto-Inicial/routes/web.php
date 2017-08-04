@@ -90,9 +90,10 @@ Route::group(['prefix' => 'admin'], function() {
 
     //Grupo de rutas para las vistas de empresas (admin/empresas/..)
     Route::group(['prefix' => 'empresas'], function(){
-        Route::get('/','EmpresasController@index');
-        Route::get('/crearEmpresa','EmpresasController@showCrearEmpresa')->name('admin.crearEmpresa');
-        Route::get('/editarEmpresa','EmpresasController@showEditarEmpresa')->name('admin.editarEmpresa');
+        Route::get('/','EmpresasAdminController@index');
+        Route::get('/crearEmpresa','EmpresasAdminController@showCrearEmpresa')->name('admin.crearEmpresa');
+        Route::post('/crearEmpresa','EmpresasAdminController@saveCrearEmresa')->name('admin.crearEmpresa.submit');
+        Route::get('/editarEmpresa/{id}','EmpresasAdminController@showEditarEmpresa')->name('admin.editarEmpresa');
     });
 
     //Grupo de rutas para las vistas de eventos (admin/eventos/..)
