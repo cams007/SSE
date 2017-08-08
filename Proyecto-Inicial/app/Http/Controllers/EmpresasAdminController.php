@@ -97,7 +97,7 @@ class EmpresasAdminController extends Controller
     	return view('admin.empresa.editarEmpresa',compact('empresa'),compact('contacto'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
     }
 
-    public function SaveEditarEmpresa(Request $request, $id){
+    public function saveEditarEmpresa(Request $request){
         echo "Holis";
     }
 }

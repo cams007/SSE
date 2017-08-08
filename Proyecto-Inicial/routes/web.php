@@ -94,6 +94,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/crearEmpresa','EmpresasAdminController@showCrearEmpresa')->name('admin.crearEmpresa');
         Route::post('/crearEmpresa','EmpresasAdminController@saveCrearEmresa')->name('admin.crearEmpresa.submit');
         Route::get('/editarEmpresa/{id}','EmpresasAdminController@showEditarEmpresa')->name('admin.editarEmpresa');
+        Route::post('/editarEmpresa','EmpresasAdminController@saveEditarEmpresa')->name('admin.editarEmpresa.submit');
     });
 
     //Grupo de rutas para las vistas de eventos (admin/eventos/..)
@@ -124,5 +125,10 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/editarTipConsejo/{id}','TipsYConsejosAdminController@showEditarTip')->name('admin.editarTipConsejo');
         Route::post('/editarTipConsejo','TipsYConsejosAdminController@saveEditarTip')->name('admin.editarTipConsejo.submit');
     });
+
+    Route::group(['prefix' => 'ofertas'], function(){
+        Route::get('/','OfertasLaboralesAdminController@index');
+    });
+
 });
 
