@@ -127,5 +127,10 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/editarTipConsejo/{id}','TipsYConsejosAdminController@showEditarTip')->name('admin.editarTipConsejo');
         Route::post('/editarTipConsejo','TipsYConsejosAdminController@saveEditarTip')->name('admin.editarTipConsejo.submit');
     });
+
+    Route::group(['prefix' => 'ofertas'], function(){
+        Route::get('/','OfertasLaboralesAdminController@index');
+    });
+
 });
 

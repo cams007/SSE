@@ -6,6 +6,7 @@
             <li class="item"><a href="{{url('/admin/historiasdeExito')}}">Historias de Éxito</a></li>
             <li class="item"><a href="{{url('/admin/tipConsejo')}}">Tips y consejos</a></li>
             <li class="item"><a href="{{url('')}}">Índices y estadisticas</a></li>
+            <li class="item"><a href="{{url('/admin/ofertas')}}">Ofertas Laborales</a></li>
             <!-- <li class="item"><a href="#">Cerrar sesión</a></li> -->
           </ul>
 
