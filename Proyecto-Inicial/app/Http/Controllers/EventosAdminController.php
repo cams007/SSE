@@ -41,21 +41,39 @@ class EventosAdminController extends Controller
             echo "no tiene permisos";
         }
         else{
-            if(is_uploaded_file($archivo)){ //verifica que el archivo se haya subido
-                if(copy($archivo, $imagen_subida)){//copia el archivo a la ruta indicada
-                    //Guarda datos en la BD
-                    $evento = new Evento();
-                    $evento->nombre = $request->nombre;
-                    $evento->descripcion = $request->descripcion;
-                    $evento->lugar = $request->lugar;
-                    $evento->fecha = $request->fecha;
-                    $evento->categoria = $request->categoria;
-                    $evento->imagen_url = $imagen_subida;
-                    $evento->activo = 1;
-                    $evento->save();
+            if(is_uploaded_file($archivo)){ //verifica que el archivo se haya subido en carpeta temporal
+                if($_FILES['imagen']['size'] <= 300000){//verifica el tama;o de la imagen
+                    if(($_FILES["imagen"]["type"]=="image/gif")
+                        ||($_FILES["imagen"]["type"]=="image/jpeg")
+                        ||($_FILES["imagen"]["type"] == "image/jpg")
+                        ||($_FILES["imagen"]["type"] == "image/png")){
+
+                        DB::beginTransaction();
+                        try{
+                            //Guarda datos en la BD
+                            $evento = new Evento();
+                            $evento->nombre = $request->nombre;
+                            $evento->descripcion = $request->descripcion;
+                            $evento->lugar = $request->lugar;
+                            $evento->fecha = $request->fecha;
+                            $evento->categoria = $request->categoria;
+                            $evento->imagen_url = $imagen_subida;
+                            $evento->activo = $request->activo;
+                            $evento->save();    
+                        }catch(Exception $e){
+                            DB::rollback();
+                            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                        }
+                        DB::commit();
+                        copy($archivo,$imagen_subida);//Copamos el archivo a la ruta indicada
+                    }
+                    else{
+                        //Si no cumple con el formato establecido
+                        echo "El formato de la imagen no es valido";
+                    }
                 }
                 else{
-                    echo "error al copiar el archivo";
+                    echo "El tama;o de la imagen es superior al establecido";
                 }
             }
             else{
@@ -77,25 +95,67 @@ class EventosAdminController extends Controller
         $evento = Evento::findOrFail($request->id);
         $imagen_ban = 0;
 
+        $valido = file_exists($evento->imagen_url);//Si existe la imagen TRUE
+        
         //Se comprueba que el parametro se envio en el formulario(definido y no es null)
         if(isset($request->imagen)){
-            unlink($evento->imagen_url);//Elimina la imagen actual
-            copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+            $img_actual = $evento->imagen_url;
             $imagen_ban = 1;
         }
 
-        $evento->nombre = $request->nombre;
-        $evento->descripcion = $request->descripcion;
-        $evento->lugar = $request->lugar;
-        $evento->fecha = $request->fecha;
-        $evento->categoria = $request->categoria;
-        if($imagen_ban == 1)//Enviamos la nueva url de la imagen de lo contrario no enviamos nada
-            $evento->imagen_url = $imagen_subida;
-        //$evento->activo = 1;
-        $evento->save();
+        if($imagen_ban == 1){
+            if($_FILES['imagen']['size'] <= 300000){
+                if(($_FILES["imagen"]["type"] == "image/gif")
+                    || ($_FILES["imagen"]["type"] == "image/jpeg")
+                    || ($_FILES["imagen"]["type"] == "image/jpg")
+                    || ($_FILES["imagen"]["type"] == "image/png")){//Formatos validos de imagen
+
+                    DB::beginTransaction();
+                    try{
+                        $evento->nombre = $request->nombre;
+                        $evento->descripcion = $request->descripcion;
+                        $evento->lugar = $request->lugar;
+                        $evento->fecha = $request->fecha;
+                        $evento->categoria = $request->categoria;
+                        $evento->imagen_url = $imagen_subida;
+                        $evento->save();
+                    }catch(Exception $e){
+                        DB::rollback();
+                        echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                    }
+                    DB::commit();
+                    if($valido)//Si existe la imagen la reemplazamos, Si no solo subimos la img nueva
+                        unlink($img_actual);//Elimina la imagen actual
+                    copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+                }
+                else{
+                    //Si no cumple con el formato
+                    echo "No se puede subir imagen con tal formato";
+                }
+            }
+            else{
+                //Si el tama;o de la imagen es superior a 300000
+                echo "La imagen es demasiado grande";
+            }
+        }
+        else{//La imagen no se modifico
+            DB::beginTransaction();
+            try{
+                $evento->nombre = $request->nombre;
+                $evento->descripcion = $request->descripcion;
+                $evento->lugar = $request->lugar;
+                $evento->fecha = $request->fecha;
+                $evento->categoria = $request->categoria;
+                $evento->save();
+            }catch(Exception $e){
+                DB::rollback();
+                echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            }
+            DB::commit();
+        }
 
         return redirect('admin/eventos');//Redireccionamos al index de eventos
-
+        
     }
 
     public function eliminarEvento(Request $request){

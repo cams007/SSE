@@ -22,6 +22,7 @@
 				<td>Nombre</td>
 				<td>Lugar</td>
 				<td>Fecha</td>
+				<td>Tipo</td>
 				<td>Acción</td>
 			</tr>
 			@foreach($eventos as $evento)
@@ -29,6 +30,7 @@
 				<td>{{ $evento->nombre}}</td>
 				<td>{{ $evento->lugar }}</td>
 				<td>{{ $evento->fecha }}</td>
+				<td>{{ $evento->categoria}}</td>
 				<td>
 					<a href="{{route('admin.editarEvento', $evento)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
           			<a href="{{route('admin.eliminarEvento', $evento)}}"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
