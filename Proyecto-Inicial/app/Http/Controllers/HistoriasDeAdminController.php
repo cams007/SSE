@@ -36,20 +36,37 @@ class HistoriasDeAdminController extends Controller
         }
         else{
             if(is_uploaded_file($archivo)){ //verifica que el archivo se haya subido en la carpeta temporal
-                if($request != null){
-                    //Guarda datos en la BD
-                    $historia = new HistoriaExito();
-                    $historia->titulo = $request->titulo;
-                    $historia->descripcion = $request->descripcion;
-                    $historia->imagen_url = $imagen_subida;
-                    $historia->activo = 1;
-                    $historia->save();
+                if($request != null && ($_FILES['imagen']['size'] <= 300000)){
+                    if(($_FILES["imagen"]["type"]=="image/gif")
+                        ||($_FILES["imagen"]["type"]=="image/jpeg")
+                        ||($_FILES["imagen"]["type"] == "image/jpg")
+                        ||($_FILES["imagen"]["type"] == "image/png")){//Formatos validos de imagen
 
-                    copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
+                        DB::beginTransaction();
+                        try{
+                            //Guarda datos en la BD
+                            $historia = new HistoriaExito();
+                            $historia->titulo = $request->titulo;
+                            $historia->descripcion = $request->descripcion;
+                            $historia->imagen_url = $imagen_subida;
+                            $historia->activo = $request->activo;
+                            $historia->save();
+                        }catch(Exception $e){
+                            DB::rollback();
+                            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                        }
+                        DB::commit();
+                        copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
+                    }
+                    else{
+                        //Si no cumple con el formato establecido como valido
+                        echo "No se puede subir una imagen con ese formato ";
+                    }
                 }
                 else{
-                    echo "error al copiar el archivo";
-                }
+                    //El tama;o de la imagen es mayor al establecido
+                    echo "El tama;o del archivo es mayor al establecido";
+                }   
             }
             else{
                 echo "El archivo no se subio a carpeta temporal del servidor";
