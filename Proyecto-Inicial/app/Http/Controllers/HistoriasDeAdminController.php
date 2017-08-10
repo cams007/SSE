@@ -95,18 +95,58 @@ class HistoriasDeAdminController extends Controller
         $historia = HistoriaExito::find($request->id);
         $imagen_ban = 0;
 
+        $valido = file_exists($historia->imagen_url);//Si existe la imagen TRUE
+
         //Se comprueba que el parametro se envio en el formulario(definido y no es null)
         if(isset($request->imagen)){
-            unlink($historia->imagen_url);//Elimina la imagen actual
-            copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+            $img_actual = $historia->imagen_url;
             $imagen_ban = 1;
         }
 
-        $historia->titulo = $request->titulo;
-        $historia->descripcion = $request->descripcion;
-        if($imagen_ban == 1)//Se verifica si hubo cambios en la imagen. Si si se envia la nueva url de la imagen
-        	$historia->imagen_url = $imagen_subida;
-        $historia->save();
+        if($imagen_ban == 1){
+            if($_FILES['imagen']['size'] <= 300000){
+                if(($_FILES["imagen"]["type"] == "image/gif")
+                    || ($_FILES["imagen"]["type"] == "image/jpeg")
+                    || ($_FILES["imagen"]["type"] == "image/jpg")
+                    || ($_FILES["imagen"]["type"] == "image/png")){
+
+                    DB::beginTransaction();//Iniciamos transacción
+                    try{
+                        $historia->titulo = $request->titulo;
+                        $historia->descripcion = $request->descripcion;
+                        $historia->imagen_url = $imagen_subida;
+                        $historia->save();
+                    }catch(Exception $e){
+                        DB::rollback();
+                        echo 'ERROR (' . $e->getCode() .'): ' . $e->getMessage();
+                    }
+                    DB::commit();
+                    if($valido)//Si existe la imagen la reemplaza, Si no sube la img nueva
+                        unlink($img_actual);//Elimina la imagen actual
+                    copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+                }
+                else{
+                    //Si no cumplio con el formato establecido
+                    echo "No se puede subir una imagen con tal formato";
+                }
+            }
+            else{
+                //El tama;o de la imagen excede el tama;o permitido
+                echo "La imagen es demasiado grande";
+            }
+        }
+        else{//No se modifico la imagen
+            DB::beginTransaction();
+            try{
+                $historia->titulo = $request->titulo;
+                $historia->descripcion = $request->descripcion;
+                $historia->save();
+            }catch(Exception $e){
+                DB::rollback();
+                echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            }
+            DB::commit();
+        }
 
         return redirect('admin/historiasdeExito');//redireccionamos a la url del index
 

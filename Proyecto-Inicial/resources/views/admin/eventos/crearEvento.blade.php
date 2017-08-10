@@ -18,26 +18,27 @@
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 					
 			<label for="" class="">Titulo del evento: </label>
-	 		<input type="text" name="nombre"/>
+	 		<input type="text" name="nombre" required/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion">
-	 		</textarea>
+	 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
 
 	 		<label for="" class="">Lugar del evento: </label>
-	 		<input type="text" name="lugar"/>
+	 		<input type="text" name="lugar" required/>
 
 	 		<label for="" class="">Fecha: </label>
-	 		<input type="date" name="fecha"/>
+	 		<input type="date" name="fecha" required/>
 
 	 		<label for="" class="">Categoria: </label>
-	 		<select name="categoria">
+	 		<select name="categoria" required>
 	 			<option value="1">Académico</option>
 	 			<option value="2">Cultural</option>
 	 		</select>
 
 	 		<label for="" class="">Poster del evento: </label>
-	 		<input name="imagen" type="file" />
+	 		<input name="imagen" type="file" required/>
+
+	 		<input type="hidden" name="activo" value="1" placeholder=""/>
 
 	 		<button type="submit" class="flat">
 						Enviar

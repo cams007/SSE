@@ -92,7 +92,9 @@ class TipsYConsejosAdminController extends Controller
 
         //Obtenemos de la BD los dados del tip($id) a modificar
         $tip = Tip::find($request->id);
-        $imagen_ban = 0; 
+        $imagen_ban = 0;
+
+        $valido = file_exists($tip->imagen_url);//Si existe la imagen TRUE 
 
          //Se comprueba que el parametro se envio en el formulario(definido y no es null)
         if(isset($request->imagen)){
@@ -106,6 +108,7 @@ class TipsYConsejosAdminController extends Controller
                     || ($_FILES["imagen"]["type"] == "image/jpeg")
                     || ($_FILES["imagen"]["type"] == "image/jpg")
                     || ($_FILES["imagen"]["type"] == "image/png")){//Formatos validos
+                    DB::beginTransaction();
                     try{
                         $tip->titulo = $request->titulo;
                         $tip->descripcion = $request->descripcion;
@@ -116,7 +119,8 @@ class TipsYConsejosAdminController extends Controller
                         echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
                     }
                     DB::commit();
-                    unlink($img_actual);//Elimina la imagen actual en la BD
+                    if($valido)//Si existe la imagen la reemplaza, si no sube la img nueva
+                        unlink($img_actual);//Elimina la imagen actual en la BD
                     copy($archivo, $imagen_subida);//Copiamos la nueva imagen
                 }
                 else{
@@ -130,6 +134,7 @@ class TipsYConsejosAdminController extends Controller
             } 
         }
         else{//la imagen no se modifico
+            DB::beginTransaction();
             try{
                     $tip->titulo = $request->titulo;
                     $tip->descripcion = $request->descripcion;
