@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    document.getElementById('otra_nacionalidad').style.display='none';
+    
     var max_fields      = 3; //maximum input boxes allowed
     var wrapper         = $(".input"); //Fields wrapper
     var add_button      = $(".addInput"); //Add button ID
@@ -17,5 +20,18 @@ $(document).ready(function() {
         e.preventDefault(); $(this).parent('div').remove(); x--;
         $(this).append('<label class="link addInput"> Agregar un correo electronico</label>');
     })
+
 });
+
+
+function changeNacionalidad( val )
+{
+    if (val == 'Otra'){
+        document.getElementById('otra_nacionalidad').style.display='block';
+        document.getElementById('otra_nacionalidad').required = true;
+    }else{
+        document.getElementById('otra_nacionalidad').style.display='none';
+        document.getElementById('otra_nacionalidad').required = false;
+    }
+}
 

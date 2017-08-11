@@ -22,7 +22,7 @@
     </div>
 
     <div class="listado"><!--listado-->
-    <p>Se encontraron {{ $empresas->total() }} resultados</p>
+    <p>Se encontraron {{ $empresas->total() }} empresas</p>
 		<ul>
 			@foreach($empresas as $empresa)
 				<li data-empresa="{{ $empresa }}" data-contacto="{{ $empresa->contacto }}" class="list">

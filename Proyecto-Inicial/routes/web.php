@@ -35,7 +35,7 @@ Route::group(['prefix' => 'perfil'], function() {
         return view('egresados.perfil.ofertaslab');
     });
     
-    Route::post('/', 'PerfilController@saveDatosB');
+    Route::post('/', 'PerfilController@saveDatosBasicos');
     Route::post('estudiosRealizados', 'PerfilController@saveFormacionPerson');
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
     Route::post('intereses', 'PerfilController@saveFormacionProf');
@@ -55,9 +55,7 @@ Route::group(['prefix' => 'directorio'], function() {
 
 Route::get('/ranking', 'RankingController@showRankingView');
 
-Route::get('/tabuladorSalarios', function(){
-    return view('egresados.tabuladorSalarios');
-});
+Route::get('/tabuladorSalarios', 'TabuladorController@showTabuladorView');
 
 Route::group(['prefix' => 'eventos'], function() {
     Route::get('/', 'EventosController@index');

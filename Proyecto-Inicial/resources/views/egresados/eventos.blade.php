@@ -35,7 +35,7 @@
 			</div><!--fin div-2-2-1-->
 
 		 	<div class="div-2-2-2"><!--inicio div-2-2-2-->
-		 	<p>Se encontraron {{ $eventos->total() }} resultados</p>
+		 	<p>Se encontraron {{ $eventos->total() }} eventos</p>
 		 		<ul>
 		 		@foreach($eventos as $evento)
 		 		<li data-evento="{{ $evento }}">

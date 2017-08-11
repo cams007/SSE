@@ -18,6 +18,7 @@ class CreateAdminsTable extends Migration
             $table->string('correo', 50)->unique();;
             $table->string('nombre', 100);
             $table->string('password', 60);
+            $table->boolean('habilitado');
             $table->rememberToken();
             $table->timestamps();
         });

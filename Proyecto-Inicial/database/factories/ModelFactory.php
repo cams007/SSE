@@ -27,6 +27,7 @@ $factory->define(App\Admin::class, function (Faker\Generator $faker) {
         'correo' => $faker->unique()->safeEmail,
         'nombre' => $faker->name,
         'password' => $password ?: $password = bcrypt('secret'),
+        'habilitado' => true,
         'remember_token' => str_random(10),
     ];
 });
@@ -78,7 +79,7 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'nombre' => $faker->name,
         'curp' => strtoupper($faker->bothify($string = '????######??????##')),
         'genero' => $faker->randomElement(['Masculino' ,'Femenino']),
-        'fecha_nacimiento' => $faker->dateTimeBetween(),
+        'fecha_nacimiento' => $faker->dateTimeBetween($startDate = '-50 years', $endDate = '-22 years'),
         'nacionalidad' => $faker->randomElement(['Mexicana' ,'Otra']),
         'telefono' => $faker->numerify($string = '##########'),
         'lugar_origen' => $faker->city . ', ' . $faker->country,
@@ -114,6 +115,8 @@ $factory->define(App\Empresa::class, function (Faker\Generator $faker) {
         'nombre' => $faker->company,
         'descripcion' => $faker->sentence(8),
         'rfc' => $faker->numerify($string = '##########'),
+        'sector' => $faker->randomElement(['Pública' ,'Privada', 'Propia']),
+        'giro' => $faker->word,
         'telefono' => $faker->numerify($string = '##########'),
         'correo' => $faker->unique()->safeEmail,
         'calle' => $faker->streetName,
@@ -222,12 +225,12 @@ $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
         'ubicacion' => $faker->city .', '. $faker->country,
         'carrera' => $faker->numberBetween($min = 0, $max = 10),
         'experiencia' => $faker->numberBetween($min = 0, $max = 5),
-        'salario' => $faker->numberBetween($min = 5000, $max = 5000),
+        'salario' => $faker->numberBetween($min = 5000, $max = 10000),
         'status' => $faker->randomElement(['Vacante', 'Ocupada', 'Cancelada']),
         'empresa_id' => function () {
              return factory(App\Empresa::class)->create()->id;
         },
-        'created_at' => $faker->dateTimeBetween(),
+        'created_at' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
     ];
 });
 $factory->define(App\Postulacion::class, function (Faker\Generator $faker) {
@@ -283,14 +286,12 @@ $factory->define(App\PrimerEmpleo::class, function (Faker\Generator $faker) {
 });
 $factory->define(App\Ranking::class, function (Faker\Generator $faker) {
     return [
-        'calificacion' => numberBetween($min = 1, $max = 5),
+        'calificacion' => $faker->numberBetween($min = 1, $max = 5),
         'comentario' => $faker->sentence(5),
         'egresado_matricula' => function () {
              return factory(App\Egresado::class)->create()->matricula;
         },
-        'empresa_id' => function () {
-             return factory(App\Empresa::class)->create()->id;
-        },
+        'empresa_id' => $faker->numberBetween($min = 1, $max = 50),
     ];
 });
 $factory->define(App\Tip::class, function (Faker\Generator $faker) {
@@ -328,5 +329,17 @@ $factory->define(App\ValorPE::class, function (Faker\Generator $faker) {
             return $val->id;
             // return factory(App\CatalogoValor::class)->create()->id;
         },
+    ];
+});
+$factory->define(App\Tabulador::class, function (Faker\Generator $faker) {
+    return [
+        'empleo' => $faker->jobTitle,
+        'carrera' => $faker->numberBetween($min = 0, $max = 10),
+        'experiencia' => $faker->numberBetween($min = 0, $max = 5),
+        'unidad_tiempo' => $faker->randomElement(['meses' ,'años']),
+        'monto_minimo' => $faker->numberBetween($min = 5000, $max = 10000),
+        'monto_maximo' => $faker->numberBetween($min = 20000, $max = 50000),
+        'unidad_monto' => $faker->randomElement(['mensuales' ,'anuales']),
+        'activo' => true,
     ];
 });
