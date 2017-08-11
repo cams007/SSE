@@ -14,12 +14,12 @@ class HistoriasDeAdminController extends Controller
         
         $historias = HistoriaExito::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(10);
 
-        return view('Admin.historiasDe.index', compact('historias'));
+        return view('admin.historiasDe.index', compact('historias'));
     }
 
     public function showCrearHistoria(Request $request){
 
-        return view('Admin.historiasDe.crearHistoriaDe');//accedemos al archivo
+        return view('admin.historiasDe.crearHistoriaDe');//accedemos al archivo
     }
 
     public function saveHistoria(Request $request){
@@ -36,20 +36,37 @@ class HistoriasDeAdminController extends Controller
         }
         else{
             if(is_uploaded_file($archivo)){ //verifica que el archivo se haya subido en la carpeta temporal
-                if($request != null){
-                    //Guarda datos en la BD
-                    $historia = new HistoriaExito();
-                    $historia->titulo = $request->titulo;
-                    $historia->descripcion = $request->descripcion;
-                    $historia->imagen_url = $imagen_subida;
-                    $historia->activo = 1;
-                    $historia->save();
+                if($request != null && ($_FILES['imagen']['size'] <= 300000)){
+                    if(($_FILES["imagen"]["type"]=="image/gif")
+                        ||($_FILES["imagen"]["type"]=="image/jpeg")
+                        ||($_FILES["imagen"]["type"] == "image/jpg")
+                        ||($_FILES["imagen"]["type"] == "image/png")){//Formatos validos de imagen
 
-                    copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
+                        DB::beginTransaction();
+                        try{
+                            //Guarda datos en la BD
+                            $historia = new HistoriaExito();
+                            $historia->titulo = $request->titulo;
+                            $historia->descripcion = $request->descripcion;
+                            $historia->imagen_url = $imagen_subida;
+                            $historia->activo = $request->activo;
+                            $historia->save();
+                        }catch(Exception $e){
+                            DB::rollback();
+                            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                        }
+                        DB::commit();
+                        copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
+                    }
+                    else{
+                        //Si no cumple con el formato establecido como valido
+                        echo "No se puede subir una imagen con ese formato ";
+                    }
                 }
                 else{
-                    echo "error al copiar el archivo";
-                }
+                    //El tama;o de la imagen es mayor al establecido
+                    echo "El tama;o del archivo es mayor al establecido";
+                }   
             }
             else{
                 echo "El archivo no se subio a carpeta temporal del servidor";
@@ -61,7 +78,7 @@ class HistoriasDeAdminController extends Controller
     public function showEditarHistoria($id){
     	
     	$historia = DB::table('HistoriaExito')->where('id',"$id")->first();
-    	return view('Admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
+    	return view('admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
 
     }
 
@@ -78,18 +95,58 @@ class HistoriasDeAdminController extends Controller
         $historia = HistoriaExito::find($request->id);
         $imagen_ban = 0;
 
+        $valido = file_exists($historia->imagen_url);//Si existe la imagen TRUE
+
         //Se comprueba que el parametro se envio en el formulario(definido y no es null)
         if(isset($request->imagen)){
-            unlink($historia->imagen_url);//Elimina la imagen actual
-            copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+            $img_actual = $historia->imagen_url;
             $imagen_ban = 1;
         }
 
-        $historia->titulo = $request->titulo;
-        $historia->descripcion = $request->descripcion;
-        if($imagen_ban == 1)//Se verifica si hubo cambios en la imagen. Si si se envia la nueva url de la imagen
-        	$historia->imagen_url = $imagen_subida;
-        $historia->save();
+        if($imagen_ban == 1){
+            if($_FILES['imagen']['size'] <= 300000){
+                if(($_FILES["imagen"]["type"] == "image/gif")
+                    || ($_FILES["imagen"]["type"] == "image/jpeg")
+                    || ($_FILES["imagen"]["type"] == "image/jpg")
+                    || ($_FILES["imagen"]["type"] == "image/png")){
+
+                    DB::beginTransaction();//Iniciamos transacción
+                    try{
+                        $historia->titulo = $request->titulo;
+                        $historia->descripcion = $request->descripcion;
+                        $historia->imagen_url = $imagen_subida;
+                        $historia->save();
+                    }catch(Exception $e){
+                        DB::rollback();
+                        echo 'ERROR (' . $e->getCode() .'): ' . $e->getMessage();
+                    }
+                    DB::commit();
+                    if($valido)//Si existe la imagen la reemplaza, Si no sube la img nueva
+                        unlink($img_actual);//Elimina la imagen actual
+                    copy($archivo, $imagen_subida);//Copiamos la nueva imagen
+                }
+                else{
+                    //Si no cumplio con el formato establecido
+                    echo "No se puede subir una imagen con tal formato";
+                }
+            }
+            else{
+                //El tama;o de la imagen excede el tama;o permitido
+                echo "La imagen es demasiado grande";
+            }
+        }
+        else{//No se modifico la imagen
+            DB::beginTransaction();
+            try{
+                $historia->titulo = $request->titulo;
+                $historia->descripcion = $request->descripcion;
+                $historia->save();
+            }catch(Exception $e){
+                DB::rollback();
+                echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            }
+            DB::commit();
+        }
 
         return redirect('admin/historiasdeExito');//redireccionamos a la url del index
 

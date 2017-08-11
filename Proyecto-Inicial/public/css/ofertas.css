@@ -13,6 +13,7 @@
 
 .contenedor{
 	  width: 1024px;
+		min-height: 536px;
 	  /*height: 536px;*/
 	  margin: 0 auto;
 	  display: block;

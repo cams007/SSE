@@ -36,50 +36,60 @@ class EmpresasAdminController extends Controller
         }
         else{
             if(is_uploaded_file($archivo)){ //verifica que el archivo se haya subido en la carpeta temporal
-                if($request != null){
-                    //Guarda datos en la BD datos del contacto
-                    $contacto = new Contacto();
-                    $contacto->nombre = $request->nombre_cont;
-                    $contacto->puesto = $request->puesto_cont;
-                    $contacto->telefono = $request->numeroTel_cont;
-                    $contacto->correo = $request->email_cont;
-                    
-                    if($contacto->save()){
-                        $cont = Contacto::all();
-                        $contID = $cont->last();//obtenemos el ultimo registro de la BD
+                if($_FILES['imagen']['size'] <= 300000){
+                    if(($_FILES["imagen"]["type"]=="image/gif")
+                        ||($_FILES["imagen"]["type"]=="image/jpeg")
+                        ||($_FILES["imagen"]["type"] == "image/jpg")
+                        ||($_FILES["imagen"]["type"] == "image/png")){
 
-                        //Datos de la empresa a la BD
-                        $empresa = new Empresa();
-                        $empresa->nombre = $request->nombre_emp;
-                        $empresa->descripcion = $request->descripcion;
-                        $empresa->rfc = $request->rfc_emp;
-                        $empresa->telefono = $request->telefono_emp;
-                        $empresa->correo = $request->correo_emp;
-                        $empresa->calle = $direccion[0];
-                        $empresa->numero = $direccion[1];
-                        $empresa->colonia = $request->colonia;
-                        $empresa->ciudad = $request->ciudad;
-                        $empresa->estado = $request->estado;
-                        $empresa->codigo_postal = $request->codigo_p;
-                        $empresa->pagina_web = $request->pagina_w;
-                        $empresa->imagen_url = $imagen_subida;
-                        $empresa->habilitada = $request->habilitado;
-                        $empresa->motivo_no_contratacion = $request->noContratacion;
-                        $empresa->recomendaciones = $request->recomendacion;
-                        $empresa->contacto_id = $contID->id;
+                        DB::beginTransaction();
+                        try{
+                            //Guarda datos en la BD datos del contacto
+                            $contacto = new Contacto();
+                            $contacto->nombre = $request->nombre_cont;
+                            $contacto->puesto = $request->puesto_cont;
+                            $contacto->telefono = $request->numeroTel_cont;
+                            $contacto->correo = $request->email_cont;
+                            $contacto->save();
+                            
+                            $cont = Contacto::all();
+                            $contID = $cont->last();//obtenemos el ultimo registro de la BD
 
-                        if(!$empresa->save())
-                            return redirect('admin/egresado');//Redirigir a una pagina de errores
+                            //Datos de la empresa a la BD
+                            $empresa = new Empresa();
+                            $empresa->nombre = $request->nombre_emp;
+                            $empresa->descripcion = $request->descripcion;
+                            $empresa->rfc = $request->rfc_emp;
+                            $empresa->telefono = $request->telefono_emp;
+                            $empresa->correo = $request->correo_emp;
+                            $empresa->calle = $direccion[0];
+                            $empresa->numero = $direccion[1];
+                            $empresa->colonia = $request->colonia;
+                            $empresa->ciudad = $request->ciudad;
+                            $empresa->estado = $request->estado;
+                            $empresa->codigo_postal = $request->codigo_p;
+                            $empresa->pagina_web = $request->pagina_w;
+                            $empresa->imagen_url = $imagen_subida;
+                            $empresa->habilitada = $request->habilitado;
+                            $empresa->motivo_no_contratacion = $request->noContratacion;
+                            $empresa->recomendaciones = $request->recomendacion;
+                            $empresa->contacto_id = $contID->id;
+                            $empresa->save();
+                        }catch(Exception $e){
+                            DB::rollback();
+                            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                        }
+                        DB::commit();
+                        copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
                     }
                     else{
-                        echo "Ocurrio un error al guardar el contacto en la BD";
-                        return redirect('admin/egresado');//Redirigir a una pagina de errores
+                        //Si no cumple con el formato de la imagen
+                        echo "No se puede subir imagen con este formato";
                     }
-
-                    copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
-                }
+                }   
                 else{
-                    echo "error al copiar el archivo";
+                    //El tama;o de la imagen es muy grande
+                    echo "No se puede guarda una imagen mayo a 300000";
                 }
             }
             else{
