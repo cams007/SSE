@@ -14,12 +14,12 @@ class HistoriasDeAdminController extends Controller
         
         $historias = HistoriaExito::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(10);
 
-        return view('Admin.historiasDe.index', compact('historias'));
+        return view('admin.historiasDe.index', compact('historias'));
     }
 
     public function showCrearHistoria(Request $request){
 
-        return view('Admin.historiasDe.crearHistoriaDe');//accedemos al archivo
+        return view('admin.historiasDe.crearHistoriaDe');//accedemos al archivo
     }
 
     public function saveHistoria(Request $request){
@@ -78,7 +78,7 @@ class HistoriasDeAdminController extends Controller
     public function showEditarHistoria($id){
     	
     	$historia = DB::table('HistoriaExito')->where('id',"$id")->first();
-    	return view('Admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
+    	return view('admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
 
     }
 

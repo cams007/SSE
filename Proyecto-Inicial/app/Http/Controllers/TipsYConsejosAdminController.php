@@ -13,12 +13,12 @@ class TipsYConsejosAdminController extends Controller
 
     	$tips = Tip::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(10);
 
-        return view('Admin.tipYconsejo.index', compact('tips'));
+        return view('admin.tipYconsejo.index', compact('tips'));
     }
 
     public function showCreateTip(Request $request){
 
-    	return view('Admin.tipYconsejo.crearTip');//accedemos al archivo
+    	return view('admin.tipYconsejo.crearTip');//accedemos al archivo
     }
 
     public function saveCrearTip(Request $request){
@@ -78,7 +78,7 @@ class TipsYConsejosAdminController extends Controller
     public function showEditarTip($id){
 
     	$tip = DB::table('Tip')->where('id',"$id")->first();
-    	return view('Admin.tipYconsejo.editarTip',compact("tip"));//accedemos a la direccion de la vista, pasamos el objeto
+    	return view('admin.tipYconsejo.editarTip',compact("tip"));//accedemos a la direccion de la vista, pasamos el objeto
     }
 
     public function saveEditarTip(Request $request){
