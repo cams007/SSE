@@ -13,7 +13,7 @@
 
 .contenedor{
 	  width: 1024px;
-	  height: 536px;
+	  /*height: 536px;*/
 	  margin: 0 auto;
 	  display: block;
 	  text-align: center;
@@ -28,25 +28,29 @@
 	margin: 8px 32px 0;
 	height:32px;
 }
-.div-2{
+.buscador_ofertas{
 	/*background: green;*/
+	height: 60px;
 	padding-left: 32px;
-	padding-top: 16px;
+	/*padding-top: 16px;*/
 	padding-bottom: 2px;
 }
-.div-3{
-	width: 450px;
-	padding-left: 8px;
-	padding-bottom: 16px;
+.se-encontraron{
+	padding-bottom: 8px;
+ /*background: rgb(112, 217, 230);*/
+ color: #838080;
+ font-size: 13px;
+ font-family: 'Roboto', sans-serif;
 }
 .div-4{
 	/*background: #1BAF63;*/
-	height: 355px;
+	/*height: 355px;*/
 	padding-left: 32px;
 }
 .div-5{
 	/*background: #1B3FAF;*/
-	padding-bottom: 16px;
+	height: 40px;
+	/*padding-bottom: 16px;*/
 	text-align: center;
 }
 

@@ -87,6 +87,8 @@ header {
 
 
   .block {
+    position: absolute;
+    /*height: 1000px;*/
     width: 1024px;
     min-height: 200px;
     margin: 36px auto 40px;
