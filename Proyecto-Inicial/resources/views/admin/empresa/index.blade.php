@@ -21,7 +21,7 @@
 				<td>Nombre</td>
 				<td>ubicación</td>
 				<td>Teléfono</td>
-				<td>Página web</td>
+				<td>Descripción</td>
 				<td>Acción</td>
 			</tr>
 			@foreach($empresas as $empresa)
@@ -29,7 +29,7 @@
 				<td>{{$empresa->nombre}}</td>
 				<td>{{$empresa->ciudad}}</td>
 				<td>{{$empresa->telefono}}</td>
-				<td>{{$empresa->pagina_web}}</td>
+				<td>{{$empresa->descripcion}}</td>
 				<td>
 					<a href="{{url('/admin/empresas/editarEmpresa',$empresa->id)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
           			<a href=""><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->

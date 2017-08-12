@@ -13,6 +13,11 @@
 
 		</div><!--div-1-->
 
+		@php
+			$sector = array(1=>'Pública',2=>'Privada',3=>'Propia');
+
+		@endphp
+
 		<form method="post" enctype="multipart/form-data" action="{{route('admin.crearEmpresa.submit')}}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
@@ -26,14 +31,27 @@
 	 		<label for="" class="">RFC: </label>
 	 		<input type="text" name="rfc_emp"/>
 
+	 		<label for="" class="">Sector: </label>
+	 		<select name="sector">
+	 			@foreach($sector as $idn=>$nombre)
+	 					<option value={{$nombre}}>{{$nombre}}</option><!--Tipo de datos enum-->
+	 			@endforeach
+	 		</select>
+
+	 		<label for="" class="">Giro: </label>
+	 		<input type="text" name="giro"/>
+
 	 		<label for="" class="">Telefono: </label>
 	 		<input type="text" name="telefono_emp" required/>
 
 	 		<label for="" class="">Correo: </label>
 	 		<input type="email" name="correo_emp" required/>
 
-	 		<label for="" class="">Dirección calle,número:</label>
-	 		<input type="text" name="direccion_emp" required/>
+	 		<label for="" class="">Calle: </label>
+	 		<input type="text" name="calle" required/>
+
+	 		<label for="" class="">Número: </label>
+	 		<input type="text" name="numero" required/>
 
 	 		<label for="" class="">Colonia:</label>
 	 		<input type="text" name="colonia" required/>

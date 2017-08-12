@@ -30,39 +30,37 @@ class EgresadosAdminController extends Controller
 
     public function saveEgresado(Request $request) {
 
-        //Guarda datos en la BD. Primero los datos de preparacion
-        $preparacion = new Preparacion();
-        $preparacion->carrera = $request->carrera;
-        $preparacion->generacion = $request->generacion;
-        $preparacion->fecha_inicio = $request->fecha_inicio;
-        $preparacion->fecha_fin = $request->fecha_fin;
-        $preparacion->promedio = $request->promedio;
+        DB::beginTransaction();
+        try{
+            //Guarda datos en la BD. Primero los datos de preparacion
+            $preparacion = new Preparacion();
+            $preparacion->carrera = $request->carrera;
+            $preparacion->generacion = $request->generacion;
+            $preparacion->fecha_inicio = $request->fecha_inicio;
+            $preparacion->fecha_fin = $request->fecha_fin;
+            $preparacion->promedio = $request->promedio;
+            $preparacion->save();//Guardamos datos de la preparacion
 
-        //Guardar datos del egresado en la BD(egresado)
-        $egresado = new Egresado();
-        $egresado->matricula = $request->matricula;
-        $egresado->nombre = $request->nombre;
-        $egresado->curp = $request->curp;
-        $egresado->genero = $request->genero;
-        $egresado->fecha_nacimiento = $request->fecha_nacimiento;
-        $egresado->nacionalidad = $request->nacionalidad;
-        $egresado->lugar_origen = $request->lugar_origen;
-        $egresado->habilitado = $request->habilitado;
-        //$egresado->save();
-
-        if($preparacion->save()){//Si se guardo correctamente se obtiene el id del registro
             $prep = preparacion::all();
             $preparacionID = $prep->last();//obtenemos el ultimo registro de la BD
-            $egresado->preparacion_id = $preparacionID->id;
+            $egresado->preparacion_id = $preparacionID->id;//Asigna idPreparacion a egresado
 
-            //se guarda el registro de egresado a la BD
-            if(!$egresado->save())
-               return redirect('admin/empresas');//Redirigir a una pagina de errores
+            //Guardar datos del egresado en la BD(egresado)
+            $egresado = new Egresado();
+            $egresado->matricula = $request->matricula;
+            $egresado->nombre = $request->nombre;
+            $egresado->curp = $request->curp;
+            $egresado->genero = $request->genero;
+            $egresado->fecha_nacimiento = $request->fecha_nacimiento;
+            $egresado->nacionalidad = $request->nacionalidad;
+            $egresado->lugar_origen = $request->lugar_origen;
+            $egresado->habilitado = $request->habilitado;
+            $egresado->save();
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
         }
-        else{
-            echo "Ocurrio un error al guardar el registro de preparacion";
-            return redirect('admin/empresas');//Redirigir a una pagina de errores
-        }
+        DB::commit();
 
         return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
     }

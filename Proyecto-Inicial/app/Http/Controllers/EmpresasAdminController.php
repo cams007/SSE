@@ -23,7 +23,6 @@ class EmpresasAdminController extends Controller
 
     public function saveCrearEmresa(Request $request){
 
-        $direccion = explode(",", $request->direccion_emp);
         //Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 
@@ -60,10 +59,12 @@ class EmpresasAdminController extends Controller
                             $empresa->nombre = $request->nombre_emp;
                             $empresa->descripcion = $request->descripcion;
                             $empresa->rfc = $request->rfc_emp;
+                            $empresa->giro = $request->giro;
+                            $empresa->sector = $request->sector;
                             $empresa->telefono = $request->telefono_emp;
                             $empresa->correo = $request->correo_emp;
-                            $empresa->calle = $direccion[0];
-                            $empresa->numero = $direccion[1];
+                            $empresa->calle = $request->calle;
+                            $empresa->numero = $request->numero;
                             $empresa->colonia = $request->colonia;
                             $empresa->ciudad = $request->ciudad;
                             $empresa->estado = $request->estado;
@@ -75,6 +76,7 @@ class EmpresasAdminController extends Controller
                             $empresa->recomendaciones = $request->recomendacion;
                             $empresa->contacto_id = $contID->id;
                             $empresa->save();
+
                         }catch(Exception $e){
                             DB::rollback();
                             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
@@ -108,6 +110,6 @@ class EmpresasAdminController extends Controller
     }
 
     public function saveEditarEmpresa(Request $request){
-        echo "Holis";
+        
     }
 }
