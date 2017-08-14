@@ -27,8 +27,14 @@
 			<label for="" class="">Matricula: </label>
 	 		<input type="text" name="matricula" placeholder="" required/>
 
-	 		<label for="" class="">Nombre: </label>
-	 		<input type="text" name="nombre" placeholder="" required/>
+	 		<label for="" class="">Apellido paterno: </label>
+	 		<input type="text" name="ap_pa" placeholder="" required/>
+
+	 		<label for="" class="">Apellido materno: </label>
+	 		<input type="text" name="ap_ma" placeholder="" required/>
+
+	 		<label for="" class="">Nombre(s): </label>
+	 		<input type="text" name="nombres" placeholder="" required/>
 
 	 		<label for="" class="">Curp: </label>
 	 		<input type="text" name="curp" placeholder="" required/>

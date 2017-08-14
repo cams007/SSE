@@ -26,7 +26,7 @@
 			@foreach($egresados as $egresado)
 			<tr>
 				<td>{{$egresado->matricula}}</td>
-				<td>{{$egresado->nombre}}</td>
+				<td>{{$egresado->ap_paternos}}</td>
 				<td>{{$egresado->preparacion->carrera}}</td>
 				<td>
 					<a href="{{url('/admin/egresado/editarEgresado', $egresado->matricula)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->

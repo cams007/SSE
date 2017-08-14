@@ -11,7 +11,7 @@ class EgresadosAdminController extends Controller
 {
 	public function index(Request $request) {
 
-        $egresados = Egresado::titulo($request->get('q'))->orderBy('nombre', 'DESC')->paginate(8);
+        $egresados = Egresado::titulo($request->get('q'))->orderBy('ap_paterno', 'DESC')->paginate(8);
 
         return view('Admin.Egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
     }
@@ -48,7 +48,9 @@ class EgresadosAdminController extends Controller
             //Guardar datos del egresado en la BD(egresado)
             $egresado = new Egresado();
             $egresado->matricula = $request->matricula;
-            $egresado->nombre = $request->nombre;
+            $egresado->ap_paterno = $request->ap_pa;
+            $egresado->ap_materno = $request->ap_ma;
+            $egresado->nombres = $request->nombres;
             $egresado->curp = $request->curp;
             $egresado->genero = $request->genero;
             $egresado->fecha_nacimiento = $request->fecha_nacimiento;
