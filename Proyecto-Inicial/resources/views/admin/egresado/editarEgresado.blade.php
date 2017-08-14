@@ -25,8 +25,14 @@
 			<label for="" class="">Matricula: </label>
 	 		<input type="text" name="matricula" value="{{$egresado->matricula}}" placeholder=""/>
 
-	 		<label for="" class="">Nombre: </label>
-	 		<input type="text" name="nombre" value="{{$egresado->nombre}}" placeholder=""/>
+	 		<label for="" class="">Apellido paterno: </label>
+	 		<input type="text" name="ap_pa" value="{{$egresado->ap_paterno}}" placeholder=""/>
+
+	 		<label for="" class="">Apellido materno: </label>
+	 		<input type="text" name="ap_ma" value="{{$egresado->ap_materno}}" placeholder=""/>
+
+	 		<label for="" class="">Nombre(s): </label>
+	 		<input type="text" name="nombres" value="{{$egresado->nombres}}" placeholder=""/>
 
 	 		<label for="" class="">Curp: </label>
 	 		<input type="text" name="curp" value="{{$egresado->curp}}" placeholder=""/>
