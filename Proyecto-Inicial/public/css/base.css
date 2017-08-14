@@ -162,7 +162,7 @@ button:hover{
 }
 
 .flat{
-  color: #fff;
+  /*color: #fff;*/
   background-color: #BE3228;
   color: #FFF;
   text-decoration: none;
@@ -176,6 +176,7 @@ button:hover{
 .flat-secundario{
   background-color: #6B6B6B;
   color: #FFF;
+  border: none;
 }
 
 #iconos {
