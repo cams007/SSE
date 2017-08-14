@@ -179,6 +179,11 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+        
+        /*
+        * Agrega el servicio para las graficas
+        */
+        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
 
     ],
 
@@ -230,6 +235,11 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        /*
+        * Alias para lo de las graficas
+        */
+        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
 
     ],
 

@@ -11,7 +11,9 @@
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4",
         "league/csv": "^8.2",
-        "mpociot/laravel-test-factory-helper": "^0.4.0"
+        "mpociot/laravel-test-factory-helper": "^0.4.0",
+        // Agregue esta linea para las graficas.
+        "khill/lavacharts" : "3.0.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -130,5 +130,14 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/','OfertasLaboralesAdminController@index');
     });
 
+    /*
+    * Rutas para indices y estadisticas
+    */
+    Route::group(['prefix' => 'estadisticas'], function(){
+        // Controlador para indices y estadisticas
+        Route::get('/','IndicesEstadisticasController@index');
+        //Route::get('/','OfertasLaboralesAdminController@index');
+    });
+
 });
 
