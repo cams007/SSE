@@ -8,6 +8,7 @@ table{
   border: #ACABAB 1px solid;
   font-size: 13px;
 }
+/*table-layout: fixed;*/
 th{
   color: #FFFFFF;
   background-color: #6B6B6B;
@@ -15,7 +16,7 @@ th{
   text-align: center;
 }
 tr, td {
-  height: 32px;
+  height: 48px;
   border: #ACABAB 1px solid;
 }
 tr:nth-child(even){ /*Filas pares*/

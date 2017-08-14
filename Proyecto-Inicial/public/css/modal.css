@@ -21,7 +21,6 @@
   transition: opacity 400ms ease-in;
   z-index: -1;
   display: none;
-
 }
 
 .modaloverlay:target {
@@ -34,7 +33,7 @@
 
 .modaloverlay .modal {
   background-color: white;
-  height: 75%;
+  /*height: 75%;*/
   width: 50%;
   position: relative;
   margin: 0 auto;
@@ -46,7 +45,7 @@
 
 @media (min-width: 60em) {
   .modaloverlay .modal {
-    height: 50%;
+    /*height: 50%;*/
     margin: 5% auto;
     max-height: 57em;
     max-width: 33em;
@@ -84,13 +83,24 @@
 
 .parte-2{
   /*background: rgb(14, 166, 15);*/
-  height: 280px;
+  /*height: 280px;*/
 }
 
 .parte-3{
+	margin-top: 24px;
   /*background: rgb(23, 3, 17);*/
+	/*height: 64px;*/
 }
-
+#e_descripcion{
+	color: #6B6B6B;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+#h_descripcion{
+	color: #6B6B6B;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
 .item-1{
   /*background: rgb(198, 169, 188);*/
   display: -webkit-flex;

@@ -12,4 +12,9 @@ class Contacto extends Model
 	* @var string
 	*/
     protected $table = 'Contacto';
+
+    public function contacto()
+    {
+        return $this->hasOne('App\Empresa');
+    }
 }

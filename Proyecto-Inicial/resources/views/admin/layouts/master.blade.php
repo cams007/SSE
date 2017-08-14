@@ -60,7 +60,7 @@
                 </div>
               </div>
               <div class="menucontainer">
-                @include('Admin.partials.navbar')
+                @include('admin.partials.navbar')
               </div>
             </div>
       </header>

@@ -14,9 +14,9 @@
 			<p class="text-center">Tips y consejos</p>
 
 		</div><!--div-1-->
-		
+
 		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
-		
+
 		<table> <!--Contenido de la pagina-->
 			<tr>
 				<td>Titulo</td>
