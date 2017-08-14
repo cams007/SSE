@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 /*Paginación*/
 div ul.pagination{
+	padding-top: 8px;
 	font-size: 13px;
 	display: inline-block;
 	text-align: initial;

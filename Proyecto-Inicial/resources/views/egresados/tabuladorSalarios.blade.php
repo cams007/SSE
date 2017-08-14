@@ -10,33 +10,37 @@
 @section('content')
 <div class="contenedor"><!-- contenedor -->
 	<div class="div-1">
-		<p class="text-center">Tabulador de salarios</p>
+		<p class="text-center">Tabulador de salarioss</p>
 	</div><!--div-1-->
 
 	<div class="div-2"><!--div-2-->
 		<div class="div-2-1"><!--div-2-1-->
 			<p class="titulo_select">Carrera:</p>
 		</div><!--div-2-1-->
+		</div><!--div-2-->
 
-		<div class="div-2-2"><!--div-2-3-->
-			<div class="search">
+		<div class="div-3"><!--div-3-->
+		<!-- Filtros -->
+			<div class="buscar-salarios">
 				{!! Form::open(['url' => 'tabuladorSalarios', 'method' => 'GET', 'role' => 'search']) !!}
 					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscar']) !!}
 			</div>
-		</div><!--div-2-3-->
-	</div><!--div-2-->
 
-	<div class="div-3"><!--div-3-->
-	<!-- Filtros -->
-		<div class="div-3-1"><!--div-3-1-->
+
+		<div class="div-3-1">
 			{!! Form::select('carrera', config('options.carreras'), null, ['class' => 'seleccion', "onchange" => "this.form.submit()"]) !!}
 			{!! Form::close() !!}
 		</div><!--div-3-1-->
+		<!-- <div class="buscar-salarios">
+			{!! Form::open(['url' => 'tabuladorSalarios', 'method' => 'GET', 'role' => 'search']) !!}
+				{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscar']) !!}
+		</div> -->
 	</div><!--div-3-->
-
+	<div class="se-encontraron">
+		<p>Se encontraron {{ $salarios->total() }} resultados</p>
+	</div>
 	<div class="div-4"><!--div-4-->
 		<div class="div-4-1"><!--div-4-1-->
-			<p>Se encontraron {{ $salarios->total() }} resultados</p>
 			<table>
 				<thead>
 					<tr>

@@ -14,19 +14,20 @@
 
 	<div class="div-1"><!--div-1-->
 		<p class="text-center">Tips y consejos</p>
-		
+
 	</div><!-- div-1 -->
 
-	<div class="buscador_empresas"> <!-- Buscador -->
+	<div class="buscador_tips"> <!-- Buscador -->
         {!! Form::open(['url' => 'tipsConsejos', 'method' => 'GET', 'role' => 'search']) !!}
 			{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de tips']) !!}
 		{!! Form::close() !!}
     </div>
-
+		<div class="se-encontraron">
+			<p>Se encontraron {{ $tips->total() }} resultados</p>
+		</div>
 	<div class="div-2"><!--div-2-->
 
 		<ul class="list">
-		<p>Se encontraron {{ $tips->total() }} resultados</p>
 		@foreach($tips as $tip)
 		<li data-tip="{{ $tip }}">
 			<div class="tip">

@@ -23,8 +23,8 @@
 		</div>
 
 	<!-- Resultados -->
-	<div class="div-se-econtraron">
-		<p class="info-se-econtraron">Se encontraron {{ $ofertas->total() }} ofertas</p>
+	<div class="se-encontraron">
+		<p>Se encontraron {{ $ofertas->total() }} ofertas</p>
 	</div>
 	<div class="div-4"><!--div-4-->
 		<table>

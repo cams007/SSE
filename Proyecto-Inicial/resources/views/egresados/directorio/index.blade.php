@@ -20,9 +20,11 @@
 			{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de empresas']) !!}
 		{!! Form::close() !!}
     </div>
-
+    <div class="se-encontraron">
+      <p>Se encontraron {{ $empresas->total() }} empresas</p>
+    </div>
     <div class="listado"><!--listado-->
-    <p>Se encontraron {{ $empresas->total() }} empresas</p>
+
 		<ul>
 			@foreach($empresas as $empresa)
 				<li data-empresa="{{ $empresa }}" data-contacto="{{ $empresa->contacto }}" class="list">
@@ -47,7 +49,7 @@
 			@endforeach
 		</ul>
 
-    	
+
 	</div><!--listado-->
 
 	<?php if (isset($_GET['q'])){ ?>

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
-
 .text-center{
 	font-family: 'Roboto', sans-serif;
 	font-size: 24px;
@@ -14,7 +13,7 @@
 
 .contenedor{
 	width: 1024px;
-	height: 536px;
+	min-height: 536px;
 	margin: 0 auto;
 	display: block;
 	text-align: center;
@@ -31,10 +30,23 @@
 	margin: 8px 32px 0;
 	height:32px;
 }
-
+.buscador_tips{
+	/*background: green;*/
+	height: 60px;
+	padding-left: 32px;
+	/*padding-top: 16px;*/
+	padding-bottom: 2px;
+}
+.se-encontraron{
+	padding-bottom: 8px;
+ /*background: rgb(112, 217, 230);*/
+ color: #838080;
+ font-size: 13px;
+ font-family: 'Roboto', sans-serif;
+}
 .div-2{
   /*background: rgb(47, 30, 209);*/
-  height: 430px;
+  /*height: 430px;*/
 	padding-top: 16px;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -43,17 +55,20 @@
 	align-items: center;
 }
 
-.historia{
+.tip{
 	/*background: rgb(214, 97, 249);*/
+	position: relative;
 	width: 800px;
-	height: 90px;
+	left: 100px;
 	padding-bottom: 24px;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
 }
+
 .foto{
-	width: 60%;
+	width: 130px;
+	height: 80px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -61,12 +76,13 @@
 
 .div-2-2{
 	/*background: rgb(223, 230, 145);*/
-	/*width: 700px;*/
+	width: 650px;
 	display: flex;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	flex-direction: column;
 }
+
 
 .titulo{
 	/*background: rgb(188, 237, 157);*/
@@ -80,12 +96,15 @@
 }
 
 .texto-descripcion{
+	/*background: rgb(42, 105, 154);*/
+	width: 570px;
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 	color: #6B6B6B;
 	text-align: left;
 	padding-left: 24px;
 }
+
 
 
 .descripcion{
@@ -127,7 +146,7 @@ a.seguirLeyendo{
   margin-left: 10px;
 }
 
-div.buscador_empresas input{
+div.buscador_tips input{
 	width: 40%;
 	height: 32px;
 	padding: 0 0 0 32px;
@@ -142,7 +161,7 @@ div.buscador_empresas input{
 	-moz-box-shadow: 0 0 3px gray;
 	-webkit-box-shadow: 0 0 3px gray;*/
 }
-div.buscador_empresas input:hover{
+div.buscador_tips input:hover{
 	outline: none;
 	border: solid 1px #BE3228;
 	/*box-shadow: 0 0 5px 1px #969696;*/
