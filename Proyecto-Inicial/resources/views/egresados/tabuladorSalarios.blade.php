@@ -47,7 +47,7 @@
 					  <th>Monto máximo</th>
 					</tr>
 				</thead>
-				
+
 				<tbody>
 					@foreach($salarios as $indexKey => $salario)
 						<tr>
