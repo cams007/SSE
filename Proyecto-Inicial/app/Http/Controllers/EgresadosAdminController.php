@@ -13,7 +13,7 @@ class EgresadosAdminController extends Controller
 
         $egresados = Egresado::titulo($request->get('q'))->orderBy('ap_paterno', 'DESC')->paginate(8);
 
-        return view('Admin.Egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
+        return view('admin.egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
     }
 
     public function showCrearEgresado(Request $request) {
