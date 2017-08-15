@@ -87,7 +87,7 @@
 
 			<div class="parte-3"><!--parte-3-->
 				<div class="btn-group">
-					<a href="#close"><button class="flat-secundario" href="#close">Salir</button></a>
+					<a href="#close"><button class="flat" href="#close">Salir</button></a>
 				</div>
 			</div><!--parte-3-->
 		</form>
