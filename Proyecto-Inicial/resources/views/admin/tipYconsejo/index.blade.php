@@ -6,6 +6,7 @@
 @section('style')
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -17,6 +18,14 @@
 
 		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 
+		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
+				<div class="search">
+					{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
+						{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}
+					{!! Form::close() !!}
+				</div>
+			</div><!--fin div-2-2-1-->
+		
 		<table> <!--Contenido de la pagina-->
 			<tr>
 				<td>Titulo</td>
@@ -30,7 +39,7 @@
 				<td> <?php  $imp =substr($tip->descripcion,0,20); echo $imp;?> </td><!--se muestran 20 caracteres de la descripción-->
 				<td>
 					<a href="{{route('admin.editarTipConsejo', $tip)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-          			<a href=""><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
+          			<a href="#EliminarEvento"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
 	        @endforeach
@@ -44,5 +53,18 @@
 			<?php } ?>
 		</div><!--div-5--><!--Fin del paginador-->
 	</div><!--contenedor-->
+
+
+	<div id="EliminarEvento" class="modaloverlay"> <!-- div-modaloverlay -->
+		<div class="modal"> <!-- div-modal -->
+			<a href="#close" class="close">&times;</a>
+			<div class="parte-1"><!--parte-1-->
+				<p class="txt">Dato del evento</p>
+			</div><!--parte-1-->
+			<form action="index_submit" method="get" >
+				
+			</form>
+		</div>
+	</div>
 
 @stop
