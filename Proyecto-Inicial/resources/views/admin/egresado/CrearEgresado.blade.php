@@ -25,13 +25,19 @@
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 			
 			<label for="" class="">Matricula: </label>
-	 		<input type="text" name="matricula" placeholder=""/>
+	 		<input type="text" name="matricula" placeholder="" required/>
 
-	 		<label for="" class="">Nombre: </label>
-	 		<input type="text" name="nombre" placeholder=""/>
+	 		<label for="" class="">Apellido paterno: </label>
+	 		<input type="text" name="ap_pa" placeholder="" required/>
+
+	 		<label for="" class="">Apellido materno: </label>
+	 		<input type="text" name="ap_ma" placeholder="" required/>
+
+	 		<label for="" class="">Nombre(s): </label>
+	 		<input type="text" name="nombres" placeholder="" required/>
 
 	 		<label for="" class="">Curp: </label>
-	 		<input type="text" name="curp" placeholder=""/>
+	 		<input type="text" name="curp" placeholder="" required/>
 
 	 		<label for="" class="">Género: </label>
 	 		<select name="genero">
@@ -41,7 +47,7 @@
 	 		</select>
 
 	 		<label for="" class="">Fecha de nacimiento: </label>
-	 		<input type="date" name="fecha_nacimiento" placeholder="" />
+	 		<input type="date" name="fecha_nacimiento" placeholder="" required/>
 
 	 		<label for="" class="">Nacionalidad: </label>
 	 		<select name="nacionalidad">
@@ -51,29 +57,29 @@
 	 		</select>
 
 	 		<label for="" class="">Lugar de origen: </label>
-	 		<input type="text" name="lugar_origen" placeholder=""/>
+	 		<input type="text" name="lugar_origen" placeholder="" required/>
 	 		
 	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
 
 	 		<!--Datos de preparacion-->
 	 		<label for="" class="">Carrera: </label>
-	 		<select name="carrera">
+	 		<select name="carrera" required>
 	 			@foreach($carrera as $idn=>$nombre)
 	 					<option value="{{$idn}}">{{$nombre}}</option><!--Tipo de datos enum-->
 	 			@endforeach
 	 		</select>
 
 	 		<label for="" class="">Generación: </label>
-	 		<input type="text" name="generacion" placeholder=""/>
+	 		<input type="text" name="generacion" placeholder="" required/>
 
 	 		<label for="" class="">Fecha de inicio de estudios: </label>
-	 		<input type="date" name="fecha_inicio"/>
+	 		<input type="date" name="fecha_inicio" required/>
 
 	 		<label for="" class="">Fecha de fin de estudios: </label>
-	 		<input type="date" name="fecha_fin"/>
+	 		<input type="date" name="fecha_fin" required/>
 
 	 		<label for="" class="">Promedio: </label>
-	 		<input type="text" name="promedio" placeholder=""/>
+	 		<input type="text" name="promedio" placeholder="" required/>
 
 	 		<button type="submit" class="flat">Enviar</button>
 		</form>	

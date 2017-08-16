@@ -10,12 +10,17 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Editar empresa</p>
-
 		</div><!--div-1-->
+
+		@php
+			$sector = array(1=>'Pública',2=>'Privada',3=>'Propia');
+		@endphp
 
 		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarEmpresa.submit')}}">
 	 		{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+
+			<input name="id" type="hidden" value="{{$empresa->id}}" />
 
 	 		<label for="" class="">Nombre de la empresa: </label>
 	 		<input type="text" name="nombre_emp" value="{{$empresa->nombre}}" />
@@ -26,14 +31,31 @@
 	 		<label for="" class="">RFC: </label>
 	 		<input type="text" name="rfc_emp" value="{{$empresa->rfc}}"/>
 
+	 		<label for="" class="">Sector: </label>
+	 		<select name="sector">
+	 			@foreach($sector as $idn=>$nombre)
+	 				@if($nombre == $empresa->sector)
+	 					<option value={{$nombre}} selected>{{$nombre}}</option><!--Tipo de datos enum-->
+	 				@else
+	 					<option value={{$nombre}}>{{$nombre}}</option><!--Tipo de datos enum-->
+	 				@endif
+	 			@endforeach
+	 		</select>
+
+	 		<label for="" class="">Giro: </label>
+	 		<input type="text" name="giro" value="{{$empresa->giro}}" />
+
 	 		<label for="" class="">Telefono: </label>
 	 		<input type="text" name="telefono_emp" value="{{$empresa->telefono}}"/>
 
 	 		<label for="" class="">Correo: </label>
 	 		<input type="email" name="correo_emp" value="{{$empresa->correo}}"/>
 
-	 		<label for="" class="">Dirección calle y número:</label>
-	 		<input type="text" name="direccion_emp" value="{{$empresa->calle . "," .$empresa->numero}}"/>
+	 		<label for="" class="">Calle: </label>
+	 		<input type="text" name="calle" value="{{$empresa->calle}}" required/>
+
+	 		<label for="" class="">Número: </label>
+	 		<input type="text" name="numero" value="{{$empresa->numero}}" required/>
 
 	 		<label for="" class="">Colonia:</label>
 	 		<input type="text" name="colonia" value="{{$empresa->colonia}}"/>
@@ -54,7 +76,7 @@
 	 		<input type="file" name="imagen"/>
 	 		<img src="{{ url($empresa->imagen_url)}}" alt=""/>
 
-	 		<!--<input type="hidden" name="habilitado" value="1" placeholder=""/>-->
+	 		<input name="contacto_id" type="hidden" value="{{$empresa->contacto_id}}" />
 
 	 		<label for="" class="">Motivos de no contratacion: </label>
 	 		<textarea rows="4" cols="50" name="noContratacion">{{$empresa->motivo_no_contratacion}}</textarea>
@@ -63,6 +85,8 @@
 	 		<textarea rows="4" cols="50" name="recomendacion">{{$empresa->recomendaciones}}</textarea>
 
 			<!--Datos del contacto de la empresa-->
+			<input name="idcontacto" type="hidden" value="{{$contacto->id}}" />
+
 	 		<label for="" class="">Nombre del contacto: </label>
 	 		<input type="text" name="nombre_cont" value="{{$contacto->nombre}}"/>
 
