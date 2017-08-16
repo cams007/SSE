@@ -16,6 +16,14 @@
 		
 		<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button para crear empresas-->
 
+		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
+			<div class="search">
+				{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
+					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}
+				{!! Form::close() !!}
+			</div>
+		</div><!--fin div-2-2-1-->
+
 		<table> <!--Contenido de la pagina-->
 			<tr>
 				<td>Nombre</td>

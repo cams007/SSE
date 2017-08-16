@@ -19,6 +19,14 @@
 		</div><!--div-1-->
 		
 		<a href="{{url('/admin/egresado/crearEgresado')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!-- Button crear Egresado-->
+
+		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
+			<div class="search">
+				{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
+					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}
+				{!! Form::close() !!}
+			</div>
+		</div><!--fin div-2-2-1-->
 		
 		@php $i =1;@endphp
 		<table> <!--Contenido de la pagina-->
