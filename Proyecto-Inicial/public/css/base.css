@@ -87,6 +87,8 @@ header {
 
 
   .block {
+    position: absolute;
+    /*height: 1000px;*/
     width: 1024px;
     min-height: 200px;
     margin: 36px auto 40px;
@@ -160,7 +162,7 @@ button:hover{
 }
 
 .flat{
-  color: #fff;
+  /*color: #fff;*/
   background-color: #BE3228;
   color: #FFF;
   text-decoration: none;
@@ -174,6 +176,7 @@ button:hover{
 .flat-secundario{
   background-color: #6B6B6B;
   color: #FFF;
+  border: none;
 }
 
 #iconos {
@@ -321,7 +324,7 @@ a{
     float: left;
   }
 
-  li a{
+  li > a{
     display: block;
     color: white;
     text-align: center;

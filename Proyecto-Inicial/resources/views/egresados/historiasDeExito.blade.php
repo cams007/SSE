@@ -16,16 +16,17 @@
 		<p class="text-center">Historias de éxito</p>
 	</div><!-- div-1 -->
 
-	<div class="buscador_empresas"> <!-- Buscador -->
+	<div class="buscador_historias"> <!-- Buscador -->
         {!! Form::open(['url' => 'historiasExito', 'method' => 'GET', 'role' => 'search']) !!}
 			{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de historias']) !!}
 		{!! Form::close() !!}
     </div>
 
+		<div class="se-encontraron">
+			<p>Se encontraron {{ $historias->total() }} resultados</p>
+		</div>
 	<div class="div-2"><!--div-2-->
-
 		<ul class="list">
-		<p>Se encontraron {{ $historias->total() }} resultados</p>
 		@foreach($historias as $historia)
 		<li data-historia="{{ $historia }}">
 			<div class="historia">

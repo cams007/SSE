@@ -15,7 +15,7 @@
 			<p class="text-center">Tips y consejos</p>
 
 		</div><!--div-1-->
-		
+
 		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
@@ -53,6 +53,7 @@
 			<?php } ?>
 		</div><!--div-5--><!--Fin del paginador-->
 	</div><!--contenedor-->
+
 
 	<div id="EliminarEvento" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->

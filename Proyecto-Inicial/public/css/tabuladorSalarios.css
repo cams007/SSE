@@ -13,7 +13,8 @@
 
 .contenedor{
 	  width: 1024px;
-	  height: 536px;
+		min-height: 536px;
+	  /*height: 536px;*/
 	  margin: 0 auto;
 	  display: block;
 	  text-align: center;
@@ -30,28 +31,31 @@
 }
 .div-2{
 	/*background: green;*/
-	padding-top: 16px;
-	padding-bottom: 2px;
+	padding-top: 8px;
+	/*padding-top: 16px;
+	padding-bottom: 2px;*/
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+
 	/*justify-content: space-around;*/
 }
 .div-2-1{
 	/*background: rgb(245, 56, 17);*/
 	width: 310px;
+	height: 20px;
 	position: relative;
 	left: 28px;
 	/*text-align: left;*/
 }
-div.search input{
-	width: 220px;
-	height: 32px;
+div.buscar-salarios input{
+	width: 250px;
+	height: 30px;
 	padding: 0 0 0 32px;
-	margin-top: 8px;
+	/*margin-top: 8px;*/
 	/*margin-right: 28px;*/
 	border: 1 !important;    /*    Removes border*/
-  	border: #ACABAB 2px solid;
+  	border: #ACABAB 1px solid;
 	background-image: url("../assets/images/search_gray.png");
 	background-repeat: no-repeat;
 	background-size: 20px 20px;
@@ -61,40 +65,58 @@ div.search input{
 	-webkit-box-shadow: 0 0 3px gray;
 }
 
-div.search input:hover{
-	outline: none;
+div.buscar-salarios input:hover{
+	/*outline: none;*/
 	border: solid 1px #BE3228;
 	box-shadow: 0 0 5px 1px #969696;
 }
 
-.div-2-2{
-	/*background: rgb(142, 144, 31);*/
-	width: 680px;
-	height: 22px;
-}
+/*.div-2-2{
+	background: rgb(142, 144, 31);
+	width: 680px;*/
+	/*height: 22px;*/
+/*}*/
 
 .div-3{
   /*background: rgb(35, 168, 181);*/
-	padding-bottom: 16px;
+	padding-bottom: 8px;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
+	 justify-content: space-around;
+	 height: 32px;
 	/*justify-content: space-around;*/
 }
 .div-3-1{
-	background: rgb(69, 44, 214);
+	/*background: rgb(69, 44, 214);*/
 	position: relative;
-	width: 250px;
-	left: 28px;
+	width: 300px;
+	height: 35px;
+	right: 596px;
+}
+.buscar-salarios{
+	/*background: rgb(45, 109, 150);*/
+	position: relative;
+	width: 300px;
+	height: 35px;
+	left: 600px;
+}
+
+.se-encontraron{
+	padding-bottom: 8px;
+ /*background: rgb(112, 217, 230);*/
+ color: #838080;
+ font-size: 13px;
+ font-family: 'Roboto', sans-serif;
 }
 
 .div-4{
   /*background: #1BAF63;*/
-	height: 360px;
-	display: -webkit-flex;
+	/*height: 360px;*/
+	/*display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	justify-content: center;*/
 	/*height: 355px;
 	padding-left: 32px;*/
 }
@@ -114,7 +136,7 @@ div.search input:hover{
 	font-family: 'Roboto', sans-serif;
 }
 div select{
-  width: 250px;
+  width: 288px;
   height: 32px;
   padding: 0 0 0 32px;
 	background: white;

@@ -14,7 +14,7 @@
 			<p class="text-center">Historias de éxito</p>
 
 		</div><!--div-1-->
-		
+
 		<a href="{{url('/admin/historiasdeExito/crearHistoriaDe')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
