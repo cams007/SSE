@@ -34,7 +34,7 @@ Route::group(['prefix' => 'perfil'], function() {
     Route::get('ofertaslab', function() {
         return view('egresados.perfil.ofertaslab');
     });
-    
+
     Route::post('/', 'PerfilController@saveDatosBasicos');
     Route::post('estudiosRealizados', 'PerfilController@saveFormacionPerson');
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
@@ -75,39 +75,59 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    
+
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::post('/', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
-    Route::get('/crearAlumno', function(){
-        return view('admin.alumnos.crearAlumno');
-    });
-    Route::get('editarAlumno', function(){
-        return view('admin.alumnos.editarAlumno');
-    });
-    Route::get('crearEmpresa', function(){
-        return view('admin.empresa.crearEmpresa');
-    });
-    Route::get('editarEmpresa', function(){
-        return view('admin.empresa.editarEmpresa');
+    //Grupo de rutas para las vistas de egresados url(/admin/egresado/...)
+    Route::group(['prefix' => 'egresado'], function(){
+        Route::get('/','EgresadosAdminController@index');
+        Route::get('/crearEgresado','EgresadosAdminController@showCrearEgresado')->name('admin.crearEgresado');
+        Route::post('/crearEgresado','EgresadosAdminController@saveEgresado')->name('admin.crearEgresado.submit');
+        Route::get('/editarEgresado/{ma}','EgresadosAdminController@showEditarEgresado')->name('admin.editarEgresado');
+        Route::post('/editarEgresado','EgresadosAdminController@saveEditarEgresado')->name('admin.editarEgresado.submit');
     });
 
-    Route::group(['prefix' => 'alumnos'], function(){
-        Route::get('/','AlumnosController@index');
-        //Route::get('/crearAlumno','AlumnosController@');
-    });
-
+    //Grupo de rutas para las vistas de empresas (admin/empresas/..)
     Route::group(['prefix' => 'empresas'], function(){
-        Route::get('/','EmpresasController@index');
-        //Route::get('/crearAlumno','AlumnosController@');
+        Route::get('/','EmpresasAdminController@index');
+        Route::get('/crearEmpresa','EmpresasAdminController@showCrearEmpresa')->name('admin.crearEmpresa');
+        Route::post('/crearEmpresa','EmpresasAdminController@saveCrearEmresa')->name('admin.crearEmpresa.submit');
+        Route::get('/editarEmpresa/{id}','EmpresasAdminController@showEditarEmpresa')->name('admin.editarEmpresa');
+        Route::post('/editarEmpresa','EmpresasAdminController@saveEditarEmpresa')->name('admin.editarEmpresa.submit');
     });
 
-    Route::get('/eventos', function(){
-        return view('admin.eventos');
+    //Grupo de rutas para las vistas de eventos (admin/eventos/..)
+    Route::group(['prefix' => 'eventos'], function(){
+        Route::get('/','EventosAdminController@index');
+        Route::get('/crearEvento','EventosAdminController@showCrearEvento')->name('admin.crearEvento');
+        Route::post('/crearEvento','EventosAdminController@saveEvento')->name('admin.crearEvento.submit');
+        Route::get('/editarEvento/{id}','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
+        Route::post('/editarEvento','EventosAdminController@saveEditarEvento')->name('admin.editarEvento.submit');
+        Route::get('/eliminarEvento/{id}','EventosAdminController@eliminarEvento')->name('admin.eliminarEvento');
+
     });
 
-    Route::get('/historiasYtips', function(){
-        return view('admin.historiasTips');
+    //Grupo de rutas para las historias de éxito (admin/historiasdeExito/..)
+    Route::group(['prefix' => 'historiasdeExito'], function(){
+        Route::get('/', 'HistoriasDeAdminController@indexH');
+        Route::get('/crearHistoriaDe','HistoriasDeAdminController@showCrearHistoria')->name('admin.crearHistoria');
+        Route::post('/crearHistoriaDe','HistoriasDeAdminController@saveHistoria')->name('admin.crearHistoria.submit');
+        Route::get('/editarHistoriaDe/{id}','HistoriasDeAdminController@showEditarHistoria')->name('admin.editarHistoria');
+        Route::post('/editarHistoriaDe','HistoriasDeAdminController@saveEditarHistoria')->name('admin.editarHistoria.submit');
     });
+
+    //Grupo de rutas para los tips y consejos. (admin/tipConsejo/..)
+    Route::group(['prefix' => 'tipConsejo'], function(){
+        Route::get('/','TipsYConsejosAdminController@index');
+        Route::get('/crearTipConsejo','TipsYConsejosAdminController@showCreateTip')->name('admin.crearTipConsejo');
+        Route::post('/crearTipConsejo','TipsYConsejosAdminController@saveCrearTip')->name('admin.crearTipConsejo.submit');
+        Route::get('/editarTipConsejo/{id}','TipsYConsejosAdminController@showEditarTip')->name('admin.editarTipConsejo');
+        Route::post('/editarTipConsejo','TipsYConsejosAdminController@saveEditarTip')->name('admin.editarTipConsejo.submit');
+    });
+
+    Route::group(['prefix' => 'ofertas'], function(){
+        Route::get('/','OfertasLaboralesAdminController@index');
+    });
+
 });
-

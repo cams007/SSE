@@ -16,7 +16,7 @@ class Egresado extends Model
     public $incrementing = false;
     // public $timestamps = false; //Si no se necesitan: created_at and updated_at
 
-    // protected $fillable = ['matricula', 'nombre', 'curp', 'genero', 'fecha_nacimiento', 'lugar_origen'];
+    protected $fillable = ['matricula', 'nombre', 'curp', 'genero', 'fecha_nacimiento', 'nacionalidad', 'telefono', 'lugar_origen', 'imagen_url'];
 
 	/**
 	* Get the preparacion that owns the egresado.
@@ -56,6 +56,13 @@ class Egresado extends Model
     public function calificaciones()
     {
         return $this->hasMany('App\Ranking');
+    }
+
+    public function scopeTitulo($query, $nombre){
+        if (trim($nombre) != ""){
+            $query
+                ->where(\DB::raw("CONCAT(nombre, ' ', matricula, ' ', curp)"), 'like', '%'.$nombre.'%');
+        }
     }
 
 }

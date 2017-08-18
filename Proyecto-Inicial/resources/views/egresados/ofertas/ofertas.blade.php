@@ -23,8 +23,10 @@
 		</div>
 
 	<!-- Resultados -->
-	<div class="div-4"><!--div-4-->
+	<div class="se-encontraron">
 		<p>Se encontraron {{ $ofertas->total() }} ofertas</p>
+	</div>
+	<div class="div-4"><!--div-4-->
 		<table>
 			<thead>
 				<tr>
@@ -37,7 +39,7 @@
 			</thead>
 			<tbody>
 				@foreach($ofertas as $oferta)
-					<tr data-oferta="{{ $oferta }}" data-empresa="{{ $oferta->empresa }}" data-contacto="{{ $oferta->empresa->contacto }}"> 
+					<tr data-oferta="{{ $oferta }}" data-empresa="{{ $oferta->empresa }}" data-contacto="{{ $oferta->empresa->contacto }}">
 						<!-- <?php
 							// $date = date_create($oferta->created_at);
 							// echo '<td>'.date_format($date, 'd/M/Y').'</td>';
@@ -47,7 +49,7 @@
 						<td><a href="#datosEmpresa" class="btn-empresa">{{ $oferta->empresa->nombre }}</a></td>
 						<td>{{ $oferta->ubicacion }}</td>
 						<td>{{ $oferta->descripcion }}<a href="#detalleOferta" class="more_detail"> + </a></td>
-					</tr>
+					<!-- </tr> -->
 				@endforeach
 			</tbody>
 		</table>
