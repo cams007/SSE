@@ -29,7 +29,7 @@ class Egresado extends Model
 	/**
 	* Get the primerEmpleo that owns the egresado.
 	*/
-    public function primerEmpleo()
+    public function primerempleo()
     {
         return $this->belongsTo('App\PrimerEmpleo');
     }

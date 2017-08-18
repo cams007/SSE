@@ -29,8 +29,8 @@ class CreateEgresadoTable extends Migration
             $table->boolean('habilitado');
             $table->integer('preparacion_id')->unsigned();
             $table->foreign('preparacion_id')->references('id')->on('Preparacion')->unique();
-            $table->integer('primerEmpleo_id')->unsigned()->nullable();
-            $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique();
+            $table->integer('primer_empleo_id')->unsigned()->nullable();
+            $table->foreign('primer_empleo_id')->references('id')->on('PrimerEmpleo')->unique();
             $table->timestamps();
         });
     }
