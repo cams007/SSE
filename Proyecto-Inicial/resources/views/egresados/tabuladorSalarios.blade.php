@@ -10,7 +10,7 @@
 @section('content')
 <div class="contenedor"><!-- contenedor -->
 	<div class="div-1">
-		<p class="text-center">Tabulador de salarioss</p>
+		<p class="text-center">Tabulador de salarios</p>
 	</div><!--div-1-->
 
 	<div class="div-2"><!--div-2-->

@@ -17,19 +17,19 @@
 	</div><!--fin div-1-->
 
 	<div class="clearfix">
-		
+
 		<div class="div-2-1"><!--inicio div-2-1-->
 			<aside id="cssmenu" class="column hrV">
 				@include('partials.asideEmpresa')
 			</aside>
 		</div><!--fin div-2-1-->
-		
+
 		<div class="column content">
-				
+
 				Ofertas laborales
 
 		</div>
-	
+
 	</div>
 </div><!--fin contenedor-->
 @stop

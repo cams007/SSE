@@ -3,6 +3,88 @@
 /* =========================================================
  1. MODAL STYLE
 ========================================================= */
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+.text-center{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #6B6B6B;
+	position: relative;
+
+}
+.contenedor{
+    /*background: rgb(26, 168, 213);*/
+	  width: 1024px;
+		min-height: 536px;
+	  /*height: 536px;*/
+	  margin: 0 auto;
+	  display: block;
+	  text-align: center;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		flex-direction: column;
+}
+
+.div-1{
+	/*background: yellow;*/
+	border-bottom: solid 1px #adacac;
+	margin: 8px 32px 0;
+	height:32px;
+}
+
+.div-2{
+	/*background: green;*/
+  margin-top: 24px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.div-2-1{
+  /*background: rgb(19, 73, 144);*/
+  width: 550px;
+}
+.bienvenida{
+  /*background: rgb(126, 84, 121);*/
+  margin-left: 32px;
+  width: 450px;
+  text-align: justify;
+  font-family: helvetica;
+  font-size: 15px;
+}
+.column{
+  /*background: rgb(77, 28, 130);*/
+  width: 450px;
+  margin-top: 16px;
+  margin-left: 32px;
+  text-align: left;
+}
+.aviso-privacidad{
+  color: #BE3228;
+  text-decoration: none;
+  font-family: helvetica;
+  font-size: 17px;
+}
+.div-2-2{
+  /*background: rgb(184, 65, 136);*/
+}
+
+.div-3{
+  /*background: rgb(224, 89, 33);*/
+  margin-top: 32px;
+  margin-bottom: 8px;
+  color: #1B1B1E;
+  font-family: helvetica;
+  font-size: 13px;
+}
+
+.div-4{
+  /*background: rgb(115, 142, 126);*/
+  color: #1B1B1E;
+  font-family: helvetica;
+  font-size: 13px;
+}
+
 .modaloverlay {
   background: rgba(0, 0, 0, 0.8);
   bottom: 0;
@@ -64,111 +146,34 @@
   top: 0;
   z-index: 1;
 }
-
-.btn-group {
-  margin: 4% 19% 0 16.5%;
-}
-
-/* Aqui agrego lo mio */
-
-
-.registro{
-    position: relative;
-    top: 50px;
-    width: 1020px;
-    height: 420px;
-    margin: 0 auto;
-    padding: 0px;
-    background: #fbfbfb;
-    box-shadow: 0px 0px 4px gray;
-    
-}
-
-.content{
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-#saludo{
-    /*float:left;*/
-    width: 60%;
-    height: 300px;
-    margin-left: 40px;
-    margin-right: 1%;
-    position: relative;
-}
-
-.panel-body{
-  /*float: left;*/
-  width: 90%;
-  margin-right: 1%;
-}
-
-.group-input{
-  margin-bottom: 10px;
-}
-
 .label{
-  float: left;
+  /*background: rgb(110, 184, 221);*/
+  text-align: left;
+  color: #6B6B6B;
+  font-family: 'Roboto',sans-serif;;
+  font-size: 14px;
+}
+.div-input{
+  margin-bottom: 16px;
+}
+.last-label{
+  /*background: rgb(110, 184, 221);*/
   text-align: right;
-  width: 40%;
+  color: #6B6B6B;
+  font-family: 'Roboto',sans-serif;;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 24px;
 }
 
-.separator-line{
-  float: right;
-  width: 70%;
-  margin: 0 5% 10px 0;
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-}
-
-#bienvenida{
-    font-family: helvetica;
-    font-size: 15px;
-    position: relative;
-    text-align: justify;
-    top: 40px;
-    color: black;
-}
-
-#aviso{
-    font-family: helvetica;
-    position: relative;
-    top: 20px;
-    text-decoration: none;
-    color: red;
-}
-
-#datos{
-    font-family: helvetica;
-    margin-top: 40px;
-    margin-left: 40px;
+.button1{
     float: left;
-    width: 455px;
-    height: 300px;
-}
-
-#entradas{
-    height: 30px;
-    width: 40%;
-    padding: 1px 14px;
-}
-
-.titulo{
-  width: 50%;
-  height: 32px;
-}
-
-.button{
-  float: left;
+    width: 100px;
+    height: 24px;
     background-color: #A4A4A4;
     color: white;
     border: none;
-    padding: 3px 15px;
+    padding: 3px 35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -178,10 +183,66 @@
 
 .button2{
     float: right;
+    width: 100px;
+    height: 24px;
     background-color: #DF0101;
     color: white;
     border: none;
-    padding: 8px 35px;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+.button2:hover{
+  background: #5E352A;
+}
+
+#entradas{
+    height: 28px;
+    width: 400px;
+    padding: 1px 14px;
+    border: none;
+    border: #ACABAB 1px solid;
+}
+#entradas:hover{
+  border: solid 1px #BE3228;
+  outline: none;
+}
+.emergente-aviso-privacidad{
+  /*background: rgb(73, 128, 24);*/
+  text-align: center;
+  color: #6B6B6B;
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+  height: 50px;
+}
+.emergente-texto-central{
+  /*background: rgb(193, 185, 224);*/
+  color: #6B6B6B;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+.div-btn{
+  /*background: rgb(162, 3, 52);*/
+  margin-top: 32px;
+  height: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.emergente-button1{
+    float: left;
+    width: 150px;
+    height: 30px;
+    background-color: #A4A4A4;
+    color: white;
+    border: none;
+    padding: 3px 35px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -189,12 +250,122 @@
     cursor: pointer;
 }
 
-.p{
+.emergente-button2{
+    float: right;
+    width: 150px;
+    height: 30px;
+    background-color: #DF0101;
+    color: white;
+    border: none;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+.emergente-button2:hover{
+  background: #5E352A;
+}
+
+
+/*.btn-group {
+  margin: 4% 19% 0 16.5%;
+}*/
+
+/* Aqui agrego lo mio */
+
+
+/*.registro{
+    position: relative;
+    top: 50px;
+    width: 1020px;
+    height: 420px;
+    margin: 0 auto;
+    padding: 0px;
+    background: #fbfbfb;
+    box-shadow: 0px 0px 4px gray;
+
+}*/
+
+
+
+/*#saludo{
+    float:left;
+    width: 60%;
+    height: 300px;
+    margin-left: 40px;
+    margin-right: 1%;
+    position: relative;
+}*/
+
+/*.panel-body{
+  float: left;
+  width: 90%;
+  margin-right: 1%;
+}*/
+
+/*.group-input{
+  margin-bottom: 10px;
+}*/
+
+/*.label{
+  float: left;
+  text-align: right;
+  width: 40%;
+}*/
+/*
+.separator-line{
+  float: right;
+  width: 70%;
+  margin: 0 5% 10px 0;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+}*/
+
+/*#bienvenida{
+    font-family: helvetica;
+    font-size: 15px;
+    position: relative;
+    text-align: justify;
+    top: 40px;
+    color: black;
+}*/
+
+/*#aviso{
+    font-family: helvetica;
+    position: relative;
+    top: 20px;
+    text-decoration: none;
+    color: red;
+}*/
+
+/*#datos{
+    font-family: helvetica;
+    margin-top: 40px;
+    margin-left: 40px;
+    float: left;
+    width: 455px;
+    height: 300px;
+}
+*/
+
+
+/*.titulo{
+  width: 50%;
+  height: 32px;
+}*/
+
+
+/*.p{
     font-size: 12px;
     width: 40%;
 
-}
-
+}*/
+/*
 .seccion{
     font-family: helvetica;
     font-size: 30px;
@@ -203,4 +374,4 @@
 
 .hre{
     width: 50%;
-}
+}*/
