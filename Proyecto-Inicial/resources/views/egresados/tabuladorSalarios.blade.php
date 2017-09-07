@@ -23,9 +23,8 @@
 		<!-- Filtros -->
 			<div class="buscar-salarios">
 				{!! Form::open(['url' => 'tabuladorSalarios', 'method' => 'GET', 'role' => 'search']) !!}
-					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscar']) !!}
+				{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscar']) !!}
 			</div>
-
 
 		<div class="div-3-1">
 			{!! Form::select('carrera', config('options.carreras'), null, ['class' => 'seleccion', "onchange" => "this.form.submit()"]) !!}

@@ -7,13 +7,13 @@
     "require": {
         "php": ">=5.6.4",
         "codeception/codeception": "*",
+        "consoletvs/charts": "^5.1",
+        "khill/lavacharts": "3.0.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "laravelcollective/html": "^5.4",
+        "laravelcollective/html": "^5.4.0",
         "league/csv": "^8.2",
-        "mpociot/laravel-test-factory-helper": "^0.4.0",
-        // Agregue esta linea para las graficas.
-        "khill/lavacharts" : "3.0.*"
+        "mpociot/laravel-test-factory-helper": "^0.4.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

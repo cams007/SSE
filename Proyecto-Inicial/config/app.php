@@ -183,8 +183,7 @@ return [
         /*
         * Agrega el servicio para las graficas
         */
-        Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
-
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
     ],
 
     /*
@@ -237,9 +236,9 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
 
         /*
-        * Alias para lo de las graficas
+        * Alias graficas
         */
-        'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
 
     ],
 
