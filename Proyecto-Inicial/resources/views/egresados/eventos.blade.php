@@ -27,15 +27,16 @@
 	 	<div class="div-2-2"><!--inicio div-2-2-->
 
 			<div class="div-2-2-1"> <!--inicio div-2-2-1-->
-				<div class="search">
+				<div class="buscar-eventos">
 					{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
 						{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}
 					{!! Form::close() !!}
 				</div>
 			</div><!--fin div-2-2-1-->
-
+			<div class="se-encontraron">
+				<p>Se encontraron {{ $eventos->total() }} eventos</p>
+			</div>
 		 	<div class="div-2-2-2"><!--inicio div-2-2-2-->
-		 	<p>Se encontraron {{ $eventos->total() }} eventos</p>
 		 		<ul>
 		 		@foreach($eventos as $evento)
 		 		<li data-evento="{{ $evento }}">
@@ -47,7 +48,10 @@
 
 					 	<div class="descripcion-foto"><!--inicio descripcion-foto-->
 						 	<div class="texto-descripcion"><!--inicio orquesta-div-1-->
-							 	<a href="#detalleEvento"><h2 class="texto-descripcion">{{ $evento->nombre }}</h2></a>
+
+							 		<a href="#detalleEvento" class="evento-nombre">{{ $evento->nombre }}</a>
+
+								<!-- <p class="evento-nombre">{{ $evento->nombre }}</p> -->
 						 	</div><!--fin orquesta-div-1-->
 
 							<div class="contenedor-fecha"><!--inicio cotenedor-fecha-->
@@ -64,12 +68,15 @@
 							 		<img src="{{ url('assets/images/eventos_location.png') }}" alt="" class="iconos">
 								</div><!--fin icono-ubicacion-->
 								<div class="texto-ubicacion"><!--inicio texto-ubicacion-->
-							 		<p class="texto-ubicacion">{{ $evento->lugar }}</p>
+							 		<!-- <p class="texto-ubicacion">{{ $evento->lugar }}</p> -->
+									{{ $evento->lugar }}
 								</div><!--fin texto-ubicacion-->
 						 	</div><!--fin contenedor-ubicacion-->
 
 						 	<div class="asistiras"><!--inicio foto1-asistiras-->
-							 	<p>¿Asistirás?</p>
+								<div class="texto-asistiras">
+							 		<p>¿Asistirás?</p>
+								</div>
 						 	</div><!--fin foto1-asistiras-->
 
 						 	<div class="botones-si-no">
@@ -84,17 +91,14 @@
 				@endforeach
 				</ul>
 			</div><!--fin div-2-2-2-->
-
+			<div class="div-2-2-3"><!--inicio div-2-2-3-->
+				<?php if (isset($_GET['q'])){ ?>
+				{!! $eventos->appends(['q' => $_GET["q"]])->render() !!}
+				<?php }else{ ?>
+					{!! $eventos->render() !!}
+				<?php } ?>
+			</div><!--fin div-2-2-3-->
 		</div><!--fin div-2-2-->
-
-		<div class="div-2-2-3"><!--inicio div-2-2-3-->
-			<?php if (isset($_GET['q'])){ ?>
-			{!! $eventos->appends(['q' => $_GET["q"]])->render() !!}
-			<?php }else{ ?>
-				{!! $eventos->render() !!}
-			<?php } ?>
-		</div><!--fin div-2-2-3-->
-
 	 <!--</div>-->
 
 	</div><!--fin div-2-->

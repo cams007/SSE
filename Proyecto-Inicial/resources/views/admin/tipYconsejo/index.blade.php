@@ -15,8 +15,11 @@
 			<p class="text-center">Tips y consejos</p>
 		</div><!--div-1-->
 
+<<<<<<< HEAD
 		@include('admin.partials.messages')<!--Mensages -->
 		
+=======
+>>>>>>> 315ac37d6394b44fd54c94762a8721890f0486dd
 		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
@@ -61,7 +64,12 @@
 		</div><!--div-5--><!--Fin del paginador-->
 	</div><!--contenedor-->
 
+<<<<<<< HEAD
 	<div id="showDelete" class="modaloverlay"> <!-- div-modaloverlay -->
+=======
+
+	<div id="EliminarEvento" class="modaloverlay"> <!-- div-modaloverlay -->
+>>>>>>> 315ac37d6394b44fd54c94762a8721890f0486dd
 		<div class="modal"> <!-- div-modal -->
 			<a href="#close" class="close">&times;</a>
 
@@ -90,7 +98,10 @@
 	</div>
 
 @stop
+<<<<<<< HEAD
 
 @section('script')
 <script src="{{ url('js/admin/tips.js') }}"></script>
 @stop
+=======
+>>>>>>> 315ac37d6394b44fd54c94762a8721890f0486dd

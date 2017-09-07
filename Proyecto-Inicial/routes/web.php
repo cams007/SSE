@@ -34,7 +34,7 @@ Route::group(['prefix' => 'perfil'], function() {
     Route::get('ofertaslab', function() {
         return view('egresados.perfil.ofertaslab');
     });
-    
+
     Route::post('/', 'PerfilController@saveDatosBasicos');
     Route::post('estudiosRealizados', 'PerfilController@saveFormacionPerson');
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
@@ -75,7 +75,7 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    
+
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::post('/', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
@@ -132,4 +132,3 @@ Route::group(['prefix' => 'admin'], function() {
     });
 
 });
-
