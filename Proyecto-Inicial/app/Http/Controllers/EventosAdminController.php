@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Evento;
+use Session;
 use Auth;
 
 class EventosAdminController extends Controller
@@ -80,6 +81,7 @@ class EventosAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
+        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/eventos');//Redireccionamos al index de eventos
     }
 
@@ -153,7 +155,7 @@ class EventosAdminController extends Controller
             }
             DB::commit();
         }
-
+        Session::flash('update', 'se ha actualizado correctamente');
         return redirect('admin/eventos');//Redireccionamos al index de eventos
         
     }

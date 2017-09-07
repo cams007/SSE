@@ -4,11 +4,12 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title> SSE - @yield('title')</title>
       <link href="{{ url('css/base.css') }}" rel="stylesheet">
       @yield('style')
 
       <!-- <link href="{{ url('assets/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet"> -->
+      <!--Mensaje alert-->
+      <title> SSE - @yield('title')</title>
   </head>
   <body>
   <div class="page-wrap">
@@ -64,7 +65,6 @@
               </div>
             </div>
       </header>
-
       <div class="block">
           @yield('content')
       </div>

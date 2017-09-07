@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Egresado;
 use App\Preparacion;
+use Session;
 
 class EgresadosAdminController extends Controller
 {
@@ -64,6 +65,7 @@ class EgresadosAdminController extends Controller
         }
         DB::commit();
 
+        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 
@@ -102,6 +104,7 @@ class EgresadosAdminController extends Controller
         }
         DB::commit();
 
+        Session::flash('update', 'se ha actualizado correctamente');
         return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 
