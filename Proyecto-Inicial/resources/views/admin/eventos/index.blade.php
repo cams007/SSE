@@ -12,8 +12,9 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Eventos UTM</p>
-
 		</div><!--div-1-->
+
+		@include('admin.partials.messages')<!--Mensages -->
 		
 		<a href="{{url('/admin/eventos/crearEvento')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear Evento-->
 

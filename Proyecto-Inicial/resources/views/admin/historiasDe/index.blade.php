@@ -12,8 +12,9 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Historias de éxito</p>
-
 		</div><!--div-1-->
+
+		@include('admin.partials.messages')<!--Mensages que se muestran para al creal,eliminar,edit-->
 		
 		<a href="{{url('/admin/historiasdeExito/crearHistoriaDe')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 

@@ -4,11 +4,16 @@
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title> SSE - @yield('title')</title>
       <link href="{{ url('css/base.css') }}" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <!--<meta name="csrf-token" content="{{ csrf_token() }}">-->
+
+      <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">-->
       @yield('style')
 
       <!-- <link href="{{ url('assets/bootstrap/css/bootstrap-theme.min.css') }}" rel="stylesheet"> -->
+      <!--Mensaje alert-->
+      <title> SSE - @yield('title')</title>
   </head>
   <body>
   <div class="page-wrap">
@@ -64,7 +69,6 @@
               </div>
             </div>
       </header>
-
       <div class="block">
           @yield('content')
       </div>
