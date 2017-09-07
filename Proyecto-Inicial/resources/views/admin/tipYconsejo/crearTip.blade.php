@@ -17,13 +17,16 @@
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearTipConsejo.submit') }}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-
+			
+			<img src="{{ url('assets/images/crear.png') }}" alt="">
 			<label for="" class="">Titulo: </label>
 	 		<input type="text" name="titulo" required/>
-
+			
+			<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
 	 		
+	 		<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Foto: </label>
 	 		<input name="imagen" type="file" required/>
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Empresa;
 use App\Contacto;
+use Session;
 
 class EmpresasAdminController extends Controller
 {
@@ -98,7 +99,7 @@ class EmpresasAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
-
+        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 
@@ -224,6 +225,7 @@ class EmpresasAdminController extends Controller
                 DB::commit();
             }
         }
+        Session::flash('update', 'se ha actualizado correctamente');
         return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 }

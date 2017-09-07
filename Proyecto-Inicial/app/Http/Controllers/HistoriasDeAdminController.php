@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\HistoriaExito;
 use Auth;
+use Session;
 
 class HistoriasDeAdminController extends Controller
 {
@@ -72,6 +73,7 @@ class HistoriasDeAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
+        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/historiasdeExito');//Redireccionamos al index de eventos
     }
 
@@ -147,7 +149,7 @@ class HistoriasDeAdminController extends Controller
             }
             DB::commit();
         }
-
+        Session::flash('update', 'se ha actualizado correctamente');
         return redirect('admin/historiasdeExito');//redireccionamos a la url del index
 
     }
