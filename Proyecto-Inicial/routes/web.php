@@ -124,7 +124,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/crearTipConsejo','TipsYConsejosAdminController@saveCrearTip')->name('admin.crearTipConsejo.submit');
         Route::get('/editarTipConsejo/{id}','TipsYConsejosAdminController@showEditarTip')->name('admin.editarTipConsejo');
         Route::post('/editarTipConsejo','TipsYConsejosAdminController@saveEditarTip')->name('admin.editarTipConsejo.submit');
-        Route::delete('/eliminarTipConsejo/{id}','TipsYConsejosAdminController@showEliminarTip')->name('admin.eliminarTipConsejo.submit');
+        Route::post('/eliminarTipConsejo','TipsYConsejosAdminController@showEliminarTip')->name('admin.eliminarTipConsejo.submit');
     });
 
     Route::group(['prefix' => 'ofertas'], function(){

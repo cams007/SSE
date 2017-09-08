@@ -152,14 +152,12 @@ class TipsYConsejosAdminController extends Controller
         return redirect('admin/tipConsejo');//redireccionamos a la url del index
     }
 
-    public function showEliminarTip(Request $request,$id){
-        //$tip = Tip::destroy($id);
+    public function showEliminarTip(Request $request){
 
-        //return redirect('admin/tipConsejo');//redireccionamos a la url del index
-        if($request->isMethod('ajax')){
-            $x = 2;
-            return x;
-        }
+        $tip = DB::table('Tip')->where('id',"$request->id")->first();
+        Tip::destroy($request->id);
+
+        return redirect('admin/tipConsejo');//redireccionamos a la url del index
     }
 
 }
