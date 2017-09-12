@@ -161,15 +161,20 @@ class EventosAdminController extends Controller
     }
 
     public function eliminarEvento(Request $request){
+        
         //Obtenemos de la BD los datos del evento a eliminar.
         $evento = Evento::findOrFail($request->id);
+        DB::beginTransaction();
         try{
-            unlink($evento->imagen_url);//Eliminamos la imagen
             $evento->delete();  //Elimina el elemnto de la BD
-            return redirect('admin/eventos');
         }catch(Exception $e){
-            return "Fatal errror" .$e->getMessage();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
         }
+        DB::commit();
+        unlink($evento->imagen_url);//Eliminamos la imagen
+
+        Session::flash('save', 'se ha actualizado correctamente');
+        return redirect('admin/eventos');//Redireccionamos al index de eventos
     }
 
 }

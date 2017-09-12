@@ -228,4 +228,25 @@ class EmpresasAdminController extends Controller
         Session::flash('update', 'se ha actualizado correctamente');
         return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
     }
+
+    public function eliminarEmpresa(Request $request){
+
+        //Obtiene la por medio del id la empresa a eliminar
+        $empresa = Empresa::find($request->id);
+        $contacto = Contacto::find($empresa->contacto_id);
+
+        DB::beginTransaction();
+        try{
+            $empresa->delete();
+            $contacto->delete();
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        unlink($empresa->imagen_url);//Elimina la imagen
+
+        Session::flash('save', 'se ha actualizado correctamente');
+        return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
+    }
 }

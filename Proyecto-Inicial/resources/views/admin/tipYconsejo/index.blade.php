@@ -7,6 +7,7 @@
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -15,11 +16,8 @@
 			<p class="text-center">Tips y consejos</p>
 		</div><!--div-1-->
 
-<<<<<<< HEAD
 		@include('admin.partials.messages')<!--Mensages -->
 		
-=======
->>>>>>> 315ac37d6394b44fd54c94762a8721890f0486dd
 		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
@@ -32,20 +30,19 @@
 		
 		<table> <!--Contenido de la pagina-->
 			<thead>
-					<td>Titulo</td>
-					<td>Descripción</td>
-					<td>Acción</td>
-				</tr>
+				<td>Titulo</td>
+				<td>Descripción</td>
+				<td>Acción</td>
 			</thead>
 			<!--Recibimos del controlador TipsYConsejosAdminController $tips-->
 			<tbody>
 			@foreach($tips as $tip)
-			<tr data-id="{{$tip->id}}">
+			<tr data-tip="{{$tip}}">
 				<td>{{ $tip->titulo}}</td>
 				<td> <?php  $imp =substr($tip->descripcion,0,20); echo $imp;?> </td><!--se muestran 20 caracteres de la descripción-->
 				<td>
 					<a href="{{route('admin.editarTipConsejo', $tip)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-          			<button class="btn-showDelete" value="{{$tip->id}}">Eliminar</button><!--Eliminar-->
+					<a href="#eliminarTip" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a>
 				</td>
 			</tr>
 	        @endforeach
@@ -64,44 +61,47 @@
 		</div><!--div-5--><!--Fin del paginador-->
 	</div><!--contenedor-->
 
-<<<<<<< HEAD
-	<div id="showDelete" class="modaloverlay"> <!-- div-modaloverlay -->
-=======
-
-	<div id="EliminarEvento" class="modaloverlay"> <!-- div-modaloverlay -->
->>>>>>> 315ac37d6394b44fd54c94762a8721890f0486dd
+	<!--Ventana emergente para eliminar-->
+	<div id="eliminarTip" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
 			<a href="#close" class="close">&times;</a>
-
 			<div class="parte-1"><!--parte-1-->
-				<p class="txt">Dato del evento</p>
+				<p class="txt">Eliminar Tip</p>
 			</div><!--parte-1-->
 			
-				<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-				<input name="id" type="hidden" value="id" />
-				<div>
-					<h4>Titulo</h4>
-					<span id="titulo_tip"></span>
-				</div>
+			<form action="{{route('admin.eliminarTipConsejo.submit')}}" method="post">
+				<div class="parte-2"><!--parte-2-->
+					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
-				<div>
-					<h4>Descripción</h4>
-					<span id="descripcion_tip"></span>
-				</div>
+					<div class="descripcion" id="t_id"></div>
 
-				<div>
-					<h4>imagen</h4>
-					<div id="img_tip"></div>
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+						<div class="descripcion" id="t_titulo"></div><!--descripcion-->
+					</div><!--item-1-->
+
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+						<div class="descripcion" id="t_descripcion"></div><!--descripcion-->
+					</div><!--item-1-->
+
+					<div class="item-1"><!--item-1-->
+						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+						<div class="descripcion" id="t_imgen"></div><!--descripcion-->
+					</div><!--item-1-->
+					
+					<!--<a href="{{ URL::previous() }}">Volver</a>-->
+					<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
+					<button type="submit" class="flat">Enviar</button>
 				</div>
-				<div id="respuesta">Hola</div>
-		</div>
-	</div>
+			</form>
+
+		</div> <!-- div-modal -->
+	</div> <!-- div-modaloverlay -->
+
 
 @stop
-<<<<<<< HEAD
 
 @section('script')
 <script src="{{ url('js/admin/tips.js') }}"></script>
 @stop
-=======
->>>>>>> 315ac37d6394b44fd54c94762a8721890f0486dd
