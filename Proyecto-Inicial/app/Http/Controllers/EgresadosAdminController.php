@@ -108,4 +108,22 @@ class EgresadosAdminController extends Controller
         return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 
+    public function eliminarEgresado(Request $request){
+
+        $egresado = Egresado::findOrFail($request->matricula);
+
+        DB::beginTransaction();
+        try{
+            $egresado->habilitado = 0;
+            $egresado->save();
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+
+        Session::flash('update', 'se ha eliminado correctamente');
+        return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
+    }
+
 }

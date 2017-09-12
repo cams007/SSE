@@ -154,9 +154,20 @@ class TipsYConsejosAdminController extends Controller
 
     public function showEliminarTip(Request $request){
 
-        $tip = DB::table('Tip')->where('id',"$request->id")->first();
-        Tip::destroy($request->id);
+        $tip = DB::table('Tip')->where('id',"$request->id")->first();//Obtenemos el elemento a eliminar
 
+        //se hace uso de transacciones por si en algún momento falla algo
+        DB::beginTransaction();
+        try{
+            Tip::destroy($request->id);
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR(' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        unlink($tip->imagen_url);//Elimina la imagen
+
+        Session::flash('save', 'se ha eliminado correctamente');
         return redirect('admin/tipConsejo');//redireccionamos a la url del index
     }
 

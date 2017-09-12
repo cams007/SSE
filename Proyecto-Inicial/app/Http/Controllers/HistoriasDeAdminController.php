@@ -153,4 +153,24 @@ class HistoriasDeAdminController extends Controller
         return redirect('admin/historiasdeExito');//redireccionamos a la url del index
 
     }
+
+    public function EliminarHistoria(Request $request){
+
+        $historia = HistoriaExito::find($request->id);//Recuperamos elemento a eliminar
+
+        //Se hace uso de las transacciones
+        DB::beginTransaction();
+        try{
+            $historia->delete();//Elimina el elemento de la BD
+            //HistoriaExito::destroy($request->id);
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        unlink($historia->imagen_url);//Elimina la imagen
+
+        Session::flash('save', 'se ha eliminado correctamente');
+        return redirect('admin/historiasdeExito');//redireccionamos a la url del index
+    }
 }

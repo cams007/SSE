@@ -86,6 +86,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/crearEgresado','EgresadosAdminController@saveEgresado')->name('admin.crearEgresado.submit');
         Route::get('/editarEgresado/{ma}','EgresadosAdminController@showEditarEgresado')->name('admin.editarEgresado');
         Route::post('/editarEgresado','EgresadosAdminController@saveEditarEgresado')->name('admin.editarEgresado.submit');
+        Route::post('/eliminarEgresado','EgresadosAdminController@eliminarEgresado')->name('admin.eliminarEgresado.submit');
     });
 
     //Grupo de rutas para las vistas de empresas (admin/empresas/..)
@@ -95,6 +96,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/crearEmpresa','EmpresasAdminController@saveCrearEmresa')->name('admin.crearEmpresa.submit');
         Route::get('/editarEmpresa/{id}','EmpresasAdminController@showEditarEmpresa')->name('admin.editarEmpresa');
         Route::post('/editarEmpresa','EmpresasAdminController@saveEditarEmpresa')->name('admin.editarEmpresa.submit');
+        Route::post('/eliminarEmpresa','EmpresasAdminController@eliminarEmpresa')->name('admin.eliminarEmpresa.submit');
     });
 
     //Grupo de rutas para las vistas de eventos (admin/eventos/..)
@@ -104,7 +106,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/crearEvento','EventosAdminController@saveEvento')->name('admin.crearEvento.submit');
         Route::get('/editarEvento/{id}','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
         Route::post('/editarEvento','EventosAdminController@saveEditarEvento')->name('admin.editarEvento.submit');
-        Route::get('/eliminarEvento/{id}','EventosAdminController@eliminarEvento')->name('admin.eliminarEvento');
+        Route::post('/eliminarEvento','EventosAdminController@eliminarEvento')->name('admin.eliminarEvento.submit');
 
     });
 
@@ -115,6 +117,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/crearHistoriaDe','HistoriasDeAdminController@saveHistoria')->name('admin.crearHistoria.submit');
         Route::get('/editarHistoriaDe/{id}','HistoriasDeAdminController@showEditarHistoria')->name('admin.editarHistoria');
         Route::post('/editarHistoriaDe','HistoriasDeAdminController@saveEditarHistoria')->name('admin.editarHistoria.submit');
+        Route::post('/eliminarHistoriaDe','HistoriasDeAdminController@EliminarHistoria')->name('admin.eliminarHistoria.submit');
     });
 
     //Grupo de rutas para los tips y consejos. (admin/tipConsejo/..)

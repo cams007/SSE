@@ -30,10 +30,9 @@
 		
 		<table> <!--Contenido de la pagina-->
 			<thead>
-					<td>Titulo</td>
-					<td>Descripción</td>
-					<td>Acción</td>
-				</tr>
+				<td>Titulo</td>
+				<td>Descripción</td>
+				<td>Acción</td>
 			</thead>
 			<!--Recibimos del controlador TipsYConsejosAdminController $tips-->
 			<tbody>
@@ -62,6 +61,7 @@
 		</div><!--div-5--><!--Fin del paginador-->
 	</div><!--contenedor-->
 
+	<!--Ventana emergente para eliminar-->
 	<div id="eliminarTip" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
 			<a href="#close" class="close">&times;</a>
