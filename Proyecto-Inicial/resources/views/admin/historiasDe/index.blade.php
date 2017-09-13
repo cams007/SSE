@@ -38,7 +38,7 @@
 			<tbody>
 				@foreach($historias as $historia)
 				<tr data-historia="{{$historia}}">
-					<td>{{ $historia->titulo}}</td>
+					<td><a href="#verHistoria" class="btn-show">{{ $historia->titulo}}</a></td>
 					<td> <?php  $imp =substr($historia->descripcion,0,20); echo $imp;?> </td><!--se muestran 20 caracteres de la descripción-->
 					<td>
 						<a href="{{route('admin.editarHistoria', $historia)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
@@ -92,6 +92,37 @@
 					<button type="submit" class="flat">Eliminar</button>
 				</div>
 			</form>
+		</div> <!-- div-modal -->
+	</div> <!-- div-modaloverlay -->
+
+	<!--ventana emergente para ver-->
+	<div id="verHistoria" class="modaloverlay"> <!-- div-modaloverlay -->
+		<div class="modal"> <!-- div-modal -->
+			<a href="#close" class="close">&times;</a>
+			<div class="parte-1"><!--parte-1-->
+				<p class="txt">Ver Historia de éxito</p>
+			</div><!--parte-1-->
+			
+			<div class="parte-2"><!--parte-2-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="hv_titulo"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="hv_descripcion"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="hv_imgen"></div><!--descripcion-->
+				</div><!--item-1-->
+					
+					<!--<a href="{{ URL::previous() }}">Volver</a>-->
+				<a href="#close"><button type="button" class="flat-secundario">Regresar</button></a>
+			</div>
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
 

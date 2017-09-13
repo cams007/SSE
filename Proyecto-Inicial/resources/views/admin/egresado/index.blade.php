@@ -45,7 +45,7 @@
 			<tr data-egresado="{{$egresado}}" data-preparacion="{{$egresado->preparacion}}">
 				<td>{{$i}}</td>
 				<td>{{$egresado->matricula}}</td>
-				<td>{{$egresado->ap_paterno}} {{$egresado->ap_materno}} {{$egresado->nombres}}</td>
+				<td><a href="#verEgresado" class="btn-show">{{$egresado->ap_paterno}} {{$egresado->ap_materno}} {{$egresado->nombres}}</a></td>
 				<td>@foreach($carrera as $idn=>$nombre)
 						@if($egresado->preparacion->carrera == $idn)
 							{{$nombre}}
@@ -147,6 +147,76 @@
 				</div>
 			</form>
 
+		</div> <!-- div-modal -->
+	</div> <!-- div-modaloverlay -->
+
+	<!--Ventana emergente para ver-->
+	<div id="verEgresado" class="modaloverlay"> <!-- div-modaloverlay -->
+		<div class="modal"> <!-- div-modal -->
+			<a href="#close" class="close">&times;</a>
+			<div class="parte-1"><!--parte-1-->
+				<p class="txt">Ver Egresado</p>
+			</div><!--parte-1-->
+			
+			<div class="parte-2"><!--parte-2-->
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egv_nombreComp"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egv_curp"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egv_genero"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egv_fechaNac"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egv_nacionalidad"></div><!--descripcion-->
+				</div><!--item-1-->
+					
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egv_telefono"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egv_lugarOrig"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egPrv_carrera"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egPrv_generacion"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egPrv_fechaI"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="egPrv_fechaF"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<!--<a href="{{ URL::previous() }}">Volver</a>-->
+				<a href="#close"><button type="button" class="flat-secundario">Regresar</button></a>
+			</div>
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
 

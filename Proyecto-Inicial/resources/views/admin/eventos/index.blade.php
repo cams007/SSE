@@ -39,7 +39,7 @@
 			<tbody>
 			@foreach($eventos as $evento)
 			<tr data-evento="{{$evento}}">
-				<td>{{ $evento->nombre}}</td>
+				<td><a href="#verEvento" class="btn-show">{{ $evento->nombre}}</a></td>
 				<td>{{ $evento->lugar }}</td>
 				<td>{{ $evento->fecha }}</td>
 				<td>{{ $evento->categoria}}</td>
@@ -111,6 +111,51 @@
 				</div>
 			</form>
 
+		</div> <!-- div-modal -->
+	</div> <!-- div-modaloverlay -->
+
+	<!--Ventana emergente para ver-->
+	<div id="verEvento" class="modaloverlay"> <!-- div-modaloverlay -->
+		<div class="modal"> <!-- div-modal -->
+			<a href="#close" class="close">&times;</a>
+			<div class="parte-1"><!--parte-1-->
+				<p class="txt">Ver Evento</p>
+			</div><!--parte-1-->
+			
+			<div class="parte-2"><!--parte-2-->
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_nombre"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_descripcion"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_lugar"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_fecha"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_categoria"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_imgen"></div><!--descripcion-->
+				</div><!--item-1-->
+					
+				<!--<a href="{{ URL::previous() }}">Volver</a>-->
+				<a href="#close"><button type="button" class="flat-secundario">Regresar</button></a>
+				</div>
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
 

@@ -38,7 +38,7 @@
 			<tbody>
 				@foreach($empresas as $empresa)
 				<tr data-empresa="{{$empresa}}">
-					<td>{{$empresa->nombre}}</td>
+					<td><a href="#verEmpresa" class="btn-show">{{$empresa->nombre}}</a></td>
 					<td>{{$empresa->ciudad}}</td>
 					<td>{{$empresa->telefono}}</td>
 					<td>{{$empresa->descripcion}}</td>
@@ -155,6 +155,100 @@
 				</div>
 			</form>
 
+		</div> <!-- div-modal -->
+	</div> <!-- div-modaloverlay -->
+
+	<!--Ventana emergente para ver-->
+	<div id="verEmpresa" class="modaloverlay"> <!-- div-modaloverlay -->
+		<div class="modal"> <!-- div-modal -->
+			<a href="#close" class="close">&times;</a>
+			<div class="parte-1"><!--parte-1-->
+				<p class="txt">Ver Empresa</p>
+			</div><!--parte-1-->
+			
+			<div class="parte-2"><!--parte-2-->
+				<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+
+				<div class="descripcion" id="ev_id"></div>
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_nombre"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_descripcion"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_rfc"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_sector"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_giro"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_tel"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_correo"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_calle"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_numero"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_colonia"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_ciudad"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_estado"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_codigoP"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_paginaWeb"></div><!--descripcion-->
+				</div><!--item-1-->
+
+				<div class="item-1"><!--item-1-->
+					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
+					<div class="descripcion" id="ev_imgen"></div><!--descripcion-->
+				</div><!--item-1-->
+					
+				<!--<a href="{{ URL::previous() }}">Volver</a>-->
+				<a href="#close"><button type="button" class="flat-secundario">Regresar</button></a>
+			</div>
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
 
