@@ -131,7 +131,7 @@ class EmpresasAdminController extends Controller
 
             $valido = file_exists($empresaEdit->imagen_url);//Si existe la imagen TRUE
 
-            if(isset($request->imagen_url)){
+            if(isset($request->imagen)){
                 $img_actual = $empresaEdit->imagen_url;//img en carpeta dle servidor
                 $imagen_ban = 1;
             }
