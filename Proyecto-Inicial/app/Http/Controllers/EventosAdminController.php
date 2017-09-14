@@ -12,7 +12,7 @@ class EventosAdminController extends Controller
 {
     public function index(Request $request) {
 
-        $eventos = Evento::titulo($request->get('q'))->orderBy('fecha', 'DESC')->paginate(8);
+        $eventos = Evento::todo($request->get('q'))->where('activo','=',1)->orderBy('fecha', 'DESC')->paginate(10);
 
         return view('admin.eventos.index', compact('eventos'));
     }
@@ -166,7 +166,8 @@ class EventosAdminController extends Controller
         $evento = Evento::findOrFail($request->id);
         DB::beginTransaction();
         try{
-            $evento->delete();  //Elimina el elemnto de la BD
+            $evento->activo = 0;
+            $evento->save();  //Se cambia de estado el evento.
         }catch(Exception $e){
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
         }

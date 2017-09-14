@@ -12,8 +12,8 @@ class EgresadosAdminController extends Controller
 {
 	public function index(Request $request) {
 
-        $egresados = Egresado::titulo($request->get('q'))->orderBy('ap_paterno', 'DESC')->paginate(8);
-
+        $egresados = Egresado::todo($request->get('q'))->where('habilitado','=',1)->orderBy('ap_paterno', 'DESC')->paginate(10);
+        //$egresados = Egresado::where('habilitado', '=',1)->orderBy('created_at', 'DESC')->paginate(10);
         return view('admin.egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
     }
 

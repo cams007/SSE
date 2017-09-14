@@ -12,7 +12,7 @@ class EmpresasAdminController extends Controller
 {
     public function index(Request $request) {
 
-        $empresas = empresa::nombre($request->get('q'))->orderBy('nombre', 'DESC')->paginate(8);
+        $empresas = empresa::todo($request->get('q'))->where('habilitada','=',1)->orderBy('nombre', 'DESC')->paginate(10);
 
         return view('admin.empresa.index', compact('empresas'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
     }
@@ -237,8 +237,8 @@ class EmpresasAdminController extends Controller
 
         DB::beginTransaction();
         try{
-            $empresa->delete();
-            $contacto->delete();
+            $empresa->habilitada=0;
+            $empresa->save();
         }catch(Exception $e){
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
