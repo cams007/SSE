@@ -29,10 +29,14 @@
 	 		
 	 		<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Foto: </label>
-	 		<input name="imagen" type="file"/>
-	 		<img src="{{ url($tip->imagen_url)}}" alt=""/>
+	 		<input id="file-input" name="imagen" type="file"/>
+	 		<img id="imgSalida" src="{{ url($tip->imagen_url)}}" alt=""/>
 
 	 		<button type="submit" class="flat">Enviar</button>
 		</form>
 	</div><!--contenedor-->
+@stop
+
+@section('script')
+<script src="{{ url('js/admin/tips.js') }}"></script>
 @stop

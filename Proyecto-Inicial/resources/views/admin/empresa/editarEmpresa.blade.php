@@ -88,8 +88,8 @@
 			
 			<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Fotografía de la empresa: </label>
-	 		<input type="file" name="imagen"/>
-	 		<img src="{{ url($empresa->imagen_url)}}" alt=""/>
+	 		<input id="file-input" name="imagen" type="file"/>
+	 		<img id="imgSalida" src="{{ url($empresa->imagen_url)}}" alt=""/>
 
 	 		<input name="contacto_id" type="hidden" value="{{$empresa->contacto_id}}" />
 			
@@ -120,9 +120,13 @@
 	 		<label for="" class="">Correo electrónico: </label>
 	 		<input type="email" name="email_cont" value="{{$contacto->correo}}"/>
 
-	 		<button type="submit" class="flat">Enviar</button>
+	 		<button type="submit" class="flat">Editar</button>
 		</form>	
 	
 	</div><!--contenedor-->
 
+@stop
+
+@section('script')
+<script src="{{ url('js/admin/empresa.js') }}"></script>
 @stop

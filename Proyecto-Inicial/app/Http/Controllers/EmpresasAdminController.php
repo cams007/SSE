@@ -12,7 +12,7 @@ class EmpresasAdminController extends Controller
 {
     public function index(Request $request) {
 
-        $empresas = empresa::nombre($request->get('q'))->orderBy('nombre', 'DESC')->paginate(8);
+        $empresas = empresa::todo($request->get('q'))->where('habilitada','=',1)->orderBy('nombre', 'DESC')->paginate(10);
 
         return view('admin.empresa.index', compact('empresas'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
     }
@@ -131,7 +131,7 @@ class EmpresasAdminController extends Controller
 
             $valido = file_exists($empresaEdit->imagen_url);//Si existe la imagen TRUE
 
-            if(isset($request->imagen_url)){
+            if(isset($request->imagen)){
                 $img_actual = $empresaEdit->imagen_url;//img en carpeta dle servidor
                 $imagen_ban = 1;
             }
@@ -226,6 +226,27 @@ class EmpresasAdminController extends Controller
             }
         }
         Session::flash('update', 'se ha actualizado correctamente');
+        return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
+    }
+
+    public function eliminarEmpresa(Request $request){
+
+        //Obtiene la por medio del id la empresa a eliminar
+        $empresa = Empresa::find($request->id);
+        $contacto = Contacto::find($empresa->contacto_id);
+
+        DB::beginTransaction();
+        try{
+            $empresa->habilitada=0;
+            $empresa->save();
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        unlink($empresa->imagen_url);//Elimina la imagen
+
+        Session::flash('save', 'se ha actualizado correctamente');
         return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 }

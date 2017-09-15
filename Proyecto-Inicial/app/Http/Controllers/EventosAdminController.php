@@ -12,7 +12,7 @@ class EventosAdminController extends Controller
 {
     public function index(Request $request) {
 
-        $eventos = Evento::titulo($request->get('q'))->orderBy('fecha', 'DESC')->paginate(8);
+        $eventos = Evento::todo($request->get('q'))->where('activo','=',1)->orderBy('fecha', 'DESC')->paginate(10);
 
         return view('admin.eventos.index', compact('eventos'));
     }
@@ -161,15 +161,21 @@ class EventosAdminController extends Controller
     }
 
     public function eliminarEvento(Request $request){
+        
         //Obtenemos de la BD los datos del evento a eliminar.
         $evento = Evento::findOrFail($request->id);
+        DB::beginTransaction();
         try{
-            unlink($evento->imagen_url);//Eliminamos la imagen
-            $evento->delete();  //Elimina el elemnto de la BD
-            return redirect('admin/eventos');
+            $evento->activo = 0;
+            $evento->save();  //Se cambia de estado el evento.
         }catch(Exception $e){
-            return "Fatal errror" .$e->getMessage();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
         }
+        DB::commit();
+        unlink($evento->imagen_url);//Eliminamos la imagen
+
+        Session::flash('save', 'se ha actualizado correctamente');
+        return redirect('admin/eventos');//Redireccionamos al index de eventos
     }
 
 }
