@@ -51,8 +51,8 @@
 			
 			<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Poster del evento: </label>
-	 		<input name="imagen" type="file"/>
-	 		<img src="{{ url($evento->imagen_url)}}" alt=""/>
+	 		<input id="file-input" name="imagen" type="file"/>
+	 		<img id="imgSalida" src="{{ url($evento->imagen_url)}}" alt=""/>
 
 	 		<button type="submit" class="flat">
 						Editar
@@ -61,4 +61,8 @@
 
 	</div><!--contenedor-->
 
+@stop
+
+@section('script')
+<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop

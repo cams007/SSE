@@ -42,15 +42,18 @@
 			
 			<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Poster del evento: </label>
-	 		<input name="imagen" type="file" required/>
+	 		<input id="file-input" name="imagen" type="file" required/>
+	 		<img id="imgSalida" src="" />
 
 	 		<input type="hidden" name="activo" value="1" placeholder=""/>
 
-	 		<button type="submit" class="flat">
-						Enviar
-			</button>
+	 		<button type="submit" class="flat">Crear</button>
 		</form>
 
 	</div><!--contenedor-->
 
+@stop
+
+@section('script')
+<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop
