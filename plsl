@@ -1,0 +1,149 @@
+[33m01a058a[m Merge branch 'master' into lorenzo
+[33m2d7d294[m Merge branch 'master' of https://github.com/cams007/SSE
+[33m35a2dfd[m Todas las consultas estaticas ya estan definidas
+[33m251c933[m Merge pull request #63 from cams007/yezhel
+[33m77ad405[m Merge branch 'yezhel' of https://github.com/cams007/SSE into yezhel
+[33m3a9880a[m elimine un link de jQuery
+[33m04fbce1[m Enlaces de los iconos.
+[33maf4d18a[m Cambios
+[33m15891e1[m Cambios al directorio local
+[33m1a79b49[m estilos registrarme
+[33mf93cd62[m Merge branch 'master' into marcos
+[33m3f22956[m Merge pull request #62 from cams007/yezhel
+[33m315ac37[m Merge branch 'master' into yezhel
+[33me144022[m Modificación a la barra de navegación y poner el buscador en todos los índex
+[33m72c1275[m estilos botones
+[33mb414634[m Agregar numeración en egresado y mostrar nombre de la carrera en el índex
+[33m4332a7f[m Merge branch 'master' into lorenzo
+[33m4ba8478[m Lavachar y rutas estadisticas
+[33ma72a8a2[m Merge pull request #61 from cams007/yezhel
+[33maa24c36[m transacciones para egresados en crear y edita.
+[33m0b47e5e[m Lavachart, rutas estadisticas
+[33m99a5d65[m Merge branch 'marcos'
+[33m281479b[m Merge branch 'master' of https://github.com/cams007/SSE
+[33m68ca1b2[m Merge pull request #60 from cams007/yezhel
+[33m5fdf695[m Modificaciones a egresados y el master
+[33maef4d81[m correccion tabulador-salarios
+[33m07eaf79[m no changes
+[33m6d5a9dd[m Update EgresadosAdminController.php
+[33m323830e[m estilos home
+[33m214be32[m estilos popup
+[33meebb2dd[m estilos tips y consejos
+[33mbd3e90c[m estilos Hitoria de exito
+[33mb1965ef[m estilos eventosUTM
+[33med03b7d[m Editar empresa listo con transaccion
+[33mcfeeee6[m Merge pull request #59 from cams007/yezhel
+[33m759f52a[m Crear empresa y egresado con transacción
+[33mcdffc9e[m estilos tabulador-salarios
+[33me906da9[m Merge branch 'master' of https://github.com/cams007/SSE
+[33mae00f15[m estilos ofertas laborales
+[33m886d8c7[m Merge pull request #58 from cams007/yezhel
+[33me7fee79[m Vistas de historiasDe y tipYconsejo.
+[33m277f5b8[m Merge pull request #57 from cams007/yezhel
+[33mfd2b39c[m Merge commit '2acbe4ce5756b4f51bd907ae052e6a390c9478bc' into yezhel
+[33m475e84f[m Se crearon vistas de admin.empresa y se eliminaron carpetas de Admin
+[33m2acbe4c[m Merge pull request #56 from cams007/yezhel
+[33mc0f3afc[m Merge commit '022b0e10532307812a70161ca3df06f1ab8146ef' into yezhel
+[33mcf927d9[m Se eliminaron dos vistas creo y editar empresa
+[33m022b0e1[m Merge pull request #55 from cams007/yezhel
+[33me748ee0[m modificación en controladores de historias y tips
+[33ma102cc4[m Merge pull request #54 from cams007/yezhel
+[33m797ee09[m Modificación empresa controller
+[33m8c50b68[m agregando archivo AuthenticasteUser
+[33m124b1b4[m Merge pull request #53 from cams007/yezhel
+[33ma2f4d20[m Tips, historias de éxito y eventos con transacción en crear y edita, así como modificaciones para subir la imagen y required en las vistas de crear
+[33mbca5c73[m Transacción de crear historia de éxito
+[33m14c9dee[m Crear y editar Tip y consejo. Listo el formato de imágenes y tamaño de la imagen a subir
+[33m734a419[m Merge pull request #52 from cams007/yezhel
+[33m3324228[m Controlador para ofertas y modificación de la barra de navegación.
+[33m0a97a6b[m Modificaciones al controlador de empresas
+[33mfc8c67a[m Merge pull request #51 from cams007/yezhel
+[33m5344621[m Empresa Crear
+[33mdec5478[m Merge pull request #50 from cams007/yezhel
+[33m0c32a1d[m Crear y Editar egresados.
+[33mde43145[m Merge pull request #49 from cams007/Adrian
+[33m70de0bc[m Icono de crear, editar y eliminar en los index
+[33mbb9fcf7[m Merge pull request #48 from cams007/yezhel
+[33me9efb09[m Crear egresado
+[33m08567b5[m Empresa y Egresado
+[33mb15bd73[m Merge pull request #47 from cams007/yezhel
+[33mb76857d[m Editar y crear historia
+[33m7fca4d6[m Merge pull request #46 from cams007/yezhel
+[33m13a30e8[m Imagen tp
+[33m9e1a2b1[m Editar tip y consejo
+[33m407b82f[m Index y crear tip
+[33md5d2c57[m editar evento, listo.
+[33m729c5a7[m Merge pull request #45 from cams007/yezhel
+[33m059e16d[m Imagen
+[33m6c90f01[m Crear historia. listo
+[33mb98d969[m Acción para crear historia
+[33m2938b2a[m Index y crear historias de éxito.
+[33m8b0fdf3[m Elimina vento
+[33md896596[m Merge pull request #44 from cams007/yezhel
+[33ma2b8104[m Editar evento
+[33mcc6352e[m Funcionalidad de crear evento y crear alumno
+[33m461103d[m Merge pull request #43 from cams007/yezhel
+[33m903da77[m modificacion en rutas
+[33mc0b1bce[m update view estudios realizados
+[33m7eab46d[m update view perfil y estudios realizados.
+[33m3a5b6db[m Se resuelve conflicto con view registrarse
+[33m13c2a9c[m Merge pull request #42 from cams007/Adrian
+[33m5896570[m update migration tabulador
+[33m8f79316[m onchange send form: a filtro de tabulador de salarios
+[33m5e28524[m Merge pull request #41 from cams007/yezhel
+[33md8b868c[m crud eventos, egresados y empresas, falta terminar las funcionalidad.
+[33m1a2bb0a[m Filtro carrera en tabulador de salarios
+[33m3111ce2[m Funcionalidad a tabulador de salarios
+[33m0f69898[m Se agrega giro y sector a empresa
+[33m854b2f9[m Se agrega funcionalidad a ranking de empresas
+[33ma670fcc[m Merge pull request #40 from cams007/yezhel
+[33mf02d6ef[m Vistas de eventos e historias y tips.
+[33m171a2bc[m Merge remote-tracking branch 'origin/master' into yezhel
+[33m8ef7046[m Modificacion de las vistas de CRUD de egresados y empresas
+[33m2311582[m Merge pull request #38 from cams007/jorge
+[33m9635693[m Merge branch 'master' into jorge
+[33m926f7e1[m Merge pull request #39 from cams007/yezhel
+[33mfc1d7a5[m CRUD de empresas y alumnos
+[33m0ae11e0[m se actualizaron los detalles de la oferta
+[33m64a1ad9[m registro fue modificado
+[33m094d27a[m Merge pull request #37 from cams007/Adrian
+[33mcddce48[m Login para administrador
+[33mba14407[m Merge branch 'master' of https://github.com/cams007/SSE into jorge
+[33md305e17[m un cambio minimo
+[33m7f8ffb6[m Registro functional test
+[33md51e1bf[m Update functional tests
+[33m1cac795[m Inicio de sesion para usuario y administrador. Update routes
+[33m2a754be[m Se agrega model, migration and configuration for admin
+[33mc919504[m Merge pull request #36 from cams007/David
+[33m9b3278d[m Merge remote-tracking branch 'origin/master' into David
+[33me0bf5fc[m Merge pull request #35 from cams007/Adrian
+[33m9d4fe43[m Se actualizan placeholder de buscadores
+[33m6076099[m Merge remote-tracking branch 'origin/Adrian' into David
+[33mb6f4050[m Se agrega funcionalidad a tips y consejos.
+[33m1cb2e36[m Se agrega funcionalidad a historias de éxito.
+[33m4428e9a[m Reestructuración de carpetas
+[33m0830969[m Se agrega funcionalidad a eventos.
+[33m901165c[m Listar usuarios en directorio de empresas.
+[33mee1fc87[m Merge pull request #34 from cams007/Adrian
+[33mcc5f73b[m funcionalidad a directorio de empresas
+[33m4a0c2bc[m Se cambia consulta para obtener perfil de prueba
+[33md9a807f[m Cambiar orden de seed usuario
+[33mf3b9ef9[m Unit test, primer egresado resgitrado
+[33m9004442[m env testing file update
+[33m743a31e[m PhantomJS parallel testing
+[33mca48993[m Check phantomJS
+[33md013e65[m Check codeship
+[33m27726d8[m Configure env codeship file
+[33m2d20e6e[m Merge pull request #33 from cams007/Adrian
+[33m1710ad8[m Merge branch 'master' into Adrian
+[33m089bac6[m Model factory para seeders actualizado & add .env.codeship
+[33ma183b50[m Se agrega funcionalidad a view ofertas
+[33ma65dd4e[m Merge pull request #32 from cams007/yezhel
+[33me5d095d[m Se actualiza bd para que funcione perfil.
+[33ma576582[m update routes
+[33md727fc8[m Merge branch 'Carlos' into Adrian
+[33m3c43a23[m crear y editar de alumnos y empresas por parte de la lic.
+[33mc868a04[m add campo generacion bd
+[33mecaeac9[m Merge remote-tracking branch 'origin/master' into yezhel
+[33mf17a7fe[m Merge pull request #31 from cams007/Adrian
+[33m204a17c[m Merge remote-tracking branch 'origin/marcos' into Adrian

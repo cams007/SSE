@@ -184,6 +184,7 @@ return [
         * Agrega el servicio para las graficas
         */
         ConsoleTVs\Charts\ChartsServiceProvider::class,
+
     ],
 
     /*
@@ -239,7 +240,6 @@ return [
         * Alias graficas
         */
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
-
     ],
 
 ];

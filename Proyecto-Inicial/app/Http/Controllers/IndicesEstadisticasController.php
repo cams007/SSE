@@ -262,4 +262,4 @@ class IndicesEstadisticasController extends Controller
 
         return $data;  
     }
-}   
+}

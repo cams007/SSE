@@ -7,8 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "codeception/codeception": "*",
-        "consoletvs/charts": "^5.1",
-        "khill/lavacharts": "3.0.*",
+        "consoletvs/charts": "5.*",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "^5.4.0",

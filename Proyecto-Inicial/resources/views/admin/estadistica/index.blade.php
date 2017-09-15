@@ -3,7 +3,9 @@
 @section('title', '&Iacute;ndices y estad&iacute;sticas')
 
 @section( 'head' )
-	 {!! Charts::assets() !!}
+	<!-- 	Se debe definir en la cabecera lo siguiente para que puede funcionar. -->
+	{!! Charts::assets() !!}
+	
 @show
 
 @section('style')
@@ -11,18 +13,23 @@
 	<link href = "{{ url( 'css/ranking.css' ) }}" rel = "stylesheet">	
 @stop
 
+<!-- Agregar scripts -->
+@stack( 'scripts' )
+    {!! Html:: script( 'js/div2Image.js' ) !!}
+
 @section('content')
+	
 	<div class="contenedor"><!-- contenedor -->
 
-		<div class="div-1">
-			<p class="text-center">&Iacute;ndices y Estad&iacute;sticas</p>
+		<div class = "div-1">
+			<p class = "text-center">&Iacute;ndices y Estad&iacute;sticas</p>
 		</div>
 
-		<label class="label-egresados" id="label-egresados">Egresados</label>
-		<div class="opciones-egresados" id="opciones-egresados">		
+		<label class = "label-egresados" id = "label-egresados">Egresados</label>
+		<div class = "opciones-egresados" id = "opciones-egresados">		
 			<div>
 				<!--
-					Se define un formulario tipo SELECT, se utiliza un metodo GET para enviar el formulario al
+					Se define un formulario tipo SELECT, con un metodo GET se envia el formulario al
 					controlador que lo llamo (IndicesEstadisticasController) y otra vez se renderiza esta vista.
 				-->
 				{!! Form::open(['url' => 'admin/estadisticas', 'method' => 'GET', 'role' => 'search']) !!}
@@ -52,19 +59,20 @@
 					],
 					null, [ 'class' => 'seleccion-carrera', "onchange" => "this.form.submit()"] )
 				!!}
-
+				<!-- Cerramos el formulario -->
 				{!!Form::close() !!}
 			</div>
 		</div>
 
 		<!-- Contenedor de grafica -->
 		<div class="chart" id="chart">
-			<!--
-				Renderiza el char que se define desde el controlador IndicesEstadiscticasController
-			-->
-			{!!
-				$chart->render()
-			!!}
+			<!-- Renderiza el chart que se define desde el controlador IndicesEstadiscticasController -->
+			{!! $chart->render() !!}
 		</div>
+			<button id = "btn-guardar" onclick = "cargar();">Descargar</button>
+		<div id="img-out">
+		
+		</div>
+
 	</div> <!-- Contenedor Principal -->
 @stop

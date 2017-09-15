@@ -23,7 +23,6 @@ $(document).ready(function() {
 
 });
 
-
 function changeNacionalidad( val )
 {
     if (val == 'Otra'){
