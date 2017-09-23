@@ -27,7 +27,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/egresados/home';
+    protected $redirectTo = '/bienvenida';
 
     /**
      * Create a new controller instance.
@@ -48,10 +48,10 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'matricula' => 'required|min:10|max:10',
+            'egresado_matricula' => 'required|min:10|max:10',
             'curp' => 'required|min:18|max:18',
             'correo' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6|confirmed',
+            'password' => 'required|min:6|confirmed|unique:users'
         ]);
     }
 
@@ -63,10 +63,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
+        // $egresado = egresado::where('matricula', $data['matricula'])->first();
+
         return User::create([
-            'name' => $data['name'],
             'correo' => $data['correo'],
             'password' => bcrypt($data['password']),
+            'egresado_matricula' => $data['egresado_matricula'],
         ]);
     }
 }

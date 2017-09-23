@@ -19,6 +19,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::get('/registro', 'RegistroController@showRegistroForm')->name('user.registro');
+Route::post('/registro', 'Auth\RegisterController@register');
 Route::get('/bienvenida', 'RegistroController@showBienvenidaForm')->name('user.bienvenida');
 
 Route::group(['prefix' => 'perfil'], function() {

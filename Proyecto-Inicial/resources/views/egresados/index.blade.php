@@ -21,15 +21,21 @@
     <form id="form_login" role="form" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         
+        @if($errors->has('correo'))
+            <div class="alert alert-danger"> 
+                {!! $errors->first('correo') !!}
+            </div>
+        @endif
+
         <div class="usuario-login">
             <div id="logo-user"></div>
             <input type="email" name="correo" id="correo" value="{{ old('correo') }}" placeholder="Correo electrónico" required autofocus>
 
-            @if ($errors->has('correo'))
+            {{-- @if ($errors->has('correo'))
                 <span class="help-block">
                     <strong>{{ $errors->first('correo') }}</strong>
                 </span>
-            @endif
+            @endif --}}
 
         </div>
 

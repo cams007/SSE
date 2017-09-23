@@ -93,7 +93,7 @@
 			</div>
 		</div><!--fin div-2-2-->
 		<div class="div-2-3">
-	    	<img src="{{url($egresados->imagen_url)}}" alt="user-picture" class="img-thumbnail img">
+	    	{{-- <img src="{{url($egresados->imagen_url)}}" alt="user-picture" class="img-thumbnail img"> --}}
 	    	<div>
 	    		<a href="#">
 	    			<i></i>
