@@ -1,12 +1,14 @@
 <?php
-
+/**
+* Controlador para Indices y Estadisticas
+*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Estadistica;
 use Auth;
-// Agregar para usar Charts
+// Se agrega el alias para usar los Charts
 use Charts;
 
 class IndicesEstadisticasController extends Controller
@@ -17,13 +19,17 @@ class IndicesEstadisticasController extends Controller
         {
             $this->middleware('auth');
         }
-    
+    */
+
+    /**
+    * Muestra la Vista Indices y Estadisticas
     */
     public function showEstadisticasView( Request $request )
     {
         $indice = array();
         $total = array();
 
+        // Opcion seleccionada en el formulario
         $index = $request->get( 'carrera' );
         
         if( $index == "" )
@@ -38,6 +44,7 @@ class IndicesEstadisticasController extends Controller
             array_push( $total, $item->{ 'Total' } );
         }
 
+        // Crea un chart tipo barra y le pasa los valores de la consulta
         $chart = Charts::create( 'bar', 'highcharts' )
             ->title( $titulo )
             ->elementLabel( 'Absoluto' )
@@ -45,13 +52,15 @@ class IndicesEstadisticasController extends Controller
             ->values( $total )
             ->dimensions( 0, 400 )
             ->responsive( false );
-    
+        // Se redenriza en la vista, se manda como un array
+        
         return view( 'admin.estadistica.index', [ 'chart' => $chart ] );
     }
 
     public function getDescription( $index )
     {
         $titulo = array(
+                        // Consultas hojas
                         "0" => 'Género de los encuestados',
                         "1" => 'Egresados con empleo',
                         "2" => 'Tiempo hasta conseguir primer empleo',
@@ -72,7 +81,27 @@ class IndicesEstadisticasController extends Controller
 						"16" => 'Importancia otorgado del titulo profesional para contratar a egresados',
 						"17" => 'Importancia de la experiencia laboral para contratar a un profesional',
 						"18" => 'Importancia de la imagen de la universidad para contrata a egresados',
-						"19" => 'Confianza de los empleadores para la contratacion de egresados de la universidad'
+						"19" => 'Confianza de los empleadores para la contratacion de egresados de la universidad',
+
+                        // Satisfaccion de la Formacion Profesional
+						"20" => 'Habilidades que requieren dominar al momento de ejercer tu profesion por primera vez',
+						"21" => "Valores y actitudes importantes al momento de ejercer tu profesion por primera vez",
+						"22" => "¿Como calificas los servicios escolares y administrativos?",
+						"23" => "¿Como calificas los equipos, instrumentos, maquinaria y herramientas de la UTM?",
+						"24" => "¿Como calificas la limpieza de la insfraestructura de la UTM?",
+						"25" => "¿Como calificas la capacidad de la insfraestructura de la UTM?",
+						"26" => "¿Como calificas el desempeño de los docentes de la UTM?",
+						"27" => "¿Como calificas las tecnicas y metodos de enseñanza de los docentes de la UTM?",
+						"28" => "¿Como calificas la forma y pertinencia de evaluacion aplicados por los docentes de la UTM?",
+						
+						// Desempeño Profesional del Egresado
+						"29" => "Habilidades importantes que debe desarrollar el egresado",
+						"30" => "Carencia de conocimientos basicos del egresado",
+						"31" => "¿Que habilidades no demostro el egresado? ",
+						"32" => "El egresado careció del dominio de alguna area de conocimiento basico?",
+						"33" => "¿El egresado debio actualizar sus conocimientos?",
+						"34" => "Valores y actitudes importantes que debe tener el egresado ",
+						"35" => "¿Que valores no demostro el egresado?"
         );
 
         return $titulo[ $index ];
@@ -80,6 +109,9 @@ class IndicesEstadisticasController extends Controller
 
     public function getData( $index )
     {
+        /**
+        * Define las consultas en MySQL.
+        */
         $consultas = array(
                 '0' => "SELECT genero AS Indice, COUNT(*) AS Total FROM egresado GROUP BY genero;",
                 '1' => "SELECT
@@ -253,9 +285,116 @@ class IndicesEstadisticasController extends Controller
                             END
                         END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacion INNER JOIN empleado
                         ON empleado_id = empleado.id ) ON catalogopregunta_id = catalogopregunta.id AND
-                        catalogopregunta.pregunta = '11' GROUP BY Indice;"
+                        catalogopregunta.pregunta = '11' GROUP BY Indice;",
+                "20" => "SELECT habilidad AS Indice, COUNT(*) AS Total FROM habilidadPE inner join
+                        PrimerEmpleo ON habilidadPE.primerempleo_id = PrimerEmpleo.id GROUP BY Indice;",
+                "21" => "SELECT valor AS Indice, COUNT(*) AS Total FROM valorPE inner join PrimerEmpleo
+                        ON valorPE.primerempleo_id = PrimerEmpleo.id GROUP BY Indice;",
+                "22" => "SELECT
+                        CASE WHEN( evaluacion = 'Excelente' ) THEN 'Excelente' ELSE
+                            CASE WHEN( evaluacion = 'Muy buena' ) THEN 'Muy buena' ELSE
+                                CASE WHEN( evaluacion = 'Buena' ) THEN 'Buena' ELSE
+                                    CASE WHEN( evaluacion = 'Regular' ) THEN 'Regular' ELSE
+                                        CASE WHEN( evaluacion = 'Mala' ) THEN 'Mala'
+                                        END
+                                                    END
+                                            END
+                                    END
+                        END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
+                        ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '9'
+                        AND cuestionario = 1 GROUP BY Indice;",
+                "23" => "SELECT
+                        CASE WHEN( evaluacion = 'Excelente' ) THEN 'Excelente' ELSE
+                            CASE WHEN( evaluacion = 'Muy buena' ) THEN 'Muy buena' ELSE
+                                CASE WHEN( evaluacion = 'Buena' ) THEN 'Buena' ELSE
+                                    CASE WHEN( evaluacion = 'Regular' ) THEN 'Regular' ELSE
+                                        CASE WHEN( evaluacion = 'Mala' ) THEN 'Mala'
+                                        END
+                                    END
+                                END
+                            END
+                        END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
+                        ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '10'
+                        AND cuestionario = 1 GROUP BY Indice;",
+                "24" => "SELECT
+                        CASE WHEN( evaluacion = 'Excelente' ) THEN 'Excelente' ELSE
+                            CASE WHEN( evaluacion = 'Muy buena' ) THEN 'Muy buena' ELSE
+                                CASE WHEN( evaluacion = 'Buena' ) THEN 'Buena' ELSE
+                                    CASE WHEN( evaluacion = 'Regular' ) THEN 'Regular' ELSE
+                                        CASE WHEN( evaluacion = 'Mala' ) THEN 'Mala'
+                                        END
+                                    END
+                                END
+                            END
+                        END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
+                        ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '11'
+                        AND cuestionario = 1 GROUP BY Indice;",
+                "25" => "SELECT
+                        CASE WHEN( evaluacion = 'Excelente' ) THEN 'Excelente' ELSE
+                            CASE WHEN( evaluacion = 'Muy buena' ) THEN 'Muy buena' ELSE
+                                CASE WHEN( evaluacion = 'Buena' ) THEN 'Buena' ELSE
+                                    CASE WHEN( evaluacion = 'Regular' ) THEN 'Regular' ELSE
+                                        CASE WHEN( evaluacion = 'Mala' ) THEN 'Mala'
+                                        END
+                                    END
+                                END
+                            END
+                        END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
+                        ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '12'
+                        AND cuestionario = 1 GROUP BY Indice;",
+                "26" => "SELECT
+                        CASE WHEN( evaluacion = 'Excelente' ) THEN 'Excelente' ELSE
+                            CASE WHEN( evaluacion = 'Muy buena' ) THEN 'Muy buena' ELSE
+                                CASE WHEN( evaluacion = 'Buena' ) THEN 'Buena' ELSE
+                                    CASE WHEN( evaluacion = 'Regular' ) THEN 'Regular' ELSE
+                                        CASE WHEN( evaluacion = 'Mala' ) THEN 'Mala'
+                                        END
+                                    END
+                                END
+                            END
+                        END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
+                        ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '13'
+                        AND cuestionario = 1 GROUP BY Indice;",
+                "27" => "SELECT
+                        CASE WHEN( evaluacion = 'Excelente' ) THEN 'Excelente' ELSE
+                            CASE WHEN( evaluacion = 'Muy buena' ) THEN 'Muy buena' ELSE
+                                CASE WHEN( evaluacion = 'Buena' ) THEN 'Buena' ELSE
+                                    CASE WHEN( evaluacion = 'Regular' ) THEN 'Regular' ELSE
+                                        CASE WHEN( evaluacion = 'Mala' ) THEN 'Mala'
+                                        END
+                                    END
+                                END
+                            END
+                        END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
+                        ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '14'
+                        AND cuestionario = 1 GROUP BY Indice;",
+                "28" => "SELECT
+                        CASE WHEN( evaluacion = 'Excelente' ) THEN 'Excelente' ELSE
+                            CASE WHEN( evaluacion = 'Muy buena' ) THEN 'Muy buena' ELSE
+                                CASE WHEN( evaluacion = 'Buena' ) THEN 'Buena' ELSE
+                                    CASE WHEN( evaluacion = 'Regular' ) THEN 'Regular' ELSE
+                                        CASE WHEN( evaluacion = 'Mala' ) THEN 'Mala'
+                                        END
+                                    END
+                                END
+                            END
+                        END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
+                        ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '15'
+                        AND cuestionario = 1 GROUP BY Indice;",
+                "29" => "SELECT habilidad AS Indice, COUNT(*) AS Total FROM habilidad inner join
+                        Empleado ON habilidad.empleado_id = empleado.id GROUP BY Indice;",
+                "30" => "SELECT carencias_basicas AS Indice, COUNT(*) AS Total from empleado GROUP BY indice;",
+                "31" => "SELECT habilidad AS Indice, COUNT(*) AS Total FROM habilidad inner join Empleado ON
+                        habilidad.empleado_id = empleado.id and habilidad.demostrada = 0 GROUP BY Indice;",
+                "32" => "SELECT carencias_areas AS Indice, COUNT(*) AS Total from empleado GROUP BY indice;",
+                "33" => "SELECT conocimientos_actualizados AS Indice, COUNT(*) AS Total from empleado GROUP BY indice;",
+                "34" => "SELECT valor AS Indice, COUNT(*) AS Total FROM valor inner join Empleado ON
+                        valor.empleado_id = Empleado.id GROUP BY Indice;",
+                "35" => "SELECT valor AS Indice, COUNT(*) AS Total FROM valor inner join Empleado ON
+                        valor.empleado_id = empleado.id and valor.demostrado = 0 GROUP BY Indice;",
                 );
 
+        // Convierte los datos en formato JSON
         $data = DB::select( $consultas[ $index ] );
         $valor = json_encode( $data, true );
         $valor = json_decode( $valor );

@@ -3,9 +3,8 @@
 @section('title', '&Iacute;ndices y estad&iacute;sticas')
 
 @section( 'head' )
-	<!-- 	Se debe definir en la cabecera lo siguiente para que puede funcionar. -->
+	<!-- Se define el asset para renderizar el grafico -->
 	{!! Charts::assets() !!}
-	
 @show
 
 @section('style')
@@ -15,7 +14,12 @@
 
 <!-- Agregar scripts -->
 @stack( 'scripts' )
-    {!! Html:: script( 'js/div2Image.js' ) !!}
+	<!-- Solo define la funcion descargar -->
+	{!! Html:: script( 'js/div2Image.js' ) !!}
+	<!-- Biblioteca para convertir elementos del DOM en imagenes PNG, SVG, etc. -->
+	{!! Html:: script( 'js/dom-to-image.js' ) !!}
+	<!-- Libreria para descargar archivos en el cliente local -->
+	{!! Html:: script( 'js/FileSaver.js' ) !!}
 
 @section('content')
 	
@@ -55,8 +59,28 @@
 						"16" => 'Importancia otorgado del titulo profesional para contratar a egresados',
 						"17" => 'Importancia de la experiencia laboral para contratar a un profesional',
 						"18" => 'Importancia de la imagen de la universidad para contrata a egresados',
-						"19" => 'Confianza de los empleadores para la contratacion de egresados de la universidad'
-					],
+						"19" => 'Confianza de los empleadores para la contratacion de egresados de la universidad',
+						
+						// Satisfaccion de la Formacion Profesional
+						"20" => 'Habilidades que requieren dominar al momento de ejercer tu profesion por primera vez',
+						"21" => "Valores y actitudes importantes al momento de ejercer tu profesion por primera vez",
+						"22" => "¿Como calificas los servicios escolares y administrativos?",
+						"23" => "¿Como calificas los equipos, instrumentos, maquinaria y herramientas de la UTM?",
+						"24" => "¿Como calificas la limpieza de la insfraestructura de la UTM?",
+						"25" => "¿Como calificas la capacidad de la insfraestructura de la UTM?",
+						"26" => "¿Como calificas el desempeño de los docentes de la UTM?",
+						"27" => "¿Como calificas las tecnicas y metodos de enseñanza de los docentes de la UTM?",
+						"28" => "¿Como calificas la forma y pertinencia de evaluacion aplicados por los docentes de la UTM?",
+						
+						// Desempeño Profesional del Egresado
+						"29" => "Habilidades importantes que debe desarrollar el egresado",
+						"30" => "Carencia de conocimientos basicos del egresado",
+						"31" => "¿Que habilidades no demostro el egresado? ",
+						"32" => "El egresado careció del dominio de alguna area de conocimiento basico?",
+						"33" => "¿El egresado debio actualizar sus conocimientos?",
+						"34" => "Valores y actitudes importantes que debe tener el egresado ",
+						"35" => "¿Que valores no demostro el egresado?"
+ 					],
 					null, [ 'class' => 'seleccion-carrera', "onchange" => "this.form.submit()"] )
 				!!}
 				<!-- Cerramos el formulario -->
@@ -65,14 +89,16 @@
 		</div>
 
 		<!-- Contenedor de grafica -->
-		<div class="chart" id="chart">
+		<div class="chart" id = "chart">
 			<!-- Renderiza el chart que se define desde el controlador IndicesEstadiscticasController -->
 			{!! $chart->render() !!}
 		</div>
-			<button id = "btn-guardar" onclick = "cargar();">Descargar</button>
-		<div id="img-out">
 		
-		</div>
+		<!-- Boton para convertir el grafico en imagen PNG,
+		     A traves de la libreria FileSaver guarda la imagen
+		     en la carpeta de descarga local
+		-->
+		<button id = "btn-guardar"  onclick = "descargar();">Descargar</button>
 
 	</div> <!-- Contenedor Principal -->
 @stop
