@@ -381,17 +381,17 @@ class IndicesEstadisticasController extends Controller
                         END Indice, COUNT(*) AS Total FROM catalogopregunta INNER JOIN( evaluacionpe INNER JOIN primerempleo
                         ON primerempleo_id=primerempleo.id ) ON catalogopregunta_id=catalogopregunta.id AND pregunta = '15'
                         AND cuestionario = 1 GROUP BY Indice;",
-                "29" => "SELECT habilidad AS Indice, COUNT(*) AS Total FROM habilidad inner join
+                "29" => "SELECT habilidad AS Indice, COUNT(*) AS Total FROM habilidad INNER JOIN
                         Empleado ON habilidad.empleado_id = empleado.id GROUP BY Indice;",
                 "30" => "SELECT carencias_basicas AS Indice, COUNT(*) AS Total from empleado GROUP BY indice;",
-                "31" => "SELECT habilidad AS Indice, COUNT(*) AS Total FROM habilidad inner join Empleado ON
+                "31" => "SELECT habilidad AS Indice, COUNT(*) AS Total FROM habilidad INNER JOIN Empleado ON
                         habilidad.empleado_id = empleado.id and habilidad.demostrada = 0 GROUP BY Indice;",
-                "32" => "SELECT carencias_areas AS Indice, COUNT(*) AS Total from empleado GROUP BY indice;",
-                "33" => "SELECT conocimientos_actualizados AS Indice, COUNT(*) AS Total from empleado GROUP BY indice;",
-                "34" => "SELECT valor AS Indice, COUNT(*) AS Total FROM valor inner join Empleado ON
+                "32" => "SELECT carencias_areas AS Indice, COUNT(*) AS Total FROM empleado GROUP BY indice;",
+                "33" => "SELECT conocimientos_actualizados AS Indice, COUNT(*) AS Total FROM empleado GROUP BY indice;",
+                "34" => "SELECT valor AS Indice, COUNT(*) AS Total FROM valor INNER JOIN Empleado ON
                         valor.empleado_id = Empleado.id GROUP BY Indice;",
-                "35" => "SELECT valor AS Indice, COUNT(*) AS Total FROM valor inner join Empleado ON
-                        valor.empleado_id = empleado.id and valor.demostrado = 0 GROUP BY Indice;",
+                "35" => "SELECT valor AS Indice, COUNT(*) AS Total FROM valor INNER JOIN Empleado ON
+                        valor.empleado_id = empleado.id AND valor.demostrado = 0 GROUP BY Indice;",
                 );
 
         // Convierte los datos en formato JSON
