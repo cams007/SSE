@@ -72,7 +72,7 @@
 						"27" => "¿Como calificas las tecnicas y metodos de enseñanza de los docentes de la UTM?",
 						"28" => "¿Como calificas la forma y pertinencia de evaluacion aplicados por los docentes de la UTM?",
 						
-						// Desempeño Profesional del Egresado
+						// Desempeño Profesional de los Egresados
 						"29" => "Habilidades importantes que debe desarrollar el egresado",
 						"30" => "Carencia de conocimientos basicos del egresado",
 						"31" => "¿Que habilidades no demostro el egresado? ",
