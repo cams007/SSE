@@ -30,9 +30,12 @@ class IndicesEstadisticasController extends Controller
         $total = array();
 
         // Opcion seleccionada en el formulario
-        $index = $request->get( 'carrera' );
+        $index = $request->get( 'egresados' );
         
         if( $index == "" )
+            $index = $request->get( 'empleadores' );
+        
+        if( $index == "" || $index == "notValue" )
             $index = '0';
 
         $titulo = $this->getDescription( $index );
@@ -61,6 +64,7 @@ class IndicesEstadisticasController extends Controller
     {
         $titulo = array(
                         // Consultas hojas
+                        "notValue" => "Elige una opción",
                         "0" => 'Género de los encuestados',
                         "1" => 'Egresados con empleo',
                         "2" => 'Tiempo hasta conseguir primer empleo',
@@ -72,36 +76,36 @@ class IndicesEstadisticasController extends Controller
                         "8" => 'Titulados y no titulados',
                         "9" => 'Tiempo para obtener el título',
                         "10" => 'Arraigo de egresados en su zona de estudios',
-                        "11" => 'Satisfaccion de los egresados en cuanto a la formacion profesional',
-                        "12" => 'Opinion de los egresados en cuanto al clima universitario',
+                        "11" => 'Satisfacción de los egresados en cuanto a la formación profesional',
+                        "12" => 'Opinión de los egresados en cuanto al clima universitario',
 
-                        "13" => 'Carreras mas demandadas',
-						"14" => 'Opinón de los egresados sobre la formación profesional de los egresados',
+                        "13" => 'Carreras más demandadas',
+						"14" => 'Opinión de los empleadores sobre la formación profesional de los egresados',
 						"15" => 'Opinión de los empleadores sobre el desempeño laboral del egresado',
-						"16" => 'Importancia otorgado del titulo profesional para contratar a egresados',
+						"16" => 'Importancia otorgado al título profesional para contratar a egresados',
 						"17" => 'Importancia de la experiencia laboral para contratar a un profesional',
-						"18" => 'Importancia de la imagen de la universidad para contrata a egresados',
-						"19" => 'Confianza de los empleadores para la contratacion de egresados de la universidad',
+						"18" => 'Importancia de la imagen de la universidad para contratar a egresados',
+						"19" => 'Confianza de los empleadores para la contratación de egresados de la universidad',
 
                         // Satisfaccion de la Formacion Profesional
-						"20" => 'Habilidades que requieren dominar al momento de ejercer tu profesion por primera vez',
-						"21" => "Valores y actitudes importantes al momento de ejercer tu profesion por primera vez",
-						"22" => "¿Como calificas los servicios escolares y administrativos?",
-						"23" => "¿Como calificas los equipos, instrumentos, maquinaria y herramientas de la UTM?",
-						"24" => "¿Como calificas la limpieza de la insfraestructura de la UTM?",
-						"25" => "¿Como calificas la capacidad de la insfraestructura de la UTM?",
-						"26" => "¿Como calificas el desempeño de los docentes de la UTM?",
-						"27" => "¿Como calificas las tecnicas y metodos de enseñanza de los docentes de la UTM?",
-						"28" => "¿Como calificas la forma y pertinencia de evaluacion aplicados por los docentes de la UTM?",
+						"20" => 'Habilidades que requieren dominar al momento de ejercer tu profesión por primera vez',
+						"21" => "Valores y actitudes importantes al momento de ejercer tu profesión por primera vez",
+						"22" => "¿Cómo calificas los servicios escolares y los administrativos?",
+						"23" => "¿Cómo calificas los equipos, instrumentos, maquinaria y herramientas de la UTM?",
+						"24" => "¿Cómo calificas la limpieza de la infraestructura de la UTM?",
+						"25" => "¿Cómo calificas la capacidad de la infraestructura de la UTM?",
+						"26" => "¿Cómo calificas el desempeño de los docentes de la UTM?",
+						"27" => "¿Cómo calificas las técnicas y métodos de enseñanza de los docentes de la UTM?",
+						"28" => "¿Cómo calificas la forma y pertinencia de evaluación aplicados por los docentes de la UTM?",
 						
 						// Desempeño Profesional del Egresado
 						"29" => "Habilidades importantes que debe desarrollar el egresado",
-						"30" => "Carencia de conocimientos basicos del egresado",
-						"31" => "¿Que habilidades no demostro el egresado? ",
-						"32" => "El egresado careció del dominio de alguna area de conocimiento basico?",
-						"33" => "¿El egresado debio actualizar sus conocimientos?",
+						"30" => "Carencia de conocimientos básicos del egresado",
+						"31" => "¿Qué habilidades no demostró el egresado? ",
+						"32" => "El egresado careció del dominio de algun área de conocimiento básico?",
+						"33" => "¿El egresado debió actualizar sus conocimientos?",
 						"34" => "Valores y actitudes importantes que debe tener el egresado ",
-						"35" => "¿Que valores no demostro el egresado?"
+						"35" => "¿Qué valores no demostró el egresado?"
         );
 
         return $titulo[ $index ];
