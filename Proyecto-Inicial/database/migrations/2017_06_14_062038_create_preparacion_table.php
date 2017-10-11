@@ -18,8 +18,8 @@ class CreatePreparacionTable extends Migration
             $table->increments('id');
             $table->integer('carrera');
             $table->string('generacion', 10);
-            $table->dateTime('fecha_inicio');
-            $table->dateTime('fecha_fin');
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
             $table->float('promedio', 8, 2);
             $table->enum('forma_titulacion', ['Tesis', 'CENEVAL', 'No titulado'])->nullable();
             $table->dateTime('fecha_titulo')->nullable();

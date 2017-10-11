@@ -16,10 +16,12 @@ class CreateEgresadoTable extends Migration
         Schema::create('Egresado', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->string('matricula', 12)->primary()->unique();
-            $table->string('nombre', 100);
+            $table->string('ap_paterno', 50);
+            $table->string('ap_materno', 50);
+            $table->string('nombres', 100);
             $table->string('curp', 25);
             $table->enum('genero', ['Masculino', 'Femenino'])->nullable();
-            $table->dateTime('fecha_nacimiento');
+            $table->date('fecha_nacimiento');
             $table->enum('nacionalidad', ['Mexicana', 'Otra'])->nullable();
             $table->string('telefono', 12)->nullable();
             $table->string('lugar_origen', 200);
