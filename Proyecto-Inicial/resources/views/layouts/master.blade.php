@@ -27,7 +27,9 @@
                         <a class="user-name" href="#">
                             <img src="{{ url('assets/images/user-name.png') }}">
                         </a>
-                        <p>{{ Auth::user()->egresado->nombre }}</p>
+                        <p>{{ Auth::user()->egresado->nombres }}
+                        {{ Auth::user()->egresado->ap_paterno }}
+                        {{ Auth::user()->egresado->ap_materno }}</p>
                     @endif
               </div>
               <div id="iconos">

@@ -76,7 +76,9 @@ $factory->define(App\Doctorado::class, function (Faker\Generator $faker) {
 $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
     return [
         'matricula' => $faker->unique()->numerify($string = '##########'),
-        'nombre' => $faker->name,
+        'ap_paterno' => $faker->lastName(),
+        'ap_materno' => $faker->lastName(),
+        'nombres' => $faker->name,
         'curp' => strtoupper($faker->bothify($string = '????######??????##')),
         'genero' => $faker->randomElement(['Masculino' ,'Femenino']),
         'fecha_nacimiento' => $faker->dateTimeBetween($startDate = '-50 years', $endDate = '-22 years'),
@@ -90,7 +92,7 @@ $factory->define(App\Egresado::class, function (Faker\Generator $faker) {
         'preparacion_id' => function () {
             return factory(App\Preparacion::class)->create()->id;
         },
-        'primerEmpleo_id' => function () {
+        'primer_empleo_id' => function () {
             return factory(App\PrimerEmpleo::class)->create()->id;
         },
     ];
@@ -176,6 +178,7 @@ $factory->define(App\Evento::class, function (Faker\Generator $faker) {
         'descripcion' => $faker->paragraph,
         'lugar' => $faker->address,
         'fecha' => $faker->dateTimeBetween(),
+        'hora' => $faker->time(),
         'categoria' => $faker->randomElement(['Académico' ,'Cultural']),
         'imagen_url' => 'assets/images/eventos/' . $faker->randomElement(['prueba1.PNG', 'prueba2.jpg', 'prueba3.png', 'prueba4.jpg']),
         'activo' => true,
@@ -230,7 +233,6 @@ $factory->define(App\Oferta::class, function (Faker\Generator $faker) {
         'empresa_id' => function () {
              return factory(App\Empresa::class)->create()->id;
         },
-        'created_at' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now'),
     ];
 });
 $factory->define(App\Postulacion::class, function (Faker\Generator $faker) {

@@ -27,7 +27,7 @@ class EgresadoTableSeeder extends Seeder
 		             		'fecha_titulo' => null,
 		             	])->id;
 		        },
-                'primerEmpleo_id' => null,
+                'primer_empleo_id' => null,
             ]);
     }
 }

@@ -30,7 +30,6 @@ class CreateEmpleadorTable extends Migration
             $table->string('estado', 60);
             $table->string('codigo_postal', 60);
             $table->string('pagina_web', 200);
-            $table->string('correo', 50);
             $table->string('imagen_url', 500);
             $table->boolean('habilitada');
             $table->string('motivo_no_contratacion', 200)->nullable();

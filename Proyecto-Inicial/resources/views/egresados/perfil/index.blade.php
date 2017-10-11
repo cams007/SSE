@@ -33,7 +33,7 @@
 							<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
-							<span class="info-perfil"> {{ $egresados->nombre }} </span>
+							<span class="info-perfil"> {{ $egresados->nombres }} {{ $egresados->ap_paterno }} {{ $egresados->ap_materno }} </span>
 						</div><!--info-->
 					</div><!--contenedor-info-->
 					<div class="contenedor-info"><!--inicio contenedor-info-->
