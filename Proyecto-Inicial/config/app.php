@@ -179,6 +179,11 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Mpociot\LaravelTestFactoryHelper\TestFactoryHelperServiceProvider::class,
+        
+        /*
+        * Agrega el servicio para las graficas
+        */
+        ConsoleTVs\Charts\ChartsServiceProvider::class,
 
     ],
 
@@ -231,6 +236,10 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
+        /*
+        * Alias graficas
+        */
+        'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
     ],
 
 ];

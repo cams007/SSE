@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Egresado;
 use App\Preparacion;
+use Session;
 
 class EgresadosAdminController extends Controller
 {
 	public function index(Request $request) {
 
-        $egresados = Egresado::titulo($request->get('q'))->orderBy('ap_paterno', 'DESC')->paginate(8);
-
+        $egresados = Egresado::todo($request->get('q'))->where('habilitado','=',1)->orderBy('ap_paterno', 'DESC')->paginate(10);
+        //$egresados = Egresado::where('habilitado', '=',1)->orderBy('created_at', 'DESC')->paginate(10);
         return view('admin.egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
     }
 
@@ -64,6 +65,7 @@ class EgresadosAdminController extends Controller
         }
         DB::commit();
 
+        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 
@@ -102,6 +104,25 @@ class EgresadosAdminController extends Controller
         }
         DB::commit();
 
+        Session::flash('update', 'se ha actualizado correctamente');
+        return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
+    }
+
+    public function eliminarEgresado(Request $request){
+
+        $egresado = Egresado::findOrFail($request->matricula);
+
+        DB::beginTransaction();
+        try{
+            $egresado->habilitado = 0;
+            $egresado->save();
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+
+        Session::flash('update', 'se ha eliminado correctamente');
         return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 

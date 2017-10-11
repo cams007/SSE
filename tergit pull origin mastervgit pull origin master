@@ -1,0 +1,562 @@
+[33mcommit 4332a7f365be5b11b7118bdae493954cfd503932[m
+Merge: 4ba8478 a72a8a2
+Author: Lorenzo <lor90td@gmail.com>
+Date:   Mon Aug 14 18:48:08 2017 -0500
+
+    Merge branch 'master' into lorenzo
+
+[33mcommit 4ba8478b2324a98e76f91f1d467462df0ae8e5b7[m
+Merge: 0b47e5e 99a5d65
+Author: Lorenzo <lor90td@gmail.com>
+Date:   Mon Aug 14 18:46:11 2017 -0500
+
+    Lavachar y rutas estadisticas
+
+[33mcommit a72a8a2ad46d2b487496852fbbe036e806847e76[m
+Merge: 99a5d65 aa24c36
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Mon Aug 14 18:34:14 2017 -0500
+
+    Merge pull request #61 from cams007/yezhel
+    
+    yezhel
+
+[33mcommit aa24c36ea6138c403d6c7b161d9926fbf8ac992c[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Mon Aug 14 18:32:16 2017 -0500
+
+    transacciones para egresados en crear y edita.
+
+[33mcommit 0b47e5e9e4a7064c9327ad7d435de1262a5f085a[m
+Author: Lorenzo <lor90td@gmail.com>
+Date:   Mon Aug 14 18:22:57 2017 -0500
+
+    Lavachart, rutas estadisticas
+
+[33mcommit 99a5d65e3493bea72946aa79feb302981c98fcc9[m
+Merge: 281479b aef4d81
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Mon Aug 14 17:21:41 2017 -0500
+
+    Merge branch 'marcos'
+
+[33mcommit 281479be4839f69d4715fb953641a19f1de72aac[m
+Merge: 07eaf79 68ca1b2
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Mon Aug 14 17:03:50 2017 -0500
+
+    Merge branch 'master' of https://github.com/cams007/SSE
+
+[33mcommit 68ca1b249076922cd4426f361b9dbe4e70488a63[m
+Merge: 6d5a9dd 5fdf695
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Mon Aug 14 16:55:52 2017 -0500
+
+    Merge pull request #60 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit 5fdf695ab9092b65761c21fd60022428e4ae9730[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Mon Aug 14 16:53:58 2017 -0500
+
+    Modificaciones a egresados y el master
+
+[33mcommit aef4d81a57b821447061b0e484528285a75c8c07[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Mon Aug 14 13:57:32 2017 -0500
+
+    correccion tabulador-salarios
+
+[33mcommit 07eaf79918e041ee2d365bac14a9cacbb3d79423[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Mon Aug 14 13:22:40 2017 -0500
+
+    no changes
+
+[33mcommit 6d5a9ddd9dd22fdedcb8a6bda79711f0df8d30ba[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Mon Aug 14 13:11:12 2017 -0500
+
+    Update EgresadosAdminController.php
+
+[33mcommit 323830ede78cf5215c5be3d66cecbf52028939fe[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Mon Aug 14 12:37:52 2017 -0500
+
+    estilos home
+
+[33mcommit 214be32f718208e490c40409e0a08f403ba49870[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Mon Aug 14 00:58:30 2017 -0500
+
+    estilos popup
+
+[33mcommit eebb2dd29dd898238cb130e68ba415561130d352[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Sun Aug 13 20:06:53 2017 -0500
+
+    estilos tips y consejos
+
+[33mcommit bd3e90c028ff9ae3d0918c7fd88b41d6916d2c10[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Sun Aug 13 19:37:50 2017 -0500
+
+    estilos Hitoria de exito
+
+[33mcommit b1965ef65fad2cbee952fba06cef3ef7fc9f3ab2[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Sat Aug 12 15:13:05 2017 -0500
+
+    estilos eventosUTM
+
+[33mcommit ed03b7dfc9e2069dbb56cdebfde20471ef924c9d[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sat Aug 12 14:18:34 2017 -0500
+
+    Editar empresa listo con transaccion
+
+[33mcommit cfeeee6b030afa902288aa13b40bf21ee9d2ede3[m
+Merge: 886d8c7 759f52a
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sat Aug 12 01:24:01 2017 -0500
+
+    Merge pull request #59 from cams007/yezhel
+    
+    Crear empresa y egresado con transacción
+
+[33mcommit 759f52a10e0eed0546d4a3ce83e5cd0161e087d6[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sat Aug 12 01:18:21 2017 -0500
+
+    Crear empresa y egresado con transacción
+
+[33mcommit cdffc9ef9860955689d86d754669f88fd5e1e59d[m
+Merge: ae00f15 e906da9
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Fri Aug 11 18:59:36 2017 -0500
+
+    estilos tabulador-salarios
+
+[33mcommit e906da98439054961312c702598dc2a0b93e225b[m
+Merge: 8c50b68 886d8c7
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Fri Aug 11 12:28:35 2017 -0500
+
+    Merge branch 'master' of https://github.com/cams007/SSE
+
+[33mcommit ae00f152d31843be9d43f8a5d140eba7550a8885[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Fri Aug 11 12:28:00 2017 -0500
+
+    estilos ofertas laborales
+
+[33mcommit 886d8c7df6d3174c7b18e191a43c9c14b10cc874[m
+Merge: 277f5b8 e7fee79
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Fri Aug 11 00:59:42 2017 -0500
+
+    Merge pull request #58 from cams007/yezhel
+    
+    Vistas de historiasDe y tipYconsejo.
+
+[33mcommit e7fee797a8a66e8492ebe291d5dbbb32d9a12f45[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Fri Aug 11 00:53:01 2017 -0500
+
+    Vistas de historiasDe y tipYconsejo.
+
+[33mcommit 277f5b8e0794a9c9578a0ee01b4128361244d13f[m
+Merge: 2acbe4c fd2b39c
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Fri Aug 11 00:14:52 2017 -0500
+
+    Merge pull request #57 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit fd2b39cd1d03400f6b3f8efabb730a4c2264d02e[m
+Merge: 475e84f 2acbe4c
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Fri Aug 11 00:01:41 2017 -0500
+
+    Merge commit '2acbe4ce5756b4f51bd907ae052e6a390c9478bc' into yezhel
+
+[33mcommit 475e84f377fff4c704f77eba721181b179182f44[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Thu Aug 10 23:55:40 2017 -0500
+
+    Se crearon vistas de admin.empresa y se eliminaron carpetas de Admin
+
+[33mcommit 2acbe4ce5756b4f51bd907ae052e6a390c9478bc[m
+Merge: 022b0e1 c0f3afc
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Thu Aug 10 23:40:45 2017 -0500
+
+    Merge pull request #56 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit c0f3afce11d56a3062d582ad75600bae36595bf1[m
+Merge: cf927d9 022b0e1
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Thu Aug 10 23:28:43 2017 -0500
+
+    Merge commit '022b0e10532307812a70161ca3df06f1ab8146ef' into yezhel
+
+[33mcommit cf927d9fff0710deab8f9a82cba1fc3f3050a10c[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Thu Aug 10 23:24:25 2017 -0500
+
+    Se eliminaron dos vistas creo y editar empresa
+
+[33mcommit 022b0e10532307812a70161ca3df06f1ab8146ef[m
+Merge: a102cc4 e748ee0
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Thu Aug 10 22:37:53 2017 -0500
+
+    Merge pull request #55 from cams007/yezhel
+    
+    modificación en controladores de historias y tips
+
+[33mcommit e748ee0e18df1ff668f2d4d00091c1235bbd905a[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Thu Aug 10 22:37:09 2017 -0500
+
+    modificación en controladores de historias y tips
+
+[33mcommit a102cc4bb85bd70b1165d39b693540218246eb15[m
+Merge: 124b1b4 797ee09
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Thu Aug 10 21:04:48 2017 -0500
+
+    Merge pull request #54 from cams007/yezhel
+    
+    Modificación empresa controller
+
+[33mcommit 797ee098ace6a001499b298af19dcf804f15162b[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Thu Aug 10 21:04:01 2017 -0500
+
+    Modificación empresa controller
+
+[33mcommit 8c50b689fa05a1733c1c7b4b45178af2fc739887[m
+Author: ccmarcos <marcosantonio199189@gmail.com>
+Date:   Thu Aug 10 18:00:58 2017 -0500
+
+    agregando archivo AuthenticasteUser
+
+[33mcommit 124b1b4197fdb2f6cef8008529bcd7641f89300e[m
+Merge: 734a419 a2f4d20
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Thu Aug 10 15:42:30 2017 -0500
+
+    Merge pull request #53 from cams007/yezhel
+    
+    Transaccion
+
+[33mcommit a2f4d20f1126c877d9721ee33a3f3445c17118d7[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Thu Aug 10 15:38:28 2017 -0500
+
+    Tips, historias de éxito y eventos con transacción en crear y edita, así como modificaciones para subir la imagen y required en las vistas de crear
+
+[33mcommit bca5c7320cde7d0d9f9beb36965b7c5bcaa01b98[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Thu Aug 10 00:46:03 2017 -0500
+
+    Transacción de crear historia de éxito
+
+[33mcommit 14c9dee563fed6ebc34e1ff2b1b3b8d6a1493e9a[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Tue Aug 8 17:35:01 2017 -0500
+
+    Crear y editar Tip y consejo. Listo el formato de imágenes y tamaño de la imagen a subir
+
+[33mcommit 734a419739a9f7c4ad441260b3ec0b5c76717818[m
+Merge: fc8c67a 3324228
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Tue Aug 8 13:37:37 2017 -0500
+
+    Merge pull request #52 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit 3324228d68c91bba4f187b87d7ee5916b8f61e48[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Tue Aug 8 13:36:19 2017 -0500
+
+    Controlador para ofertas y modificación de la barra de navegación.
+
+[33mcommit 0a97a6b7a53183c2d9c26917614fd7d1f51e75a5[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Mon Aug 7 00:46:13 2017 -0500
+
+    Modificaciones al controlador de empresas
+
+[33mcommit fc8c67ac3ec2229777e0c1322b0c98dc41e3196b[m
+Merge: dec5478 5344621
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Fri Aug 4 00:13:30 2017 -0500
+
+    Merge pull request #51 from cams007/yezhel
+    
+    Empresa Crear
+
+[33mcommit 5344621948c507e7aac3ba3752c3afb9a9f3d8f1[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Fri Aug 4 00:08:44 2017 -0500
+
+    Empresa Crear
+
+[33mcommit dec547801ff6629a8bf0c077ded283869b60ad86[m
+Merge: de43145 0c32a1d
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Thu Aug 3 00:52:39 2017 -0500
+
+    Merge pull request #50 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit 0c32a1d1f96cedc2f70c6b96ccf0dee62b777b69[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Thu Aug 3 00:49:48 2017 -0500
+
+    Crear y Editar egresados.
+
+[33mcommit de43145bd699587dc84e8756fb179e902752ab5f[m
+Merge: bb9fcf7 c0b1bce
+Author: Adrian Castillo <adri.castillo18@gmail.com>
+Date:   Wed Aug 2 23:40:08 2017 -0500
+
+    Merge pull request #49 from cams007/Adrian
+    
+    Conflicto
+
+[33mcommit 70de0bc9a47bc8a1b75038c6e687c256b57f2877[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Wed Aug 2 11:50:14 2017 -0500
+
+    Icono de crear, editar y eliminar en los index
+
+[33mcommit bb9fcf7188a7fa293ac728fdfac5d729079f9317[m
+Merge: b15bd73 e9efb09
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Wed Aug 2 00:55:22 2017 -0500
+
+    Merge pull request #48 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit e9efb09429543ca8a8a339863332c26f3d041c0c[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Wed Aug 2 00:53:23 2017 -0500
+
+    Crear egresado
+
+[33mcommit 08567b556757538b8d5c8ded2035d250fff5cce6[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Tue Aug 1 01:00:23 2017 -0500
+
+    Empresa y Egresado
+
+[33mcommit b15bd737f01e19dbac50566f6e4f3e5dc6687fd6[m
+Merge: 7fca4d6 b76857d
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Mon Jul 31 13:43:28 2017 -0500
+
+    Merge pull request #47 from cams007/yezhel
+    
+    Editar y crear historia
+
+[33mcommit b76857d5254bf50e6a2e69fc86b1ec874d887992[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Mon Jul 31 13:32:31 2017 -0500
+
+    Editar y crear historia
+
+[33mcommit 7fca4d6481e45a31af3ef2c8294111c1e8d4f1cd[m
+Merge: 729c5a7 13a30e8
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sun Jul 30 14:13:06 2017 -0700
+
+    Merge pull request #46 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit 13a30e860677fd85a98cc021518fc47d6709ab2e[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Sun Jul 30 16:11:28 2017 -0500
+
+    Imagen tp
+
+[33mcommit 9e1a2b15f7204bfc840c03fee9581fbf80949b35[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Sat Jul 29 23:48:20 2017 -0500
+
+    Editar tip y consejo
+
+[33mcommit 407b82f028812c7c4732e63ff14b70b9edb3edae[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Sat Jul 29 17:39:53 2017 -0500
+
+    Index y crear tip
+
+[33mcommit d5d2c5774d8bbb621a4f4a8de044b2ff08285fdc[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Sat Jul 29 15:04:55 2017 -0500
+
+    editar evento, listo.
+
+[33mcommit 729c5a7370d93176f5ad7b9bfb3b87743309000a[m
+Merge: d896596 059e16d
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Fri Jul 28 16:03:44 2017 -0700
+
+    Merge pull request #45 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit 059e16d9fc6c462fdbb0e960ab4de51710bd8d5f[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Fri Jul 28 18:01:48 2017 -0500
+
+    Imagen
+
+[33mcommit 6c90f01e316af88248750a20136a5b91a37d9670[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Fri Jul 28 18:01:11 2017 -0500
+
+    Crear historia. listo
+
+[33mcommit b98d969c1e773df0b07f621aecdf0636f521ba95[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Wed Jul 26 16:25:35 2017 -0700
+
+    Acción para crear historia
+
+[33mcommit 2938b2aa0cd1e8f92b163e6fc8048b84db5d3dba[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Wed Jul 26 16:02:51 2017 -0700
+
+    Index y crear historias de éxito.
+
+[33mcommit 8b0fdf34d71015ddf1d691e9cf9a7e8169b96771[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Sun Jul 23 21:16:25 2017 -0700
+
+    Elimina vento
+
+[33mcommit d896596c722d1b6162f2d3c9662d15830793e391[m
+Merge: 461103d a2b8104
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sun Jul 23 01:01:02 2017 -0700
+
+    Merge pull request #44 from cams007/yezhel
+    
+    Yezhel
+
+[33mcommit a2b810426206edc34b28d7e13737b0e202088b82[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Sun Jul 23 00:57:36 2017 -0700
+
+    Editar evento
+
+[33mcommit cc6352e6d997d53cf7f7b5c901d03261ed044a48[m
+Author: Yezhel Marcial Ruiz <yezhelmr@gmail.com>
+Date:   Fri Jul 21 11:14:40 2017 -0700
+
+    Funcionalidad de crear evento y crear alumno
+
+[33mcommit 461103d150f3f9cec4a6f6bcbb31b9b283d0657c[m
+Merge: 13c2a9c 903da77
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sat Jul 15 12:30:24 2017 -0500
+
+    Merge pull request #43 from cams007/yezhel
+    
+    modificacion en rutas
+
+[33mcommit 903da77bdc862e1554391bd88f0fccb3092b873a[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sat Jul 15 12:16:36 2017 -0500
+
+    modificacion en rutas
+
+[33mcommit c0b1bce80e3ab824622121639dcb459f8a9042bf[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Mon Jul 10 14:58:55 2017 -0500
+
+    update view estudios realizados
+
+[33mcommit 7eab46d71c515a1634f28b46bf6f784a81421115[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Mon Jul 10 00:01:24 2017 -0500
+
+    update view perfil y estudios realizados.
+
+[33mcommit 3a5b6db4d2b4a0b783cc4ebbf6116f7a5eae1851[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Mon Jul 10 00:00:54 2017 -0500
+
+    Se resuelve conflicto con view registrarse
+
+[33mcommit 13c2a9c17e0a43b5f4816c9a38ab540272d67a0d[m
+Merge: 5e28524 5896570
+Author: Adrian Castillo <adri.castillo18@gmail.com>
+Date:   Sun Jul 9 18:43:16 2017 -0500
+
+    Merge pull request #42 from cams007/Adrian
+    
+    Ranking y tabulador de salarios
+
+[33mcommit 589657022108d4639c2631c2da258436857eebfa[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Sun Jul 9 18:40:50 2017 -0500
+
+    update migration tabulador
+
+[33mcommit 8f79316fee03932bdbc060fd1ee4686089a77448[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Sun Jul 9 18:27:58 2017 -0500
+
+    onchange send form: a filtro de tabulador de salarios
+
+[33mcommit 5e28524ed63b0f7599b644a0f80e989afbdc2953[m
+Merge: a670fcc d8b868c
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sun Jul 9 17:31:08 2017 -0500
+
+    Merge pull request #41 from cams007/yezhel
+    
+    crud eventos, egresados y empresas, falta terminar las funcionalidad.
+
+[33mcommit d8b868c8e5c2e91a21df482fcfc6c8d98fdefded[m
+Author: yezhel <yezhelmr@gmail.com>
+Date:   Sun Jul 9 17:29:13 2017 -0500
+
+    crud eventos, egresados y empresas, falta terminar las funcionalidad.
+
+[33mcommit 1a2bb0a814f7887f62b9ddc120dc2c19ac570787[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Sun Jul 9 03:50:38 2017 -0500
+
+    Filtro carrera en tabulador de salarios
+
+[33mcommit 3111ce2973a80a60b1eaffb675f4ab95f87a105e[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Sun Jul 9 02:55:24 2017 -0500
+
+    Funcionalidad a tabulador de salarios
+
+[33mcommit 0f69898a23bc8fe13a8dc8c18dbcc7d1be73b8d1[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Sun Jul 9 00:05:05 2017 -0500
+
+    Se agrega giro y sector a empresa
+
+[33mcommit 854b2f9cde46a63027e0a407c83a10aad48d4cd0[m
+Author: Adrian <adri.castillo18@gmail.com>
+Date:   Sat Jul 8 23:18:05 2017 -0500
+
+    Se agrega funcionalidad a ranking de empresas

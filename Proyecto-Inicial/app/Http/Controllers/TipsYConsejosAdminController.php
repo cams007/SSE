@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Tip;
 use Auth;
 
+use Session;
+
 class TipsYConsejosAdminController extends Controller
 {
     public function index(Request $request){
@@ -72,6 +74,7 @@ class TipsYConsejosAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
+        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/tipConsejo');//Redireccionamos a la url del index
     }
 
@@ -145,7 +148,27 @@ class TipsYConsejosAdminController extends Controller
                 }
                 DB::commit();
         }
-
+        Session::flash('update', 'se ha actualizado correctamente');
         return redirect('admin/tipConsejo');//redireccionamos a la url del index
     }
+
+    public function showEliminarTip(Request $request){
+
+        $tip = DB::table('Tip')->where('id',"$request->id")->first();//Obtenemos el elemento a eliminar
+
+        //se hace uso de transacciones por si en algún momento falla algo
+        DB::beginTransaction();
+        try{
+            Tip::destroy($request->id);
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR(' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        unlink($tip->imagen_url);//Elimina la imagen
+
+        Session::flash('save', 'se ha eliminado correctamente');
+        return redirect('admin/tipConsejo');//redireccionamos a la url del index
+    }
+
 }

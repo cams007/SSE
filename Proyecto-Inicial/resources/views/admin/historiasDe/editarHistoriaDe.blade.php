@@ -18,18 +18,25 @@
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 			<input name="id" type="hidden" value="{{$historia->id}}" />
-
+			
+			<img src="{{ url('assets/images/crear.png') }}" alt="">
 			<label for="" class="">Titulo: </label>
 	 		<input type="text" name="titulo" value="{{$historia->titulo}}"/>
-
+			
+			<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion">{{$historia->descripcion}}</textarea>
 	 		
+	 		<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Foto: </label>
-	 		<input name="imagen" type="file"/>
-	 		<img src="{{ url($historia->imagen_url)}}" alt=""/>
+	 		<input id="file-input" name="imagen" type="file"/>
+	 		<img id="imgSalida" src="{{ url($historia->imagen_url)}}" alt=""/>
 
 	 		<button type="submit" class="flat">Enviar</button>
 		</form>
 	</div><!--contenedor-->
+@stop
+
+@section('script')
+<script src="{{ url('js/admin/historiaDExito.js') }}"></script>
 @stop

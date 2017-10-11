@@ -61,7 +61,15 @@ class Egresado extends Model
     public function scopeTitulo($query, $nombre){
         if (trim($nombre) != ""){
             $query
-                ->where(\DB::raw("CONCAT(nombre, ' ', matricula, ' ', curp)"), 'like', '%'.$nombre.'%');
+                ->where(\DB::raw("CONCAT(ap_paterno, ' ', matricula, ' ', curp)"), 'like', '%'.$nombre.'%');
+        }
+    }
+
+    //Realiza la busqueda todo, por los campos asignados
+    public function scopeTodo($query, $nombre){
+        if (trim($nombre) != ""){
+            $query
+                ->where(\DB::raw("CONCAT(ap_paterno, ' ', ap_materno, ' ', nombres, matricula, ' ', curp)"), 'like', '%'.$nombre.'%');
         }
     }
 

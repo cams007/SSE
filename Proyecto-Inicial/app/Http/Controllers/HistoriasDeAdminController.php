@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\HistoriaExito;
 use Auth;
+use Session;
 
 class HistoriasDeAdminController extends Controller
 {
@@ -72,6 +73,7 @@ class HistoriasDeAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
+        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/historiasdeExito');//Redireccionamos al index de eventos
     }
 
@@ -147,8 +149,28 @@ class HistoriasDeAdminController extends Controller
             }
             DB::commit();
         }
-
+        Session::flash('update', 'se ha actualizado correctamente');
         return redirect('admin/historiasdeExito');//redireccionamos a la url del index
 
+    }
+
+    public function EliminarHistoria(Request $request){
+
+        $historia = HistoriaExito::find($request->id);//Recuperamos elemento a eliminar
+
+        //Se hace uso de las transacciones
+        DB::beginTransaction();
+        try{
+            $historia->delete();//Elimina el elemento de la BD
+            //HistoriaExito::destroy($request->id);
+        }catch(Exception $e){
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        unlink($historia->imagen_url);//Elimina la imagen
+
+        Session::flash('save', 'se ha eliminado correctamente');
+        return redirect('admin/historiasdeExito');//redireccionamos a la url del index
     }
 }
