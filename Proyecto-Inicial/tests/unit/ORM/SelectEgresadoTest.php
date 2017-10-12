@@ -8,6 +8,6 @@ class SelectEgresadoTest extends \Codeception\Test\Unit
     public function test_select_egresado_registrado()
     {
         $egresadoDB = Egresado::first();
-        $this->assertNotNull($egresadoDB->nombre);
+        $this->assertNotNull($egresadoDB->nombres);
     }
 }
