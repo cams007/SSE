@@ -33,7 +33,7 @@ class UserTableSeeder extends Seeder
 
         //Se crea egresado de prueba
         factory(User::class)->times(1)->create([
-            'correo' => 'usuario@ejemplo.net',
+            'correo' => 'usalab@gmail.com',
         ]);
 
     }

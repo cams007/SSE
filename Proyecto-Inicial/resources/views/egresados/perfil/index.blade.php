@@ -30,7 +30,7 @@
 
 					<div class="contenedor-info"><!--inicio contenedor-info-->
 						<div class="icono"><!--inicio icono-->
-							<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos">
+							<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos" title="Nombre">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
 							<span class="info-perfil"> {{ $egresados->nombres }} {{ $egresados->ap_paterno }} {{ $egresados->ap_materno }} </span>
@@ -38,7 +38,7 @@
 					</div><!--contenedor-info-->
 					<div class="contenedor-info"><!--inicio contenedor-info-->
 						<div class="icono"><!--inicio icono-->
-							<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos">
+							<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos" title="Fecha de nacimiento">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
 							<span class="info-perfil"> {{ $egresados->fecha_nacimiento }} </span>
@@ -47,7 +47,7 @@
 
 					<div class="contenedor-info"><!--inicio contenedor-info-->
 						<div class="icono"><!--inicio icono-->
-							<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
+							<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos" title="Lugar de origen">
 						</div><!--fin icono-->
 						<div class="info"><!--inicio info-->
 							<span class="info-perfil"> {{ $egresados->lugar_origen }}</span>
@@ -55,15 +55,15 @@
 					</div><!--contenedor-info-->
 
 					<div>
-						<input type="text" name="e_direccionActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->direccion_actual}} " />
+						<input type="text" name="e_direccionActual" class="input-icon inputHome" placeholder="Agrega tu ciudad actual"  value="{{$egresados->direccion_actual}} " title="Dirección actual" />
 					</div>
 
 					<div>
-						<input type="email" name="e_correo" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->usuario->correo}}" />
+						<input type="email" name="e_correo" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->usuario->correo}}" title="Correo electrónico" />
 					</div>
 
 					<div>
-						<input type="tel" name="e_telefono" class="input-icon inputTel" placeholder="Agregar telefóno" value="{{$egresados->telefono}}" />
+						<input type="tel" name="e_telefono" class="input-icon inputTel" placeholder="Agregar teléfono" value="{{$egresados->telefono}}" title="Teléfono" />
 					</div>
 
 					<div>
@@ -93,13 +93,21 @@
 			</div>
 		</div><!--fin div-2-2-->
 		<div class="div-2-3">
-	    	{{-- <img src="{{url($egresados->imagen_url)}}" alt="user-picture" class="img-thumbnail img"> --}}
-	    	<div>
+			@if($egresados->imagen_url)
+				<img src="{{url($egresados->imagen_url)}}" alt="user-picture" class="img-thumbnail img">
+				<div>
 	    		<a href="#">
-	    			<i></i>
 	    			Cambiar foto de perfil
 	    		</a>
 	    	</div>
+			@else
+				<img src="{{url('assets/images/egresados/default.png')}}" alt="user-picture" class="img-thumbnail img">
+				<div>
+	    		<a href="#">
+	    			Subir foto de perfil
+	    		</a>
+	    	</div>
+			@endif
 		</div><!--fin div-2-3-->
 	</div><!--fin div-2-->
 </div><!--fin contenedor-->

@@ -29,10 +29,13 @@
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 
-				
 				<div class="form-group">
 					<label for="nEmpresa">Nombre de la empresa</label>
-					<input type="text" name="nEmpresa" id="nEmpresa" class="form-control" value="{{ $empleo->empresa }}">
+					@if($empleo)
+						<input type="text" name="nEmpresa" id="nEmpresa" class="form-control" value="{{ $empleo->empresa }}">
+					@else
+						<input type="text" name="nEmpresa" id="nEmpresa" class="form-control">
+					@endif
 				</div>
 
 				<div class="form-group">
@@ -51,18 +54,30 @@
 			
 				<div class="form-group">
 					<label for="fingreso"> Fecha de ingreso</label>
-					<input type="date" name="fingreso" id="fingreso" class="form-control" value="{{ $empleo->fecha_ingreso }}">
+					@if($empleo)
+						<input type="date" name="fingreso" id="fingreso" class="form-control" value="{{ $empleo->fecha_ingreso }}">
+					@else
+						<input type="date" name="fingreso" id="fingreso" class="form-control">
+					@endif
 					{{-- {{ Form::date('fingreso', $empleo->fecha_ingreso ) }} --}}
 				</div>				
 			
 				<div class="form-group">
 					<label for="puestoA"> Puesto actual</label>
-					<input type="text" name="puestoA" id="puestoA" class="form-control" value="{{ $empleo->puesto_inicial }}">
+					@if($empleo)
+						<input type="text" name="puestoA" id="puestoA" class="form-control" value="{{ $empleo->puesto_inicial }}">
+					@else
+						<input type="text" name="puestoA" id="puestoA" class="form-control">
+					@endif
 				</div>
 			
 				<div class="form-group">
 					<label for="puestoI">Puesto final</label>
-					<input type="text" name="puestoI" id="puestoI" class="form-control" pattern="[a-z]" value="{{ $empleo->puesto_final }}">
+					@if($empleo)
+						<input type="text" name="puestoI" id="puestoI" class="form-control" pattern="[a-z]" value="{{ $empleo->puesto_final }}">
+					@else
+						<input type="text" name="puestoI" id="puestoI" class="form-control" pattern="[a-z]">
+					@endif
 				</div>
 			
 				<div class="form-group">
@@ -72,12 +87,7 @@
 
 				<div>
 					<label for="inputTContrato">Tipo de contrato</label>
-					<select name="tContrato" id="inputTContrato">
-						<option value="" checked>---Selecionar---</option>
-						<option value="0">Indeterminado</option>
-						<option value="1">Eventual</option>
-						<option value="2">Honorarios</option>
-					</select>
+					{!! Form::select('contrato', config('options.tipo_contrato'), "", ['class' => 'seleccion']) !!}
 				</div>
 			
 				<!-- <div class="form-group">

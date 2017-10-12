@@ -26,6 +26,13 @@ return array(
 		'' 				=> 	'Selecciona tu nacionalidad',
 		'Mexicana'		=>	'Mexicana',
 		'Otra'		=>	'Otra'
+	],
+
+	'tipo_contrato' 	=> [
+		'' 				=> 	'Selecciona el tipo de contrato',
+		'Indeterminado'	=>	'Indeterminado',
+		'Eventual'		=>	'Eventual',
+		'Honorarios'	=>	'Honorarios'
 	]
 );
 
