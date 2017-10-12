@@ -474,10 +474,10 @@ label {
   position: relative;
   top: 16px;
   width: 200px;
-  background:#7F7B79;
-  background-image: url("../assets/images/biblioteca.JPG");
+  /*background:#7F7B79;*/
+  /*background-image: url("../assets/images/biblioteca.JPG");*/
   height: 160px;
-  border: 8px solid #5E352A;
+  /*border: 8px solid #5E352A;*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

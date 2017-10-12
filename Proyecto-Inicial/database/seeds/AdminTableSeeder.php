@@ -13,8 +13,8 @@ class AdminTableSeeder extends Seeder
     public function run()
     {
         factory(Admin::class)->times(1)->create([
-        	'correo' => 'admin@ejemplo.net',
-        	'nombre' => 'Administrador de prueba',
+        	'correo' => 'usalab@gmail.com',
+        	'nombre' => 'Alta de usuarios UsaLab',
         ]);
     }
 }

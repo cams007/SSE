@@ -24,7 +24,7 @@ class Ranking extends Model
 
     public function scopeEmpresa($query, $puesto){
         if (trim($puesto) != ""){
-            // $query
+                // $query
             //     ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
         }
     }

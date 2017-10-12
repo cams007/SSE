@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Egresado;
 use App\User;
 use App\Preparacion;
+use App\PrimerEmpleo;
 use App\Maestria;
 use App\Doctorado;
 use Auth;
@@ -35,7 +36,10 @@ class PerfilController extends Controller {
     }
 
     public function showPrimerEmpleoForm(){
-        return view('egresados.perfil.primerEmpleo');
+
+        $primerempleo = PrimerEmpleo::where('id', Auth::user()->egresado->primerEmpleo_id)->first();
+
+        return view('egresados.perfil.primerEmpleo', ['empleo' => $primerempleo]);
     }
 
     public function showEmpleosForm(){

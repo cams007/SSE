@@ -16,10 +16,12 @@ class CreateEgresadoTable extends Migration
         Schema::create('Egresado', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->string('matricula', 12)->primary()->unique();
-            $table->string('nombre', 100);
+            $table->string('ap_paterno', 50);
+            $table->string('ap_materno', 50);
+            $table->string('nombres', 100);
             $table->string('curp', 25);
             $table->enum('genero', ['Masculino', 'Femenino'])->nullable();
-            $table->dateTime('fecha_nacimiento');
+            $table->date('fecha_nacimiento');
             $table->enum('nacionalidad', ['Mexicana', 'Otra'])->nullable();
             $table->string('telefono', 12)->nullable();
             $table->string('lugar_origen', 200);
@@ -29,8 +31,8 @@ class CreateEgresadoTable extends Migration
             $table->boolean('habilitado');
             $table->integer('preparacion_id')->unsigned();
             $table->foreign('preparacion_id')->references('id')->on('Preparacion')->unique();
-            $table->integer('primerEmpleo_id')->unsigned()->nullable();
-            $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo')->unique();
+            $table->integer('primer_empleo_id')->unsigned()->nullable();
+            $table->foreign('primer_empleo_id')->references('id')->on('PrimerEmpleo')->unique();
             $table->timestamps();
         });
     }

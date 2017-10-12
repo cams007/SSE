@@ -25,34 +25,50 @@
 
 
     <div class="div-2-2">
-        <form>
-                <div class="label">Matricula:*</div>
-                <div class="div-input">
-                  <input type="text" name="matricula" id="entradas" placeholder="i.e. 2010123456" autofocus>
+        <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+            {{ csrf_field() }}
+            <div class="label">Matricula:*</div>
+                <div class="div-input {{ $errors->has('matricula') ? ' has-error' : '' }}">
+                    <input type="text" name="egresado_matricula" id="entradas" placeholder="i.e. 2010123456" value="{{ old('matricula') }}" required autofocus>
+
+                    @if ($errors->has('matricula'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('matricula') }}</strong>
+                            error
+                        </span>
+                    @endif
                 </div>
 
                 <div class="label">CURP:*</div>
-                <div class="div-input">
-                  <input type="text" name="curp" id="entradas">
+                <div class="div-input{{ $errors->has('curp') ? ' has-error' : '' }}">
+                    <input type="text" name="curp" id="entradas" value="{{ old('curp') }}" style="text-transform:uppercase" required>
                 </div>
 
                 <div class="label">Correo electrónico:*</div>
-                <div class="div-input">
-                  <input type="text" name="correo" id="entradas" placeholder="correo@ejemplo.net">
+                <div class="div-input{{ $errors->has('correo') ? ' has-error' : '' }}">
+                    <input type="text" name="correo" id="entradas" placeholder="correo@ejemplo.net" required>
+
+                    @if ($errors->has('correo'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('correo') }}</strong>
+                        </span>
+                    @endif
                 </div>
 
                 <div class="label">Contraseña:*</div>
-                <div class="div-input">
-                  <input type="password" name="password" id="entradas">
+                <div class="div-input{{ $errors->has('password') ? ' has-error' : '' }}">
+                  <input type="password" name="password" id="entradas" required>
                 </div>
 
                 <div class="label">Confirmar contraseña:*</div>
-                <input type="password_confirmacion" name="pass2" id="entradas">
+                <input type="password" name="password_confirmation" id="entradas" required>
                 <div class="last-label">* Campos obligatorios</div>
 
                 <div class="btn-group">
-                <a href="{{url('/')}}" class="button1"> Cancelar</a>
-                <a href="{{url('bienvenida')}}" class="button2">Registrarse</a>
+                    <a href="{{url('/')}}" class="button1"> Cancelar</a>
+                    <button type="submit">
+                        <a href="{{url('bienvenida')}}" class="button2" type="submit">Registrarse</a>
+                    </button>
               </div>
         </form>
     </div>
