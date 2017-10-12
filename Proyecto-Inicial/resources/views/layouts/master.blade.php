@@ -25,7 +25,11 @@
                         
                     @else
                         <a class="user-name" href="#">
+                          @if(Auth::user()->egresado->imagen_url)
+                            <img src="{{ url(Auth::user()->egresado->imagen_url) }}" style="width: 24px; height: 24px; border-radius: 50%">
+                          @else
                             <img src="{{ url('assets/images/user-name.png') }}">
+                          @endif
                         </a>
                         <p>{{ Auth::user()->egresado->nombres }}
                         {{ Auth::user()->egresado->ap_paterno }}
@@ -42,11 +46,11 @@
                       <ul>
                         <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
                         <li><a  href="#">Cambiar contraseña</a></li>
-                        <li><a  href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                        <li><a  href="{{ route('user.logout') }}" onclick="event.preventDefault(); 
                               document.getElementById('logout-form').submit();">
                               Cerrar sesión
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
                         </li>

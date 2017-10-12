@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Egresado;
 
 class AdminController extends Controller
 {
@@ -24,6 +25,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.home'); //change for admin/home
+        $egresados = Egresado::where('habilitado','=',1)->orderBy('ap_paterno', 'DESC')->paginate(10);
+
+        // return view('admin.egresado.index'); //change for admin/home
+        return view('admin.egresado.index', compact('egresados'));
     }
 }

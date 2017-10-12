@@ -93,21 +93,19 @@
 			</div>
 		</div><!--fin div-2-2-->
 		<div class="div-2-3">
+
 			@if($egresados->imagen_url)
-				<img src="{{url($egresados->imagen_url)}}" alt="user-picture" class="img-thumbnail img">
-				<div>
-	    		<a href="#">
-	    			Cambiar foto de perfil
-	    		</a>
-	    	</div>
+				<img src="{{url($egresados->imagen_url)}}" style="width:90%; height:100%; float: left; border-radius: 50%">
 			@else
 				<img src="{{url('assets/images/egresados/default.png')}}" alt="user-picture" class="img-thumbnail img">
-				<div>
-	    		<a href="#">
-	    			Subir foto de perfil
-	    		</a>
-	    	</div>
 			@endif
+
+			<form enctype="multipart/form-data" action="perfil/upphoto" method="POST">
+				<input type="file" name="e_img" accept="image/*">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<input type="submit" class="flat" value="Actualizar">
+			</form>
+
 		</div><!--fin div-2-3-->
 	</div><!--fin div-2-->
 </div><!--fin contenedor-->
