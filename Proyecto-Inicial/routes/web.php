@@ -131,12 +131,15 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/eliminarTipConsejo','TipsYConsejosAdminController@showEliminarTip')->name('admin.eliminarTipConsejo.submit');
     });
 
-    Route::group(['prefix' => 'ofertas'], function(){
+    Route::group(['prefix' => 'ofertas'], function() {
         Route::get('/','OfertasLaboralesAdminController@index');
     });
 
     /*
     * Rutas para indices y estadisticas
     */
-    Route::get('/estadisticas', 'IndicesEstadisticasController@showEstadisticasView');
+    Route::group( [ 'prefix' => 'estadisticas' ], function() {
+        Route::get('/', 'IndicesEstadisticasController@showEstadisticasView');
+    } );
+    //Route::get('/estadisticas', 'IndicesEstadisticasController@showEstadisticasView');
 });
