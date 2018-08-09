@@ -17,7 +17,7 @@ class OfertasController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index(Request $request) {
 
         $ofertas = Oferta::puesto($request->get('q'))->orderBy('created_at', 'DESC')->paginate(9);
