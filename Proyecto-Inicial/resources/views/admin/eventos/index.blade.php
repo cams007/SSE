@@ -30,13 +30,11 @@
 		
 		<table> <!--Contenido de la pagina-->
 			<thead>
-				<td>Puesto</td>
-				<td>Descripción</td>
-				<td>Empresa</td>
-				<td>Ubicación</td>
-				<td>Carrera</td>
-				<td>Experiencia</td>
-				<td>Salario</td>
+				<td>Nombre</td>
+				<td>Lugar</td>
+				<td>Fecha</td>
+				<td>Tipo</td>
+				<td>Acción</td>
 			</thead>
 			<tbody>
 			@foreach($eventos as $evento)
@@ -47,7 +45,7 @@
 				<td>{{ $evento->categoria}}</td>
 				<td>
 					<a href="{{route('admin.editarEvento', $evento)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-          				<a href="#eliminarEvento" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
+          			<a href="#eliminarEvento" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
 	        @endforeach
