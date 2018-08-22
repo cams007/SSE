@@ -21,10 +21,8 @@
     <form id="form_login" role="form" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         
-        @if($errors->has('correo'))
-            <div class="alert alert-danger"> 
-                {!! $errors->first('correo') !!}
-            </div>
+        @if (Session::has('failure'))
+            <div class="alert alert-danger">{!! Session::get('failure') !!}</div>
         @endif
 
         <div class="usuario-login">

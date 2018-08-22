@@ -28,7 +28,7 @@
                         <a class="user-name" href="#">
                             <img src="{{ url('assets/images/user-name.png') }}">
                         </a>
-                        <p>{{ Auth::user()->egresado->nombre }}</p>
+                        <p>{{ Auth::user()->nombre }}</p>
                     @endif
               </div>
               <div id="iconos">
@@ -39,13 +39,12 @@
                     <li><a  href="{{url('home')}}"><img src="{{url('assets/images/home.png')}}"></a></li>
                     <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
                       <ul>
-                        <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
                         <li><a  href="#">Cambiar contraseña</a></li>
-                        <li><a  href="{{ route('logout') }}" onclick="event.preventDefault(); 
+                        <li><a  href="{{ route('admin.logout') }}" onclick="event.preventDefault(); 
                               document.getElementById('logout-form').submit();">
                               Cerrar sesión
                             </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>
                         </li>

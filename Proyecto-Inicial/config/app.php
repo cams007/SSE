@@ -185,6 +185,8 @@ return [
         */
         ConsoleTVs\Charts\ChartsServiceProvider::class,
 
+        Intervention\Image\ImageServiceProvider::class,
+
     ],
 
     /*
@@ -240,6 +242,7 @@ return [
         * Alias graficas
         */
         'Charts' => ConsoleTVs\Charts\Facades\Charts::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];
