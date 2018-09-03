@@ -37,6 +37,7 @@ Route::group(['prefix' => 'perfil'], function() {
     });
 
     Route::post('/', 'PerfilController@saveDatosBasicos');
+    Route::post('upphoto', 'PerfilController@updatePhoto');
     Route::post('estudiosRealizados', 'PerfilController@saveFormacionPerson');
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
     Route::post('intereses', 'PerfilController@saveFormacionProf');

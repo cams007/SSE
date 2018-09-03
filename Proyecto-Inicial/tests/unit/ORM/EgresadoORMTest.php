@@ -21,7 +21,9 @@ class EgresadoORMTest extends \Codeception\Test\Unit
 
         $egresado = new Egresado();
         $egresado->matricula = '2012020212';
-        $egresado->nombre = 'Adrian Castillo Castillo';
+        $egresado->ap_paterno = "Castillo";
+        $egresado->ap_materno = "Castillo";
+        $egresado->nombres = 'Adrian Santiago';
         $egresado->curp = 'CXCA951012HOCSSD08';
         $egresado->genero = "Masculino";
         $egresado->fecha_nacimiento = date('Y-m-d H:i:s');
@@ -34,7 +36,7 @@ class EgresadoORMTest extends \Codeception\Test\Unit
         $egresadoDB = Egresado::find($egresado->matricula);
         
         $this->assertNotNull($egresadoDB);
-        $this->assertEquals($egresadoDB->nombre, 'Adrian Castillo Castillo');
+        $this->assertEquals($egresadoDB->nombres, 'Adrian Santiago');
 
         $this->assertNotNull($egresadoDB->preparacion);
         $this->assertNull($egresadoDB->primerEmpleo);

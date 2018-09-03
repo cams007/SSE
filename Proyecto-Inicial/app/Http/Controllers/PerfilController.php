@@ -10,6 +10,7 @@ use App\PrimerEmpleo;
 use App\Maestria;
 use App\Doctorado;
 use Auth;
+use Image;
 
 class PerfilController extends Controller {
 
@@ -63,7 +64,21 @@ class PerfilController extends Controller {
         $egresado->usuario->correo = $request->e_correo;
         $egresado->usuario->save();
         
-        return redirect('perfil/estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
+        // return redirect('perfil/estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
+        return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
+    }
+
+    public function updatePhoto(Request $request){
+        if ($request->hasFile('e_img')){
+            $imagen = $request->file('e_img');
+            $filename = time() . '.' . $imagen->getClientOriginalExtension();
+            Image::make($imagen)->save( public_path('/assets/images/egresados/' . $filename ) );
+
+            $egresado = Auth::user()->egresado;
+            $egresado->imagen_url = 'assets/images/egresados/' . $filename;
+            $egresado->save();
+        }
+        return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
 
     public function saveFormacionPerson(Request $request) {
