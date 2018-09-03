@@ -10,7 +10,19 @@
 @stop
 
 @php
-	$carrera = array(0=>'Ingeniería en Diseño',1=>'Ingeniería en Computación',2=>'Ingeniría en Alimentos',3=>'Ingeniería en Electrónica',4=>'Ingeniería en Mecatrónica',5=>'Ingeniería Industrial',6=>'Ingeniería en Física Aplicada',7=>'Licenciatura en Ciencias Empresariales',8=>'Licenciatura en Matemáticas Aplicadas',9=>'Licenciatura en Estudios Mexicanos',10=>'Ingeniería en Mecánica Automotriz');
+	$carrera = array(
+		0=>'Ingeniería en Diseño',
+		1=>'Ingeniería en Computación',
+		2=>'Ingeniría en Alimentos',
+		3=>'Ingeniería en Electrónica',
+		4=>'Ingeniería en Mecatrónica',
+		5=>'Ingeniería Industrial',
+		6=>'Ingeniería en Física Aplicada',
+		7=>'Licenciatura en Ciencias Empresariales',
+		8=>'Licenciatura en Matemáticas Aplicadas',
+		9=>'Licenciatura en Estudios Mexicanos',
+		10=>'Ingeniería en Mecánica Automotriz'
+	);
 @endphp
 
 @section('content')
@@ -26,7 +38,7 @@
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
 			<div class="search">
 				{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
-					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}
+					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de egresados']) !!}
 				{!! Form::close() !!}
 			</div>
 		</div><!--fin div-2-2-1-->
@@ -45,16 +57,21 @@
 			<tr data-egresado="{{$egresado}}" data-preparacion="{{$egresado->preparacion}}">
 				<td>{{$i}}</td>
 				<td>{{$egresado->matricula}}</td>
-				<td><a href="#verEgresado" class="btn-show">{{$egresado->ap_paterno}} {{$egresado->ap_materno}} {{$egresado->nombres}}</a></td>
-				<td>@foreach($carrera as $idn=>$nombre)
+				<td>
+					<a href="#verEgresado" class="btn-show">{{$egresado->ap_paterno}} {{$egresado->ap_materno}} {{$egresado->nombres}}</a>
+				</td>
+				<!--
+					<td>@foreach($carrera as $idn=>$nombre)
 						@if($egresado->preparacion->carrera == $idn)
-							{{$nombre}}
+							{{$nombre}} {{ $egresado->preparacion->carrera }}
 						@endif
 					@endforeach
 				</td>
+				-->
+				<td>{{ $carrera[ $egresado->preparacion->carrera ] }}</td>
 				<td>
 					<a href="{{url('/admin/egresado/editarEgresado', $egresado->matricula)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
-          			<a href="#eliminarEgresado" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
+          				<a href="#eliminarEgresado" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 				</td>
 			</tr>
 			@php $i++; @endphp
@@ -139,7 +156,6 @@
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="egPr_fechaF"></div><!--descripcion-->
 					</div><!--item-1-->
-
 
 					<!--<a href="{{ URL::previous() }}">Volver</a>-->
 					<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>

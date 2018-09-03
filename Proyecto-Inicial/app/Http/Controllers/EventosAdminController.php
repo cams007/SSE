@@ -10,9 +10,12 @@ use Auth;
 
 class EventosAdminController extends Controller
 {
-    public function index(Request $request) {
-
-        $eventos = Evento::todo($request->get('q'))->where('activo','=',1)->orderBy('fecha', 'DESC')->paginate(10);
+    public function index(Request $request)
+    {
+        $eventos = Evento::todo($request->get('q'))
+            ->where('activo','=',1)
+            ->orderBy('fecha', 'DESC')
+            ->paginate(10);
 
         return view('admin.eventos.index', compact('eventos'));
     }

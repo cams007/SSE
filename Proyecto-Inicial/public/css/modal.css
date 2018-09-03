@@ -15,7 +15,10 @@
   left: 0;
   opacity: 0;
   pointer-events: none;
+  /*
   position: fixed;
+  */
+  position: absolute;
   right: 0;
   top: 0;
   transition: opacity 400ms ease-in;
@@ -47,7 +50,7 @@
   .modaloverlay .modal {
     /*height: 50%;*/
     margin: 5% auto;
-    max-height: 57em;
+   
     max-width: 33em;
     width: 85%;
   }

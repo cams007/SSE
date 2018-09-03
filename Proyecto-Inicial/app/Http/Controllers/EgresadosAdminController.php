@@ -12,8 +12,12 @@ class EgresadosAdminController extends Controller
 {
 	public function index(Request $request) {
 
-        $egresados = Egresado::todo($request->get('q'))->where('habilitado','=',1)->orderBy('ap_paterno', 'DESC')->paginate(10);
+        $egresados = Egresado::todo($request->get('q'))
+            ->where('habilitado','=',1)
+            ->orderBy('ap_paterno', 'DESC')
+            ->paginate(10);
         //$egresados = Egresado::where('habilitado', '=',1)->orderBy('created_at', 'DESC')->paginate(10);
+        
         return view('admin.egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
     }
 
@@ -123,7 +127,9 @@ class EgresadosAdminController extends Controller
         DB::commit();
 
         Session::flash('update', 'se ha eliminado correctamente');
-        return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
+        
+        //Redireccionamos al index de egresado url(/admin/egresado)
+        return redirect('admin/egresado');
     }
 
 }

@@ -131,8 +131,16 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/eliminarTipConsejo','TipsYConsejosAdminController@showEliminarTip')->name('admin.eliminarTipConsejo.submit');
     });
 
+    //Grupo de rutas para los ofertas. (admin/ofertas/..)
     Route::group(['prefix' => 'ofertas'], function() {
         Route::get('/','OfertasLaboralesAdminController@index');
+        Route::post('/eliminarOferta','OfertasLaboralesAdminController@eliminarOferta')->name('admin.eliminarOferta.submit');
+        
+        Route::get('/crearOferta','OfertasLaboralesAdminController@showCrearOferta')->name('admin.crearOferta');
+        Route::post('/crearOferta','OfertasLaboralesAdminController@saveOferta')->name('admin.crearOferta.submit');
+
+        Route::get('/editarOferta/{id}','OfertasLaboralesAdminController@showEditarOferta')->name('admin.editarOferta');
+        Route::post('/editarOferta','OfertasLaboralesAdminController@saveEditarOferta')->name('admin.editarOferta.submit');
     });
 
     /*

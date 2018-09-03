@@ -23,7 +23,8 @@ class Evento extends Model
     public function scopeTodo($query, $titulo){
         if (trim($titulo) != ""){
             $query
-                ->where(\DB::raw("CONCAT(nombre, ' ', descripcion, ' ', lugar, ' ',categoria, ' ',fecha)"), 'like', '%'.$titulo.'%');
+                ->where(\DB::raw("CONCAT(nombre, ' ', descripcion, ' ', lugar, ' ',categoria, ' ',fecha)"),
+                                'like', '%'.$titulo.'%');
         }
     }
 

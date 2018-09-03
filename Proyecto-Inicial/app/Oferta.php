@@ -11,33 +11,16 @@ class Oferta extends Model
 	*
 	* @var string
 	*/
-    protected $table = 'Oferta';
 
-    public function empresa(){
-    	return $this->belongsTo('App\Empresa');
-    }
+    public $table = 'Oferta';
 
-    public function scopePuesto($query, $puesto){
-        if (trim($puesto) != ""){
-
-            // $words = explode(' ', $puesto);
-            // foreach($words as $word){
-            // }
-            // $query->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', implode(" OR ", $sql));
-
+    //Realiza la busqueda todo, por los campos asignados
+    public function scopeTodo($query, $nombre)
+    {
+        if (trim($nombre) != ""){
             $query
-                ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
+                ->where(\DB::raw("CONCAT(titulo_empleo, ' ', ubicacion )"), 'like', '%'.$nombre.'%');
         }
     }
-
-    // /**
-    //  * Get the user's nombre empresa.
-    //  *
-    //  * @param  string  $value
-    //  * @return string
-    //  */
-    // public function getNombreEmpresaAttribute(){
-    //     return $this->belongsTo('App\Empresa')->select('nombre');
-    // }
-
+    
 }
