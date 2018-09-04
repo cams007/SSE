@@ -122,15 +122,15 @@ class IndicesEstadisticasController extends Controller
 		                    CASE WHEN( DATEDIFF(fecha_ingreso,fecha_fin ) > 0 ) THEN 'Egresado sin empleo'
 		                    END
 	                    END Indice, COUNT(*) AS Total FROM egresado INNER JOIN ( primerempleo INNER JOIN preparacion )
-                        ON egresado.preparacion_id = preparacion.id AND egresado.primerempleo_id = primerempleo.id GROUP BY Indice;",
+                        ON egresado.preparacion_id = preparacion.id AND egresado.primer_empleo_id = primerempleo.id GROUP BY Indice;",
                 '2' => "SELECT tiempo_sin_empleo AS 'Indice', COUNT(*) AS Total FROM primerempleo INNER JOIN egresado
-                        ON egresado.primerEmpleo_id = primerempleo.id GROUP BY Indice;",
+                        ON egresado.primer_Empleo_id = primerempleo.id GROUP BY Indice;",
                 '3' => "SELECT factores_contratacion AS 'Indice', COUNT(*) AS Total FROM egresado INNER JOIN primerempleo
-                        ON egresado.primerempleo_id = primerempleo.id GROUP BY factores_contratacion;",
+                        ON egresado.primer_empleo_id = primerempleo.id GROUP BY factores_contratacion;",
                 '4' => "SELECT sector AS 'Indice', COUNT(*) AS Total FROM primerempleo INNER JOIN egresado
-                        ON egresado.primerempleo_id = primerempleo.id GROUP BY sector;",
+                        ON egresado.primer_empleo_id = primerempleo.id GROUP BY sector;",
                 '5' => "SELECT jornada AS 'Indice', COUNT(*) AS Total FROM primerempleo INNER JOIN egresado
-                        ON egresado.primerempleo_id = primerempleo.id GROUP BY jornada;",
+                        ON egresado.primer_empleo_id = primerempleo.id GROUP BY jornada;",
                 '6' => "SELECT
 	                    CASE WHEN( actividad_laboral = 0 ) THEN 'Requieren formacion de mi carrera' ELSE
 		                    CASE WHEN( actividad_laboral = 1 ) THEN 'No requieren formacion de mi carrera' ELSE
@@ -138,7 +138,7 @@ class IndicesEstadisticasController extends Controller
 			                    END
 		                    END
 	                    END Indice, COUNT(*) AS Total FROM primerempleo INNER JOIN egresado ON
-                        egresado.primerempleo_id=primerempleo.id GROUP BY Indice;",
+                        egresado.primer_empleo_id=primerempleo.id GROUP BY Indice;",
                 '7' => "SELECT
 	                    CASE WHEN( salario BETWEEN 0 AND 5000 ) THEN 'De 0 a 50000' ELSE
 		                    CASE WHEN( salario BETWEEN 5001 AND 10000 ) THEN 'Entre 5000 y 10000' ELSE
