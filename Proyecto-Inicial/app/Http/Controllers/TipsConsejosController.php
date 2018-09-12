@@ -13,11 +13,11 @@ class TipsConsejosController extends Controller
      *
      * @return void
      */
-    public function __construct()
+   /* public function __construct()
     {
         $this->middleware('auth');
     }
-    
+    */
     public function index(Request $request) {
 
         $tips = Tip::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(4);

@@ -49,6 +49,7 @@
 						<th>Nombre de la empresa</th>
 						<th>Ubicación</th>
 						<th>Giro de la empresa</th>
+						<th>Calificacion</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -78,6 +79,7 @@
 							<td><a href="#datosEmpresa" class="btn-empresa">{{ $empresa->nombre }}</a></td>
 							<td>{{ $empresa->ciudad . ', ' . $empresa->estado }}</td>
 							<td>{{ $empresa->giro }}</td>
+							<td>{{ $empresa->calificacion }}</td>
 						</tr>
 					@endforeach
 				</tbody>

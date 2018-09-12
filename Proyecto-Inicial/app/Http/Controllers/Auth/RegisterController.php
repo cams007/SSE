@@ -63,7 +63,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
         // $egresado = egresado::where('matricula', $data['matricula'])->first();
 
         return User::create([

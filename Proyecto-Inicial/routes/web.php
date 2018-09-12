@@ -13,15 +13,23 @@
 
 // Rutas de login y registro (auth)
 Auth::routes();
-
+// Authentication routes...
+//Route::get('/', 'HomeController@index')->name('index');
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
-Route::get('/registro', 'RegistroController@showRegistroForm')->name('user.registro');
-Route::post('/registro', 'Auth\RegisterController@register');
+//Route::get('/registro', 'RegistroController@showRegistroForm')->name('user.registro');
+//Route::post('/registro', 'Auth\RegisterController@register');
+Route::get('/registro','RegistroController@showRegistroForm')->name('crearUsuario');
+Route::post('/registro','RegistroController@saveUsuario')->name('crearUsuario.submit');
+
 Route::get('/bienvenida', 'RegistroController@showBienvenidaForm')->name('user.bienvenida');
 
+Route::get('admin/home', 'HomeAdminController@index')->name('home');
+Route::get('egresados/home', 'HomeController@index')->name('home');
+
+//Rutas para la seccion de Administrador@
 Route::group(['prefix' => 'perfil'], function() {
     Route::get('/', 'PerfilController@showPerfilForm')->name('perfil');
     Route::get('estudiosRealizados', 'PerfilController@showEstudiosForm')->name('perfil.estudiosRealizados');
@@ -67,9 +75,6 @@ Route::group(['prefix' => 'eventos'], function() {
 
 Route::get('/historiasExito', 'HistoriasExitoController@index');
 Route::get('/tipsConsejos', 'TipsConsejosController@index');
-
-
-
 
 
 //Rutas para la seccion de Administrador@

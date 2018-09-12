@@ -12,7 +12,14 @@ class Oferta extends Model
 	* @var string
 	*/
 
-    public $table = 'Oferta';
+    protected $table = 'Oferta';
+    /**
+	* Get the empresa that owns the oferta.
+	*/
+    public function empresa()
+    {
+        return $this->belongsTo('App\Empresa');
+    }
 
     //Realiza la busqueda todo, por los campos asignados
     public function scopeTodo($query, $nombre)
@@ -20,7 +27,14 @@ class Oferta extends Model
         if (trim($nombre) != ""){
             $query
                 ->where(\DB::raw("CONCAT(titulo_empleo, ' ', ubicacion )"), 'like', '%'.$nombre.'%');
-        }
+        };
     }
     
+    public function scopePuesto( $query, $nombre )
+    {
+        if (trim($nombre) != ""){
+            $query
+                ->where(\DB::raw("CONCAT(titulo_empleo, ' ', ubicacion )"), 'like', '%'.$nombre.'%');
+        }
+    }
 }

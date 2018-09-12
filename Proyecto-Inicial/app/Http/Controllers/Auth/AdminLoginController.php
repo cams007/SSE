@@ -8,35 +8,38 @@ use Auth;
 
 class AdminLoginController extends Controller
 {
-
 	public function __construct(){
 		$this->middleware('guest:admin', ['except' => ['logout']]);
 	}
 
-    public function showLoginForm()
-    {
-    	return view('admin.admin-login');
-    }
-
-    public function login(Request $request){
-    	//Validate the form data
-    	$this->validate($request, [
-    		'correo' => 'required|email',
-    		'password' => 'required|min:6'
-    	]);
-    	
-    	// Attempt to log the user in
-    	if (Auth::guard('admin')->attempt(['correo' => $request->correo, 'password' => $request->password], $request->remember)){
-    		// If successful, then redirect to their intented location
-            return redirect()->intended(route('admin.dashboard'));
+	public function showLoginForm()
+	{
+    		return view('admin.admin-login');
     	}
 
-    	//if unsuccessful, then redirect back to the login with the form data
-    	return redirect()->back()->withInput($request->only('correo', 'remember'));
-    }
+    	public function login( Request $request )
+    	{
+    		//Validate the form data
+    		$this->validate($request, [
+    			'correo' => 'required|email',
+    			'password' => 'required|min:6'
+    		]);
+    	
+    		// Attempt to log the user in
+    		if (Auth::guard('admin')->attempt(['correo' => $request->correo, 'password' => $request->password], $request->remember)){
+    			// If successful, then redirect to their intented location
+            	return redirect()->intended(route('admin.dashboard'));
+    		}
 
-    public function logout(){
-    	Auth::guard('admin')->logout();
-    	return redirect('/admin/login');
-    }
+    		//if unsuccessful, then redirect back to the login with the form data
+    		return redirect()->back()->withInput($request->only('correo', 'remember'));
+    	}
+
+    	public function logout()
+    	{
+    		Auth::guard('admin')
+	    		->logout();
+
+    		return redirect('/admin/login');
+    	}
 }

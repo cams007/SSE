@@ -13,15 +13,16 @@ class OfertasController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth');
     }
+    */
 
-    public function index(Request $request) {
+    public function index( Request $request)
+    {
+        $ofertas = Oferta::todo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(9);
 
-        $ofertas = Oferta::puesto($request->get('q'))->orderBy('created_at', 'DESC')->paginate(9);
-
-        return view('egresados.ofertas.ofertas', compact('ofertas'));
+        return view('egresados.ofertas.ofertas', compact( 'ofertas') );
     }
 }

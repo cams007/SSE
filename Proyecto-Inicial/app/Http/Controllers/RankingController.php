@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Model;
+
 use App\Ranking;
 use App\Empresa;
 
@@ -13,14 +16,14 @@ class RankingController extends Controller
      *
      * @return void
      */
-    public function __construct()
+  /*  public function __construct()
     {
         $this->middleware('auth');
     }
-
-    public function showRankingView(Request $request){
-
-    	$empresas = Empresa::nombre($request->get('q'))
+*/
+    public function showRankingView(Request $request)
+    {
+        $empresas = Empresa::nombre($request->get('q'))
             ->ubicacion($request->get('q'))
             ->join('ranking', 'empresa.id', '=', 'ranking.empresa_id')
             ->groupBy('empresa.id')

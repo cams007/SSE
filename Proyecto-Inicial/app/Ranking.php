@@ -21,11 +21,17 @@ class Ranking extends Model
     	return $this->belongsTo('App\Egresado');
     }
 
-
-    public function scopeEmpresa($query, $puesto){
+    public function scopeTodo( $query ){
         if (trim($puesto) != ""){
-                // $query
-            //     ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
+                 $query
+                ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
+        }
+    }
+
+    public function scopeNombre( $query, $puesto ){
+        if (trim($puesto) != ""){
+                 $query
+                ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
         }
     }
 }
