@@ -49,7 +49,6 @@
 						<th>Nombre de la empresa</th>
 						<th>Ubicación</th>
 						<th>Giro de la empresa</th>
-						<th>Calificacion</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -69,17 +68,18 @@
 
 							<!-- <td class="text_red">{{ $indexKey + 1 }}</td> -->
 							<td>
-								{{ $empresa->calif }}
-								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-								<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
-								<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+							<!--	{{ round( $empresa->calif ) }} -->
+								@for( $i = 1; $i <= 5; $i++ )
+									@if( $i <=  round( $empresa->calif ) )
+										<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
+									@else
+										<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">
+									@endif
+								@endfor
 							</td>
 							<td><a href="#datosEmpresa" class="btn-empresa">{{ $empresa->nombre }}</a></td>
 							<td>{{ $empresa->ciudad . ', ' . $empresa->estado }}</td>
 							<td>{{ $empresa->giro }}</td>
-							<td>{{ $empresa->calificacion }}</td>
 						</tr>
 					@endforeach
 				</tbody>
