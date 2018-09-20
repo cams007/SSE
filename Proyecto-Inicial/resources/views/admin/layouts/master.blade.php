@@ -36,13 +36,13 @@
                     <img src="{{url('assets/images/configuration.png')}}">
                   </a> -->
                   <ul class="nav">
-                    <li><a  href="{{url('home')}}"><img src="{{url('assets/images/home.png')}}"></a></li>
+                    <li><a  href="{{url('admin/home')}}"><img src="{{url('assets/images/home.png')}}"></a></li>
                     <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
                       <ul>
                         <li><a  href="#">Cambiar contraseña</a></li>
                         <li><a  href="{{ route('admin.logout') }}" onclick="event.preventDefault(); 
                               document.getElementById('logout-form').submit();">
-                              Cerrar sesión
+                              Cerrar sesión Admin
                             </a>
                             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}

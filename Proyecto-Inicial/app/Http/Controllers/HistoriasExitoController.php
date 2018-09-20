@@ -13,15 +13,16 @@ class HistoriasExitoController extends Controller
      *
      * @return void
      */
-   /* public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
-    */
     
     public function index(Request $request) {
 
-        $historias = HistoriaExito::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(10);
+        $historias = HistoriaExito::titulo($request->get('q'))
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
 
         return view('egresados.historiasDeExito', compact('historias'));
     }

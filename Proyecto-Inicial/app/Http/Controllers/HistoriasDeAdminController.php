@@ -10,10 +10,17 @@ use Session;
 
 class HistoriasDeAdminController extends Controller
 {
-       //Metodo para mostrar en el 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    //Metodo para mostrar en el 
     public function indexH(Request $request){
         
-        $historias = HistoriaExito::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(10);
+        $historias = HistoriaExito::titulo($request->get('q'))
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
 
         return view('admin.historiasDe.index', compact('historias'));
     }

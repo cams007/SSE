@@ -9,13 +9,18 @@ use App\Empresa;
 use Session;
 use Auth;
 
-class OfertasLaboralesAdminController extends Controller {
-    
+class OfertasLaboralesAdminController extends Controller
+{
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index(Request $request)
     {
         /*
-        ** Obtiene las columnas de oferta y empresa.
-        ** Utiliza un join para obtener el nombre de la empresa
+        * Obtiene las columnas de oferta y empresa.
+        * Utiliza un join para obtener el nombre de la empresa
         */
         $ofertas = Oferta::todo( $request->get( 'q' ) )
             ->join( 'empresa', 'oferta.empresa_id', '=', 'empresa.id' )

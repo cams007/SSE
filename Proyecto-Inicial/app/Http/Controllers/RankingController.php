@@ -16,11 +16,11 @@ class RankingController extends Controller
      *
      * @return void
      */
-  /*  public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
     }
-*/
+
     public function showRankingView(Request $request)
     {
         $empresas = Empresa::nombre($request->get('q'))

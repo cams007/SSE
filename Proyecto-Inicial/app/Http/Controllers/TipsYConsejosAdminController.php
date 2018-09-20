@@ -11,9 +11,16 @@ use Session;
 
 class TipsYConsejosAdminController extends Controller
 {
-    public function index(Request $request){
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-    	$tips = Tip::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(10);
+    public function index(Request $request)
+    {
+    	$tips = Tip::titulo($request->get('q'))
+            ->orderBy('created_at', 'DESC')
+            ->paginate(10);
 
         return view('admin.tipYconsejo.index', compact('tips'));
     }

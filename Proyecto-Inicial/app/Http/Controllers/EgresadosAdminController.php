@@ -10,6 +10,11 @@ use Session;
 
 class EgresadosAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
 	public function index(Request $request) {
 
         $egresados = Egresado::todo($request->get('q'))

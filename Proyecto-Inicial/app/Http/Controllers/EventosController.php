@@ -7,6 +7,11 @@ use App\Evento;
 
 class EventosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request) {
 
         $eventos = Evento::titulo($request->get('q'))->orderBy('fecha', 'DESC')->paginate(8);

@@ -13,13 +13,12 @@ use Charts;
 
 class IndicesEstadisticasController extends Controller
 {    
-    
-    /* Este controlador requiere verificacion de usuario
     public function __construct()
     {
-        $this->middleware('auth:admin');
+        // $this->middleware('auth:admin');
+        $this->middleware( 'auth' );
     }
-    */
+    
     /**
     * Muestra la Vista Indices y Estadisticas
     */

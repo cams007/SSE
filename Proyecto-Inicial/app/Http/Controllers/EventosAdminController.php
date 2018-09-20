@@ -10,6 +10,11 @@ use Auth;
 
 class EventosAdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request)
     {
         $eventos = Evento::todo($request->get('q'))

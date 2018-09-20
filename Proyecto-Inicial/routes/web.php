@@ -14,10 +14,10 @@
 // Rutas de login y registro (auth)
 Auth::routes();
 // Authentication routes...
-//Route::get('/', 'HomeController@index')->name('index');
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
+Route::post('/logout', 'Auth\LogoutController@logout')->name('user.logout');
+
 
 //Route::get('/registro', 'RegistroController@showRegistroForm')->name('user.registro');
 //Route::post('/registro', 'Auth\RegisterController@register');
@@ -26,8 +26,12 @@ Route::post('/registro','RegistroController@saveUsuario')->name('crearUsuario.su
 
 Route::get('/bienvenida', 'RegistroController@showBienvenidaForm')->name('user.bienvenida');
 
-Route::get('admin/home', 'HomeAdminController@index')->name('home');
-Route::get('egresados/home', 'HomeController@index')->name('home');
+
+
+
+// Login de usuarios
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login')->name('login.submit');
 
 //Rutas para la seccion de Administrador@
 Route::group(['prefix' => 'perfil'], function() {
@@ -78,13 +82,17 @@ Route::get('/tipsConsejos', 'TipsConsejosController@index');
 
 
 //Rutas para la seccion de Administrador@
-Route::group(['prefix' => 'admin'], function() {
-
+Route::group(['prefix' => 'admin'], function()
+{
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
 
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::post('/', 'Auth\AdminLoginController@logout')->name('admin.logout');
+    Route::post('/logout', 'Auth\AdminLogoutController@logout')->name('admin.logout');
+    //Route::post('/', 'Auth\AdminLoginController@logout')->name('admin.logout');
+
+    Route::get('/home', 'HomeAdminController@index')->name('admin.home');
 
     //Grupo de rutas para las vistas de egresados url(/admin/egresado/...)
     Route::group(['prefix' => 'egresado'], function(){

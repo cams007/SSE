@@ -56,19 +56,20 @@ class Handler extends ExceptionHandler
      */
     protected function unauthenticated($request, AuthenticationException $exception)
     {
-        if ($request->expectsJson()) {
+        if ($request->expectsJson())
+        {
             return response()->json(['error' => 'Unauthenticated.'], 401);
         }
 
         $guard = array_get($exception->guards(), 0);
 
         //Verificar si esta intentando iniciar como administrador o usuario
-        switch ($guard) {
+        switch ($guard)
+        {
             case 'admin':
                 // si intenta como administrador redirigir a inicio de admin
                 $login = 'admin.login';
                 break;
-            
             default:
                 // de lo contrario redirigir a login de usuario
                 $login = 'login';

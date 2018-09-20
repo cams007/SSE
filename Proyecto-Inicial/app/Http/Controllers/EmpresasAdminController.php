@@ -10,16 +10,25 @@ use Session;
 
 class EmpresasAdminController extends Controller
 {
-    public function index(Request $request) {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
-        $empresas = empresa::todo($request->get('q'))->where('habilitada','=',1)->orderBy('nombre', 'DESC')->paginate(10);
+    public function index(Request $request)
+    {
+        $empresas = empresa::todo($request->get('q'))
+            ->where('habilitada','=',1)
+            ->orderBy('nombre', 'DESC')
+            ->paginate(10);
 
         return view('admin.empresa.index', compact('empresas'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
     }
 
-    public function showCrearEmpresa(Request $request) {
-
-    	return view('admin.empresa.crearEmpresa');//Direccio'n de la ubicacio'n del archivo crearEmpresa
+    public function showCrearEmpresa(Request $request)
+    {
+        //Direccio'n de la ubicacio'n del archivo crearEmpresa
+    	return view('admin.empresa.crearEmpresa');
     }
 
     public function saveCrearEmresa(Request $request){

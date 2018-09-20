@@ -29,13 +29,14 @@ class RegistroController extends Controller
     	*/
 	public function saveUsuario( Request $request )
 	{
-		// Si la matricula del alumno existe
-		// y si el correo no existe como usuario
-		if( Egresado::where( 'matricula', "$request->egresado_matricula" )
-			->exists()
+		if(	// Si la matricual del usuario existe en la BD de la universidad	
+			Egresado::where( 'matricula', "$request->egresado_matricula" )->exists()
 			&&
-			!User::where( 'correo', "$request->correo" )
-			->exists() )
+			// Si el correo no se ha registrado antes
+			!User::where( 'correo', "$request->correo" )->exists()
+			&&
+			// Si la matricula no se ha registrado antes
+			!User::where( 'egresado_matricula', "$request->egresado_matricula" )->exists() )
 		{
 			$egresado = Egresado::where('matricula',"$request->egresado_matricula")->first();
 		
@@ -57,7 +58,7 @@ class RegistroController extends Controller
 			//Para mostrar mensaje partials/messages.blade.php
 			Session::flash('save', 'Usuario creado correctamente');
 			//Redireccionamos al index de egresado url(/admin/egresado)
-			return redirect('/home');	
+			return redirect('egresados/home');	
 		}
 		else
 		{

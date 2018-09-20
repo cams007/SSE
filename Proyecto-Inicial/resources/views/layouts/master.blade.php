@@ -41,18 +41,20 @@
                     <img src="{{url('assets/images/configuration.png')}}">
                   </a> -->
                   <ul class="nav">
-                    <li><a  href="{{url('home')}}"><img src="{{url('assets/images/home.png')}}"></a></li>
+                    <li><a href="{{url('home')}}"><img src="{{url('assets/images/home.png')}}"></a></li>
                     <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
                       <ul>
                         <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
                         <li><a  href="#">Cambiar contraseña</a></li>
-                        <li><a  href="{{ route('user.logout') }}" onclick="event.preventDefault(); 
-                              document.getElementById('logout-form').submit();">
-                              Cerrar sesión
-                            </a>
-                            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
+                        <li>
+                                    <a href="{{ route('user.logout') }}"
+                                        onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        Cerrar sesión
+                                    </a>
+                                    <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                         </li>
                         </ul>
                     </li>

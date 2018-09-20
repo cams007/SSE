@@ -12,13 +12,13 @@ class TabuladorController extends Controller
      *
      * @return void
      */
-   /* public function __construct()
+    public function __construct()
     {
         $this->middleware('auth');
-    }*/
+    }
 
-    public function showTabuladorView(Request $request){
-
+    public function showTabuladorView(Request $request)
+    {
     	$salarios = Tabulador::empleo($request->get('q'))
     		->carrera($request->get('carrera'))
             ->orderBy('created_at', 'DESC')

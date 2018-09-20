@@ -12,16 +12,17 @@ class DirectorioController extends Controller
      *
      * @return void
      */
-    /*
     public function __construct()
     {
         $this->middleware('auth');
     }
-    */
+    
 
-    public function index(Request $request) {
-
-        $empresas = Empresa::nombre($request->get('q'))->orderBy('nombre', 'ASC')->paginate(10);
+    public function index(Request $request)
+    {
+        $empresas = Empresa::nombre($request->get('q'))
+            ->orderBy('nombre', 'ASC')
+            ->paginate(10);
 
         return view('egresados.directorio.index', compact('empresas'));
     }
