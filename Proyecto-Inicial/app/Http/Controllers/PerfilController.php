@@ -28,11 +28,13 @@ class PerfilController extends Controller {
      *   Retorna formulario de datos básicos de mi perfil
      *   con datos de egresado autenticado
     **/
-    public function showPerfilForm(){
+    public function showPerfilForm()
+    {
         return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
 
-    public function showEstudiosForm(){
+    public function showEstudiosForm()
+    {
         return view('egresados.perfil.estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
     }
 
@@ -51,7 +53,8 @@ class PerfilController extends Controller {
         return view('egresados.perfil.satisfaccion', array('dato' => 'No'));
     }
 
-    public function saveDatosBasicos(Request $request) {
+    public function saveDatosBasicos(Request $request)
+    {
         $egresado = Auth::user()->egresado;
 
         $egresado->genero = $request->e_genero;
@@ -68,8 +71,10 @@ class PerfilController extends Controller {
         return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
 
-    public function updatePhoto(Request $request){
-        if ($request->hasFile('e_img')){
+    public function updatePhoto(Request $request)
+    {
+        if ($request->hasFile('e_img'))
+        {
             $imagen = $request->file('e_img');
             $filename = time() . '.' . $imagen->getClientOriginalExtension();
             Image::make($imagen)->save( public_path('/assets/images/egresados/' . $filename ) );
@@ -78,19 +83,23 @@ class PerfilController extends Controller {
             $egresado->imagen_url = 'assets/images/egresados/' . $filename;
             $egresado->save();
         }
+
         return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
 
-    public function saveFormacionPerson(Request $request) {
+    public function saveFormacionPerson(Request $request)
+    {
         // $p = 
         return redirect('perfil/primerEmpleo');
     }
 
-    public function savePrimerEmp(Request $request) {
+    public function savePrimerEmp(Request $request)
+    {
     	return redirect('perfil/empleos');
     }
 
-    public function saveFormacionProf(Request $request) {
+    public function saveFormacionProf(Request $request)
+    {
     	return redirect('perfil/satisfaccion');
     }
 }

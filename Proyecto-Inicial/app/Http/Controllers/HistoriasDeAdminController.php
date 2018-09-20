@@ -16,8 +16,8 @@ class HistoriasDeAdminController extends Controller
     }
 
     //Metodo para mostrar en el 
-    public function indexH(Request $request){
-        
+    public function indexH(Request $request)
+    {
         $historias = HistoriaExito::titulo($request->get('q'))
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
@@ -30,8 +30,8 @@ class HistoriasDeAdminController extends Controller
         return view('admin.historiasDe.crearHistoriaDe');//accedemos al archivo
     }
 
-    public function saveHistoria(Request $request){
-
+    public function saveHistoria(Request $request)
+    {
         //Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 
@@ -84,15 +84,15 @@ class HistoriasDeAdminController extends Controller
         return redirect('admin/historiasdeExito');//Redireccionamos al index de eventos
     }
 
-    public function showEditarHistoria($id){
-    	
+    public function showEditarHistoria($id)
+    {
     	$historia = DB::table('HistoriaExito')->where('id',"$id")->first();
     	return view('admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
 
     }
 
-    public function saveEditarHistoria(Request $request){
-
+    public function saveEditarHistoria(Request $request)
+    {
     	//Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 

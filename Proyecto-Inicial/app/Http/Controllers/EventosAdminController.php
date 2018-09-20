@@ -17,7 +17,7 @@ class EventosAdminController extends Controller
     
     public function index(Request $request)
     {
-        $eventos = Evento::todo($request->get('q'))
+        $eventos = Evento::todo( $request->get( 'q' ) )
             ->where('activo','=',1)
             ->orderBy('fecha', 'DESC')
             ->paginate(10);
@@ -31,9 +31,13 @@ class EventosAdminController extends Controller
     }
 
     //Metodo para mostrar evento para editar
-    public function showEditarEvento($id) {
+    public function showEditarEvento($id)
+    {
         //Se envia $evento como parametro a la vista
-        $evento = DB::table('Evento')->where('id',"$id")->first();
+        $evento = DB::table('Evento')
+            ->where('id',"$id")
+            ->first();
+
         return view('admin.eventos.editarEvento',compact('evento'));//direccion de la vista editarEventos
     }
 
@@ -164,8 +168,8 @@ class EventosAdminController extends Controller
             DB::commit();
         }
         Session::flash('update', 'se ha actualizado correctamente');
-        return redirect('admin/eventos');//Redireccionamos al index de eventos
         
+        return redirect('admin/eventos');//Redireccionamos al index de eventos
     }
 
     public function eliminarEvento(Request $request){

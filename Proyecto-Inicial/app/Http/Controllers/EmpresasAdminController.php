@@ -114,8 +114,14 @@ class EmpresasAdminController extends Controller
 
     public function showEditarEmpresa(Request $request,$id){
 
-        $empresa = DB::table('empresa')->where('id',"$id")->first();
-        $contacto = DB::table('contacto')->where('id',"$empresa->contacto_id")->first();;
+        $empresa = DB::table('Empresa')
+            ->where('id',"$id")
+            ->first();
+    
+        $contacto = DB::table('Contacto')
+            ->where('id',"$empresa->contacto_id")
+            ->first();
+
     	return view('admin.empresa.editarEmpresa',compact('empresa'),compact('contacto'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
     }
 
@@ -129,7 +135,9 @@ class EmpresasAdminController extends Controller
         $imagen_subida = $dir_destino.mt_rand(0,10000). basename($_FILES['imagen']['name']);//mt_rand(0,500)
 
 
-        if(!is_writable($dir_destino)){//comprobamos permisos de escritura
+        if(!is_writable( $dir_destino ) )
+        {
+            //comprobamos permisos de escritura
             echo "no tiene permisos de escritura";
         }
         else{

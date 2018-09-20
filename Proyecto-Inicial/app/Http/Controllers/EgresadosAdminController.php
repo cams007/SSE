@@ -31,10 +31,16 @@ class EgresadosAdminController extends Controller
         return view('admin.egresado.crearEgresado', compact('egresados'));
     }
 
-    public function showEditarEgresado(Request $request,$ma){
+    public function showEditarEgresado(Request $request,$ma)
+    {
+        $egresado = DB::table('Egresado')
+            ->where('matricula',"$ma")
+            ->first();
+    
+        $preparacion = DB::table('Preparacion')
+            ->where('id',"$egresado->preparacion_id")
+            ->first();
 
-        $egresado = DB::table('egresado')->where('matricula',"$ma")->first();
-        $preparacion = DB::table('preparacion')->where('id',"$egresado->preparacion_id")->first();
         return view('admin.egresado.editarEgresado', compact('egresado'), compact('preparacion'));
     }
 

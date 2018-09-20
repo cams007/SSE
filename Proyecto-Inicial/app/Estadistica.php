@@ -14,7 +14,8 @@ class Estadistica extends Model
     protected $table = 'Estadistica';
 
     public function scopeEmpleo($query, $empleo){
-        if (trim($empleo) != ""){
+        if (trim($empleo) != "")
+        {
             $query
                 ->where('empleo', 'like', '%'.$empleo.'%');
         }

@@ -17,8 +17,8 @@ class TipsConsejosController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(Request $request) {
-
+    public function index(Request $request)
+    {
         $tips = Tip::titulo($request->get('q'))->orderBy('created_at', 'DESC')->paginate(4);
 
         return view('egresados.tipsConsejos', compact('tips'));

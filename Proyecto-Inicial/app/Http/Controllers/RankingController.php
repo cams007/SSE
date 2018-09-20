@@ -25,10 +25,10 @@ class RankingController extends Controller
     {
         $empresas = Empresa::nombre($request->get('q'))
             ->ubicacion($request->get('q'))
-            ->join('ranking', 'empresa.id', '=', 'ranking.empresa_id')
-            ->groupBy('empresa.id')
+            ->join('Ranking', 'Empresa.id', '=', 'Ranking.empresa_id')
+            ->groupBy('Empresa.id')
             ->orderBy('calif', 'DESC')
-            ->selectRaw('empresa.*, avg(ranking.calificacion) as calif')
+            ->selectRaw('Empresa.*, avg( Ranking.calificacion ) as calif')
             ->paginate(10);
 
         return view('egresados.ranking', compact('empresas'));
