@@ -7,14 +7,13 @@ use Illuminate\Http\Request;
 class HomeAdminController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-
+    * Create a new controller instance.
+    *
+    * @return void
+    */
     public function __construct()
 	{
-		$this->middleware( 'auth' );
+		$this->middleware( 'auth:admin' );
 	}
 
     /**
