@@ -33,13 +33,13 @@ class AdminLoginController extends Controller
 		
 		// Check if the user request is in the database, if it is true then redirect it
 		// to the dashboard as user 
-		if( Auth::attempt( ['correo' => $request->correo, 'password' => $request->password ] ) )
+		if( Auth::guard('admin')->attempt( ['correo' => $request->correo, 'password' => $request->password], $request->remember))
 		{
-    			//Auth::logout();
-			return redirect( '/admin/home' );
+    			// If successful, then redirect to their intented location
+    			return redirect( '/admin/home' );
     		}
 
-		// If the user is not in database then redirec to login page and show him the next menssage 
+		// If the user is not in database then redirec it to login page and show him the next menssage 
 		return back()->withErrors( [ 'correo' => 'Por favor verifique que sus datos sean correctos' ] );
 	}
 }

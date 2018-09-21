@@ -11,15 +11,15 @@ class AdminLogoutController extends Controller
 	// Show only if is a guest authenticated 
 	public function __construct()
 	{
-		$this->middleware( 'auth' );
+		$this->middleware( 'auth:admin' );
 	}
 
 	public function logout()
     	{
 		// Clear the authentication information in the user's session
-		Auth::logout();
+		Auth::guard('admin')->logout();
 
-		// Return to the login user		
-            return redirect( '/admin' );
+		// Return to the login admins
+            return redirect( '/admin/login' );
     	}
 }

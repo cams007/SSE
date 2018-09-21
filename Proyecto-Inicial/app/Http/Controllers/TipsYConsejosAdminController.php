@@ -13,7 +13,7 @@ class TipsYConsejosAdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:admin');
     }
 
     public function index(Request $request)
@@ -167,7 +167,8 @@ class TipsYConsejosAdminController extends Controller
         DB::beginTransaction();
         try{
             Tip::destroy($request->id);
-        }catch(Exception $e){
+        }catch(Exception $e)
+        {
             DB::rollback();
             echo 'ERROR(' .$e->getCode() .'): ' .$e->getMessage();
         }
@@ -175,6 +176,7 @@ class TipsYConsejosAdminController extends Controller
         unlink($tip->imagen_url);//Elimina la imagen
 
         Session::flash('save', 'se ha eliminado correctamente');
+
         return redirect('admin/tipConsejo');//redireccionamos a la url del index
     }
 

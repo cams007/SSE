@@ -16,7 +16,8 @@ class RegistroController extends Controller
 	public function showCrearUsuario()
 	{
 		// Se comprueba primero que el usuario no este autentificado antes
-    		if (Auth::user() == null){
+    		if (Auth::user() == null)
+		{
     			return view('egresados.registro.registrarse');
     		} else{
     			return redirect('/');
@@ -69,12 +70,13 @@ class RegistroController extends Controller
 		}
 	}
 
-    	public function showBienvenidaForm(){
-
-    		if (Auth::user() == null){
+    	public function showBienvenidaForm()
+	{
+    		if (Auth::user() == null)
+		{
     			return redirect('/');
     		} else{
     			return view('egresados.registro.bienvenida');
     		}
-    }
+	}
 }

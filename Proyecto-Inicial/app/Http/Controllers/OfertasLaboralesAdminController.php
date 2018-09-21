@@ -13,7 +13,7 @@ class OfertasLaboralesAdminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:admin');
     }
 
     public function index(Request $request)
@@ -23,11 +23,11 @@ class OfertasLaboralesAdminController extends Controller
         * Utiliza un join para obtener el nombre de la empresa
         */
         $ofertas = Oferta::todo( $request->get( 'q' ) )
-            ->join( 'empresa', 'oferta.empresa_id', '=', 'empresa.id' )
+            ->join( 'Empresa', 'Oferta.empresa_id', '=', 'Empresa.id' )
             ->where( 'status', '=', 'Vacante' )
             ->orwhere( 'status', '=', 'Ocupada' )
-            ->select( 'oferta.id', 'oferta.titulo_empleo', 'oferta.status','empresa.nombre','oferta.descripcion',
-                'oferta.ubicacion', 'oferta.salario', 'oferta.experiencia', 'oferta.carrera' )
+            ->select( 'Oferta.id', 'Oferta.titulo_empleo', 'Oferta.status','Empresa.nombre','Oferta.descripcion',
+                'Oferta.ubicacion', 'Oferta.salario', 'Oferta.experiencia', 'Oferta.carrera' )
             ->paginate( 10 );
         
         return view('admin.ofertas.index', compact('ofertas') );
@@ -36,7 +36,7 @@ class OfertasLaboralesAdminController extends Controller
     public function showCrearOferta(Request $request) 
     {
         // Obtiene las empresas y selecciona solo id's y nombre's
-        $empresas = DB::table( 'empresa' )
+        $empresas = DB::table( 'Empresa' )
             ->select( 'id', 'nombre' )
             ->get();
         
@@ -138,11 +138,11 @@ class OfertasLaboralesAdminController extends Controller
     public function showEditarOferta( Request $request, $id )
     {
         // Obtiene la oferta a editar
-        $oferta = DB::table( 'oferta' )
+        $oferta = DB::table( 'Oferta' )
             ->where( 'id', "$id" )
             ->first();
         // Obtiene las empresas
-        $empresas = DB::table( 'empresa' )
+        $empresas = DB::table( 'Empresa' )
             ->select( 'id', 'nombre' )
             ->get();
         

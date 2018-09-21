@@ -23,13 +23,13 @@ class RankingController extends Controller
 
     public function showRankingView(Request $request)
     {
-      $empresas = Empresa::nombre($request->get('q'))
-          ->ubicacion($request->get('q'))
-          ->join('Ranking', 'Empresa.id', '=', 'Ranking.empresa_id')
-          ->groupBy('Empresa.id')
-          ->orderBy('calif', 'DESC')
-          ->selectRaw('Empresa.*, avg(Ranking.calificacion) as calif')
-          ->paginate(10);
+        $empresas = Empresa::nombre($request->get('q'))
+            ->ubicacion($request->get('q'))
+            ->join('Ranking', 'Empresa.id', '=', 'Ranking.empresa_id')
+            ->groupBy('Empresa.id')
+            ->orderBy('calif', 'DESC')
+            ->selectRaw('Empresa.*, avg( Ranking.calificacion ) as calif')
+            ->paginate(10);
 
         return view('egresados.ranking', compact('empresas'));
     }

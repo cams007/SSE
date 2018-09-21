@@ -42,4 +42,9 @@ class LoginController extends Controller
 		// If the user is not in database then redirec to login page and show him the next menssage 
 		return back()->withErrors( [ 'correo' => 'Por favor verifique que sus datos sean correctos' ] );
 	}
+
+	protected function guard()
+	{
+		return Auth::guard( 'user' );
+	}
 }

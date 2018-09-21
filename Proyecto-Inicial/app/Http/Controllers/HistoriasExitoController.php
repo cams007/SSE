@@ -18,8 +18,8 @@ class HistoriasExitoController extends Controller
         $this->middleware('auth');
     }
     
-    public function index(Request $request) {
-
+    public function index(Request $request) 
+    {
         $historias = HistoriaExito::titulo($request->get('q'))
             ->orderBy('created_at', 'DESC')
             ->paginate(10);
