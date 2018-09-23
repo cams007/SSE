@@ -110,6 +110,12 @@ div.search input:hover{
 	width: 1000px;
 	padding-left: 28px;
 }
+.div-4-1 a {
+	color: #be3228;
+  text-decoration: none;
+  cursor:pointer; cursor: hand;
+  margin-left: 10px;
+}
 .div-5{
 	/*background: #1B3FAF;*/
 }
@@ -316,16 +322,16 @@ tr:nth-child(odd){ /*Filas nones*/
 	font-family: 'Roboto', sans-serif;
 }*/
 
-a{
+/*a{
   color: #be3228;
   text-decoration: none;
   cursor:pointer; cursor: hand;
   margin-left: 10px;
-}
+}*/
 
 div.item-1{
 	display: flex;
-	margin-bottom: 8px;
+	margin: auto;
 }
 div.item-1 div.icono {
 	width: 15%;
@@ -341,5 +347,8 @@ div.item-1 div.icono {
 .descripcion {
 	font-family: 'Roboto', sans-serif;
 	font-size: 15px;
+	color: #6B6B6B;
+}
+.texto-calificar {
 	color: #6B6B6B;
 }

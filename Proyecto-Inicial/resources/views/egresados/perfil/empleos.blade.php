@@ -10,14 +10,12 @@
 
 @section('content')
 <div class="contenedor"><!--inicio contenedor-->
-	<div class="div-1"><!--inicio div-1-->
-		<!-- <p>Mi Perfil</p> -->
-		<h1>Mi perfil</h1>
-		<hr class="hr">
+	<div class="div-1"> <!--incio div-1-->
+		<p class="text-center">Mi perfil</p>
 	</div><!--fin div-1-->
-	
+
 	<div class="clearfix">
-		
+
 		<div class="div-2"><!--inicio div-2-->
 			<div class="div-2-1"><!--inicio div-2-1-->
 			<aside id="cssmenu" class="column hrV">
@@ -25,7 +23,7 @@
 			</aside>
 		</div><!--fin div-2-1-->
 
-		<div class="column content-lg">	
+		<div class="column content-lg">
 			<div class="clearfix margin">
 				<div class="column">
 					<a href="#addEmpleo">Agregar empleo</a>
@@ -35,8 +33,8 @@
 					<a href="" class="column disabled"> Editar</a>
 				</div>
 			</div>
-	
-			<table>
+
+			<table class="tabla">
 				<tr>
 					<th></th>
 				  	<th>Empresa en la que laboró</th>
@@ -74,9 +72,9 @@
 				</tr>
 			</table>
 			<a href="{{url('perfil/satisfaccion')}}" class="button flat"> Siguiente</a>
-		</div>		
+		</div>
 	</div>
-	
+
 	<div id="addEmpleo" class="modaloverlay">
 	  	<div class="modal">
 		    <a href="#close" class="close">&times;</a>

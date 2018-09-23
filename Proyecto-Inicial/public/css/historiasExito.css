@@ -117,7 +117,7 @@
 	justify-content: flex-end;
 }
 
-.click, a{
+.click{
   color: #be3228;
   text-decoration: none;
   cursor:pointer; cursor: hand;

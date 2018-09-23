@@ -9,28 +9,26 @@
 
 @section('content')
 <div class="contenedor"><!--inicio contenedor-->
-	<div class="div-1"><!--inicio div-1-->
-		<!-- <p>Mi Perfil</p> -->
-		<h1>Mi perfil</h1>
-		<hr class="hr">
+	<div class="div-1"> <!--incio div-1-->
+		<p class="text-center">Mi perfil</p>
 	</div><!--fin div-1-->
 
 	<div class="clearfix">
-		
+
 		<div class="div-2"><!--inicio div-2-->
 			<div class="div-2-1"><!--inicio div-2-1-->
 			<aside id="cssmenu" class="column hrV">
 				@include('partials.aside')
 			</aside>
 		</div><!--fin div-2-1-->
-		
-		<div class="column content">
+
+		<div class="column content content-lg">
 			<form method="POST" action="{{url('perfil/estudiosRealizados')}}">
-			
+
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 
-				<div class="form-group">	
+				<div class="form-group">
 					<label for="Carrera"> Carrera</label>
 					{!! Form::select('carrera', config('options.carreras'), $preparacion->carrera, ['class' => 'seleccion', 'disabled']) !!}
 				</div>
@@ -59,7 +57,7 @@
 					{{-- <input type="text" name="ftitulacion" id="ftitulacion" class="form-control"> --}}
 					{!! Form::date('ftitulacion', \Carbon\Carbon::now()) !!}
 				</div>
-			
+
 				<br><br>
 				<hr>
 				<br>
@@ -105,7 +103,7 @@
 				<div class="form-group">
 					<label>Titulado</label>
 					<div class="radio">
-						<input type="radio" name="dtitulado" id="tDSi" value="1">  <label for="tDSi" class="label-radio">Sí</label>	
+						<input type="radio" name="dtitulado" id="tDSi" value="1">  <label for="tDSi" class="label-radio">Sí</label>
 						<input type="radio" name="dtitulado" id="tDNo" value="0"> <label for="tDNo" class="label-radio">No</label>
 					</div>
 				</div>
