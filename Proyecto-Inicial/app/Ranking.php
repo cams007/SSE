@@ -13,15 +13,18 @@ class Ranking extends Model
 	*/
     protected $table = 'Ranking';
 
-    public function empresa(){
+    public function empresa()
+    {
     	return $this->belongsTo('App\Empresa');
     }
 
-    public function egresado(){
+    public function egresado()
+    {
     	return $this->belongsTo('App\Egresado');
     }
 
-    public function scopeTodo( $query ){
+    public function scopeTodo( $query, $puesto )
+    {
         if (trim($puesto) != ""){
                  $query
                 ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion)"), 'like', '%'.$puesto.'%');
