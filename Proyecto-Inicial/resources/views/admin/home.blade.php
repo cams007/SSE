@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Inicio')
+@section('title', 'Home')
 
 @section('style')
     <link href="{{ url('css/home.css') }}" rel="stylesheet">

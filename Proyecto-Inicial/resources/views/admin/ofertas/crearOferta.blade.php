@@ -13,7 +13,7 @@
 		2 => 'Ocupada',
 		3 => 'Cancelada'
 	);
-	
+
 	$carrera = array(
 		0 => 'Ingeniería en Diseño',
 		1 => 'Ingeniería en Computación',

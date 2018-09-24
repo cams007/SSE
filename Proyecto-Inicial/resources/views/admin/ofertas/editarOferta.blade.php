@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Editar-oferta')
+@section('title', 'Editar oferta')
 
 @section('style')
 
