@@ -71,6 +71,9 @@
 
 		<form action="{{ url('directorio/empresa') }}" method="get">
 			<div class="parte-2"><!--parte-2-->
+				<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+
+				<div class="descripcion" id="id"></div>
 
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>

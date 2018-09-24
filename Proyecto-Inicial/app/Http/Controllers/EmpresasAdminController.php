@@ -17,7 +17,8 @@ class EmpresasAdminController extends Controller
 
     public function index(Request $request)
     {
-        $empresas = empresa::todo($request->get('q'))
+        // Estaba en minuscula, verifica q este bien
+        $empresas = Empresa::todo($request->get('q'))
             ->where('habilitada','=',1)
             ->orderBy('nombre', 'DESC')
             ->paginate(10);

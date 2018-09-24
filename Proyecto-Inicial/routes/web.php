@@ -63,7 +63,9 @@ Route::group(['prefix' => 'ofertas'], function() {
 Route::group(['prefix' => 'directorio'], function() {
     Route::get('/', 'DirectorioController@index');
     Route::get('empresa', 'DirectorioController@showEmpresaView');
+    Route::post('empresa/calificar','DirectorioController@saveCalificacion')->name('guardarCalificacion.submit');
     Route::get('empresa/comentarios', 'DirectorioController@showComentariosEmpresaView');
+    Route::get('empresa/ofertas', 'DirectorioController@showOfertasEmpresaView');
     Route::get('empresa/ofertas', 'DirectorioController@showOfertasEmpresaView');
 });
 

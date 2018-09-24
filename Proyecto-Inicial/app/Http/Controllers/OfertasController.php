@@ -20,7 +20,7 @@ class OfertasController extends Controller
 
     public function index( Request $request)
     {
-        $ofertas = Oferta::todo($request->get('q'))
+        $ofertas = Oferta::todo( $request->get( 'q' ) )
             ->orderBy('created_at', 'DESC')
             ->paginate(9);
 
