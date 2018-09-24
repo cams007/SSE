@@ -6,7 +6,8 @@
 @section('style')
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
-	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<!-- <link href="{{ url('css/modal.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
 	<link href="{{ url('css/cssadmin/tips.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
 @stop
