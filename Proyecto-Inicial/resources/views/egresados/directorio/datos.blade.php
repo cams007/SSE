@@ -3,9 +3,12 @@
 @section('title', 'Datos basicos')
 
 @section('style')
-<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
-<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
-<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+
+	<link href="{{ url('css/estrellasRating.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 @stop
 
 @section('content')
@@ -88,10 +91,12 @@
 
 			<div class="column"> <!-- div-2-3 -->
 			<img src="{{url( $empresa->imagen_url )}}" alt="user-picture" class="img-thumbnail img">
-				<div>
-					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-					<a href="#calificaEmpresa">Calificar empresa</a>
-				</div>
+				@if( $rank == 0 )
+					<div>
+						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
+						<a href="#calificaEmpresa">Calificar empresa</a>
+					</div>
+				@endif
 			</div><!--fin div-2-3-->
 
 		</div><!--fin div-2-->
@@ -99,45 +104,45 @@
 
 	<div id="calificaEmpresa" class="modaloverlay">
 	  	<div class="modal">
-		    <a href="#close" class="close">&times;</a>
-		    <div>
+		    	<a href="#close" class="close">&times;</a>
+			<div>
+				<h1>Calificar esta empresa</h1>
+				<div class = "stars">
+					<form method="POST" enctype="multipart/form-data" action="{{ route('guardarCalificacion.submit') }}">
+						{{ csrf_field() }}
 
-		    	<h1>Calificar esta empresa</h1>
-			<!-- FALTA ESTAS-->
-		    	<form action = "#">
-			    	{{ csrf_field() }}
+						<div class="descripcion" id="id">
+							<!-- {{$request->id}} -->
+							<input type="hidden" name = "id" value='{{$request->id}}'/>
+						</div>
+
+						<input class="star star-5" id="star_5" type="radio" name = "star" value = "5"/>
+						<label class="star star-5" for="star_5"></label>
+						<input class="star star-4" id="star_4" type="radio" name = "star" value = "4"/>
+						<label class="star star-4" for="star_4"></label>
+						<input class="star star-3" id="star_3" type="radio" name = "star" value = "3"/>
+						<label class="star star-3" for="star_3"></label>
+						<input class="star star-2" id="star_2" type="radio" name = "star" value = "2"/>
+						<label class="star star-2" for="star_2"></label>
+						<input class="star star-1" id="star_1" type="radio" name = "star" value = "1"/>
+						<label class="star star-1" for="star_1"></label>
 						
-				<div class="descripcion" id="id">
-					<!-- {{$request->id}} -->
-					<input type="hidden" name="id" value='{{$request->id}}'/>
-				</div>
+						<p>Comentario</p>
+						<div>
+							<textarea name="comentario" id="comentario" class="form-control" rows="3" required></textarea>
+						</div>
 
+						<div class="btn-group">
+							<button type="button" class="flat-secundario">Cancelar</button>
+							<button type="submit" class="flat aling-right">Guardar</button>
+						</div>
+					</form>
 				<div>
-					<br><br>
-					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-					<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-				</div>
-				<p>Comentario</p>
-				<div>
-					<textarea name="" id="comentario" class="form-control" rows="3"></textarea>
-				</div>
-
-				<div class="btn-group">
-					<button type="button" class="flat-secundario">Cancelar</button>
-					<button type="button" class="flat aling-right">Guardar</button>
-				</div>
-		    	</form>
-		    </div>
+		    	</div>
 		</div>
 	</div>
 @stop
 
 @section('script')
-	<script src="{{ url('js/ofertas.js') }}"></script>
-	<script type="text/javascript">
-		var APP_URL = {!! json_encode(url('/calificar')) !!}
-	</script>
+	<script src="{{ url('js/calificar.js') }}"></script>
 @stop
