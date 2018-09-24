@@ -26,9 +26,9 @@ class EgresadosAdminController extends Controller
         return view('admin.egresado.index', compact('egresados'));//dirigimos a la direccion de la vista
     }
 
-    public function showCrearEgresado(Request $request) {
-
-        return view('admin.egresado.crearEgresado', compact('egresados'));
+    public function showCrearEgresado(Request $request)
+    {
+        return view('admin.egresado.CrearEgresado', compact('egresados'));
     }
 
     public function showEditarEgresado(Request $request,$ma)
