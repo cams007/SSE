@@ -1,0 +1,65 @@
+.modaloverlay {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 400ms ease-in;
+  z-index: -1;
+  display: none;
+}
+.modaloverlay:target {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 99999;
+}
+.modaloverlay .modal {
+  background-color: white;
+  height: auto;
+  width: 50%;
+  position: relative;
+  margin: 0 auto;
+  /*padding: 3em;*/
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+}
+div.modaloverlay a.close {
+  background-color: white;
+  color: #6B6B6b;
+  font-size: 24px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-decoration: none;
+  top: 0;
+  z-index: 1;
+}
+div.parte-1 p {
+  font-family: 'Roboto', sans-serif;
+	font-size: 25px;
+	color: #6B6B6B;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+div.parte-2 {
+  width: 80%;
+  margin: auto;
+}
+div.parte-2 {
+  margin-bottom: 16px;
+}
+div.parte-2 div.item-1 {
+  display: flex;
+  margin-bottom: 8px;
+}
+div.parte-2 div.item-1 div.icono {
+  width: 20%;
+}
+div.parte-2 div.item-1 div.descripcion {
+  color: #6B6B6B;
+}

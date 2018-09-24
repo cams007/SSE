@@ -7,17 +7,18 @@
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<link href="{{ url('css/cssadmin/tips.css') }}" rel="stylesheet">
+	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
 @stop
 
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
-			<p class="text-center">Tips y consejos</p>
+			<p>Tips y consejos</p>
 		</div><!--div-1-->
 
 		@include('admin.partials.messages')<!--Mensages -->
-		
+
 		<a href="{{url('/admin/tipConsejo/crearTipConsejo')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
@@ -27,7 +28,7 @@
 				{!! Form::close() !!}
 			</div>
 		</div><!--fin div-2-2-1-->
-		
+
 		<table> <!--Contenido de la pagina-->
 			<thead>
 				<td>Titulo</td>
@@ -68,7 +69,7 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Eliminar Tip</p>
 			</div><!--parte-1-->
-			
+
 			<form action="{{route('admin.eliminarTipConsejo.submit')}}" method="post">
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
@@ -89,7 +90,7 @@
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="t_imgen"></div><!--descripcion-->
 					</div><!--item-1-->
-					
+
 					<!--<a href="{{ URL::previous() }}">Volver</a>-->
 					<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
 					<button type="submit" class="flat">Enviar</button>
@@ -106,7 +107,7 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Ver Tip</p>
 			</div><!--parte-1-->
-			
+
 			<div class="parte-2"><!--parte-2-->
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
@@ -122,7 +123,7 @@
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 					<div class="descripcion" id="tv_imgen"></div><!--descripcion-->
 				</div><!--item-1-->
-					
+
 					<!--<a href="{{ URL::previous() }}">Volver</a>-->
 				<a href="#close"><button type="button" class="flat-secundario">Regresar</button></a>
 			</div>

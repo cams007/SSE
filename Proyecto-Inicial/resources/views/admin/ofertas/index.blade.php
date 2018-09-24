@@ -7,7 +7,8 @@
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<link href="{{ url('css/cssadmin/ofertas.css') }}" rel="stylesheet">
+	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
 @stop
 
 @php
@@ -29,11 +30,11 @@
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
-			<p class="text-center">Ofertas laborales</p>
+			<p>Ofertas laborales</p>
 		</div><!--div-1-->
 
 		@include('admin.partials.messages')<!--Mensages -->
-		
+
 		<a href="{{url('/admin/ofertas/crearOferta')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear Evento-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
@@ -43,7 +44,7 @@
 				{!! Form::close() !!}
 			</div>
 		</div><!--fin div-2-2-1-->
-		
+
 		<table> <!--Contenido de la pagina-->
 			<thead>
 				<td>
@@ -65,7 +66,7 @@
 				<td>
 					Acción
 				</td>
-				
+
 			</thead>
 
 			<tbody>
@@ -119,7 +120,7 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt" id = "getOferta"></p>
 			</div><!--parte-1-->
-			
+
 			<div class="parte-2"><!--parte-2-->
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
@@ -145,7 +146,7 @@
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 					<div class="descripcion" id="getExperiencia"></div><!--descripcion-->
 				</div><!--item-1-->
-					
+
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 					<div class="descripcion" id="getCarrera"></div><!--descripcion-->
@@ -169,13 +170,13 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt" id = "getOfertaD"></p>
 			</div><!--parte-1-->
-			
+
 			<form action="{{route('admin.eliminarOferta.submit')}}" method="post">
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 					<div class="descripcion" id="idOferta"></div>
-				
+
 					<div class="item-1"><!--item-1-->
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="getEmpresaD"></div><!--descripcion-->
@@ -200,7 +201,7 @@
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="getExperienciaD"></div><!--descripcion-->
 					</div><!--item-1-->
-						
+
 					<div class="item-1"><!--item-1-->
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="getCarreraD"></div><!--descripcion-->

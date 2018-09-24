@@ -1,0 +1,52 @@
+div.contenedor div.div-1 p {
+  font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #6B6B6B;
+  margin-top: 8px;
+}
+div.div-1 {
+  border-bottom: solid 1px #adacac;
+  margin: 8px 32px 0;
+  margin-bottom: 16px;
+}
+select{
+  width: 250px;
+  height: 32px;
+  padding: 0 0 0 32px;
+  background: white;
+  color: #ACABAB;
+  border: 1px solid #D8D8D8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("../../assets/images/menu_hamburguesa.png");
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}
+.label-egresados {
+  display: block;
+}
+.label-empleadores {
+  display: block;
+}
+.opciones-reporte div {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+div.chart {
+  width: 98%;
+  /*margin: auto;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+}
+#btn-guardar {
+  background-color: #BE3228;
+  color: white;
+  border: none;
+  margin-bottom: 16px;
+}
