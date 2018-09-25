@@ -49,33 +49,14 @@
 							</div><!--info-->
 						</div><!--contenedor-info-->
 
-						<div>
-							@if( $egresados->usuario->correo == NULL )
-								<div class="contenedor-info"><!--inicio contenedor-info-->
-									<div class="icono"><!--inicio icono-->
-											<img src="{{ url( 'assets/images/phone.png') }}" alt="" class="iconos" title="Numero telefónico">
-										</div><!--fin icono-->
-									<a href="{{url('')}}" class="link">Agregar correo electrónico</a>
-									<!--- <input type="tel" name="e_telefono" class="input-icon inputTel" placeholder="Agregar teléfono" value="{{$egresados->telefono}}" title="Teléfono" />
-									-->
-									<a href="#actualizarCorreo" class="btn-empresa">Agregar correo electrónico</a>
-								</div>
-							@else
-								<div class="contenedor-info"><!--inicio contenedor-info-->
-									<div class="icono"><!--inicio icono-->
-										<img src="{{ url( 'assets/images/email.png') }}" alt="" class="iconos" title="Lugar de origen">
-									</div><!--fin icono-->
-									<div class="info"><!--inicio info-->
-										<span class="info-perfil">{{ $egresados->usuario->correo }}</span>
-									</div><!--info-->
-									<a href="#actualizarCorreo" class="btn-empresa">Actualizar</a>
-								</div><!--contenedor-info-->
-							@endif
-						</div>
-						<!-- <div>
-							<input type="email" name="e_correo" class="input-icon inputEmail" placeholder="Agregar un correo electrónico" value="{{$egresados->usuario->correo}}" title="Correo electrónico" />
-						</div>
-						-->
+						<div class="contenedor-info"><!--inicio contenedor-info-->
+							<div class="icono"><!--inicio icono-->
+								<img src="{{ url( 'assets/images/email.png') }}" alt="" class="iconos" title="Lugar de origen">
+							</div><!--fin icono-->
+							<div class="info"><!--inicio info-->
+								<span class="info-perfil">{{ $egresados->usuario->correo }}</span>
+							</div><!--info-->
+						</div><!--contenedor-info-->
 
 						<div>
 							@if( $egresados->direccion_actual == NULL )
@@ -155,7 +136,7 @@
 		</div><!--fin div-2-->
 	</div><!--fin contenedor-->
 
-	<!-- Modal para agregar o actualizar telefono -->
+	<!-- Modal para agregar o actualizar TELEFONO -->
 	<div id="actualizarTelefono" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
 			<a href="#close" class="close">&times;</a>
@@ -183,36 +164,7 @@
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
 
-	<!-- Modal para agregar o actualizar CORREO -->
-	<div id="actualizarCorreo" class="modaloverlay"> <!-- div-modaloverlay -->
-		<div class="modal"> <!-- div-modal -->
-			<a href="#close" class="close">&times;</a>
-			<!-- <div> -->
-			<div class="parte-1"><!--parte-1-->
-				<p class="txt">Actualizar correo electrónico</p>
-			</div><!--parte-1-->
-
-			<form action="{{ url('perfil/guardar') }}" method="post">
-				{{-- TODO: Protección contra CSRF --}}
-				{{ csrf_field() }}
-				<div class="parte-2"><!--parte-2-->
-					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-					<div>
-						<input type="email" name = "email" class = "input-icon inputEmail" placeholder="Agregar correo"
-							value="{{ $egresados->usuario->correo }}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title = "correo@proveedor.com" required/>
-						<input type="hidden" name = "modificacion" value = "correo"/>
-					</div>
-					<div class="btn-group">
-						<button type="button" class="flat-secundario aling-left">Cancelar</button>
-						<button type="submit" class="flat aling-right">Guardar</button>
-					</div>
-				</div>
-			</form>
-			<!-- </div> -->
-		</div> <!-- div-modal -->
-	</div> <!-- div-modaloverlay -->
-
-	<!-- Modal para agregar o actualizar CORREO -->
+	<!-- Modal para agregar o actualizar DIRECCION -->
 	<div id="actualizarDireccion" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
 			<a href="#close" class="close">&times;</a>

@@ -64,14 +64,12 @@ class PerfilController extends Controller {
         {
             $egresado = Auth::user()->egresado;
 
-            if( $request[ 'modificacion' ] == "correo" )
-                $egresado->usuario->correo = $request->correo;;
             if( $request[ 'modificacion' ] == "telefono" )
                 $egresado->telefono = $request->telefono;
             if( $request[ 'modificacion' ] == "direccion" )
                 $egresado->direccion_actual = $request->direccion;
-            
-            $egresado->usuario->save();
+
+            $egresado->save();
         }
         catch( Exception $e )
         {
