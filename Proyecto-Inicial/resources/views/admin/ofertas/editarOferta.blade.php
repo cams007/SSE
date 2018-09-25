@@ -4,7 +4,8 @@
 
 @section('style')
 
-<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/editarOferta.css') }}" rel="stylesheet">
 @stop
 
 @php
@@ -33,27 +34,23 @@
 		<div class="div-1">
 			<p class="text-center">Editar oferta</p>
 		</div><!--div-1-->
-		
+
 		<!--Contenido de la pagina-->
 		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarOferta.submit')}}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-			
+
 			<input name="id" type="hidden" value="{{$oferta->id}}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
 			<label for="" class="">Titulo del empleo: </label>
 	 		<input type="text" name="titulo_empleo" value="{{ $oferta->titulo_empleo }}" />
 
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
 			<label for="" class="">Descripción: </label>
 	 		<input type="text" name="descripcion" value="{{ $oferta->descripcion }}" />
 
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
 			<label for="" class="">Ubicación: </label>
 	 		<input type="text" name="ubicacion" value="{{ $oferta->ubicacion }}" />
 
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera" required>
 			 	<!--Valor original del campo-->
@@ -66,15 +63,12 @@
 	 			@endforeach
 	 		</select>
 
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
 			<label for="" class="">Experiencia: </label>
 	 		<input type="text" name="experiencia" value="{{ $oferta->experiencia }}" />
 
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
 			<label for="" class="">Salario: </label>
 	 		<input type="text" name="salario" value="{{ $oferta->salario }}" />
 
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
 			<label for="" class="">Status: </label>
 	 		<select name="status">
 				<option value = "{{ $oferta->status }}">{{ $oferta->status }}</option>
@@ -85,7 +79,6 @@
 	 			@endforeach
 	 		</select>
 
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
 	 		<label for="" class="">Empresa: </label>
 	 		<select name="empresa_id">
 			 	<!-- Empresa original de la oferta -->
@@ -103,9 +96,11 @@
 	 			@endforeach
 	 		</select>
 
-	 		<button type="submit" class="flat">
-						Editar
-			</button>
+			<div class="boton">
+		 		<button type="submit" class="flat">
+							Editar
+				</button>
+			</div>
 		</form>
 
 	</div><!--contenedor-->

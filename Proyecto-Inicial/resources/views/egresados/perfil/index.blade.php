@@ -85,7 +85,6 @@
 						<button type = "button" class="flat-secundario aling-left">Cancelar</button>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
-<<<<<<< HEAD
 
 				</form>
 			</div>
@@ -102,9 +101,6 @@
 				<input type="file" name="e_img" accept="image/*">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<input type="submit" class="flat" value="Actualizar">
-=======
-				</div>
->>>>>>> dbd21ce90abe8cd1f7b88f3241f54c7968a7dc4e
 			</form>
 			<!-- </div> -->
 		</div> <!-- div-modal -->
