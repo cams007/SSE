@@ -9,7 +9,8 @@
 
 @section('style')
 	<link href = "{{ url( 'css/paginacion.css' ) }}" rel = "stylesheet">
-	<link href = "{{ url( 'css/ranking.css' ) }}" rel = "stylesheet">	
+	<!-- <link href = "{{ url( 'css/ranking.css' ) }}" rel = "stylesheet"> -->
+	<link href = "{{ url( 'css/cssadmin/estadisticas.css' ) }}" rel = "stylesheet">
 @stop
 
 <!-- Agregar scripts -->
@@ -22,23 +23,23 @@
 	{!! Html:: script( 'js/FileSaver.js' ) !!}
 
 @section('content')
-	
+
 	<div class="contenedor"><!-- contenedor -->
 
 		<div class = "div-1">
-			<p class = "text-center">&Iacute;ndices y Estad&iacute;sticas</p>
+			<p>&Iacute;ndices y Estad&iacute;sticas</p>
 		</div>
 
-		<div class = "opciones-reporte" id = "opciones-reporte">		
+		<div class = "opciones-reporte" id = "opciones-reporte">
 			<div>
 				<!--
 					Se define un formulario tipo SELECT, con un metodo GET se envia el formulario al
 					controlador que lo llamo (IndicesEstadisticasController) y otra vez se renderiza esta vista.
 				-->
 				{!! Form::open(['url' => 'admin/estadisticas', 'method' => 'GET', 'role' => 'search']) !!}
-				
+
 				{{ csrf_field() }}
-				
+
 				<label class = "label-egresados" id = "label-egresados">Estad&iacute;sticas Egresados</label>
 				{!! Form::select('egresados',
 					[
@@ -67,7 +68,7 @@
 						"26" => "¿Como calificas el desempeño de los docentes de la UTM?",
 						"27" => "¿Como calificas las tecnicas y metodos de enseñanza de los docentes de la UTM?",
 						"28" => "¿Como calificas la forma y pertinencia de evaluacion aplicados por los docentes de la UTM?",
-						
+
 						// Desempeño Profesional de los Egresados
 						"29" => "Habilidades importantes que debe desarrollar el egresado",
 						"30" => "Carencia de conocimientos basicos del egresado",
@@ -122,7 +123,7 @@
 			<!-- Renderiza el chart que se define desde el controlador IndicesEstadiscticasController -->
 			{!! $chart->render() !!}
 		</div>
-		
+
 		<!-- Boton para convertir el grafico en imagen PNG,
 		     A traves de la libreria FileSaver guarda la imagen
 		     en la carpeta de descarga local.
