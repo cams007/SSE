@@ -128,5 +128,5 @@
 @stop
 
 @section('script')
-<script src="{{ url('js/directorio.js') }}"></script>
+	<script src="{{ url('js/directorio.js') }}"></script>
 @stop

@@ -68,7 +68,7 @@ class PerfilController extends Controller {
                 $egresado->telefono = $request->telefono;
             if( $request[ 'modificacion' ] == "direccion" )
                 $egresado->direccion_actual = $request->direccion;
-
+            // $egresado->usuario->correo;
             $egresado->save();
         }
         catch( Exception $e )
@@ -99,9 +99,44 @@ class PerfilController extends Controller {
         return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
 
+    public function saveFormacion( Request $request )
+    {
+        // echo "Forma: ".$request->titulacion."\n";
+        // echo "Fecha: ".$request->ftitulacion;
+        DB::beginTransaction();
+        try
+        {
+            $prep = Auth::user()->egresado->preparacion;
+            
+            if( $request->titulacion == "No titulado" )
+            {
+                $prep->forma_titulacion = $request->titulacion;    
+            }
+            else
+            {
+                $prep->forma_titulacion = $request->titulacion;
+                $prep->fecha_titulo = $request->ftitulacion;
+            }
+            
+            $prep->save();
+        }
+        catch( Exception $e )
+        {
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        //Para mostrar mensaje partials/messages.blade.php
+        Session::flash('save', 'Fecha titulacion actualizada correctamente' );
+        
+        return view('egresados.perfil.estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
+    }
+
     public function saveFormacionPerson(Request $request)
     {
-        return redirect('perfil/primerEmpleo');
+        return $request;
+
+        //return redirect('perfil/primerEmpleo');
     }
 
     public function savePrimerEmp(Request $request)
