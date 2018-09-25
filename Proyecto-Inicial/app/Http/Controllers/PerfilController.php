@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Egresado;
 use App\User;
 use App\Preparacion;
 use App\PrimerEmpleo;
 use App\Maestria;
-use App\Doctorado;
+use App\Doctorado;              
+use Session;
 use Auth;
 use Image;
 
@@ -32,42 +34,52 @@ class PerfilController extends Controller {
     {
         return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
-
+    
     public function showEstudiosForm()
     {
         return view('egresados.perfil.estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
     }
 
-    public function showPrimerEmpleoForm(){
-
+    public function showPrimerEmpleoForm()
+    {
         $primerempleo = PrimerEmpleo::where('id', Auth::user()->egresado->primerEmpleo_id)->first();
 
         return view('egresados.perfil.primerEmpleo', ['empleo' => $primerempleo]);
     }
 
-    public function showEmpleosForm(){
+    public function showEmpleosForm()
+    {
         return view('egresados.perfil.empleos');
     }
 
-    public function showSatisfaccionForm(){
+    public function showSatisfaccionForm()
+    {
         return view('egresados.perfil.satisfaccion', array('dato' => 'No'));
     }
 
     public function saveDatosBasicos(Request $request)
     {
-        $egresado = Auth::user()->egresado;
+        DB::beginTransaction();
+        try
+        {
+            $egresado = Auth::user()->egresado;
 
-        $egresado->genero = $request->e_genero;
-        $egresado->nacionalidad = $request->e_nacionalidad;
-        $egresado->telefono = $request->e_telefono;
-        $egresado->direccion_actual = $request->e_direccionActual;
-        // save cv
-        $egresado->save();
+            if( $request[ 'modificacion' ] == "telefono" )
+                $egresado->telefono = $request->telefono;
+            if( $request[ 'modificacion' ] == "direccion" )
+                $egresado->direccion_actual = $request->direccion;
 
-        $egresado->usuario->correo = $request->e_correo;
-        $egresado->usuario->save();
-        
-        // return redirect('perfil/estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
+            $egresado->save();
+        }
+        catch( Exception $e )
+        {
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+        //Para mostrar mensaje partials/messages.blade.php
+        Session::flash('save', 'Información actualizada correctamente' );
+
         return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
 
@@ -89,7 +101,6 @@ class PerfilController extends Controller {
 
     public function saveFormacionPerson(Request $request)
     {
-        // $p = 
         return redirect('perfil/primerEmpleo');
     }
 

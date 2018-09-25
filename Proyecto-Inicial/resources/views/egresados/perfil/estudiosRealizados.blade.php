@@ -65,27 +65,27 @@
 				<div class="form-group">
 					<label for="maestria">Maestría(s)</label>
 				</div>
-				@if ( $preparacion->maestrias->count() > 0)
-					<table>
-						<thead>
-							<tr>
-								<th>Descripcion</th>
-								<th>Titulado</th>
-							</tr>
-						</thead>
-
-						@foreach($preparacion->maestrias as $maestria)
-							<tbody>
+					@if( $preparacion->maestrias->count() > 0)
+						<table>
+							<thead>
 								<tr>
-									<td>{{ $maestria->descripcion }}</td>
-									<td>Si</td>
+									<th>Descripcion</th>
+									<th>Titulado</th>
 								</tr>
-							</tbody>
-						@endforeach
-					</table>
-				@endif
+							</thead>
 
-				<input type="text" name="maestria" id="maestria" class="form-control" pattern="[a-z]" >
+							@foreach($preparacion->maestrias as $maestria)
+								<tbody>
+									<tr>
+										<td>{{ $maestria->descripcion }}</td>
+										<td>Si</td>
+									</tr>
+								</tbody>
+							@endforeach
+						</table>
+					@endif
+
+				<input type="text" name="maestria" id="maestria" class="form-control" pattern = "[A-Za-z]{2, 100}"/>
 				<label>Titulado</label>
 				<div class="radio">
 					<input type="radio" name="mtitulado" id="tMSi" value="1" > <label for="tMSi" class="label-radio">Sí</label>
@@ -97,7 +97,7 @@
 				<br>
 				<div class="form-group">
 					<label for="doctorado">Doctorado</label>
-					<input type="text" name="doctorado" id="doctorado" class="form-control" pattern="[a-z]" >
+					<input type="text" name="doctorado" id="doctorado" class="form-control" pattern = "[A-Za-z]{2, 100}" >
 				</div>
 
 				<div class="form-group">

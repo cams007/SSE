@@ -3,7 +3,8 @@
 @section('title', 'Datos basicos')
 
 @section('style')
-<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -80,12 +81,11 @@
 						<p>Curriculum vitae</p>
 						<input type="file" name="e_cv">
 					</div>
-
-					<div class="text-center">
-						<button type="submit" class="flat">
-							Siguiente
-						</button>
+					<div class="btn-group">
+						<button type = "button" class="flat-secundario aling-left">Cancelar</button>
+						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
+<<<<<<< HEAD
 
 				</form>
 			</div>
@@ -102,14 +102,12 @@
 				<input type="file" name="e_img" accept="image/*">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<input type="submit" class="flat" value="Actualizar">
+=======
+				</div>
+>>>>>>> dbd21ce90abe8cd1f7b88f3241f54c7968a7dc4e
 			</form>
+			<!-- </div> -->
+		</div> <!-- div-modal -->
+	</div> <!-- div-modaloverlay -->
 
-		</div><!--fin div-2-3-->
-	</div><!--fin div-2-->
-</div><!--fin contenedor-->
-
-@stop
-
-@section('script')
-	<script src="{{ url('js/perfil.js') }}"></script>
 @stop
