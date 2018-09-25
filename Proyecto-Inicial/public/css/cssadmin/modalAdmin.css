@@ -66,11 +66,11 @@ div.parte-2 div.item-1 div.descripcion {
   color: #6B6B6B;
   margin-left: 16px;
 }
-div#ev_imgen, div#hv_imgen, div#tv_imgen {
+div#ev_imgen, div#hv_imgen, div#tv_imgen, div#e_imgen, div#h_imgen, div#t_imgen {
   text-align: left;
   /*padding-left: 10px;*/
 }
-div#ev_imgen img, div#hv_imgen img, div#tv_imgen img{
+div#ev_imgen img, div#hv_imgen img, div#tv_imgen img, div#e_imgen img, div#h_imgen img, div#t_imgen img{
   margin-left: 0px;
   width: 10%;
   height: auto;

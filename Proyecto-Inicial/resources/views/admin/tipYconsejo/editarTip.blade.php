@@ -3,7 +3,8 @@
 @section('title', 'HistoriasYtips')
 
 @section('style')
-<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/editarTip.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -18,21 +19,21 @@
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 			<input name="id" type="hidden" value="{{$tip->id}}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
 			<label for="" class="">Titulo: </label>
-	 		<input type="text" name="titulo" value="{{$tip->titulo}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+	 		<input class="nombre" type="text" name="titulo" value="{{$tip->titulo}}"/>
+
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion">{{$tip->descripcion}}</textarea>
-	 		
-	 		<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Foto: </label>
-	 		<input id="file-input" name="imagen" type="file"/>
-	 		<img id="imgSalida" src="{{ url($tip->imagen_url)}}" alt=""/>
 
-	 		<button type="submit" class="flat">Enviar</button>
+			<div class="foto">
+		 		<label for="" class="">Foto: </label>
+		 		<input id="file-input" name="imagen" type="file"/>
+		 		<img id="imgSalida" src="{{ url($tip->imagen_url)}}" alt=""/>
+			</div>
+			<div class="boton">
+	 			<button type="submit" class="flat">Enviar</button>
+			</div>
 		</form>
 	</div><!--contenedor-->
 @stop

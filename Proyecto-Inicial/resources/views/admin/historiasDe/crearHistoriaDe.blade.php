@@ -20,15 +20,17 @@
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 			<label for="" class="">Titulo: </label>
-	 		<input type="text" name="titulo" required/>
+	 		<input class="nombre" type="text" name="titulo" required/>
 
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
+
 			<div class="foto">
 		 		<label for="" class="">Foto: </label>
 		 		<input id="file-input" name="imagen" type="file" required/>
 		 		<img id="imgSalida" src="" />
 			</div>
+			
 	 		<input type="hidden" name="activo" value="1" placeholder=""/>
 			<div class="boton">
 	 			<button type="submit" class="flat">Crear</button>
