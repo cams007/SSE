@@ -38,9 +38,11 @@
 		</div><!--div-3-1-->
 	</div><!--div-3-->
 
+	<div class="se-encontraron">
+		<p>Se encontraron {{ $empresas->total() }} resultados</p>
+	</div>
 	<div class="div-4"><!--div-4-->
 		<div class="div-4-1"><!--div-4-1-->
-			<p>Se encontraron {{ $empresas->total() }} resultados</p>
 			<table>
 				<thead>
 					<tr>
@@ -56,12 +58,12 @@
 						<tr data-empresa="{{ $empresa }}" data-contacto="{{ $empresa->contacto }}">
 							@if ( Request::get('page') )
 								@if ( Request::get('page') == 1 and $indexKey == 0 )
-									<td><img src="{{ url('assets/images/trofeo.png') }}"></td> 
-								@else							
+									<td><img src="{{ url('assets/images/trofeo.png') }}"></td>
+								@else
 									<td class="text_red"> {{ ($indexKey + 1) + ((Request::get('page')-1) * 10) }} </td>
 								@endif
 							@elseif ( $indexKey == 0 )
-								<td><img src="{{ url('assets/images/trofeo.png') }}"></td> 
+								<td><img src="{{ url('assets/images/trofeo.png') }}"></td>
 							@else
 								<td class="text_red">{{ $indexKey + 1 }}</td>
 							@endif
@@ -103,7 +105,7 @@
 	  	<div class="modal">
 		    <a href="#close" class="close">&times;</a>
 		    <div>
-		    	<h1>Datos de empresa</h1>
+		    	<p class="txt">Datos de empresa</p>
 		    	<form action="#">
 			    	<div class="item-1"><!--item-1-->
 						<div class="icono"><!--icono-->
@@ -149,7 +151,7 @@
 
 					<div>
 						<br><br>
-						<h4>Calificar esta empresa</h4>
+						<h4 class="texto-calificar">Calificar esta empresa</h4>
 						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
 						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
 						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">

@@ -26,11 +26,11 @@
                 </div>
               </div>
               <div class="menucontainer">
-                
+
               </div>
             </div>
       </header>
-    
+
       <div class="block">
           @yield('content')
       </div>

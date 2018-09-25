@@ -66,9 +66,9 @@
 
                 <div class="btn-group">
                     <a href="{{url('/')}}" class="button1"> Cancelar</a>
-                    <button type="submit">
+                    <!-- <button type="submit"> -->
                         <a href="{{url('bienvenida')}}" class="button2" type="submit">Registrarse</a>
-                    </button>
+                    <!-- </button> -->
               </div>
         </form>
     </div>

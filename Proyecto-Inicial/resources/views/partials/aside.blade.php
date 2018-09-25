@@ -1,5 +1,5 @@
 
-<ul style="border: 1px outline ">
+<ul>
 	  <li {{ Request::is('perfil') ? ' class=active' : ''}} >
 	  	<a href="{{url('perfil')}}">Datos básicos</a>
 	  </li>

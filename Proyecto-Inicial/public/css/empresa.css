@@ -125,12 +125,12 @@ textarea#comentario{
 	/*background: rgb(124, 32, 205);*/
 }
 .link,
-a{
+/*a{
   color: #be3228;
   text-decoration: none;
   cursor:pointer; cursor: hand;
   margin-left: 10px;
-}
+}*/
 .paginate{
 	margin:32px 0 ;
 }
@@ -143,6 +143,6 @@ li.list a{
 	display: block;
 	color: #be3228;
 	text-align: center;
-	padding: 14px 16px;
+	/*padding: 14px 16px;*/
 	text-decoration: none;
 }

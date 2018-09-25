@@ -60,6 +60,8 @@ td.text_red {
 }
 td a.more_detail {
 	float: right;
+	color: #be3228;
+	text-decoration: none;
 	font-weight: bold;
 	border: 2px solid red;
 	border-color: red;
@@ -106,12 +108,12 @@ div select{
 	font-size: 14px;
 	font-family: 'Roboto', sans-serif;
 }
-
-a{
-  color: #be3228;
-  text-decoration: none;
-  cursor:pointer; cursor: hand;
-  margin-left: 10px;
+.btn-empresa {
+	color: #be3228;
+	text-decoration: none;
+	cursor: pointer;
+	cursor: hand;
+	margin-left: 10px;
 }
 
 div.buscador_ofertas input{
