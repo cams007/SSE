@@ -99,8 +99,8 @@
 							<div>
 								<label> Forma de titulación</label>
 								<div class="radio">
-									<input type="radio" name="titulacion" id="tesis" value="tesis"> <label for="tesis" class="label-radio">Tesis</label>
-									<input type="radio" name="titulacion" id="ceneval" value="ceneval"> <label for="ceneval" class="label-radio">CENEVAL</label>
+									<input type="radio" name="titulacion" id="tesis" value="Tesis"> <label for="tesis" class="label-radio">Tesis</label>
+									<input type="radio" name="titulacion" id="ceneval" value="CENEVAL"> <label for="ceneval" class="label-radio">CENEVAL</label>
 									<input type="radio" name="titulacion" id="Ntitulado" value="No titulado"> <label for="Ntitulado" class="label-radio">No titulado</label>
 								</div>
 							</div>
