@@ -1,0 +1,47 @@
+div.contenedor div.div-1 p {
+  font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #6B6B6B;
+  margin-top: 8px;
+}
+div.div-1 {
+  border-bottom: solid 1px #adacac;
+  margin: 8px 32px 0;
+  margin-bottom: 16px;
+}
+form {
+  width: 41%;
+  min-height: 405px;
+  margin: auto;
+  text-align: left;
+}
+label {
+  display: block;
+  font-size: 15px;
+  color: #6B6B6B;
+}
+input {
+  margin-bottom: 16px;
+  /*width: 35%;*/
+  width: 70%;
+  height: 24px;
+}
+div.boton {
+  text-align: right;
+  margin-top: 16px;
+  /*margin-right: 61px;*/
+  margin-bottom: 50px;
+}
+select {
+  width: 70%;
+  height: 28px;
+  padding: 0 0 0 32px;
+  margin-bottom: 16px;
+	background: white;
+	border: 1px solid #acabab;
+  -webkit-appearance: none;        /*Removes default chrome and safari style */
+  -moz-appearance: none;
+  background-image: url("../../assets/images/menu_hamburguesa.png");
+	background-repeat: no-repeat;
+	background-position: 3px 7px;
+}

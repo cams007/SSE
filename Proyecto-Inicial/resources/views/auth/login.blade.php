@@ -10,7 +10,7 @@
     <section id="franja">
         <div id="franja_contenedor">
             <div id="logo_sse"> </div>
-            <div id="titulo_index"><p>Sistema de Seguimiento de Egresados - Egresados</p></div>
+            <div id="titulo_index"><p>Sistema de Seguimiento de Egresados</p></div>
             <div id="logo_info"></div>
         </div>
     </section>
@@ -20,7 +20,7 @@
 
     <form id="form_login" role="form" method="POST" action="{{ route('login.submit') }}">
         {{ csrf_field() }}
-        
+
         <div class="usuario-login">
             <div id="logo-user"></div>
             <input type="email" id="correo" name="correo" value="{{ old('correo') }}" placeholder="Correo electrónico" required autofocus>
@@ -63,7 +63,7 @@
         </div>
 
         @if (Auth::guest())
-            <li><a href="{{ route('register') }}">Regístrate</a></li>
+            <li class="registro-boton"><a href="{{ route('register') }}">Regístrate</a></li>
         @endif
 
     </form>

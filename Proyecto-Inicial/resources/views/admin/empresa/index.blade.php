@@ -5,18 +5,20 @@
 @section('style')
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
-	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<!-- <link href="{{ url('css/modal.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
+	<link href="{{ url('css/cssadmin/empresas.css') }}" rel="stylesheet">
+	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
 @stop
 
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
-			<p class="text-center">Empresas</p>
+			<p>Empresas</p>
 		</div><!--div-1-->
-		
+
 		@include('admin.partials.messages')<!--Mensages -->
-		
+
 		<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button para crear empresas-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
@@ -59,7 +61,7 @@
 			<?php } ?>
 		</div><!--div-5--><!--Fin paginacion-->
 	</div><!--contenedor-->
-	
+
 	<!--Ventana emergente para eliminar-->
 	<div id="eliminarEmpresa" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
@@ -67,7 +69,7 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Eliminar Empresa</p>
 			</div><!--parte-1-->
-			
+
 			<form action="{{route('admin.eliminarEmpresa.submit')}}" method="post">
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
@@ -148,7 +150,7 @@
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="e_imgen"></div><!--descripcion-->
 					</div><!--item-1-->
-					
+
 					<!--<a href="{{ URL::previous() }}">Volver</a>-->
 					<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
 					<button type="submit" class="flat">Eliminar</button>
@@ -165,7 +167,7 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Ver Empresa</p>
 			</div><!--parte-1-->
-			
+
 			<div class="parte-2"><!--parte-2-->
 				<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
@@ -245,7 +247,7 @@
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 					<div class="descripcion" id="ev_imgen"></div><!--descripcion-->
 				</div><!--item-1-->
-					
+
 				<!--<a href="{{ URL::previous() }}">Volver</a>-->
 				<a href="#close"><button type="button" class="flat-secundario">Regresar</button></a>
 			</div>

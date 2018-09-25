@@ -22,7 +22,7 @@
               <div id="nombre_usuario">
 
                     @if (Auth::guest())
-                        
+
                     @else
                         <a class="user-name" href="#">
                           @if(Auth::user()->egresado->imagen_url)
@@ -47,14 +47,14 @@
                         <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
                         <li><a  href="#">Cambiar contraseña</a></li>
                         <li>
-                                    <a href="{{ route('user.logout') }}"
-                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                        Cerrar sesión
-                                    </a>
-                                    <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                    </form>
+                            <a href="{{ route('user.logout') }}"
+                                onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                                Cerrar sesión
+                            </a>
+                            <form id="logout-form" action="{{ route('user.logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </li>
                         </ul>
                     </li>

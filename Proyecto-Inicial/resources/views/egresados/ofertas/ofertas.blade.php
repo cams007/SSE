@@ -133,7 +133,7 @@
 	    <a href="#close" class="close">&times;</a>
 	    <div>
 	    	<h1>Detalles de la oferta</h1>
-	    	<form action="#">
+	    	<form action="#" class="detalles_ofertas">
 		    	<div>
 					<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
 					<h2 id="oferta_puesto"></h2>
@@ -141,7 +141,7 @@
 				</div>
 
 				<div>
-				<span id="oferta_descripcion"></span><br>
+					<span id="oferta_descripcion"></span><br>
 					<span> {{"Solicita: "}} </span>
 					<span id="oferta_vacante"></span>
 					<span id="oferta_carrera"></span>

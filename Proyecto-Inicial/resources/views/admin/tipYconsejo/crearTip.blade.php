@@ -3,7 +3,8 @@
 @section('title', 'Tip y consejo')
 
 @section('style')
-<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/crearTip.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -17,23 +18,23 @@
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearTipConsejo.submit') }}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
 			<label for="" class="">Titulo: </label>
-	 		<input type="text" name="titulo" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+	 		<input class="nombre" type="text" name="titulo" required/>
+
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
-	 		
-	 		<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Foto: </label>
-	 		<input id="file-input" name="imagen" type="file" required/><br/>
-	 		<img id="imgSalida" src="" />
 
+			<div class="foto">
+		 		<label for="" class="">Foto: </label>
+		 		<input id="file-input" name="imagen" type="file" required/><br/>
+		 		<img id="imgSalida" src="" />
+			</div>
 	 		<input type="hidden" name="activo" value="1" placeholder=""/>
 
-	 		<button type="submit" class="flat">Crear</button>
+			<div class="boton">
+	 			<button type="submit" class="flat">Crear</button>
+			</div>
 		</form>
 	</div><!--contenedor-->
 

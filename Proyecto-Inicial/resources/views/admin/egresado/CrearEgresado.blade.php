@@ -4,7 +4,8 @@
 
 @section('style')
 
-<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
+		<link href="{{ url('css/cssadmin/altaEgresado.css') }}" rel="stylesheet">
 @stop
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
@@ -14,7 +15,7 @@
 		@php
 			//creamos arreglos asociativos para los select
 			$nacionalidad = array(1=>'Mexicana', 2=>'Otra');
-			
+
 			$genero = array(1=>'Masculino', 2=>'Femenino');
 
 			$carrera = array(0=>'Ingeniería en Diseño',1=>'Ingeniería en Computación',2=>'Ingeniría en Alimentos',3=>'Ingeniería en Electrónica',4=>'Ingeniería en Mecatrónica',5=>'Ingeniería Industrial',6=>'Ingeniería en Física Aplicada',7=>'Licenciatura en Ciencias Empresariales',8=>'Licenciatura en Matemáticas Aplicadas',9=>'Licenciatura en Estudios Mexicanos',10=>'Ingeniería en Mecánica Automotriz');
@@ -23,81 +24,91 @@
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearEgresado.submit') }}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
+			<div class="seccion1">
 			<label for="" class="">Matricula: </label>
 	 		<input type="text" name="matricula" placeholder="" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Apellido paterno: </label>
-	 		<input type="text" name="ap_pa" placeholder="" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Apellido materno: </label>
-	 		<input type="text" name="ap_ma" placeholder="" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
+			<div class="columnitas">
+				<div>
+	 				<label for="" class="">Apellido paterno: </label>
+	 				<input type="text" name="ap_pa" placeholder="" required/>
+				</div>
+
+				<div>
+	 				<label for="" class="">Apellido materno: </label>
+	 				<input type="text" name="ap_ma" placeholder="" required/>
+				</div>
+			</div>
+
 	 		<label for="" class="">Nombre(s): </label>
-	 		<input type="text" name="nombres" placeholder="" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Curp: </label>
-	 		<input type="text" name="curp" placeholder="" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Género: </label>
-	 		<select name="genero">
-	 			@foreach($genero as $idn=>$nombre)
-	 					<option value={{$idn}}>{{$nombre}}</option><!--Tipo de datos enum-->
-	 			@endforeach
-	 		</select>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Fecha de nacimiento: </label>
-	 		<input type="date" name="fecha_nacimiento" placeholder="" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Nacionalidad: </label>
-	 		<select name="nacionalidad">
-	 			<@foreach($nacionalidad as $idn=>$nombre)
-	 					<option value={{$idn}}>{{$nombre}}</option><!--Tipo de datos enum-->
-	 			@endforeach
-	 		</select>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+	 		<input class="nombre" type="text" name="nombres" placeholder="" required/>
+
+			<div class="columnitas">
+				<div>
+	 				<label for="" class="">Curp: </label>
+	 				<input type="text" name="curp" placeholder="" required/>
+				</div>
+
+				<div>
+	 				<label for="" class="">Género: </label>
+	 				<select name="genero">
+	 					@foreach($genero as $idn=>$nombre)
+	 						<option value={{$idn}}>{{$nombre}}</option><!--Tipo de datos enum-->
+	 					@endforeach
+	 				</select>
+				</div>
+			</div>
+
+			<div class="columnitas">
+				<div>
+	 				<label for="" class="">Fecha de nacimiento: </label>
+	 				<input type="date" name="fecha_nacimiento" placeholder="" required/>
+				</div>
+
+				<div>
+	 				<label for="" class="">Nacionalidad: </label>
+	 				<select name="nacionalidad">
+	 					<@foreach($nacionalidad as $idn=>$nombre)
+	 						<option value={{$idn}}>{{$nombre}}</option><!--Tipo de datos enum-->
+	 					@endforeach
+	 				</select>
+				</div>
+			</div>
+
 	 		<label for="" class="">Lugar de origen: </label>
 	 		<input type="text" name="lugar_origen" placeholder="" required/>
-	 		
-	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
 
+	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
+		</div>
+
+		<div class="seccion2">
 	 		<!--Datos de preparacion-->
-	 		<img src="{{ url('assets/images/crear.png') }}" alt="">
+
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera" required>
 	 			@foreach($carrera as $idn=>$nombre)
 	 					<option value="{{$idn}}">{{$nombre}}</option><!--Tipo de datos enum-->
 	 			@endforeach
 	 		</select>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
 	 		<label for="" class="">Generación: </label>
 	 		<input type="text" name="generacion" placeholder="" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
 	 		<label for="" class="">Fecha de inicio de estudios: </label>
 	 		<input type="date" name="fecha_inicio" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
 	 		<label for="" class="">Fecha de fin de estudios: </label>
 	 		<input type="date" name="fecha_fin" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Promedio: </label>
-	 		<input type="text" name="promedio" placeholder="" required/>
-	 		
-	 		<button type="submit" class="flat">Enviar</button>
-		</form>	
 
+	 		<label for="" class="promedio">Promedio: </label>
+	 		<input class="promedio" type="text" name="promedio" placeholder="" required/>
+
+			<div class="boton">
+	 			<button type="submit" class="flat">Enviar</button>
+			</div>
+		</form>
+	</div>
 	</div><!--contenedor-->
 
 @stop

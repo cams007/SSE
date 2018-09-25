@@ -20,19 +20,17 @@
 }
 
 
-/*#cssmenu > ul > li.active,*/
 #cssmenu ul li{
 	width: 200px;
+	height: 40px;
+	padding-top: 10px;
+	text-align: left;
 }
-#cssmenu > ul > li {
-	/*border-left: 8px solid rgba(255,255,255,0.1);*/
-	/*border-left: 8px solid #be3228;*/
-	/*background: black;*/
-}
-
 #cssmenu > ul > li:hover {
-	/*border-left: 8px solid #be3228;*/
 	background: #BE3228;
+}
+#cssmenu > ul > li:hover > a{
+	color: white;
 }
 #cssmenu > ul > li > a{
 	padding-left: 32px;
@@ -40,16 +38,10 @@
 	text-align: left;
 	font-size: 15px;
 	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
 }
-#cssmenu > ul > li > a:hover{
-	/*font-weight:bold;*/
-	color: white;
-}
-
 #cssmenu > ul > li.active{
-	/*border-left: 8px solid #be3228;*/
 	background: #be3228;
-	/*font-weight:bold;*/
 }
 #cssmenu > ul > li.active > a{
 	color: white;

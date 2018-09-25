@@ -5,8 +5,10 @@
 @section('style')
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
-	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<!-- <link href="{{ url('css/modal.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
+	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/egresados.css') }}" rel="stylesheet">
 @stop
 
 @php
@@ -28,11 +30,11 @@
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
-			<p class="text-center">Egresados</p>
+			<p>Egresados</p>
 		</div><!--div-1-->
 
 		@include('admin.partials.messages')<!--Mensages -->
-		
+
 		<a href="{{url('/admin/egresado/crearEgresado')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!-- Button crear Egresado-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
@@ -42,7 +44,7 @@
 				{!! Form::close() !!}
 			</div>
 		</div><!--fin div-2-2-1-->
-		
+
 		@php $i =1;@endphp
 		<table> <!--Contenido de la pagina-->
 			<thead>
@@ -52,7 +54,7 @@
 				<td>Carrera</td>
 				<td>Acción</td>
 			</thead>
-			<tbody>	
+			<tbody>
 			@foreach($egresados as $egresado)
 			<tr data-egresado="{{$egresado}}" data-preparacion="{{$egresado->preparacion}}">
 				<td>{{$i}}</td>
@@ -95,7 +97,7 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Eliminar Egresado</p>
 			</div><!--parte-1-->
-			
+
 			<form action="{{route('admin.eliminarEgresado.submit')}}" method="post">
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
@@ -126,7 +128,7 @@
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="eg_nacionalidad"></div><!--descripcion-->
 					</div><!--item-1-->
-					
+
 					<div class="item-1"><!--item-1-->
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 						<div class="descripcion" id="eg_telefono"></div><!--descripcion-->
@@ -173,7 +175,7 @@
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Ver Egresado</p>
 			</div><!--parte-1-->
-			
+
 			<div class="parte-2"><!--parte-2-->
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
@@ -199,7 +201,7 @@
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 					<div class="descripcion" id="egv_nacionalidad"></div><!--descripcion-->
 				</div><!--item-1-->
-					
+
 				<div class="item-1"><!--item-1-->
 					<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
 					<div class="descripcion" id="egv_telefono"></div><!--descripcion-->
