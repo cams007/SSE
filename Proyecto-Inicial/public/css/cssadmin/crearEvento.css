@@ -23,6 +23,7 @@ div.seccion1 {
 div.seccion2 {
   /*background: rgb(29, 158, 215);*/
   width: 50%;
+  min-height: 400px;
   border-left: 1px solid #adacac;
   margin-bottom: 8px;
   padding-left: 25px;
@@ -37,14 +38,24 @@ label {
 }
 input {
   margin-bottom: 16px;
-  width: 35%;
+  /*width: 35%;*/
   height: 24px;
 }
 input.nombre {
   width: 85%;
 }
-
+textarea {
+  width: 70%;
+  margin-bottom: 16px;
+}
+div.columnitas {
+  display: flex;
+}
+div.columnitas div {
+  width: 50%;
+}
 select {
+  width: 35%;
   height: 28px;
   padding: 0 0 0 32px;
   margin-bottom: 16px;
@@ -56,21 +67,13 @@ select {
 	background-repeat: no-repeat;
 	background-position: 3px 7px;
 }
-input.promedio {
-  width: 15%;
-}
-div.columnitas {
-  display: flex;
-}
-div.columnitas div {
-  width: 50%;
-}
-div.columnitas input, div.columnitas select {
-  width: 70%;
-}
 div.boton {
   text-align: right;
-  margin-top: 8px;
-  margin-right: 20px;
+  margin-top: 16px;
+  margin-right: 61px;
   margin-bottom: 50px;
+}
+div.seccion2 img {
+  width: 50%;
+  height: auto;
 }

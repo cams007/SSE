@@ -4,7 +4,8 @@
 
 @section('style')
 
-<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/editarEmpresa.css') }}" rel="stylesheet">
 @stop
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
@@ -21,108 +22,148 @@
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 			<input name="id" type="hidden" value="{{$empresa->id}}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+			<div class="seccion1">
 	 		<label for="" class="">Nombre de la empresa: </label>
-	 		<input type="text" name="nombre_emp" value="{{$empresa->nombre}}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion">{{$empresa->descripcion}}</textarea>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">RFC: </label>
-	 		<input type="text" name="rfc_emp" value="{{$empresa->rfc}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Sector: </label>
-	 		<select name="sector">
-	 			@foreach($sector as $idn=>$nombre)
-	 				@if($nombre == $empresa->sector)
-	 					<option value={{$nombre}} selected>{{$nombre}}</option><!--Tipo de datos enum-->
-	 				@else
-	 					<option value={{$nombre}}>{{$nombre}}</option><!--Tipo de datos enum-->
-	 				@endif
-	 			@endforeach
-	 		</select>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Giro: </label>
-	 		<input type="text" name="giro" value="{{$empresa->giro}}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Telefono: </label>
-	 		<input type="text" name="telefono_emp" value="{{$empresa->telefono}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Correo: </label>
-	 		<input type="email" name="correo_emp" value="{{$empresa->correo}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Calle: </label>
-	 		<input type="text" name="calle" value="{{$empresa->calle}}" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Número: </label>
-	 		<input type="text" name="numero" value="{{$empresa->numero}}" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Colonia:</label>
-	 		<input type="text" name="colonia" value="{{$empresa->colonia}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Ciudad:</label>
-	 		<input type="text" name="ciudad" value="{{$empresa->ciudad}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Estado:</label>
-	 		<input type="text" name="estado" value="{{$empresa->estado}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Código postal:</label>
-	 		<input type="text" name="codigo_p" value="{{$empresa->codigo_postal}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Página web: </label>
-	 		<input type="text" name="pagina_w" value="{{$empresa->pagina_web}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Fotografía de la empresa: </label>
-	 		<input id="file-input" name="imagen" type="file"/>
-	 		<img id="imgSalida" src="{{ url($empresa->imagen_url)}}" alt=""/>
+	 		<input class="nombre" type="text" name="nombre_emp" value="{{$empresa->nombre}}" />
 
+			<div class="columnitas">
+				<div>
+			 		<label for="" class="">Descripción: </label>
+			 		<textarea rows="4" cols="50" name="descripcion">{{$empresa->descripcion}}</textarea>
+				</div>
+
+				<div>
+					<label for="" class="">Fotografía de la empresa: </label>
+					<input id="file-input" name="imagen" type="file"/>
+					<img id="imgSalida" src="{{ url($empresa->imagen_url)}}" alt=""/>
+				</div>
+			</div>
+
+			<div class="columnitas">
+				<div>
+					<label for="" class="">Calle: </label>
+					<input type="text" name="calle" value="{{$empresa->calle}}" required/>
+				</div>
+				<div>
+					<label for="" class="">Número: </label>
+					<input type="text" name="numero" value="{{$empresa->numero}}" required/>
+				</div>
+			</div>
+
+			<div class="columnitas">
+				<div>
+					<label for="" class="">Colonia:</label>
+					<input type="text" name="colonia" value="{{$empresa->colonia}}"/>
+				</div>
+
+				<div>
+					<label for="" class="">Ciudad:</label>
+					<input type="text" name="ciudad" value="{{$empresa->ciudad}}"/>
+				</div>
+			</div>
+
+			<div class="columnitas">
+				<div>
+					<label for="" class="">Estado:</label>
+					<input type="text" name="estado" value="{{$empresa->estado}}"/>
+				</div>
+
+				<div>
+					<label for="" class="">Código postal:</label>
+					<input type="text" name="codigo_p" value="{{$empresa->codigo_postal}}"/>
+				</div>
+			</div>
+
+			<div class="columnitas">
+				<div>
+					<label for="" class="">Giro: </label>
+					<input type="text" name="giro" value="{{$empresa->giro}}" />
+				</div>
+
+				<div>
+			 		<label for="" class="">Sector: </label>
+			 		<select name="sector">
+			 			@foreach($sector as $idn=>$nombre)
+			 				@if($nombre == $empresa->sector)
+			 					<option value={{$nombre}} selected>{{$nombre}}</option><!--Tipo de datos enum-->
+			 				@else
+			 					<option value={{$nombre}}>{{$nombre}}</option><!--Tipo de datos enum-->
+			 				@endif
+			 			@endforeach
+			 		</select>
+				</div>
+			</div>
+		</div>
+		<div class="seccion2">
+			<div class="columnitas">
+				<div>
+					<label for="" class="">RFC: </label>
+			 		<input type="text" name="rfc_emp" value="{{$empresa->rfc}}"/>
+				</div>
+
+				<div>
+			 		<label for="" class="">Telefono: </label>
+			 		<input type="text" name="telefono_emp" value="{{$empresa->telefono}}"/>
+				</div>
+			</div>
+
+			<div class="columnitas">
+				<div>
+			 		<label for="" class="">Correo: </label>
+			 		<input type="email" name="correo_emp" value="{{$empresa->correo}}"/>
+				</div>
+
+				<div>
+			 		<label for="" class="">Página web: </label>
+			 		<input type="text" name="pagina_w" value="{{$empresa->pagina_web}}"/>
+				</div>
+			</div>
 	 		<input name="contacto_id" type="hidden" value="{{$empresa->contacto_id}}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Motivos de no contratacion: </label>
-	 		<textarea rows="4" cols="50" name="noContratacion">{{$empresa->motivo_no_contratacion}}</textarea>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Recomendaciones: </label>
-	 		<textarea rows="4" cols="50" name="recomendacion">{{$empresa->recomendaciones}}</textarea>
 
+			<div class="columnitas">
+				<div>
+			 		<label for="" class="">Motivos de no contratacion: </label>
+			 		<textarea rows="4" cols="50" name="noContratacion">{{$empresa->motivo_no_contratacion}}</textarea>
+				</div>
+
+				<div>
+			 		<label for="" class="">Recomendaciones: </label>
+			 		<textarea rows="4" cols="50" name="recomendacion">{{$empresa->recomendaciones}}</textarea>
+				</div>
+			</div>
 			<!--Datos del contacto de la empresa-->
 			<input name="idcontacto" type="hidden" value="{{$contacto->id}}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Nombre del contacto: </label>
-	 		<input type="text" name="nombre_cont" value="{{$contacto->nombre}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Puesto: </label>
-	 		<input type="text" name="puesto_cont" value="{{$contacto->puesto}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Número telefónico: </label>
-	 		<input type="text" name="numeroTel_cont" value="{{$contacto->telefono}}"/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Correo electrónico: </label>
-	 		<input type="email" name="email_cont" value="{{$contacto->correo}}"/>
 
-	 		<button type="submit" class="flat">Editar</button>
-		</form>	
-	
+			<div class="columnitas">
+				<div>
+			 		<label for="" class="">Nombre del contacto: </label>
+			 		<input type="text" name="nombre_cont" value="{{$contacto->nombre}}"/>
+				</div>
+
+				<div>
+			 		<label for="" class="">Puesto: </label>
+			 		<input type="text" name="puesto_cont" value="{{$contacto->puesto}}"/>
+				</div>
+			</div>
+
+			<div class="columnitas">
+				<div>
+			 		<label for="" class="">Número telefónico: </label>
+			 		<input type="text" name="numeroTel_cont" value="{{$contacto->telefono}}"/>
+				</div>
+
+				<div>
+			 		<label for="" class="">Correo electrónico: </label>
+			 		<input type="email" name="email_cont" value="{{$contacto->correo}}"/>
+				</div>
+			</div>
+
+			<div class="boton">
+	 			<button type="submit" class="flat">Editar</button>
+			</div>
+		</div>
+		</form>
+
 	</div><!--contenedor-->
 
 @stop

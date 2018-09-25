@@ -42,7 +42,7 @@
 			</div>
 
 	 		<label for="" class="">Nombre(s): </label>
-	 		<input type="text" name="nombres" placeholder="" required/>
+	 		<input class="nombre" type="text" name="nombres" placeholder="" required/>
 
 			<div class="columnitas">
 				<div>
@@ -101,8 +101,8 @@
 	 		<label for="" class="">Fecha de fin de estudios: </label>
 	 		<input type="date" name="fecha_fin" required/>
 
-	 		<label for="" class="">Promedio: </label>
-	 		<input type="text" name="promedio" placeholder="" required/>
+	 		<label for="" class="promedio">Promedio: </label>
+	 		<input class="promedio" type="text" name="promedio" placeholder="" required/>
 
 			<div class="boton">
 	 			<button type="submit" class="flat">Enviar</button>

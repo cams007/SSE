@@ -3,7 +3,8 @@
 @section('title', 'eventos')
 
 @section('style')
-<link href="{{ url('css/ranking.css') }}" rel="stylesheet">
+<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/cssadmin/crearEvento.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -16,38 +17,40 @@
 		<form method="POST" enctype="multipart/form-data" action="{{route('admin.crearEvento.submit')}}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+			<div class="seccion1">
 			<label for="" class="">Titulo del evento: </label>
-	 		<input type="text" name="nombre" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+	 		<input class="nombre" type="text" name="nombre" required/>
+
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Lugar del evento: </label>
-	 		<input type="text" name="lugar" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
-	 		<label for="" class="">Fecha: </label>
-	 		<input type="date" name="fecha" required/>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+
+			<div class="columnitas">
+				<div>
+			 		<label for="" class="">Lugar del evento: </label>
+			 		<input type="text" name="lugar" required/>
+				</div>
+
+				<div>
+			 		<label for="" class="">Fecha: </label>
+			 		<input type="date" name="fecha" required/>
+				</div>
+			</div>
 	 		<label for="" class="">Categoria: </label>
 	 		<select name="categoria" required>
 	 			<option value="1">Académico</option>
 	 			<option value="2">Cultural</option>
 	 		</select>
-			
-			<img src="{{ url('assets/images/crear.png') }}" alt="">
+			</div>
+			<div class="seccion2">
 	 		<label for="" class="">Poster del evento: </label>
 	 		<input id="file-input" name="imagen" type="file" required/>
 	 		<img id="imgSalida" src="" />
 
 	 		<input type="hidden" name="activo" value="1" placeholder=""/>
-
-	 		<button type="submit" class="flat">Crear</button>
+			<div class="boton">
+	 			<button type="submit" class="flat">Crear</button>
+			</div>
+			</div>
 		</form>
 
 	</div><!--contenedor-->

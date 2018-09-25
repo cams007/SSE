@@ -43,7 +43,12 @@ input {
 input.nombre {
   width: 85%;
 }
-
+div.columnitas {
+  display: flex;
+}
+div.columnitas div {
+  width: 50%;
+}
 select {
   height: 28px;
   padding: 0 0 0 32px;
@@ -56,17 +61,11 @@ select {
 	background-repeat: no-repeat;
 	background-position: 3px 7px;
 }
-input.promedio {
-  width: 15%;
-}
-div.columnitas {
-  display: flex;
-}
-div.columnitas div {
-  width: 50%;
-}
 div.columnitas input, div.columnitas select {
   width: 70%;
+}
+input.promedio {
+  width: 15%;
 }
 div.boton {
   text-align: right;
