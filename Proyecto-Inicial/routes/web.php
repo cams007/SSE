@@ -18,16 +18,10 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/logout', 'Auth\LogoutController@logout')->name('user.logout');
 
-
-//Route::get('/registro', 'RegistroController@showRegistroForm')->name('user.registro');
-//Route::post('/registro', 'Auth\RegisterController@register');
 Route::get('/registro','RegistroController@showRegistroForm')->name('crearUsuario');
 Route::post('/registro','RegistroController@saveUsuario')->name('crearUsuario.submit');
 
 Route::get('/bienvenida', 'RegistroController@showBienvenidaForm')->name('user.bienvenida');
-
-
-
 
 // Login de usuarios
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -48,7 +42,7 @@ Route::group(['prefix' => 'perfil'], function() {
         return view('egresados.perfil.ofertaslab');
     });
 
-    Route::post('/', 'PerfilController@saveDatosBasicos');
+    Route::post('guardar', 'PerfilController@saveDatosBasicos');
     Route::post('upphoto', 'PerfilController@updatePhoto');
     Route::post('estudiosRealizados', 'PerfilController@saveFormacionPerson');
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
