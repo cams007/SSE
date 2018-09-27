@@ -24,9 +24,11 @@ select{
 }
 .label-egresados {
   display: block;
+  color: #6B6B6B;
 }
 .label-empleadores {
   display: block;
+  color: #6B6B6B;
 }
 .opciones-reporte div {
   display: flex;

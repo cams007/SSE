@@ -5,7 +5,7 @@
 
 @section('style')
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
-	<link href="{{ url('css/table.css') }}" rel="stylesheet">
+	<link href="{{ url('css/cssadmin/tableAdmin.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/modal.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
 	<link href="{{ url('css/cssadmin/historias.css') }}" rel="stylesheet">
@@ -20,9 +20,11 @@
 
 		@include('admin.partials.messages')<!--Mensages que se muestran para al creal,eliminar,edit-->
 
-		<a href="{{url('/admin/historiasdeExito/crearHistoriaDe')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
-
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
+			<div>
+				<a href="{{url('/admin/historiasdeExito/crearHistoriaDe')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear historia, acceder por medio de la url-->
+			</div>
+		
 			<div class="search">
 				{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
 					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}

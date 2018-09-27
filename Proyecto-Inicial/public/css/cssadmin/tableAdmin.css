@@ -1,0 +1,41 @@
+/* =========================================================
+TABLE STYLE
+========================================================= */
+table{
+  width: 97%;
+  /*margin: 0 5% 0 5%;*/
+  border-collapse: collapse;
+  border: #ACABAB 1px solid;
+  font-size: 13px;
+  margin: auto;
+}
+table thead {
+	color: white;
+	background-color: #6B6B6B;
+}
+/*table-layout: fixed;*/
+
+/*th{
+  color: #FFFFFF;
+  background-color: #6B6B6B;
+  border: #ACABAB 1px solid;
+  text-align: center;
+}*/
+tr, td {
+  height: 48px;
+  border: #ACABAB 1px solid;
+}
+tr:nth-child(even){ /*Filas pares*/
+  color: #6B6B6B; /*color: #FFFFFF;*/
+  background-color: #D8D8D8;
+}
+tbody tr:nth-child(odd){ /*Filas nones*/
+  color: #6B6B6B;
+  background-color: #FFFFFF;
+}
+
+
+/* =========================================================
+END TABLE STYLE
+========================================================= */
+
