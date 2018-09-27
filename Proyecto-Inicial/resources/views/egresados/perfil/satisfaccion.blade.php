@@ -23,7 +23,10 @@
 		</div><!--fin div-2-1-->
 
 		<div class="column content content-lg">
-			<form method="POST" action="#">
+			<form method="post" action="{{url('perfil/guardarSatisfaccion')}}">
+				{{-- TODO: Protección contra CSRF --}}
+				{{ csrf_field() }}
+				
 				<div class="form-group">
 					<label for="tContrato">1. ¿Qué tiempo transcurrió para que consiguieras tu primer empleo, después de haber egresado?</label>
 					<select name="tContrato" id="inputTContrato" class="form-control">
@@ -464,7 +467,7 @@
 				</div>
 				<div class="form-group text-center">
 					<button type="submit" class="flat">
-						Siguiente
+						Guardar
 					</button>
 				</div>
 			</form>

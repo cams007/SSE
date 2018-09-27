@@ -44,11 +44,13 @@ Route::group(['prefix' => 'perfil'], function() {
 
     Route::post('guardar', 'PerfilController@saveDatosBasicos');
     Route::post('upphoto', 'PerfilController@updatePhoto');
+    Route::post('uploadcv', 'PerfilController@uploadCV');
     Route::post('estudiosRealizados', 'PerfilController@saveFormacionPerson');
 
     Route::post('guardarFormacion', 'PerfilController@saveFormacion');
 
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
+    Route::post('guardarSatisfaccion', 'PerfilController@saveSatisfaccion');
     Route::post('intereses', 'PerfilController@saveFormacionProf');
 });
 

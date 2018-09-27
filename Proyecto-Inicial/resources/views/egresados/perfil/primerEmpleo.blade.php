@@ -28,97 +28,195 @@
 				{{ csrf_field() }}
 
 				<div class="form-group">
-					<label for="nEmpresa">Nombre de la empresa</label>
-					@if($empleo)
-						<input type="text" name="nEmpresa" id="nEmpresa" class="form-control" value="{{ $empleo->empresa }}">
+					<label>Nombre de la empresa</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="empresa" id="empresa" class="form-control">{{ $empleo->empresa }}</label>
 					@else
-						<input type="text" name="nEmpresa" id="nEmpresa" class="form-control">
+						<input type="text" name="empresa" id="empresa" class="form-control" placeholder="Nombre de la empresa" required autofocus>
 					@endif
 				</div>
 
 				<div class="form-group">
 					<label>Sector</label>
-					<div class="radio">
-						<input type="radio" name="sector" id="publica" value="1">
-						<label for="publica" class="label-radio"> Pública</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="sector" id="sector" class="form-control">{{ $empleo->sector }}</label>
+					@else
+						<div class="radio">
+							<input type="radio" name="sector" id="publica" value="Pública" checked="checked" >
+							<label for="publica" class="label-radio">Pública</label>
 
-						<input type="radio" name="sector" id="privada" value="0">
-						<label for="privada" class="label-radio">Privada</label>
+							<input type="radio" name="sector" id="privada" value="Privada">
+							<label for="privada" class="label-radio">Privada</label>
 
-						<input type="radio" name="sector" id="propia" value="0">
-						<label for="propia" class="label-radio">Propia</label>
-					</div>
+							<input type="radio" name="sector" id="propia" value="Propia">
+							<label for="propia" class="label-radio">Propia</label>
+						</div>
+					@endif
+				</div>
+
+				<div class="form-group">
+					<label>Tiempo sin empleo</label>
+					@if($empleo)
+						<label style="color:red" type="text" name="sinempleo" id="sinempleo" class="form-control">{{ $empleo->tiempo_sin_empleo }}</label>
+					@else
+						<select name="sinempleo" id="sinempleo" class="select">
+							<option value="">-Selecionar-</option>
+							<option value="< a 6 meses">< a 6 meses</option>
+							<option value="De 6 a 9 meses">De 6 a 9 meses</option>
+							<option value="De 10 a 12 meses">De 10 a 12 meses</option>
+							<option value="> a 1 año">> a 1 año</option>
+							<option value="No cuento con empleo aún">No cuento con empleo aún</option>
+						</select>
+					@endif
 				</div>
 
 				<div class="form-group">
 					<label for="fingreso"> Fecha de ingreso</label>
-					@if($empleo)
-						<input type="date" name="fingreso" id="fingreso" class="form-control" value="{{ $empleo->fecha_ingreso }}">
+					@if( $empleo )
+						<label style="color:red" type="text" name="fingreso" id="fingreso" class="form-control">{{ $empleo->fecha_ingreso }}</label>
 					@else
 						<input type="date" name="fingreso" id="fingreso" class="form-control">
+						{{-- {{ Form::date('fingreso', $empleo->fecha_ingreso ) }} --}}
 					@endif
-					{{-- {{ Form::date('fingreso', $empleo->fecha_ingreso ) }} --}}
 				</div>
 
 				<div class="form-group">
-					<label for="puestoA"> Puesto actual</label>
+					<label for="puestoA">Puesto inicial</label>
 					@if($empleo)
-						<input type="text" name="puestoA" id="puestoA" class="form-control" value="{{ $empleo->puesto_inicial }}">
+						<label style="color:red" type="text" name="puestoA" id="puestoA" class="form-control">{{ $empleo->puesto_inicial }}</label>
 					@else
-						<input type="text" name="puestoA" id="puestoA" class="form-control">
+						<input type="text" name="puestoA" id="puestoA" class="form-control" placeholder = "Agregar puesto" required>
 					@endif
 				</div>
 
 				<div class="form-group">
 					<label for="puestoI">Puesto final</label>
 					@if($empleo)
-						<input type="text" name="puestoI" id="puestoI" class="form-control" pattern="[a-z]" value="{{ $empleo->puesto_final }}">
+						<label style="color:red" type="text" name="puestoI" id="puestoI" class="form-control">{{ $empleo->puesto_final }}</label>
 					@else
-						<input type="text" name="puestoI" id="puestoI" class="form-control" pattern="[a-z]">
+						<input type="text" name="puestoI" id="puestoI" class="form-control"  placeholder="Agregar puesto" required>
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="jornada"> Jornada de trabajo</label>
-					<input type="text" name="jornada" id="jornada" class="form-control">
+					<label for="contrato">Jornada de trabajo</label>
+					@if($empleo)
+						<label style="color:red" type="text" name="contrato" id="contrato" class="form-control">{{ $empleo->jornada }}</label>
+					@else
+						<select name="contrato" id="inputTContrato" class="select">
+							<option value="" checked>-Selecionar-</option>
+							<option value="Completa">Completa</option>
+							<option value="Medio">Media</option>
+							<option value="Horas">Horas</option>
+						</select>	
+					@endif
 				</div>
 
 				<div class="entradas">
 					<label for="inputTContrato">Tipo de contrato</label>
-					{!! Form::select('contrato', config('options.tipo_contrato'), "", ['class' => 'seleccion']) !!}
-				</div>
-
-				<!-- <div class="form-group">
-					<label for="">Telefono de la empresa</label>
-					<input type="tel" name="eTel" id="inputETel" class="form-control" pattern="[0-1]">
+					@if($empleo)
+						<label style="color:red" type="text" name="tcontrato" id="tcontrato" class="form-control">{{ $empleo->contrato }}</label>
+					@else
+						{!! Form::select('tcontrato', config('options.tipo_contrato'), "", ['class' => 'seleccion']) !!}
+					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="tContrato">Ingreso mensual</label>
-					<select name="tContrato" id="inputTContrato" class="select">
-						<option value="" checked>-Selecionar-</option>
-						<option value="0"> < a 5000</option>
-						<option value="1"> De 5001 a 10000</option>
-						<option value="2"> De 10001 a 15000</option>
-						<option value="3"> > 15000</option>
-					</select>
+					<label for="">Teléfono de la empresa</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="telefono" id="telefono" class="form-control">{{ $empleo->telefono_empresa }}</label>
+					@else
+						<input type="tel" name="telefono" id="telefono" class="form-control"  placeholder="Agregar teléfono" pattern="[0-9]{9, 15}">
+					@endif
+				</div>
+
+				<div class="form-group">
+					<label>Ingreso mensual</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="ingresomensual" id="ingresomensual" class="form-control">{{ $empleo->ingreso_mensual }}</label>
+					@else
+						<select name = "ingresomensual" id = "ingresomensual" class="select">
+							<option value="">-Selecionar-</option>
+							<option value = 'Menor a 5,000.00'>Menor a 5000</option>
+							<option value = 'De 5,001.00 a 10,000.00'>De 5001 a 10000</option>
+							<option value = 'De 10,001.00 a 15,000.00'>De 10001 a 15000</option>
+							<option value = 'Mayor a 15,000.00'>Más de 15000</option>
+						</select>
+					@endif
 				</div>
 
 				<div class="form-group">
 					<label for="tContrato">Sus actividades laborales:</label>
-					<select name="tContrato" id="inputTContrato" class="select">
-						<option value="" checked>-Selecionar-</option>
-						<option value="0"> Requieren de la formación de mi carrera</option>
-						<option value="1"> No requieren de la formación de mi carrera</option>
-						<option value="2"> No requieren de una profesión</option>
-					</select>
-				</div> -->
-
-				<div class="form-group text-center">
-					<button type="submit" class="flat">
-						Siguiente
-					</button>
+					@if( $empleo )
+						@if( $empleo->actividad_laboral == 0 )
+							<label style="color:red" type="text" name = "actividades" id = "actividades" class="form-control">Requieren de la formación de mi carrera</label>
+						@elseif( $empleo->actividad_laboral == 1 )
+							<label style="color:red" type="text" name = "actividades" id = "actividades" class="form-control">No requieren de la formación de mi carrera</label>
+						@elseif( $empleo->actividad_laboral == 2 )
+							<label style="color:red" type="text" name = "actividades" id = "actividades" class="form-control">No requieren de una profesión</label>
+						@endif
+					@else
+						<select name="actividades" id="actividades" class="select">
+							<option value="">-Selecionar-</option>
+							<option value="0">Requieren de la formación de mi carrera</option>
+							<option value="1">No requieren de la formación de mi carrera</option>
+							<option value="2">No requieren de una profesión</option>
+						</select>
+					@endif
 				</div>
+
+				<div class="form-group">
+					<label for="factores">Factores de contratación</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="factor" id="factor" class="form-control">{{ $empleo->factores_contratacion }}</label>
+					@else
+						<input type="text" name = "factor" id = "factor" class = "form-control" placeholder = "Agrega factores" required>
+					@endif
+				</div>
+
+				<div class="form-group">
+					<label for="carencias">Carencias básicas</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="carencia" id="carencia" class="form-control">{{ $empleo->carencias_basicas }}</label>
+					@else
+						<input type="text" name = "carencia" id = "carencia" class = "form-control" placeholder = "Agrega carencias" required>
+					@endif
+				</div>
+
+				<div class="form-group">
+					<label for="areascarencias">Áreas de carencias</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="areascarencia" id="areascarencia" class="form-control">{{ $empleo->carencias_areas }}</label>
+					@else
+						<input type="text" name = "areascarencia" id = "areascarencia" class = "form-control" placeholder = "Agrega carencias" required>
+					@endif
+				</div>
+
+				<div class="form-group">
+					<label for="posgrado">Motivos de no estudiar posgrado</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="posgrado" id = "posgrado" class="form-control">{{ $empleo->motivo_no_posgrado }}</label>
+					@else
+						<input type="text" name = "posgrado" id = "posgrado" class = "form-control" placeholder = "Agrega motivos" required>
+					@endif
+				</div>
+
+				<div class="form-group">
+					<label for="recomendacion">Recomendaciones</label>
+					@if( $empleo )
+						<label style="color:red" type="text" name="recomendacion" id = "recomendacion" class="form-control">{{ $empleo->recomendaciones }}</label>
+					@else
+						<input type="text" name = "recomendacion" id = "recomendacion" class = "form-control" placeholder = "Agrega recomendaciones para recien egresados" required>
+					@endif
+				</div>
+
+				@if( $empleo == NULL )
+					<div class="form-group text-center">
+						<button type="submit" class="flat">
+							Guardar
+						</button>
+					</div>
+				@endif
 			</form>
 		</div>
 	</div>

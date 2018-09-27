@@ -82,7 +82,9 @@
 		    	<h1>Agregar Empleo</h1>
 		    	<form action="#">
 			    	<div>
-						<input type="text" class="input-icon inputAddress" placeholder="Nombre de la empresa" />
+				    	<p>Llego estoo</p>
+					    {{ $primerempleo->count() }}
+					<input type="text" class="input-icon inputAddress" placeholder="Nombre de la empresa" />
 					</div>
 					<div>
 						<input type="text" class="input-icon inputPuesto" placeholder="Agregar puesto" />

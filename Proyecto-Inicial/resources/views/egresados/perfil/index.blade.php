@@ -103,20 +103,14 @@
 								</div><!--contenedor-info-->
 							@endif
 						</div>
-						<!--
-						FALTA CHECAR SI SE SUBE EL CV DEL USUARIO
-						<div>
-							<p>Curriculum vitae</p>
-							<input type="file" name="e_cv">
-						</div>
-						-->
-						<!-- BOTON DE SIGUIENTE??
-						<div class="text-center">
-							<button type="submit" class="flat">
-								Siguiente
-							</button>
-						</div>
-						-->
+						
+						<form enctype = "multipart/form-data" action="perfil/uploadcv" method="POST">
+							<p>Curriculum Vitae</p>
+							<input type="file" name="e_cv" accept="application/pdf" />
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+							<input type="submit" class="flat" value = "Actualizar">
+						</form>
 					</div>
 				</div>
 			</div><!--fin div-2-2-->
