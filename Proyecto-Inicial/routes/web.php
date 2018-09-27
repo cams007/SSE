@@ -51,6 +51,10 @@ Route::group(['prefix' => 'perfil'], function() {
 
     Route::post('primerEmpleo', 'PerfilController@savePrimerEmp');
     Route::post('guardarSatisfaccion', 'PerfilController@saveSatisfaccion');
+    Route::post('guardarmaestria', 'PerfilController@saveMaestria');
+    Route::post('guardardoctorado', 'PerfilController@saveDoctorado');
+    Route::post('guardarempleo', 'PerfilController@saveEmpleo');
+
     Route::post('intereses', 'PerfilController@saveFormacionProf');
 });
 

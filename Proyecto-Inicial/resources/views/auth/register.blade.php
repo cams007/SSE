@@ -15,7 +15,7 @@
     <div class="div-2" id="saludo">
       <div class="div-2-1">
         <div class="bienvenida">
-                Hola! Estás a punto de iniciar tu registro en el Sistema de Seguimiento de Egresados de la UTM,
+                Holaaaaaaaaa! Estás a punto de iniciar tu registro en el Sistema de Seguimiento de Egresados de la UTM,
                 de antemano te agradecemos por colaborar cordialmente con tu universidad.
         </div>
         <div class="column">
@@ -66,9 +66,7 @@
 
                 <div class="btn-group">
                     <a href="{{url('/')}}" class="button1"> Cancelar</a>
-                    <!-- <button type="submit"> -->
-                        <a href="{{url('bienvenida')}}" class="button2" type="submit">Registrarse</a>
-                    <!-- </button> -->
+                    <button type="submit">Registrarse </button>
               </div>
         </form>
     </div>

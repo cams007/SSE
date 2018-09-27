@@ -12,6 +12,10 @@ use App\Egresado;
 
 class RegistroController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('guest');
+	}
 
 	public function showCrearUsuario()
 	{
@@ -31,15 +35,15 @@ class RegistroController extends Controller
 	public function saveUsuario( Request $request )
 	{
 		if(	// Si la matricual del usuario existe en la BD de la universidad	
-			Egresado::where( 'matricula', "$request->egresado_matricula" )->exists()
+			Egresado::where( 'matricula', $request->egresado_matricula )->exists()
 			&&
 			// Si el correo no se ha registrado antes
-			!User::where( 'correo', "$request->correo" )->exists()
+			!User::where( 'correo', $request->correo )->exists()
 			&&
 			// Si la matricula no se ha registrado antes
-			!User::where( 'egresado_matricula', "$request->egresado_matricula" )->exists() )
+			!User::where( 'egresado_matricula', $request->egresado_matricula )->exists() )
 		{
-			$egresado = Egresado::where('matricula',"$request->egresado_matricula")->first();
+			$egresado = Egresado::where('matricula', $request->egresado_matricula )->first();
 		
 			DB::beginTransaction();
 			try {
@@ -56,10 +60,13 @@ class RegistroController extends Controller
 			}
 			DB::commit();
 
+			// Iniciamos sesion de usuario y se redirigue la pagina home
+			Auth::login( $user );
+
 			//Para mostrar mensaje partials/messages.blade.php
 			Session::flash('save', 'Usuario creado correctamente');
 			//Redireccionamos al index de egresado url(/admin/egresado)
-			return redirect('egresados/home');	
+			return redirect('/home');	
 		}
 		else
 		{

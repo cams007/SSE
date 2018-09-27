@@ -5,6 +5,7 @@
 
 @section('style')
 	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 @stop
 
 @php
@@ -145,10 +146,7 @@
 					</form>
 				@endif
 
-				<form method="POST" action="{{url('perfil/estudiosRealizados')}}">
-					{{-- TODO: Protección contra CSRF --}}
-					{{ csrf_field() }}
-
+				<div>
 					<br><br>
 					<hr>
 					<br>
@@ -161,7 +159,7 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Descripcion</th>
+									<th>Descripción</th>
 									<th>Titulado</th>
 								</tr>
 							</thead>
@@ -174,36 +172,117 @@
 								</tbody>
 							@endforeach
 						</table>
+					@else
+						<label style="color:red">No tiene maestrías registradas</label>
 					@endif
 
-					<input type="text" name="maestria" id="maestria" class="form-control" pattern = "[A-Za-z]{2, 100}"/>
-					<label>Titulado</label>
-					<div class="radio">
-						<input type="radio" name="mtitulado" id="tMSi" value="1" > <label for="tMSi" class="label-radio">Sí</label>
-						<input type="radio" name="mtitulado" id="tMNo" value="0" > <label for="tMNo" class="label-radio">No</label>
-					</div>
+					<div class="contenedor-info"><!--inicio contenedor-info-->
+						<a href="#agregarMaestria" class="btn-empresa">Agregar maestría</a>
+					</div><!--contenedor-info-->
 
 					<br><br>
 					<hr>
 					<br>
-					<div class="form-group">
-						<label for="doctorado">Doctorado</label>
-						<input type="text" name="doctorado" id="doctorado" class="form-control" pattern = "[A-Za-z]{2, 100}" >
-					</div>
+
 
 					<div class="form-group">
-						<label>Titulado</label>
-						<div class="radio">
-							<input type="radio" name="dtitulado" id="tDSi" value="1">  <label for="tDSi" class="label-radio">Sí</label>	
-							<input type="radio" name="dtitulado" id="tDNo" value="0"> <label for="tDNo" class="label-radio">No</label>
-						</div>
+						<label for="doctorado">Doctorado(s)</label>
 					</div>
+					
+					@if( $preparacion->doctorados->count() > 0)
+						<table>
+							<thead>
+								<tr>
+									<th>Descripción</th>
+									<th>Titulado</th>
+								</tr>
+							</thead>
+							@foreach( $preparacion->doctorados as $doctorado )
+								<tbody>
+									<tr>
+										<td>{{ $doctorado->descripcion }}</td>
+										<td>{{ $maestria_titulacion[ $doctorado->titulado ] }}</td>
+									</tr>
+								</tbody>
+							@endforeach
+						</table>
+					@else
+						<label style="color:red">No tiene doctorados registrados</label>
+					@endif
 
-					<div class="form-group text-center">
-						<button type="submit" class="flat">Siguiente</button>
-					</div>
-				</form>
+					<div class="contenedor-info"><!--inicio contenedor-info-->
+						<a href="#agregarDoctorado" class="btn-empresa">Agregar doctorado</a>
+					</div><!--contenedor-info-->
+				</div>
 			</div>
 		</div>
+
+		<!-- Modal para agregar DOCTORADO -->
+		<div id="agregarDoctorado" class = "modaloverlay" name = "div-doctorado"> <!-- div-modaloverlay -->
+			<div class="modal"> <!-- div-modal -->
+				<a href="#close" class="close">&times;</a>
+				<!-- <div> -->
+				<div class="parte-1"><!--parte-1-->
+					<p class="txt">Agregar doctorado</p>
+				</div><!--parte-1-->
+
+				<form action="{{ url('perfil/guardardoctorado') }}" method="post">
+					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />	
+					
+					<input type="text" name="agregardoctorado" id="agregardoctorado" class = "form-control" placeholder = "Titulo del doctorado" required/>
+					<label>Titulado</label>
+					
+					<div class="radio">
+						<input type="radio" name="sector" id="publica" value="1" checked>
+						<label for="publica" class="label-radio"> Sí</label>
+
+						<input type="radio" name="sector" id="privada" value="0">
+						<label for="privada" class="label-radio"> No</label>
+					</div>
+					
+					<div class="btn-group">
+						<button type = "button" class="flat-secundario aling-left">Cancelar</button>
+						<button type = "submit" class="flat aling-right">Guardar</button>
+					</div>
+				</form>
+				<!-- </div> -->
+			</div> <!-- div-modal -->
+		</div> <!-- div-modaloverlay -->
+
 	</div><!--fin contenedor-->
+
+	<!-- Modal para agregar MAESTRIA -->
+		<div id="agregarMaestria" class="modaloverlay" name = "div-maestria"> <!-- div-modaloverlay -->
+			<div class="modal"> <!-- div-modal -->
+				<a href="#close" class="close">&times;</a>
+				<!-- <div> -->
+				<div class="parte-1"><!--parte-1-->
+					<p class="txt">Agregar maestría</p>
+				</div><!--parte-1-->
+
+				<form action="{{ url('perfil/guardarmaestria') }}" method="post">
+					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />	
+					
+					<input type="text" name="agregarmaestria" id="agregarmaestria" class = "form-control" placeholder = "Titulo de la maestría" required/>
+					<label>Titulado</label>
+					
+					<div class="radio">
+						<input type="radio" name="sector1" id="publica1" value="1" checked>
+						<label for="publica1" class="label-radio"> Sí</label>
+
+						<input type="radio" name="sector1" id="privada1" value="0">
+						<label for="privada1" class="label-radio"> No</label>
+					</div>
+					
+					<div class="btn-group">
+						<button type = "button" class="flat-secundario aling-left">Cancelar</button>
+						<button type = "submit" class="flat aling-right">Guardar</button>
+					</div>
+				</form>
+				<!-- </div> -->
+			</div> <!-- div-modal -->
+		</div> <!-- div-modaloverlay -->
+
+
+	
 @stop

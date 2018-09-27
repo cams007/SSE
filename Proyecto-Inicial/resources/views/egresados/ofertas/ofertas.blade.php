@@ -49,7 +49,7 @@
 						<td><a href="#datosEmpresa" class="btn-empresa">{{ $oferta->empresa->nombre }}</a></td>
 						<td>{{ $oferta->ubicacion }}</td>
 						<td>{{ $oferta->descripcion }}<a href="#detalleOferta" class="more_detail"> + </a></td>
-					<!-- </tr> -->
+					</tr>
 				@endforeach
 			</tbody>
 		</table>

@@ -9,99 +9,107 @@
 @stop
 
 @section('content')
-<div class="contenedor"><!--inicio contenedor-->
-	<div class="div-1"> <!--incio div-1-->
-		<p class="text-center">Mi perfil</p>
-	</div><!--fin div-1-->
-
-	<div class="clearfix">
-
+	<div class="contenedor"><!--inicio contenedor-->
+		<div class="div-1"> <!--incio div-1-->
+			<p class="text-center">Mi perfil</p>
+		</div><!--fin div-1-->
+		
 		<div class="div-2"><!--inicio div-2-->
 			<div class="div-2-1"><!--inicio div-2-1-->
-			<aside id="cssmenu" class="column hrV">
-				@include('partials.aside')
-			</aside>
-		</div><!--fin div-2-1-->
+				<aside id="cssmenu" class="column hrV">
+					@include('partials.aside')
+				</aside>
+				
+				<div class="contenedor-info"><!--inicio contenedor-info-->
+					<a href="#agregarEmpleo" class="btn-empresa">Agregar empleo</a>
+					
+					@if( $empleos->count() == 0 )
+						<label>No tiene empleos registrados todavía<label>
+					@endif
+				</div><!--contenedor-info-->
+				
+				<div class = "div-4"><!--div-4-->
+					@if( $empleos->count() > 0 )
+						<label>Tiene {{ $empleos->count() }} empleos anteriores<label>
+						<table>
+							<thead>
+								<tr>
+									<th>Empresa</th>
+									<th>Funciones</th>
+									<th>Antiguedad</th>
+									<th>Puesto inicial</th>
+									<th>Puesto final</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach($empleos as $empleo)
+									<tr>
+										<td>{{ $empleo->empresa }} </td>
+										<td>{{ $empleo->funciones }}</td>
+										<td>{{ $empleo->antiguedad }} {{ $empleo->unidad_tiempo }}</td>
+										<td>{{ $empleo->puesto_inicial }}</td>
+										<td>{{ $empleo->puesto_final }}</td>
+									</tr>
+								@endforeach
+							</tbody>
+						</table>
+					@endif
+				</div><!--div-4-->
 
-		<div class="column content-lg">
-			<div class="clearfix margin">
-				<div class="column">
-					<a href="#addEmpleo">Agregar empleo</a>
-				</div>
-				<div class="aling-right">
-					<a href="" class="column disabled"> Eliminar</a>
-					<a href="" class="column disabled"> Editar</a>
-				</div>
-			</div>
+				<div id="agregarEmpleo" class = "modaloverlay" name = "div-empleo"> <!-- div-modaloverlay -->
+					<div class="modal"> <!-- div-modal -->
+						<a href="#close" class="close">&times;</a>
+						<!-- <div> -->
+						<div class="parte-1"><!--parte-1-->
+							<p class="txt">Agregar empleo</p>
+						</div><!--parte-1-->
 
-			<table class="tabla">
-				<tr>
-					<th></th>
-				  	<th>Empresa en la que laboró</th>
-				  	<th>Puesto</th>
-				  	<th>Antigüedad</th>
-				  	<th>Funciones principales</th>
-				</tr>
-				<tr >
-					<td class="text-center"><input type="checkbox"></td>
-				  	<td>4/5</td>
-				  	<td>Grupo GSI</td>
-				  	<td>CDMX</td>
-				  	<td></td>
-				</tr>
-				<tr>
-					<td class="text-center"><input type="checkbox"></td>
-				  	<td>2/5</td>
-				  	<td>Veureka</td>
-				  	<td>Huajuapan de León, Oax.</td>
-				  	<td></td>
-				</tr>
-				<tr>
-					<td class="text-center"><input type="checkbox"></td>
-				  	<td></td>
-				  	<td></td>
-				  	<td></td>
-				  	<td></td>
-				</tr>
-				<tr>
-					<td class="text-center"><input type="checkbox"></td>
-				  	<td></td>
-				  	<td></td>
-				  	<td></td>
-				  	<td></td>
-				</tr>
-			</table>
-			<a href="{{url('perfil/satisfaccion')}}" class="button flat"> Siguiente</a>
+						<form action="{{ url('perfil/guardarempleo') }}" method="post">
+							<input name="_token" type="hidden" value="{!! csrf_token() !!}" />	
+							
+							<div class="form-group">
+								<label>Nombre de la empresa</label>
+								<input type="text" name="empresa" id="empresa" class="form-control" placeholder="Nombre de la empresa" autofocus required>
+							</div>
+
+							<div class="form-group">
+								<label>Puesto inicial</label>
+								<input type="text" name="puestoi" id="puestoi" class="form-control" placeholder="Puesto inicial" required>
+							</div>
+
+							<div class="form-group">
+								<label>Puesto final</label>
+								<input type="text" name="puestof" id="puestof" class="form-control" placeholder="Puesto final" required>
+							</div>
+
+							<div class="form-group">
+								<label>Funciones</label>
+								<input type="text" name="funciones" id="funciones" class="form-control" placeholder="Funciones" required>
+							</div>
+
+							<div class="form-group">
+								<label>Antiguedad</label>
+								<input type="text" name="antiguedad" id="antiguedad" class="form-control" placeholder="Antiguedad" pattern="[0-9]{1,2}"required>
+							</div>
+
+							<div class="form-group">
+								<div class="radio">
+									<input type="radio" name="antiguedadunidad" id="meses" value="meses" checked>
+									<label for="meses" class="label-radio"> Meses</label>
+
+									<input type="radio" name="antiguedadunidad" id="anios" value="años">
+									<label for="anios" class="label-radio"> Años</label>
+								</div>
+							</div>
+
+							<div class="btn-group">
+								<button type = "submit" class="flat aling-right">Guardar</button>
+							</div>
+						</form>
+						<!-- </div> -->
+					</div> <!-- div-modal -->
+				</div> <!-- div-modaloverlay -->			
+			</div><!--fin div-2-1-->
 		</div>
-	</div>
-
-	<div id="addEmpleo" class="modaloverlay">
-	  	<div class="modal">
-		    <a href="#close" class="close">&times;</a>
-		    <div>
-		    	<h1>Agregar Empleo</h1>
-		    	<form action="#">
-			    	<div>
-				    	<p>Llego estoo</p>
-					    {{ $primerempleo->count() }}
-					<input type="text" class="input-icon inputAddress" placeholder="Nombre de la empresa" />
-					</div>
-					<div>
-						<input type="text" class="input-icon inputPuesto" placeholder="Agregar puesto" />
-					</div>
-					<div>
-						<input type="text" class="input-icon inputAntiguedad" placeholder="Antiguedad __años __meses" />
-					</div>
-					<div>
-						<input type="text" class="input-icon inputFuncionDes" placeholder="Agregar funcion desempeñada" />
-					</div>
-					<div class="btn-group">
-						<button type="button" class="flat-secundario aling-left">Cancelar</button>
-						<button type="button" class="flat aling-right">Agregar</button>
-					</div>
-		    	</form>
-		    </div>
-		</div>
-	</div>
-</div><!--fin contenedor-->
+	</div><!--fin contenedor-->
 @stop
