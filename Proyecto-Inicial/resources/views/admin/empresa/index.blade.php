@@ -4,7 +4,7 @@
 
 @section('style')
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
-	<link href="{{ url('css/table.css') }}" rel="stylesheet">
+	<link href="{{ url('css/cssadmin/tableAdmin.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/modal.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
 	<link href="{{ url('css/cssadmin/empresas.css') }}" rel="stylesheet">
@@ -18,10 +18,11 @@
 		</div><!--div-1-->
 
 		@include('admin.partials.messages')<!--Mensages -->
-
-		<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button para crear empresas-->
-
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
+			<div>
+				<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button para crear empresas-->
+			</div>
+
 			<div class="search">
 				{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
 					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de eventos']) !!}
