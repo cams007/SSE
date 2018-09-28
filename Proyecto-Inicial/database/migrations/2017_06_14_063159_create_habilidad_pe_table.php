@@ -16,7 +16,7 @@ class CreateHabilidadPETable extends Migration
         Schema::create('HabilidadPE', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('habilidad', 45);
+            $table->string('habilidad', 100 );
             $table->integer('primerEmpleo_id')->unsigned();
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
             $table->integer('catalogoHabilidad_id')->unsigned();

@@ -16,7 +16,7 @@ class CreateCatalogoHabilidadTable extends Migration
         Schema::create('CatalogoHabilidad', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('descripcion', 45);
+            $table->string('descripcion', 100 );
             $table->timestamps();
         });
     }

@@ -19,10 +19,10 @@
 				<aside id="cssmenu" class="column hrV">
 					@include('partials.aside')
 				</aside>
-				
+
 				<div class="contenedor-info"><!--inicio contenedor-info-->
 					<a href="#agregarEmpleo" class="btn-empresa">Agregar empleo</a>
-					
+
 					@if( $empleos->count() == 0 )
 						<label>No tiene empleos registrados todavía<label>
 					@endif

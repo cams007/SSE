@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Storage;
 use App\Egresado;
 use App\User;
 use App\Preparacion;
+use App\CatalogoPregunta;
+use App\CatalogoHabilidad;
+use App\HabilidadPE;
+use App\EvaluacionPE;
+use App\CatalogoValor;
+use App\ValorPE;
 use App\PrimerEmpleo;
 use App\Maestria;
 use App\Doctorado;
@@ -39,7 +45,7 @@ class PerfilController extends Controller {
     
     public function showEstudiosForm()
     {
-        return view('egresados.perfil.estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion]);
+        return view('egresados.perfil.estudiosRealizados', ['preparacion' => Auth::user()->egresado->preparacion] );
     }
 
     public function showPrimerEmpleoForm()
@@ -53,6 +59,15 @@ class PerfilController extends Controller {
     public function showEmpleosForm()
     {
         return view( 'egresados.perfil.empleos', [ 'empleos' => Auth::user()->egresado->empleos ] );
+    }
+
+    public function showSatisfaccionForm()
+    {
+        $count = DB::table('EvaluacionPE')
+            ->where( 'primerEmpleo_id', Auth::user()->egresado->primer_empleo_id )
+            ->count();
+
+        return view('egresados.perfil.satisfaccion', compact('count') );
     }
 
     public function saveEmpleo( Request $request )
@@ -82,11 +97,6 @@ class PerfilController extends Controller {
         Session::flash('save', 'Empleo guardado correctamente' );
 
         return $this->showEmpleosForm();
-    }
-
-    public function showSatisfaccionForm()
-    {
-        return view('egresados.perfil.satisfaccion', array('dato' => 'No'));
     }
 
     public function saveDatosBasicos(Request $request)
@@ -262,9 +272,92 @@ class PerfilController extends Controller {
         return $this->showPrimerEmpleoForm();
     }
 
+    function guardarRelacion( $id, $valrequest, $pregunta )
+    {
+        DB::beginTransaction();
+        try
+        {
+            $catalogo = new CatalogoPregunta();
+            $evaluacionpe = new EvaluacionPE();
+
+            $catalogo->pregunta = $pregunta;
+            $catalogo->cuestionario = "1";
+            $catalogo->save();
+
+            $evaluacionpe->evaluacion = $valrequest;
+            $evaluacionpe->primerEmpleo_id = $id;
+            $evaluacionpe->catalogoPregunta_id = $catalogo->id;
+            $evaluacionpe->save();
+        }
+        catch( Exception $e )
+        {
+            DB::rollback();
+            echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+        }
+        DB::commit();
+    }
+
     public function saveSatisfaccion( Request $request )
     {
-        return $request;
+        try {
+            $pe_id = Auth::user()->egresado->primer_empleo_id;
+            // Formacion recibida
+            $this->guardarRelacion( $pe_id, $request->formacion, "Formación recibida" );
+
+            // Instalaciones (aulas, biblioteca, salas de cómputo, laboratorios, otros)
+            $this->guardarRelacion( $pe_id, $request->instalaciones, "Instalaciones (aulas, biblioteca, salas de cómputo, laboratorios, otros)" );
+
+            // Servicios (escolares y administrativos)
+            $this->guardarRelacion( $pe_id, $request->servicios, "Servicios (escolares y administrativos)" );
+
+            // Equipos, instrumentos, maquinaria, herramientas y software
+            $this->guardarRelacion( $pe_id, $request->equipos, "Equipos, instrumentos, maquinaria, herramientas y software" );
+
+            // Limpieza de la infraestructura
+            $this->guardarRelacion( $pe_id, $request->limpieza, "Limpieza de la infraestructura" );
+
+            // Capacidad de la infraestructura
+            $this->guardarRelacion( $pe_id, $request->infraestructura, "Capacidad de la infraestructura" );
+
+            //Desempeño de los docentes (transmisión de conocimientos, aclaración de dudas y asesorías)
+            $this->guardarRelacion( $pe_id, $request->desempenio, "Desempeño de los docentes (transmisión de conocimientos, aclaración de dudas y asesorías)" );
+
+            // Técnicas (investigación, análisis, comparación, etc.) y métodos (uso de casos de estudio,
+            // aplicación del conocimiento en problemas reales, etc.) de enseñanza aplicados por los Docentes
+            $this->guardarRelacion( $pe_id, $request->tecnicas, "Técnicas y métodos de enseñanza aplicados por los Docentes" );
+
+            // Técnicas (investigación, análisis, comparación, etc.) y métodos (uso de casos de estudio,
+            // aplicación del conocimiento en problemas reales, etc.) de enseñanza aplicados por los Docentes
+            $this->guardarRelacion( $pe_id, $request->pertinencia, "Forma y pertinencia de evaluación aplicados por los Docentes" );
+
+            $catalogohabilidad = new CatalogoHabilidad();
+            $habilidadpe = new HabilidadPE();
+
+            $catalogohabilidad->descripcion = implode( ", ", $request->actitudes );
+            $catalogohabilidad->save();
+
+            $habilidadpe->habilidad = implode( ", ", $request->actitudes );
+            $habilidadpe->primerEmpleo_id = $pe_id;
+            $habilidadpe->catalogoHabilidad_id = $catalogohabilidad->id;
+            $habilidadpe->save();
+
+            $catalogovalor = new CatalogoValor();
+            $valorpe = new ValorPE();
+            
+            $catalogovalor->descripcion = implode( ", ", $request->valores );
+            $catalogovalor->save();
+
+            $valorpe->valor = implode( ", ", $request->valores );
+            $valorpe->primerEmpleo_id = $pe_id;
+            $valorpe->catalogoValor_id = $catalogovalor->id;
+            $valorpe->save();
+            Session::flash('save', 'Datos guardados correctamente' );
+        } catch( ModelNotFoundException $exception )
+        {
+            return back()->withError($exception->getMessage())->withInput();
+        }
+
+        return redirect( 'perfil/satisfaccion' );
     }
 
     public function saveFormacionProf(Request $request)

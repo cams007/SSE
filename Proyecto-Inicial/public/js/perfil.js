@@ -20,7 +20,6 @@ $(document).ready(function() {
         e.preventDefault(); $(this).parent('div').remove(); x--;
         $(this).append('<label class="link addInput"> Agregar un correo electronico</label>');
     })
-
 });
 
 function changeNacionalidad( val )
@@ -33,4 +32,3 @@ function changeNacionalidad( val )
         document.getElementById('otra_nacionalidad').required = false;
     }
 }
-

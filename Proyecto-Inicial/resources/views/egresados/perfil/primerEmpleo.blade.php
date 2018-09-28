@@ -179,7 +179,16 @@
 					@if( $empleo )
 						<label style="color:red" type="text" name="carencia" id="carencia" class="form-control">{{ $empleo->carencias_basicas }}</label>
 					@else
-						<input type="text" name = "carencia" id = "carencia" class = "form-control" placeholder = "Agrega carencias" required>
+						<select name="carencia" id="carencia" class="select">
+							<option value="">-Selecionar-</option>
+							<option value="No tener competencias laborales">No tener competencias laborales</option>
+							<option value="No estar titulado">No estar titulado</option>
+							<option value="No acreditar el examen seleccionado">No acreditar el examen seleccionado</option>
+							<option value="Ser egresado de la UTM">Ser egresado de la UTM</option>
+							<option value="No dominar el idioma extranjero">No dominar el idioma extranjero</option>
+							<option value="Inhabilidades Socio-comunicativas">Inhabilidades Socio-comunicativas</option>
+							<option value="Otras">Otras</option>
+						</select>
 					@endif
 				</div>
 

@@ -16,7 +16,7 @@ class CreateValorPETable extends Migration
         Schema::create('ValorPE', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('valor', 45);
+            $table->string('valor', 100 );
             $table->integer('primerEmpleo_id')->unsigned();
             $table->foreign('primerEmpleo_id')->references('id')->on('PrimerEmpleo');
             $table->integer('catalogoValor_id')->unsigned();
