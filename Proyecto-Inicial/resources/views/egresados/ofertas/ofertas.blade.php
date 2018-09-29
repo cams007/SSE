@@ -3,10 +3,10 @@
 @section('title', 'Ofertas laborales')
 
 @section('style')
-<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
-<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-<link href="{{ url('css/table.css') }}" rel="stylesheet">
-<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<link href="{{ url('css/table.css') }}" rel="stylesheet">
+	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -14,7 +14,6 @@
 		<div class="div-1"><!--div-1-->
 			<p class="text-center">Ofertas laborales</p>
 		</div><!--div-1-->
-
 		<!-- Buscador -->
 		<div class="buscador_ofertas">
 			{!! Form::open(['url' => 'ofertas', 'method' => 'GET', 'role' => 'search']) !!}
@@ -133,34 +132,41 @@
 	    <a href="#close" class="close">&times;</a>
 	    <div>
 	    	<h1>Detalles de la oferta</h1>
-	    	<form action="#" class="detalles_ofertas">
-		    	<div>
-					<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
-					<h2 id="oferta_puesto"></h2>
-					<h4 id="oferta_empresa"></h4>
-				</div>
+	    	<form method="post" action="{{ url('ofertas/postularme') }}" class="detalles_ofertas">
+		    	<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
-				<div>
-					<span id="oferta_descripcion"></span><br>
-					<span> {{"Solicita: "}} </span>
-					<span id="oferta_vacante"></span>
-					<span id="oferta_carrera"></span>
-					<span id="oferta_experiencia"></span>
-				</div>
+			<div class="descripcion" id="correo_oferta"></div>
+			<div class="descripcion" id="nombre_oferta"></div>
+			<div class="descripcion" id="e_id"></div>
 
-				<div>
-					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-					<span id="oferta_salario"></span>
-				</div>
+			<div>
+				<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
+				<h2 id="oferta_puesto"></h2>
+				<h4 id="oferta_empresa"></h4>
+			</div>
 
-				<div>
-					<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
-					<span id="oferta_ubicacion">  </span>
-				</div>
-				<div class="btn-group">
-					<button type="cancel" class="flat-secundario aling-left" >Cancelar</button>
-					<button type="button" class="flat aling-right">Postularme</button>
-				</div>
+			<div>
+				<span id="oferta_descripcion"></span><br>
+				<span> {{"Solicita: "}} </span>
+				<span id="oferta_vacante"></span>
+				<span id="oferta_carrera"></span>
+				<span id="oferta_experiencia"></span>
+			</div>
+
+			<div>
+				<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
+				<span id="oferta_salario"></span>
+			</div>
+
+			<div>
+				<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
+				<span id="oferta_ubicacion">  </span>
+			</div>
+
+			<div class="btn-group">
+				<a href="#close"><button type="button" class="flat-secundario">Cerrar</button></a>
+				<button type="submit" class="flat aling-right">Postularme</button>
+			</div>
 	    	</form>
 	    </div>
 	</div>
@@ -171,8 +177,8 @@
 
 
 @section('script')
-<script src="{{ url('js/ofertas.js') }}"></script>
-<script type="text/javascript">
-	var APP_URL = {!! json_encode(url('/ofertas')) !!}
-</script>
+	<script src="{{ url('js/ofertas.js') }}"></script>
+	<script type="text/javascript">
+		var APP_URL = {!! json_encode(url('/ofertas')) !!}
+	</script>
 @stop

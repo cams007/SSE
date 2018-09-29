@@ -32,6 +32,10 @@ $(document).ready(function() {
 		var empresa = row.data('empresa');
 		var oferta = row.data('oferta');
 
+		document.getElementById('nombre_oferta').innerHTML = '<input type="hidden" name="oferta" value="'+oferta.titulo_empleo+'"/>';
+		document.getElementById('correo_oferta').innerHTML = '<input type="hidden" name="correo" value="'+empresa.correo+'"/>';
+		document.getElementById('e_id').innerHTML = '<input type="hidden" name="e_id" value="'+oferta.id+'"/>';
+
 		var puesto = document.getElementById('oferta_puesto');
 		var name_empresa = document.getElementById('oferta_empresa');
 		var salario = document.getElementById('oferta_salario');

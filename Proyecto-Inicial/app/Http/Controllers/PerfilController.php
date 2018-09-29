@@ -17,7 +17,7 @@ use App\ValorPE;
 use App\PrimerEmpleo;
 use App\Maestria;
 use App\Doctorado;
-use App\Empleo;            
+use App\Empleo;
 use Session;
 use Auth;
 use Image;

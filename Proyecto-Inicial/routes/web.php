@@ -61,6 +61,7 @@ Route::group(['prefix' => 'perfil'], function() {
 
 Route::group(['prefix' => 'ofertas'], function() {
     Route::get('/', 'OfertasController@index');
+    Route::post('postularme', 'OfertasController@savePost');
 });
 
 Route::group(['prefix' => 'directorio'], function() {
