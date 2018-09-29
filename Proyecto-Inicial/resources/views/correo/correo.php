@@ -24,7 +24,7 @@
                   <br><br>
                   <label>Saludos.</label>
             </div>
-
+            
             <div class = "div_contenido">
                   <?= $nombre; ?>
                   <br>
