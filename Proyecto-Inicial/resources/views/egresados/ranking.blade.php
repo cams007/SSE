@@ -13,11 +13,6 @@
 		<p class="text-center">Ranking de empresas</p>
 	</div><!--div-1-->
 
-	<div class="div-2"><!--div-2-->
-		<div class="div-2-1"><!--div-2-1-->
-			<p class="titulo_select">Calificación:</p>
-		</div><!--div-2-1-->
-
 		<div class="div-2-2"><!--div-2-3-->
 			<div class="search">
 				{!! Form::open(['url' => 'ranking', 'method' => 'GET', 'role' => 'search']) !!}
@@ -26,18 +21,7 @@
 			</div>
 		</div><!--div-2-3-->
 	</div><!--div-2-->
-
-	<div class="div-3"><!--div-3-->
-		<!-- Filtros -->
-		<div class="div-3-1"><!--div-3-1-->
-			<select name="Calificacion" class="seleccion">
-				<option selected="">Todas</option>
-				<option value="saab">Menor a 2.5</option>
-				<option value="saab">Mayor o igual a 2.5</option>
-			</select>
-		</div><!--div-3-1-->
-	</div><!--div-3-->
-
+		<br><br><br>
 	<div class="se-encontraron">
 		<p>Se encontraron {{ $empresas->total() }} resultados</p>
 	</div>
