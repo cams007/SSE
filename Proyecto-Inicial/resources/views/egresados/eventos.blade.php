@@ -73,16 +73,18 @@
 									</div><!--fin texto-ubicacion-->
 								</div><!--fin contenedor-ubicacion-->
 
-								<div class="asistiras"><!--inicio foto1-asistiras-->
+								<!-- La asistencia no esta considerada en la Base de Datos
+								<div class="asistiras">
 									<div class="texto-asistiras">
 										<p>¿Asistirás?</p>
 									</div>
-								</div><!--fin foto1-asistiras-->
-
+								</div>
+								
 								<div class="botones-si-no">
 									<input type="button" class="si" value="Sí">
 									<input type="button" class="no" value="No">
 								</div>
+								-->
 							</div><!--fin descripcion-foto-->
 
 						</div><!--fin div-2-2-2-1-->
