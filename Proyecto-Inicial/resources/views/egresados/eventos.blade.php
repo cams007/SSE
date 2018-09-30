@@ -40,7 +40,6 @@
 		 		<ul>
 		 		@foreach($eventos as $evento)
 					<li data-evento="{{ $evento }}">
-						{{ $evento->imagen_url }}
 						<div class="div-2-2-2-1"><!--inicio div2-2-2-1-->
 
 							<div class="foto"><!--incio foto-->
