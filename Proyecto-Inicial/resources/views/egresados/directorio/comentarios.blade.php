@@ -3,10 +3,10 @@
 @section('title', 'Comentarios')
 
 @section('style')
-<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
-<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
-<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
-<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
+	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
@@ -22,7 +22,7 @@
 					<center>
 						<div>{{ $comentario->empresa->nombre }}</div>
 						<div>
-						<h2>{{ $comentario->promedio }}</h2>
+						<h2>{{ round( $comentario->promedio ) }}</h2>
 							@for( $i = 1; $i <= 5; $i++ )
 								@if( $i <=  round( $comentario->promedio ) )
 									<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
@@ -50,11 +50,7 @@
 
 					<!-- Paginación -->
 					<div class="div-5"><!--div-5-->
-						@if ( Request::get('q') )
-							{!! $ranking->appends(['q' => $_GET["q"]])->render() !!}
-						@else
-							{!! $ranking->render() !!}
-						@endif
+						{{ $ranking->appends( $_GET )->links() }}
 					</div><!--div-5-->
 				@else
 					<p>No se encontraron resultados para esta empresa</p>

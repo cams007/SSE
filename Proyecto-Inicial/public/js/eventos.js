@@ -4,10 +4,10 @@ $(document).ready(function() {
 	{
 		var row = $(this).parents('li');
 		var evento = row.data('evento');
-		
+
 		var direccion = window.location.href;
 		var n = direccion.search( "eventos" );
-		
+
 		if( n > -1 )
 			direccion = direccion.substr( 0, n );
 		
