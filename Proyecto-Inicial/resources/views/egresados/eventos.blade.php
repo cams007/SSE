@@ -40,6 +40,7 @@
 		 		<ul>
 		 		@foreach($eventos as $evento)
 					<li data-evento="{{ $evento }}">
+						{{ $evento->imagen_url }}
 						<div class="div-2-2-2-1"><!--inicio div2-2-2-1-->
 
 							<div class="foto"><!--incio foto-->
@@ -119,9 +120,7 @@
 
 			<div class="parte-2"><!--parte-2-->
 
-				<div class="e_imagen" id = "e_imagen"><!--item-1-->
-				
-				</div><!--item-1-->
+				<div class="e_imagen" id = "e_imagen"><!--item-1--> </div><!--item-1-->
 
 				<div class="item-1" id="e_descripcion"><!--item-1-->
 				</div><!--item-1-->

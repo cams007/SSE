@@ -15,28 +15,29 @@ class EventosController extends Controller
     public function index(Request $request)
     {
         $eventos = Evento::titulo( $request->get( 'q' ) )
-            ->orderBy('fecha', 'DESC')
+            ->orderBy( 'fecha', 'DESC' )
             ->paginate(8);
 
-        return view('egresados.eventos', compact('eventos'));
+        return view( 'egresados.eventos', compact( 'eventos' ) );
     }
 
-    public function culturales(Request $request)
+    public function culturales( Request $request )
     {
-        $eventos = Evento::titulo($request->get('q'))
-            ->where('categoria', 'Cultural')
-            ->orderBy('fecha', 'DESC')->paginate(8);
+        $eventos = Evento::titulo( $request->get( 'q' ) )
+            ->where( 'categoria', 'Cultural' )
+            ->orderBy( 'fecha', 'DESC' )
+            ->paginate( 8 );
 
-        return view('egresados.eventos', compact('eventos'));
+        return view( 'egresados.eventos', compact( 'eventos' ) );
     }
 
-    public function academicos(Request $request)
+    public function academicos( Request $request )
     {	
-        $eventos = Evento::titulo($request->get('q'))
-            ->where('categoria', 'Académico')
-            ->orderBy('fecha', 'DESC')
-            ->paginate(8);
+        $eventos = Evento::titulo( $request->get( 'q' ) )
+            ->where( 'categoria', 'Académico' )
+            ->orderBy( 'fecha', 'DESC' )
+            ->paginate( 8 );
 
-        return view('egresados.eventos', compact('eventos'));
+        return view('egresados.eventos', compact( 'eventos') );
     }
 }
