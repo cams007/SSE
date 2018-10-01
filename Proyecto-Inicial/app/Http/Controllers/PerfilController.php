@@ -1,26 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
-use App\Egresado;
-use App\User;
-use App\Preparacion;
-use App\CatalogoPregunta;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use App\CatalogoHabilidad;
-use App\HabilidadPE;
-use App\EvaluacionPE;
+use App\CatalogoPregunta;
 use App\CatalogoValor;
-use App\ValorPE;
+use App\EvaluacionPE;
 use App\PrimerEmpleo;
-use App\Maestria;
+use App\HabilidadPE;
+use App\Preparacion;
 use App\Doctorado;
+use App\Egresado;
+use App\Maestria;
+use App\ValorPE;
 use App\Empleo;
+use App\User;
 use Session;
-use Auth;
 use Image;
+use Auth;
 
 class PerfilController extends Controller {
 
@@ -52,7 +51,6 @@ class PerfilController extends Controller {
     {
         $empleo = PrimerEmpleo::where('id', Auth::user()->egresado->primer_empleo_id)->first();
 
-        //return $primerempleo->empresa;
         return view('egresados.perfil.primerEmpleo', compact( 'empleo' ) );
     }
 
@@ -91,25 +89,36 @@ class PerfilController extends Controller {
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            
+            Session::flash('message_danger', 'Hubo un problema al momento de guardar la información.' );
+            
+            return view( 'egresados.perfil.empleos', [ 'empleos' => Auth::user()->egresado->empleos ] );
         }
         DB::commit();
-        //Para mostrar mensaje partials/messages.blade.php
-        Session::flash('save', 'Empleo guardado correctamente' );
+        
+        Session::flash('message_success', 'Empleo guardado correctamente.' );
 
-        return $this->showEmpleosForm();
+        return view( 'egresados.perfil.empleos', [ 'empleos' => Auth::user()->egresado->empleos ] );
     }
 
     public function saveDatosBasicos(Request $request)
     {
+        $info = "";
         DB::beginTransaction();
         try
         {
             $egresado = Auth::user()->egresado;
 
             if( $request[ 'modificacion' ] == "telefono" )
+            {
                 $egresado->telefono = $request->telefono;
+                $info = "Teléfono";
+            }
             if( $request[ 'modificacion' ] == "direccion" )
+            {
                 $egresado->direccion_actual = $request->direccion;
+                $info = "Dirección";
+            }
             // $egresado->usuario->correo;
             $egresado->save();
         }
@@ -117,10 +126,13 @@ class PerfilController extends Controller {
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', "Hubo un error al momento de actualizar" );
+
+            return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
         }
         DB::commit();
         //Para mostrar mensaje partials/messages.blade.php
-        Session::flash('save', 'Información actualizada correctamente' );
+        Session::flash('message_success', $info." actualizado correctamente" );
 
         return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
@@ -143,9 +155,6 @@ class PerfilController extends Controller {
 
     public function saveMaestria( Request $request )
     {
-        //$egresado = Auth::user()->egresado->preparacion->id;
-        //return $egresado;
-
         DB::beginTransaction();
         try
         {
@@ -161,11 +170,14 @@ class PerfilController extends Controller {
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', "Hubo un error al momento de actualizar" );
+            
+            return $this->showEstudiosForm();
         }
         DB::commit();
+
         //Para mostrar mensaje partials/messages.blade.php
-        Session::flash('save', 'Maestría guardada correctamente' );
-        
+        Session::flash('message_success', "Maestría guardada correctamente" );
         return $this->showEstudiosForm();
     }
 
@@ -186,10 +198,13 @@ class PerfilController extends Controller {
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', "Doctorado guardada correctamente" );
+
+            return $this->showEstudiosForm();
         }
         DB::commit();
         //Para mostrar mensaje partials/messages.blade.php
-        Session::flash('save', 'Doctorado guardado correctamente' );
+        Session::flash('message_success', "Doctorado guardada correctamente" );
 
         return $this->showEstudiosForm();
     }
@@ -264,10 +279,13 @@ class PerfilController extends Controller {
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            //Para mostrar mensaje partials/messages.blade.php
+            Session::flash('message_danger', "Hubo un error al momento de actualizar la información." );
+            return $this->showPrimerEmpleoForm();
         }
         DB::commit();
         //Para mostrar mensaje partials/messages.blade.php
-        Session::flash('save', 'Datos guardados correctamente' );
+        Session::flash('message_success', "Primer empleo guardado correctamente." );
 
         return $this->showPrimerEmpleoForm();
     }
@@ -351,9 +369,11 @@ class PerfilController extends Controller {
             $valorpe->primerEmpleo_id = $pe_id;
             $valorpe->catalogoValor_id = $catalogovalor->id;
             $valorpe->save();
-            Session::flash('save', 'Datos guardados correctamente' );
-        } catch( ModelNotFoundException $exception )
-        {
+            
+            Session::flash('message_success', "Formulario guardado correctamente." );
+        } 
+        catch( ModelNotFoundException $exception ) {
+            Session::flash('message_danger', "Error al momento de guardar los datos." );
             return back()->withError($exception->getMessage())->withInput();
         }
 
@@ -381,6 +401,8 @@ class PerfilController extends Controller {
             $egresado->save();
         }
 
-       return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
+        Session::flash('message_success', "CV actualizado correctamente" );
+        
+        return view('egresados.perfil.index', ['egresados' => Auth::user()->egresado]);
     }
 }

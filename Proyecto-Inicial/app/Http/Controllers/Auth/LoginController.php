@@ -14,6 +14,9 @@ class LoginController extends Controller
 		$this->middleware( 'guest', [ 'only', 'showLoginForm' ] );
 	}
 
+	/**
+	* Muestra la pagina Login para usuarios
+	**/
 	public function showLoginForm()
 	{
 		return view('auth.login');

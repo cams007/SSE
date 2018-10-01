@@ -28,6 +28,16 @@ class RegistroController extends Controller
     		}
 	}
 
+	public function showBienvenidaForm()
+	{
+    		if (Auth::user() == null)
+		{
+    			return redirect('/');
+    		} else{
+    			return view('egresados.registro.bienvenida');
+    		}
+	}
+
 	/*
     	** Iniciamos la transaccion para guardar los datos
     	** del nuevo usuario en la base de datos
@@ -64,26 +74,16 @@ class RegistroController extends Controller
 			Auth::login( $user );
 
 			//Para mostrar mensaje partials/messages.blade.php
-			Session::flash('save', 'Usuario creado correctamente');
+			Session::flash('message', 'Usuario creado correctamente');
 			//Redireccionamos al index de egresado url(/admin/egresado)
-			return redirect('/home');	
+			return redirect('/home');
 		}
 		else
 		{
 			//Para mostrar mensaje partials/messages.blade.php
-			Session::flash('error', 'Datos de usuario incorrectos, intente otra vez');
+			session()->flash('message', 'La matrícula de usuario no existe, intente otra vez.');
 			//Redireccionamos al index de egresado url(/admin/egresado)
 			return redirect('/register');
 		}
-	}
-
-    	public function showBienvenidaForm()
-	{
-    		if (Auth::user() == null)
-		{
-    			return redirect('/');
-    		} else{
-    			return view('egresados.registro.bienvenida');
-    		}
 	}
 }

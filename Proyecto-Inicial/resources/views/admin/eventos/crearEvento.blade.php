@@ -18,21 +18,21 @@
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 			<div class="seccion1">
-			<label for="" class="">Titulo del evento: </label>
-	 		<input class="nombre" type="text" name="nombre" required/>
+			<label for="" class="">Título del evento: </label>
+	 		<input class="nombre" type="text" name="nombre" placeholder="Título del evento" required/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
+	 		<textarea rows="4" cols="50" name="descripcion" placeholder="Descripción del evento" required></textarea>
 
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Lugar del evento: </label>
-			 		<input type="text" name="lugar" required/>
+			 		<input type="text" name="lugar" placeholder="Lugar del evento" required/>
 				</div>
 
 				<div>
 			 		<label for="" class="">Fecha: </label>
-			 		<input type="date" name="fecha" required/>
+			 		<input type="date" name="fecha" placeholder="Fecha del evento" required/>
 				</div>
 			</div>
 	 		<label for="" class="">Categoria: </label>
@@ -47,6 +47,7 @@
 	 		<img id="imgSalida" src="" />
 
 	 		<input type="hidden" name="activo" value="1" placeholder=""/>
+			 
 			<div class="boton">
 	 			<button type="submit" class="flat">Crear</button>
 			</div>

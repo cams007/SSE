@@ -3,10 +3,9 @@
 @section('title', 'Alta egresados')
 
 @section('style')
-
-<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
-		<link href="{{ url('css/cssadmin/altaEgresado.css') }}" rel="stylesheet">
+	<link href="{{ url('css/cssadmin/altaEgresado.css') }}" rel="stylesheet">
 @stop
+
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
@@ -27,27 +26,27 @@
 
 			<div class="seccion1">
 			<label for="" class="">Matricula: </label>
-	 		<input type="text" name="matricula" placeholder="" required/>
+	 		<input type="text" name="matricula" placeholder="Ingrese la matricula" required/>
 
 			<div class="columnitas">
 				<div>
 	 				<label for="" class="">Apellido paterno: </label>
-	 				<input type="text" name="ap_pa" placeholder="" required/>
+	 				<input type="text" name="ap_pa" placeholder="Apellido del paterno" required/>
 				</div>
 
 				<div>
 	 				<label for="" class="">Apellido materno: </label>
-	 				<input type="text" name="ap_ma" placeholder="" required/>
+	 				<input type="text" name="ap_ma" placeholder="Apellido del materno" required/>
 				</div>
 			</div>
 
 	 		<label for="" class="">Nombre(s): </label>
-	 		<input class="nombre" type="text" name="nombres" placeholder="" required/>
+	 		<input class="nombre" type="text" name="nombres" placeholder="Ingrese nombre del egresado" required/>
 
 			<div class="columnitas">
 				<div>
 	 				<label for="" class="">Curp: </label>
-	 				<input type="text" name="curp" placeholder="" required/>
+	 				<input type="text" name="curp" placeholder="Ingrese curp del egresado" required/>
 				</div>
 
 				<div>
@@ -63,7 +62,7 @@
 			<div class="columnitas">
 				<div>
 	 				<label for="" class="">Fecha de nacimiento: </label>
-	 				<input type="date" name="fecha_nacimiento" placeholder="" required/>
+	 				<input type="date" name="fecha_nacimiento" required/>
 				</div>
 
 				<div>
@@ -77,8 +76,7 @@
 			</div>
 
 	 		<label for="" class="">Lugar de origen: </label>
-	 		<input type="text" name="lugar_origen" placeholder="" required/>
-
+	 		<input type="text" name="lugar_origen" placeholder="Lugar de origen" required/>
 	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
 		</div>
 
@@ -93,7 +91,7 @@
 	 		</select>
 
 	 		<label for="" class="">Generación: </label>
-	 		<input type="text" name="generacion" placeholder="" required/>
+	 		<input type="text" name="generacion" placeholder="Ingrese la generación del egresado" required/>
 
 	 		<label for="" class="">Fecha de inicio de estudios: </label>
 	 		<input type="date" name="fecha_inicio" required/>
@@ -102,7 +100,7 @@
 	 		<input type="date" name="fecha_fin" required/>
 
 	 		<label for="" class="promedio">Promedio: </label>
-	 		<input class="promedio" type="text" name="promedio" placeholder="" required/>
+	 		<input class="promedio" type="text" name="promedio" placeholder="Promedio" required/>
 
 			<div class="boton">
 	 			<button type="submit" class="flat">Enviar</button>

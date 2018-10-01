@@ -3,20 +3,21 @@
 @section('title', 'Alta empresa')
 
 @section('style')
-
-<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/crearEmpresa.css') }}" rel="stylesheet">
 @stop
+
+@section('script')
+	<script src="{{ url('js/admin/empresa.js') }}"></script>
+@stop
+
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Alta empresa</p>
-
 		</div><!--div-1-->
 
 		@php
 			$sector = array(1=>'Pública',2=>'Privada',3=>'Propia');
-
 		@endphp
 
 		<form method="post" enctype="multipart/form-data" action="{{route('admin.crearEmpresa.submit')}}">
@@ -25,12 +26,12 @@
 
 			<div class="seccion1">
 	 		<label for="" class="">Nombre de la empresa: </label>
-	 		<input class="nombre" type="text" name="nombre_emp" required/>
+	 		<input class="nombre" type="text" name="nombre_emp" placeholder="Ingrese nombre de la empresa" required/>
 
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Descripción: </label>
-			 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
+			 		<textarea rows="4" cols="50" name="descripcion" placeholder="Describa la empresa" required></textarea>
 				</div>
 
 				<div>
@@ -43,43 +44,43 @@
 			<div class="columnitas">
 				<div>
 					<label for="" class="">Calle: </label>
-			 		<input type="text" name="calle" required/>
+			 		<input type="text" name="calle" placeholder="Calle" required/>
 				</div>
 
 				<div>
 					<label for="" class="">Número: </label>
-					<input type="text" name="numero" required/>
+					<input type="text" name="numero" placeholder="Número" required/>
 				</div>
 			</div>
 
 			<div class="columnitas">
 				<div>
 					<label for="" class="">Colonia:</label>
-					<input type="text" name="colonia" required/>
+					<input type="text" name="colonia" placeholder="Colonia" required/>
 				</div>
 
 				<div>
 					<label for="" class="">Ciudad:</label>
-					<input type="text" name="ciudad" required/>
+					<input type="text" name="ciudad" placeholder="Ciudad" required/>
 				</div>
 			</div>
 
 			<div class="columnitas">
 				<div>
 					<label for="" class="">Estado:</label>
-					<input type="text" name="estado" required/>
+					<input type="text" name="estado" placeholder="Estado" required/>
 				</div>
 
 				<div>
 					<label for="" class="">Código postal:</label>
-					<input type="text" name="codigo_p" required/>
+					<input type="text" name="codigo_p" placeholder="Código postal" required/>
 				</div>
 			</div>
 
 			<div class="columnitas">
 				<div>
 					<label for="" class="">Giro: </label>
-					<input type="text" name="giro"/>
+					<input type="text" name="giro" placeholder="Giro de la empresa"/>
 				</div>
 
 				<div>
@@ -97,24 +98,24 @@
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">RFC: </label>
-			 		<input type="text" name="rfc_emp"/>
+			 		<input type="text" name="rfc_emp" placeholder="RFC"/>
 				</div>
 
 				<div>
 			 		<label class="">Telefono: </label>
-			 		<input type="text" name="telefono_emp" required/>
+			 		<input type="text" name="telefono_emp" placeholder="Teléfono" required/>
 				</div>
 			</div>
 
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Correo: </label>
-			 		<input type="email" name="correo_emp" required/>
+			 		<input type="email" name="correo_emp" placeholder="Correo" required/>
 				</div>
 
 				<div>
 			 		<label for="" class="">Página web: </label>
-			 		<input type="text" name="pagina_w" required/>
+			 		<input type="text" name="pagina_w" placeholder="Página web de la empresa" required/>
 				</div>
 			</div>
 			<!--Habilitacion de la empresa-->
@@ -123,36 +124,36 @@
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Motivos de no contratacion: </label>
-			 		<textarea rows="4" cols="50" name="noContratacion"></textarea>
+			 		<textarea rows="4" cols="50" name="noContratacion" placeholder="Describa los motivos de no contatación"></textarea>
 				</div>
 
 				<div>
 			 		<label for="" class="">Recomendaciones: </label>
-			 		<textarea rows="4" cols="50" name="recomendacion" required></textarea>
+			 		<textarea rows="4" cols="50" name="recomendacion" placeholder="Recomendaciones de la empresa" required></textarea>
 				</div>
 			</div>
 			<!--Datos del contacto de la empresa-->
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Nombre del contacto: </label>
-			 		<input type="text" name="nombre_cont" required/>
+			 		<input type="text" name="nombre_cont" placeholder="Nombre de contacto" required/>
 				</div>
 
 				<div>
 			 		<label for="" class="">Puesto: </label>
-			 		<input type="text" name="puesto_cont" required/>
+			 		<input type="text" name="puesto_cont" placeholder="Puesto del contacto" required/>
 				</div>
 			</div>
 
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Número telefónico: </label>
-			 		<input type="text" name="numeroTel_cont" required/>
+			 		<input type="text" name="numeroTel_cont" placeholder="Teléfono del contacto" required/>
 				</div>
 
 				<div>
 			 		<label for="" class="">Correo electrónico: </label>
-			 		<input type="email" name="email_cont" required/>
+			 		<input type="email" name="email_cont" placeholder="Correo del contacto" required/>
 				</div>
 			</div>
 
@@ -161,11 +162,6 @@
 			</div>
 		</div>
 		</form>
-
 	</div><!--contenedor-->
 
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/empresa.js') }}"></script>
 @stop

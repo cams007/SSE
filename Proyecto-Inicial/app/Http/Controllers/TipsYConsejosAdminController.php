@@ -25,13 +25,13 @@ class TipsYConsejosAdminController extends Controller
         return view('admin.tipYconsejo.index', compact('tips'));
     }
 
-    public function showCreateTip(Request $request){
-
+    public function showCreateTip(Request $request)
+    {
     	return view('admin.tipYconsejo.crearTip');//accedemos al archivo
     }
 
-    public function saveCrearTip(Request $request){
-
+    public function saveCrearTip(Request $request)
+    {
     	//Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 
@@ -61,9 +61,13 @@ class TipsYConsejosAdminController extends Controller
                             $tip->activo = $request->activo;
                             $tip->save();
                         
-                        }catch(Exception $e){//Ha ocurrido un error al guardar en la BD
+                        }catch(Exception $e)
+                        {
+                            //Ha ocurrido un error al guardar en la BD
                             DB::rollback();
                             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                            Session::flash('message_danger', 'No se pudo guardar el Tip.');//Para mostrar mensaje partials/messages.blade.php
+                            return redirect('admin/tipConsejo');//Redireccionamos a la url del index
                         }
                         DB::commit();
                         copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
@@ -81,18 +85,19 @@ class TipsYConsejosAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
-        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
+        Session::flash('message_success', 'Tip creado correctamente.');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/tipConsejo');//Redireccionamos a la url del index
     }
 
-    public function showEditarTip($id){
-
+    public function showEditarTip($id)
+    {
     	$tip = DB::table('Tip')->where('id',"$id")->first();
+
     	return view('admin.tipYconsejo.editarTip',compact("tip"));//accedemos a la direccion de la vista, pasamos el objeto
     }
 
-    public function saveEditarTip(Request $request){
-
+    public function saveEditarTip(Request $request)
+    {
         //Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 
@@ -127,6 +132,8 @@ class TipsYConsejosAdminController extends Controller
                     }catch(Exception $e){
                         DB::rollback();
                         echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                        Session::flash('message_danger', 'No se pudo guardar el Tip.');
+                        return redirect('admin/tipConsejo');//redireccionamos a la url del index
                     }
                     DB::commit();
                     if($valido)//Si existe la imagen la reemplaza, si no sube la img nueva
@@ -152,10 +159,13 @@ class TipsYConsejosAdminController extends Controller
                 }catch(Exception $e){
                     DB::rollback();
                     echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                    
+                    Session::flash('message_danger', 'No se pudo guardar el Tip.');
+                    return redirect('admin/tipConsejo');//redireccionamos a la url del index
                 }
                 DB::commit();
         }
-        Session::flash('update', 'se ha actualizado correctamente');
+        Session::flash('message_success', 'Tip actualizado correctamten.');
         return redirect('admin/tipConsejo');//redireccionamos a la url del index
     }
 
@@ -171,11 +181,13 @@ class TipsYConsejosAdminController extends Controller
         {
             DB::rollback();
             echo 'ERROR(' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', 'El Tip no se eliminó.');
+            return redirect('admin/tipConsejo');//redireccionamos a la url del index
         }
         DB::commit();
         unlink($tip->imagen_url);//Elimina la imagen
 
-        Session::flash('save', 'se ha eliminado correctamente');
+        Session::flash('message_success', 'Tip eliminado correctamente.');
 
         return redirect('admin/tipConsejo');//redireccionamos a la url del index
     }

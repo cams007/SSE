@@ -7,16 +7,15 @@
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 @stop
 
+@section('script')
+	<script src="{{ url('js/ranking.js') }}"></script>
+@stop
+
 @section('content')
 <div class="contenedor"><!-- contenedor -->
 	<div class="div-1">
 		<p class="text-center">Ranking de empresas</p>
 	</div><!--div-1-->
-
-	<div class="div-2"><!--div-2-->
-		<div class="div-2-1"><!--div-2-1-->
-			<p class="titulo_select">Calificación:</p>
-		</div><!--div-2-1-->
 
 		<div class="div-2-2"><!--div-2-3-->
 			<div class="search">
@@ -26,18 +25,7 @@
 			</div>
 		</div><!--div-2-3-->
 	</div><!--div-2-->
-
-	<div class="div-3"><!--div-3-->
-		<!-- Filtros -->
-		<div class="div-3-1"><!--div-3-1-->
-			<select name="Calificacion" class="seleccion">
-				<option selected="">Todas</option>
-				<option value="saab">Menor a 2.5</option>
-				<option value="saab">Mayor o igual a 2.5</option>
-			</select>
-		</div><!--div-3-1-->
-	</div><!--div-3-->
-
+		<br><br><br>
 	<div class="se-encontraron">
 		<p>Se encontraron {{ $empresas->total() }} resultados</p>
 	</div>
@@ -149,30 +137,11 @@
 						<div class="descripcion" id="e_puesto"></div><!--descripcion-->
 					</div><!--item-1-->
 
-					<div>
-						<br><br>
-						<h4 class="texto-calificar">Calificar esta empresa</h4>
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-					</div>
-					<div>
-						<textarea name="" id="comentario" class="form-control" rows="3"></textarea>
-					</div>
-
 					<div class="btn-group">
-						<!-- <button type="button" class="flat-secundario">Cancelar</button> -->
-						<button type="button" class="flat aling-right">Guardar</button>
+						<a href="#close"><button type="button" class="flat-secundario">Cerrar</button></a>
 					</div>
 		    	</form>
 		    </div>
 		</div>
 	</div>
-
-@stop
-
-@section('script')
-	<script src="{{ url('js/ranking.js') }}"></script>
 @stop

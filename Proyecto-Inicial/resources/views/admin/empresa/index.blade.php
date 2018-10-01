@@ -9,15 +9,34 @@
 	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
 	<link href="{{ url('css/cssadmin/empresas.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
+@stop
+
+@section( 'script' )
+	<script src="{{ url('js/ocultarelemento.js') }}"></script>
+	<script src="{{ url('js/admin/empresa.js') }}"></script>
 @stop
 
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
+		@if(Session::has('message_success'))
+			<div class = "alert alert-success flashmensasse" id = "message_alert">
+				<em> {!! session('message_success') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
+		@if(Session::has('message_danger'))
+			<div class = "alert alert-danger flashmensasse" id = "message_alert">
+				<em> {!! session('message_danger') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
 		<div class="div-1">
 			<p>Empresas</p>
 		</div><!--div-1-->
 
-		@include('admin.partials.messages')<!--Mensages -->
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
 			<div>
 				<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button para crear empresas-->
@@ -66,7 +85,7 @@
 	<!--Ventana emergente para eliminar-->
 	<div id="eliminarEmpresa" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
-			<a href="#close" class="close">&times;</a>
+			<a href="#" class="close1">&times;</a>
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Eliminar Empresa</p>
 			</div><!--parte-1-->
@@ -153,7 +172,7 @@
 					</div><!--item-1-->
 
 					<!--<a href="{{ URL::previous() }}">Volver</a>-->
-					<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
+					<a href="#"><button type="button" class="flat-secundario">Cancelar</button></a>
 					<button type="submit" class="flat">Eliminar</button>
 				</div>
 			</form>
@@ -164,7 +183,7 @@
 	<!--Ventana emergente para ver-->
 	<div id="verEmpresa" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
-			<a href="#close" class="close">&times;</a>
+			<a href="#" class="close1">&times;</a>
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt">Ver Empresa</p>
 			</div><!--parte-1-->
@@ -250,13 +269,8 @@
 				</div><!--item-1-->
 
 				<!--<a href="{{ URL::previous() }}">Volver</a>-->
-				<a href="#close"><button type="button" class="flat-secundario">Regresar</button></a>
+				<a href="#"><button type="button" class="flat-secundario">Regresar</button></a>
 			</div>
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
-
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/empresa.js') }}"></script>
 @stop

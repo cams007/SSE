@@ -10,6 +10,16 @@
 	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
 	<link href="{{ url('css/cssadmin/ofertas.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
+	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
+@stop
+
+@section( 'script' )
+	<script src="{{ url('js/ocultarelemento.js') }}"></script>
+	<!--
+		Este archivo esta en public, presenta la ventana emergente
+		para crear, ver y eliminar un evento
+	-->
+	<script src="{{ url('js/admin/ofertas.js') }}"></script>
 @stop
 
 @php
@@ -30,6 +40,21 @@
 
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
+
+		@if(Session::has('message_success'))
+			<div class = "alert alert-success flashmensasse" id = "message_alert">
+				<em> {!! session('message_success') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
+		@if(Session::has('message_danger'))
+			<div class = "alert alert-danger flashmensasse" id = "message_alert">
+				<em> {!! session('message_danger') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
 		<div class="div-1">
 			<p>Ofertas laborales</p>
 		</div><!--div-1-->
@@ -119,7 +144,7 @@
 
 	<div id="verOferta" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
-			<a href="#close" class="close">&times;</a>
+			<a href="#" class="close1">&times;</a>
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt" id = "getOferta"></p>
 			</div><!--parte-1-->
@@ -169,7 +194,7 @@
 	<!--Ventana emergente para eliminar-->
 	<div id="eliminarOferta" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
-			<a href="#close" class="close">&times;</a>
+			<a href="#" class="close1">&times;</a>
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt" id = "getOfertaD"></p>
 			</div><!--parte-1-->
@@ -226,12 +251,4 @@
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
 
-@stop
-
-@section('script')
-<!--
-	Este archivo esta en public, presenta la ventana emergente
-	para crear, ver y eliminar un evento
--->
-<script src="{{ url('js/admin/ofertas.js') }}"></script>
 @stop

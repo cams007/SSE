@@ -5,10 +5,31 @@
 @section('style')
 	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/ocultarelemento.js') }}"></script>
 @stop
 
 @section('content')
 	<div class="contenedor"><!--inicio contenedor-->
+
+		<!-- Muestra un mensaje de alerta en caso de que el usuario no se puede registrar -->
+		@if(Session::has('message_success'))
+			<div class = "alert alert-success flashmensasse" id = "message_alert">
+				<em> {!! session('message_success') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
+		@if(Session::has('message_danger'))
+			<div class = "alert alert-danger flashmensasse" id = "message_alert">
+				<em> {!! session('message_danger') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
 		<div class="div-1"><!--inicio div-1-->
 			<p class="text-center">Mi perfil</p>
 		</div><!--fin div-1-->
@@ -102,7 +123,7 @@
 							@endif
 						</div>
 						
-						<form enctype = "multipart/form-data" action="perfil/uploadcv" method="POST">
+						<form enctype = "multipart/form-data" action="uploadcv" method="POST">
 							<p>Curriculum Vitae</p>
 							<input type="file" name="e_cv" accept="application/pdf" />
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -146,7 +167,7 @@
 						<input type="hidden" name = "modificacion" value = "telefono"/>
 					</div>
 					<div class="btn-group">
-						<button type="button" class="flat-secundario aling-left">Cancelar</button>
+						<a href="#close"><button type="button" class="flat-secundario aling-left">Cancelar</button></a>
 						<button type="submit" class="flat aling-right">Guardar</button>
 					</div>
 				</div>
@@ -175,7 +196,7 @@
 						<input type = "hidden" name = "modificacion" value = "direccion"/>
 					</div>
 					<div class="btn-group">
-						<button type = "button" class="flat-secundario aling-left">Cancelar</button>
+						<a href="#close"><button type="button" class="flat-secundario aling-left">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</div>

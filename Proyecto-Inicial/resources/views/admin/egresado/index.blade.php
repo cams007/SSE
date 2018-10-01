@@ -9,6 +9,12 @@
 	<link href="{{ url('css/cssadmin/modalAdmin.css') }}" rel="stylesheet">
 	<!-- <link href="{{ url('css/empresa.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/egresados.css') }}" rel="stylesheet">
+	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/admin/egresado.js') }}"></script>
+	<script src="{{ url('js/ocultarelemento.js') }}"></script>
 @stop
 
 @php
@@ -29,6 +35,20 @@
 
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
+		@if(Session::has('message_success'))
+			<div class = "alert alert-success flashmensasse" id = "message_alert">
+				<em> {!! session('message_success') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
+		@if(Session::has('message_danger'))
+			<div class = "alert alert-danger flashmensasse" id = "message_alert">
+				<em> {!! session('message_danger') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
 		<div class="div-1">
 			<p>Egresados</p>
 		</div><!--div-1-->
@@ -240,8 +260,4 @@
 		</div> <!-- div-modal -->
 	</div> <!-- div-modaloverlay -->
 
-@stop
-
-@section('script')
-	<script src="{{ url('js/admin/egresado.js') }}"></script>
 @stop

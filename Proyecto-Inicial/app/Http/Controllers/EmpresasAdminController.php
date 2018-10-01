@@ -32,8 +32,21 @@ class EmpresasAdminController extends Controller
     	return view('admin.empresa.crearEmpresa');
     }
 
-    public function saveCrearEmresa(Request $request){
+    public function showEditarEmpresa(Request $request,$id)
+    {
+        $empresa = DB::table('Empresa')
+            ->where('id',"$id")
+            ->first();
+    
+        $contacto = DB::table('Contacto')
+            ->where('id',"$empresa->contacto_id")
+            ->first();
 
+    	return view('admin.empresa.editarEmpresa',compact('empresa'),compact('contacto'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
+    }
+
+    public function saveCrearEmresa( Request $request )
+    {
         //Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 
@@ -91,6 +104,9 @@ class EmpresasAdminController extends Controller
                         }catch(Exception $e){
                             DB::rollback();
                             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                            Session::flash('message_danger', 'Hubo un error al momento de guardar la información.');//Para mostrar mensaje partials/messages.blade.php
+        
+                            return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
                         }
                         DB::commit();
                         copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
@@ -109,32 +125,19 @@ class EmpresasAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
-        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
+        Session::flash('message_success', 'La empresa se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
+        
         return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 
-    public function showEditarEmpresa(Request $request,$id){
-
-        $empresa = DB::table('Empresa')
-            ->where('id',"$id")
-            ->first();
-    
-        $contacto = DB::table('Contacto')
-            ->where('id',"$empresa->contacto_id")
-            ->first();
-
-    	return view('admin.empresa.editarEmpresa',compact('empresa'),compact('contacto'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
-    }
-
-    public function saveEditarEmpresa(Request $request){
-        
+    public function saveEditarEmpresa( Request $request )
+    {
         //Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 
         //Ruta donde se guardaran las imagenes
         $dir_destino = 'assets/images/empresas/';
         $imagen_subida = $dir_destino.mt_rand(0,10000). basename($_FILES['imagen']['name']);//mt_rand(0,500)
-
 
         if(!is_writable( $dir_destino ) )
         {
@@ -154,13 +157,15 @@ class EmpresasAdminController extends Controller
                 $imagen_ban = 1;
             }
 
-            if($imagen_ban == 1){
-                if($_FILES['imagen']['size'] <= 300000){
+            if($imagen_ban == 1)
+            {
+                if($_FILES['imagen']['size'] <= 300000)
+                {
                     if(($_FILES["imagen"]["type"] == "image/gif")
                         || ($_FILES["imagen"]["type"] == "image/jpeg")
                         || ($_FILES["imagen"]["type"] == "image/jpg")
-                        || ($_FILES["imagen"]["type"] == "image/png")){
-
+                        || ($_FILES["imagen"]["type"] == "image/png"))
+                    {
                         DB::beginTransaction();
                         try{
                             //Guarda datos en la BD datos del contacto
@@ -169,7 +174,6 @@ class EmpresasAdminController extends Controller
                             $contactoEdit->telefono = $request->numeroTel_cont;
                             $contactoEdit->correo = $request->email_cont;
                             $contactoEdit->save();
-
                             //Datos de la empresa a la BD
                             $empresaEdit->nombre = $request->nombre_emp;
                             $empresaEdit->descripcion = $request->descripcion;
@@ -189,9 +193,13 @@ class EmpresasAdminController extends Controller
                             $empresaEdit->motivo_no_contratacion = $request->noContratacion;
                             $empresaEdit->recomendaciones = $request->recomendacion;
                             $empresaEdit->save();
-                        }catch(Exception $e){
+                        }catch(Exception $e)
+                        {
                             DB::rollback();
                             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                            Session::flash('message_danger', 'Hubo un error al momento de actulizar la empresa.' );
+
+                            return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
                         }
                         DB::commit();
                         if($valido)//Si existe la imagen la elimina, Si no solo subimos la img nueva
@@ -217,7 +225,6 @@ class EmpresasAdminController extends Controller
                     $contactoEdit->telefono = $request->numeroTel_cont;
                     $contactoEdit->correo = $request->email_cont;
                     $contactoEdit->save();
-
                     //Datos de la empresa a la BD
                     $empresaEdit->nombre = $request->nombre_emp;
                     $empresaEdit->descripcion = $request->descripcion;
@@ -236,19 +243,24 @@ class EmpresasAdminController extends Controller
                     $empresaEdit->motivo_no_contratacion = $request->noContratacion;
                     $empresaEdit->recomendaciones = $request->recomendacion;
                     $empresaEdit->save();
-                }catch(Exception $e){
+                }catch(Exception $e)
+                {
                     DB::rollback();
                     echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                    Session::flash('message_danger', 'Hubo un error al momento de actulizar la empresa.' );
+
+                    return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
                 }
                 DB::commit();
             }
         }
-        Session::flash('update', 'se ha actualizado correctamente');
-        return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
+        Session::flash('message_success', 'La empresa se ha actualizado correctamente.' );
+        //Redireccionamos al index de egresado url(/admin/egresado)
+        return redirect('admin/empresas');
     }
 
-    public function eliminarEmpresa(Request $request){
-
+    public function eliminarEmpresa(Request $request)
+    {
         //Obtiene la por medio del id la empresa a eliminar
         $empresa = Empresa::find($request->id);
         $contacto = Contacto::find($empresa->contacto_id);
@@ -260,11 +272,15 @@ class EmpresasAdminController extends Controller
         }catch(Exception $e){
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', 'Hubo un error al momento de eliminar la información.' );
+        
+            return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
         }
         DB::commit();
         unlink($empresa->imagen_url);//Elimina la imagen
 
-        Session::flash('save', 'se ha actualizado correctamente');
+        Session::flash('message_success', 'La empresa se ha eliminado correctamente.' );
+        
         return redirect('admin/empresas');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 }

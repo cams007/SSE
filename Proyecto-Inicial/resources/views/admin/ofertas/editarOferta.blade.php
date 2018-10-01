@@ -3,9 +3,12 @@
 @section('title', 'Editar oferta')
 
 @section('style')
-
-<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
+	<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/editarOferta.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop
 
 @php
@@ -43,13 +46,13 @@
 			<input name="id" type="hidden" value="{{$oferta->id}}" />
 
 			<label for="" class="">Titulo del empleo: </label>
-	 		<input type="text" name="titulo_empleo" value="{{ $oferta->titulo_empleo }}" />
+	 		<input type="text" name="titulo_empleo" value="{{ $oferta->titulo_empleo }}" placeholder="Titulo de empleo" required/>
 
 			<label for="" class="">Descripción: </label>
-	 		<input type="text" name="descripcion" value="{{ $oferta->descripcion }}" />
+	 		<input type="text" name="descripcion" value="{{ $oferta->descripcion }}" placeholder="Descripción del puesto" required/>
 
 			<label for="" class="">Ubicación: </label>
-	 		<input type="text" name="ubicacion" value="{{ $oferta->ubicacion }}" />
+	 		<input type="text" name="ubicacion" value="{{ $oferta->ubicacion }}" placeholder="Ubicación" required/>
 
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera" required>
@@ -64,13 +67,13 @@
 	 		</select>
 
 			<label for="" class="">Experiencia: </label>
-	 		<input type="text" name="experiencia" value="{{ $oferta->experiencia }}" />
+	 		<input type="text" name="experiencia" value="{{ $oferta->experiencia }}" placeholder="Experiencia requerida" required/>
 
 			<label for="" class="">Salario: </label>
-	 		<input type="text" name="salario" value="{{ $oferta->salario }}" />
+	 		<input type="text" name="salario" value="{{ $oferta->salario }}" placeholder="Salario" required/>
 
 			<label for="" class="">Status: </label>
-	 		<select name="status">
+	 		<select name="status" required>
 				<option value = "{{ $oferta->status }}">{{ $oferta->status }}</option>
 				<@foreach( $status as $sts )
 					@if( $sts != $oferta->status )
@@ -80,7 +83,7 @@
 	 		</select>
 
 	 		<label for="" class="">Empresa: </label>
-	 		<select name="empresa_id">
+	 		<select name="empresa_id" required>
 			 	<!-- Empresa original de la oferta -->
 			 	<@foreach( $empresas as $empresa )
 					@if( $oferta->empresa_id == $empresa->id )
@@ -98,15 +101,11 @@
 
 			<div class="boton">
 		 		<button type="submit" class="flat">
-							Editar
+					Editar
 				</button>
 			</div>
 		</form>
 
 	</div><!--contenedor-->
 
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop

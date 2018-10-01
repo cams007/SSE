@@ -64,7 +64,8 @@ class OfertasController extends Controller
             {
                 $message->to( $destinatario );
                 $message->subject( $asunto );
-                // email del administrador
+                // Este email es de prueba, para la liberacion del sistema se debe cambiar por el correo 
+                // del administrador, por la configuracion debe ser un correo del gmail.
                 $message->from( 'betydomlopez@gmail.com' );
                 $message->attach( $pathToFile );
             });
@@ -76,18 +77,18 @@ class OfertasController extends Controller
                 $postulacion->oferta_id = $request->e_id;
                 $postulacion->save();
 
-                Session::flash( 'save', 'Se ha postulado exitasamente' );
+                Session::flash('message_success', 'Se ha postulado exitosamente.' );
                 // Return to view
                 return view('egresados.ofertas.ofertas', compact( 'ofertas') );
             }
             else {
-                Session::flash( 'save', 'Hubo un error, intente postularse nuevamente' );
+                Session::flash('message_danger', 'Hubo un error, intente postularse nuevamente.' );
                 // Return to view
                 return view('egresados.ofertas.ofertas', compact( 'ofertas') );
             }
         }else
         {
-            Session::flash('save', 'Asegúese de subir su CV antes de postularse' );
+            Session::flash('message_danger', 'Asegúese de subir su CV antes de postularse.' );
             // Return to View
             return view('egresados.ofertas.ofertas', compact( 'ofertas') );
         }

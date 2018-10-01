@@ -59,9 +59,14 @@ class HistoriasDeAdminController extends Controller
                             $historia->imagen_url = $imagen_subida;
                             $historia->activo = $request->activo;
                             $historia->save();
-                        }catch(Exception $e){
+                        }catch(Exception $e)
+                        {
                             DB::rollback();
                             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+
+                            Session::flash('message_danger', 'La historia no se pudo crear.');//Para mostrar mensaje partials/messages.blade.php
+                            
+                            return redirect('admin/historiasdeExito');//Redireccionamos al index de eventos
                         }
                         DB::commit();
                         copy($archivo, $imagen_subida);//copia el archivo a la ruta indicada
@@ -80,18 +85,18 @@ class HistoriasDeAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
-        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
+        Session::flash('message_success', 'Historia creada correctamente.');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/historiasdeExito');//Redireccionamos al index de eventos
     }
 
     public function showEditarHistoria($id)
     {
     	$historia = DB::table('HistoriaExito')->where('id',"$id")->first();
-    	return view('admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
 
+    	return view('admin.historiasDe.editarHistoriaDe',compact("historia"));//Direccion de la vista, pasamos el objeto
     }
 
-    public function saveEditarHistoria(Request $request)
+    public function saveEditarHistoria( Request $request )
     {
     	//Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
@@ -125,9 +130,13 @@ class HistoriasDeAdminController extends Controller
                         $historia->descripcion = $request->descripcion;
                         $historia->imagen_url = $imagen_subida;
                         $historia->save();
-                    }catch(Exception $e){
+                    }catch(Exception $e)
+                    {
                         DB::rollback();
                         echo 'ERROR (' . $e->getCode() .'): ' . $e->getMessage();
+
+                        Session::flash('message_danger', 'La historia no se pudo actualizar.');
+                        return redirect('admin/historiasdeExito');//redireccionamos a la url del 
                     }
                     DB::commit();
                     if($valido)//Si existe la imagen la reemplaza, Si no sube la img nueva
@@ -146,38 +155,45 @@ class HistoriasDeAdminController extends Controller
         }
         else{//No se modifico la imagen
             DB::beginTransaction();
-            try{
+            try
+            {
                 $historia->titulo = $request->titulo;
                 $historia->descripcion = $request->descripcion;
                 $historia->save();
-            }catch(Exception $e){
+            }catch(Exception $e)
+            {
                 DB::rollback();
                 echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                
+                Session::flash('message_danger', 'La historia no se pudo actualizar.');
+                return redirect('admin/historiasdeExito');//redireccionamos a la url del 
             }
             DB::commit();
         }
-        Session::flash('update', 'se ha actualizado correctamente');
+        Session::flash('message_success', 'La historia se ha actualizado correctamente.');
         return redirect('admin/historiasdeExito');//redireccionamos a la url del index
-
     }
 
-    public function EliminarHistoria(Request $request){
-
+    public function EliminarHistoria(Request $request)
+    {
         $historia = HistoriaExito::find($request->id);//Recuperamos elemento a eliminar
-
         //Se hace uso de las transacciones
         DB::beginTransaction();
         try{
             $historia->delete();//Elimina el elemento de la BD
             //HistoriaExito::destroy($request->id);
-        }catch(Exception $e){
+        }catch(Exception $e)
+        {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', 'La historia no se pudo eliminar');
+            
+            return redirect('admin/historiasdeExito');//redireccionamos a la url del index
         }
         DB::commit();
         unlink($historia->imagen_url);//Elimina la imagen
 
-        Session::flash('save', 'se ha eliminado correctamente');
+        Session::flash('message_success', 'Historia eliminada correctamente');
         return redirect('admin/historiasdeExito');//redireccionamos a la url del index
     }
 }

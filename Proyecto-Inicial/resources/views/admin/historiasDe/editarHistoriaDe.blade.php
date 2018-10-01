@@ -20,11 +20,11 @@
 
 			<input name="id" type="hidden" value="{{$historia->id}}" />
 
-			<label for="" class="">Titulo: </label>
-	 		<input class="nombre" type="text" name="titulo" value="{{$historia->titulo}}"/>
+			<label for="" class="">Título: </label>
+	 		<input class="nombre" type="text" name="titulo" value="{{$historia->titulo}}" placeholder ="Título de la historia" required>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion">{{$historia->descripcion}}</textarea>
+	 		<textarea rows="4" cols="50" name="descripcion" placeholder ="Descripción de la historia" required>{{$historia->descripcion}}</textarea>
 
 			<div class="foto">
 		 		<label for="" class="">Foto: </label>

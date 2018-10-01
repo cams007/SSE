@@ -84,8 +84,7 @@ class DirectorioController extends Controller
             ->first();
         // To check if the actual user
         $rank = DB::table( 'Ranking' )
-            ->where( [[ 'egresado_matricula', '=', Auth::user()->egresado_matricula ],
-                    [ 'empresa_id', '=', $request->id ] ] )
+            ->where( [[ 'egresado_matricula', '=', Auth::user()->egresado_matricula ], [ 'empresa_id', '=', $request->id ] ] )
             ->count();
 
         return view('egresados.directorio.datos', compact( 'empresa', 'request', 'rank' ) );
@@ -95,8 +94,8 @@ class DirectorioController extends Controller
     {
         // Get comments on the current company
         $ranking = Ranking::where( 'empresa_id', $request->id )
-            ->orderBy('calificacion', 'DESC')
             ->paginate( 10 );
+
         // To get the average rating of the current company
         $comentario = Ranking::where('empresa_id', $request->id )
             ->select(DB::raw( 'count(*) as total' ) )
