@@ -28,18 +28,18 @@
 				{{ csrf_field() }}
 
 				<div class="form-group">
-					<label>Nombre de la empresa</label>
+					<label>Nombre de la empresa:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="empresa" id="empresa" class="form-control">{{ $empleo->empresa }}</label>
+						<label type="text" name="empresa" id="empresa" class="form-control">{{ $empleo->empresa }}</label>
 					@else
 						<input type="text" name="empresa" id="empresa" class="form-control" placeholder="Nombre de la empresa" required autofocus>
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label>Sector</label>
+					<label>Sector:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="sector" id="sector" class="form-control">{{ $empleo->sector }}</label>
+						<label type="text" name="sector" id="sector" class="form-control">{{ $empleo->sector }}</label>
 					@else
 						<div class="radio">
 							<input type="radio" name="sector" id="publica" value="Pública" checked="checked" >
@@ -55,9 +55,9 @@
 				</div>
 
 				<div class="form-group">
-					<label>Tiempo sin empleo</label>
+					<label>Tiempo sin empleo:</label>
 					@if($empleo)
-						<label style="color:red" type="text" name="sinempleo" id="sinempleo" class="form-control">{{ $empleo->tiempo_sin_empleo }}</label>
+						<label type="text" name="sinempleo" id="sinempleo" class="form-control">{{ $empleo->tiempo_sin_empleo }}</label>
 					@else
 						<select name="sinempleo" id="sinempleo" class="select">
 							<option value="">-Selecionar-</option>
@@ -71,9 +71,9 @@
 				</div>
 
 				<div class="form-group">
-					<label for="fingreso"> Fecha de ingreso</label>
+					<label for="fingreso"> Fecha de ingreso:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="fingreso" id="fingreso" class="form-control">{{ $empleo->fecha_ingreso }}</label>
+						<label type="text" name="fingreso" id="fingreso" class="form-control">{{ $empleo->fecha_ingreso }}</label>
 					@else
 						<input type="date" name="fingreso" id="fingreso" class="form-control">
 						{{-- {{ Form::date('fingreso', $empleo->fecha_ingreso ) }} --}}
@@ -81,27 +81,27 @@
 				</div>
 
 				<div class="form-group">
-					<label for="puestoA">Puesto inicial</label>
+					<label for="puestoA">Puesto inicial:</label>
 					@if($empleo)
-						<label style="color:red" type="text" name="puestoA" id="puestoA" class="form-control">{{ $empleo->puesto_inicial }}</label>
+						<label type="text" name="puestoA" id="puestoA" class="form-control">{{ $empleo->puesto_inicial }}</label>
 					@else
 						<input type="text" name="puestoA" id="puestoA" class="form-control" placeholder = "Agregar puesto" required>
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="puestoI">Puesto final</label>
+					<label for="puestoI">Puesto final:</label>
 					@if($empleo)
-						<label style="color:red" type="text" name="puestoI" id="puestoI" class="form-control">{{ $empleo->puesto_final }}</label>
+						<label type="text" name="puestoI" id="puestoI" class="form-control">{{ $empleo->puesto_final }}</label>
 					@else
 						<input type="text" name="puestoI" id="puestoI" class="form-control"  placeholder="Agregar puesto" required>
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="contrato">Jornada de trabajo</label>
+					<label for="contrato">Jornada de trabajo:</label>
 					@if($empleo)
-						<label style="color:red" type="text" name="contrato" id="contrato" class="form-control">{{ $empleo->jornada }}</label>
+						<label type="text" name="contrato" id="contrato" class="form-control">{{ $empleo->jornada }}</label>
 					@else
 						<select name="contrato" id="inputTContrato" class="select">
 							<option value="" checked>-Selecionar-</option>
@@ -112,28 +112,28 @@
 					@endif
 				</div>
 
-				<div class="entradas">
-					<label for="inputTContrato">Tipo de contrato</label>
+				<div class="form-group">
+					<label for="inputTContrato">Tipo de contrato:</label>
 					@if($empleo)
-						<label style="color:red" type="text" name="tcontrato" id="tcontrato" class="form-control">{{ $empleo->contrato }}</label>
+						<label type="text" name="tcontrato" id="tcontrato" class="form-control">{{ $empleo->contrato }}</label>
 					@else
 						{!! Form::select('tcontrato', config('options.tipo_contrato'), "", ['class' => 'seleccion']) !!}
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="">Teléfono de la empresa</label>
+					<label for="">Teléfono de la empresa:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="telefono" id="telefono" class="form-control">{{ $empleo->telefono_empresa }}</label>
+						<label type="text" name="telefono" id="telefono" class="form-control">{{ $empleo->telefono_empresa }}</label>
 					@else
 						<input type="tel" name="telefono" id="telefono" class="form-control"  placeholder="Agregar teléfono" pattern="[0-9]{9, 15}">
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label>Ingreso mensual</label>
+					<label>Ingreso mensual:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="ingresomensual" id="ingresomensual" class="form-control">{{ $empleo->ingreso_mensual }}</label>
+						<label type="text" name="ingresomensual" id="ingresomensual" class="form-control">{{ $empleo->ingreso_mensual }}</label>
 					@else
 						<select name = "ingresomensual" id = "ingresomensual" class="select">
 							<option value="">-Selecionar-</option>
@@ -149,11 +149,11 @@
 					<label for="tContrato">Sus actividades laborales:</label>
 					@if( $empleo )
 						@if( $empleo->actividad_laboral == 0 )
-							<label style="color:red" type="text" name = "actividades" id = "actividades" class="form-control">Requieren de la formación de mi carrera</label>
+							<label type="text" name = "actividades" id = "actividades" class="form-control">Requieren de la formación de mi carrera</label>
 						@elseif( $empleo->actividad_laboral == 1 )
-							<label style="color:red" type="text" name = "actividades" id = "actividades" class="form-control">No requieren de la formación de mi carrera</label>
+							<label type="text" name = "actividades" id = "actividades" class="form-control">No requieren de la formación de mi carrera</label>
 						@elseif( $empleo->actividad_laboral == 2 )
-							<label style="color:red" type="text" name = "actividades" id = "actividades" class="form-control">No requieren de una profesión</label>
+							<label type="text" name = "actividades" id = "actividades" class="form-control">No requieren de una profesión</label>
 						@endif
 					@else
 						<select name="actividades" id="actividades" class="select">
@@ -166,18 +166,18 @@
 				</div>
 
 				<div class="form-group">
-					<label for="factores">Factores de contratación</label>
+					<label for="factores">Factores de contratación:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="factor" id="factor" class="form-control">{{ $empleo->factores_contratacion }}</label>
+						<label type="text" name="factor" id="factor" class="form-control">{{ $empleo->factores_contratacion }}</label>
 					@else
 						<input type="text" name = "factor" id = "factor" class = "form-control" placeholder = "Agrega factores" required>
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="carencias">Carencias básicas</label>
+					<label for="carencias">Carencias básicas:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="carencia" id="carencia" class="form-control">{{ $empleo->carencias_basicas }}</label>
+						<label type="text" name="carencia" id="carencia" class="form-control">{{ $empleo->carencias_basicas }}</label>
 					@else
 						<select name="carencia" id="carencia" class="select">
 							<option value="">-Selecionar-</option>
@@ -193,27 +193,27 @@
 				</div>
 
 				<div class="form-group">
-					<label for="areascarencias">Áreas de carencias</label>
+					<label for="areascarencias">Áreas de carencias:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="areascarencia" id="areascarencia" class="form-control">{{ $empleo->carencias_areas }}</label>
+						<label type="text" name="areascarencia" id="areascarencia" class="form-control">{{ $empleo->carencias_areas }}</label>
 					@else
 						<input type="text" name = "areascarencia" id = "areascarencia" class = "form-control" placeholder = "Agrega carencias" required>
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="posgrado">Motivos de no estudiar posgrado</label>
+					<label for="posgrado">Motivos de no estudiar posgrado:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="posgrado" id = "posgrado" class="form-control">{{ $empleo->motivo_no_posgrado }}</label>
+						<label type="text" name="posgrado" id = "posgrado" class="form-control">{{ $empleo->motivo_no_posgrado }}</label>
 					@else
 						<input type="text" name = "posgrado" id = "posgrado" class = "form-control" placeholder = "Agrega motivos" required>
 					@endif
 				</div>
 
 				<div class="form-group">
-					<label for="recomendacion">Recomendaciones</label>
+					<label class="recomendacion" for="recomendacion">Recomendaciones:</label>
 					@if( $empleo )
-						<label style="color:red" type="text" name="recomendacion" id = "recomendacion" class="form-control">{{ $empleo->recomendaciones }}</label>
+						<label type="text" name="recomendacion" id = "recomendacion" class="form-control">{{ $empleo->recomendaciones }}</label>
 					@else
 						<input type="text" name = "recomendacion" id = "recomendacion" class = "form-control" placeholder = "Agrega recomendaciones para recien egresados" required>
 					@endif
