@@ -55,6 +55,7 @@ html {
   margin-top:13px;
   margin-left: 40px;
 }
+
 #logo_info{
   background-image: url("../assets/images/logo_info.png") ;
 	width: 52px;
@@ -64,6 +65,7 @@ html {
 	top: 25px;
 	right: 32px;
 }
+
 #logo_utm{
 	width: 170px;
 	height:170px;
@@ -172,4 +174,178 @@ li.registro-boton{
 }
 li.registro-boton a {
   color: #5E352A;
+}
+
+.modaloverlay {
+  background: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  display: none;
+}
+
+.modaloverlay:target {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 99999;
+}
+
+.modaloverlay .modal {
+  background-color: white;
+  height: 480;
+  width: 40%;
+  position: relative;
+  margin: 0 auto;
+  padding: 3em;
+  text-align: justify;
+  overflow-y: overlay;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 60em) {
+  .modaloverlay .modal {
+    height: 50%;
+    margin: 5% auto;
+    max-height: 57em;
+    max-width: 33em;
+    width: 85%;
+  }
+}
+
+.modaloverlay .modal > iframe, .modaloverlay .modal > div {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.modaloverlay .close {
+  background-color: white;
+  color: #6B6B6b;
+  font-size: 24px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 0;
+  text-align: justify;
+  text-decoration: none;
+  top: 0;
+  z-index: -1;
+}
+
+.label{
+  /*background: rgb(110, 184, 221);*/
+  text-align: left;
+  color: #6B6B6B;
+  font-family: 'Roboto',sans-serif;;
+  font-size: 14px;
+}
+.div-input{
+  margin-bottom: 16px;
+}
+.last-label{
+  /*background: rgb(110, 184, 221);*/
+  text-align: right;
+  color: #6B6B6B;
+  font-family: 'Roboto',sans-serif;;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+
+.button2{
+    display: inline;
+    width: 100px;
+    height: 24px;
+    background-color: #DF0101;
+    color: white;
+    border: none;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+.button2:hover{
+  background: #5E352A;
+}
+
+#entradas{
+    height: 28px;
+    width: 400px;
+    padding: 1px 14px;
+    border: none;
+    border: #ACABAB 1px solid;
+}
+#entradas:hover{
+  border: solid 1px #BE3228;
+  outline: none;
+}
+.emergente-aviso-privacidad{
+  /*background: rgb(73, 128, 24);*/
+  text-align: center;
+  color: #6B6B6B;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  height: 40px;
+}
+.emergente-texto-central{
+  /*background: rgb(193, 185, 224);*/
+  color: #6B6B6B;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+.div-btn{
+  /*background: rgb(162, 3, 52);*/
+  margin-top: 32px;
+  height: 30px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.emergente-button1{
+    float: left;
+    width: 150px;
+    height: 30px;
+    background-color: #A4A4A4;
+    color: white;
+    border: none;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.emergente-button2{
+    float: right;
+    width: 150px;
+    height: 30px;
+    background-color: #DF0101;
+    color: white;
+    border: none;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+.emergente-button2:hover{
+  background: #5E352A;
+}
+
+.has-error{
+  color: #a94442;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075); 
 }

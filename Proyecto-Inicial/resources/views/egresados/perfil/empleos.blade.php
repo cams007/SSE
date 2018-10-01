@@ -39,7 +39,7 @@
 				<aside id="cssmenu" class="column hrV">
 					@include('partials.aside')
 				</aside>
-
+		</div>
 				<div class="contenedor-info"><!--inicio contenedor-info-->
 					<a href="#agregarEmpleo" class="btn-empresa">Agregar empleo</a>
 
@@ -129,7 +129,6 @@
 						<!-- </div> -->
 					</div> <!-- div-modal -->
 				</div> <!-- div-modaloverlay -->			
-			</div><!--fin div-2-1-->
-		</div>
+			</div><!--fin div-2-1-->		
 	</div><!--fin contenedor-->
 @stop

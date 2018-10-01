@@ -338,11 +338,6 @@ textarea:focus, textarea:hover {
 	color: #6B6B6B;
 	/*position: relative;*/
 }
-
-label {
-  display: block;
-}
-
 .hidden {
   display: none;
 }
@@ -363,7 +358,8 @@ label {
 
 .contenedor {
   width: 1024px;
-  height: 536px;
+  /*height: 536px;*/
+  height: auto;
   margin: 0 auto;
   display: block;
   text-align: center;
@@ -427,6 +423,15 @@ label {
   display: -ms-flexbox;
   display: flex;
 }
+.contenedor-info a {
+  margin-top: 16px;
+  margin-right: 24px;
+  margin-left: 32px;
+}
+.contenedor-info label {
+  margin-top: 16px;
+  color: #6B6B6B;
+}
 .entradas {
   margin-bottom: 24px;
 }
@@ -446,6 +451,20 @@ div.form-group select {
     padding: 5px;
     width: 250px;
 }
+
+div.form-group-estudios {
+  text-align: left;
+  width: auto;
+  margin-left: 20px;
+  margin-top: 8px;
+}
+div.form-group-estudios label:first-child {
+  display: inline-block;
+  width: 300px;  
+}
+div.form-group-estudios label:nth-child(2) {
+  color: #6B6B6B;
+}
 .seleccion-foto{
   display: block;
   margin-top: 16px;
@@ -462,8 +481,9 @@ div.margin a {
   margin-top: 50px;
   margin-left: 170px;
 }
-.content-lg{
-  margin-top: 32px;
+.btn {
+  text-align: right;
+  margin-top: 8px;
 }
 .btn-empresa {
   display: inline-block;
@@ -474,6 +494,7 @@ div.margin a {
   width: 60%;
   text-align: left;
   margin-right: 30px;
+  color: #6B6B6B;
 }
 .icono-perfil {
   width: 50px;
@@ -484,6 +505,7 @@ form {
 }
 form p {
   margin-bottom: 16px;
+  color: #6B6B6B;
 }
 form input.flat {
   display: block;
@@ -492,4 +514,14 @@ form input.flat {
 }
 div.modal form {
   text-align: center;
+}
+.recomendacion {
+  width: 300px;
+  display: inline;
+  position: relative;
+  top: -42px;
+}
+.form-control {
+  display: inline-block;
+  width: 400px;
 }
