@@ -51,7 +51,6 @@ class PerfilController extends Controller {
     {
         $empleo = PrimerEmpleo::where('id', Auth::user()->egresado->primer_empleo_id)->first();
 
-        //return $primerempleo->empresa;
         return view('egresados.perfil.primerEmpleo', compact( 'empleo' ) );
     }
 
@@ -90,13 +89,13 @@ class PerfilController extends Controller {
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
-            //Para mostrar mensaje partials/messages.blade.php
+            
             Session::flash('message_danger', 'Hubo un problema al momento de guardar la información.' );
             
             return view( 'egresados.perfil.empleos', [ 'empleos' => Auth::user()->egresado->empleos ] );
         }
         DB::commit();
-        //Para mostrar mensaje partials/messages.blade.php
+        
         Session::flash('message_success', 'Empleo guardado correctamente.' );
 
         return view( 'egresados.perfil.empleos', [ 'empleos' => Auth::user()->egresado->empleos ] );
@@ -172,6 +171,7 @@ class PerfilController extends Controller {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
             Session::flash('message_danger', "Hubo un error al momento de actualizar" );
+            
             return $this->showEstudiosForm();
         }
         DB::commit();
@@ -369,9 +369,11 @@ class PerfilController extends Controller {
             $valorpe->primerEmpleo_id = $pe_id;
             $valorpe->catalogoValor_id = $catalogovalor->id;
             $valorpe->save();
-            Session::flash('save', 'Datos guardados correctamente' );
-        } catch( ModelNotFoundException $exception )
-        {
+            
+            Session::flash('message_success', "Formulario guardado correctamente." );
+        } 
+        catch( ModelNotFoundException $exception ) {
+            Session::flash('message_danger', "Error al momento de guardar los datos." );
             return back()->withError($exception->getMessage())->withInput();
         }
 

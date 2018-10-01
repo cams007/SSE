@@ -6,20 +6,43 @@
 	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
-	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
+@stop
+
+@section( 'script' )
+	<script src="{{ url('js/ocultarelemento.js') }}"></script>
+	<script src="{{ url('js/ofertas.js') }}"></script>
+	<script type="text/javascript">
+		var APP_URL = {!! json_encode(url('/ofertas')) !!}
+	</script>
 @stop
 
 @section('content')
 <div class="contenedor"><!--contenedor-->
-		<div class="div-1"><!--div-1-->
-			<p class="text-center">Ofertas laborales</p>
-		</div><!--div-1-->
-		<!-- Buscador -->
-		<div class="buscador_ofertas">
-			{!! Form::open(['url' => 'ofertas', 'method' => 'GET', 'role' => 'search']) !!}
-				{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de ofertas']) !!}
-			{!! Form::close() !!}
+	
+	@if(Session::has('message_success'))
+		<div class = "alert alert-success flashmensasse" id = "message_alert">
+			<em> {!! session('message_success') !!}</em>
+			<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		</div>
+	@endif
+
+	@if(Session::has('message_danger'))
+		<div class = "alert alert-danger flashmensasse" id = "message_alert">
+			<em> {!! session('message_danger') !!}</em>
+			<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		</div>
+	@endif
+	
+	<div class="div-1"><!--div-1-->
+		<p class="text-center">Ofertas laborales</p>
+	</div><!--div-1-->
+	<!-- Buscador -->
+	<div class="buscador_ofertas">
+		{!! Form::open(['url' => 'ofertas', 'method' => 'GET', 'role' => 'search']) !!}
+			{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de ofertas']) !!}
+		{!! Form::close() !!}
+	</div>
 
 	<!-- Resultados -->
 	<div class="se-encontraron">
@@ -173,12 +196,4 @@
 </div>
 
 
-@stop
-
-
-@section('script')
-	<script src="{{ url('js/ofertas.js') }}"></script>
-	<script type="text/javascript">
-		var APP_URL = {!! json_encode(url('/ofertas')) !!}
-	</script>
 @stop

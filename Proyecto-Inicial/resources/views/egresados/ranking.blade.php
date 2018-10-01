@@ -7,6 +7,10 @@
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 @stop
 
+@section('script')
+	<script src="{{ url('js/ranking.js') }}"></script>
+@stop
+
 @section('content')
 <div class="contenedor"><!-- contenedor -->
 	<div class="div-1">
@@ -133,30 +137,11 @@
 						<div class="descripcion" id="e_puesto"></div><!--descripcion-->
 					</div><!--item-1-->
 
-					<div>
-						<br><br>
-						<h4 class="texto-calificar">Calificar esta empresa</h4>
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
-					</div>
-					<div>
-						<textarea name="" id="comentario" class="form-control" rows="3"></textarea>
-					</div>
-
 					<div class="btn-group">
-						<!-- <button type="button" class="flat-secundario">Cancelar</button> -->
-						<button type="button" class="flat aling-right">Guardar</button>
+						<a href="#close"><button type="button" class="flat-secundario">Cerrar</button></a>
 					</div>
 		    	</form>
 		    </div>
 		</div>
 	</div>
-
-@stop
-
-@section('script')
-	<script src="{{ url('js/ranking.js') }}"></script>
 @stop
