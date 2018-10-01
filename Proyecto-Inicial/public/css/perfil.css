@@ -71,8 +71,8 @@ input[type="date"] {
 }
 input[type="submit"] {
   /*background-color: rgb(126, 11, 221);*/
-  width: 100px;
-  height: 20px;
+/*  width: 100px;
+  height: 20px;*/
 }
 input[type="file"] {
   width: 80%;
@@ -301,12 +301,12 @@ textarea:focus, textarea:hover {
 
 
 .content {
-  width: 75%;
-  height: 450px;
-  text-align: left;
-  margin-left: 5%;
+  /*height: auto;*/
+  /*width: 75%;*/
+  /*text-align: left;*/
+  /*margin-left: 5%;
   margin-bottom: 15px;
-  overflow-y: auto;
+  overflow-y: auto;*/
 }
 
 .clearfix ::after {
@@ -395,23 +395,23 @@ label {
 }
 
 .div-2-2{
-  /*background: #1D3B4F;*/
-  width: 520px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: auto;
 }
 
 .div-2-3{
-  position: relative;
-  top: 16px;
+  /*position: relative;*/
   width: 200px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   flex-direction: column;
+}
+.div-2-3 img {
+  margin-top: 16px;
+  width: 70%;
+  height: 30%;
+  border-radius: 50%;
+
 }
 .foto {
   width: 200px;
@@ -420,19 +420,12 @@ label {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.column {
-  float: left;
-  /*padding-top: 30px;*/
-}
 .contenedor-info{
-  margin-top: 32px;
+  margin-top:  8px;
   margin-bottom: 24px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-}
-.icono {
-  width: 12%;
 }
 .entradas {
   margin-bottom: 24px;
@@ -471,4 +464,32 @@ div.margin a {
 }
 .content-lg{
   margin-top: 32px;
+}
+.btn-empresa {
+  display: inline-block;
+  text-decoration: none;
+  color: #BE3228;
+}
+.info {
+  width: 60%;
+  text-align: left;
+  margin-right: 30px;
+}
+.icono-perfil {
+  width: 50px;
+}
+form {
+  text-align: left;
+  padding-left: 16px;
+}
+form p {
+  margin-bottom: 16px;
+}
+form input.flat {
+  display: block;
+  padding: 8px 20px;
+  margin-top: 20px;
+}
+div.modal form {
+  text-align: center;
 }

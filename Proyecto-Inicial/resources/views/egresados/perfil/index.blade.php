@@ -10,8 +10,7 @@
 @section('content')
 	<div class="contenedor"><!--inicio contenedor-->
 		<div class="div-1"><!--inicio div-1-->
-			<h1>Mi Perfil</h1>
-			<hr class="hr">
+			<p class="text-center">Mi perfil</p>
 		</div><!--fin div-1-->
 
 		<div class="div-2"><!--inicio div-2-->
@@ -21,10 +20,9 @@
 				</aside>
 			</div><!--fin div-2-1-->
 			<div class="div-2-2"><!--inicio div-2-2-->
-				<div class="column content">
-					<div>
+				<div class="column content">				
 						<div class="contenedor-info"><!--inicio contenedor-info-->
-							<div class="icono"><!--inicio icono-->
+							<div class="icono-perfil"><!--inicio icono-->
 								<img src="{{ url('assets/images/user0.png') }}" alt="" class="iconos" title="Nombre">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
@@ -32,7 +30,7 @@
 							</div><!--info-->
 						</div><!--contenedor-info-->
 						<div class="contenedor-info"><!--inicio contenedor-info-->
-							<div class="icono"><!--inicio icono-->
+							<div class="icono-perfil"><!--inicio icono-->
 								<img src="{{ url('assets/images/birthday.png') }}" alt="" class="iconos" title="Fecha de nacimiento">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
@@ -41,7 +39,7 @@
 						</div><!--contenedor-info-->
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
-							<div class="icono"><!--inicio icono-->
+							<div class="icono-perfil"><!--inicio icono-->
 								<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos" title="Lugar de origen">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
@@ -50,7 +48,7 @@
 						</div><!--contenedor-info-->
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
-							<div class="icono"><!--inicio icono-->
+							<div class="icono-perfil"><!--inicio icono-->
 								<img src="{{ url( 'assets/images/email.png') }}" alt="" class="iconos" title="Lugar de origen">
 							</div><!--fin icono-->
 							<div class="info"><!--inicio info-->
@@ -61,7 +59,7 @@
 						<div>
 							@if( $egresados->direccion_actual == NULL )
 								<div class="contenedor-info"><!--inicio contenedor-info-->
-									<div class="icono"><!--inicio icono-->
+									<div class="icono-perfil"><!--inicio icono-->
 										<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos" title="Direccion actual">
 									</div><!--fin icono-->
 									<a href="#actualizarDireccion" class="btn-empresa">Agregar dirección actual</a>
@@ -70,7 +68,7 @@
 								</div>
 							@else	
 								<div class="contenedor-info"><!--inicio contenedor-info-->
-									<div class="icono"><!--inicio icono-->
+									<div class="icono-perfil"><!--inicio icono-->
 										<img src="{{ url('assets/images/home0.png') }}" alt="" class="iconos" title="Direccion actual">
 									</div><!--fin icono-->
 									<div class="info"><!--inicio info-->
@@ -84,7 +82,7 @@
 						<div>
 							@if( $egresados->telefono == NULL )
 								<div class="contenedor-info"><!--inicio contenedor-info-->
-									<div class="icono"><!--inicio icono-->
+									<div class="icono-perfil"><!--inicio icono-->
 										<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos" title="Numero telefónico">
 									</div><!--fin icono-->
 									<a href="#actualizarTelefono" class="btn-empresa">Agregar número de teléfono</a>
@@ -93,7 +91,7 @@
 								</div>
 							@else	
 								<div class="contenedor-info"><!--inicio contenedor-info-->
-									<div class="icono"><!--inicio icono-->
+									<div class="icono-perfil"><!--inicio icono-->
 										<img src="{{ url('assets/images/phone.png') }}" alt="" class="iconos" title="Numero telefónico">
 									</div><!--fin icono-->
 									<div class="info"><!--inicio info-->
@@ -110,14 +108,13 @@
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 							<input type="submit" class="flat" value = "Actualizar">
-						</form>
-					</div>
+						</form>					
 				</div>
 			</div><!--fin div-2-2-->
 			
 			<div class="div-2-3">
 				@if($egresados->imagen_url)
-					<img src="{{url($egresados->imagen_url)}}" style="width:50%; height:30%; float: left; border-radius: 50%">
+					<img src="{{url($egresados->imagen_url)}}">
 				@else
 					<img src="{{url('assets/images/egresados/default.png')}}" alt="user-picture" class="img-thumbnail img">
 				@endif
