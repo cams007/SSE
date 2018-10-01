@@ -27,6 +27,12 @@ Route::get('/bienvenida', 'RegistroController@showBienvenidaForm')->name('user.b
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login')->name('login.submit');
 
+Route::get('/change/password', 'CambiarPasswordController@showChangeForm');
+Route::post('/change/confirm', 'CambiarPasswordController@confirmNewPassword')->name( 'confirmar.submit' );
+
+Route::get('/change/password/admin', 'CambiarPasswordAdminController@showChangeForm');
+Route::post('/change/confirm/admin', 'CambiarPasswordAdminController@confirmNewPassword')->name( 'passrwordconfirmar.submit' );
+
 //Rutas para la seccion de Administrador@
 Route::group(['prefix' => 'perfil'], function() {
     Route::get('/', 'PerfilController@showPerfilForm')->name('perfil');

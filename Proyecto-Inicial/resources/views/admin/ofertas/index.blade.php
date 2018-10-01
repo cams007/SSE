@@ -40,7 +40,6 @@
 
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
-
 		@if(Session::has('message_success'))
 			<div class = "alert alert-success flashmensasse" id = "message_alert">
 				<em> {!! session('message_success') !!}</em>

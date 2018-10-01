@@ -23,8 +23,6 @@
               <div id="nombre_usuario">
 
                     @if (Auth::guest())
-                        
-                    @else
                         <a class="user-name" href="#">
                             <img src="{{ url('assets/images/user-name.png') }}">
                         </a>
@@ -39,7 +37,7 @@
                     <li><a  href="{{url('admin/home')}}"><img src="{{url('assets/images/home.png')}}"></a></li>
                     <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
                       <ul>
-                        <li><a  href="#">Cambiar contraseña</a></li>
+                        <li><a href = "{{ url( 'change/password/admin' ) }}">Cambiar contraseña</a></li>
                         <li><a  href="{{ route('admin.logout') }}" onclick="event.preventDefault(); 
                               document.getElementById('logout-form').submit();">
                               Cerrar sesión

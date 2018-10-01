@@ -45,7 +45,7 @@
                     <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
                       <ul>
                         <li><a  href="{{url('perfil')}}">Mi perfil</a></li>
-                        <li><a  href="#">Cambiar contraseña</a></li>
+                        <li><a  href="{{ url( 'change/password' ) }}">Cambiar contraseña</a></li>
                         <li>
                             <a href="{{ route('user.logout') }}"
                                 onclick="event.preventDefault();
