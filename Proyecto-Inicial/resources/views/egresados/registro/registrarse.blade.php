@@ -23,7 +23,6 @@
         </div>
     </div>
 
-
     <div class="div-2-2">
         <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
             {{ csrf_field() }}

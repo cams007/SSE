@@ -64,10 +64,10 @@ class RegisterController extends Controller
     {
         // $egresado = egresado::where('matricula', $data['matricula'])->first();
 
-        return User::create([
+        return User::create( [
             'correo' => $data['correo'],
-            'password' => bcrypt($data['password']),
-            'egresado_matricula' => $data['egresado_matricula'],
+            'password' => bcrypt( $data[ 'password' ] ),
+            'egresado_matricula' => $data[ 'egresado_matricula' ],
         ]);
     }
 }

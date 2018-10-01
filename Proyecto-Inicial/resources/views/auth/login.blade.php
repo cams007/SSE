@@ -2,6 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
+        <title>Login de egresados</title>
         <link href="{{url('css/inicio.css')}}" rel="stylesheet">
     </head>
 
@@ -42,14 +43,6 @@
 
         </div>
 
-        <!-- <div class="password-login">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar
-                </label>
-            </div>
-        </div> -->
-
         <a href="{{ route('password.request') }}">
             <div id="olvido_pswd">
                 <p>¿Olvidó su contraseña?</p>
@@ -62,8 +55,10 @@
                 </button>
         </div>
 
-        @if (Auth::guest())
-            <li class="registro-boton"><a href="{{ route('register') }}">Regístrate</a></li>
+        @if( Auth::guest() )
+            <li class="registro-boton">
+                <a href="{{ route( 'register' ) }}">Regístrate</a>
+            </li>
         @endif
 
     </form>

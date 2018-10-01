@@ -27,14 +27,13 @@
 
         <div class="usuario-login">
             <div id="logo-user"></div>
-            <input type="email" name="correo" id="correo" value="{{ old('correo') }}" placeholder="Correo electrónico" required autofocus>
+            <input type="email" name="correo" id="correo" value = "{{ old('correo') }}" placeholder = "Correo electrónico" required autofocus>
 
             {{-- @if ($errors->has('correo'))
                 <span class="help-block">
                     <strong>{{ $errors->first('correo') }}</strong>
                 </span>
             @endif --}}
-
         </div>
 
         <div class="password-login">
@@ -46,16 +45,7 @@
                     <strong>{{ $errors->first('password') }}</strong>
                 </span>
             @endif
-
         </div>
-
-        <!-- <div class="password-login">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar
-                </label>
-            </div>
-        </div> -->
 
         <a href="{{ route('password.request') }}">
             <div id="olvido_pswd">
@@ -70,7 +60,7 @@
         </div>
 
         <div id="registrate">
-            <a href="{{url('registro')}}" class="link">Regístrate</a>
+            <a href="{{url( 'registro' ) }}" class = "link">Regístrate</a>
         </div>
     </form>
     </div>

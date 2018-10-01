@@ -6,6 +6,12 @@
 @section('style')
 	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/estudiosRealizados.js') }}"></script>
+	<script src="{{ url('js/ocultarelemento.js') }}"></script>
 @stop
 
 @php
@@ -29,12 +35,23 @@
 	);
 @endphp
 
-@section('script')
-	<script src="{{ url('js/estudiosRealizados.js') }}"></script>
-@stop
-
 @section('content')
 	<div class="contenedor"><!--inicio contenedor-->
+		<!-- Muestra un mensaje de alerta en caso de que el usuario no se puede registrar -->
+		@if(Session::has('message_success'))
+			<div class = "alert alert-success flashmensasse" id = "message_alert">
+				<em> {!! session('message_success') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
+		@if(Session::has('message_danger'))
+			<div class = "alert alert-danger flashmensasse" id = "message_alert">
+				<em> {!! session('message_danger') !!}</em>
+				<button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			</div>
+		@endif
+
 		<div class="div-1"><!--inicio div-1-->
 			<!-- <p>Mi Perfil</p> -->
 			<h1>Mi perfil</h1>
@@ -282,7 +299,4 @@
 				<!-- </div> -->
 			</div> <!-- div-modal -->
 		</div> <!-- div-modaloverlay -->
-
-
-	
 @stop
