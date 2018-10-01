@@ -65,22 +65,22 @@
 			</div><!--fin div-2-1-->
 			
 			<div class="column content">
-				<div class="form-group">	
+				<div class="form-group-estudios">	
 					<label for="Carrera">Carrera:</label>
 					<label>{{ $carrera[ $preparacion->carrera ] }}</label>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="finicio">Fecha de inicio de estudios:</label>
 					<label>{{ $preparacion->fecha_inicio }}</label>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="ffinal">Fecha de fin de estudios:</label>
 					<label>{{ $preparacion->fecha_fin }}</label>
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="ffinal">Promedio general:</label>
 					<label>{{ $preparacion->promedio }}</label>
 				</div>
@@ -88,18 +88,18 @@
 				<!-- Si el usuario ya selecciono su forma de titulacion -->
 				@if( $preparacion->forma_titulacion != NULL  )					
 					@if( $preparacion->forma_titulacion != "No titulado" )
-						<div class="form-group">
+						<div class="form-group-estudios">
 							<label for="ffinal">Forma de titulación:</label>
 							<label>{{ $preparacion->forma_titulacion }}</label>
 						</div>
 
-						<div class="form-group">
+						<div class="form-group-estudios">
 							<label for="ffinal">Fecha de titulación:</label>
 							<label>{{ $preparacion->fecha_titulo }}</label>
 						</div>
 					<!-- Si el estatus de titulacion del egresado es "No titulado" -->
 					@else
-						<div class="form-group">
+						<div class="form-group-estudios">
 							<label for="ffinal">Forma titulación:</label>
 							<label>{{ $preparacion->forma_titulacion }}</label>
 							<a href="#" class="btn-titulacion" onclick = "showElement()">Actualizar</a>
@@ -120,7 +120,7 @@
 								</div>
 							</div>
 						
-							<div class="form-group">
+							<div class="form-group-estudios">
 								<label for="ftitulacion">Fecha de titulación:</label>
 								{{-- <input type="text" name="ftitulacion" id="ftitulacion" class="form-control"> --}}
 								{!! Form::date( 'ftitulacion', \Carbon\Carbon::now() ) !!}
@@ -163,7 +163,7 @@
 					<br><br>					
 					<br>
 
-					<div class="form-group">
+					<div class="form-group-estudios">
 						<label for="maestria">Maestría(s)</label>					
 					
 					@if( $preparacion->maestrias->count() > 0)
@@ -192,7 +192,7 @@
 						<a href="#agregarMaestria" class="btn-empresa">Agregar maestría</a>
 					</div><!--contenedor-info-->
 
-					<div class="form-group">
+					<div class="form-group-estudios">
 						<label for="doctorado">Doctorado(s)</label>					
 					
 					@if( $preparacion->doctorados->count() > 0)

@@ -27,7 +27,7 @@
 				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label>Nombre de la empresa:</label>
 					@if( $empleo )
 						<label type="text" name="empresa" id="empresa" class="form-control">{{ $empleo->empresa }}</label>
@@ -36,7 +36,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label>Sector:</label>
 					@if( $empleo )
 						<label type="text" name="sector" id="sector" class="form-control">{{ $empleo->sector }}</label>
@@ -54,7 +54,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label>Tiempo sin empleo:</label>
 					@if($empleo)
 						<label type="text" name="sinempleo" id="sinempleo" class="form-control">{{ $empleo->tiempo_sin_empleo }}</label>
@@ -70,7 +70,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="fingreso"> Fecha de ingreso:</label>
 					@if( $empleo )
 						<label type="text" name="fingreso" id="fingreso" class="form-control">{{ $empleo->fecha_ingreso }}</label>
@@ -80,7 +80,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="puestoA">Puesto inicial:</label>
 					@if($empleo)
 						<label type="text" name="puestoA" id="puestoA" class="form-control">{{ $empleo->puesto_inicial }}</label>
@@ -89,7 +89,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="puestoI">Puesto final:</label>
 					@if($empleo)
 						<label type="text" name="puestoI" id="puestoI" class="form-control">{{ $empleo->puesto_final }}</label>
@@ -98,7 +98,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="contrato">Jornada de trabajo:</label>
 					@if($empleo)
 						<label type="text" name="contrato" id="contrato" class="form-control">{{ $empleo->jornada }}</label>
@@ -112,7 +112,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="inputTContrato">Tipo de contrato:</label>
 					@if($empleo)
 						<label type="text" name="tcontrato" id="tcontrato" class="form-control">{{ $empleo->contrato }}</label>
@@ -121,7 +121,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="">Teléfono de la empresa:</label>
 					@if( $empleo )
 						<label type="text" name="telefono" id="telefono" class="form-control">{{ $empleo->telefono_empresa }}</label>
@@ -130,7 +130,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label>Ingreso mensual:</label>
 					@if( $empleo )
 						<label type="text" name="ingresomensual" id="ingresomensual" class="form-control">{{ $empleo->ingreso_mensual }}</label>
@@ -145,7 +145,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="tContrato">Sus actividades laborales:</label>
 					@if( $empleo )
 						@if( $empleo->actividad_laboral == 0 )
@@ -165,7 +165,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="factores">Factores de contratación:</label>
 					@if( $empleo )
 						<label type="text" name="factor" id="factor" class="form-control">{{ $empleo->factores_contratacion }}</label>
@@ -174,7 +174,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="carencias">Carencias básicas:</label>
 					@if( $empleo )
 						<label type="text" name="carencia" id="carencia" class="form-control">{{ $empleo->carencias_basicas }}</label>
@@ -192,7 +192,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="areascarencias">Áreas de carencias:</label>
 					@if( $empleo )
 						<label type="text" name="areascarencia" id="areascarencia" class="form-control">{{ $empleo->carencias_areas }}</label>
@@ -201,7 +201,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label for="posgrado">Motivos de no estudiar posgrado:</label>
 					@if( $empleo )
 						<label type="text" name="posgrado" id = "posgrado" class="form-control">{{ $empleo->motivo_no_posgrado }}</label>
@@ -210,7 +210,7 @@
 					@endif
 				</div>
 
-				<div class="form-group">
+				<div class="form-group-estudios">
 					<label class="recomendacion" for="recomendacion">Recomendaciones:</label>
 					@if( $empleo )
 						<label type="text" name="recomendacion" id = "recomendacion" class="form-control">{{ $empleo->recomendaciones }}</label>

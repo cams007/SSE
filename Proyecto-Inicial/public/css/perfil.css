@@ -423,6 +423,15 @@ textarea:focus, textarea:hover {
   display: -ms-flexbox;
   display: flex;
 }
+.contenedor-info a {
+  margin-top: 16px;
+  margin-right: 24px;
+  margin-left: 32px;
+}
+.contenedor-info label {
+  margin-top: 16px;
+  color: #6B6B6B;
+}
 .entradas {
   margin-bottom: 24px;
 }
@@ -443,17 +452,17 @@ div.form-group select {
     width: 250px;
 }
 
-div.form-group {
+div.form-group-estudios {
   text-align: left;
   width: auto;
   margin-left: 20px;
   margin-top: 8px;
 }
-div.form-group label:first-child {
+div.form-group-estudios label:first-child {
   display: inline-block;
-  width: 300px;
+  width: 300px;  
 }
-div.form-group label:nth-child(2) {
+div.form-group-estudios label:nth-child(2) {
   color: #6B6B6B;
 }
 .seleccion-foto{
