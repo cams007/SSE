@@ -42,7 +42,8 @@ class EventosAdminController extends Controller
     }
 
     //Guarda datos de la vista de crear eventos en la BD
-    public function saveEvento(Request $request) {
+    public function saveEvento(Request $request)
+    {
         //Datos de la imagen que se va a guardar
         $archivo = $_FILES['imagen']['tmp_name'];
 
@@ -50,10 +51,13 @@ class EventosAdminController extends Controller
         $dir_destino = 'assets/images/eventos/';
         $imagen_subida = $dir_destino.mt_rand(0,10000). basename($_FILES['imagen']['name']);//mt_rand(0,500)
 
-        if(!is_writable($dir_destino)){//comprobamos permisos de escritura
+        if(!is_writable( $dir_destino ) )
+        {
+            //comprobamos permisos de escritura
             echo "no tiene permisos";
         }
-        else{
+        else
+        {
             if(is_uploaded_file($archivo)){ //verifica que el archivo se haya subido en carpeta temporal
                 if($_FILES['imagen']['size'] <= 300000){//verifica el tama;o de la imagen
                     if(($_FILES["imagen"]["type"]=="image/gif")

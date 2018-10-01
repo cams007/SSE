@@ -15,6 +15,7 @@ class EventosController extends Controller
     public function index(Request $request)
     {
         $eventos = Evento::titulo( $request->get( 'q' ) )
+            ->where( 'activo', '=', 1 )
             ->orderBy( 'fecha', 'DESC' )
             ->paginate(8);
 
