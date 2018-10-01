@@ -210,13 +210,8 @@ div select{
 }
 
 .btn-group {
-  /*margin: 4% 19% 0 16.5%;*/
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 50px;
-	/*margin-right: auto;
-	margin-top: 8px;
-	margin-bottom: 16px;*/
+	width: 160px;
+	margin: auto;
 }
 .form-control{
 	margin-left: auto;
