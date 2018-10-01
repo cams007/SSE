@@ -416,7 +416,6 @@ textarea:focus, textarea:hover {
   background-size: cover;
 }
 .contenedor-info{
-  background-color: pink;
   margin-top:  8px;
   margin-bottom: 24px;
   display: -webkit-flex;
