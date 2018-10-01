@@ -53,9 +53,7 @@
 		@endif
 
 		<div class="div-1"><!--inicio div-1-->
-			<!-- <p>Mi Perfil</p> -->
-			<h1>Mi perfil</h1>
-			<hr class="hr">
+			<p class="text-center">Mi perfil</p>
 		</div><!--fin div-1-->
 
 		<div class="clearfix">
@@ -68,43 +66,42 @@
 			
 			<div class="column content">
 				<div class="form-group">	
-					<label for="Carrera">Carrera</label>
-					<label style = "color: red;">{{ $carrera[ $preparacion->carrera ] }}</label>
+					<label for="Carrera">Carrera:</label>
+					<label>{{ $carrera[ $preparacion->carrera ] }}</label>
 				</div>
 
 				<div class="form-group">
-					<label for="finicio">Fecha de inicio de estudios</label>
-					<label style = "color: red;">{{ $preparacion->fecha_inicio }}</label>
+					<label for="finicio">Fecha de inicio de estudios:</label>
+					<label>{{ $preparacion->fecha_inicio }}</label>
 				</div>
 
 				<div class="form-group">
-					<label for="ffinal">Fecha de fin de estudios</label>
-					<label style = "color: red;">{{ $preparacion->fecha_fin }}</label>
+					<label for="ffinal">Fecha de fin de estudios:</label>
+					<label>{{ $preparacion->fecha_fin }}</label>
 				</div>
 
 				<div class="form-group">
-					<label for="ffinal">Promedio general</label>
-					<label style = "color: red;">{{ $preparacion->promedio }}</label>
+					<label for="ffinal">Promedio general:</label>
+					<label>{{ $preparacion->promedio }}</label>
 				</div>
 
 				<!-- Si el usuario ya selecciono su forma de titulacion -->
-				@if( $preparacion->forma_titulacion != NULL  )
-					<hr>
+				@if( $preparacion->forma_titulacion != NULL  )					
 					@if( $preparacion->forma_titulacion != "No titulado" )
 						<div class="form-group">
-							<label for="ffinal">Forma de titulación</label>
-							<label style = "color: red;">{{ $preparacion->forma_titulacion }}</label>
+							<label for="ffinal">Forma de titulación:</label>
+							<label>{{ $preparacion->forma_titulacion }}</label>
 						</div>
 
 						<div class="form-group">
-							<label for="ffinal">Fecha de titulación</label>
-							<label style = "color: red;">{{ $preparacion->fecha_titulo }}</label>
+							<label for="ffinal">Fecha de titulación:</label>
+							<label>{{ $preparacion->fecha_titulo }}</label>
 						</div>
 					<!-- Si el estatus de titulacion del egresado es "No titulado" -->
 					@else
 						<div class="form-group">
-							<label for="ffinal">Forma titulación</label>
-							<label style = "color: red;">{{ $preparacion->forma_titulacion }}</label>
+							<label for="ffinal">Forma titulación:</label>
+							<label>{{ $preparacion->forma_titulacion }}</label>
 							<a href="#" class="btn-titulacion" onclick = "showElement()">Actualizar</a>
 						</div>
 					@endif
@@ -115,7 +112,7 @@
 							{{-- TODO: Protección contra CSRF --}}
 							{{ csrf_field() }}
 							<div>
-								<label> Forma de titulación</label>
+								<label> Forma de titulación:</label>
 								<div class="radio">
 									<input type="radio" name="titulacion" id="tesis" value="Tesis"> <label for="tesis" class="label-radio">Tesis</label>
 									<input type="radio" name="titulacion" id="ceneval" value="CENEVAL"> <label for="ceneval" class="label-radio">CENEVAL</label>
@@ -124,7 +121,7 @@
 							</div>
 						
 							<div class="form-group">
-								<label for="ftitulacion">Fecha de titulación</label>
+								<label for="ftitulacion">Fecha de titulación:</label>
 								{{-- <input type="text" name="ftitulacion" id="ftitulacion" class="form-control"> --}}
 								{!! Form::date( 'ftitulacion', \Carbon\Carbon::now() ) !!}
 							</div>
@@ -134,15 +131,14 @@
 						</form>
 					</div>
 
-				@else
-					<hr>
+				@else				
 					<form method="POST" action="{{url('perfil/guardarFormacion')}}">
 						{{-- TODO: Protección contra CSRF --}}
 						{{ csrf_field() }}
 
 						@if( $preparacion->forma_titulacion == NULL )
 							<div>
-								<label> Forma de titulación</label>
+								<label> Forma de titulación:</label>
 								<div class="radio">
 									<input type="radio" name="titulacion" id="tesis" value="tesis"> <label for="tesis" class="label-radio">Tesis</label>
 									<input type="radio" name="titulacion" id="ceneval" value="ceneval"> <label for="ceneval" class="label-radio">CENEVAL</label>
@@ -151,7 +147,7 @@
 							</div>
 						
 							<div class="form-group">
-								<label for="ftitulacion">Fecha de titulación</label>
+								<label for="ftitulacion">Fecha de titulación:</label>
 								{{-- <input type="text" name="ftitulacion" id="ftitulacion" class="form-control"> --}}
 								{!! Form::date( 'ftitulacion', \Carbon\Carbon::now() ) !!}
 							</div>
@@ -164,13 +160,11 @@
 				@endif
 
 				<div>
-					<br><br>
-					<hr>
+					<br><br>					
 					<br>
 
 					<div class="form-group">
-						<label for="maestria">Maestría(s)</label>
-					</div>
+						<label for="maestria">Maestría(s)</label>					
 					
 					@if( $preparacion->maestrias->count() > 0)
 						<table>
@@ -190,21 +184,16 @@
 							@endforeach
 						</table>
 					@else
-						<label style="color:red">No tiene maestrías registradas</label>
+						<label>No tiene maestrías registradas</label>
 					@endif
+					</div>
 
-					<div class="contenedor-info"><!--inicio contenedor-info-->
+					<div class="btn"><!--inicio contenedor-info-->
 						<a href="#agregarMaestria" class="btn-empresa">Agregar maestría</a>
 					</div><!--contenedor-info-->
 
-					<br><br>
-					<hr>
-					<br>
-
-
 					<div class="form-group">
-						<label for="doctorado">Doctorado(s)</label>
-					</div>
+						<label for="doctorado">Doctorado(s)</label>					
 					
 					@if( $preparacion->doctorados->count() > 0)
 						<table>
@@ -224,10 +213,10 @@
 							@endforeach
 						</table>
 					@else
-						<label style="color:red">No tiene doctorados registrados</label>
+						<label>No tiene doctorados registrados</label>
 					@endif
-
-					<div class="contenedor-info"><!--inicio contenedor-info-->
+					</div>
+					<div class="btn"><!--inicio contenedor-info-->
 						<a href="#agregarDoctorado" class="btn-empresa">Agregar doctorado</a>
 					</div><!--contenedor-info-->
 				</div>
