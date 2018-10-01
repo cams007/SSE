@@ -21,10 +21,10 @@
 			<input name="id" type="hidden" value="{{$tip->id}}" />
 
 			<label for="" class="">Titulo: </label>
-	 		<input class="nombre" type="text" name="titulo" value="{{$tip->titulo}}"/>
+	 		<input class="nombre" type="text" name="titulo" value="{{$tip->titulo}}" placeholder="Título del tip" required/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion">{{$tip->descripcion}}</textarea>
+	 		<textarea rows="4" cols="50" name="descripcion" placeholder="Descripción" required>{{$tip->descripcion}}</textarea>
 
 			<div class="foto">
 		 		<label for="" class="">Foto: </label>

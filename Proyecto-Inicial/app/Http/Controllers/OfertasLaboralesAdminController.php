@@ -101,10 +101,14 @@ class OfertasLaboralesAdminController extends Controller
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', 'La oferta no se actualizó correctamente.');
+        
+            return redirect('admin/ofertas');//Redireccionamos al index de egresado url(/admin/egresado)
         }
         DB::commit();
 
-        Session::flash('update', 'Oferta actualizada correctamente');
+        Session::flash('message_success', 'Oferta actualizada correctamente.');
+
         return redirect('admin/ofertas');//Redireccionamos al index de egresado url(/admin/egresado)  
     }
 
@@ -125,12 +129,13 @@ class OfertasLaboralesAdminController extends Controller
         }catch(Exception $e){
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            Session::flash('message_danger', 'La oferta no se ha eliminado.');
+            //Redireccionamos al index de oferta url(/admin/oferta)
+            return redirect('admin/ofertas');
         }
         DB::commit();
-
         // Manda un mensaje de exito
-        Session::flash('update', 'La oferta se ha eliminado correctamente');
-        
+        Session::flash('message_success', 'La oferta se ha eliminado correctamente.');
         //Redireccionamos al index de oferta url(/admin/oferta)
         return redirect('admin/ofertas');
     }

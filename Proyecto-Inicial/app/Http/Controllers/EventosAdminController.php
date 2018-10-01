@@ -76,6 +76,10 @@ class EventosAdminController extends Controller
                         }catch(Exception $e){
                             DB::rollback();
                             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+
+                            Session::flash('message_danger', 'Hubo un error al momento de guardar el evento.');//Para mostrar mensaje partials/messages.blade.php
+        
+                            return redirect('admin/eventos');//Redireccionamos al index de eventos
                         }
                         DB::commit();
                         copy($archivo,$imagen_subida);//Copamos el archivo a la ruta indicada
@@ -93,7 +97,7 @@ class EventosAdminController extends Controller
                 echo "El archivo no se subio a carpeta temporal del servidor";
             }
         }
-        Session::flash('save', 'se ha creado correctamente');//Para mostrar mensaje partials/messages.blade.php
+        Session::flash('message_success', 'Evento creado correctamente.');//Para mostrar mensaje partials/messages.blade.php
         return redirect('admin/eventos');//Redireccionamos al index de eventos
     }
 
@@ -136,6 +140,9 @@ class EventosAdminController extends Controller
                     }catch(Exception $e){
                         DB::rollback();
                         echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                        Session::flash('message_danger', 'Hubo un error al momento de actualizar el evento.');
+        
+                        return redirect('admin/eventos');//Redireccionamos al index de eventos
                     }
                     DB::commit();
                     if($valido)//Si existe la imagen la reemplazamos, Si no solo subimos la img nueva
@@ -161,32 +168,43 @@ class EventosAdminController extends Controller
                 $evento->fecha = $request->fecha;
                 $evento->categoria = $request->categoria;
                 $evento->save();
-            }catch(Exception $e){
+            }catch(Exception $e)
+            {
                 DB::rollback();
                 echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+                Session::flash('message_danger', 'Hubo un error al momento de actualizar el evento.');
+        
+                return redirect('admin/eventos');//Redireccionamos al index de eventos
             }
             DB::commit();
         }
-        Session::flash('update', 'se ha actualizado correctamente');
+        Session::flash('message_success', 'Evento actualizado correctamente.');
         
         return redirect('admin/eventos');//Redireccionamos al index de eventos
     }
 
-    public function eliminarEvento(Request $request){
-        
+    public function eliminarEvento(Request $request)
+    {
         //Obtenemos de la BD los datos del evento a eliminar.
         $evento = Evento::findOrFail($request->id);
         DB::beginTransaction();
         try{
             $evento->activo = 0;
             $evento->save();  //Se cambia de estado el evento.
-        }catch(Exception $e){
+        }catch(Exception $e)
+        {
+            DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            
+            Session::flash('message_danger', 'Hubo un error al momento de eliminar el evento.');
+            
+            return redirect('admin/eventos');//Redireccionamos al index de eventos
         }
         DB::commit();
         unlink($evento->imagen_url);//Eliminamos la imagen
 
-        Session::flash('save', 'se ha actualizado correctamente');
+        Session::flash('message_success', 'El evento se ha eliminado correctamente.');
+
         return redirect('admin/eventos');//Redireccionamos al index de eventos
     }
 

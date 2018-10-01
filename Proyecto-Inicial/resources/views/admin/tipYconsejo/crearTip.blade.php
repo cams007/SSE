@@ -19,11 +19,11 @@
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
-			<label for="" class="">Titulo: </label>
-	 		<input class="nombre" type="text" name="titulo" required/>
+			<label for="" class="">Título: </label>
+	 		<input class="nombre" type="text" name="titulo" placeholder="Título del tip" required/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion" required></textarea>
+	 		<textarea rows="4" cols="50" name="descripcion" placeholder="Descripción del tip" required></textarea>
 
 			<div class="foto">
 		 		<label for="" class="">Foto: </label>

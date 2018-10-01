@@ -42,13 +42,13 @@
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 			<label for="" class="">Nombre del empleo: </label>
-	 		<input type="text" name="titulo_empleo" placeholder="" required/>
+	 		<input type="text" name="titulo_empleo" placeholder="Nombre del empleo" required/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<input type="text" name="descripcion" placeholder="" required/>
+	 		<input type="text" name="descripcion" placeholder="Descripción" required/>
 
 	 		<label for="" class="">Ubicación: </label>
-	 		<input type="text" name="ubicacion" placeholder="" required/>
+	 		<input type="text" name="ubicacion" placeholder="Ubicación" required/>
 
 			<!--Datos de preparacion-->
 	 		<label for="" class="">Carrera: </label>
@@ -59,20 +59,20 @@
 	 		</select>
 
 	 		<label for="" class="">Experiencia: </label>
-	 		<input type="text" name="experiencia" placeholder="" required/>
+	 		<input type="text" name="experiencia" placeholder="Experiencia" required/>
 
 	 		<label for="" class="">Salario: </label>
-	 		<input type="text" name="salario" placeholder="" required/>
+	 		<input type="text" name="salario" placeholder="Salario" required/>
 
 	 		<label for="" class="">Status: </label>
-	 		<select name="status">
+	 		<select name="status" required>
 	 			<@foreach($status as $idn=>$nombre)
 	 					<option value={{$idn}}>{{$nombre}}</option>
 	 			@endforeach
 	 		</select>
 
 	 		<label for="" class="">Empresa: </label>
-	 		<select name="empresa_id">
+	 		<select name="empresa_id" required>
 	 			<@foreach( $empresas as $empresa )
 				 		{{ $id = $empresa->id }}
 	 					<option value={{$id}}>{{$empresa->nombre}}</option>

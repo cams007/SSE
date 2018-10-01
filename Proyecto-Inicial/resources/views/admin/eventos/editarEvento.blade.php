@@ -3,9 +3,11 @@
 @section('title', 'Editar-evento')
 
 @section('style')
-
-<!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/editarEvento.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop
 
 @section('content')
@@ -24,7 +26,7 @@
 
 			<div class="seccion1">
 			<label for="" class="">Titulo del evento: </label>
-	 		<input class="nombre" type="text" name="nombre" value="{{ $evento->nombre }}" />
+	 		<input class="nombre" type="text" name="nombre" value="{{ $evento->nombre }}" required/>
 
 	 		<label for="" class="">Descripción: </label>
 	 		<textarea rows="4" cols="50" name="descripcion">{{$evento->descripcion}}</textarea>
@@ -66,9 +68,4 @@
 		</form>
 
 	</div><!--contenedor-->
-
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop

@@ -9,14 +9,11 @@
 @stop
 
 @section( 'script' )
-	<script src="{{ url('js/limitcheckbox.js') }}"></script>
-	<script src="{{ url('js/estudiosRealizados.js') }}"></script>
 	<script src="{{ url('js/ocultarelemento.js') }}"></script>
 @stop
 
 @section('content')
 <div class="contenedor"><!--inicio contenedor-->
-
 	@if(Session::has('message_success'))
 		<div class = "alert alert-success flashmensasse" id = "message_alert">
 			<em> {!! session('message_success') !!}</em>
