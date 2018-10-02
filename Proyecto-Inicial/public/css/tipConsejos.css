@@ -33,16 +33,16 @@
 .buscador_tips{
 	/*background: green;*/
 	height: 60px;
-	padding-left: 32px;
+	/*padding-left: 32px;*/
 	/*padding-top: 16px;*/
 	padding-bottom: 2px;
 }
 .se-encontraron{
 	padding-bottom: 8px;
- /*background: rgb(112, 217, 230);*/
- color: #838080;
- font-size: 13px;
- font-family: 'Roboto', sans-serif;
+ 	/*background: rgb(112, 217, 230);*/
+ 	color: #838080;
+ 	font-size: 13px;
+ 	font-family: 'Roboto', sans-serif;
 }
 .div-2{
   /*background: rgb(47, 30, 209);*/

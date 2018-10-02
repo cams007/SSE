@@ -153,8 +153,7 @@
 
 <div id="detalleOferta" class="modaloverlay">
   	<div class="modal">
-	    <a href="#close" class="close">&times;</a>
-	    <div>
+	    <a href="#close" class="close">&times;</a>	  
 	    	<div class="parte-1"><!--parte-1-->
 			<p class="txt">Detalles de la oferta</p>
 		</div><!--parte-1-->

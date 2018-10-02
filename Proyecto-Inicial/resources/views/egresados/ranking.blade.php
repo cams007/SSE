@@ -16,16 +16,13 @@
 	<div class="div-1">
 		<p class="text-center">Ranking de empresas</p>
 	</div><!--div-1-->
-
-		<div class="div-2-2"><!--div-2-3-->
-			<div class="search">
-				{!! Form::open(['url' => 'ranking', 'method' => 'GET', 'role' => 'search']) !!}
-					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscar']) !!}
-				{!! Form::close() !!}
-			</div>
-		</div><!--div-2-3-->
-	</div><!--div-2-->
-		<br><br><br>
+	
+		<div class="search">
+			{!! Form::open(['url' => 'ranking', 'method' => 'GET', 'role' => 'search']) !!}
+				{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscar']) !!}
+			{!! Form::close() !!}
+		</div>		
+		
 	<div class="se-encontraron">
 		<p>Se encontraron {{ $empresas->total() }} resultados</p>
 	</div>
@@ -91,9 +88,8 @@
 
 	<div id="datosEmpresa" class="modaloverlay">
 	  	<div class="modal">
-		    <a href="#close" class="close">&times;</a>
-		    <div>
-		    	<p class="txt">Datos de empresa</p>
+		    <a href="#close" class="close">&times;</a>		    
+				<p class="txt">Datos de la empresa</p>			
 		    	<form action="#">
 			    	<div class="item-1"><!--item-1-->
 						<div class="icono"><!--icono-->
@@ -141,7 +137,6 @@
 						<a href="#close"><button type="button" class="flat-secundario">Cerrar</button></a>
 					</div>
 		    	</form>
-		    </div>
 		</div>
 	</div>
 @stop

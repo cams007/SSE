@@ -15,9 +15,6 @@
   left: 0;
   opacity: 0;
   pointer-events: none;
-  /*
-  position: fixed;
-  */
   position: absolute;
   right: 0;
   top: 0;
@@ -36,19 +33,17 @@
 
 .modaloverlay .modal {
   background-color: white;
-  /*height: 75%;*/
   width: 50%;
   position: relative;
   margin: 0 auto;
   padding: 3em;
-  /*overflow-y: overlay;*/
   -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
 }
 
 @media (min-width: 60em) {
   .modaloverlay .modal {
-    /*height: 50%;*/
+    /*height: 70%;*/
     margin: 5% auto;
 
     max-width: 33em;
@@ -120,7 +115,7 @@
 }
 .texto-descripcion{
   text-align: left;
-  padding-left: 24px;
+  /*padding-left: 24px;*/
   padding-top: 8px;
   font-family: 'Roboto', sans-serif;
 	font-size: 14px;
