@@ -190,24 +190,8 @@ div.buscar-eventos input:hover{
 	flex-direction: column;
 }
 
-.texto-descripcion{
-	/*background: #C12E9D;*/
-	/*text-align: left;*/
-	/*padding: 0px;*/
-	/*text-align: left;*/
-	/*background: #C12E9D;
-	font-family: 'Roboto', sans-serif;
-	font-size: 8px;
-	font-weight: 300;
-	color: #BE3228;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	text-align: left;
-	padding-left: 8px;*/
-}
 .evento-nombre{
-	position: relative;
-	left: -14px;
+	margin-left: 10px;
 	color: #be3228;
 	text-decoration:none;
 	font-size: 18px;
