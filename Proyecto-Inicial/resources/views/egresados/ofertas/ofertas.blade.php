@@ -6,6 +6,7 @@
 	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
+	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
 @stop
 
