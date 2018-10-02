@@ -62,7 +62,7 @@ class Empresa extends Model
     public function scopeTodo($query, $ubicacion){
         if (trim($ubicacion) != ""){
             $query
-                ->orWhere(\DB::raw("CONCAT(nombre, ' ', ciudad, ' ', estado, ' ', colonia, ' ', descripcion)"), 'like', '%'.$ubicacion.'%');
+                ->orWhere(\DB::raw("CONCAT(nombre, ' ', ciudad, ' ', estado, ' ', colonia, ' ', descripcion, ' ', telefono)"), 'like', '%'.$ubicacion.'%');
         }
     }
 }

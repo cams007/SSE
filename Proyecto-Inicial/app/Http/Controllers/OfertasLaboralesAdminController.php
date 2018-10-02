@@ -16,18 +16,9 @@ class OfertasLaboralesAdminController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function index(Request $request)
+    public function index( Request $request )
     {
-        /*
-        * Obtiene las columnas de oferta y empresa.
-        * Utiliza un join para obtener el nombre de la empresa
-        */
         $ofertas = Oferta::todo( $request->get( 'q' ) )
-            ->join( 'Empresa', 'Oferta.empresa_id', '=', 'Empresa.id' )
-            ->where( 'status', '=', 'Vacante' )
-            ->orwhere( 'status', '=', 'Ocupada' )
-            ->select( 'Oferta.id', 'Oferta.titulo_empleo', 'Oferta.status','Empresa.nombre','Oferta.descripcion',
-                'Oferta.ubicacion', 'Oferta.salario', 'Oferta.experiencia', 'Oferta.carrera' )
             ->paginate( 10 );
         
         return view('admin.ofertas.index', compact('ofertas') );

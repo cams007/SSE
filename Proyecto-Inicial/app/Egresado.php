@@ -21,12 +21,12 @@ class Egresado extends Model
                             4 => 'ingenieria en alimentos', 5 => 'alimentos',
                             6 => 'ingenieria en electronica', 7 => 'electronica',
                             8 => 'ingenieria en mecatronica', 9 => 'mecatronica',
-                            10 => 'ingenieria en industrial', 11 => 'industrial',
+                            10 => 'ingenieria industrial', 11 => 'industrial',
                             12 => 'ingenieria en fisica aplicada', 13 => 'fisica',
                             14 => 'licenciatura en ciencias empresariales', 15 => 'empresariales',
                             16 => 'licenciatura en matematicas aplicadas', 17 => 'matematicas',
                             18 => 'licenciatura en estudios mexicanos', 19 => 'estudios mexicanos',
-                            20 =>'ingenieria en mecanica automotriz', 21 => 'mecanica automotriz', 22 => 'automotriz' );
+                            20 => 'ingenieria en mecanica automotriz', 21 => 'mecanica automotriz', 22 => 'automotriz' );
 
 	/**
 	* Get the preparacion that owns the egresado.
@@ -90,9 +90,13 @@ class Egresado extends Model
                     ->join( 'Preparacion', 'Preparacion.id', '=', 'Egresado.preparacion_id' )
                     ->where( 'carrera', '=', $index );
             }
+            else if( preg_match( '/[0-9]{4}-[0-9]{4}/', $nombre, $math ) )
+                $query
+                    ->join( 'Preparacion', 'Preparacion.id', '=', 'Egresado.preparacion_id' )
+                    ->where( 'generacion', '=', $nombre );
             else
                 $query
-                    ->where(\DB::raw("CONCAT(ap_paterno, ' ', ap_materno, ' ', nombres, matricula, ' ', curp )" ), 'like', '%'.$nombre.'%');
+                    ->where(\DB::raw("CONCAT(ap_paterno, ' ', ap_materno, ' ', nombres, ' ', matricula, ' ', curp )" ), 'like', '%'.$nombre.'%');
         }
     }
 

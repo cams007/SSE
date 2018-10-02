@@ -98,7 +98,6 @@
 
 			<tbody>
 				@foreach( $ofertas as $oferta )
-					{{ $oferta->postulacion }}
 					<tr data-oferta="{{ $oferta }}" data-empresa="{{ $oferta->empresa }}">
 						<td>
 							<a href="#verOferta" class="btn-show">
@@ -106,7 +105,7 @@
 							</a>
 						</td>
 						<td>
-							{{ $oferta->nombre }}
+							{{ $oferta->empresa->nombre }}
 						</td>
 						<td>
 							{{ $oferta->descripcion }}
@@ -114,7 +113,6 @@
 						<td>
 							{{ $oferta->ubicacion }}
 						</td>
-						<!-- <td>$ {{ $oferta->salario }} </td> -->
 						<td>
 							{{ $carrera[ $oferta->carrera ] }}
 						</td>
