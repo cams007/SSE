@@ -12,36 +12,30 @@
 }
 
 .contenedor{
-	  width: 1024px;
-		min-height: 536px;
-	  /*height: 536px;*/
-	  margin: 0 auto;
-	  display: block;
-	  text-align: center;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: flex;
-		flex-direction: column;
+	width: 1024px;
+	min-height: 536px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+	text-align: center;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;	
 }
-.div-1{
-	/*background: yellow;*/
-	border-bottom: solid 1px #adacac;
+.div-1{	
+	border-bottom: 1px solid #adacac;
 	margin: 8px 32px 0;
 	height:32px;
 }
-.buscador_ofertas{
-	/*background: green;*/
-	height: 60px;
-	padding-left: 32px;
-	/*padding-top: 16px;*/
-	padding-bottom: 2px;
+.buscador_ofertas{	
+	margin-top: 20px;
 }
 .se-encontraron{
 	padding-bottom: 8px;
- /*background: rgb(112, 217, 230);*/
- color: #838080;
- font-size: 13px;
- font-family: 'Roboto', sans-serif;
+ 	color: #838080;
+ 	font-size: 13px;
+ 	font-family: 'Roboto', sans-serif;
 }
 .div-4{
 	/*background: #1BAF63;*/
@@ -120,8 +114,8 @@ div.buscador_ofertas input{
 	width: 40%;
 	height: 32px;
 	padding: 0 0 0 32px;
-	margin-top: 20px;
-	margin-bottom: 16px;
+	/*margin-top: 20px;*/
+	/*margin-bottom: 16px;*/
 	border: 1 !important;    /*    Removes border*/
   	border: #ACABAB 1px solid;
 	background-image: url("../assets/images/search_gray.png");
