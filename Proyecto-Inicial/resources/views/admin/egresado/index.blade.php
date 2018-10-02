@@ -74,30 +74,24 @@
 				<td>Matricula</td>
 				<td>Nombre</td>
 				<td>Carrera</td>
+				<td>Generación</td>
 				<td>Acción</td>
 			</thead>
 			<tbody>
 			@foreach($egresados as $egresado)
-			<tr data-egresado="{{$egresado}}" data-preparacion="{{$egresado->preparacion}}">
-				<td>{{$i}}</td>
-				<td>{{$egresado->matricula}}</td>
-				<td>
-					<a href="#verEgresado" class="btn-show">{{$egresado->ap_paterno}} {{$egresado->ap_materno}} {{$egresado->nombres}}</a>
-				</td>
-				<!--
-					<td>@foreach($carrera as $idn=>$nombre)
-						@if($egresado->preparacion->carrera == $idn)
-							{{$nombre}} {{ $egresado->preparacion->carrera }}
-						@endif
-					@endforeach
-				</td>
-				-->
-				<td>{{ $carrera[ $egresado->preparacion->carrera ] }}</td>
-				<td>
-					<a href="{{url('/admin/egresado/editarEgresado', $egresado->matricula)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
-          				<a href="#eliminarEgresado" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
-				</td>
-			</tr>
+				<tr data-egresado="{{$egresado}}" data-preparacion="{{$egresado->preparacion}}">
+					<td>{{$i}}</td>
+					<td>{{$egresado->matricula}}</td>
+					<td>
+						<a href="#verEgresado" class="btn-show">{{$egresado->ap_paterno}} {{$egresado->ap_materno}} {{$egresado->nombres}}</a>
+					</td>
+					<td>{{ $carrera[ $egresado->preparacion->carrera ] }}</td>
+					<td>{{ $egresado->preparacion->generacion }}</td>
+					<td>
+						<a href="{{url('/admin/egresado/editarEgresado', $egresado->matricula)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
+						<a href="#eliminarEgresado" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
+					</td>
+				</tr>
 			@php $i++; @endphp
 			@endforeach
 			</tbody>
