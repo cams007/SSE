@@ -6,6 +6,7 @@
 	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
+	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 	<link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
 @stop
 
@@ -154,7 +155,9 @@
   	<div class="modal">
 	    <a href="#close" class="close">&times;</a>
 	    <div>
-	    	<h1>Detalles de la oferta</h1>
+	    	<div class="parte-1"><!--parte-1-->
+			<p class="txt">Detalles de la oferta</p>
+		</div><!--parte-1-->
 	    	<form method="post" action="{{ url('ofertas/postularme') }}" class="detalles_ofertas">
 		    	<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
@@ -163,27 +166,43 @@
 			<div class="descripcion" id="e_id"></div>
 
 			<div>
-				<img src="{{ url('assets/images/address.png') }}" alt="" class="iconos">
-				<h2 id="oferta_puesto"></h2>
-				<h4 id="oferta_empresa"></h4>
+				<div>
+					<img src="{{ url('assets/images/address.png') }}">
+				</div>
+				<div>
+					<h3 id="oferta_puesto"></h3>
+					<h4 id="oferta_empresa"></h4>
+					<span id="oferta_descripcion"></span>
+				</div>
+			</div>
+
+			<div>				
+				<div>
+					<span> {{"Solicita: "}} </span>
+				</div>
+				<div>
+					<span id="oferta_vacante"></span>
+					<span id="oferta_carrera"></span><br>
+					<span id="oferta_experiencia"></span>
+				</div>
 			</div>
 
 			<div>
-				<span id="oferta_descripcion"></span><br>
-				<span> {{"Solicita: "}} </span>
-				<span id="oferta_vacante"></span>
-				<span id="oferta_carrera"></span>
-				<span id="oferta_experiencia"></span>
+				<div>
+					<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos"></p>
+				</div>
+				<div>
+					<span id="oferta_salario"></span>
+				</div>
 			</div>
 
 			<div>
-				<img src="{{ url('assets/images/email.png') }}" alt="" class="iconos">
-				<span id="oferta_salario"></span>
-			</div>
-
-			<div>
-				<img src="{{ url('assets/images/empresa_puesto.png') }}" alt="" class="iconos">
-				<span id="oferta_ubicacion">  </span>
+				<div>
+					<img src="{{ url('assets/images/empresa_puesto.png') }}" style="width: 30px; height: 30px"alt="" class="iconos"></p>
+				</div>
+				<div>
+					<span id="oferta_ubicacion">  </span>
+				</div>
 			</div>
 
 			<div class="btn-group">
