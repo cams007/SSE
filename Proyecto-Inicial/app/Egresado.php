@@ -66,7 +66,8 @@ class Egresado extends Model
     }
 
     //Realiza la busqueda todo, por los campos asignados
-    public function scopeTodo($query, $nombre){
+    public function scopeTodo( $query, $nombre )
+    {
         if (trim($nombre) != ""){
             $query
                 ->where(\DB::raw("CONCAT(ap_paterno, ' ', ap_materno, ' ', nombres, matricula, ' ', curp)"), 'like', '%'.$nombre.'%');
