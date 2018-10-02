@@ -15,13 +15,13 @@ class EgresadosAdminController extends Controller
         $this->middleware('auth:admin');
     }
     
-	public function index(Request $request) {
-
+	public function index( Request $request )
+    {
         $egresados = Egresado::todo($request->get('q'))
-            ->where('habilitado','=',1)
-            ->orderBy('ap_paterno', 'DESC')
-            ->paginate(10);
-        
+            ->where( 'habilitado','=', 1 )
+            ->orderBy( 'ap_paterno', 'DESC' )
+            ->paginate( 10 );
+
         return view('admin.egresado.index', compact('egresados'));
     }
 
