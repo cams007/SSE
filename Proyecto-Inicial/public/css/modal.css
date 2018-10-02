@@ -69,7 +69,7 @@
   padding: 8px 12px;
   position: absolute;
   right: 0;
-  text-align: center;
+  /*text-align: center;*/
   text-decoration: none;
   top: 0;
   z-index: 1;
@@ -116,7 +116,6 @@
   width: 70px;
 }
 .descripcion{
-  /*background: rgb(124, 214, 6);*/
   width: 300px;
 }
 .texto-descripcion{
@@ -127,6 +126,27 @@
 	font-size: 14px;
 	color: #6B6B6B;
 }
-.detalles_ofertas div{
-	color: #6B6B6B;
+.detalles_ofertas {
+  margin: auto;
+}
+.detalles_ofertas > div {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+.detalles_ofertas div div:first-child {
+  width: 20%;
+  height: auto;
+  text-align: left;
+  margin-top: 20px;
+}
+.detalles_ofertas div div:nth-child(2) {
+  margin-top: 20px;
+  width: 80%;
+  text-align: left;
+  color: #6B6B6B;
+}
+.detalles_ofertas .btn-group {
+  margin-top: 20px;
+  padding-left: 40px;
 }
