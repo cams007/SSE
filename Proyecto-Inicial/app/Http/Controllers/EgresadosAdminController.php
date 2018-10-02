@@ -21,7 +21,7 @@ class EgresadosAdminController extends Controller
             ->where( 'habilitado','=', 1 )
             ->orderBy( 'ap_paterno', 'DESC' )
             ->paginate( 10 );
-        
+
         return view('admin.egresado.index', compact('egresados'));
     }
 
