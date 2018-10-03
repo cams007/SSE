@@ -59,7 +59,7 @@
 					@if($empleo)
 						<label type="text" name="sinempleo" id="sinempleo" class="form-control">{{ $empleo->tiempo_sin_empleo }}</label>
 					@else
-						<select name="sinempleo" id="sinempleo" class="select">
+						<select name="sinempleo" id="sinempleo" class="select" required>
 							<option value="">-Selecionar-</option>
 							<option value="< a 6 meses">< a 6 meses</option>
 							<option value="De 6 a 9 meses">De 6 a 9 meses</option>
@@ -75,7 +75,7 @@
 					@if( $empleo )
 						<label type="text" name="fingreso" id="fingreso" class="form-control">{{ $empleo->fecha_ingreso }}</label>
 					@else
-						<input type="date" name="fingreso" id="fingreso" class="form-control">
+						<input type="date" name="fingreso" id="fingreso" class="form-control" required>
 						{{-- {{ Form::date('fingreso', $empleo->fecha_ingreso ) }} --}}
 					@endif
 				</div>
@@ -103,7 +103,7 @@
 					@if($empleo)
 						<label type="text" name="contrato" id="contrato" class="form-control">{{ $empleo->jornada }}</label>
 					@else
-						<select name="contrato" id="inputTContrato" class="select">
+						<select name="contrato" id="inputTContrato" class="select" required>
 							<option value="" checked>-Selecionar-</option>
 							<option value="Completa">Completa</option>
 							<option value="Medio">Media</option>
@@ -126,7 +126,7 @@
 					@if( $empleo )
 						<label type="text" name="telefono" id="telefono" class="form-control">{{ $empleo->telefono_empresa }}</label>
 					@else
-						<input type="tel" name="telefono" id="telefono" class="form-control"  placeholder="Agregar teléfono" pattern="[0-9]{9, 15}">
+						<input type="tel" name="telefono" id="telefono" class="form-control"  placeholder="Agregar teléfono" pattern="[0-9]{9, 15}" required>
 					@endif
 				</div>
 
@@ -135,7 +135,7 @@
 					@if( $empleo )
 						<label type="text" name="ingresomensual" id="ingresomensual" class="form-control">{{ $empleo->ingreso_mensual }}</label>
 					@else
-						<select name = "ingresomensual" id = "ingresomensual" class="select">
+						<select name = "ingresomensual" id = "ingresomensual" class="select" required>
 							<option value="">-Selecionar-</option>
 							<option value = 'Menor a 5,000.00'>Menor a 5000</option>
 							<option value = 'De 5,001.00 a 10,000.00'>De 5001 a 10000</option>
@@ -156,7 +156,7 @@
 							<label type="text" name = "actividades" id = "actividades" class="form-control">No requieren de una profesión</label>
 						@endif
 					@else
-						<select name="actividades" id="actividades" class="select">
+						<select name="actividades" id="actividades" class="select" required>
 							<option value="">-Selecionar-</option>
 							<option value="0">Requieren de la formación de mi carrera</option>
 							<option value="1">No requieren de la formación de mi carrera</option>
@@ -179,7 +179,7 @@
 					@if( $empleo )
 						<label type="text" name="carencia" id="carencia" class="form-control">{{ $empleo->carencias_basicas }}</label>
 					@else
-						<select name="carencia" id="carencia" class="select">
+						<select name="carencia" id="carencia" class="select" required>
 							<option value="">-Selecionar-</option>
 							<option value="No tener competencias laborales">No tener competencias laborales</option>
 							<option value="No estar titulado">No estar titulado</option>

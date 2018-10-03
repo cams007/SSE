@@ -22,9 +22,9 @@
 
 		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarEmpresa.submit')}}">
 	 		{{ csrf_field() }}
-			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+			<input name="_token" type="hidden" value="{!! csrf_token() !!}"/>
 
-			<input name="id" type="hidden" value="{{$empresa->id}}" />
+			<input name="id" type="hidden" value="{{$empresa->id}}"/>
 			<div class="seccion1">
 	 		<label for="" class="">Nombre de la empresa: </label>
 	 		<input class="nombre" type="text" name="nombre_emp" value="{{$empresa->nombre}}" required />
@@ -73,7 +73,7 @@
 
 				<div>
 					<label for="" class="">Código postal:</label>
-					<input type="text" name="codigo_p" value="{{$empresa->codigo_postal}}"/>
+					<input type="text" name="codigo_p" value="{{$empresa->codigo_postal}}" required/>
 				</div>
 			</div>
 
@@ -135,7 +135,7 @@
 				</div>
 			</div>
 			<!--Datos del contacto de la empresa-->
-			<input name="idcontacto" type="hidden" value="{{$contacto->id}}" />
+			<input name="idcontacto" type="hidden" value="{{$contacto->id}}" required/>
 
 			<div class="columnitas">
 				<div>
@@ -162,7 +162,7 @@
 			</div>
 
 			<div class="boton">
-	 			<button type="submit" class="flat">Editar</button>
+	 			<button type="submit" class="flat">Actualizar</button>
 			</div>
 		</div>
 		</form>

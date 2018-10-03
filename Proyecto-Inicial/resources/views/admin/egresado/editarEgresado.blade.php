@@ -45,7 +45,7 @@
 				<div>
 		 			<label for="" class="">Curp: </label>
 	 		<input class="nombre" type="text" name="nombres" value="{{$egresado->nombres}}" placeholder="" required/>
-		 			<input type="text" name="curp" value="{{$egresado->curp}}" placeholder="" />
+		 			<input type="text" name="curp" value="{{$egresado->curp}}" placeholder="" required/>
 				</div>
 
 				<div>
@@ -65,7 +65,7 @@
 				<div>
 			 		<label for="" class="">Fecha de nacimiento: </label>
 	 		<input class="nombre" type="text" name="nombres" value="{{$egresado->nombres}}" placeholder="" required/>
-			 		<input type="date" name="fecha_nacimiento" value="{{$egresado->fecha_nacimiento}}" placeholder="" />
+			 		<input type="date" name="fecha_nacimiento" value="{{$egresado->fecha_nacimiento}}" placeholder="" required/>
 				</div>
 
 				<div>
@@ -113,7 +113,7 @@
 	 		<input class="promedio" type="text" name="promedio" value="{{$preparacion->promedio}}" placeholder="" required/>
 
 			<div class="boton">
-	 			<button type="submit" class="flat">Enviar</button>
+	 			<button type="submit" class="flat">Actualizar</button>
 			</div>
 		</div>
 		</form>

@@ -80,7 +80,7 @@
 			<div class="columnitas">
 				<div>
 					<label for="" class="">Giro: </label>
-					<input type="text" name="giro" placeholder="Giro de la empresa"/>
+					<input type="text" name="giro" placeholder="Giro de la empresa" required/>
 				</div>
 
 				<div>
@@ -98,7 +98,7 @@
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">RFC: </label>
-			 		<input type="text" name="rfc_emp" placeholder="RFC"/>
+			 		<input type="text" name="rfc_emp" placeholder="RFC" required/>
 				</div>
 
 				<div>
@@ -124,7 +124,7 @@
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Motivos de no contratacion: </label>
-			 		<textarea rows="4" cols="50" name="noContratacion" placeholder="Describa los motivos de no contatación"></textarea>
+			 		<textarea rows="4" cols="50" name="noContratacion" placeholder="Describa los motivos de no contatación" required></textarea>
 				</div>
 
 				<div>
@@ -158,7 +158,7 @@
 			</div>
 
 			<div class="boton">
-	 			<button type="submit" class="flat">Crear</button>
+	 			<button type="submit" class="flat">Guardar</button>
 			</div>
 		</div>
 		</form>

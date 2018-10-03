@@ -101,7 +101,7 @@
 
 			<div class="boton">
 		 		<button type="submit" class="flat">
-					Editar
+					Actualizar
 				</button>
 			</div>
 		</form>

@@ -196,7 +196,7 @@
 						<input type = "hidden" name = "modificacion" value = "direccion"/>
 					</div>
 					<div class="btn-group">
-						<a href="#close"><button type="button" class="flat-secundario aling-left">Cancelar</button></a>
+						<a href="#"><button type="button" class="flat-secundario aling-left">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</div>

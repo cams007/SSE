@@ -77,7 +77,7 @@
 
 	 		<label for="" class="">Lugar de origen: </label>
 	 		<input type="text" name="lugar_origen" placeholder="Lugar de origen" required/>
-	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
+	 		<input type="hidden" name="habilitado" value="1" placeholder="" required/>
 		</div>
 
 		<div class="seccion2">
@@ -103,7 +103,7 @@
 	 		<input class="promedio" type="text" name="promedio" placeholder="Promedio" required/>
 
 			<div class="boton">
-	 			<button type="submit" class="flat">Enviar</button>
+	 			<button type="submit" class="flat">Guardar</button>
 			</div>
 		</form>
 	</div>

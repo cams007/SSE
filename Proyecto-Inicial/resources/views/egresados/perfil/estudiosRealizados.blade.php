@@ -247,7 +247,7 @@
 					</div>
 					
 					<div class="btn-group">
-						<button type = "button" class="flat-secundario aling-left">Cancelar</button>
+						<a href="#"><button type="button" class="flat-secundario">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</form>
@@ -281,7 +281,7 @@
 					</div>
 					
 					<div class="btn-group">
-						<button type = "button" class="flat-secundario aling-left">Cancelar</button>
+						<a href="#"><button type="button" class="flat-secundario">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</form>

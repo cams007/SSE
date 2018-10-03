@@ -33,7 +33,7 @@
 			</div>
 
 			<div class="boton">
-	 			<button type="submit" class="flat">Enviar</button>
+	 			<button type="submit" class="flat">Actualizar</button>
 			</div>
 		</form>
 	</div><!--contenedor-->
