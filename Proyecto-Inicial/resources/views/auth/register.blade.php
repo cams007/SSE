@@ -18,11 +18,7 @@
                 Hola! Estás a punto de iniciar tu registro en el Sistema de Seguimiento de Egresados de la UTM,
                 de antemano te agradecemos por colaborar cordialmente con tu universidad.
         </div>
-        <!--div class="column">
-            <a href="#privacidad" class="aviso-privacidad">Leer aviso de privacidad.</a>
-        </div-->
     </div>
-
 
     <div class="div-2-2">
         <form class="form-horizontal" role="form" method="POST" action="{{ route('crearUsuario.submit') }}">
@@ -38,12 +34,6 @@
                         </span>
                     @endif
                 </div>
-<!--
-                <div class="label">CURP:*</div>
-                <div class="div-input{{ $errors->has('curp') ? ' has-error' : '' }}">
-                    <input type="text" name="curp" id="entradas" value="{{ old('curp') }}" style="text-transform:uppercase" required>
-                </div>
--->
                 <div class="label">Correo electrónico:*</div>
                 <div class="div-input{{ $errors->has('correo') ? ' has-error' : '' }}">
                     <input type="text" name="correo" id="entradas" placeholder="correo@ejemplo.net" required>
@@ -57,11 +47,11 @@
 
                 <div class="label">Contraseña:*</div>
                 <div class="div-input{{ $errors->has('password') ? ' has-error' : '' }}">
-                  <input type="password" name="password" id="entradas" required>
+                  <input type="password" name="password" id="entradas" placeholder = "Contraseña" required>
                 </div>
 
                 <div class="label">Confirmar contraseña:*</div>
-                <input type="password" name="password_confirmation" id="entradas" required>
+                <input type="password" name="password_confirmation" id="entradas" placeholder = "Confirme contraseña" required>
                 <div class="last-label">* Campos obligatorios</div>
 
                 <div class="btn-group">
