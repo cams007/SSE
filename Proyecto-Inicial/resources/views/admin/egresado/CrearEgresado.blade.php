@@ -77,7 +77,7 @@
 
 	 		<label for="" class="">Lugar de origen: </label>
 	 		<input type="text" name="lugar_origen" placeholder="Lugar de origen" required/>
-	 		<input type="hidden" name="habilitado" value="1" placeholder="" required/>
+	 		<input type="hidden" name="habilitado" value="1" placeholder=""/>
 		</div>
 
 		<div class="seccion2">

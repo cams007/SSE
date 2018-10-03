@@ -29,9 +29,11 @@
                           @else
                             <img src="{{ url('assets/images/user-name.png') }}">
                           @endif
-                        <p>{{ Auth::user()->egresado->nombres }}
-                        {{ Auth::user()->egresado->ap_paterno }}
-                        {{ Auth::user()->egresado->ap_materno }}</p>
+                        <p>
+                          {{ Auth::user()->egresado->nombres }}
+                          {{ Auth::user()->egresado->ap_paterno }}
+                          {{ Auth::user()->egresado->ap_materno }}
+                        </p>
                     @endif
               </div>
               <div id="iconos">
