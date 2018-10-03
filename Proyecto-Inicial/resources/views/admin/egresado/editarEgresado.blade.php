@@ -25,27 +25,27 @@
 			
 			<div class="seccion1">
 				<label for="" class="">Matrícula: </label>
-				<input type="text" name="matricula" value="{{$egresado->matricula}}" placeholder="" required/>
+				<input type="text" name="matricula" value="{{$egresado->matricula}}" placeholder="Matrícula" required/>
 
 				<div class="columnitas">
 					<div>
 						<label for="" class="">Apellido paterno: </label>
-						<input type="text" name="ap_pa" value="{{$egresado->ap_paterno}}" placeholder="" required/>
+						<input type="text" name="ap_pa" value="{{$egresado->ap_paterno}}" placeholder="Apellido paterno" required/>
 					</div>
 
 					<div>
 						<label for="" class="">Apellido materno: </label>
-						<input type="text" name="ap_ma" value="{{$egresado->ap_materno}}" placeholder="" required/>
+						<input type="text" name="ap_ma" value="{{$egresado->ap_materno}}" placeholder="Apellido materno" required/>
 					</div>
 				</div>
 
 				<label for="" class="">Nombre(s): </label>
-				<input class="nombre" type="text" name="nombres" value="{{$egresado->nombres}}" placeholder="" required/>
+				<input class="nombre" type="text" name="nombres" value="{{$egresado->nombres}}" placeholder="Nombre(s)" required/>
 
 				<div class="columnitas">
 					<div>
 						<label for="" class="">Curp: </label>
-						<input type="text" name="curp" value="{{$egresado->curp}}" placeholder="" required/>
+						<input type="text" name="curp" value="{{$egresado->curp}}" placeholder="Curp" required/>
 					</div>
 
 					<div>
@@ -64,7 +64,7 @@
 				<div class="columnitas">
 					<div>
 						<label for="" class="">Fecha de nacimiento: </label>
-						<input type="date" name="fecha_nacimiento" value="{{$egresado->fecha_nacimiento}}" placeholder="" required/>
+						<input type="date" name="fecha_nacimiento" value="{{$egresado->fecha_nacimiento}}" placeholder="Fecha de nacimiento" required/>
 					</div>
 
 					<div>
@@ -82,7 +82,7 @@
 				</div>
 
 				<label for="" class="">Lugar de origen: </label>
-				<input type="text" name="lugar_origen" value="{{$egresado->lugar_origen}}" placeholder="" required/>
+				<input type="text" name="lugar_origen" value="{{$egresado->lugar_origen}}" placeholder="Lugar de origen" required/>
 				<input type="hidden" name="habilitado" value="1" placeholder=""/>
 			</div>
 				<!--Datos de preparacion-->
@@ -99,16 +99,16 @@
 				</select>
 
 				<label for="" class="">Generación: </label>
-				<input type="text" name="generacion" value="{{$preparacion->generacion}}" placeholder="" required/>
+				<input type="text" name="generacion" value="{{$preparacion->generacion}}" placeholder="Ejemplo: 2013-2018" required/>
 
 				<label for="" class="">Fecha de inicio de estudios: </label>
-				<input type="date" name="fecha_inicio" value="{{$preparacion->fecha_inicio}}" required/>
+				<input type="date" name="fecha_inicio" value="{{$preparacion->fecha_inicio}}" placeholder="Fecha de inicio de estudios" required/>
 
 				<label for="" class="">Fecha de fin de estudios: </label>
-				<input type="date" name="fecha_fin" value="{{$preparacion->fecha_fin}}" required/>
+				<input type="date" name="fecha_fin" value="{{$preparacion->fecha_fin}}" placeholder="Fecha de fin de estudios" required/>
 
 				<label for="" class="">Promedio: </label>
-				<input class="promedio" type="text" name="promedio" value="{{$preparacion->promedio}}" placeholder="" required/>
+				<input class="promedio" type="text" name="promedio" value="{{$preparacion->promedio}}" placeholder="Promedio" required/>
 
 				<div class="boton">
 					<button type="submit" class="flat">Actualizar</button>
