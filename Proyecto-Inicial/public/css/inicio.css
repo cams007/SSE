@@ -126,7 +126,7 @@ html {
 }
 
 #input-button{
-  background: #5E352A;
+  background-color: #5E352A;  
   border: none;
   color:white;
   height: 40px;
@@ -138,6 +138,9 @@ html {
   -moz-border-radius: 7px 7px 7px 7px;
   -webkit-border-radius: 7px 7px 7px 7px;
   border: 0px solid #000000;
+}
+#input-button:hover {
+  background-color: #BE3228;
 }
 #registrate
 {

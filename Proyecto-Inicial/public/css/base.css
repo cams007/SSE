@@ -46,9 +46,9 @@ header {
 /*----------------ICONOS SUPERIOR-------------*/
 
 #nombre_usuario {
-    display:block;
+    display: inline-block;
     position: relative;
-    float:left;
+    /*float:left;*/
     left: 32px;
     top: 5px;
 
@@ -87,8 +87,7 @@ header {
 
 
   .block {
-    position: absolute;
-    /*height: 1000px;*/
+    position: absolute;    
     width: 1024px;
     min-height: 200px;
     margin: 36px auto 40px;
@@ -106,28 +105,23 @@ header {
   height: 80px;
   margin: 0 auto;
   display:block;
-  position:relative;
-  /*text-align: center;*/
-  top:24px;
-
+  position:relative;  
 }
 #logo_see_contenido{
   width: 64px;
   height:65px;
   position: relative;
   top:12px;
-  left: -66px;
   display:block;
   float:left;
 }
-#logo_utm_contenido{
+#logo_utm_contenido{  
   width: 64px;
   height:64px;
   position: relative;
   top:12px;
   display:block;
   float:right;
-
 }
 #titulo_contenido{
   margin: 0 auto;
@@ -138,9 +132,7 @@ header {
   color:#5E352A;
   font:30px Helvetica;
   text-align:center;
-
 }
-
 button, .button {
   display: inline-block;
   margin: 0 10px 0 0;
@@ -154,44 +146,35 @@ button, .button {
   width: 160px;
   height: 32px;
 }
-
-
 button:hover{
   outline: none
 }
-
 .flat{
-  /*color: #fff;*/
   background-color: #BE3228;
   color: #FFF;
   text-decoration: none;
   border: none;
 }
-
 .flat:hover{
   background-color: #5E352A;
 }
-
 .flat-secundario{
   background-color: #6B6B6B;
   color: #FFF;
   border: none;
 }
-
 #iconos {
    display:block;
    position: relative;
    float: right;
-   right: 32px;
-   /*top:-3px;*/
+   right: 32px;   
  }
 .nav ul{
   float: right;
   background-color: #5E352A;
   z-index: 2;
   display: none;
-  position: absolute;
-  /*top: 40px;*/
+  position: absolute;  
   right: 0;
   margin-top: -8px;
 }
@@ -199,11 +182,8 @@ button:hover{
   text-align: center;
   position: relative;
 }
-
 .nav li a{
   position: relative;
-  /*width: 5px;*/
-  /*background-color: #000;*/
   text-align: left;
   color: #fff;
   font-size: 13px;
@@ -214,92 +194,19 @@ button:hover{
 .nav ul li a{
   width: 66px;
 }
-
 .nav li:hover > ul{
  display: block;
 }
 .nav ul a:hover{
   background: #BE3228;
 }
-/*.control {
-  display: block;
-  position: relative;
-  padding-left: 30px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  font-size: 18px;
-}
-.control input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
-}
-
-.control__indicator {
-  position: absolute;
-  top: 2px;
-  left: 0;
-  height: 20px;
-  width: 20px;
-  background: #e6e6e6;
-
-}
-.control--radio .control__indicator {
-  border-radius: 50%;
-}
-.control:hover input ~ .control__indicator,
-.control input:focus ~ .control__indicator {
-  background: #ccc;
-}
-.control input:checked ~ .control__indicator {
-  background: #2aa1c0;
-}
-.control:hover input:not([disabled]):checked ~ .control__indicator,
-.control input:checked:focus ~ .control__indicator {
-  background: #0e647d;
-}
-.control input:disabled ~ .control__indicator {
-  background: #e6e6e6;
-  opacity: 0.6;
-  pointer-events: none;
-}
-.control__indicator:after {
-  content: '';
-  position: absolute;
-  display: none;
-}
-.control input:checked ~ .control__indicator:after {
-  display: block;
-}
-.control--radio .control__indicator:after {
-  left: 7px;
-  top: 7px;
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background: #fff;
-}
-.control--radio input:disabled ~ .control__indicator:after {
-  background: #7b7b7b;
-}*/
-
 .img{
   max-width: 50%;
   max-height: 50%;
 }
-/*
-.link,
-a{
-  color: #be3228;
-  text-decoration: none;
-  cursor:pointer; cursor: hand;
-  margin-left: 10px;
-}*/
 
 /* NavBar */
 .menucontainer {
-  /*width: 100%;*/
-  /*background: rgb(237, 26, 169);*/
  width: 1024px;
  height: 60px;
  margin: 0 auto;
@@ -307,7 +214,6 @@ a{
  display:block;
  position:relative;
  text-align: center;
- top:25px;
 }
 ul#menu {
   list-style: none;
@@ -340,37 +246,6 @@ ul#menu {
     font-size: 13px;
     width: 120px;
   }
-
-/*div select{
-  width: 100%;
-  height: 32px;
-  /*padding-left: 32px;
-  float: left;
-  padding: 0 0 0 32px;
-<<<<<<< HEAD
-  border: 1 !important;    /*    Removes border
-=======
-  /*border: 1 !important;    /*    Removes border*/
-  /*border: #ACABAB 2px solid;
-  -webkit-appearance: none; */       /*Removes default chrome and safari style
-  -moz-appearance: none;          /* Removes Default Firefox style*/
-  /*background: {{url('assets/images/home.png')}};         /*Adds background-image*/
-  /*background-position: 82px 7px;                /*Position of the background-image
-}
-div .filtro_1{
-  width: 40%;
-  margin: 0 0 10px 5%;
-  float: left;
-}/*
-div .filtro_3{
-  width: 26.7%;
-  margin: 0 0 10px 5%;
-  float: left;
-}
-div p.titulo_select{
-  margin: 0;
-  text-align: left;
-}*/
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */

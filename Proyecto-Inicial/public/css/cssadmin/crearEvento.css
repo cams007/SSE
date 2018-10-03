@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 div.contenedor div.div-1 p {
   font-family: 'Roboto', sans-serif;
 	font-size: 24px;
@@ -40,12 +41,13 @@ input {
   margin-bottom: 16px;
   /*width: 35%;*/
   height: 24px;
+  font-family: 'Roboto', sans-serif;
 }
 input.nombre {
   width: 85%;
 }
 textarea {
-  width: 70%;
+  width: 85%;
   margin-bottom: 16px;
 }
 div.columnitas {
