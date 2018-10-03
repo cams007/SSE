@@ -21,7 +21,7 @@
         @endif
         <!-- Muestra un mensaje de alerta en caso de que el usuario no se puede registrar -->        
         <div class="div-1">
-            <p class="text-center">Cambiar contraseña administrador</p>
+            <p class="text-center">Cambiar contraseña</p>
         </div><!--div-1-->
 
         <div class="div-2-2">
