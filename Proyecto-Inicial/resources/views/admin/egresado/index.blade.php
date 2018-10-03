@@ -21,7 +21,7 @@
 	$carrera = array(
 		0=>'Ingeniería en Diseño',
 		1=>'Ingeniería en Computación',
-		2=>'Ingeniría en Alimentos',
+		2=>'Ingeniería en Alimentos',
 		3=>'Ingeniería en Electrónica',
 		4=>'Ingeniería en Mecatrónica',
 		5=>'Ingeniería Industrial',
