@@ -166,8 +166,14 @@ input[type="date"]:hover, input:focus {
 .radio {
   margin: 8px 0px 8px 0px;
 }
-
-
+.agregar-maestria-radio {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.agregar-maestria-radio label {
+  color: #6B6B6B;
+}
 textarea{
   margin: 0px;
   width: 614px;

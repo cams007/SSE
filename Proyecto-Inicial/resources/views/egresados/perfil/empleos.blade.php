@@ -84,7 +84,7 @@
 							<p class="txt">Agregar empleo</p>
 						</div><!--parte-1-->
 
-						<form action="{{ url('perfil/guardarempleo') }}" method="post">
+						<form action="{{ url('perfil/guardarempleo') }}" method="post" class="agregarEmpleoForm">
 							<input name="_token" type="hidden" value="{!! csrf_token() !!}" />	
 							
 							<div class="form-group">
@@ -112,15 +112,15 @@
 								<input type="text" name="antiguedad" id="antiguedad" class="form-control" placeholder="Antiguedad" pattern="[0-9]{1,2}"required>
 							</div>
 
-							<div class="form-group">
-								<div class="radio">
+							
+								<div class="agregarEmpleoRadio">
 									<input type="radio" name="antiguedadunidad" id="meses" value="meses" checked>
 									<label for="meses" class="label-radio"> Meses</label>
 
 									<input type="radio" name="antiguedadunidad" id="anios" value="años">
 									<label for="anios" class="label-radio"> Años</label>
 								</div>
-							</div>
+						
 
 							<div class="btn-group">
 								<button type = "submit" class="flat aling-right">Guardar</button>

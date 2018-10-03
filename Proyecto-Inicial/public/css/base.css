@@ -105,10 +105,9 @@ header {
   width: 1024px;
   height: 80px;
   margin: 0 auto;
-
   display:block;
   position:relative;
-  text-align: center;
+  /*text-align: center;*/
   top:24px;
 
 }
@@ -117,9 +116,9 @@ header {
   height:65px;
   position: relative;
   top:12px;
+  left: -66px;
   display:block;
   float:left;
-
 }
 #logo_utm_contenido{
   width: 64px;

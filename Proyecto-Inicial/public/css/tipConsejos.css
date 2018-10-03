@@ -166,3 +166,13 @@ div.buscador_tips input:hover{
 	border: solid 1px #BE3228;
 	/*box-shadow: 0 0 5px 1px #969696;*/
 }
+div.btn-group a {	
+	margin-top: 16px;
+	padding: 6px 60px;
+	background-color: #BE3228;
+	color: white;
+	text-decoration: none;
+}
+div.btn-group a:hover {
+	background-color: #5E352A;
+}

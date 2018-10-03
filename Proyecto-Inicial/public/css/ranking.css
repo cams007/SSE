@@ -155,14 +155,14 @@ div select{
   background-color: white;
   width: 50%;
   position: relative;
-  margin: 0 auto;
+  margin: 8px auto;
   padding: 3em;
    -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
 }
 
 
-@media (min-width: 60em) {
+/*@media (min-width: 60em) {
   .modaloverlay .modal {
     height: 70%;
     margin: 5% auto;
@@ -171,7 +171,7 @@ div select{
     width: 85%;
   }
 }
-
+*/
 .modaloverlay .modal > iframe, .modaloverlay .modal > div {
   border: none;
   width: 100%;

@@ -235,10 +235,10 @@
 				<form action="{{ url('perfil/guardardoctorado') }}" method="post">
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />	
 					
-					<input type="text" name="agregardoctorado" id="agregardoctorado" class = "form-control" placeholder = "Titulo del doctorado" required/>
+					<input type="text" name="agregardoctorado" id="agregardoctorado" class = "form-control" placeholder = "Titulo del doctorado" required/><br>
 					<label>Titulado</label>
 					
-					<div class="radio">
+					<div class="agregar-maestria-radio">
 						<input type="radio" name="sector" id="publica" value="1" checked>
 						<label for="publica" class="label-radio"> Sí</label>
 
@@ -269,10 +269,10 @@
 				<form action="{{ url('perfil/guardarmaestria') }}" method="post">
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />	
 					
-					<input type="text" name="agregarmaestria" id="agregarmaestria" class = "form-control" placeholder = "Titulo de la maestría" required/>
-					<label>Titulado</label>
+					<input type="text" name="agregarmaestria" id="agregarmaestria" class = "form-control" placeholder = "Titulo de la maestría" required/><br>
+					<label>Titulado:</label>
 					
-					<div class="radio">
+					<div class="agregar-maestria-radio">
 						<input type="radio" name="sector1" id="publica1" value="1" checked>
 						<label for="publica1" class="label-radio"> Sí</label>
 
