@@ -22,28 +22,28 @@
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
-			<input name="id" type="hidden" value="{{$evento->id}}" />
+			<input name="id" type="hidden" value="{{$evento->id}}"/>
 
 			<div class="seccion1">
 			<label for="" class="">Titulo del evento: </label>
 	 		<input class="nombre" type="text" name="nombre" value="{{ $evento->nombre }}" required/>
 
 	 		<label for="" class="">Descripción: </label>
-	 		<textarea rows="4" cols="50" name="descripcion">{{$evento->descripcion}}</textarea>
+	 		<textarea rows="4" cols="50" name="descripcion" required>{{$evento->descripcion}}</textarea>
 
 			<div class="columnitas">
 				<div>
 			 		<label for="" class="">Lugar del evento: </label>
-			 		<input type="text" name="lugar" value="{{ $evento->lugar}}" />
+			 		<input type="text" name="lugar" value="{{ $evento->lugar}}" required/>
 				</div>
 
 				<div>
 			 		<label for="" class="">Fecha: </label>
-			 		<input type="date" name="fecha" value="{{$evento->fecha}}"/>
+			 		<input type="date" name="fecha" value="{{$evento->fecha}}" required/>
 				</div>
 			</div>
 	 		<label for="" class="">Categoria: </label>
-	 		<select name="categoria">
+	 		<select name="categoria" required>
 	 			@if($evento->categoria == 'Académico'){{--Se obtiene como string y se envia en numero--}}
 	 				<option value="1" selected>Académico</option>
 	 				<option value="2">Cultural</option>
@@ -61,7 +61,7 @@
 
 			<div class="boton">
 		 		<button type="submit" class="flat">
-							Editar
+							Actualizar
 				</button>
 			</div>
 			</div>

@@ -56,7 +56,7 @@
 								<tr>
 									<th>Empresa</th>
 									<th>Funciones</th>
-									<th>Antiguedad</th>
+									<th>Antig&#252;edad</th>
 									<th>Puesto inicial</th>
 									<th>Puesto final</th>
 								</tr>
@@ -108,11 +108,9 @@
 							</div>
 
 							<div class="form-group">
-								<label>Antiguedad</label>
-								<input type="text" name="antiguedad" id="antiguedad" class="form-control" placeholder="Antiguedad" pattern="[0-9]{1,2}"required>
+								<label>Antig&#252;edad</label>
+								<input type="text" name="antiguedad" id="antiguedad" class="form-control" placeholder="Antig&#252;edad" pattern="[0-9]{1,2}"required>
 							</div>
-
-							
 								<div class="agregarEmpleoRadio">
 									<input type="radio" name="antiguedadunidad" id="meses" value="meses" checked>
 									<label for="meses" class="label-radio"> Meses</label>

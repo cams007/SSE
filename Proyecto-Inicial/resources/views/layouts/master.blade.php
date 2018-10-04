@@ -24,16 +24,16 @@
                     @if (Auth::guest())
 
                     @else
-                        <a class="user-name" href="#">
                           @if(Auth::user()->egresado->imagen_url)
                             <img src="{{ url(Auth::user()->egresado->imagen_url) }}" style="width: 24px; height: 24px; border-radius: 50%">
                           @else
                             <img src="{{ url('assets/images/user-name.png') }}">
                           @endif
-                        </a>
-                        <p>{{ Auth::user()->egresado->nombres }}
-                        {{ Auth::user()->egresado->ap_paterno }}
-                        {{ Auth::user()->egresado->ap_materno }}</p>
+                        <p>
+                          {{ Auth::user()->egresado->nombres }}
+                          {{ Auth::user()->egresado->ap_paterno }}
+                          {{ Auth::user()->egresado->ap_materno }}
+                        </p>
                     @endif
               </div>
               <div id="iconos">

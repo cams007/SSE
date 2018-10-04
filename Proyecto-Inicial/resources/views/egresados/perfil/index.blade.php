@@ -195,6 +195,7 @@
 							value = "{{ $egresados->direccion_actual }}" required/>
 						<input type = "hidden" name = "modificacion" value = "direccion"/>
 					</div>
+
 					<div class="botones-direccion">
 						<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>

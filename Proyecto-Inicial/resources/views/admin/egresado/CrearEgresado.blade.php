@@ -82,16 +82,16 @@
 
 		<div class="seccion2">
 	 		<!--Datos de preparacion-->
-
 	 		<label for="" class="">Carrera: </label>
-	 		<select name="carrera" required>
+	 		
+			 <select name="carrera" required>
 	 			@foreach($carrera as $idn=>$nombre)
 	 					<option value="{{$idn}}">{{$nombre}}</option><!--Tipo de datos enum-->
 	 			@endforeach
 	 		</select>
 
 	 		<label for="" class="">Generación: </label>
-	 		<input type="text" name="generacion" placeholder="Ingrese la generación del egresado" required/>
+	 		<input type="text" name="generacion" placeholder="Ejemplo: 2013-2018" required/>
 
 	 		<label for="" class="">Fecha de inicio de estudios: </label>
 	 		<input type="date" name="fecha_inicio" required/>
@@ -103,7 +103,7 @@
 	 		<input class="promedio" type="text" name="promedio" placeholder="Promedio" required/>
 
 			<div class="boton">
-	 			<button type="submit" class="flat">Enviar</button>
+	 			<button type="submit" class="flat">Guardar</button>
 			</div>
 		</form>
 	</div>

@@ -246,6 +246,7 @@
 						<label for="privada" class="label-radio"> No</label>
 					</div>
 					
+
 					<div class="botones-doctorado">
 						<button type = "button" class="flat-secundario">Cancelar</button>
 						<button type = "submit" class="flat aling-right">Guardar</button>

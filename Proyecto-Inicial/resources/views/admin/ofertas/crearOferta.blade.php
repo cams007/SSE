@@ -80,7 +80,7 @@
 	 		</select>
 
 			<div class="boton">
-			 <button type="submit" class="flat">Enviar</button>
+			 <button type="submit" class="flat">Guardar</button>
 		 	</div>
 		</form>
 

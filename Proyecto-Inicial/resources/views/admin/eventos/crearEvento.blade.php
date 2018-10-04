@@ -46,10 +46,10 @@
 	 		<input id="file-input" name="imagen" type="file" required/>
 	 		<img id="imgSalida" src="" />
 
-	 		<input type="hidden" name="activo" value="1" placeholder=""/>
+	 		<input type="hidden" name="activo" value="1" placeholder="" required/>
 			 
 			<div class="boton">
-	 			<button type="submit" class="flat">Crear</button>
+	 			<button type="submit" class="flat">Guardar</button>
 			</div>
 			</div>
 		</form>

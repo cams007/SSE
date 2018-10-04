@@ -47,14 +47,14 @@
                     <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar
                 </label>
             </div>
-        </div> -->
+        </div>
 
         <a href="{{ route('password.request') }}">
             <div id="olvido_pswd">
                 <p>¿Olvidó su contraseña?</p>
             </div>
         </a>
-
+        -->
         <div class="boton-login">
                 <button type="submit" id="input-button">
                     Entrar

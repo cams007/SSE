@@ -28,11 +28,11 @@
 
 			<div class="foto">
 		 		<label for="" class="">Foto: </label>
-		 		<input id="file-input" name="imagen" type="file"/>
+		 		<input id="file-input" name="imagen" type="file" />
 		 		<img id="imgSalida" src="{{ url($tip->imagen_url)}}" alt=""/>
 			</div>
 			<div class="boton">
-	 			<button type="submit" class="flat">Enviar</button>
+	 			<button type="submit" class="flat">Actualizar</button>
 			</div>
 		</form>
 	</div><!--contenedor-->
