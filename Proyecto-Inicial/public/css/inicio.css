@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 *{
   margin: 0;
   padding:0;
@@ -145,7 +146,7 @@ html {
 #registrate
 {
   font-size: 13px;
-  font-family: helvetica;
+  /*font-family: helvetica;*/
   color: #5E352A;
   text-align: center;
   margin: 16px auto;
@@ -177,6 +178,7 @@ li.registro-boton{
 }
 li.registro-boton a {
   color: #5E352A;
+  font-family: 'Roboto',sans-serif;
 }
 
 .modaloverlay {
@@ -244,7 +246,7 @@ li.registro-boton a {
   /*background: rgb(110, 184, 221);*/
   text-align: left;
   color: #6B6B6B;
-  font-family: 'Roboto',sans-serif;;
+  font-family: 'Roboto',sans-serif;
   font-size: 14px;
 }
 .div-input{
@@ -254,7 +256,7 @@ li.registro-boton a {
   /*background: rgb(110, 184, 221);*/
   text-align: right;
   color: #6B6B6B;
-  font-family: 'Roboto',sans-serif;;
+  font-family: 'Roboto',sans-serif;
   font-size: 14px;
   margin-top: 8px;
   margin-bottom: 24px;

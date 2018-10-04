@@ -51,6 +51,7 @@ header {
     /*float:left;*/
     left: 32px;
     top: 5px;
+    font-weight: bold;
 
   }
   #nombre_usuario p {
@@ -135,7 +136,7 @@ header {
 }
 button, .button {
   display: inline-block;
-  margin: 0 10px 0 0;
+  /*margin: 0 10px 0 0;*/
   padding: 5px 25px;
   font-size: 14px;
   font-family: "Roboto",serif;
@@ -151,6 +152,7 @@ button:hover{
 }
 .flat{
   background-color: #BE3228;
+  margin: auto;
   color: #FFF;
   text-decoration: none;
   border: none;

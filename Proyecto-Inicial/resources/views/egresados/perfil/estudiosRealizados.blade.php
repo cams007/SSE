@@ -246,8 +246,9 @@
 						<label for="privada" class="label-radio"> No</label>
 					</div>
 					
-					<div class="btn-group">
-						<a href="#"><button type="button" class="flat-secundario">Cancelar</button></a>
+
+					<div class="botones-doctorado">
+						<button type = "button" class="flat-secundario">Cancelar</button>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</form>
@@ -280,8 +281,8 @@
 						<label for="privada1" class="label-radio"> No</label>
 					</div>
 					
-					<div class="btn-group">
-						<a href="#"><button type="button" class="flat-secundario">Cancelar</button></a>
+					<div class="botones-maestria">
+						<button type = "button" class="flat-secundario">Cancelar</button>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</form>

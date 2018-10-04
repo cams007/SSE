@@ -124,9 +124,10 @@
   margin: auto;
 }
 .detalles_ofertas div div:first-child {
-  width: 20%;
+  width: 15%;
+  margin-right: 16px;  
   height: auto;
-  text-align: left;
+  text-align: right;
   margin-top: 20px;
 }
 .detalles_ofertas div div:nth-child(2) {
