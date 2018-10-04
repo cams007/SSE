@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Empresa;
+use App\Evento;
 use App\Contacto;
 use Session;
 
@@ -17,13 +18,14 @@ class EmpresasAdminController extends Controller
 
     public function index(Request $request)
     {
-        // Estaba en minuscula, verifica q este bien
+        if( $request->q =="" ) $string = "empty"; else $string = $request->q;
+        
         $empresas = Empresa::todo($request->get('q'))
             ->where('habilitada','=',1)
             ->orderBy('nombre', 'DESC')
             ->paginate(10);
 
-        return view('admin.empresa.index', compact('empresas'));//Direccio'n de la ubicacio'n del archivo crearEmpresa
+        return view('admin.empresa.index', compact('empresas'), [ 'valor' => $string ] );//Direccio'n de la ubicacio'n del archivo crearEmpresa
     }
 
     public function showCrearEmpresa(Request $request)

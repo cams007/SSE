@@ -36,7 +36,8 @@
 		<div class="div-1">
 			<p>Empresas</p>
 		</div><!--div-1-->
-
+		<a href="{{url('/admin/empresas/reporte', $valor) }}" target="_blank">PDF</a><!--editar-->
+		
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
 			<div>
 				<a href="{{url('/admin/empresas/crearEmpresa')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button para crear empresas-->
