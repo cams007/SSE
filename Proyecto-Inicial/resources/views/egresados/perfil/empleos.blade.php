@@ -123,7 +123,7 @@
 						
 
 							<div class="btn-group">
-								<button type = "submit" class="flat aling-right">Guardar</button>
+								<button type = "submit" class="flat">Guardar</button>
 							</div>
 						</form>
 						<!-- </div> -->

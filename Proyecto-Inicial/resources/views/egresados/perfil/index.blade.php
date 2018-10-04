@@ -166,8 +166,8 @@
 						<input type="text" name = "telefono" class="input-icon inputTel" placeholder="Agregar teléfono" value="{{$egresados->telefono}}" required/>
 						<input type="hidden" name = "modificacion" value = "telefono"/>
 					</div>
-					<div class="btn-group">
-						<a href="#close"><button type="button" class="flat-secundario aling-left">Cancelar</button></a>
+					<div class="botones-telefono">
+						<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
 						<button type="submit" class="flat aling-right">Guardar</button>
 					</div>
 				</div>
@@ -195,8 +195,8 @@
 							value = "{{ $egresados->direccion_actual }}" required/>
 						<input type = "hidden" name = "modificacion" value = "direccion"/>
 					</div>
-					<div class="btn-group">
-						<a href="#close"><button type="button" class="flat-secundario aling-left">Cancelar</button></a>
+					<div class="botones-direccion">
+						<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</div>

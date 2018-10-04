@@ -145,22 +145,19 @@ input[type="date"]:hover, input:focus {
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
   color: #000;
-
 }
 
 .label-radio:before {
   content: "";
   display: inline-block;
   width: 15px;
-  height: 15px;
-  /*   margin-right: 10px; */
+  height: 15px;  
   position: absolute;
   left: 0;
   bottom: 1px;
-  background-color: #fff;
   box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid #6B6B6B;
 }
 
 .radio {
@@ -180,6 +177,11 @@ textarea{
   height: 212px;
   resize: none;
   }
+td {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding-left: 16px;
+}
 td > .radio {
   margin-left: 3.5px;
 }
@@ -187,21 +189,22 @@ td > .radio {
 td > .radio > .label-radio {
   margin-right: 0px;
 }
-
+th {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
 th.col_calif {
-  width: 120px;
+  width: 140px;
 }
 
 th.col_calif > span {
-  font-size: 8pt;
+  font-size: 16px;
 }
-
 input[type=radio] {
   display: none;
   border: 1px #fff solid;
   margin: 8px 0px 8px 0px;
 }
-
 input[type=radio]:checked + label:before {
   content: "\2022";
   color: #BE3228;
@@ -212,7 +215,7 @@ input[type=radio]:checked + label:before {
 }
 
 input[type=radio]:checked + .label-radio:before {
-  border: 1px solid #BE3228;
+  border: 1px solid #BE3228;  
 }
 
 select {
@@ -233,7 +236,6 @@ input[type=checkbox] {
   margin: 8px 0px 8px 0px;
   display: none;
 }
-
 input[type=checkbox]:checked + label:before {
   content: "\2713";
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -258,9 +260,9 @@ input[type=checkbox]:checked + .label-radio:before {
   *overflow: hidden;*/
   margin: 8px 0px 8px 0px;
 }
-
 .checkbox label:before {
   border-radius: 3px;
+  border: 1px solid #6B6B6B;
 }
 
 .checkbox .label-radio:before {
@@ -325,8 +327,8 @@ textarea:focus, textarea:hover {
 }
 
 .aling-right {
-  float: right;
-  margin: 0px 0px 10px 10px;
+  /*float: right;*/
+  /*margin: 0px 0px 10px 10px;*/
 }
 
 .aling-left {
@@ -348,9 +350,9 @@ textarea:focus, textarea:hover {
   display: none;
 }
 
-/*table {
-  margin: 8px 0px 8px 0px;
-}*/
+table {
+  margin: 8px 0px 16px 0px;
+}
 
 .column-3 {
   display: -webkit-box;
@@ -463,6 +465,7 @@ div.form-group-estudios {
   width: auto;
   margin-left: 20px;
   margin-top: 8px;
+  margin-bottom: 16px;
 }
 div.form-group-estudios label:first-child {
   display: inline-block;
@@ -517,6 +520,7 @@ form input.flat {
   display: block;
   padding: 8px 20px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 div.modal form {
   text-align: center;
@@ -530,4 +534,31 @@ div.modal form {
 .form-control {
   display: inline-block;
   width: 400px;
+}
+.pregunta1 {
+  display: inline-block;
+  margin-top: 16px;
+}
+div.botones-direccion {
+  margin-top: 16px;
+}
+div.botones-telefono {
+  margin-top: 16px;
+}
+div.botones-doctorado {
+  margin-top: 16px;
+}
+div.botones-maestria {
+  margin-top: 16px;
+}
+div.btn-group {
+  text-align: center;
+}
+div.btn-group button {
+  margin-top: 16px;
+}
+div.btn-guardar { 
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 20px;
 }

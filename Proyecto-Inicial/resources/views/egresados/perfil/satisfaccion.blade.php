@@ -50,7 +50,7 @@
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 					<!-- if no empreo no mostrar tabla -->
 					<div class="form-group">
-						<label for="tContrato">1. ¿Cómo calificas los siguientes aspectos de la UTM al momento de ejercer tu profesión por primera vez? (donde 1 es Mala y 5 Excelente)</label>
+						<label for="tContrato" class="pregunta1">1. ¿Cómo calificas los siguientes aspectos de la UTM al momento de ejercer tu profesión por primera vez? (donde 1 es Mala y 5 Excelente)</label>
 
 						<table>
 							<tr>
@@ -63,7 +63,7 @@
 								<td>Formación recibida</td>
 								<td>
 									<div class="radio">
-										<input type="radio" name="formacion" id="form1" value="Excelente" required>
+										<input type="radio" class="radio-b" name="formacion" id="form1" value="Excelente" required>
 										<label class="label-radio" for="form1"></label>
 
 										<input type="radio" name="formacion" id="form2" value="Muy buena">
@@ -422,8 +422,8 @@
 						</div>
 					</div>
 					
-					<div class="btn-group">
-						<button type = "submit" class="flat aling-right">Guardar</button>
+					<div class="btn-guardar">
+						<button type = "submit" class="flat">Guardar</button>
 					</div>
 				</form>
 			@else
