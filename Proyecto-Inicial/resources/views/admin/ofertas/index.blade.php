@@ -58,6 +58,8 @@
 			<p>Ofertas laborales</p>
 		</div><!--div-1-->
 
+		<a href="{{url('/admin/ofertas/reporte', $valor) }}" target="_blank">PDF</a><!--editar-->
+
 		@include('admin.partials.messages')<!--Mensages -->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->

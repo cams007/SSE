@@ -109,6 +109,9 @@ Route::group(['prefix' => 'admin'], function()
     //Grupo de rutas para las vistas de egresados url(/admin/egresado/...)
     Route::group(['prefix' => 'egresado'], function(){
         Route::get('/','EgresadosAdminController@index');
+        
+        Route::get('/reporte/{string}','ReporteAdminController@showReporteView')->name('admin.reporte');
+
         Route::get('/crearEgresado','EgresadosAdminController@showCrearEgresado')->name('admin.crearEgresado');
         Route::post('/crearEgresado','EgresadosAdminController@saveEgresado')->name('admin.crearEgresado.submit');
         Route::get('/editarEgresado/{ma}','EgresadosAdminController@showEditarEgresado')->name('admin.editarEgresado');
@@ -119,6 +122,9 @@ Route::group(['prefix' => 'admin'], function()
     //Grupo de rutas para las vistas de empresas (admin/empresas/..)
     Route::group(['prefix' => 'empresas'], function(){
         Route::get('/','EmpresasAdminController@index');
+        
+        Route::get('/reporte/{string}','ReporteAdminController@showReporteViewEmpresas');
+
         Route::get('/crearEmpresa','EmpresasAdminController@showCrearEmpresa')->name('admin.crearEmpresa');
         Route::post('/crearEmpresa','EmpresasAdminController@saveCrearEmresa')->name('admin.crearEmpresa.submit');
         Route::get('/editarEmpresa/{id}','EmpresasAdminController@showEditarEmpresa')->name('admin.editarEmpresa');
@@ -129,6 +135,8 @@ Route::group(['prefix' => 'admin'], function()
     //Grupo de rutas para las vistas de eventos (admin/eventos/..)
     Route::group(['prefix' => 'eventos'], function(){
         Route::get('/','EventosAdminController@index');
+        Route::get('/reporte/{string}','ReporteAdminController@showReporteViewEventos');
+
         Route::get('/crearEvento','EventosAdminController@showCrearEvento')->name('admin.crearEvento');
         Route::post('/crearEvento','EventosAdminController@saveEvento')->name('admin.crearEvento.submit');
         Route::get('/editarEvento/{id}','EventosAdminController@showEditarEvento')->name('admin.editarEvento');
@@ -160,11 +168,12 @@ Route::group(['prefix' => 'admin'], function()
     //Grupo de rutas para los ofertas. (admin/ofertas/..)
     Route::group(['prefix' => 'ofertas'], function() {
         Route::get('/','OfertasLaboralesAdminController@index');
+
+        Route::get('/reporte/{string}','ReporteAdminController@showReporteViewOfertas');
+
         Route::post('/eliminarOferta','OfertasLaboralesAdminController@eliminarOferta')->name('admin.eliminarOferta.submit');
-        
         Route::get('/crearOferta','OfertasLaboralesAdminController@showCrearOferta')->name('admin.crearOferta');
         Route::post('/crearOferta','OfertasLaboralesAdminController@saveOferta')->name('admin.crearOferta.submit');
-
         Route::get('/editarOferta/{id}','OfertasLaboralesAdminController@showEditarOferta')->name('admin.editarOferta');
         Route::post('/editarOferta','OfertasLaboralesAdminController@saveEditarOferta')->name('admin.editarOferta.submit');
     });

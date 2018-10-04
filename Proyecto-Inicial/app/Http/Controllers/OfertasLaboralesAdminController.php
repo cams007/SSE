@@ -18,10 +18,12 @@ class OfertasLaboralesAdminController extends Controller
 
     public function index( Request $request )
     {
+        if( $request->q =="" ) $string = "empty"; else $string = $request->q;
+
         $ofertas = Oferta::todo( $request->get( 'q' ) )
             ->paginate( 10 );
         
-        return view('admin.ofertas.index', compact('ofertas') );
+        return view('admin.ofertas.index', compact('ofertas'), [ 'valor' => $string ] );
     }
 
     public function showCrearOferta(Request $request) 

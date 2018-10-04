@@ -53,13 +53,14 @@
 			<p>Egresados</p>
 		</div><!--div-1-->
 
-		@include('admin.partials.messages')<!--Mensages -->
-
+		<a href="{{url('/admin/egresado/reporte', $valor) }}" target="_blank">PDF</a><!--editar-->
+		
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
 			<div>
 				<a href="{{url('/admin/egresado/crearEgresado')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!-- Button crear Egresado-->
 			</div>
 		
+
 			<div class="search">
 				{!! Form::open(['url' => url()->current(), 'method' => 'GET', 'role' => 'search']) !!}
 					{!! Form::text('q', null, ['type' => 'search', 'name' => 'q', 'placeholder' => 'Buscador de egresados']) !!}
