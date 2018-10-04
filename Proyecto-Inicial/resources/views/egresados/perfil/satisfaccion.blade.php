@@ -263,13 +263,13 @@
 						<div class="column-3">
 							<div class="checkbox">
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="A" value="Comuninicar">
-								<label class="label-radio" for="A">Comuninicar</label><br>
+								<label class="label-radio" for="A">Comunicar</label><br>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="B" value="Dirigir">
-								<label class="label-radio" for="B">Dirigir</label>
+								<label class="label-radio" for="B">Dirigir</label><br>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="C" value="Tabajo en equipo">
-								<label class="label-radio" for="C">Tabajo en equipo</label>
+								<label class="label-radio" for="C">Trabajo en equipo</label>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="D" value="Identificar y resolver problemas">
 								<label class="label-radio" for="D">Identificar y resolver problemas</label>
@@ -294,7 +294,7 @@
 								<label class="label-radio" for="J">Categorizar/Clasificar</label>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="K" value="Describir/Explicar">
-								<label class="label-radio" for="K">Describir/Explicar</label>
+								<label class="label-radio" for="K">Describir/Explicar</label><br>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="L" value="Evaluar">
 								<label class="label-radio" for="L">Evaluar</label>
@@ -304,7 +304,7 @@
 								<label class="label-radio" for="M">Procesar</label> <br>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="N" value="Expresar">
-								<label class="label-radio" for="N">Expresar</label>
+								<label class="label-radio" for="N">Expresar</label><br>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="O" value="Escuchar">
 								<label class="label-radio" for="O">Escuchar</label>
@@ -323,7 +323,7 @@
 								<label class="label-radio" for="S">Interpretar</label>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="T" value="Debatir">
-								<label class="label-radio" for="T">Debatir</label>
+								<label class="label-radio" for="T">Debatir</label><br>
 
 								<input type="checkbox" class="checkbox" name="actitudes[]" id="U" value="Innovar">
 								<label class="label-radio" for="U">Innovar</label> <br>
@@ -337,7 +337,7 @@
 						<div class="column-3">
 							<div class="checkbox">
 								<input type="checkbox" class="checkbox2" name="valores[]" id = "valA" value="Respeto" >
-								<label class="label-radio" for="valA">Respeto</label>
+								<label class="label-radio" for="valA">Respeto</label><br>
 								
 								<input type="checkbox" class="checkbox2" name="valores[]" id = "valB" value="Honestidad">
 								<label class="label-radio" for = "valB">Honestidad</label> <br>
@@ -362,7 +362,7 @@
 								<label class="label-radio" for="valH">Imparcialidad</label>
 								
 								<input type="checkbox" class="checkbox2" name="valores[]" value="Solidalidad" id = "valI">
-								<label class="label-radio" for="valI">Solidalidad</label> <br>
+								<label class="label-radio" for="valI">Solidaridad</label> <br>
 								
 								<input type="checkbox" class="checkbox2" name="valores[]" value="Integridad" id = "valJ">
 								<label class="label-radio" for="valJ">Integridad</label>
