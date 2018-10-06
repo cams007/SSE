@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+  font-family: 'Roboto', sans-serif;
+}
 div.contenedor div.div-1 p {
   font-family: 'Roboto', sans-serif;
 	font-size: 24px;
@@ -38,19 +42,19 @@ label {
 input {
   margin-bottom: 16px;
   width: 35%;
-  height: 24px;
+  height: 24px;  
+  padding-left: 8px;
 }
 input.nombre {
   width: 85%;
 }
-
 select {
   height: 28px;
-  padding: 0 0 0 32px;
+  padding: 0 0 0 40px;
   margin-bottom: 16px;
 	background: white;
 	border: 1px solid #acabab;
-  -webkit-appearance: none;        /*Removes default chrome and safari style */
+  -webkit-appearance: none;       
   -moz-appearance: none;
   background-image: url("../../assets/images/menu_hamburguesa.png");
 	background-repeat: no-repeat;
@@ -65,12 +69,18 @@ div.columnitas {
 div.columnitas div {
   width: 50%;
 }
-div.columnitas input, div.columnitas select {
+div.columnitas input {
   width: 70%;
+}
+div.columnitas select {
+  width: 75%;
+}
+select.carrera {
+  width: 85%;
 }
 div.boton {
   text-align: right;
-  margin-top: 8px;
+  margin-top: 16px;
   margin-right: 20px;
   margin-bottom: 50px;
 }

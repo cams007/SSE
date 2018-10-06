@@ -28,6 +28,9 @@
 			<label for="" class="">Matricula: </label>
 	 		<input type="text" name="matricula" placeholder="Ingrese la matricula" required/>
 
+	 		<label for="" class="">Nombre(s): </label>
+	 		<input class="nombre" type="text" name="nombres" placeholder="Ingrese nombre del egresado" required/>
+
 			<div class="columnitas">
 				<div>
 	 				<label for="" class="">Apellido paterno: </label>
@@ -39,9 +42,7 @@
 	 				<input type="text" name="ap_ma" placeholder="Apellido del materno" required/>
 				</div>
 			</div>
-
-	 		<label for="" class="">Nombre(s): </label>
-	 		<input class="nombre" type="text" name="nombres" placeholder="Ingrese nombre del egresado" required/>
+	 		
 
 			<div class="columnitas">
 				<div>
@@ -51,7 +52,7 @@
 
 				<div>
 	 				<label for="" class="">Género: </label>
-	 				<select name="genero">
+	 				<select name="genero" class="genero">
 	 					@foreach($genero as $idn=>$nombre)
 	 						<option value={{$idn}}>{{$nombre}}</option><!--Tipo de datos enum-->
 	 					@endforeach
@@ -84,7 +85,7 @@
 	 		<!--Datos de preparacion-->
 	 		<label for="" class="">Carrera: </label>
 	 		
-			 <select name="carrera" required>
+			 <select name="carrera" class="carrera" required>
 	 			@foreach($carrera as $idn=>$nombre)
 	 					<option value="{{$idn}}">{{$nombre}}</option><!--Tipo de datos enum-->
 	 			@endforeach

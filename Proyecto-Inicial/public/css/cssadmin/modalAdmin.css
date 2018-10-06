@@ -21,9 +21,10 @@
   background-color: white;
   height: auto;
   width: 50%;
-  position: relative;
-  margin: 0 auto;
-  /*padding: 3em;*/
+  position: relative;  
+  margin-top: 8px;
+  margin-right: auto;
+  margin-left: auto;  
   -webkit-overflow-scrolling: touch;
   overflow-y: hidden;
 }
