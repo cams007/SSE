@@ -17,12 +17,14 @@ class EventosAdminController extends Controller
     
     public function index(Request $request)
     {
+        if( $request->q =="" ) $string = "empty"; else $string = $request->q;
+
         $eventos = Evento::todo( $request->get( 'q' ) )
             ->where('activo','=',1)
             ->orderBy('fecha', 'DESC')
             ->paginate(10);
 
-        return view('admin.eventos.index', compact('eventos'));
+        return view('admin.eventos.index', compact('eventos'), [ 'valor' => $string ] );
     }
 
     public function showCrearEvento(Request $request) {

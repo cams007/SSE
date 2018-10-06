@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Egresado;
@@ -17,12 +16,14 @@ class EgresadosAdminController extends Controller
     
 	public function index( Request $request )
     {
-        $egresados = Egresado::todo($request->get('q'))
+        if( $request->q =="" ) $string = "empty"; else $string = $request->q;
+
+        $egresados = Egresado::todo( $request->get('q') )
             ->where( 'habilitado','=', 1 )
             ->orderBy( 'ap_paterno', 'DESC' )
             ->paginate( 10 );
 
-        return view('admin.egresado.index', compact('egresados'));
+        return view('admin.egresado.index', compact('egresados'), [ 'valor' => $string ] );
     }
 
     public function showCrearEgresado(Request $request)

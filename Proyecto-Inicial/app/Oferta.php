@@ -41,8 +41,19 @@ class Oferta extends Model
             if( in_array( $nombre, $this->carreras ) )
             {
                 $index = $this->index( $nombre );
-                $query
-                    ->where(\DB::raw("CONCAT( carrera )"), 'like', '%'.$index.'%');
+                
+                if( $index == 0 )
+                    $query
+                        ->where( 'carrera','=', 0 );
+                else if( $index == 1 )
+                    $query
+                        ->where( 'carrera','=', 1 );
+                else if( $index == 10 )
+                    $query
+                        ->where( 'carrera','=', 10 );
+                else
+                    $query
+                        ->where(\DB::raw("CONCAT( carrera )"), 'like', '%'.$index.'%');
             }
             else
                 $query

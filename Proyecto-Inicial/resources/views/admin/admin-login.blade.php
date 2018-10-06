@@ -10,7 +10,7 @@
     <section id="franja">
         <div id="franja_contenedor">
             <div id="logo_sse"> </div>
-            <div id="titulo_index"><p>Sistema de Seguimiento de Egresados - Administrador</p></div>
+            <div id="titulo_index"><p>Sistema de Seguimiento de Egresados - Admin</p></div>
             <div id="logo_info"></div>
         </div>
     </section>

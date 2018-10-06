@@ -37,6 +37,8 @@
 		<div class="div-1">
 			<p>Eventos UTM</p>
 		</div><!--div-1-->
+		
+		<a href="{{url('/admin/eventos/reporte', $valor) }}" target="_blank">PDF</a><!--editar-->
 
 		@include('admin.partials.messages')<!--Mensages -->
 
