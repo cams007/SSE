@@ -41,6 +41,7 @@
 		<!--Contenido de la pagina-->
 		<form method="post" enctype="multipart/form-data" action="{{route('admin.editarOferta.submit')}}">
 			{{ csrf_field() }}
+		<div class="seccion1">
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 			<input name="id" type="hidden" value="{{$oferta->id}}" />
@@ -50,9 +51,6 @@
 
 			<label for="" class="">Descripción: </label>
 	 		<input type="text" name="descripcion" value="{{ $oferta->descripcion }}" placeholder="Descripción del puesto" required/>
-
-			<label for="" class="">Ubicación: </label>
-	 		<input type="text" name="ubicacion" value="{{ $oferta->ubicacion }}" placeholder="Ubicación" required/>
 
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera" required>
@@ -66,6 +64,10 @@
 	 			@endforeach
 	 		</select>
 
+			<label for="" class="">Ubicación: </label>
+	 		<input type="text" name="ubicacion" value="{{ $oferta->ubicacion }}" placeholder="Ubicación" required/>
+	 	</div>
+	 	<div class="seccion2">
 			<label for="" class="">Experiencia: </label>
 	 		<input type="text" name="experiencia" value="{{ $oferta->experiencia }}" placeholder="Experiencia requerida" required/>
 
@@ -104,6 +106,7 @@
 					Actualizar
 				</button>
 			</div>
+		</div>
 		</form>
 
 	</div><!--contenedor-->

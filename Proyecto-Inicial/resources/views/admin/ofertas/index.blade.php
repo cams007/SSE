@@ -58,7 +58,7 @@
 			<p>Ofertas laborales</p>
 		</div><!--div-1-->
 
-		<a href="{{url('/admin/ofertas/reporte', $valor) }}" target="_blank">PDF</a><!--editar-->
+		<a href="{{url('/admin/ofertas/reporte', $valor) }}" target="_blank" class="pdf">Descargar PDF</a><!--editar-->
 
 		@include('admin.partials.messages')<!--Mensages -->
 
@@ -79,7 +79,7 @@
 				<td>
 					Puesto
 				</td>
-				<td>
+				<td class="columnados">
 					Empresa
 				</td>
 				<td>
@@ -92,7 +92,7 @@
 				<td>
 					Carrera
 				</td>
-				<td>
+				<td class="last">
 					Acción
 				</td>
 
@@ -143,7 +143,7 @@
 
 	<div id="verOferta" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
-			<a href="#" class="close1">&times;</a>
+			<a href="#" class="close">&times;</a>
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt" id = "getOferta"></p>
 			</div><!--parte-1-->
