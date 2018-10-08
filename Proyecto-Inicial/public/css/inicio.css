@@ -249,6 +249,14 @@ li.registro-boton a {
   font-family: 'Roboto',sans-serif;
   font-size: 14px;
 }
+
+.help-block {
+  text-align: left;
+  color: red;
+  font-family: 'Roboto',sans-serif;
+  font-size: 12px;
+}
+
 .div-input{
   margin-bottom: 16px;
 }

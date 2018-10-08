@@ -38,16 +38,24 @@ $(document).ready( function(){//Comprueba que el documento se cargo correctament
 
 		document.getElementById('egv_nombreComp').innerHTML = '<p class="texto-descripcion">'+ nombre_completo +'</p>';
 		document.getElementById('egv_curp').innerHTML = '<p class="texto-descripcion">'+ egresado.curp +'</p>';
+		
 		if(egresado.genero=='Masculino')
 			document.getElementById('egv_genero').innerHTML = '<p class="texto-descripcion">Masculino</p>';
 		else
 			document.getElementById('egv_genero').innerHTML = '<p class="texto-descripcion">Femenino</p>';
+		
 		document.getElementById('egv_fechaNac').innerHTML = '<p class="texto-descripcion">'+ egresado.fecha_nacimiento +'</p>';
+		
 		if(egresado.nacionalidad=='Mexicana')
 			document.getElementById('egv_nacionalidad').innerHTML = '<p class="texto-descripcion">Mexicana</p>';
 		else
 			document.getElementById('egv_nacionalidad').innerHTML = '<p class="texto-descripcion">Otra</p>';
-		document.getElementById('egv_telefono').innerHTML = '<p class="texto-descripcion">'+egresado.telefono+'</p>';
+		
+		if( egresado.telefono )
+			document.getElementById('egv_telefono').innerHTML = '<p class="texto-descripcion">'+egresado.telefono+'</p>';
+		else
+			document.getElementById('egv_telefono').innerHTML = '<p class="texto-descripcion">'+"Teléfono no registrado"+'</p>';
+
 		document.getElementById('egv_lugarOrig').innerHTML = '<p class="texto-descripcion">'+egresado.lugar_origen+'</p>';
 		document.getElementById('egPrv_carrera').innerHTML = '<p class="texto-descripcion">'+Carrera(preparacion.carrera)+'</p>';
 		document.getElementById('egPrv_generacion').innerHTML = '<p class="texto-descripcion">'+preparacion.generacion+'</p>';

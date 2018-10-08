@@ -46,9 +46,7 @@ class EgresadosAdminController extends Controller
 
     public function saveEgresado( Request $request )
     {
-        $egresado = Egresado::findOrFail( $request->matricula )->count();
-        
-        if( $egresado == 0 )
+        if( !Egresado::where( 'matricula', '=', $request->matricula )->exists() )
         {
             DB::beginTransaction();
             try{
@@ -98,7 +96,7 @@ class EgresadosAdminController extends Controller
         return redirect('admin/egresado');//Redireccionamos al index de egresado url(/admin/egresado)
     }
 
-    public function saveEditarEgresado(Request $request)
+    public function saveEditarEgresado( Request $request )
     {
         $egresado = Egresado::findOrFail( $request->matricula );
         $preparacion = Preparacion::findOrFail( $egresado->preparacion_id );

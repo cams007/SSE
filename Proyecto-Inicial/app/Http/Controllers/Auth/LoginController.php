@@ -38,12 +38,11 @@ class LoginController extends Controller
 		// to the dashboard as user 
 		if( Auth::attempt( ['correo' => $request->correo, 'password' => $request->password ] ) )
 		{
-    			//Auth::logout();
 			return redirect( '/home' );
     		}
 		
 		// If the user is not in database then redirec to login page and show him the next menssage 
-		return back()->withErrors( [ 'correo' => 'Por favor verifique que sus datos sean correctos' ] );
+		return back()->withErrors( [ 'correo' => 'Verifique su correo o su contraseña' ] );
 	}
 
 	protected function guard()

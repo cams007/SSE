@@ -57,8 +57,7 @@ class Oferta extends Model
             }
             else
                 $query
-                    ->join( 'Empresa', 'Empresa.id', '=', 'Oferta.empresa_id' )
-                    ->where(\DB::raw("CONCAT(titulo_empleo, ' ', Oferta.descripcion, ' ', ubicacion, ' ', nombre )"), 'like', '%'.$nombre.'%');
+                    ->where(\DB::raw("CONCAT(titulo_empleo, ' ', descripcion, ' ', ubicacion )"), 'like', '%'.$nombre.'%');
         };
     }
     

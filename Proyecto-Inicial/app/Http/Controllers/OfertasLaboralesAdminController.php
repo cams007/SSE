@@ -18,9 +18,10 @@ class OfertasLaboralesAdminController extends Controller
 
     public function index( Request $request )
     {
-        if( $request->q =="" ) $string = "empty"; else $string = $request->q;
+        if( $request->q == "" ) $string = "empty"; else $string = $request->q;
 
         $ofertas = Oferta::todo( $request->get( 'q' ) )
+            ->where( 'status', '<>','Cancelada' )
             ->paginate( 10 );
         
         return view('admin.ofertas.index', compact('ofertas'), [ 'valor' => $string ] );
@@ -60,11 +61,15 @@ class OfertasLaboralesAdminController extends Controller
         {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+            //Para mostrar mensaje partials/messages.blade.php
+            Session::flash('message_danger', 'No se pudo crear la oferta.');
+            //Redireccionamos al index de egresado url(/admin/egresado)
+            return redirect('admin/ofertas');
         }
         DB::commit();
 
         //Para mostrar mensaje partials/messages.blade.php
-        Session::flash('save', 'La oferta se ha guardado correctamente');
+        Session::flash('message_success', 'La oferta se ha creado correctamente.');
         //Redireccionamos al index de egresado url(/admin/egresado)
         return redirect('admin/ofertas');
     }
@@ -95,7 +100,6 @@ class OfertasLaboralesAdminController extends Controller
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
             Session::flash('message_danger', 'La oferta no se actualizó correctamente.');
-        
             return redirect('admin/ofertas');//Redireccionamos al index de egresado url(/admin/egresado)
         }
         DB::commit();
@@ -111,15 +115,16 @@ class OfertasLaboralesAdminController extends Controller
     */
     public function eliminarOferta( Request $request )
     {
-        $oferta = Oferta::findOrFail( $request->id );
+        $oferta = Oferta::findOrFail( $request->oferta_id );
 
         DB::beginTransaction();
         try{
             // Cambia el status de la oferta a cancelada
-            $oferta->status = 'Cancelada';
+            $oferta->status = "Cancelada";
             // Guarda los cambios
             $oferta->save();
-        }catch(Exception $e){
+        }catch(Exception $e)
+        {
             DB::rollback();
             echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
             Session::flash('message_danger', 'La oferta no se ha eliminado.');
