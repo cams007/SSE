@@ -3,19 +3,16 @@
 @section('title', 'Datos basicos')
 
 @section('style')
-	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
-	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-
+	<link href="{{ url('css/datosEmpresa.css') }}" rel="stylesheet">	
+	<link href="{{ url('css/modalDatosEmpresa.css') }}" rel="stylesheet">
 	<link href="{{ url('css/estrellasRating.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 @stop
 
 @section('content')
 	<div class="contenedor"><!--inicio contenedor-->
-
-		<div class="div-1"><!--inicio div-1-->
-			<h1>Datos de empresa</h1>
+		<div class="div-1"> <!--incio div-1-->
+				<p class="text-center">Datos de empresa</p>
 		</div><!--fin div-1-->
 		<div class="div-2"><!--inicio div-2-->
 			<div class="div-2-1"><!--inicio div-2-1-->
@@ -89,10 +86,10 @@
 				</div>
 			</div><!--fin div-2-2-->
 
-			<div class="column"> <!-- div-2-3 -->
+			<div class="column column2"> <!-- div-2-3 -->
 			<img src="{{url( $empresa->imagen_url )}}" alt="user-picture" class="img-thumbnail img">
 				@if( $rank == 0 )
-					<div>
+					<div class="calificacion">
 						<img src="{{ url('assets/images/empresa_estrella.png') }}" alt="" class="iconos">
 						<a href="#calificaEmpresa">Calificar empresa</a>
 					</div>
@@ -106,7 +103,7 @@
 	  	<div class="modal">
 		    	<a href="#close" class="close">&times;</a>
 			<div>
-				<h1>Calificar esta empresa</h1>
+				<p class="txt">Calificar esta empresa</p>
 				<div class = "stars">
 					<form method="POST" enctype="multipart/form-data" action="{{ route('guardarCalificacion.submit') }}">
 						{{ csrf_field() }}
@@ -127,7 +124,7 @@
 						<input class="star star-1" id="star_1" type="radio" name = "star" value = "1"/>
 						<label class="star star-1" for="star_1"></label>
 						
-						<p>Comentario</p>
+						<p class="coment">Comentario</p>
 						<div>
 							<textarea name="comentario" id="comentario" class="form-control" rows="3" required></textarea>
 						</div>

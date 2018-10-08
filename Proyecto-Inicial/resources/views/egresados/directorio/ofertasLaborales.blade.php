@@ -2,15 +2,11 @@
 
 @section('title', 'Ofertas laborales')
 
-@section('style')
-	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
+@section('style')	
+	<link href="{{ url('css/datosEmpresa.css') }}" rel="stylesheet">	
 	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
 	<link href="{{ url('css/table.css') }}" rel="stylesheet">
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
-
-	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
-	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
 @stop
 
 @php
@@ -30,15 +26,17 @@
 @endphp
 
 @section('content')
-
-<h1>Datos de empresa</h1>
-	<hr class="hr">
-	<div class="clearfix">
-		<aside id="cssmenu" class="column hrV">
-			@include('partials.asideEmpresa')
-		</aside>
-		<div class="column content">
-				<div class="contenedor"><!--contenedor-->
+<div class="contenedor"><!--contenedor-->
+	<div class="div-1"> <!--incio div-1-->
+				<p class="text-center">Datos de empresa</p>
+	</div><!--fin div-1-->		
+	<div class="div-2">
+		<div class="div-2-1">
+			<aside id="cssmenu" class="column hrV">
+				@include('partials.asideEmpresa')
+			</aside>
+		</div>
+		<div class="column content">				
 					<!-- Resultados -->
 					@if( $totalOferta->total > 0 )
 						<div class="se-encontraron">
@@ -65,7 +63,7 @@
 											<td>{{ $carrera[ $oferta->carrera ] }}</td>
 											<td>${{ $oferta->salario }}.00 MXN</td>
 											<td>{{ $oferta->status }}</td>
-										<!-- </tr> -->
+										</tr>
 									@endforeach
 								</tbody>
 							</table>
@@ -78,9 +76,8 @@
 						<p>No se encontraron ofertas laborales para esta empresa</p>
 					@endif
 				</div><!--contenedor-->
-		</div>
-	</div>
-
+		</div>	
+</div>
 
 
 @stop

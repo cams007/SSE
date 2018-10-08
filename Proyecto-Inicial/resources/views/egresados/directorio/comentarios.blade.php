@@ -3,21 +3,23 @@
 @section('title', 'Comentarios')
 
 @section('style')
-	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
+	<link href="{{ url('css/datosEmpresa.css') }}" rel="stylesheet">	
 	<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">
-	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
 	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
-	<h1>Datos de empresa</h1>
-	<hr class="hr">
-	<div class="clearfix">
-		<aside id="cssmenu" class="column hrV">
-			@include('partials.asideEmpresa')
-		</aside>
-		<div class="column content">
-			<div class="contenedor"><!--contenedor-->
+<div class="contenedor"><!--contenedor-->
+	<div class="div-1"> <!--incio div-1-->
+				<p class="text-center">Datos de empresa</p>
+	</div><!--fin div-1-->	
+	<div class="div-2">
+		<div class="div-2-1">
+			<aside id="cssmenu" class="column hrV">
+				@include('partials.asideEmpresa')
+			</aside>
+		</div>
+		<div class="column content">			
 				@if( $comentario->total > 0 )
 					<center>
 						<div>{{ $comentario->empresa->nombre }}</div>
@@ -55,7 +57,7 @@
 				@else
 					<p>No se encontraron resultados para esta empresa</p>
 				@endif
-			</div>
-		</div><!--contenedor-->
+			</div>	
+		</div>
 	</div>
 @stop

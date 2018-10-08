@@ -1,6 +1,6 @@
 div.stars {
-      width: 270px;
-      display: inline-block;
+      /*width: 270px;*/
+      /*display: inline-block;*/
 }
 
 input.star { 
@@ -8,7 +8,7 @@ input.star {
 }	
 
 label.star {
-	float: right;
+	/*float: right;*/
       padding: 10px;
 	font-size: 36px;
 	color: #444;
