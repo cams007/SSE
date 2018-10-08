@@ -69,9 +69,9 @@ class RegistroController extends Controller
 			}catch( Exception $e )
 			{
 				DB::rollback();
-				Session::flash('message_success', 'Hubo al guardar el usaurio.');
+				Session::flash('message_success', 'Hubo un error al guardar el usaurio.');
 
-				return redirect( 'register' );
+				return redirect( '/register' );
 
 			}
 			DB::commit();
@@ -88,7 +88,7 @@ class RegistroController extends Controller
 		else
 		{
 			//Para mostrar mensaje partials/messages.blade.php
-			session()->flash('message', 'La matrícula de usuario no existe, intente otra vez.');
+			Session::flash('message_danger', 'Verifica que tu información sea correcta.');
 			//Redireccionamos al index de egresado url(/admin/egresado)
 			return redirect('/register');
 		}
