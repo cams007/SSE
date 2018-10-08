@@ -184,7 +184,10 @@
   margin-bottom: 24px;
 }
 
-.button1{
+.button1 {
+  display: block;
+}
+/*.button1{
     float: left;
     width: 100px;
     height: 24px;
@@ -199,7 +202,7 @@
     cursor: pointer;
       animation: modal 0s 0s forwards;
   visibility: hidden;
-}
+}*/
 
 .button2{
     float: right;
@@ -297,36 +300,55 @@
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075); 
 }
 form {
-  width: 45%;
-  margin: auto;
+  width: 38%;
+  margin-top: 24px;
+  margin-right: auto;
+  margin-left: auto;
   /*text-align: left;*/
 }
 label {
-  display: inline-block;
-  width: 250px;
-  text-align: left;
+  /*display: block;*/
+  /*width: 400px;*/
+  /*text-align: left;*/
 }
 div.col-md-6 {
-  display: inline-block;
+  /*display: inline-block;*/
 }
 div.col-md-offset-4 a {
   display: inline-block;
+  background-color: #6B6B6B;
+  color: white;
+  text-decoration: none;
+  padding-top: 6px;
+  padding-left: 47px;
+  padding-right: 47px;
 }
 div.col-md-offset-4{
   margin-top: 24px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 div.col-md-6 input {
-  height: 20px;
-  margin-top: 24px;  
+  height: 25px;
+  width: 100%;  
+  border: 1 !important;    /*    Removes border*/
+  border: 1px solid #ACABAB;
+  margin-bottom: 8px;
 }
 .btn {
   background-color: #BE3228;
   color: white;
   border: none;
+  margin-right: -76px;
 }
-/*.btn-group {
+.btn:hover {
+  background-color: #5E352A;
+}
+.contenedor-datos {
+  /*width: 90%;*/
+  text-align: left;
+}
+/*.#ACABABgroup {
   margin: 4% 19% 0 16.5%;
 }*/
 
