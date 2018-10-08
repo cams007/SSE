@@ -53,7 +53,7 @@
 			<p>Egresados</p>
 		</div><!--div-1-->
 
-		<a href="{{url('/admin/egresado/reporte', $valor) }}" target="_blank">PDF</a><!--editar-->
+		<a href="{{url('/admin/egresado/reporte', $valor) }}" target="_blank" class="pdf">Descargar PDF</a><!--editar-->
 		
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
 			<div>

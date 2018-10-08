@@ -51,7 +51,10 @@ class RegistroController extends Controller
 			!User::where( 'correo', $request->correo )->exists()
 			&&
 			// Si la matricula no se ha registrado antes
-			!User::where( 'egresado_matricula', $request->egresado_matricula )->exists() )
+			!User::where( 'egresado_matricula', $request->egresado_matricula )->exists()
+			&&
+			// Si las contraseñas coinciden
+			$request->password == $request->password_confirmation )
 		{
 			$egresado = Egresado::where('matricula', $request->egresado_matricula )->first();
 		
@@ -66,15 +69,19 @@ class RegistroController extends Controller
 			}catch( Exception $e )
 			{
 				DB::rollback();
-				echo 'ERROR (' .$e->getCode() .'): ' .$e->getMessage();
+				Session::flash('message_success', 'Hubo al guardar el usaurio.');
+
+				return redirect( 'register' );
+
 			}
 			DB::commit();
 
-			// Iniciamos sesion de usuario y se redirigue la pagina home
+			// Iniciamos sesion de usuario y se redirigue a la pagina home
 			Auth::login( $user );
 
 			//Para mostrar mensaje partials/messages.blade.php
-			Session::flash('message', 'Usuario creado correctamente');
+			Session::flash('message_success', 'Usuario dado de alta correctamente.');
+			
 			//Redireccionamos al index de egresado url(/admin/egresado)
 			return redirect('/home');
 		}

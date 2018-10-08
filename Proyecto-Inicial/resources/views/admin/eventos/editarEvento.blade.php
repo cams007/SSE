@@ -56,7 +56,7 @@
 
 			<div class="seccion2">
 	 		<label for="" class="">Poster del evento: </label>
-	 		<input id="file-input" name="imagen" type="file"/>
+	 		<input id="file-input" name="imagen" type="file" class="input-file" />
 	 		<img id="imgSalida" src="{{ url($evento->imagen_url)}}" alt=""/>
 
 			<div class="boton">

@@ -33,8 +33,12 @@ tbody tr:nth-child(odd){ /*Filas nones*/
   color: #6B6B6B;
   background-color: #FFFFFF;
 }
-
-
+.last {
+  width: 70px;
+}
+.columnados {
+  width: 100px;
+}
 /* =========================================================
 END TABLE STYLE
 ========================================================= */
