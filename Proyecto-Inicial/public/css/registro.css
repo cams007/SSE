@@ -11,10 +11,25 @@
   position: relative;
 
 }
+
 .contenedor{
     /*background: rgb(26, 168, 213);*/
     width: 1024px;
     min-height: 536px;
+    /*height: 536px;*/
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-2{
+    /*background: rgb(26, 168, 213);*/
+    width: 1024px;
+    min-height: 350px;
     /*height: 536px;*/
     margin: 0 auto;
     display: block;
@@ -44,6 +59,7 @@
   /*background: rgb(19, 73, 144);*/
   width: 550px;
 }
+
 .bienvenida{
   /*background: rgb(126, 84, 121);*/
   margin-left: 32px;
@@ -52,6 +68,7 @@
   font-family: helvetica;
   font-size: 15px;
 }
+
 .column{
   /*background: rgb(77, 28, 130);*/
   width: 450px;
@@ -59,13 +76,16 @@
   margin-left: 32px;
   text-align: left;
 }
+
 .aviso-privacidad{
   color: #BE3228;
   text-decoration: none;
   font-family: helvetica;
   font-size: 17px;
 }
+
 .div-2-2{
+  width: 550px;
   /*background: rgb(184, 65, 136);*/
 }
 
@@ -96,20 +116,11 @@
   top: 0;
   transition: opacity 400ms ease-in;
   z-index: 99999;
-
   display: block;
   animation: modal 0s 0s forwards;
   visibility: hidden;
+}
 
-}
-/*
-.modaloverlay:target {
-  display: block;
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 99999;
-}
-*/
 .modaloverlay .modal {
   background-color: white;
   height: 75%;
@@ -164,6 +175,7 @@
     opacity: 1;
   }
 }
+
 .label{
   /*background: rgb(110, 184, 221);*/
   text-align: left;
@@ -171,9 +183,11 @@
   font-family: 'Roboto',sans-serif;;
   font-size: 14px;
 }
+
 .div-input{
   margin-bottom: 16px;
 }
+
 .last-label{
   /*background: rgb(110, 184, 221);*/
   text-align: right;
@@ -184,54 +198,19 @@
   margin-bottom: 24px;
 }
 
-.button1{
-    float: left;
-    width: 100px;
-    height: 24px;
-    background-color: #A4A4A4;
-    color: white;
-    border: none;
-    padding: 3px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    cursor: pointer;
-      animation: modal 0s 0s forwards;
-  visibility: hidden;
-}
-
-.button2{
-    float: right;
-    width: 100px;
-    height: 24px;
-    background-color: #DF0101;
-    color: white;
-    border: none;
-    padding: 3px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    cursor: pointer;
-      animation: modal 0s 0s forwards;
-  visibility: hidden;
-}
-.button2:hover{
-  background: #5E352A;
-}
-
 #entradas{
     height: 28px;
-    width: 400px;
+    width: 300px;
     padding: 1px 14px;
     border: none;
     border: #ACABAB 1px solid;
 }
+
 #entradas:hover{
   border: solid 1px #BE3228;
   outline: none;
 }
+
 .emergente-aviso-privacidad{
   /*background: rgb(73, 128, 24);*/
   text-align: center;
@@ -240,16 +219,19 @@
   font-size: 20px;
   height: 50px;
 }
+
 .emergente-texto-central{
   /*background: rgb(193, 185, 224);*/
   color: #6B6B6B;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
-    text-align: justify;
-  overflow-y: hidden;
+  text-align: justify;
+  overflow-y: scroll;
 }
+
 .div-btn{
   /*background: rgb(162, 3, 52);*/
+  outline: none;
   margin-top: 32px;
   height: 50px;
   display: -webkit-flex;
@@ -257,7 +239,6 @@
   display: flex;
   justify-content: space-around;
 }
-
 
 .emergente-button1{
     float: left;
@@ -288,6 +269,7 @@
     font-size: 15px;
     cursor: pointer;
 }
+
 .emergente-button2:hover{
   background: #5E352A;
 }
@@ -321,114 +303,55 @@ div.col-md-6 input {
   height: 20px;
   margin-top: 24px;  
 }
+
+
+.btn-group {
+  width: 330px;
+  background: white;
+  margin-top: 32px;
+  height: 50px;
+  outline: none;
+  
+  justify-content: space-around;
+  /*margin: 4% 19% 0 16.5%;*/
+}
+
+.button1{
+    float: left;
+    width: 80px;
+    height: 24px;
+    background-color: #A4A4A4;
+    color: white;
+    border: none;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+
+.button2{
+    float: right;
+    width: 150px;
+    height: 30px;
+    background-color: #DF0101;
+    color: white;
+    border: none;
+    padding: 3px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.button2:hover{
+  background: #5E352A;
+}
+
 .btn {
   background-color: #BE3228;
   color: white;
   border: none;
 }
-/*.btn-group {
-  margin: 4% 19% 0 16.5%;
-}*/
-
-/* Aqui agrego lo mio */
-
-
-/*.registro{
-    position: relative;
-    top: 50px;
-    width: 1020px;
-    height: 420px;
-    margin: 0 auto;
-    padding: 0px;
-    background: #fbfbfb;
-    box-shadow: 0px 0px 4px gray;
-
-}*/
-
-
-
-/*#saludo{
-    float:left;
-    width: 60%;
-    height: 300px;
-    margin-left: 40px;
-    margin-right: 1%;
-    position: relative;
-}*/
-
-/*.panel-body{
-  float: left;
-  width: 90%;
-  margin-right: 1%;
-}*/
-
-/*.group-input{
-  margin-bottom: 10px;
-}*/
-
-/*.label{
-  float: left;
-  text-align: right;
-  width: 40%;
-}*/
-/*
-.separator-line{
-  float: right;
-  width: 70%;
-  margin: 0 5% 10px 0;
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-}*/
-
-/*#bienvenida{
-    font-family: helvetica;
-    font-size: 15px;
-    position: relative;
-    text-align: justify;
-    top: 40px;
-    color: black;
-}*/
-
-/*#aviso{
-    font-family: helvetica;
-    position: relative;
-    top: 20px;
-    text-decoration: none;
-    color: red;
-}*/
-
-/*#datos{
-    font-family: helvetica;
-    margin-top: 40px;
-    margin-left: 40px;
-    float: left;
-    width: 455px;
-    height: 300px;
-}
-*/
-
-
-/*.titulo{
-  width: 50%;
-  height: 32px;
-}*/
-
-
-/*.p{
-    font-size: 12px;
-    width: 40%;
-
-}*/
-/*
-.seccion{
-    font-family: helvetica;
-    font-size: 30px;
-    text-align: center;
-}
-
-.hre{
-    width: 50%;
-}*/

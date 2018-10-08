@@ -56,7 +56,7 @@
 
                 <div class="btn-group">
                     <a href="{{url('/')}}" class="button1"> Cancelar</a>
-                    <button type="submit">Registrarse </button>
+                    <button type="submit" class="button2">Registrarse </button>
               </div>
         </form>
     </div>
@@ -87,7 +87,7 @@
                 </div>
 
                 <div id="a" class="column">
-                    <a id="leerAviso" href="#privacidad" onclick="mostrarAviso()" class="aviso-privacidad">Leer aviso de privacidad completo.</a>
+                    <a id="leerAviso" onclick="mostrarAviso()" class="aviso-privacidad">Leer aviso de privacidad completo.</a>
                 </div>
 
                 <div class="div-btn">
@@ -95,7 +95,7 @@
                   <a href="{{url('/')}}"><button class="emergente-button1">Cancelar</button></a>
                 </div>
                 <div class="btn-2">
-                  <a href="#"><button class="emergente-button2" onclick="closeModal()">Aceptar</button></a>
+                  <button class="emergente-button2" onclick="closeModal()">Aceptar</button>
                 </div>
                 </div>
               </div>
