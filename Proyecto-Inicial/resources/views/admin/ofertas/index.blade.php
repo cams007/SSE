@@ -60,8 +60,6 @@
 
 		<a href="{{url('/admin/ofertas/reporte', $valor) }}" target="_blank" class="pdf">Descargar PDF</a><!--editar-->
 
-		@include('admin.partials.messages')<!--Mensages -->
-
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
 			<div>
 				<a href="{{url('/admin/ofertas/crearOferta')}}"><img src="{{ url('assets/images/crear.png') }}" alt=""></a><!--Button crear Evento-->
@@ -201,8 +199,8 @@
 			<form action="{{route('admin.eliminarOferta.submit')}}" method="post">
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-
-					<div class="descripcion" id="idOferta"></div>
+					
+					<div class="descripcion" id="oferta_id"></div>
 
 					<div class="item-1"><!--item-1-->
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>

@@ -42,7 +42,6 @@
 	 				<input type="text" name="ap_ma" placeholder="Apellido del materno" required/>
 				</div>
 			</div>
-	 		
 
 			<div class="columnitas">
 				<div>
@@ -104,7 +103,7 @@
 	 		<input class="promedio" type="text" name="promedio" placeholder="Promedio" required/>
 
 			<div class="boton">
-	 			<button type="submit" class="flat">Guardar</button>
+	 			<button for="submit" type="submit" class="flat">Guardar</button>
 			</div>
 		</form>
 	</div>

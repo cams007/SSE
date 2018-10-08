@@ -1,13 +1,17 @@
-$(document).ready( function(){//Comprueba que el documento se cargo correctamente
-
-	//Eliminar tip
-	$('.btn-showDelete').click(function(){//accedemos a la clase del index. btn-delet
+$(document).ready( function()
+{
+	//Comprueba que el documento se cargo correctamente
+	//Eliminar oferta
+	$('.btn-showDelete').click(function()
+	{
+		//accedemos a la clase del index. btn-delet
 		var row = $( this ).parents( 'tr' );
-            var oferta = row.data( 'oferta' );
+		var oferta = row.data( 'oferta' );
+		var empresa = row.data( 'empresa' );
 
-		document.getElementById('idOferta').innerHTML = '<input type="hidden" name="id" value="'+oferta.id +'"/>';
+		document.getElementById( 'oferta_id' ).innerHTML = '<input type="hidden" name="oferta_id" value="'+oferta.id +'"/>';
             document.getElementById( 'getOfertaD' ).innerHTML = '<p class="texto-descripcion">' + oferta.titulo_empleo +'</p>';
-            document.getElementById( 'getEmpresaD' ).innerHTML = '<p class="texto-descripcion">'+ oferta.nombre +'</p>';
+            document.getElementById( 'getEmpresaD' ).innerHTML = '<p class="texto-descripcion">'+ empresa.nombre +'</p>';
             document.getElementById( 'getDescripcionD' ).innerHTML = '<p class="texto-descripcion">'+ oferta.descripcion +'</p>';
             document.getElementById( 'getUbicacionD' ).innerHTML = '<p class="texto-descripcion">'+ oferta.ubicacion +'</p>';
             document.getElementById( 'getSalarioD' ).innerHTML = '<p class="texto-descripcion">'+ '$' + oferta.salario + ' MXN' + '</p>';
@@ -20,10 +24,11 @@ $(document).ready( function(){//Comprueba que el documento se cargo correctament
       $('.btn-show').click(function()
       {
             var row = $( this ).parents( 'tr' );
-            var oferta = row.data( 'oferta' );
+		var oferta = row.data( 'oferta' );
+		var empresa = row.data( 'empresa' );
 
             document.getElementById( 'getOferta' ).innerHTML = '<p class="texto-descripcion">'+ oferta.titulo_empleo +'</p>';
-            document.getElementById( 'getEmpresa' ).innerHTML = '<p class="texto-descripcion">'+ oferta.nombre +'</p>';
+            document.getElementById( 'getEmpresa' ).innerHTML = '<p class="texto-descripcion">'+ empresa.nombre +'</p>';
             document.getElementById( 'getDescripcion' ).innerHTML = '<p class="texto-descripcion">'+ oferta.descripcion +'</p>';
             document.getElementById( 'getUbicacion' ).innerHTML = '<p class="texto-descripcion">'+ oferta.ubicacion +'</p>';
             document.getElementById( 'getSalario' ).innerHTML = '<p class="texto-descripcion">'+ '$' + oferta.salario + ' MXN' + '</p>';
