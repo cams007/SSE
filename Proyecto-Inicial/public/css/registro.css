@@ -63,6 +63,7 @@
 
 .bienvenida{
   /*background: rgb(126, 84, 121);*/
+  margin-top: 24px;
   margin-left: 32px;
   width: 450px;
   text-align: justify;
