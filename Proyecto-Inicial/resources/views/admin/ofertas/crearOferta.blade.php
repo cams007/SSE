@@ -38,7 +38,7 @@
 
 		<form method="POST" enctype="multipart/form-data" action="{{ route('admin.crearOferta.submit') }}">
 			{{ csrf_field() }}
-
+		<div class="seccion1">
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
 
 			<label for="" class="">Nombre del empleo: </label>
@@ -47,9 +47,18 @@
 	 		<label for="" class="">Descripción: </label>
 	 		<input type="text" name="descripcion" placeholder="Descripción" required/>
 
+	 		<label for="" class="">Empresa: </label>
+	 		<select name="empresa_id" required>
+	 			<@foreach( $empresas as $empresa )
+				 		{{ $id = $empresa->id }}
+	 					<option value={{$id}}>{{$empresa->nombre}}</option>
+	 			@endforeach
+	 		</select>
+
 	 		<label for="" class="">Ubicación: </label>
 	 		<input type="text" name="ubicacion" placeholder="Ubicación" required/>
-
+		</div>
+		<div class="seccion2">
 			<!--Datos de preparacion-->
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera" required>
@@ -57,7 +66,7 @@
 	 					<option value="{{$idn}}">{{$nombre}}</option>
 	 			@endforeach
 	 		</select>
-
+	 		 	
 	 		<label for="" class="">Experiencia: </label>
 	 		<input type="text" name="experiencia" placeholder="Experiencia" required/>
 
@@ -71,17 +80,11 @@
 	 			@endforeach
 	 		</select>
 
-	 		<label for="" class="">Empresa: </label>
-	 		<select name="empresa_id" required>
-	 			<@foreach( $empresas as $empresa )
-				 		{{ $id = $empresa->id }}
-	 					<option value={{$id}}>{{$empresa->nombre}}</option>
-	 			@endforeach
-	 		</select>
 
 			<div class="boton">
 			 <button type="submit" class="flat">Guardar</button>
 		 	</div>
+		 </div>
 		</form>
 
 	</div><!--contenedor-->

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+  font-family: 'Roboto', sans-serif;
+}
 div.contenedor div.div-1 p {
   font-family: 'Roboto', sans-serif;
 	font-size: 24px;
@@ -37,6 +41,7 @@ label {
 }
 input {
   margin-bottom: 16px;
+  padding-left: 8px;
   width: 35%;
   height: 24px;
 }
@@ -51,7 +56,7 @@ div.columnitas div {
 }
 select {
   height: 28px;
-  padding: 0 0 0 32px;
+  padding: 0 0 0 40px;
   margin-bottom: 16px;
 	background: white;
 	border: 1px solid #acabab;
@@ -61,15 +66,21 @@ select {
 	background-repeat: no-repeat;
 	background-position: 3px 7px;
 }
-div.columnitas input, div.columnitas select {
+div.columnitas input {
   width: 70%;
+}
+div.columnitas select {
+  width: 75%;
 }
 input.promedio {
   width: 15%;
 }
 div.boton {
   text-align: right;
-  margin-top: 8px;
+  margin-top: 16px;
   margin-right: 20px;
   margin-bottom: 50px;
+}
+select.carrera {
+  width: 85%;
 }

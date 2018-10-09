@@ -27,12 +27,12 @@
         <div class="div-2-2">
             <form class="form-horizontal" role="form" method="POST" action="{{ route( 'passrwordconfirmar.submit' ) }}">
                 {{ csrf_field() }}
-
+            <div class="contenedor-datos">
                 <div class = "form-group{{ $errors->has( 'passwordold' ) ? ' has-error' : '' }}">
                     <label for = "password" class = "col-md-4 control-label">Contraseña actual: </label>
                     
                     <div class = "col-md-6" >
-                        <input id = "password" type = "password" class = "form-control" name = "passwordold" placeholder ="Contraseña actual" required autofocus>
+                        <input id = "password" type = "password" class = "form-control" name = "passwordold" required autofocus>
                         @if( $errors->has( 'passwordold' ) )
                             <span class = "help-block">
                                 <strong>{{ $errors->first( 'passwordold' ) }}</strong>
@@ -44,7 +44,7 @@
                 <div class = "form-group{{ $errors->has( 'password' ) ? ' has-error' : '' }}">
                     <label for = "password" class = "col-md-4 control-label">Contraseña nueva: </label>
                     <div class = "col-md-6" >
-                        <input id = "password" type = "password" class = "form-control" name = "password" placeholder ="Contraseña nueva" required>
+                        <input id = "password" type = "password" class = "form-control" name = "password" required>
                         @if( $errors->has( 'passwordold' ) )
                             <span class = "help-block">
                                 <strong>{{ $errors->first( 'passwordold' ) }}</strong>
@@ -56,10 +56,10 @@
                 <div class = "form-group">
                     <label for = "password-confirm" class = "col-md-4 control-label">Confirmar contraseña nueva: </label>
                     <div class = "col-md-6" >
-                        <input id = "password-confirm" type = "password" class = "form-control" name = "password_confirmation" placeholder ="Confirme contraseña nueva" required>
+                        <input id = "password-confirm" type = "password" class = "form-control" name = "password_confirmation" required>
                     </div>
                 </div>
-
+            </div>
                 <div class="form-group">
                     <div class = "col-md-6 col-md-offset-4">
                         <a href="{{url('admin/home')}}" class="button1">Cancelar</a>

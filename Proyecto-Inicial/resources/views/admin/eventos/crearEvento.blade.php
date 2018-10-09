@@ -43,7 +43,7 @@
 			</div>
 			<div class="seccion2">
 	 		<label for="" class="">Poster del evento: </label>
-	 		<input id="file-input" name="imagen" type="file" required/>
+	 		<input id="file-input" name="imagen" type="file" class="input-file" required/>
 	 		<img id="imgSalida" src="" />
 
 	 		<input type="hidden" name="activo" value="1" placeholder="" required/>

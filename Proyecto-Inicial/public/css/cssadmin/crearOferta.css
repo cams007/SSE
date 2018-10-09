@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+* {
+  font-family: 'Roboto', sans-serif;
+}
 div.contenedor div.div-1 p {
   font-family: 'Roboto', sans-serif;
 	font-size: 24px;
@@ -10,9 +14,7 @@ div.div-1 {
   margin-bottom: 16px;
 }
 form {
-  width: 41%;
-  min-height: 405px;
-  margin: auto;
+  display: flex;
   text-align: left;
 }
 label {
@@ -20,22 +22,40 @@ label {
   font-size: 15px;
   color: #6B6B6B;
 }
+div.seccion1 {
+  width: 50%;
+  padding-left: 25px;
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+      box-sizing: border-box;
+}
+div.seccion2 {
+  /*background: rgb(29, 158, 215);*/
+  width: 50%;
+  border-left: 1px solid #adacac;
+  margin-bottom: 8px;
+  padding-left: 25px;
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+      box-sizing: border-box;
+}
 input {
   margin-bottom: 16px;
+  padding-left: 8px;
   /*width: 35%;*/
   width: 70%;
   height: 24px;
 }
 div.boton {
   text-align: right;
-  margin-top: 16px;
-  /*margin-right: 61px;*/
+  margin-top: 60px;
+  margin-right: 20px;
   margin-bottom: 50px;
 }
 select {
-  width: 70%;
+  width: 352px;
   height: 28px;
-  padding: 0 0 0 32px;
+  padding: 0 0 0 40px;
   margin-bottom: 16px;
 	background: white;
 	border: 1px solid #acabab;

@@ -1,0 +1,578 @@
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,700,900);
+
+/* =========================================================
+ 2. ASIDE STYLE
+========================================================= */
+/* Aside */
+/* Starter CSS for Flyout Menu */
+#cssmenu ul {
+  /*background-color: rgb(223, 147, 9);*/
+}
+#cssmenu ul li{
+	width: 200px;
+	/*height: 45px;*/
+	padding-top: 10px;
+  padding-bottom: 10px;
+	text-align: left;
+  padding-left: 32px;
+}
+#cssmenu > ul > li:hover {
+	background: #BE3228;
+}
+#cssmenu > ul > li:hover > a{
+	color: white;
+}
+#cssmenu > ul > li > a{
+	/*padding-left: 32px;*/
+	color: #6B6B6B;
+	text-align: left;
+	font-size: 15px;
+	font-family: 'Roboto', sans-serif;
+	text-decoration: none;
+}
+#cssmenu > ul > li.active{
+	background: #be3228;
+}
+#cssmenu > ul > li.active > a{
+	color: white;
+	font-weight: bold;
+}
+  /*#dprof{
+  	width: 30px;
+  }*/
+/* =========================================================
+ 3. CUSTOM INPUT STYLE
+========================================================= */
+input[type="text"],
+input[type="tel"],
+input[type="email"] {
+  width: 56%;
+  height: 32px;
+  padding: 0 0 0 5px;
+  margin: 8px 0px 8px 0px;
+  border: #ACABAB 2px solid;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 4px 4px;
+}
+
+input[type="date"] {
+  width: 56%;
+  /*height: 32px;*/
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  /*padding: 0px 0 0 5px;*/
+  margin: 8px 0px 8px 0px;
+  border: #ACABAB 2px solid;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 4px 4px;
+}
+input[type="submit"] {
+  /*background-color: rgb(126, 11, 221);*/
+/*  width: 100px;
+  height: 20px;*/
+}
+input[type="file"] {
+  width: 80%;
+  height: 32px;
+  /*margin: 8px 0px 8px 0px;*/
+  /*border: rgba(255, 255, 255, 0.5);*/
+}
+input.input-icon {
+  padding: 0 0 0 32px;
+}
+
+input.inputEmail {
+  background-image: url("../assets/images/email.png");
+}
+
+input.inputHome {
+  background-image: url("../assets/images/home0.png");
+}
+
+input.inputTel {
+  background-image: url("../assets/images/phone.png");
+}
+
+input.inputAddress {
+  background-image: url("../assets/images/address.png");
+}
+
+input.inputPuesto {
+  background-image: url("../assets/images/empresa_puesto.png");
+}
+
+input.inputAntiguedad {
+  background-image: url("../assets/images/empresa_antiguedad.png");
+}
+
+input.inputFuncionDes {
+  background-image: url("../assets/images/empresa_funcion_principal.png");
+}
+
+input[type="text"]:hover,
+input[type="tel"]:hover,
+input[type="email"]:hover,
+input[type="date"]:hover, input:focus {
+  outline: none;
+  border: solid 2px #BE3228;
+}
+
+.label-icon {
+  margin: 8px 0px 8px 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 10pt;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* =========================================================
+ 4. CUSTOM RADIO STYLE
+========================================================= */
+.label-radio {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  padding-left: 20px;
+  margin-right: 15px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+}
+
+.label-radio:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;  
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  box-shadow: inset 0px 0px 3px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border: 1px solid #6B6B6B;
+}
+
+.radio {
+  margin: 8px 0px 8px 0px;
+}
+.agregar-maestria-radio {
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.agregar-maestria-radio label {
+  color: #6B6B6B;
+}
+textarea{
+  margin: 0px;
+  width: 614px;
+  height: 212px;
+  resize: none;
+  }
+td {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  padding-left: 16px;
+}
+td > .radio {
+  margin-left: 3.5px;
+}
+
+td > .radio > .label-radio {
+  margin-right: 0px;
+}
+th {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+}
+th.col_calif {
+  width: 140px;
+}
+
+th.col_calif > span {
+  font-size: 16px;
+}
+input[type=radio] {
+  display: none;
+  border: 1px #fff solid;
+  margin: 8px 0px 8px 0px;
+}
+input[type=radio]:checked + label:before {
+  content: "\2022";
+  color: #BE3228;
+  font-size: 36px;
+  text-align: center;
+  line-height: 18px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+input[type=radio]:checked + .label-radio:before {
+  border: 1px solid #BE3228;  
+}
+
+select {
+  background-color: #fff;
+  border: 2px solid #ACABAB;
+  margin: 8px 0px 8px 0px;
+}
+
+select:focus, select:hover {
+  border: 2px solid #BE3228;
+}
+
+/* =========================================================
+ 5. CUSTOM CHECKBOX STYLE
+========================================================= */
+
+input[type=checkbox] {
+  margin: 8px 0px 8px 0px;
+  display: none;
+}
+input[type=checkbox]:checked + label:before {
+  content: "\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 22px;
+  text-align: right;
+  line-height: 18px;
+  color: #BE3228;
+}
+
+input[type=checkbox]:checked + .label-radio:before {
+  border: 1px solid #BE3228;
+}
+
+.checkbox {
+  /*width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;*/
+  margin: 8px 0px 8px 0px;
+}
+.checkbox label:before {
+  border-radius: 3px;
+  border: 1px solid #6B6B6B;
+}
+
+.checkbox .label-radio:before {
+  bottom: inherit;
+}
+
+/* =========================================================
+ 6. CUSTOM CHECKBOX STYLE
+========================================================= */
+textarea {
+  margin: 8px 0px 8px 0px;
+  height: 68px;
+  width: 619px;
+  font-family: 'Roboto', sans-serif;
+  border: 2px solid #ACABAB;
+  padding: 10px;
+  resize: none;
+}
+
+textarea:focus, textarea:hover {
+  outline: none;
+  border: 2px solid #BE3228;
+}
+
+.disabled {
+  pointer-events: none;
+  color: #ACABAB;
+  cursor: default;
+}
+
+.hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.38);
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.clearfix ::after {
+  content: "";
+  clear: both;
+}
+
+.aling {
+  margin-left: 16px;
+}
+
+.aling-right {
+  /*float: right;*/
+  /*margin: 0px 0px 10px 10px;*/
+}
+
+.aling-left {
+  float: left;
+  margin: 0px 0px 10px 10px;
+}
+
+.margin {
+  margin: 0 5% 0% 5%;
+}
+
+.text-center{
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	color: #6B6B6B;
+	/*position: relative;*/
+}
+.hidden {
+  display: none;
+}
+
+table {
+  margin: 8px 0px 16px 0px;
+}
+
+.column-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.contenedor {
+  width: 1024px;
+  /*height: 536px;*/
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-1{
+	/*background: yellow;*/
+	border-bottom: solid 1px #adacac;
+	margin: 8px 32px 0;
+	height:32px;
+}
+
+.div-2{
+  /*background: #E67E22;*/
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.div-2-1{
+  /*background: #2874A6;*/
+  border-right: 1px solid gray;
+  height: 465px;
+  width: 248px;
+  margin-right: 8px;
+}
+
+.div-2-2{
+
+  margin-top: 16px;
+  /*overflow: auto;*/
+  width: 50%;
+}
+
+.div-2-3{
+  /*position: relative;*/
+  width: 200px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+}
+.div-2-3 img {
+  margin-top: 16px;
+  width: 70%;
+  height: 30%;
+  border-radius: 50%;
+
+}
+.foto {
+  width: 200px;
+  height: 170px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contenedor-info{
+  margin-top:  8px;
+  margin-bottom: 24px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contenedor-info a {
+  margin-top: 16px;
+  margin-right: 24px;
+  margin-left: 32px;
+}
+.contenedor-info label {
+  margin-top: 16px;
+  color: #6B6B6B;
+}
+.entradas {
+  margin-bottom: 24px;
+}
+div.entradas select {
+  background-color: white;
+  border: 1px solid gray;
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 250px;
+}
+div.form-group select {
+    background-color: white;
+    border: 1px solid gray;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 250px;
+}
+
+div.form-group-estudios {
+  text-align: left;
+  width: auto;
+  margin-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+div.form-group-estudios label:first-child {
+  display: inline-block;
+  width: 300px;  
+}
+div.form-group-estudios label:nth-child(2) {
+  color: #6B6B6B;
+}
+.seleccion-foto{
+  display: block;
+  margin-top: 16px;
+  width: 80%;
+  /*background: rgb(244, 102, 58);*/
+}
+.tabla {
+  margin-left: 100px;
+}
+div.margin a {
+  margin-left: 100px;
+}
+.button {
+  margin-top: 50px;
+  margin-left: 170px;
+}
+.btn {
+  text-align: right;
+  margin-top: 8px;
+}
+.btn-empresa {
+  display: inline-block;
+  text-decoration: none;
+  color: #BE3228;
+}
+.info {
+  width: 60%;
+  text-align: left;
+  margin-right: 30px;
+  color: #6B6B6B;
+}
+.icono-perfil {
+  width: 50px;
+}
+form {
+  text-align: left;
+  padding-left: 16px;
+}
+form p {
+  margin-bottom: 16px;
+  color: #6B6B6B;
+}
+form input.flat {
+  display: block;
+  padding: 8px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+div.modal form {
+  text-align: center;
+}
+.recomendacion {
+  width: 300px;
+  display: inline;
+  position: relative;
+  top: -42px;
+}
+.form-control {
+  display: inline-block;
+  width: 400px;
+}
+.pregunta1 {
+  display: inline-block;
+  margin-top: 16px;
+}
+div.botones-direccion {
+  margin-top: 16px;
+}
+div.botones-telefono {
+  margin-top: 16px;
+}
+div.botones-doctorado {
+  margin-top: 16px;
+}
+div.botones-maestria {
+  margin-top: 16px;
+}
+div.btn-group {
+  text-align: center;
+}
+div.btn-group button {
+  margin-top: 16px;
+}
+div.btn-guardar { 
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+.calificacion a {
+	display: block;
+	margin: auto;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	text-decoration: none;
+	margin-top: 16px;
+	width: 170px;	
+	background-color: #BE3228;
+	color: white;
+}
+.column2 {
+	margin-top: 16px;
+}
+.content p {	
+	margin-top: 16px;
+	margin-left: 16px;
+	color: #6B6B6B;	
+}

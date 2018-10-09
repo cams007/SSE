@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+*{
+  font-family: 'Roboto', sans-serif;
+}
 div.contenedor div.div-1 p {
   font-family: 'Roboto', sans-serif;
 	font-size: 24px;
@@ -21,6 +25,7 @@ input {
 }
 input.nombre {
   width: 97%;
+  padding-left: 8px;
 }
 form {
   width: 41%;
@@ -30,7 +35,8 @@ form {
 }
 textarea {
   margin-bottom: 16px;
-  width: 97%;
+  padding-left: 8px;
+  width: 409px;
 }
 div.foto {
   margin-bottom: 16px;
@@ -42,6 +48,6 @@ div.foto img {
 div.boton {
   text-align: right;
   margin-top: 16px;
-  /*margin-right: 61px;*/
+  /*margin-right: 8px;*/
   margin-bottom: 50px;
 }

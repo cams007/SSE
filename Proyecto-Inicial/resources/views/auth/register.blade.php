@@ -3,11 +3,23 @@
 @section('title', 'Registrarse')
 
 @section('style')
-<link href="{{ url('css/registro.css') }}" rel="stylesheet">
+    <link href="{{ url('css/registro.css') }}" rel="stylesheet">
+    <link href="{{ url('css/notificationflash.css') }}" rel="stylesheet">
+@stop
+
+@section( 'script' )
+	<script src="{{ url('js/ocultarelemento.js') }}"></script>
 @stop
 
 @section('content')
 <div class="contenedor">
+    @if(Session::has('message_danger'))
+        <div class = "alert alert-danger flashmensasse" id = "message_alert">
+            <em> {!! session('message_danger') !!}</em>
+            <button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        </div>
+    @endif
+
   <div class="div-1">
 		<p class="text-center">Registrarme</p>
 	</div><!--div-1-->
@@ -36,7 +48,7 @@
                 </div>
                 <div class="label">Correo electrónico:*</div>
                 <div class="div-input{{ $errors->has('correo') ? ' has-error' : '' }}">
-                    <input type="text" name="correo" id="entradas" placeholder="correo@ejemplo.net" required>
+                    <input type="email" value="{{ old( 'correo' ) }}" name="correo" id="entradas" placeholder="correo@ejemplo.net" required>
 
                     @if ($errors->has('correo'))
                         <span class="help-block">
@@ -52,6 +64,7 @@
 
                 <div class="label">Confirmar contraseña:*</div>
                 <input type="password" name="password_confirmation" id="entradas" placeholder = "Confirme contraseña" required>
+                
                 <div class="last-label">* Campos obligatorios</div>
 
                 <div class="btn-group">

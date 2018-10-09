@@ -58,9 +58,7 @@
 			<p>Ofertas laborales</p>
 		</div><!--div-1-->
 
-		<a href="{{url('/admin/ofertas/reporte', $valor) }}" target="_blank">PDF</a><!--editar-->
-
-		@include('admin.partials.messages')<!--Mensages -->
+		<a href="{{url('/admin/ofertas/reporte', $valor) }}" target="_blank" class="pdf">Descargar PDF</a><!--editar-->
 
 		<div class="div-2-2-1"> <!--inicio div-2-2-1-->
 			<div>
@@ -79,7 +77,7 @@
 				<td>
 					Puesto
 				</td>
-				<td>
+				<td class="columnados">
 					Empresa
 				</td>
 				<td>
@@ -92,7 +90,7 @@
 				<td>
 					Carrera
 				</td>
-				<td>
+				<td class="last">
 					Acción
 				</td>
 
@@ -143,7 +141,7 @@
 
 	<div id="verOferta" class="modaloverlay"> <!-- div-modaloverlay -->
 		<div class="modal"> <!-- div-modal -->
-			<a href="#" class="close1">&times;</a>
+			<a href="#" class="close">&times;</a>
 			<div class="parte-1"><!--parte-1-->
 				<p class="txt" id = "getOferta"></p>
 			</div><!--parte-1-->
@@ -201,8 +199,8 @@
 			<form action="{{route('admin.eliminarOferta.submit')}}" method="post">
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
-
-					<div class="descripcion" id="idOferta"></div>
+					
+					<div class="descripcion" id="oferta_id"></div>
 
 					<div class="item-1"><!--item-1-->
 						<div class="icono"><img src="{{ url('assets/images/address.png') }}" alt="" class="iconos"></div>
