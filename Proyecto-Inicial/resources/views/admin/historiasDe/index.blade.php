@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'index')
+@section('title', 'Historias de éxito')
 
 
 @section('style')
@@ -54,22 +54,27 @@
 
 		<table> <!--Contenido de la pagina-->
 			<thead>
-				<td>Titulo</td>
+				<td>Título</td>
 				<td>Descripción</td>
 				<td>Acción</td>
 			</thead>
 			<!--Recibimos del controlador HistoriasExito $historiaas-->
 			<tbody>
 				@foreach($historias as $historia)
-				<tr data-historia="{{$historia}}">
-					<td><a href="#verHistoria" class="btn-show">{{ $historia->titulo}}</a></td>
-					<td> <?php  $imp =substr($historia->descripcion,0,20); echo $imp;?> </td><!--se muestran 20 caracteres de la descripción-->
-					<td>
-						<a href="{{route('admin.editarHistoria', $historia)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-	          			<a href="#eliminarHistoria" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
-					</td>
-				</tr>
-		        @endforeach
+					<tr data-historia="{{$historia}}">
+						<td><a href="#verHistoria" class="btn-show">{{ $historia->titulo}}</a></td>
+						<td>
+							<?php
+								$imp = substr( $historia->descripcion, 0, 20 );
+								echo $imp;
+							?>
+						</td><!--se muestran 20 caracteres de la descripción-->
+						<td>
+							<a href="{{route('admin.editarHistoria', $historia)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
+							<a href="#eliminarHistoria" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
+						</td>
+					</tr>
+		        	@endforeach
 			</tbody>
          </table><!--Fin del contenido de la pagina-->
 

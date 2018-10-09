@@ -44,7 +44,6 @@
 		<div class="column content">
 			@if( $count == 0 )
 				<form action="{{ url('perfil/guardarsatisfaccion') }}" method="post">
-					{{-- TODO: Protección contra CSRF --}}
 					{{ csrf_field() }}
 					
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />

@@ -39,18 +39,18 @@
 				<aside id="cssmenu" class="column hrV">
 					@include('partials.aside')
 				</aside>
-		</div>
+			</div>
 				<div class="contenedor-info"><!--inicio contenedor-info-->
 					<a href="#agregarEmpleo" class="btn-empresa">Agregar empleo</a>
 
 					@if( $empleos->count() == 0 )
-						<label>No tiene empleos registrados todavía<label>
+						<label>No tiene empleos registrados<label>
 					@endif
 				</div><!--contenedor-info-->
 				
 				<div class = "div-4"><!--div-4-->
 					@if( $empleos->count() > 0 )
-						<label>Tiene {{ $empleos->count() }} empleos anteriores<label>
+						<label>Tiene {{ $empleos->count() }} empleos registrados<label>
 						<table>
 							<thead>
 								<tr>
@@ -62,7 +62,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								@foreach($empleos as $empleo)
+								@foreach( $empleos as $empleo )
 									<tr>
 										<td>{{ $empleo->empresa }} </td>
 										<td>{{ $empleo->funciones }}</td>

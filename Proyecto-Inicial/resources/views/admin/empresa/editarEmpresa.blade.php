@@ -105,7 +105,7 @@
 				</div>
 
 				<div>
-			 		<label for="" class="">Telefono: </label>
+			 		<label for="" class="">Teléfono: </label>
 			 		<input type="text" name="telefono_emp" value="{{$empresa->telefono}}" required/>
 				</div>
 			</div>
@@ -125,7 +125,7 @@
 
 			<div class="columnitas">
 				<div>
-			 		<label for="" class="">Motivos de no contratacion: </label>
+			 		<label for="" class="">Motivos de no contratación: </label>
 			 		<textarea rows="4" cols="50" name="noContratacion" required>{{$empresa->motivo_no_contratacion}}</textarea>
 				</div>
 

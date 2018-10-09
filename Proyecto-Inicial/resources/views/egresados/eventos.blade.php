@@ -9,6 +9,10 @@
 	<!--<link href="{{ url('css/ofertas.css') }}" rel="stylesheet">-->
 @stop
 
+@section('script')
+	<script src="{{ url('js/eventos.js') }}"></script>
+@stop
+
 @section('content')
 <div class="contenedor"><!--inicio contenedor-->
 
@@ -86,9 +90,7 @@
 								</div>
 								-->
 							</div><!--fin descripcion-foto-->
-
 						</div><!--fin div-2-2-2-1-->
-
 					</li>
 				@endforeach
 				</ul>
@@ -106,8 +108,6 @@
 	</div><!--fin div-2-->
 
 </div><!--fin contenedor-->
-
-
 
 <div id="detalleEvento" class="modaloverlay"> <!-- div-modaloverlay -->
 	<div class="modal"> <!-- div-modal -->
@@ -150,8 +150,4 @@
 	</div> <!-- div-modal -->
 </div> <!-- div-modaloverlay -->
 
-@stop
-
-@section('script')
-	<script src="{{ url('js/eventos.js') }}"></script>
 @stop

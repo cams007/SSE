@@ -25,7 +25,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $egresados = Egresado::where('habilitado','=',1)->orderBy('ap_paterno', 'DESC')->paginate(10);
+        $egresados = Egresado::where('habilitado','=',1)
+            ->orderBy('ap_paterno', 'DESC')
+            ->paginate(10);
 
         // return view('admin.egresado.index'); //change for admin/home
         return view('admin.egresado.index', compact('egresados'));

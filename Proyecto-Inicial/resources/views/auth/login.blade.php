@@ -12,23 +12,22 @@
             <div id="logo_sse"> </div>
             <div id="titulo_index"><p>Sistema de Seguimiento de Egresados</p></div>
             <a  onmouseover ="mostrarAviso()" href="#modalAcercaDe"><div id="logo_info"></div></a>
-        </div>
-        
-    <div id="modalAcercaDe" class="modaloverlay">
-        <div class="modal">
-                <div class="contenedor-2">
-                  <div id="avisoTitulo" class="emergente-aviso-privacidad">Aquí encontrarás</div>
-                  <div id="textoCompleto" class="emergente-texto-central">
-                </div>
+        </div>    
+        <div id="modalAcercaDe" class="modaloverlay">
+            <div class="modal">
+                    <div class="contenedor-2">
+                    <div id="avisoTitulo" class="emergente-aviso-privacidad">Aquí encontrarás</div>
+                    <div id="textoCompleto" class="emergente-texto-central">
+                    </div>
 
-                <div class="div-btn">
-                    <div class="btn-2">
-                        <a href="#"><button class="emergente-button2" >Aceptar</button></a>
+                    <div class="div-btn">
+                        <div class="btn-2">
+                            <a href="#"><button class="emergente-button2" >Aceptar</button></a>
+                        </div>
                     </div>
                 </div>
-              </div>
+            </div>
         </div>
-    </div>
     </section>
 
     <div class="block">
@@ -72,7 +71,7 @@
                 </button>
         </div>
 
-        @if (Auth::guest())
+        @if( Auth::guest() )
             <li class="registro-boton"><a href="{{ route('register') }}">Regístrate</a></li>
         @endif
 

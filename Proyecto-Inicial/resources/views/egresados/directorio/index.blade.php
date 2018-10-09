@@ -3,9 +3,13 @@
 @section('title', 'Directorio de empresas')
 
 @section('style')
-<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
-<link href="{{ url('css/modal.css') }}" rel="stylesheet">
-<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+	<link href="{{ url('css/empresa.css') }}" rel="stylesheet">
+	<link href="{{ url('css/modal.css') }}" rel="stylesheet">
+	<link href="{{ url('css/paginacion.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/directorio.js') }}"></script>
 @stop
 
 @section('content')
@@ -125,8 +129,4 @@
 	</div> <!-- div-modal -->
 </div> <!-- div-modaloverlay -->
 
-@stop
-
-@section('script')
-	<script src="{{ url('js/directorio.js') }}"></script>
 @stop

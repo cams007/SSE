@@ -3,11 +3,11 @@
 @section('title', 'Bienvenida')
 
 @section('style')
-<link href="{{ url('css/registro.css') }}" rel="stylesheet">
+    <link href="{{ url('css/registro.css') }}" rel="stylesheet">
 @stop
 
 @section('content')
-        <div>
+    <div>
         <br>
         	<p class="seccion">¡Felicitaciones!</p><hr><br>
           	<div >
@@ -21,8 +21,6 @@
             <div>
                 <p align="right">Adelante y ¡Disfruta!</p><br>
                <a href="{{url('/perfil')}}" class="button2">Continuar</a> 
-            </div>
-
-          
-        </div>
+            </div>          
+    </div>
 @stop

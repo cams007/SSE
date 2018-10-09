@@ -1,10 +1,14 @@
 @extends('admin.layouts.master')
 
-@section('title', 'HistoriasYtips')
+@section('title', 'Editar tip y consejo')
 
 @section('style')
 <!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/editarTip.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/admin/tips.js') }}"></script>
 @stop
 
 @section('content')
@@ -20,7 +24,7 @@
 
 			<input name="id" type="hidden" value="{{$tip->id}}" />
 
-			<label for="" class="">Titulo: </label>
+			<label for="" class="">Título: </label>
 	 		<input class="nombre" type="text" name="titulo" value="{{$tip->titulo}}" placeholder="Título del tip" required/>
 
 	 		<label for="" class="">Descripción: </label>
@@ -36,8 +40,4 @@
 			</div>
 		</form>
 	</div><!--contenedor-->
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/tips.js') }}"></script>
 @stop

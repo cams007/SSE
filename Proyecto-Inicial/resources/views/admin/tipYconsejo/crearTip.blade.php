@@ -1,10 +1,14 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Tip y consejo')
+@section('title', 'Crear tip y consejo')
 
 @section('style')
 <!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/crearTip.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/admin/tips.js') }}"></script>
 @stop
 
 @section('content')
@@ -38,8 +42,4 @@
 		</form>
 	</div><!--contenedor-->
 
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/tips.js') }}"></script>
 @stop

@@ -29,7 +29,8 @@
 		7=>'Licenciatura en Ciencias Empresariales',
 		8=>'Licenciatura en Matemáticas Aplicadas',
 		9=>'Licenciatura en Estudios Mexicanos',
-		10=>'Ingeniería en Mecánica Automotriz');
+		10=>'Ingeniería en Mecánica Automotriz'
+	);
 @endphp
 
 @section('content')
@@ -46,7 +47,7 @@
 
 			<input name="id" type="hidden" value="{{$oferta->id}}" />
 
-			<label for="" class="">Titulo del empleo: </label>
+			<label for="" class="">Título del empleo: </label>
 	 		<input type="text" name="titulo_empleo" value="{{ $oferta->titulo_empleo }}" placeholder="Titulo de empleo" required/>
 
 			<label for="" class="">Descripción: </label>

@@ -3,7 +3,7 @@
 @section('title', 'Registrarse')
 
 @section('style')
-<link href="{{ url('css/registro.css') }}" rel="stylesheet">
+    <link href="{{ url('css/registro.css') }}" rel="stylesheet">
 @stop
 
 @section('content')

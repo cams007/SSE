@@ -21,8 +21,7 @@
         </div>
           <div id="header">
               <div id="nombre_usuario">
-
-                    @if (Auth::guest())
+                    @if( Auth::guest() )
                         <a class="user-name" href="#">
                             <img src="{{ url('assets/images/user-name.png') }}">
                         </a>
@@ -38,7 +37,7 @@
                     <li><a href="#"><img src="{{url('assets/images/user.png')}}"></a>
                       <ul>
                         <li><a href = "{{ url( 'change/password/admin' ) }}">Cambiar contraseña</a></li>
-                        <li><a  href="{{ route('admin.logout') }}" onclick="event.preventDefault(); 
+                        <li><a href="{{ route('admin.logout') }}" onclick="event.preventDefault(); 
                               document.getElementById('logout-form').submit();">
                               Cerrar sesión
                             </a>
@@ -68,9 +67,7 @@
           @yield('content')
       </div>
     </section>
-
       @yield('script')
-
 </div>
 <footer>
 </footer>
