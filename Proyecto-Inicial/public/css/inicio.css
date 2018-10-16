@@ -181,17 +181,27 @@ li.registro-boton a {
   font-family: 'Roboto',sans-serif;
 }
 
+.contenedor-2{
+    width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: column;
+}
+
 .modaloverlay {
   background: rgba(0, 0, 0, 0.8);
   bottom: 0;
   left: 0;
   opacity: 0;
-  pointer-events: none;
+  pointer-events: auto;
   position: fixed;
   right: 0;
   top: 0;
   z-index: -1;
-  display: none;
+  display: block;
 }
 
 .modaloverlay:target {
@@ -203,8 +213,8 @@ li.registro-boton a {
 
 .modaloverlay .modal {
   background-color: white;
-  height: 480;
-  width: 40%;
+  height: 45%;
+  width: 30%;
   position: relative;
   margin: 0 auto;
   padding: 3em;
@@ -215,11 +225,11 @@ li.registro-boton a {
 
 @media (min-width: 60em) {
   .modaloverlay .modal {
-    height: 50%;
+    height: 45%;
     margin: 5% auto;
     max-height: 57em;
     max-width: 33em;
-    width: 85%;
+    width: 30%;
   }
 }
 
@@ -235,7 +245,7 @@ li.registro-boton a {
   font-size: 24px;
   padding: 8px 12px;
   position: absolute;
-  right: 0;
+  right: 10px;
   text-align: justify;
   text-decoration: none;
   top: 0;
@@ -301,27 +311,38 @@ li.registro-boton a {
   outline: none;
 }
 .emergente-aviso-privacidad{
+  position: relative;
   /*background: rgb(73, 128, 24);*/
   text-align: center;
   color: #6B6B6B;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  height: 40px;
+  height: auto;
+  margin-bottom: 20px;
 }
 .emergente-texto-central{
+  position: relative;
+  margin-left: 25%;
+  text-align: justify;
   /*background: rgb(193, 185, 224);*/
   color: #6B6B6B;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  min-height: 60%;
+  margin-bottom: 20px;
+  text-align: justify;
+  overflow-y: scroll;
 }
+
 .div-btn{
   /*background: rgb(162, 3, 52);*/
-  margin-top: 32px;
-  height: 30px;
+  margin-top: 15px;
+  height: inherit;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 25px;
 }
 
 

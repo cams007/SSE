@@ -26,15 +26,14 @@
 	</div><!--div-1-->
 
     <div class="div-2" id="saludo">
-      <div class="div-2-1">
-        <div class="bienvenida">
-                Hola! Estás a punto de iniciar tu registro en el Sistema de Seguimiento de Egresados de la UTM,
-                de antemano te agradecemos por colaborar cordialmente con tu universidad.
+        <div class="div-2-1">
+            <div class="bienvenida">
+                Hola! Estás a punto de iniciar tu registro en el Sistema de Seguimiento de Egresados de la UTM, de antemano te agradecemos por colaborar cordialmente con tu universidad.
+            </div>
         </div>
-    </div>
 
-    <div class="div-2-2">
-        <form class="form-horizontal" role="form" method="POST" action="{{ route('crearUsuario.submit') }}">
+        <div class="div-2-2">
+            <form class="form-horizontal" role="form" method="POST" action="{{ route('crearUsuario.submit') }}">
             {{ csrf_field() }}
             <div class="label">Matricula:*</div>
                 <div class="div-input {{ $errors->has('matricula') ? ' has-error' : '' }}">

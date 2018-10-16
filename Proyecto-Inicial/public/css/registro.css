@@ -23,7 +23,6 @@
 
 .contenedor-2{
     width: 1024px;
-    min-height: 350px;
     margin: 0 auto;
     text-align: center;
     display: -webkit-flex;
@@ -41,20 +40,17 @@
 .div-2{
   text-align: left;
   margin-top: 24px;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .div-2-1{
-  width: 550px;
+  width: 100%;
 }
 
 .bienvenida{
   margin-top: 24px;
-  margin-left: 32px;
-  width: 450px;
-  text-align: justify;
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
   font-family: helvetica;
   font-size: 15px;
 }
@@ -62,15 +58,16 @@
 .column{
   width: auto;
   max-width: 100%;
-  margin-top: 16px;
-  margin-left: 32px;
+  margin-top: 25px;
+  margin-left: 0px;
   text-align: left;
 }
 
 
 
 .div-2-2{
-  width: 450px;
+  width: 100%;
+  margin-left: 35%;
 }
 
 .div-3{
@@ -105,7 +102,7 @@
 
 .modaloverlay .modal {
   background-color: white;
-  height: 75%;
+  height: 60%;
   width: 50%;
   position: relative;
   margin: 0 auto;
@@ -141,7 +138,7 @@
   font-size: 24px;
   padding: 8px 12px;
   position: absolute;
-  right: 0;
+  right: 10px;
   text-align: justify;
   text-decoration: none;
   top: 0;
@@ -171,6 +168,8 @@
 
 
 .last-label{
+  width:330px;
+  display: block;
   text-align: right;
   color: #6B6B6B;
   font-family: 'Roboto',sans-serif;;
@@ -265,11 +264,12 @@
 
 .div-btn{
   height: inherit;
-  margin-top: 10px;  
+  margin-top: 25px;  
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 25px;
 }
 
 .emergente-button1{
@@ -282,7 +282,7 @@
     padding: 3px 35px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 15px;
     cursor: pointer;
 }
@@ -297,7 +297,7 @@
     padding: 3px 35px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     font-size: 15px;
     cursor: pointer;
 }
