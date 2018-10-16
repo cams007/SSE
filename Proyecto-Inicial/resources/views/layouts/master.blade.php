@@ -20,10 +20,7 @@
         </div>
           <div id="header">
               <div id="nombre_usuario">
-
-                    @if (Auth::guest())
-
-                    @else
+                    @if( Auth::user() )
                           @if(Auth::user()->egresado->imagen_url)
                             <img src="{{ url(Auth::user()->egresado->imagen_url) }}" style="width: 24px; height: 24px; border-radius: 50%">
                           @else

@@ -1,7 +1,7 @@
 
 @extends('layouts.master')
 
-@section('title', 'Estudios realizados')
+@section('title', 'Mis estudios')
 
 @section('style')
 	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
@@ -109,7 +109,6 @@
 					<!-- Si el egresado cambia de "No titulado" por alguna forma de titulacion -->
 					<div id = "hide_element" style = "display:none;">
 						<form method="POST" action="{{url('perfil/guardarFormacion')}}">
-							{{-- TODO: Protección contra CSRF --}}
 							{{ csrf_field() }}
 							<div>
 								<label> Forma de titulación:</label>
@@ -133,7 +132,6 @@
 
 				@else				
 					<form method="POST" action="{{url('perfil/guardarFormacion')}}">
-						{{-- TODO: Protección contra CSRF --}}
 						{{ csrf_field() }}
 
 						@if( $preparacion->forma_titulacion == NULL )
@@ -245,10 +243,9 @@
 						<input type="radio" name="sector" id="privada" value="0">
 						<label for="privada" class="label-radio"> No</label>
 					</div>
-					
 
 					<div class="botones-doctorado">
-						<button type = "button" class="flat-secundario">Cancelar</button>
+						<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</form>
@@ -282,7 +279,7 @@
 					</div>
 					
 					<div class="botones-maestria">
-						<button type = "button" class="flat-secundario">Cancelar</button>
+						<a href="#close"><button type="button" class="flat-secundario">Cancelar</button></a>
 						<button type = "submit" class="flat aling-right">Guardar</button>
 					</div>
 				</form>

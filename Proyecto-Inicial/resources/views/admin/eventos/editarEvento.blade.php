@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Editar-evento')
+@section('title', 'Editar evento')
 
 @section('style')
 	<link href="{{ url('css/cssadmin/editarEvento.css') }}" rel="stylesheet">
@@ -14,7 +14,6 @@
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
 			<p class="text-center">Editar evento</p>
-
 		</div><!--div-1-->
 
 		<!--Contenido de la pagina-->
@@ -25,7 +24,7 @@
 			<input name="id" type="hidden" value="{{$evento->id}}"/>
 
 			<div class="seccion1">
-			<label for="" class="">Titulo del evento: </label>
+			<label for="" class="">Título del evento: </label>
 	 		<input class="nombre" type="text" name="nombre" value="{{ $evento->nombre }}" required/>
 
 	 		<label for="" class="">Descripción: </label>
@@ -42,7 +41,7 @@
 			 		<input type="date" name="fecha" value="{{$evento->fecha}}" required/>
 				</div>
 			</div>
-	 		<label for="" class="">Categoria: </label>
+	 		<label for="" class="">Categoría: </label>
 	 		<select name="categoria" required>
 	 			@if($evento->categoria == 'Académico'){{--Se obtiene como string y se envia en numero--}}
 	 				<option value="1" selected>Académico</option>
@@ -55,7 +54,7 @@
 			</div>
 
 			<div class="seccion2">
-	 		<label for="" class="">Poster del evento: </label>
+	 		<label for="" class="">Póster del evento: </label>
 	 		<input id="file-input" name="imagen" type="file" class="input-file" />
 	 		<img id="imgSalida" src="{{ url($evento->imagen_url)}}" alt=""/>
 

@@ -19,6 +19,7 @@
             <button id = "hide" type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             </div>
         @endif
+        
         <!-- Muestra un mensaje de alerta en caso de que el usuario no se puede registrar -->        
         <div class="div-1">
             <p class="text-center">Cambiar contraseña</p>

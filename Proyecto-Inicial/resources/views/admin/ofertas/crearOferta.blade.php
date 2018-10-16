@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'Alta oferta')
+@section('title', 'Crear oferta')
 
 @section('style')
 
@@ -49,7 +49,7 @@
 
 	 		<label for="" class="">Empresa: </label>
 	 		<select name="empresa_id" required>
-	 			<@foreach( $empresas as $empresa )
+	 			@foreach( $empresas as $empresa )
 				 		{{ $id = $empresa->id }}
 	 					<option value={{$id}}>{{$empresa->nombre}}</option>
 	 			@endforeach
@@ -62,7 +62,7 @@
 			<!--Datos de preparacion-->
 	 		<label for="" class="">Carrera: </label>
 	 		<select name="carrera" required>
-	 			@foreach($carrera as $idn=>$nombre)
+	 			@foreach( $carrera as $idn=>$nombre )
 	 					<option value="{{$idn}}">{{$nombre}}</option>
 	 			@endforeach
 	 		</select>
@@ -88,5 +88,4 @@
 		</form>
 
 	</div><!--contenedor-->
-
 @stop

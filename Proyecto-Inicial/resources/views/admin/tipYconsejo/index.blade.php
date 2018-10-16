@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'index')
+@section('title', 'Tip y consejo')
 
 
 @section('style')
@@ -62,15 +62,20 @@
 			<!--Recibimos del controlador TipsYConsejosAdminController $tips-->
 			<tbody>
 			@foreach($tips as $tip)
-			<tr data-tip="{{$tip}}">
-				<td><a href="#verTip" class="btn-show">{{ $tip->titulo}}</a></td>
-				<td> <?php  $imp =substr($tip->descripcion,0,20); echo $imp;?> </td><!--se muestran 20 caracteres de la descripción-->
-				<td>
-					<a href="{{route('admin.editarTipConsejo', $tip)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-					<a href="#eliminarTip" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a>
-				</td>
-			</tr>
-	        @endforeach
+				<tr data-tip="{{$tip}}">
+					<td><a href="#verTip" class="btn-show">{{ $tip->titulo}}</a></td>
+					<td>
+						<?php
+							$imp = substr( $tip->descripcion, 0, 20 );
+							echo $imp;
+						?>
+					</td><!--se muestran 20 caracteres de la descripción-->
+					<td>
+						<a href="{{route('admin.editarTipConsejo', $tip)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
+						<a href="#eliminarTip" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a>
+					</td>
+				</tr>
+	        	@endforeach
 	        </tbody>
          </table><!--Fin del contenido de la pagina-->
 

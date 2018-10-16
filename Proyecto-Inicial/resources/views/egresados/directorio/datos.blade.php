@@ -1,12 +1,16 @@
 @extends('layouts.master')
 
-@section('title', 'Datos basicos')
+@section('title', 'Datos básicos')
 
 @section('style')
 	<link href="{{ url('css/datosEmpresa.css') }}" rel="stylesheet">	
 	<link href="{{ url('css/modalDatosEmpresa.css') }}" rel="stylesheet">
 	<link href="{{ url('css/estrellasRating.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+@stop
+
+@section('script')
+	<script src="{{ url('js/calificar.js') }}"></script>
 @stop
 
 @section('content')
@@ -23,9 +27,7 @@
 
 			<div class="div-2-2"><!--inicio div-2-2-->
 				<div class="column content-sm">
-					<form method="POST" action="#">
-
-						{{-- TODO: Protección contra CSRF --}}
+					<div>
 						{{ csrf_field() }}
 
 						<div class="contenedor-info"><!--inicio contenedor-info-->
@@ -82,7 +84,7 @@
 							</div><!--info-->
 						</div><!--contenedor-info-->
 
-					</form>
+					</div>
 				</div>
 			</div><!--fin div-2-2-->
 
@@ -138,8 +140,4 @@
 		    	</div>
 		</div>
 	</div>
-@stop
-
-@section('script')
-	<script src="{{ url('js/calificar.js') }}"></script>
 @stop

@@ -18,7 +18,6 @@ trait AuthenticatesUsers
     {
         return view('egresados.index');
     }
-
     /**
      * Handle a login request to the application.
      *

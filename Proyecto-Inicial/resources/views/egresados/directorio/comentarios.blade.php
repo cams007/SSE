@@ -26,7 +26,7 @@
 						<div>
 						<h2>{{ round( $comentario->promedio ) }}</h2>
 							@for( $i = 1; $i <= 5; $i++ )
-								@if( $i <=  round( $comentario->promedio ) )
+								@if( $i <= round( $comentario->promedio ) )
 									<img src="{{ url('assets/images/empresa_estrella_full.png') }}">
 								@else
 									<img src="{{ url('assets/images/empresa_estrella_empty.png') }}">

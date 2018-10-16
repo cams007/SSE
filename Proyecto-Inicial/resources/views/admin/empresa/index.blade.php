@@ -67,7 +67,7 @@
 					<td>{{$empresa->descripcion}}</td>
 					<td>
 						<a href="{{url('/admin/empresas/editarEmpresa',$empresa->id)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar-->
-	          			<a href="#eliminarEmpresa" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
+	          				<a href="#eliminarEmpresa" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 					</td>
 				</tr>
 				@endforeach

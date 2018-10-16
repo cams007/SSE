@@ -24,7 +24,6 @@
 		<div class="column content content-lg">
 			<form method="POST" action="{{url('perfil/primerEmpleo')}}">
 
-				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 
 				<div class="form-group-estudios">

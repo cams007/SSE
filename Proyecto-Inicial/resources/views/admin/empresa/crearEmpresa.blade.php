@@ -123,7 +123,7 @@
 
 			<div class="columnitas">
 				<div>
-			 		<label for="" class="">Motivos de no contratacion: </label>
+			 		<label for="" class="">Motivos de no contratación: </label>
 			 		<textarea rows="4" cols="50" name="noContratacion" placeholder="Describa los motivos de no contatación" required></textarea>
 				</div>
 

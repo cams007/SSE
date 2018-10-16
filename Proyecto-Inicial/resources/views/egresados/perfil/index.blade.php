@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Datos basicos')
+@section('title', 'Mi perfil')
 
 @section('style')
 	<link href="{{ url('css/perfil.css') }}" rel="stylesheet">
@@ -158,7 +158,6 @@
 			</div><!--parte-1-->
 
 			<form action="{{ url('perfil/guardar') }}" method="post">
-				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
@@ -186,7 +185,6 @@
 			</div><!--parte-1-->
 
 			<form action="{{ url('perfil/guardar') }}" method="post">
-				{{-- TODO: Protección contra CSRF --}}
 				{{ csrf_field() }}
 				<div class="parte-2"><!--parte-2-->
 					<input name="_token" type="hidden" value="{!! csrf_token() !!}" />

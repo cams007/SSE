@@ -68,7 +68,9 @@
 			</div>
 		</div><!--fin div-2-2-1-->
 
-		@php $i =1;@endphp
+		@php
+			$i = 1;
+		@endphp
 		<table> <!--Contenido de la pagina-->
 			<thead>
 				<td>Número</td>
@@ -93,7 +95,10 @@
 						<a href="#eliminarEgresado" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
 					</td>
 				</tr>
-			@php $i++; @endphp
+				@php
+					$i++;
+				@endphp
+
 			@endforeach
 			</tbody>
          </table>

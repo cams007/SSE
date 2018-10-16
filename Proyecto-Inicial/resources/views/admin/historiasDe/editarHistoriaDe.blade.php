@@ -1,10 +1,14 @@
 @extends('admin.layouts.master')
 
-@section('title', 'HistoriasYtips')
+@section('title', 'Editar historia')
 
 @section('style')
 <!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/editarHistorias.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/admin/historiaDExito.js') }}"></script>
 @stop
 
 @section('content')
@@ -37,8 +41,4 @@
 			</div>
 		</form>
 	</div><!--contenedor-->
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/historiaDExito.js') }}"></script>
 @stop

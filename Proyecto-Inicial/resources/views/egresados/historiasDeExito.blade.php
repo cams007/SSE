@@ -9,6 +9,10 @@
 	<!-- <link href="{{ url('css/ofertas.css') }}" rel="stylesheet"> -->
 @stop
 
+@section('script')
+	<script src="{{ url('js/historiasExito.js') }}"></script>
+@stop
+
 @section('content')
 <div class="contenedor"><!--contenedor-->
 
@@ -94,8 +98,4 @@
 	</div> <!-- div-modal -->
 </div> <!-- div-modaloverlay -->
 
-@stop
-
-@section('script')
-	<script src="{{ url('js/historiasExito.js') }}"></script>
 @stop

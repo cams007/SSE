@@ -1,6 +1,6 @@
 @extends('admin.layouts.master')
 
-@section('title', 'index')
+@section('title', 'Eventos')
 
 
 @section('style')
@@ -64,17 +64,17 @@
 			</thead>
 			<tbody>
 			@foreach($eventos as $evento)
-			<tr data-evento="{{$evento}}">
-				<td><a href="#verEvento" class="btn-show">{{ $evento->nombre}}</a></td>
-				<td>{{ $evento->lugar }}</td>
-				<td>{{ $evento->fecha }}</td>
-				<td>{{ $evento->categoria}}</td>
-				<td>
-					<a href="{{route('admin.editarEvento', $evento)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
-          			<a href="#eliminarEvento" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
-				</td>
-			</tr>
-	        @endforeach
+				<tr data-evento="{{$evento}}">
+					<td><a href="#verEvento" class="btn-show">{{ $evento->nombre}}</a></td>
+					<td>{{ $evento->lugar }}</td>
+					<td>{{ $evento->fecha }}</td>
+					<td>{{ $evento->categoria}}</td>
+					<td>
+						<a href="{{route('admin.editarEvento', $evento)}}"><img src="{{ url('assets/images/editar.png') }}" alt=""></a><!--editar--><!--accedemos al name de la ruta-->
+						<a href="#eliminarEvento" class="btn-showDelete"><img src="{{ url('assets/images/eliminar.png') }}" alt=""></a><!--Eliminar-->
+					</td>
+				</tr>
+	        	@endforeach
 			</tbody>
          </table><!--Fin del contenido de la pagina-->
 

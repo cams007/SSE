@@ -63,10 +63,6 @@
 			<tbody>
 				@foreach($ofertas as $oferta)
 					<tr data-oferta="{{ $oferta }}" data-empresa="{{ $oferta->empresa }}" data-contacto="{{ $oferta->empresa->contacto }}">
-						<!-- <?php
-							// $date = date_create($oferta->created_at);
-							// echo '<td>'.date_format($date, 'd/M/Y').'</td>';
-						?> -->
 						<td> {{ $oferta->created_at->diffForHumans() }} </td>
 						<td>{{ $oferta->titulo_empleo }}</td>
 						<td><a href="#datosEmpresa" class="btn-empresa">{{ $oferta->empresa->nombre }}</a></td>
@@ -150,7 +146,6 @@
 	</div>
 </div> <!-- div-modaloverlay -->
 
-
 <div id="detalleOferta" class="modaloverlay">
   	<div class="modal">
 	    <a href="#close" class="close">&times;</a>	  
@@ -212,6 +207,5 @@
 	    </div>
 	</div>
 </div>
-
 
 @stop

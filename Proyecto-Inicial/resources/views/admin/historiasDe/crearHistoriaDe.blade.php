@@ -7,6 +7,10 @@
 	<link href="{{ url('css/cssadmin/crearHistorias.css') }}" rel="stylesheet">
 @stop
 
+@section('script')
+	<script src="{{ url('js/admin/evento.js') }}"></script>
+@stop
+
 @section('content')
 	<div class="contenedor"><!-- contenedor -->
 		<div class="div-1">
@@ -38,8 +42,4 @@
 		</form>
 	</div><!--contenedor-->
 
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/historiaDExito.js') }}"></script>
 @stop

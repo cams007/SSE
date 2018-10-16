@@ -1,10 +1,14 @@
 @extends('admin.layouts.master')
 
-@section('title', 'eventos')
+@section('title', 'Crear evento')
 
 @section('style')
 <!-- <link href="{{ url('css/ranking.css') }}" rel="stylesheet"> -->
 	<link href="{{ url('css/cssadmin/crearEvento.css') }}" rel="stylesheet">
+@stop
+
+@section('script')
+	<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop
 
 @section('content')
@@ -17,6 +21,7 @@
 		<form method="POST" enctype="multipart/form-data" action="{{route('admin.crearEvento.submit')}}">
 			{{ csrf_field() }}
 			<input name="_token" type="hidden" value="{!! csrf_token() !!}" />
+			
 			<div class="seccion1">
 			<label for="" class="">Título del evento: </label>
 	 		<input class="nombre" type="text" name="nombre" placeholder="Título del evento" required/>
@@ -35,7 +40,7 @@
 			 		<input type="date" name="fecha" placeholder="Fecha del evento" required/>
 				</div>
 			</div>
-	 		<label for="" class="">Categoria: </label>
+	 		<label for="" class="">Categoriía: </label>
 	 		<select name="categoria" required>
 	 			<option value="1">Académico</option>
 	 			<option value="2">Cultural</option>
@@ -56,8 +61,4 @@
 
 	</div><!--contenedor-->
 
-@stop
-
-@section('script')
-<script src="{{ url('js/admin/evento.js') }}"></script>
 @stop
