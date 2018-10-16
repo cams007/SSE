@@ -11,15 +11,15 @@
         <div id="franja_contenedor">
             <div id="logo_sse"> </div>
             <div id="titulo_index"><p>Sistema de Seguimiento de Egresados</p></div>
-            <a  onmouseover ="mostrarAviso()" href="#modalAcercaDe"><div id="logo_info"></div></a>
-        </div>    
-        <div id="modalAcercaDe" class="modaloverlay">
-            <div class="modal">
-                    <div class="contenedor-2">
-                    <div id="avisoTitulo" class="emergente-aviso-privacidad">Aquí encontrarás</div>
-                    <div id="textoCompleto" class="emergente-texto-central">
-                    </div>
-
+            <a  onclick="mostrarAviso()" href="#modalAcercaDe"><div id="logo_info"></div></a>
+        </div>
+        
+    <div id="modalAcercaDe" class="modaloverlay">
+        <div class="modal">
+                <div class="contenedor-2">
+                  <div id="avisoTitulo" class="emergente-aviso-privacidad">Aquí encontrarás</div>
+                  <div id="textoCompleto" class="emergente-texto-central">
+                </div>
                     <div class="div-btn">
                         <div class="btn-2">
                             <a href="#"><button class="emergente-button2" >Aceptar</button></a>
@@ -57,13 +57,13 @@
 
         </div>
 
-        <!--
+        
         <a href="{{ route('password.request') }}">
             <div id="olvido_pswd">
                 <p>¿Olvidó su contraseña?</p>
             </div>
         </a>
-        -->
+        
 
         <div class="boton-login">
                 <button type="submit" id="input-button">
@@ -82,19 +82,15 @@
 </html>
 
 <script type="text/javascript">
-    window.onload=function()
+    function mostrarAviso()
         {
             var elemento=document.getElementById("modalAcercaDe");
-            elemento.onmouseover = function(e) {
  
-                // El contenido de esta funcion se ejecutara cuanso el mouse
-                // pase por encima del elemento
  
                 document.getElementById("textoCompleto").innerHTML = "<ul><li>Ofertas Laborales</li><li>Directorio de empresas</li><li>Ranking de las mejores empresas</li><li>Tips y consejos</li><li>Historias de éxito</li><li>Eventos y más...</li></ul>";
     
-            };
-            elemento.onmouseout = function(e) {;
-            };
-        }
+            }
+            
+        
 </script>
 
