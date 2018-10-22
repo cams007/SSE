@@ -20,7 +20,7 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Roboto', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
 }
 header {
   height: 160px;
@@ -51,12 +51,14 @@ header {
   height: 64px;
 }
 #titulo_contenido {
-  width: 300px;
+  width: auto;
   height: auto;
 }
-#titulo_contenido {
-  width: 600px;
+#titulo_contenido p {
+  padding-top: 10px;
+  font-family: 'Roboto', sans-serif;
   font-size: 30px;
+  color: #5E352A;
 }
 .menucontainer {
  width: 1024px;

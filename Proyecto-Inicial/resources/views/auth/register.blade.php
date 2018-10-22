@@ -97,6 +97,7 @@
                   ni empleadores, ni personas ajenas al sistema podrán visualizarla. Para mayor información acerca del tratamiento
                   y de los derechos que puedes hacer valer, puedes acceder al aviso de privacidad completo a través de nuestra
                   oficina de seguimiento a egresados, ubicada en la misma dirección.
+
                 </div>
 
                 <div id="a" class="column">
@@ -105,11 +106,11 @@
 
                 <div class="div-btn">
                   <div class="btn1">
-                  <a href="{{url('/')}}"><button class="emergente-button1">Cancelar</button></a>
-                </div>
-                <div class="btn-2">
-                  <button class="emergente-button2" onclick="closeModal()">Aceptar</button>
-                </div>
+                    <a href="{{url('/')}}"><button class="emergente-button1">Cancelar</button></a>
+                 </div>
+                  <div class="btn-2">
+                    <button class="emergente-button2" onclick="closeModal()">Aceptar</button>
+                  </div>
                 </div>
               </div>
         </div>

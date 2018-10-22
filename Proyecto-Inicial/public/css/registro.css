@@ -23,12 +23,12 @@
 
 .contenedor-2{
     /*width: 1024px;*/
-    margin: 0 auto;
-    text-align: center;
-    display: -webkit-flex;
+   /* margin: 0 auto;
+    text-align: center;*/
+  /*  display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;*/
 }
 
 .div-1{
@@ -84,37 +84,49 @@
   font-size: 13px;
 }
 
+
 .modaloverlay {
   background: rgba(0, 0, 0, 0.8);
   bottom: 0;
   left: 0;
-  opacity: 0;
-  pointer-events: auto;
-  position: fixed;
   right: 0;
   top: 0;
+  opacity: 0;
+  height: auto;
+  pointer-events: auto;
+  position: fixed;
   transition: opacity 400ms ease-in;
   z-index: 99999;
   display: block;
   animation: modal 0s 0s forwards;
-  visibility: hidden;
+  /*visibility: hidden;*/
+  display: flex;
 }
 
 .modaloverlay .modal {
   background-color: white;
-  height: 60%;
+  width: 50%;
+  height: auto;
+  margin: auto;
+  position: relative;
+  padding-top: 16px;
+  padding-right: 50px;
+  padding-left: 50px;
+  animation: modal 0s 0s forwards;
+  /*height: auto;*/
+/*  background-color: white;
+  height: 800px;
   width: 50%;
   position: relative;
   margin: 0 auto;
   padding: 3em;
   text-align: justify;
-  overflow-y: overlay;
   -webkit-overflow-scrolling: touch;
   animation: modal 0s 0s forwards;
-  visibility: hidden;
+  visibility: hidden;*/
 }
 
-@media (min-width: 60em) {
+/*@media (min-width: 60em) {
   .modaloverlay .modal {
     height: 50%;
     margin: 5% auto;
@@ -130,7 +142,7 @@
   height: 100%;
   animation: modal 0s 0s forwards;
   visibility: hidden;
-}
+}*/
 
 .modaloverlay .close {
   background-color: white;
@@ -208,19 +220,23 @@
 
 .emergente-aviso-privacidad{
   text-align: center;
+  margin-bottom: 16px;
   color: #6B6B6B;
   font-family: 'Roboto', sans-serif;
-  font-size: 20px;
+  font-size: 26px;
   height: auto;
+  font-weight: bold;
 }
 
 .emergente-texto-central{
-    min-height: 60%;
+    /*min-height: 60%;*/
+    height: 300px;
     color: #6B6B6B;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-align: justify;
-    overflow-y: scroll;
+    overflow: auto;
+    /*overflow-y: scroll;*/
 }
 
 .div-btn{
@@ -330,6 +346,7 @@ div.col-md-6 input {
 }
 
 .button1{
+    font-family: 'Roboto', sans-serif;
     float: left;
     padding: 5px 30px;
     background-color: #A4A4A4;    
@@ -338,6 +355,7 @@ div.col-md-6 input {
 }
 
 .button2{
+    font-family: 'Roboto', sans-serif;
     float: right;
     width: 125px;
     height: 30px;
