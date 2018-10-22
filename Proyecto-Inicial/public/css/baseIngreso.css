@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+h1{
+  font-family: 'Roboto', sans-serif;
+  font-size: 24pt;
+  color: #6B6B6B;
+  padding-top: 15PX;
+}
+html {
+  background-image: url("../assets/images/biblioteca.JPG");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  height: 160px;
+  background-color: white;
+  border-bottom: solid 1px #ccc;
+  box-shadow: 0 1px 3px #888888;
+}
+#barrasuperior {
+  width:100%;
+  display:block;
+  height:32px;
+  background-color: #5E352A;
+  box-shadow: 0 1px 3px #888888;
+}
+/*----------------ICONOS SUPERIOR-------------*/
+.headercontainer {
+  width: 1024px;
+  margin: 16px auto;
+  display: flex;
+  justify-content: space-between;
+}
+#logo_see_contenido {
+  width: 64px;
+  height: 65px;
+}
+#logo_utm_contenido {
+  width: 65px;
+  height: 64px;
+}
+#titulo_contenido {
+  width: 300px;
+  height: auto;
+}
+#titulo_contenido {
+  width: 600px;
+  font-size: 30px;
+}
+.menucontainer {
+ width: 1024px;
+ height: 60px;
+ margin: 0 auto;
+ background-color: #5E352A;
+ text-align: center;
+}
+.block {
+  width: 1024px;
+  min-height: 200px;
+  margin: 43px auto;
+  background: rgba(255,255,255,0.9);  
+  text-align: center;
+  border: solid 1px #ccc;
+  box-shadow: 0 0 3px #888888;
+  -moz-box-shadow: 0 0 3px #888888;
+  -webkit-box-shadow: 0 0 3px #888888;
+}
+footer {
+  height: 32px;
+  background-color: #6b6b6b;
+}
+

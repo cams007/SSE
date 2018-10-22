@@ -10,7 +10,7 @@
 }
 
 .contenedor{
-    width: 1024px;
+    /*width: 1024px;*/
     min-height: 536px;
     margin: 0 auto;
     display: block;
@@ -22,7 +22,7 @@
 }
 
 .contenedor-2{
-    width: 1024px;
+    /*width: 1024px;*/
     margin: 0 auto;
     text-align: center;
     display: -webkit-flex;
@@ -43,7 +43,7 @@
 }
 
 .div-2-1{
-  width: 100%;
+  /*width: 100%;*/
 }
 
 .bienvenida{
@@ -57,7 +57,7 @@
 
 .column{
   width: auto;
-  max-width: 100%;
+  /*max-width: 100%;*/
   margin-top: 25px;
   margin-left: 0px;
   text-align: left;
@@ -66,7 +66,7 @@
 
 
 .div-2-2{
-  width: 100%;
+  /*width: 100%;*/
   margin-left: 35%;
 }
 
@@ -168,7 +168,7 @@
 
 
 .last-label{
-  width:330px;
+  width:300px;
   display: block;
   text-align: right;
   color: #6B6B6B;
@@ -177,45 +177,6 @@
   margin-top: 8px;
   margin-bottom: 24px;
 }
-
-.button1{
-    float: left;
-    width: 100px;
-    height: 24px;
-    background-color: #A4A4A4;
-    color: white;
-    border: none;
-    padding: 3px 35px;
-    text-align: center;
-    text-decoration: none;
-    display:block;
-    font-size: 15px;
-    cursor: pointer;
-      animation: modal 0s 0s forwards;
-  visibility: hidden;
-}
-
-.button2{
-    float: right;
-    width: 100px;
-    height: 24px;
-    background-color: #DF0101;
-    color: white;
-    border: none;
-    padding: 3px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    cursor: pointer;
-    animation: modal 0s 0s forwards;
-    visibility: hidden;
-}
-
-.button2:hover{
-  background: #5E352A;
-}
-
 
 .div-input{
     width: auto;
@@ -361,8 +322,7 @@ div.col-md-6 input {
 }
 
 .btn-group {
-  width: 330px;
-  background: white;
+  width: 300px;
   margin-top: 32px;
   height: 50px;
   outline: none;
@@ -371,29 +331,19 @@ div.col-md-6 input {
 
 .button1{
     float: left;
-    width: 80px;
-    height: 24px;
-    background-color: #A4A4A4;
-    color: white;
-    border: none;
-    padding: 3px 35px;
-    text-align: center;
+    padding: 5px 30px;
+    background-color: #A4A4A4;    
     text-decoration: none;
-    font-size: 15px;
-    cursor: pointer;
+    color: white;
 }
 
 .button2{
     float: right;
-    width: 150px;
+    width: 125px;
     height: 30px;
     background-color: #DF0101;
+    border: none; 
     color: white;
-    border: none;
-    padding: 3px 35px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 15px;
     cursor: pointer;
 }
